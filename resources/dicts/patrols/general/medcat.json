@@ -14,7 +14,7 @@
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The patrol finds a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -105,7 +105,7 @@
         "min_max_status": {
             "healer cats": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "r_c finds a nice spot to sun {PRONOUN/r_c/self}.",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to stay focused instead.",
         "chance_of_success": 60,
@@ -144,7 +144,7 @@
             "medicine cat": [1, 6],
             "healer cats": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As the medicine cats' patrol pads out into c_n territory, r_c tells p_l about the dream {PRONOUN/r_c/subject} had last night, and what the StarClan vision could mean for c_n.",
         "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
         "chance_of_success": 40,
@@ -277,7 +277,7 @@
             "medicine cat": [1, 6],
             "healer cats": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As the medicine cats' patrol pads out into c_n territory, r_c tells p_l about the dream {PRONOUN/r_c/subject} had last night, and what the StarClan vision could mean for c_n.",
         "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
         "chance_of_success": 40,
@@ -409,7 +409,7 @@
             "medicine cat": [1, 6],
             "healer cats": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As {PRONOUN/p_l/subject} head out to gather cobwebs, p_l thinks about the dream {PRONOUN/p_l/subject} had last night. . . was it sent by StarClan?",
         "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/push/pushes} it from {PRONOUN/p_l/poss} mind.",
         "chance_of_success": 40,
@@ -451,7 +451,7 @@
             "medicine cat apprentice": [1, 6],
             "healer cats": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As the patrol pads out into c_n territory, r_c tells p_l about the dream {PRONOUN/r_c/subject} had last night, and what the StarClan vision could mean for c_n.",
         "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
         "chance_of_success": 40,
@@ -598,7 +598,7 @@
             "healer cats": [1, 6],
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As p_l pads through c_n territory, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} a presence join {PRONOUN/p_l/object}.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} companion stays with {PRONOUN/p_l/object} as silent support while {PRONOUN/p_l/subject} {VERB/p_l/work/works}.",
         "chance_of_success": 30,
@@ -664,7 +664,7 @@
             "healer cats": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As p_l pads through c_n territory with their entourage, {PRONOUN/p_l/subject} {VERB/p_l/feel/feels} a presence join {PRONOUN/p_l/object}.",
         "decline_text": "{PRONOUN/p_l/poss/CAP} companion stays with {PRONOUN/p_l/object} as silent support while {PRONOUN/p_l/subject} {VERB/p_l/continue/continues} on.",
         "chance_of_success": 30,
@@ -776,7 +776,7 @@
             "medicine cat apprentice": [1, 6],
             "healer cats": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As app1 pads through c_n territory, {PRONOUN/app1/subject} {VERB/app1/feel/feels} a presence join {PRONOUN/app1/object}.",
         "decline_text": "{PRONOUN/app1/poss/CAP} companion stays with {PRONOUN/app1/object} as silent support while {PRONOUN/p_l/subject} {VERB/p_l/work/works}. It's a little unnerving, but app1 thinks they mean well?",
         "chance_of_success": 30,
@@ -838,7 +838,7 @@
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As app1 pads through c_n territory, {PRONOUN/app1/subject} {VERB/app1/feel/feels} a presence join {PRONOUN/app1/object}.",
         "decline_text": "{PRONOUN/app1/poss/CAP} companion stays with {PRONOUN/app1/object} as silent support while {PRONOUN/p_l/subject} work.",
         "chance_of_success": 30,
@@ -953,7 +953,7 @@
             "all apprentices": [-1, -1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "During a patrol looking for herbs, p_l notices that r_c seems more quiet than usual. When prompted, r_c slowly asks if p_l could teach {PRONOUN/r_c/object} more about the nature of StarClan.",
         "decline_text": "p_l opens {PRONOUN/p_l/poss} mouth to answer, but the cry of another patrol looking for {PRONOUN/p_l/object} shuts down the conversation. p_l races away towards the scene, leaving r_c behind.",
         "chance_of_success": 60,
@@ -1037,7 +1037,7 @@
             "all apprentices": [-1, -1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "To p_l's concern, their warrior escort is unusually quiet. When prompted on {PRONOUN/r_c/poss} troubles, r_c comments that {PRONOUN/r_c/subject} could not help but think of what legacy {PRONOUN/r_c/subject} would leave behind if StarClan called upon {PRONOUN/r_c/object}.",
         "decline_text": "p_l isn't sure how to exactly address such a statement, and quickly attempts to distract r_c with some herb collecting.",
         "chance_of_success": 60,
@@ -1107,7 +1107,7 @@
             "all apprentices": [-1, -1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "It was one of the worst storms of the season, and left p_l in an unavoidably grumpy mood. Herbs strewn about, prey in hiding, it would take forever to find anything. r_c attempts to find a way to cheer up the healer.",
         "decline_text": "Before r_c can come up with a plan, a cry from the camp forces p_l to return in a hurry.",
         "chance_of_success": 60,
@@ -1160,7 +1160,7 @@
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The gaggle of medicine cats strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity, for all of them to be out like this together, and each cat plans to make the most of it.",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them of a small emergency back at camp that needs their attention. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 20,
@@ -1235,7 +1235,7 @@
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The gaggle of medicine cats strolls through c_n's territory, chatting amicably amongst themselves. It's a rare opportunity, for all of them to be out like this together, and though the weather is poor and not really ideal for herb-gathering, each cat plans to make the most of it.",
         "decline_text": "Before they get very far, it starts pouring rain, and none of the cats feel like getting soaked today. At least they can spend time together organizing the herb stores instead!",
         "chance_of_success": 30,
@@ -1311,7 +1311,7 @@
             "all apprentices": [3, 3],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The trio of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 30,
@@ -1371,7 +1371,7 @@
             "all apprentices": [4, 4],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The quartet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 50,
@@ -1431,7 +1431,7 @@
             "all apprentices": [5, 5],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The quintet of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 50,
@@ -1490,7 +1490,7 @@
             "healer cats": [1, 6],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The gaggle of apprentices strolls through c_n's territory, chatting amicably amongst themselves. The senior medicine cats are all busy back at camp, so the young cats get the chance to be out on their own today, which has everyone excited!",
         "decline_text": "Before they get very far, one of their Clanmates catches up to inform them that they're wanted back at camp. Oh well, maybe they'll get the chance again another day.",
         "chance_of_success": 50,
@@ -1548,7 +1548,7 @@
             "healer cats": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l eyes the warrior chosen to escort {PRONOUN/p_l/object} to fetch herbs, feeling a little bit giddy. Apprentices getting to boss around warriors is something that almost never happens, and p_l is going to make sure {PRONOUN/p_l/subject} {VERB/p_l/make/makes} the most of it.",
         "decline_text": "Just as they're about to leave, r_c is called off to help on a hunting patrol instead. p_l lashes {PRONOUN/p_l/poss} tail in frustration, but doesn't protest, and heads back to the medicine cat's den alone.",
         "chance_of_success": 50,
@@ -1615,7 +1615,7 @@
             "healer cats": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "r_c eyes p_l as the younger cat approaches, ears slightly drawn back. The prospect of being bossed around by an apprentice is downright humiliating, and the warrior is <i>not</i> looking forward to this experience.",
         "decline_text": "Just as they're about to leave, r_c is called off to help on a hunting patrol instead, and eagerly rushes off, not sparing a second glance back at the young medicine cat.",
         "chance_of_success": 30,
@@ -1872,7 +1872,7 @@
             "healer cats": [1, 6],
             "all apprentices": [1, 1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l leads app1 through c_n's territory, enjoying the nice day. {PRONOUN/p_l/subject/CAP} {VERB/p_l/glance/glances} back, and {VERB/p_l/realize/realizes} app1 looks like {PRONOUN/app1/subject} {VERB/app1/want/wants} to ask {PRONOUN/p_l/object} a question.",
         "decline_text": "Just as app1 opens {PRONOUN/app1/poss} mouth to speak, p_l spots a Clanmate trying to remove a thorn from their paw over app1's shoulder, and {PRONOUN/p_l/subject} {VERB/p_l/hurry/hurries} away to help.",
         "chance_of_success": 50,
@@ -1972,7 +1972,7 @@
             "healer cats": [1, 6],
             "all apprentices": [1, 1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l leads app1 through c_n's territory, enjoying the nice day. {PRONOUN/p_l/subject/CAP} {VERB/p_l/glance/glances} back, and {VERB/p_l/realize/realizes} app1 looks like they want to ask them a question.",
         "decline_text": "Just as app1 opens {PRONOUN/app1/poss} mouth to speak, p_l spots a Clanmate trying to remove a thorn from their paw over app1's shoulder, and {PRONOUN/p_l/subject} {VERB/p_l/hurry/hurries} away to help.",
         "chance_of_success": 50,
@@ -2072,7 +2072,7 @@
             "healer cats": [1, 6],
             "all apprentices": [1, 1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l leads app1 through c_n's territory, enjoying the nice day. {PRONOUN/p_l/subject/CAP} {VERB/p_l/glance/glances} back, and {VERB/p_l/realize/realizes} app1 looks like they want to ask them a question.",
         "decline_text": "Just as app1 opens {PRONOUN/app1/poss} mouth to speak, p_l spots a Clanmate trying to remove a thorn from their paw over app1's shoulder, and {PRONOUN/p_l/subject} {VERB/p_l/hurry/hurries} away to help.",
         "chance_of_success": 50,
@@ -2172,7 +2172,7 @@
             "healer cats": [1, 6],
             "all apprentices": [1, 1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l leads app1 through c_n's territory, enjoying the nice day. {PRONOUN/p_l/subject/CAP} {VERB/p_l/glance/glances} back, and {VERB/p_l/realize/realizes} app1 looks like they want to ask them a question.",
         "decline_text": "Just as app1 opens {PRONOUN/app1/poss} mouth to speak, p_l spots a Clanmate trying to remove a thorn from their paw over app1's shoulder, and {PRONOUN/p_l/subject} {VERB/p_l/hurry/hurries} away to help.",
         "chance_of_success": 20,
@@ -2272,7 +2272,7 @@
             "healer cats": [1, 6],
             "all apprentices": [1, 1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l leads app1 through c_n's territory, enjoying the nice day. {PRONOUN/p_l/subject/CAP} {VERB/p_l/glance/glances} back, and {VERB/p_l/realize/realizes} app1 looks like they want to ask them a question.",
         "decline_text": "Just as app1 opens {PRONOUN/app1/poss} mouth to speak, p_l spots a Clanmate trying to remove a thorn from their paw over app1's shoulder, and {PRONOUN/p_l/subject} {VERB/p_l/hurry/hurries} away to help.",
         "chance_of_success": 20,
@@ -2372,7 +2372,7 @@
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
         "decline_text": "p_l stops, then laughs. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
         "chance_of_success": 50,
@@ -2457,7 +2457,7 @@
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
         "decline_text": "p_l stops, then laughs. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
         "chance_of_success": 50,
@@ -2542,7 +2542,7 @@
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
         "decline_text": "p_l stops, then laughs. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
         "chance_of_success": 50,
@@ -2611,7 +2611,7 @@
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
         "decline_text": "p_l stops, then laughs. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
         "chance_of_success": 50,
@@ -2680,7 +2680,7 @@
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l and r_c stroll through the territory, chatting while on their way to an herb patch they haven't visited in a while.",
         "decline_text": "p_l stops, then laughs. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} just remembered that they already have the herb they're walking to back at camp! Better to remember now than after picking it and walking all the way back.",
         "chance_of_success": 50,
@@ -2748,7 +2748,7 @@
             "healer cats": [1, 6],
             "all apprentices": [2, 2]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "In order to spice up their patrol, p_l challenges app2 to an herb-gathering competition.",
         "decline_text": "app2 scoffs at p_l's silliness and stalks off, leaving p_l alone in {PRONOUN/p_l/poss} dismay.",
         "chance_of_success": 60,
@@ -2882,7 +2882,7 @@
             "healer cats": [1, 6],
             "all apprentices": [2, 2]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "app2 boasts about {PRONOUN/app2/poss} hunting skills, saying that makes {PRONOUN/app2/object} better at finding herbs than p_l.",
         "decline_text": "p_l rolls {PRONOUN/p_l/poss} eyes, ignoring {PRONOUN/app2/object} for the rest of the patrol.",
         "chance_of_success": 60,
@@ -2923,7 +2923,7 @@
             "all apprentices": [-1, -1],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l and r_c decide to look for herbs whilst discussing the latest news.",
         "decline_text": "It seems like some mischievous cat has gotten into the herb storage and they have to sort it all over again.",
         "chance_of_success": 50,
@@ -2990,7 +2990,7 @@
             "medicine cat": [1, 6],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l and r_c take a look at their dwindling supply of herbs and decide to combine their efforts into searching for more.",
         "decline_text": "Unfortunately, they are interrupted by a cat claiming that they have an emergency.",
         "chance_of_success": 50,

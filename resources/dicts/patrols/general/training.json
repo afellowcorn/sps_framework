@@ -440,7 +440,7 @@
         "min_max_status": {
             "deputy": [1, 1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "While training, p_l admits that {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} think that {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} a good deputy.",
         "decline_text": "The rest of the patrol awkwardly ignores this statement.",
         "chance_of_success": 50,
@@ -621,7 +621,7 @@
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 10,
+        "weight": 5,
         "intro_text": "The patrol finds a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 50,
@@ -779,7 +779,7 @@
         "min_max_status": {
             "all apprentices":[-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "r_c finds a nice spot to sun {PRONOUN/r_c/self}.",
         "decline_text": "{PRONOUN/r_c/subject} {VERB/r_c/decide/decides} to stay focused instead.",
         "chance_of_success": 60,
@@ -825,7 +825,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l and r_c find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -922,7 +922,7 @@
             "apprentice": [1, 6],
             "all apprentices": [2, 2]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "app1 and app2 find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -1020,7 +1020,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The pair find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -1109,7 +1109,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 40,
+        "weight": 5,
         "intro_text": "The pair find a nice spot to sun themselves.",
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 60,
@@ -1251,7 +1251,7 @@
             "deputy": [-1, -1],
             "leader": [-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
         "decline_text": "Your patrol decides to head home.",
         "chance_of_success": 50,
@@ -1454,7 +1454,7 @@
             "apprentice": [1, 6],
             "warrior": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "While out training together, app1 starts an argument with p_l about the technique they're working on.",
         "decline_text": "Your patrol decides to head home.",
         "chance_of_success": 50,
@@ -1635,7 +1635,7 @@
             "deputy": [1, 6],
             "leader": [-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "The patrol has a disagreement and looks to p_l to settle the dispute.",
         "decline_text": "Your patrol decides to head home.",
         "chance_of_success": 50,
@@ -1950,7 +1950,7 @@
         "min_max_status": {
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As the patrol gathers together to train under p_l's leadership, r_c admits {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject} had a vision from StarClan last night.",
         "decline_text": "The patrol doesn't talk about the vision.",
         "chance_of_success": 70,
@@ -2076,7 +2076,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As they head out to work on their skills, r_c thinks about the dream {PRONOUN/r_c/subject} had last night... was it sent by StarClan?",
         "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/push/pushes} it from {PRONOUN/r_c/poss} mind.",
         "chance_of_success": 70,
@@ -2115,7 +2115,7 @@
         "min_max_status": {
             "all apprentices": [2, 2]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As app1 and app2 collect moss for the elder's den, app2 admits that the strange dreams {PRONOUN/app2/subject}{VERB/app2/'ve/'s} been having is why {PRONOUN/app2/subject} kicked app1 in the night.",
         "decline_text": "The apprentices don't talk about the dreams.",
         "chance_of_success": 70,
@@ -2200,7 +2200,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "While app1 and p_l are out walking, app1 seems preoccupied. When p_l brings their patrol to a halt and asks what's wrong, {PRONOUN/app1/subject} {VERB/app1/reveal/reveals} {PRONOUN/app1/subject}{VERB/app1/'ve/'s} been having a hard time sleeping. {PRONOUN/app1/poss/CAP} dreams are filled with shadows and... images.",
         "decline_text": "This is beyond p_l's sphere of teachable subjects, but {PRONOUN/p_l/subject} {VERB/p_l/promise/promises} that there'll be another cat back at camp who can help, and app1 should probably talk to a medicine cat.",
         "chance_of_success": 70,
@@ -2353,7 +2353,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The patrol quickly devolves into ghost stories, leaving everyone on edge.",
         "decline_text": "p_l quickly silences any talk about ghosts.",
         "chance_of_success": 20,
@@ -2432,7 +2432,7 @@
             "apprentice": [1, 6],
             "all apprentices": [2, 2]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "The patrol quickly devolves into ghost stories, leaving everyone on edge.",
         "decline_text": "p_l quickly silences any talk about ghosts.",
         "chance_of_success": 20,
@@ -2578,7 +2578,7 @@
         "min_max_status": {
             "apprentice": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught. After all, {PRONOUN/app1/subject}{VERB/app1/'re/'s} only practice hunting, right? And since it's  <i>technically</i> not a <i>true</i> hunting patrol, it's <i>technically</i> {PRONOUN/app1/inposs}, right...?",
         "decline_text": "app1 decides against breaking the warrior code, resisting the temptation.",
         "chance_of_success": 60,
@@ -2744,7 +2744,7 @@
         "min_max_status": {
             "all apprentices":[-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 25,
@@ -3035,7 +3035,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -3308,7 +3308,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork, particularly with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 40,
@@ -3497,7 +3497,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -3672,7 +3672,7 @@
             "all apprentices": [2, 2],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As p_l sets the cats up to practice together, app1 and app2 sit in the back, hiding their lashing tails as they plan their prank.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -3759,7 +3759,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -3968,7 +3968,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 20,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mate.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -4173,7 +4173,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 20,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -4353,7 +4353,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 60,
+        "weight": 20,
         "intro_text": "p_l suggests this might be a good chance to practice teamwork with {PRONOUN/p_l/poss} mates.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -4540,7 +4540,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -4706,7 +4706,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -4949,7 +4949,7 @@
             "all apprentices": [1, 5],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with app1 present.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -5181,7 +5181,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -5262,7 +5262,7 @@
             "all apprentices": [2, 2],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -5343,7 +5343,7 @@
             "all apprentices": [3, 3],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -5410,7 +5410,7 @@
             "all apprentices": [4, 4],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -5477,7 +5477,7 @@
             "all apprentices": [5, 5],
             "normal adult": [1, 6]
         },
-        "weight": 10,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with apprentices present.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -5542,7 +5542,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -5604,7 +5604,7 @@
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {},
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -5670,7 +5670,7 @@
             "all apprentices": [1, 1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with app1 here to learn from them.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -5736,7 +5736,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with app1.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 60,
@@ -5803,7 +5803,7 @@
             "all apprentices": [2, 2],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -5870,7 +5870,7 @@
             "all apprentices": [3, 3],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -5937,7 +5937,7 @@
             "all apprentices": [4, 4],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -6004,7 +6004,7 @@
             "all apprentices": [5, 5],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques, particularly with the apprentices here to learn from them.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 20,
@@ -6069,7 +6069,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 70,
@@ -6138,7 +6138,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
         "decline_text": "They decide to focus on working on a different skill instead.",
         "chance_of_success": 70,
@@ -6207,7 +6207,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "As they wander aimlessly towards the sparring area for a training session, r_c stops p_l and asks for {PRONOUN/p_l/poss} advice with something.",
         "decline_text": "It's not the right time for this conversation... maybe once they're back at camp.",
         "chance_of_success": 70,
@@ -6276,7 +6276,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "Quietly, r_c brings p_l aside as they work on their chores, asking for help with wording something difficult.",
         "decline_text": "Both of them are interrupted by a request from a Clanmate - this conversation will have to wait.",
         "chance_of_success": 70,
@@ -6347,7 +6347,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "During an odd moment of downtime, r_c asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} a good teacher.",
         "decline_text": "They are interrupted by some Clanmates who need help, and go off to attend to their duties.",
         "chance_of_success": 70,
@@ -6426,7 +6426,7 @@
         "min_max_status": {
             "all apprentices": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l gets taken aside by r_c as {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} why {PRONOUN/r_c/subject} {VERB/r_c/feel/feels} like StarClan ignores {PRONOUN/r_c/object}.",
         "decline_text": "Neither of them have the time for such a conversation today - it'll have to wait.",
         "chance_of_success": 70,
@@ -6506,7 +6506,7 @@
         "min_max_status": {
             "all apprentices": [2, 2]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "app1 and app2, while exploring the territory, come across the forbidden tunnels.",
         "decline_text": "They don't want to get into trouble, and they have a lot more territory to explore anyway.",
         "chance_of_success": 50,
@@ -6603,7 +6603,7 @@
             "all apprentices": [1, 1],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "app1 isn't acting like {PRONOUN/app1/poss} usual self.",
         "decline_text": "p_l has no time today to get to the bottom of it.",
         "chance_of_success": 60,
@@ -6668,7 +6668,7 @@
             "apprentice": [1, 6],
             "normal adult": [1, 6]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "p_l takes app1 out of camp to gather moss.",
         "decline_text": "Before they even leave the camp, r_c's expertise is required in another matter.",
         "chance_of_success": 40,
@@ -9196,7 +9196,7 @@
             "apprentice": [1, 6],
             "normal adult": [-1, -1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "{PRONOUN/app1/poss/CAP} mentor sends {PRONOUN/app1/object} out with other apprentices from the clan to assess {PRONOUN/app1/poss} hunting skills. {PRONOUN/app1/poss} group argues about who should really lead this patrol. app2 wants to be in charge, but {PRONOUN/app2/subject} aren't the easiest cat to work with. app1 thinks {PRONOUN/app1/subject} should speak up.",
         "decline_text": "app1 confesses to {PRONOUN/app1/poss} mentor that {PRONOUN/app1/subject} do not feel ready for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/poss} mentor looks disappointed but seems to understand and offers to postpone the test until next moon. Part of app1 cannot help but wonder if the other apprentices will think poorly of {PRONOUN/app1/object}.",
         "chance_of_success": 60,
@@ -9384,7 +9384,7 @@
             "apprentice": [1, 1],
             "warrior": [1, 1]
         },
-        "weight": 20,
+        "weight": 5,
         "intro_text": "It is almost dawn when the deputy rouses app1 for {PRONOUN/app1/poss} assessment. {PRONOUN/app1/subject/CAP} are meant to find p_l posing as an enemy warrior somewhere on the territory and handle the situation. p_l could be anywhere!",
         "decline_text": "app1 sheepishly looks up at the deputy, a guilty gleam in {PRONOUN/app1/poss} eyes, and says that {PRONOUN/app1/subject} have a stomachache. They {PRONOUN/app1/subject/CAP} hurriedly {VERB/app1/run/runs} to the medicine den, wondering how {PRONOUN/app1/subject} are going to get away with this fake illness at sunhigh when the Clan shares tongues.",
         "chance_of_success": 60,
