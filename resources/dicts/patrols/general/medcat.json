@@ -483,7 +483,7 @@
                 ]
             },
             {
-                "text": "s_c promises r_c that {PRONOUN/s_c/subject}'ll make sure to look deeper into this matter, and that r_c didn't need to worry.",
+                "text": "s_c promises r_c that {PRONOUN/s_c/subject}'ll make sure to look deeper into this matter, and that r_c doesn't need to worry.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -528,7 +528,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
+                "text": "r_c tells p_l of clair_list. However, p_l shakes {PRONOUN/p_l/poss} head sadly. {PRONOUN/p_l/subject/CAP} can't make sense of the vision.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
@@ -744,17 +744,17 @@
         ],
         "fail_outcomes": [
             { 
-                "text": "r_c can't make sense of the vision.", 
+                "text": "As r_c reflects on clair_list from {PRONOUN/r_c/poss} vision, {PRONOUN/r_c/subject} still find that {PRONOUN/r_c/subject} can't make sense of it.", 
                 "exp": 0, 
                 "weight": 20
             },
             { 
-                "text": "Despite p_l's attempts, the vision remains cryptic and elusive... just like the cobwebs.", 
+                "text": "Despite p_l's attempts, the vision containing glimpses of clair_list remains cryptic and elusive... just like the cobwebs.", 
                 "exp": 0, 
                 "weight": 20
             },
             { 
-                "text": "Despite deep contemplation during the cobweb-gathering, p_l struggles to decipher the dream's meaning. The lack of clarity leaves p_l feeling uncertain, and the potential message from StarClan remains elusive. At least {PRONOUN/p_l/subject} collected cobwebs.", 
+                "text": "Despite deep contemplation during the cobweb-gathering, p_l struggles to decipher what clair_list could mean. The lack of clarity leaves p_l feeling uncertain, and the potential message from StarClan remains elusive. At least {PRONOUN/p_l/subject} collected cobwebs.", 
                 "exp": 0, 
                 "weight": 15,
                 "herbs": ["cobwebs"]
@@ -978,7 +978,7 @@
                 ]
             },
             {
-                "text": "app1 doesn't tell p_l about the dream, keeping it to {PRONOUN/app1/self}.",
+                "text": "app1 doesn't tell p_l about the dream, keeping it to {PRONOUN/app1/self}. p_l doesn't need to know that app1 saw flashes of clair_list... right?",
                 "exp": 0,
                 "weight": 20
             },
@@ -1150,7 +1150,7 @@
                 "herbs": ["random_herbs"]
             },
             {
-                "text": "With a hesitant nod, s_c greets the StarClan cat, nerves slowly fading as the two converse.",
+                "text": "With a hesitant nod, s_c greets the StarClan cat, nerves slowly fading as the two converse. Before the StarClan cat leaves, they bring warning of prophecy_list.",
                 "exp": 30,
                 "weight": 20,
                 "herbs": ["random_herbs"],
