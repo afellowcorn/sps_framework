@@ -507,7 +507,7 @@
                 ]
             },
             {
-                "text": "s_c listens intently and tells r_c not to be weirded out, but {PRONOUN/s_c/subject} had seen the dream, too. r_c is alarmed, but s_c soothes {PRONOUN/r_c/object}, explaining that StarClan sometimes shows {PRONOUN/s_c/object} others' dreams. This one, luckily, was nothing but a mild warning.",
+                "text": "s_c listens intently and tells r_c not to be weirded out, but {PRONOUN/s_c/subject} {VERB/s_c/had/has} seen the dream, too. r_c is alarmed, but s_c soothes {PRONOUN/r_c/object}, explaining that StarClan sometimes shows {PRONOUN/s_c/object} others' dreams. This one, luckily, was nothing but a mild warning.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": [
@@ -659,7 +659,7 @@
                 ]
             },
             {
-                "text": "s_c listens intently and tells r_c not to be weirded out, but {PRONOUN/s_c/subject} had seen the dream, too. r_c is alarmed, but s_c soothes {PRONOUN/r_c/object}, explaining that StarClan sometimes shows {PRONOUN/s_c/object} others' dreams. However, s_c confesses this dream is a warning of a lurking danger.",
+                "text": "s_c listens intently and tells r_c not to be weirded out, but {PRONOUN/s_c/subject} {VERB/s_c/had/has} seen the dream, too. r_c is alarmed, but s_c soothes {PRONOUN/r_c/object}, explaining that StarClan sometimes shows {PRONOUN/s_c/object} others' dreams. However, s_c confesses this dream is a warning of a lurking danger.",
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": [
