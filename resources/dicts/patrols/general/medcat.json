@@ -3220,6 +3220,325 @@
                   ]
             }
         ]
+    },
+    {
+        "patrol_id": "gen_med_stressed1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["romance"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 1]
+        },
+        "weight": 20,
+        "intro_text": "While out collecting herbs with p_l, r_c can't help but notice just how hard the medicine cat is pushing {PRONOUN/p_l/self}.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to keep {PRONOUN/r_c/poss} thoughts to {PRONOUN/r_c/self}.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Without a single word, r_c drapes {PRONOUN/r_c/poss} tail over p_l's shoulders, letting out a comforting purr as the medicine cat leans against {PRONOUN/r_c/object}.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Feigning tiredness, r_c is able to convince p_l to take a break. While relaxing, r_c makes sure to tell p_l how great {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} {PRONOUN/p_l/subject} {VERB/p_l/are/is} and how the whole Clan owes {PRONOUN/p_l/object} so much. p_l's fur goes warm at the praise, and {PRONOUN/p_l/subject} {VERB/p_l/spend/spends} the rest of the patrol unable to look r_c in the eye without feeling all fluttery.",
+                "exp": 30,
+                "weight": 5,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol continues on as normal, but when p_l returns to the medicine den later that day, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} something special waiting for {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} nest.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1", "SENSE,2"],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c asks p_l if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alright, and lends an ear as the other cat vents about how stressed {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been. By the time the two cats return to camp, p_l feels as though a huge weight has been lifted off {PRONOUN/p_l/poss} shoulders, all thanks to s_c.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "compassionate",
+                    "empathetic",
+                    "loving",
+                    "patient",
+                    "thoughtful"
+                ],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l snaps at r_c when {PRONOUN/r_c/subject} {VERB/r_c/bring/brings} it up. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} fine, totally fine, only a mousebrain would think otherwise!",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_med_stressed2",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["romance"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "medicine cat": [2, 2]
+        },
+        "weight": 20,
+        "intro_text": "While out collecting herbs with p_l, r_c can't help but notice just how hard {PRONOUN/r_c/poss} fellow medicine cat is pushing {PRONOUN/p_l/self}.",
+        "decline_text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/decide/decides} to keep {PRONOUN/r_c/poss} thoughts to {PRONOUN/r_c/self}.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Without a single word, r_c drapes {PRONOUN/r_c/poss} tail over p_l's shoulders, letting out a comforting purr as the other medicine cat leans against {PRONOUN/r_c/object}.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Feigning tiredness, r_c is able to convince p_l to take a break. While relaxing, r_c makes sure to tell p_l how great {PRONOUN/r_c/subject} {VERB/r_c/think/thinks} p_l is and how happy it makes {PRONOUN/r_c/object} to work with {PRONOUN/p_l/object} every day. p_l's fur goes warm at the praise, and {PRONOUN/p_l/subject} {VERB/p_l/spend/spends} the rest of the patrol unable to look r_c in the eye without feeling all fluttery.",
+                "exp": 30,
+                "weight": 5,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol continues on as normal, but when p_l returns to the medicine den later that day, {PRONOUN/p_l/subject} {VERB/p_l/find/finds} something special waiting for {PRONOUN/p_l/object} in {PRONOUN/p_l/poss} nest.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1", "SENSE,2"],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c asks p_l if {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} alright, and lends an ear as the other cat vents about how stressed {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} been. By the time the two cats return to camp, p_l feels as though a huge weight has been lifted off {PRONOUN/p_l/poss} shoulders, all thanks to s_c.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "compassionate",
+                    "empathetic",
+                    "loving",
+                    "patient",
+                    "thoughtful"
+                ],
+                "can_have_stat": ["r_c"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l snaps at r_c when {PRONOUN/r_c/subject} {VERB/r_c/bring/brings} it up. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} fine, totally fine, only a mousebrain would think otherwise!",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "gen_med_stressed3",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["herb_gathering"],
+        "tags": ["romance"],
+        "patrol_art": "med_general_intro",
+        "min_cats": 2,
+        "max_cats": 2,
+        "min_max_status": {
+            "apprentice": [-1, -1],
+            "medicine cat": [1, 1]
+        },
+        "weight": 20,
+        "intro_text": "While out collecting herbs with r_c, p_l can't help but notice just how hard the warrior is pushing {PRONOUN/r_c/self}.",
+        "decline_text": "{PRONOUN/p_l/subject/CAP} {VERB/p_l/decide/decides} to keep {PRONOUN/p_l/poss} thoughts to {PRONOUN/p_l/self}.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Without a single word, p_l drapes {PRONOUN/p_l/poss} tail over r_c's shoulders, letting out a comforting purr as the warrior leans against {PRONOUN/p_l/object}.",
+                "exp": 20,
+                "weight": 20,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": true,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Feigning tiredness, p_l is able to convince r_c to take a break. While relaxing, p_l makes sure to tell r_c how great {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} r_c is and how happy r_c's company makes {PRONOUN/p_l/object}. r_c's fur goes warm at the praise, and {PRONOUN/r_c/subject} {VERB/r_c/spend/spends} the rest of the patrol unable to look p_l in the eye without feeling all fluttery.",
+                "exp": 30,
+                "weight": 5,
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The patrol continues on as normal, but when r_c returns to camp later that day, {PRONOUN/r_c/subject} {VERB/r_c/find/finds} something special waiting for {PRONOUN/r_c/object} in {PRONOUN/r_c/poss} nest.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1", "SENSE,2"],
+                "can_have_stat": ["p_l"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c asks r_c if {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alright, and lends an ear as the other cat vents about how stressed {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been. By the time the two cats return to camp, r_c feels as though a huge weight has been lifted off {PRONOUN/r_c/poss} shoulders, all thanks to s_c.",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "altruistic",
+                    "compassionate",
+                    "empathetic",
+                    "loving",
+                    "patient",
+                    "thoughtful"
+                ],
+                "can_have_stat": ["p_l"],
+                "herbs": ["random_herbs"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c snaps at p_l when {PRONOUN/p_l/subject} {VERB/p_l/bring/brings} it up. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} fine, totally fine, only a mousebrain would think otherwise!",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["romantic", "platonic", "respect", "comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     }
-
 ]
