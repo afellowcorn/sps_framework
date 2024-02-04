@@ -5370,7 +5370,44 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "bch_hunt_fish2",
+        "biome": ["beach"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_fish",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "The patrol sees the shadow of a school of fish in the rockpools.",
+        "decline_text": "The patrol ignores the fish.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "p_l leads a successful fishing session, with almost everyone walking home with a fishy mouthful.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["large"]
+            },
+            {
+                "text": "s_c makes fishing look easy, giving out tips to any interested cats.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,1"],
+                "prey": ["large"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
     }
-    
     
 ]
