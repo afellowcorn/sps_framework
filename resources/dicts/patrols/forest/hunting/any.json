@@ -3226,5 +3226,48 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "fst_hunt_rat1",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_rat",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "The patrol comes across a large rat.",
+        "decline_text": "The patrol ignores the rat.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "The patrol catches the rat! More fresh-kill!",
+                "exp": 20,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "The rat rears up and hisses at r_c, but while it's distracted, p_l takes it out with a quick strike.",
+                "exp": 20,
+                "weight": 5,
+                "prey": ["medium"]
+            },
+            {
+                "text": "The rat is huge and quick, but s_c is quicker, bringing it down just before it scurries out of reach. Everyone gathers around {PRONOUN/s_c/object} in congratulations of the skillful kill.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["HUNTER,2"],
+                "prey": ["large"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol misses the rat, and their confidence is shaken.",
+                "exp": 0,
+                "weight": 20
+            }
+        ]
     }
 ]
