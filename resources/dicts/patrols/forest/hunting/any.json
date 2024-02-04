@@ -3269,5 +3269,42 @@
                 "weight": 20
             }
         ]
+    },
+    {
+        "patrol_id": "fst_hunt_bird1",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_bird",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "The patrol comes across a bird that's occupied scratching at the ground for insects.",
+        "decline_text": "The patrol ignores the bird.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "The patrol catches the bird before it flies away!",
+                "exp": 15,
+                "weight": 20,
+                "prey": ["small"]
+            },
+            {
+                "text": "r_c creeps towards the bird, setting {PRONOUN/r_c/poss} paws down gently. The bird notices the cat sneaking towards it and attempts to take off. r_c bounds forward and smacks the bird to the ground with an outstretched paw. Outstanding!",
+                "exp": 15,
+                "weight": 5,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol narrowly misses the bird.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
     }
 ]
