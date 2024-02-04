@@ -6,7 +6,7 @@
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_vision",
-        "min_cats": 2,
+        "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
         "weight": 5,
@@ -16,7 +16,7 @@
         "success_outcomes": [
             {
                 "text": "The patrol talks to {PRONOUN/r_c/object} about whether it was a real vision as they hunt.",
-                "exp": 20,
+                "exp": 10,
                 "weight": 20,
                 "prey": ["medium"],
                 "relationships": [
@@ -43,7 +43,7 @@
                 "prey": ["medium"],
                 "relationships": [
                     {
-                        "cats_to": ["patrol"],
+                        "cats_to": ["p_l"],
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
@@ -59,10 +59,83 @@
                 ]
             },
             {
+                "text": "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in {PRONOUN/s_c/object}.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["STAR,1", "SENSE,1", "OMEN,1", "CLAIRVOYANT,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect", "trust", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c nods, and pads beside r_c as they hunt. {PRONOUN/s_c/subject/CAP} don't know if it was a vision from StarClan, but {PRONOUN/s_c/subject} felt flashes of r_c's dreams, dream_list, and s_c isn't going to leave r_c alone to figure it out {PRONOUN/r_c/self}.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["DREAM,1"],
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["jealous"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect", "trust", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike", "jealous"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
                 "text": "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in {PRONOUN/p_l/object}.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["STAR,1"],
                 "stat_trait": ["faithful"],
                 "prey": ["medium"],
                 "relationships": [
@@ -78,6 +151,20 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["jealous"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["respect", "trust", "comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["dislike", "jealous"],
                         "amount": -5
                     }
                 ]
@@ -148,18 +235,37 @@
             {
                 "text": "It definitely distracts {PRONOUN/r_c/object} from the hunt, but r_c uses the time by {PRONOUN/r_c/self} to put {PRONOUN/r_c/poss} thoughts in order. It was a sign from {PRONOUN/r_c/poss} ancestors. Now {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to figure out what to do next.",
                 "exp": 20,
-                "weight": 20
+                "weight": 10,
+                "prey": ["small"]
             },
             {
                 "text": "Somehow hunting brings r_c to almost a meditative state, and not only {VERB/r_c/are/is} {PRONOUN/r_c/subject} fairly confident of {PRONOUN/r_c/poss} next steps having been given this vision, but {PRONOUN/r_c/subject} also {VERB/r_c/bring/brings} back a good haul to the prey pile.",
                 "exp": 20,
-                "weight": 5,
+                "weight": 20,
+                "can_have_stat": ["any"],
+                "stat_skill": ["HUNTER,3", "CLEVER,1", "INSIGHTFUL,1"],
                 "prey": ["large"]
             },
             {
                 "text": "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} the solo patrol to collect {PRONOUN/s_c/poss} thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good catch, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at.",
                 "exp": 20,
-                "stat_skill": ["STAR,1"],
+                "can_have_stat": ["any"],
+                "stat_skill": ["STAR,1", "CLAIRVOYANT,1", "SENSE,1"],
+                "weight": 20,
+                "prey": ["large"]
+            },
+            {
+                "text": "As {PRONOUN/s_c/subject} {VERB/s_c/hunt/hunts}, s_c's eyes are caught by omen_list, and {PRONOUN/s_c/poss} dream snaps into clarity. It draws the hunt short, but that's not important right now.",
+                "exp": 20,
+                "can_have_stat": ["any"],
+                "stat_skill": ["OMEN,1"],
+                "weight": 20,
+                "prey": ["small"]
+            },
+            {
+                "text": "s_c often feels like StarClan walks with {PRONOUN/s_c/object}, and this is just another instance on the path. {PRONOUN/s_c/subject/CAP} {VERB/s_c/use/uses} the solo patrol to collect {PRONOUN/s_c/poss} thoughts, and by the time {PRONOUN/s_c/subject} {VERB/s_c/pad/pads} home with a good catch, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} ready for the next step {PRONOUN/s_c/poss} vision hinted at.",
+                "exp": 20,
+                "can_have_stat": ["any"],
                 "stat_trait": ["faithful"],
                 "weight": 20,
                 "prey": ["large"]
@@ -171,6 +277,13 @@
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
+            },
+            {
+                "text": "The clair_list r_c remembers from {PRONOUN/r_c/poss} dream doesn't exactly feel like <i>StarClan's</i> type of message.",
+                "exp": 0,
+                "can_have_stat": ["any"],
+                "stat_skill": ["DARK,1"],
+                "weight": 20
             }
         ]
     },
