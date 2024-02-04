@@ -3147,5 +3147,84 @@
                 }
             }
         ]
+    },
+    {
+        "patrol_id": "fst_hunt_mouse2",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {
+            "apprentice": [-1, -1]
+        },
+        "weight": 5,
+        "intro_text": "The patrol catches scent of a mouse nearby.",
+        "decline_text": "The patrol ignores the mouse.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles {PRONOUN/r_c/poss} haunches and leaps, pinning the mouse beneath a paw as {PRONOUN/r_c/subject} {VERB/r_c/make/makes} the killing bite.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["small"]
+            },
+            {
+                "text": "r_c pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} almost within pouncing distance when the mouse suddenly bolts. With a lash of {PRONOUN/r_c/poss} tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c/poss} tongue.",
+                "exp": 10,
+                "weight": 5,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol narrowly misses the mouse.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "fst_hunt_mouse_warriorapp1",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_mouse",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {
+            "apprentice": [1, 6],
+            "normal adult": [1, 6]
+        },
+        "weight": 5,
+        "intro_text": "The patrol comes across a mouse.",
+        "decline_text": "The patrol ignores the mouse.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["small"]
+            },
+            {
+                "text": "app1 leaps onto the mouse, an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting!",
+                "exp": 10,
+                "weight": 5,
+                "prey": ["small"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol narrowly misses the mouse.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
     }
 ]
