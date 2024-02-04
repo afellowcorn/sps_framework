@@ -14631,6 +14631,13 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_skill": ["RUNNER,1"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["sprain"],
+                        "scars": []
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
