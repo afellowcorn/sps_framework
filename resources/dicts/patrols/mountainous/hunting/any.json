@@ -1343,5 +1343,42 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "mtn_hunt_squirrel1",
+        "biome": ["mountainous"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_squirrel",
+        "min_cats": 1,
+        "max_cats": 3,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "The patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
+        "decline_text": "The patrol ignores the squirrel.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "Stealthily, r_c stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. r_c sends a silent thanks to StarClan for this prey.",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["medium"]
+            },
+            {
+                "text": "r_c rapidly pads towards the squirrel, {PRONOUN/r_c/poss} tailtip twitching in excitement. The squirrel is alerted to their presence with a bird's alarm call, but r_c launches {PRONOUN/r_c/self} forward and cuts off its escape with a bite to the back of the head.",
+                "exp": 10,
+                "weight": 5,
+                "prey": ["medium"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol narrowly misses the squirrel as it's alerted by a bird's alarm call.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
     }
 ]
