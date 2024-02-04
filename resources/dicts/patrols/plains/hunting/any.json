@@ -2863,5 +2863,43 @@
                 "prey": ["very_small"]
             }
         ]
+    },
+    {
+        "patrol_id": "pln_hunt_hare1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunt_hare",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "The patrol comes across a large hare.",
+        "decline_text": "The patrol ignores the hare.",
+        "chance_of_success": 20,
+        "success_outcomes": [
+            {
+                "text": "The patrol catches the hare!",
+                "exp": 10,
+                "weight": 20,
+                "prey": ["large"]
+            },
+            {
+                "text": "s_c runs the hare down in a huge display of athleticism and skill.",
+                "exp": 10,
+                "weight": 20,
+                "stat_skill": ["HUNTER,3"],
+                "prey": ["large"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "The patrol narrowly misses the hare.",
+                "exp": 0,
+                "weight": 20,
+                "prey": ["very_small"]
+            }
+        ]
     }
 ]
