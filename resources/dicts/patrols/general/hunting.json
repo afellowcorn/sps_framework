@@ -292,7 +292,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["disrespect", "distrust"],
+        "tags": [],
         "patrol_art": "gen_hunt_sneakprey",
         "min_cats": 1,
         "max_cats": 1,
@@ -424,7 +424,7 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["disrespect", "distrust"],
+        "tags": [],
         "patrol_art": "gen_hunt_sneakprey",
         "min_cats": 2,
         "max_cats": 6,
@@ -444,14 +444,14 @@
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -466,14 +466,14 @@
                 "prey": ["huge"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -489,14 +489,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -511,14 +511,14 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["r_c"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -534,34 +534,33 @@
         "biome": ["Any"],
         "season": ["Any"],
         "types": ["hunting"],
-        "tags": ["disrespect", "distrust"],
+        "tags": [],
         "patrol_art": "gen_hunt_sneakprey",
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {
-            "apprentice": [1, 6],
-            "all apprentices": [-1, -1]
+            "apprentice": [1, 6]
         },
         "weight": 5,
-        "intro_text": "r_c is tempted to eat the prey {PRONOUN/r_c/subject} just caught.",
-        "decline_text": "r_c decides against breaking the warrior code.",
+        "intro_text": "app1 is tempted to eat the prey {PRONOUN/app1/subject} just caught.",
+        "decline_text": "app1 decides against breaking the warrior code.",
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/eat/eats} the prey without anyone noticing.",
+                "text": "{PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} so hungry - but this prey is for the Clan, not app1. {PRONOUN/app1/subject/CAP} hold {PRONOUN/app1/poss} head up high and bring {PRONOUN/app1/poss} small catch home to the freshkill pile.",
                 "exp": 20,
                 "weight": 20,
                 "prey": ["small"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["app1"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["app1"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["dislike"],
@@ -570,21 +569,21 @@
                 ]
             },
             {
-                "text": "After all, the patrol has caught enough on this hunt that {PRONOUN/r_c/subject}'ll have trouble carrying it all back to camp. {PRONOUN/r_c/subject/CAP} {VERB/r_c/stop/stops} for a quick snack and {VERB/r_c/return/returns} to camp laden with prey for the fresh-kill pile.",
+                "text": "After all, the patrol has caught enough on this hunt that {PRONOUN/app1/subject}'ll have trouble carrying it all back to camp. {PRONOUN/app1/subject/CAP} {VERB/app1/stop/stops} for a quick snack and {VERB/app1/return/returns} to camp laden with prey for the fresh-kill pile.",
                 "exp": 20,
                 "weight": 5,
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "r_c"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": 5
                     },
                     {
-                        "cats_to": ["r_c", "r_c"],
-                        "cats_from": ["clan", "patrol"],
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
                         "amount": -5
@@ -594,22 +593,37 @@
         ],
         "fail_outcomes": [
             {
-                "text": "{PRONOUN/r_c/subject/CAP} {VERB/r_c/think/thinks} {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} gotten away with {PRONOUN/r_c/poss} clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns {PRONOUN/r_c/object} to dig a new trench for the Clan's dirtplace; r_c prickles with humiliation and terrible smells.",
+                "text": "{PRONOUN/app1/subject/CAP} {VERB/app1/think/thinks} {PRONOUN/app1/subject}{VERB/app1/'ve/'s} gotten away with {PRONOUN/app1/poss} clandestine snacking, but when app1 arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at app1. The deputy assigns {PRONOUN/app1/object} to dig a new trench for the Clan's dirtplace; app1 prickles with humiliation and terrible smells.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["app1"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["respect", "trust"],
                         "amount": -5
                     },
                     {
-                        "cats_to": ["r_c", "r_c"],
+                        "cats_to": ["app1"],
                         "cats_from": ["clan", "patrol"],
                         "mutual": false,
                         "values": ["dislike"],
+                        "amount": 5
+                    }
+                ],
+                "prey": ["very_small"]
+            },
+            {
+                "text": "app1 gets away with it, burying the evidence. But {PRONOUN/app1/poss} pelt still prickles with guilt when the patrol brings so little home.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["clan", "patrol"],
+                        "cats_from": ["app1"],
+                        "mutual": false,
+                        "values": ["jealous"    ],
                         "amount": 5
                     }
                 ],
