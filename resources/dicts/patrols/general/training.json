@@ -9672,5 +9672,90 @@
                 "weight": 10
             }
         ]
+    },
+    {
+        "patrol_id": "gen_train_trainingapprentices1",
+        "biome": ["Any"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": ["disrespect"],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [2, 5],
+            "normal adult": [1, 6]
+        },
+        "weight": 5,
+        "intro_text": "p_l is showing several apprentices the border, and points out some good spots to keep watch on specific parts of it.",
+        "decline_text": "p_l has no patience for the rowdy apprentices that day, and orders them all back to camp. ",
+        "chance_of_success": 65,
+        "success_outcomes": [
+            {
+                "text": "p_l is super proud of the apprentices, they are all attentive and are asking some great questions about c_n and their relations to the other Clans.",
+                "exp": 10,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "p_l laughs at the faces the apprentices are making, as they complain about all the icky smells coming from the other Clans at the border. They keep up their disgusted grimaces while asking questions about the other Clans their specific cultures.",
+                "exp": 10,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "p_l just can't deal with those mouse-brained apprentices today. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'ve/'s} had to stop app1 from crossing the border twice now. {PRONOUN/p_l/subject/CAP} {VERB/p_l/order/orders} them all back to camp, scolding them along the way.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ]
     }
 ]
