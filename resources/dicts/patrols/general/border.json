@@ -127,7 +127,7 @@
                 "weight": 20
             },
             {
-                "text": "Despite p_l's efforts, {PRONOUN/p_l/subject} cannot discern the source of the scent and return to camp to report it.",
+                "text": "Despite p_l's efforts, {PRONOUN/p_l/subject} cannot discern the source of the scent and returns to camp to report it.",
                 "exp": 0,
                 "weight": 20
             },
@@ -186,7 +186,7 @@
                 "weight": 20
             },
             {
-                "text": "Despite p_l efforts, {PRONOUN/p_l/subject} can't identify the tracks, and report it back at camp.",
+                "text": "Despite p_l efforts, {PRONOUN/p_l/subject} can't identify the tracks, and reports it back at camp.",
                 "exp": 0,
                 "weight": 20
             },
@@ -218,7 +218,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "Upon closer inspection, it was just remarkings from a clannmate.",
+                "text": "Upon closer inspection, it was just remarking from a clannmate.",
                 "exp": 0,
                 "weight": 20
             },
@@ -235,7 +235,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Despite {PRONOUN/p_l/poss} efforts, p_l couldn't identify what had disturbed their markings, leaving {PRONOUN/p_l/object} perplexed as {PRONOUN/p_l/subject} return to camp.",
+                "text": "Despite {PRONOUN/p_l/poss} efforts, p_l couldn't identify what had disturbed the border markings, leaving {PRONOUN/p_l/object} perplexed as {PRONOUN/p_l/subject} return to camp.",
                 "exp": 0,
                 "weight": 20
             },
