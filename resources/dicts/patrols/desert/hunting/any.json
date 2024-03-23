@@ -2113,7 +2113,34 @@
                 "text": "r_c catches the rabbit, but later {PRONOUN/r_c/subject} and the cats who eat it become violently ill.",
                 "exp": 0,
                 "weight": 20,
-                "prey": ["very_small"]
+                "prey": ["very_small"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": -5
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": -5
+                    }
+                ],
+                "injury": [
+                    {
+                        "cats": ["r_c", "some_clan"],
+                        "injuries": ["poisoned"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "This cat died after eating tainted prey.",
+                    "lead_death": "after eating tainted prey"
+                }
             }
         ]
     },
@@ -2154,8 +2181,7 @@
                         "values": ["trust", "respect"],
                         "amount": -5
                     }
-                ],
-                "prey": ["very_small"]
+                ]
             }
         ]
     },
@@ -2183,12 +2209,13 @@
                 "prey": ["large"],
                 "relationships": [
                     {
-                        "cats": ["r_c", "some_clan"],
-                        "injuries": ["poisoned"],
-                        "scars": []
+                        "cats_to": ["r_c", "r_c"],
+                        "cats_from": ["clan", "patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
                     }
-                ],
-                "prey": ["very_small"]
+                ]
             }
         ]
     },
