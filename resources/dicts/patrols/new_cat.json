@@ -3132,7 +3132,7 @@
             "normal adult": [1, 6]
         },
         "weight": 5,
-        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely legible over the sound of a monster speeding away.",
+        "intro_text": "The patrol hears a cat begging for their housefolk to come back, just barely understandable over the sound of a monster speeding away.",
         "decline_text": "p_l decides it's none of {PRONOUN/p_l/poss} business, and resumes {PRONOUN/p_l/poss} patrol.",
         "chance_of_success": 30,
         "success_outcomes": [
