@@ -274,7 +274,7 @@
     {
         "patrol_id": "pln_bord_greenleaf_coyote1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["greenleaf"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
