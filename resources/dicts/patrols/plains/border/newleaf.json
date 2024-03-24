@@ -1,1 +1,134 @@
-[]
+[
+    {
+        "patrol_id": "pln_bord_newleaf_longdistancemarking_group1",
+        "biome": ["plains"],
+        "season": ["newleaf"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "pln_train_session1",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "Here on the plains, the reaches of c_n's territory is vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass but no permanent water sources. Still, with the grass at it's newleaf minimum, they can see where they're going.",
+        "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp - border marking will wait til later.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "There's a good crop of new grass along this border. It's worth noting, and p_l will report the potential hunting spot when they return to camp.",
+                "exp": 30,
+                "weight": 5,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "s_c isn't just talented at running fast - {PRONOUN/s_c/subject} {VERB/s_c/have/has} some very good advice and {PRONOUN/s_c/subject} {VERB/s_c/share/shares} {PRONOUN/s_c/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c.",
+                "exp": 40,
+                "weight": 20,
+                "can_have_stat": ["any"],
+                "stat_skill": [
+                    "RUNNER,2"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "respect"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 8
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "p_l really pushes them, to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achivement when they come back into camp after dark, panting.",
+                "exp": 50,
+                "weight": 20,
+                  "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c limping. it's nothing, {PRONOUN/r_c/subject} {VERB/r_c/say/says}, just sleeping on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                      "cats": ["r_c"],
+                      "injuries": ["sprain", "sore"]
+                    }
+                  ],
+                  "relationships": [
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": true,
+                        "values": ["trust", "comfort"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Before they reach the far border itself, p_l spots s_c limping. it's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enoguh to escape. <i>Should.</i>",
+                "exp": 0,
+                "weight": 20,
+                "can_have_stat": ["not_pl_rc"],
+                "stat_trait": [
+                    "troublesome",
+                    "fierce",
+                    "confident",
+                    "arrogant",
+                    "competitive",
+                    "rebellious"
+                ],
+                "dead_cats": ["s_c"],
+                "history_text": {
+                    "reg_death": "This cat was killed after continuing to patrol the far border while injured by a young, inexperienced cougar.",
+                    "lead_death": "by a cougar while patrolling the far border"
+                }
+            }
+        ]
+    }
+]
