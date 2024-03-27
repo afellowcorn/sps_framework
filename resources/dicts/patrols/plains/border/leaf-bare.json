@@ -1323,5 +1323,457 @@
                 ]
             }
         ]
+    },
+    {
+        "patrol_id": "pln_bord_leafbare_tunnel1",
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "gen_hunt_leafbaresnowstorm",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 5],
+            "normal adult": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "Patrolling the border and updating the markings, p_l feels the temperature drop. Rearing up, {PRONOUN/p_l/subject} can just make out the distant sky above the valley of trampled snow the patrol pads in. A sheer wall of grey approaches. They need to take cover!!",
+        "decline_text": "Fortunately they haven't padded far from camp yet, and the patrol makes it back before the storm hits.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "p_l knows a set of tunnels near here, and charges through the snowbanks, leading the patrol to the entrance and digging frantically as the wind starts to pick up. They make it inside by the skin of their teeth, but the important thing is that they make it.",
+                "exp": 30,
+                "weight": 10,
+                "art": ["fst_hunt_fun3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "Fox-dung. Controlling the urge to panic, s_c takes off, running to the shelter {PRONOUN/s_c/subject} {VERB/s_c/were/was} keeping in the back of {PRONOUN/s_c/poss} mind when the patrol set out this morning and leading the way for the rest of the cats. It's not paranoia when the weather really is out to get you.",
+                "exp": 30,
+                "weight": 30,
+                "can_have_stat": ["any"],
+                "stat_trait": [
+                    "nervous",
+                    "insecure",
+                    "gloomy"
+                ],
+                "art": ["fst_hunt_fun3"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "It's important not to panic. s_c takes one deep breath. Two. By {PRONOUN/s_c/poss} third, {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} remembered the route to the nearest set of known, safe tunnels. The rest of the patrol is snappish and impatient, but they all apologise later, packed snugly and safely into an old bager sett as the storm rages outside.",
+                "exp": 30,
+                "weight": 30,
+                "can_have_stat": ["any"],
+                "stat_trait": [
+                    "calm",
+                    "careful",
+                    "wise",
+                    "thoughtful"
+                ],
+                "art": ["fst_bord_sett1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -15
+                    }
+                ]
+            },
+            {
+                "text": "s_c is an expert on the network of tunnels and burrows that dot the plains, and the entire patrol immediately looks to {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} nod - {PRONOUN/s_c/subject} know just the place, an old sett. By the smell of the wind, the storm blowing down on them will be one of sleet capable of wicking away all warmth from a pelt. The patrol needs to shelter and wait it out.",
+                "exp": 40,
+                "weight": 30,
+                "can_have_stat": ["any"],
+                "stat_skill": ["CAMP,1"],
+                "art": ["fst_bord_sett1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -15
+                    }
+                ]
+            },
+            {
+                "text": "The storm hits before the patrol finds the entrance to some tunnels to shelter in. s_c instructs everyone to start sharing tongues. They all need to get their pelts dry and warm again, as soon as possible.",
+                "exp": 40,
+                "weight": 30,
+                "can_have_stat": ["any"],
+                "stat_skill": ["HEALER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -15
+                    }
+                ]
+            },
+            {
+                "text": "s_c spots a rabbit bolting for home. You know what? That's good enough. Calling the patrol in, s_c tracks it to it's burrow, and the cats cram themselves in, one at a time and completely squished, to wait out the storm. It's not comfortable, but it works.",
+                "exp": 30,
+                "weight": 30,
+                "can_have_stat": ["any"],
+                "stat_skill": ["HUNTER,2"],
+                "art": ["gen_hunt_rabbit"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "There's absolutely no shelter here, no tunnels, no burrow, no bushes or valleys, nothing. The patrol begins to panic, but s_c frowns, concentrating, remembering the histories of cats who live on hills of ice. The snow itself can be their den, a snow-den, cold, but better than nothing.",
+                "exp": 30,
+                "weight": 30,
+                "can_have_stat": ["any"],
+                "stat_skill": ["LORE,2"],
+                "injury": [
+                    {
+                        "cats": ["multi"],
+                        "injuries": ["shivering"],
+                        "scars": ["FROSTFACE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
+                    "reg_death": "m_c was killed by the consequences of {PRONOUN/m_c/poss} border patrol failing to find shelter in a sleet storm.",
+                    "lead_death": "consequences of {PRONOUN/m_c/poss} border patrol failing to find shelter in a sleet storm"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "No one can remember any tunnels near this stretch of border, and the patrol huddles under a bush instead. The storm hits, not with snow or hail, but with dreadful, bonechilling sleet, half melted specks of hail and ice cold water that suck the heat from the cats' pelts and slick them down wet against the skin.",
+                "exp": 0,
+                "weight": 20,
+                "art": ["gen_bord_flashflood"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTFACE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
+                    "reg_death": "m_c was killed by the consequences of {PRONOUN/m_c/poss} border patrol failing to find shelter in a sleet storm.",
+                    "lead_death": "consequences of {PRONOUN/m_c/poss} border patrol failing to find shelter in a sleet storm"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "No one can remember any tunnels near this stretch of border, and the patrol huddles under a bush instead. The storm hits, not with snow or hail, but with dreadful, bonechilling sleet, half melted specks of hail and ice cold water that suck the heat from the cats' pelts and slick them down wet against the skin. r_c becomes unresponsive.",
+                "exp": 0,
+                "weight": 20,
+                "art": ["gen_bord_flashflood"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTFACE"]
+                    }
+                ],
+                "dead_cats":["r_c"],
+                "history_text": {
+                    "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
+                    "reg_death": "m_c was killed by the consequences of {PRONOUN/m_c/poss} border patrol failing to find shelter in a sleet storm.",
+                    "lead_death": "consequences of {PRONOUN/m_c/poss} border patrol failing to find shelter in a sleet storm"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} do best, racing the wind home. {PRONOUN/s_c/subject/CAP} arrive in one piece. One shivering, sodden piece.",
+                "exp": 0,
+                "weight": 20,
+                "art": ["gen_bord_flashflood"],
+                "can_have_stat": ["any"],
+                "stat_skill": ["RUNNER,3"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["frostbite"],
+                        "scars": ["FROSTFACE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
+                    "reg_death": "m_c was killed by the consequences of failing to find shelter in a sleet storm.",
+                    "lead_death": "consequences of failing to find shelter in a sleet storm"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol hesitates, but... s_c knows what {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} doing, surely. The storm overtakes them on the way home, shards of ice in the sleet washing their pelts sodden and frozen.",
+                "exp": 0,
+                "weight": 20,
+                "art": ["gen_bord_flashflood"],
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["RUNNER,3"],
+                "stat_trait": [
+                    "arrogant",
+                    "competitive",
+                    "confident",
+                    "bold",
+                    "daring",
+                    "oblivious"
+                ],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["frostbite"],
+                        "scars": ["FROSTFACE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
+                    "reg_death": "m_c was killed by the consequences of failing to find shelter in a sleet storm.",
+                    "lead_death": "consequences of failing to find shelter in a sleet storm"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol hesitates, but... s_c knows what {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} doing, surely. None of the patrol will make it home.",
+                "exp": 0,
+                "weight": 20,
+                "art": ["gen_bord_flashflood"],
+                "can_have_stat": ["p_l"],
+                "stat_skill": ["RUNNER,3"],
+                "stat_trait": [
+                    "arrogant",
+                    "competitive",
+                    "confident",
+                    "bold",
+                    "daring",
+                    "oblivious"
+                ],
+                "dead_cats":["patrol"],
+                "history_text": {
+                    "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
+                    "reg_death": "m_c was killed by the consequences of failing to find shelter in a sleet storm.",
+                    "lead_death": "consequences of failing to find shelter in a sleet storm"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} do best, racing the wind home. {PRONOUN/s_c/subject/CAP} don't arrive at camp.",
+                "exp": 0,
+                "weight": 20,
+                "art": ["gen_bord_flashflood"],
+                "can_have_stat": ["any"],
+                "stat_skill": ["RUNNER,3"],
+                "dead_cats":["s_c"],
+                "history_text": {
+                    "scar": "m_c was caught out in the cold on a border patrol, and the cold burned {PRONOUN/m_c/object}.",
+                    "reg_death": "m_c was killed by the consequences of failing to find shelter in a sleet storm.",
+                    "lead_death": "consequences of failing to find shelter in a sleet storm"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
     }
 ]
