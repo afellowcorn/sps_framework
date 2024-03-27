@@ -30,100 +30,7 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "fierce", "vengeful"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["multi"],
-                "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
-                }
             },
-            {
-                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded.",
-                "exp": 0,
-                "weight": 10,
-                "injury": [
-                    {
-                        "cats": ["r_c"],
-                        "injuries": ["battle_injury"],
-                        "scars": ["FACE"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
-                }
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_bord_rogue2",
-        "biome": ["mountainous"],
-        "season": ["Any"],
-        "types": ["border"],
-        "tags": [],
-        "patrol_art": "bord_general_intro",
-        "min_cats": 1,
-        "max_cats": 1,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "r_c turns tail and races away! The rogues have {PRONOUN/r_c/object} far outnumbered, warning the Clan is more important than dying needlessly.",
-        "chance_of_success": 30,
-        "success_outcomes": [
-            {
-                "text": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/use/uses} {PRONOUN/r_c/poss} superior knowledge of the rocky terrain to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
-                "exp": 30,
-                "weight": 20
-            },
-            {
-                "text": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c sees {PRONOUN/s_c/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
-                "exp": 30,
-                "weight": 20,
-                "stat_skill": ["FIGHTER,3"]
-            }
-        ],
-        "fail_outcomes": [
-            {
-                "text": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity and fury that the rogues are taken aback. For a moment the rogues are stunned by the reaction, but the shock doesn't last long before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before {PRONOUN/s_c/subject} {VERB/s_c/are/is} killed.",
-                "exp": 0,
-                "weight": 20,
-                "stat_trait": ["bloodthirsty", "fierce", "vengeful"]
-            },
-            {
-                "text": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. {PRONOUN/r_c/poss/CAP} body is discovered the next day, cold and covered in wounds.",
-                "exp": 0,
-                "weight": 10,
-                "dead_cats": ["r_c"],
-                "history_text": {
-                    "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol.",
-                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
-                }
-            }
-        ]
-    },
-    {
-        "patrol_id": "mtn_bord_rogue3",
-        "biome": ["mountainous"],
-        "season": ["Any"],
-        "types": ["border"],
-        "tags": [],
-        "patrol_art": "bord_general_intro",
-        "min_cats": 4,
-        "max_cats": 6,
-        "min_max_status": {},
-        "weight": 20,
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues strides confidently out from behind a tumble of rocks, yowling as they confront the Clan cats!",
-        "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
-        "chance_of_success": 20,
-        "success_outcomes": [
             {
                 "text": "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
                 "exp": 30,
@@ -185,24 +92,32 @@
         ],
         "fail_outcomes": [
             {
-                "text": "The rogues are terrifyingly coordinated and are quick to use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
+                "text": "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
                 "exp": 0,
                 "weight": 10,
                 "dead_cats": ["multi"],
                 "history_text": {
-                    "scar": "m_c was badly scarred when rogues attacked {PRONOUN/m_c/poss} patrol.",
-                    "reg_death": "This cat was killed when rogues attacked {PRONOUN/m_c/poss} patrol.",
+                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+                    "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
                     "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
-                },
-                "relationships": [
+                }
+            },
+            {
+                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
                     {
-                        "cats_to": ["patrol"],
-                        "cats_from": ["patrol"],
-                        "mutual": false,
-                        "values": ["respect", "trust"],
-                        "amount": -5
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury"],
+                        "scars": ["FACE"]
                     }
-                ]
+                ],
+                "history_text": {
+                    "scar": "m_c was badly scarred when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+                    "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/poss} patrol.",
+                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                }
             },
             {
                 "text": "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters and eventually the patrol is forced to retreat, r_c badly injured.",
@@ -243,6 +158,52 @@
                 "text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
                 "exp": 30,
                 "weight": 20
+            }
+        ]
+    },
+    {
+        "patrol_id": "mtn_bord_rogue2",
+        "biome": ["mountainous"],
+        "season": ["Any"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "bord_general_intro",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
+        "decline_text": "r_c turns tail and races away! The rogues have {PRONOUN/r_c/object} far outnumbered, warning the Clan is more important than dying needlessly.",
+        "chance_of_success": 30,
+        "success_outcomes": [
+            {
+                "text": "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but {PRONOUN/r_c/subject} {VERB/r_c/use/uses} {PRONOUN/r_c/poss} superior knowledge of the rocky terrain to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from {PRONOUN/r_c/poss} lungs.",
+                "exp": 30,
+                "weight": 20
+            },
+            {
+                "text": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c sees {PRONOUN/s_c/poss} opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
+                "exp": 30,
+                "weight": 20,
+                "stat_skill": ["FIGHTER,3"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "s_c snarls at the rogues, outnumbered but not cowed. {PRONOUN/s_c/subject/CAP} {VERB/s_c/throw/throws} {PRONOUN/s_c/self} at the intruders with such ferocity and fury that the rogues are taken aback. For a moment the rogues are stunned by the reaction, but the shock doesn't last long before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before {PRONOUN/s_c/subject} {VERB/s_c/are/is} killed.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["bloodthirsty", "fierce", "vengeful"]
+            },
+            {
+                "text": "The rogues greatly outnumber r_c and have no trouble killing the lone cat. {PRONOUN/r_c/poss/CAP} body is discovered the next day, cold and covered in wounds.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["r_c"],
+                "history_text": {
+                    "reg_death": "This cat was killed when rogues ambushed {PRONOUN/m_c/object} while on a solo patrol.",
+                    "lead_death": "{VERB/m_c/were/was} killed in a rogue ambush"
+                }
             }
         ]
     },
@@ -447,7 +408,7 @@
       }
     },
     {
-      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns them with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
+      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns them with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water washes the patrol downriver and far away...",
       "exp": 0,
       "weight": 5,
       "lost_cats": ["patrol"]
@@ -480,7 +441,7 @@
       }
     },
     {
-      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react and the water rushes them downriver and far away...",
       "exp": 0,
       "weight": 5,
       "stat_trait": ["nervous", "insecure"],
@@ -545,15 +506,15 @@
    		 "exp": 40,
    		 "weight": 20,
    		 "stat_trait": [
-            "lonesome", 
-            "nervous", 
-            "insecure", 
-            "calm", 
-            "careful", 
-            "sneaky", 
-            "strange", 
-            "wise", 
-            "cunning", 
+            "lonesome",
+            "nervous",
+            "insecure",
+            "calm",
+            "careful",
+            "sneaky",
+            "strange",
+            "wise",
+            "cunning",
             "gloomy"
         ],
          "art": "mothman_OUTCOME"
