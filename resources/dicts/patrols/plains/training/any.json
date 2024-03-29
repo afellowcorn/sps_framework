@@ -2866,10 +2866,10 @@
             "apprentice": [2, 6],
             "normal adult":[1, 6]
         },
-        "weight": 20,
+        "weight": 30,
         "intro_text": "p_l leads the training patrol out for a crucial lesson, imparting survival knowledge specific to the plains cats.",
         "decline_text": "On second thought, p_l decides they all need the afternoon off.",
-        "chance_of_success": 10,
+        "chance_of_success": 50,
         "success_outcomes": [
             {
                 "text": "This is important, p_l says, sitting as tall as {PRONOUN/p_l/subject} can and making eye contact with the apprentices. Living in the grasslands affords c_n few of the hiding spots that come naturally to cats, with few big trees and not a lot of thick bush cover. c_n uses tunnels instead, and it's vital to develop a map of the known safe refuges in the territory.",
