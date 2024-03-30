@@ -679,7 +679,12 @@
                 "injury": [
                     {
                         "cats": ["patrol"],
-                        "injuries": ["minor_injury", "big_bite_injury"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    },
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["big_bite_injury"],
                         "scars": ["NECKBITE"]
                     }
                 ],
@@ -1108,7 +1113,12 @@
                 "injury": [
                     {
                         "cats": ["patrol"],
-                        "injuries": ["minor_injury", "big_bite_injury"],
+                        "injuries": ["minor_injury"],
+                        "scars": []
+                    },
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["big_bite_injury"],
                         "scars": ["NECKBITE"]
                     }
                 ],
@@ -1182,6 +1192,11 @@
                         "cats": ["multi"],
                         "injuries": ["big_bite_injury", "scrapes"],
                         "scars": ["NECKBITE"]
+                    },
+                    {
+                        "cats": ["multi"],
+                        "injuries": ["scrapes"],
+                        "scars": []
                     }
                 ],
                 "dead_cats":["multi"],
@@ -1218,6 +1233,11 @@
                         "cats": ["r_c"],
                         "injuries": ["bite-wound", "blood loss"],
                         "scars": ["NECKBITE"]
+                    },
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["blood loss"],
+                        "scars": []
                     }
                 ],
                 "history_text": {
@@ -2374,6 +2394,16 @@
                         "cats": ["s_c"],
                         "injuries": ["claw-wound", "torn ear", "scrapes", "shock"],
                         "scars": ["THREE"]
+                    },
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["torn ear", "scrapes", "shock"],
+                        "scars": ["LEFTEAR"]
+                    },
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["scrapes", "shock"],
+                        "scars": []
                     }
                 ],
                 "history_text": {
@@ -2728,6 +2758,304 @@
                 "history_text": {
                     "scar": "m_c was injured after disturbing a badger in its sett.",
                     "reg_death": "This cat was killed after an unfortunate meeting with a badger.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_bord_leafbare_apprenticesolotunnel1",
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "pln_bord_tunnel",
+        "min_cats": 1,
+        "max_cats": 1,
+        "min_max_status": {
+            "apprentice":[1, 1]
+        },
+        "weight": 20,
+        "intro_text": "app1's ears swivel back and forth, pressing flat against {PRONOUN/app1/poss} head every so often as {PRONOUN/app1/poss} emotions slip through. With fur bristled out to full puff against cold and danger {PRONOUN/app1/subject} nevertheless {VERB/app1/pad/pads} the border alone. A strange mismash of shadows catches {PRONOUN/app1/poss} eye. Is that a tunnel entrance?",
+        "decline_text": "app1 decides not to check. After all, who knows what might be hiding inside? No, it's time to go home, before anything bad happens to {PRONOUN/app1/object}.",
+        "chance_of_success": 20,
+        "success_outcomes": [
+            {
+                "text": "app1 pokes {PRONOUN/app1/poss} head into the shallow cave, one whisker at a time, eyes wide. Huh. Well, there's no one home, and from the look of the soggy grass blown in by the wind and the frost climbing the walls, no one has been home in a while. There's also no c_n scent though. Perhaps because this is too shallow to be a refuge from predators?",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "This burrow is weird. app1's never seen a tunnel with straight walls, or metal ones, for that matter. Pelt standing up in a little mohawk along {PRONOUN/app1/poss} spine, {PRONOUN/app1/subject} {VERB/app1/back/backs} away.",
+                "exp": 20,
+                "weight": 10,
+                "art": ["pln_hunt_gonetwolegtrap1"]
+            },
+            {
+                "text": "As app1 shivers, {PRONOUN/app1/poss} paws cold on the frosty ground, a steam of warm air escapes the unknown tunnel entrance. That can't be good, something's breathing in there. app1 has had enough adventure for one day, and goes back to camp.",
+                "exp": 20,
+                "weight": 30
+            },
+            {
+                "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} don't know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
+                "exp": 20,
+                "weight": 10,
+                "art": ["pln_hunt_gonetwolegtrap1"],
+                "stat_skill": ["CLEVER,1", "CAMP,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} don't just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around eachother rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
+                "exp": 20,
+                "weight": 10,
+                "stat_trait": [
+                    "careful", 
+                    "wise", 
+                    "responsible",
+                    "thoughtful",
+                    "cunning"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 3
+                    }
+                ]
+            },
+            {
+                "text": "app1 carefully explores the tunnel {PRONOUN/app1/subject} spotted, seeing how a bush noramlly conceals its entrance. The idea of having a secret, hidden place that only {PRONOUN/app1/subject} {VERB/app1/know/knows} about is incredibly appealing.",
+                "exp": 20,
+                "weight": 10,
+                "stat_trait": [
+                    "strange",
+                    "sneaky",
+                    "cunning"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 3
+                    }
+                ]
+            },
+            {
+                "text": "This is yet another thing to deal with on an adventure that became terrifying a long time ago. No. app1 heads home instead, back to {PRONOUN/app1/poss} nice safe den.",
+                "exp": 20,
+                "weight": 10,
+                "stat_trait": [
+                    "nervous",
+                    "insecure",
+                    "gloomy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 3
+                    }
+                ]
+            },
+            {
+                "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collpased roof into a wider tunnel system, smelling faintly of something app1 can't identify. Awesome!",
+                "exp": 20,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous", 
+                    "rebellious", 
+                    "daring",
+                    "bold",
+                    "childish",
+                    "playful"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["clan"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 3
+                    }
+                ]
+            },
+            {
+                "text": "app1 sticks {PRONOUN/app1/poss} head into {PRONOUN/app1/poss} new discovery and finds a furious prairie dog. {PRONOUN/app1/subject/CAP} exchange blows and chatter at each other, both escaping unscathed and irritated.",
+                "exp": 20,
+                "weight": 20,
+                "art": ["pln_hunt_prairiedog1"],
+                "stat_skill": ["FIGHTER,0"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "As app1 shivers, {PRONOUN/app1/poss} paws cold on the frosty ground, a steam of warm air escapes the unknown tunnel entrance. It's warm in there! {PRONOUN/app1/subject/CAP} {VERB/app1/bound/bounds} forward, but the tunnel is warm because it's inhabitated.",
+                "exp": 0,
+                "weight": 30,
+                "dead_cats": ["app1"],
+                "history_text": {
+                    "scar": "m_c was injured after disturbing a wolverine in its sett.",
+                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                }
+            },
+            {
+                "text": "As app1 shivers, {PRONOUN/app1/poss} paws cold on the frosty ground, {PRONOUN/app1/subject} {VERB/app1/consider/considers} approaching the tunnel. It's just so cold out here, colder than {PRONOUN/app1/subject} {VERB/app1/were/was} expecting, and the wind's starting to pick up. But no, no {PRONOUN/app1/subject} should go back to camp instead. {PRONOUN/app1/poss/CAP} inexperience lets the leaf-bare storm catch up with {PRONOUN/app1/object}.",
+                "exp": 0,
+                "weight": 30,
+                "dead_cats": ["app1"],
+                "history_text": {
+                    "scar": "",
+                    "reg_death": "This cat was killed after a leaf-bare storm caught {PRONOUN/s_c/object} on patrol as an apprentice.",
+                    "lead_death": "a leaf-bare storm caught {PRONOUN/s_c/object} on patrol as an apprentice"
+                }
+            },
+            {
+                "text": "As app1 shivers, {PRONOUN/app1/poss} paws cold on the frosty ground, {PRONOUN/app1/subject} {VERB/app1/consider/considers} approaching the tunnel. It's just so cold out here, colder than {PRONOUN/app1/subject} {VERB/app1/were/was} expecting, and the wind's starting to pick up. {PRONOUN/app1/subject/CAP} {VERB/app1/huddle/huddles} down in the tunnel, trying to get as much shelter from the wind as possible.",
+                "exp": 0,
+                "weight": 30,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["sore"],
+                        "scars": []
+                    },
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["frostbite"],
+                        "scars": ["FROSTFACE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c went out on a border patorl alone as an apprentice during leaf-bare, and still bears the marks of that lesson.",
+                    "reg_death": "This cat was killed after a leaf-bare storm caught {PRONOUN/s_c/object} on patrol as an apprentice.",
+                    "lead_death": "a leaf-bare storm caught {PRONOUN/s_c/object} on patrol as an apprentice"
+                }
+            },
+            {
+                "text": "app1 sticks {PRONOUN/app1/poss} head into {PRONOUN/app1/poss} new discovery and finds a furious prairie dog. It delivers a stinging lesson about putting one's head into random holes in the ground.",
+                "exp": 0,
+                "weight": 20,
+                "art": ["pln_hunt_prairiedog1"],
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["bruises"],
+                        "scars": []
+                    },
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["torn ear"],
+                        "scars": ["LEFTEAR"]
+                    },
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["torn pelt"],
+                        "scars": ["BRIDGE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was injured after disturbing a wrathful prairie dog.",
+                    "reg_death": "This cat was killed after wounds given by a prairie dog progressed to something worse.",
+                    "lead_death": "after wounds given by a prairie dog progressed to something worse"
+                }
+            },
+            {
+                "text": "This burrow is weird. app1's never seen a tunnel with straight walls, or metal ones, for that matter. But c_n can always benefit from knowing about new tunnels, so {PRONOUN/app1/subject} {VERB/app1/creep/creeps} in. The trap door slams shut behind {PRONOUN/app1/object}.",
+                "exp": 0,
+                "weight": 20,
+                "art": ["pln_hunt_gonetwolegtrap1"],
+                "lost_cats": ["app1"]
+            },
+            {
+                "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collpased roof into a wider tunnel system, smelling faintly of something app1 can't identify. Huh, app1 wonders what-",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "adventurous", 
+                    "rebellious", 
+                    "daring",
+                    "bold",
+                    "childish",
+                    "playful"
+                ],
+                "dead_cats":["app1"],
+                "history_text": {
+                    "scar": "m_c was injured after disturbing a wrathful prairie dog.",
+                    "reg_death": "This cat was killed as an apprentice, patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have.",
+                    "lead_death": "patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have"
+                }
+            },
+            {
+                "text": "Okay, so that might be a tunnel. app1 should go check it out, right? c_n cares about tunnels and stuff. {PRONOUN/app1/subject/CAP} clamber in, and then there's a sharp pain.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": [
+                    "oblivious", 
+                    "grumpy"
+                ],
+                "dead_cats":["app1"],
+                "history_text": {
+                    "scar":"",
+                    "reg_death": "This cat was killed as an apprentice, patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have.",
+                    "lead_death": "patrolling the border alone and investigating things {PRONOUN/m_c/subject} shouldn't have"
+                }
+            },
+            {
+                "text": "The shallow cave is home to a young badger, inexperienced, far from its natal family, and dangerous. p_l escapes, battered, bruised, and bleeding, but the subadult predator won't follow p_l back to camp, not in territory that's unfamiliar and new to it.",
+                "exp": 20,
+                "weight": 20,
+                "injury": [
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["bruises"],
+                        "scars": []
+                    },
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["torn ear"],
+                        "scars": ["LEFTEAR"]
+                    },
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["torn pelt"],
+                        "scars": ["BRIDGE"]
+                    },
+                    {
+                        "cats": ["p_l"],
+                        "injuries": ["mangled tail"],
+                        "scars": ["MANTAIL"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was injured after disturbing a badger in its sett.",
+                    "reg_death": "This cat was killed after an unfortunate meeting with a badger.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                }
+            },
+            {
+                "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company.",
+                "exp": 0,
+                "weight": 20,
+                "stat_trait": ["childish", "playful", "adventurous"],
+                "dead_cats": ["s_c"],
+                "history_text": {
+                    "scar": "m_c was injured after disturbing a wolverine in its sett.",
+                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
                     "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
                 }
             }
