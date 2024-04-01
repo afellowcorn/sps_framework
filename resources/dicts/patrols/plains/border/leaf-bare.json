@@ -1366,7 +1366,7 @@
                 "text": "p_l knows a set of tunnels near here, and charges through the snowbanks, leading the patrol to the entrance and digging frantically as the wind starts to pick up. They make it inside by the skin of their teeth, but the important thing is that they make it.",
                 "exp": 30,
                 "weight": 10,
-                "art": ["fst_hunt_fun3"],
+                "art": "fst_hunt_fun3",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1401,7 +1401,7 @@
                     "insecure",
                     "gloomy"
                 ],
-                "art": ["fst_hunt_fun3"],
+                "art": "fst_hunt_fun3",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1437,7 +1437,7 @@
                     "wise",
                     "thoughtful"
                 ],
-                "art": ["fst_bord_sett1"],
+                "art": "fst_bord_sett1",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1475,7 +1475,7 @@
                 "weight": 30,
                 "can_have_stat": ["any"],
                 "stat_skill": ["CAMP,1"],
-                "art": ["fst_bord_sett1"],
+                "art": "fst_bord_sett1",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1550,7 +1550,7 @@
                 "weight": 30,
                 "can_have_stat": ["any"],
                 "stat_skill": ["HUNTER,2"],
-                "art": ["gen_hunt_rabbit"],
+                "art": "gen_hunt_rabbit",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1623,7 +1623,7 @@
                 "text": "No one can remember any tunnels near this stretch of border, and the patrol huddles under a bush instead. The storm hits, not with snow or hail, but with dreadful, bonechilling sleet, half melted specks of hail and ice cold water that suck the heat from the cats' pelts and slick them down wet against the skin.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["gen_bord_flashflood"],
+                "art": "gen_bord_flashflood",
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -1650,7 +1650,7 @@
                 "text": "No one can remember any tunnels near this stretch of border, and the patrol huddles under a bush instead. The storm hits, not with snow or hail, but with dreadful, bonechilling sleet, half melted specks of hail and ice cold water that suck the heat from the cats' pelts and slick them down wet against the skin. r_c becomes unresponsive.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["gen_bord_flashflood"],
+                "art": "gen_bord_flashflood",
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -1678,7 +1678,7 @@
                 "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} do best, racing the wind home. {PRONOUN/s_c/subject/CAP} arrive in one piece. One shivering, sodden piece.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["gen_bord_flashflood"],
+                "art": "gen_bord_flashflood",
                 "can_have_stat": ["any"],
                 "stat_skill": ["RUNNER,3"],
                 "injury": [
@@ -1707,7 +1707,7 @@
                 "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol hesitates, but... s_c knows what {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} doing, surely. The storm overtakes them on the way home, shards of ice in the sleet washing their pelts sodden and frozen.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["gen_bord_flashflood"],
+                "art": "gen_bord_flashflood",
                 "can_have_stat": ["p_l"],
                 "stat_skill": ["RUNNER,3"],
                 "stat_trait": [
@@ -1744,7 +1744,7 @@
                 "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol hesitates, but... s_c knows what {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} doing, surely. None of the patrol will make it home.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["gen_bord_flashflood"],
+                "art": "gen_bord_flashflood",
                 "can_have_stat": ["p_l"],
                 "stat_skill": ["RUNNER,3"],
                 "stat_trait": [
@@ -1775,7 +1775,7 @@
                 "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} do best, racing the wind home. {PRONOUN/s_c/subject/CAP} don't arrive at camp.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["gen_bord_flashflood"],
+                "art": "gen_bord_flashflood",
                 "can_have_stat": ["any"],
                 "stat_skill": ["RUNNER,3"],
                 "dead_cats":["s_c"],
@@ -1853,7 +1853,7 @@
                 "text": "No, these aren't new... but the smell of badger on them is. Something's very odd here. No badger, no matter the species, shoudl be moving into new tunnels during leaf-bare. Maybe it's injured, or sick, maybe it was driven out of its cete, but they should report this to the rest of c_n.",
                 "exp": 30,
                 "weight": 20,
-                "art": ["fst_bord_sett"],
+                "art": "fst_bord_sett",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1875,7 +1875,7 @@
                 "text": "No, these aren't new... but the smell of them is. Something's weird here, possibly a badger? Not a big one, both cats agree, but one of the smaller variety, though what its doing so far from its cete is a mystery, that kind should move in packs. s_c devises a plan to block the entrance with snow, to mark the place for another, bigger border patrol to deal with.",
                 "exp": 30,
                 "weight": 20,
-                "art": ["fst_bord_sett"],
+                "art": "fst_bord_sett",
                 "can_have_stat": ["any"],
                 "stat_skill": [
                     "CLEVER,1"
@@ -1940,7 +1940,7 @@
                 "text": "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. It's a new set of tunnels, yes. But all the excavations in the cold leave them both shivering.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["mtn_hunt_newleafsnowstorm"],
+                "art": "mtn_hunt_newleafsnowstorm",
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -1958,7 +1958,7 @@
                 "text": "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. They nearly fall on the young coyote sheltering inside the shallow hole, and there's a shcoked, violent scramble as every animal involved lashes out and retreats, everyone coming out worse for wear.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["fst_hunt_howl"],
+                "art": "fst_hunt_howl",
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -1976,7 +1976,7 @@
                 "text": "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. Inside, the indignant new owner of the burrow pushes back violently, leaving p_l bleeding as the badger snarls.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["bord_general_intro"],
+                "art": "bord_general_intro",
                 "injury": [
                     {
                         "cats": ["p_l"],
@@ -2144,7 +2144,7 @@
                 "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's caution.",
                 "exp": 30,
                 "weight": 20,
-                "art": ["gen_hunt_huntassessment"],
+                "art": "gen_hunt_huntassessment",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "nervous",
@@ -2173,7 +2173,7 @@
                 "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. What if someone got hurt? {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's selflessness.",
                 "exp": 30,
                 "weight": 20,
-                "art": ["gen_hunt_huntassessment"],
+                "art": "gen_hunt_huntassessment",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "responsible",
@@ -2203,7 +2203,7 @@
                 "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, burrow investigation is serious. {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's focus.",
                 "exp": 30,
                 "weight": 20,
-                "art": ["gen_hunt_huntassessment"],
+                "art": "gen_hunt_huntassessment",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "wise",
@@ -2233,7 +2233,7 @@
                 "text": "Careful, p_l warns, ready to yank app1 back by the tail. But app1, while frighteningly keen on attacking a thankfully imaginary badger hiding in the hole, is easily redirected into a good teaching conversation about how a good warrior does that without getting mauled in return.",
                 "exp": 30,
                 "weight": 20,
-                "art": ["gen_hunt_huntassessment"],
+                "art": "gen_hunt_huntassessment",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "bloodthirsty",
@@ -2262,7 +2262,7 @@
                 "text": "Checking the new tunnels is cold hard work. Digging in leaf-bare is no fun, whether it's snow, soil, or plant debris, and all of them clog the entrance in a soggy cold mess. p_l gives up when {PRONOUN/p_l/subject} see app1 starting to shiver, and takes the younger cat back to camp before the cold starts to truly bite.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["mtn_hunt_newleafsnowstorm"],
+                "art": "mtn_hunt_newleafsnowstorm",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2277,7 +2277,7 @@
                 "text": "Checking the new tunnels is cold hard work. Digging in leaf-bare is no fun, whether it's snow, soil, or plant debris, and all of them clog the entrance in a soggy cold mess. They clear the shallow hideaway, but by the time they return to camp, p_l is shivering and app1 can't feel {PRONOUN/app1/poss} paws anymore.",
                 "exp": 0,
                 "weight": 30,
-                "art": ["mtn_hunt_newleafsnowstorm"],
+                "art": "mtn_hunt_newleafsnowstorm",
                 "injury": [
                     {
                         "cats": ["p_l"],
@@ -2309,7 +2309,7 @@
                 "text": "It's a good thing p_l spotted the entrance, but a bad, <i>bad</i> day to be out in the borderlands. THe weather closes in, and though both cats huddle close, with just the two of them neither escapes the bite of the wind, even if the sleet can't touch them.",
                 "exp": 0,
                 "weight": 30,
-                "art": ["mtn_hunt_newleafsnowstorm"],
+                "art": "mtn_hunt_newleafsnowstorm",
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -2336,7 +2336,7 @@
                 "text": "Darting over to p_l's side, app1 shoves in front of {PRONOUN/p_l/object}, determined to be the first into the new burrow. The badger inside is not pleased to meet {PRONOUN/app1/object}, and it's only p_l's lightning fast reflexes that haul app1 out by the scruff fast enough. What was app1 thinking? <i>{VERB/app1/Were/Was} {PRONOUN/app1/subject} even thinking at all?</i>",
                 "exp": 0,
                 "weight": 20,
-                "art": ["fst_bord_sett"],
+                "art": "fst_bord_sett",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "ambitious",
@@ -2380,7 +2380,7 @@
                 "text": "Darting over to p_l's side, app1 shoves in front of {PRONOUN/p_l/object}, determined to be the first into the new burrow. The badger inside is not pleased to meet {PRONOUN/app1/object}, and it's only p_l's lightning fast reflexes that haul app1 out before it can cuff app1 about too badly. p_l berates app1 all the way back to camp and into the medicine den.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["fst_bord_sett"],
+                "art": "fst_bord_sett",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "ambitious",
@@ -2446,7 +2446,7 @@
                 "text": "Darting over to p_l's side, app1 shoves in front of {PRONOUN/p_l/object}, determined to be the first into the new burrow. The badger inside is not pleased to meet {PRONOUN/app1/object}, and p_l can't get to app1 in time.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["fst_bord_sett"],
+                "art": "fst_bord_sett",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "ambitious",
@@ -2496,7 +2496,7 @@
                 "text": "Careful, p_l warns. app1 sneers at them, and bounds forward to check out the new discovery, crawling into the hole. p_l is too far away to do anything when the wolverine inside kills {PRONOUN/app1/object}.",
                 "exp": 30,
                 "weight": 20,
-                "art": ["gen_train_soloapp"],
+                "art": "gen_train_soloapp",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "rebellious",
@@ -2597,13 +2597,13 @@
                 "text": "The weather is caving in. The burrow is small, cramped, and hard to wiggle into - but it's out of the wind and cold rain, and that's what counts for the next couple of hours. p_l emerges uncomfortable, covered in dirt, and stinking of rabbit, but safe and sound.",
                 "exp": 20,
                 "weight": 40,
-                "art": ["gen_bord_flashflood"]
+                "art": "gen_bord_flashflood"
             },
             {
                 "text": "There's something odd about this burrow, a tang of scent that hits the roof of p_l's mouth and reminds {PRONOUN/p_l/object} of Twoleg trash. Tail swishing, p_l stays outside, and resolves to go back to camp to report this not-burrow.",
                 "exp": 20,
                 "weight": 10,
-                "art": ["pln_hunt_gonetwolegtrap1"],
+                "art": "pln_hunt_gonetwolegtrap1",
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -2618,7 +2618,7 @@
                 "text": "This is no burrow. p_l backs away from the metal mesh. {PRONOUN/p_l/subject/CAP} {VERB/p_l/find/finds} a grass stalk long enough to poke the depths of the Twoleg trap with, setting it off and shutting it with a violent snap. No one is going to use this kind of fox-dung against c_n, not while p_l is here to do something about it.",
                 "exp": 20,
                 "weight": 20,
-                "art": ["pln_hunt_gonetwolegtrap1"],
+                "art": "pln_hunt_gonetwolegtrap1",
                 "stat_skill": ["CLEVER,1", "CAMP,1"],
                 "relationships": [
                     {
@@ -2658,14 +2658,14 @@
                 "text": "There's something odd about this burrow, a tang of scent that hits the roof of p_l's mouth and reminds {PRONOUN/p_l/object} of Twoleg trash. Padding inside for a better look, p_l jolts as the trap door slams down.",
                 "exp": 20,
                 "weight": 20,
-                "art": ["pln_hunt_gonetwolegtrap1"],
+                "art": "pln_hunt_gonetwolegtrap1",
                 "lost_cats": ["p_l"]
             },
             {
                 "text": "The weather is caving in. The burrow is small, cramped, and hard to wiggle into - but it's out of the wind and cold rain, and that's what counts for the next couple of hours. p_l emerges uncomfortable, covered in dirt, and shivering. Ugh.",
                 "exp": 20,
                 "weight": 20,
-                "art": ["gen_bord_flashflood"],
+                "art": "gen_bord_flashflood",
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -2692,7 +2692,7 @@
                 "text": "The weather is caving in. The burrow is small, cramped, and hard to wiggle into - but it's out of the wind and cold rain, and that's what counts for the next couple of hours. p_l emerges uncomfortable, covered in dirt, and shivering. Ugh.",
                 "exp": 20,
                 "weight": 30,
-                "art": ["gen_bord_flashflood"],
+                "art": "gen_bord_flashflood",
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -2789,7 +2789,7 @@
                 "text": "This burrow is weird. app1's never seen a tunnel with straight walls, or metal ones, for that matter. Pelt standing up in a little mohawk along {PRONOUN/app1/poss} spine, {PRONOUN/app1/subject} {VERB/app1/back/backs} away.",
                 "exp": 20,
                 "weight": 10,
-                "art": ["pln_hunt_gonetwolegtrap1"]
+                "art": "pln_hunt_gonetwolegtrap1"
             },
             {
                 "text": "As app1 shivers, {PRONOUN/app1/poss} paws cold on the frosty ground, a steam of warm air escapes the unknown tunnel entrance. That can't be good, something's breathing in there. app1 has had enough adventure for one day, and goes back to camp.",
@@ -2800,7 +2800,7 @@
                 "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} don't know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
                 "exp": 20,
                 "weight": 10,
-                "art": ["pln_hunt_gonetwolegtrap1"],
+                "art": "pln_hunt_gonetwolegtrap1",
                 "stat_skill": ["CLEVER,1", "CAMP,0"],
                 "relationships": [
                     {
@@ -2897,7 +2897,7 @@
                 "text": "app1 sticks {PRONOUN/app1/poss} head into {PRONOUN/app1/poss} new discovery and finds a furious prairie dog. {PRONOUN/app1/subject/CAP} exchange blows and chatter at each other, both escaping unscathed and irritated.",
                 "exp": 20,
                 "weight": 20,
-                "art": ["pln_hunt_prairiedog1"],
+                "art": "pln_hunt_prairiedog1",
                 "stat_skill": ["FIGHTER,0"]
             }
         ],
@@ -2950,7 +2950,7 @@
                 "text": "app1 sticks {PRONOUN/app1/poss} head into {PRONOUN/app1/poss} new discovery and finds a furious prairie dog. It delivers a stinging lesson about putting one's head into random holes in the ground.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["pln_hunt_prairiedog1"],
+                "art": "pln_hunt_prairiedog1",
                 "injury": [
                     {
                         "cats": ["app1"],
@@ -2978,7 +2978,7 @@
                 "text": "This burrow is weird. app1's never seen a tunnel with straight walls, or metal ones, for that matter. But c_n can always benefit from knowing about new tunnels, so {PRONOUN/app1/subject} {VERB/app1/creep/creeps} in. The trap door slams shut behind {PRONOUN/app1/object}.",
                 "exp": 0,
                 "weight": 20,
-                "art": ["pln_hunt_gonetwolegtrap1"],
+                "art": "pln_hunt_gonetwolegtrap1",
                 "lost_cats": ["app1"]
             },
             {
@@ -3057,6 +3057,404 @@
                     "scar": "m_c was injured after disturbing a wolverine in its sett.",
                     "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
                     "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_bord_leafbare_apprenticegrouptunnel1",
+        "biome": ["plains"],
+        "season": ["leaf-bare"],
+        "types": ["border"],
+        "tags": [],
+        "patrol_art": "mtn_train_snowcrunching",
+        "min_cats": 2,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice":[1, 6],
+            "normal adult":[-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "The apprentices are at the border - not exaclty a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Not a patrol <i>anyone</i> is supposed to do with a storm rolling in. Anyway, is that a tunnel entrance over there?",
+        "decline_text": "Eventually the apprentices get tired. Whatever, they're not supposed to be out here without a warrior anyway.",
+        "chance_of_success": 20,
+        "success_outcomes": [
+            {
+                "text": "They don't know this tunnel - but it knows them, marked by scent and claw as one of the safe refuges in the network c_n constantly maintains and expands in their territory. It knows them, and it saves them, because while they explore it the storm breaks outside, and what was a fun adventure becomes a little more scary as they huddle underground to escape the cold.",
+                "exp": 20,
+                "weight": 10,
+                "art": "pln_bord_tunnel",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "platonic"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "app1 claims the discovery for {PRONOUN/app1/self}, shoving app2 aside with {PRONOUN/app1/poss} shoulder when app2 comes to take a look. What a furball, app2 isn't staying here to be treated like this, {PRONOUN/app2/subject}{VERB/app2/'re/'s} going home!",
+                "exp": 20,
+                "weight": 5,
+                "art": "pln_bord_tunnel",
+                "can_have_stat": ["app1"],
+                "stat_trait":[
+                    "arrogant",
+                    "competitive",
+                    "rebellious"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -10
+                    }
+                ]
+            },
+            {
+                "text": "app1 has found a wonderful set of tunnels, and just in time. Everyone cowers low to the ground as thunder sweeps the plains, sending the apprentices scurrying undergorund and impressing on them how crucial safe refuge is while sleet pelts down outside.",
+                "exp": 20,
+                "weight": 10,
+                "art": "gen_bord_flashflood",
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "trust"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "Oh hey cool, what's this? The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides, digging the soil that's been piled on top of it off. Really weird, but this'll make a great story to tell back at camp.",
+                "exp": 20,
+                "weight": 5,
+                "art": "pln_hunt_gonetwolegtrap1",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "platonic"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "Oh hey cool, what's this? The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides. s_c suddenly flinches backwards. Get away from that, it's a trap!",
+                "exp": 20,
+                "weight": 10,
+                "art": "pln_hunt_gonetwolegtrap1",
+                "can_have_stat": ["any"],
+                "stat_skill": ["CLEVER,1", "CAMP,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust", "platonic"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "The tunnels are marked with c_n scent, already known and therefore less enticing. But s_c refuses to leave their safety, arguing with the rest of the patrol until tunder claps outside. The cold rain that would've soaked them all rather proves {PRONOUN/s_c/poss} point.",
+                "exp": 20,
+                "weight": 20,
+                "art": "gen_bord_flashflood",
+                "can_have_stat": ["any"],
+                "stat_trait": [
+                    "nervous",
+                    "insecure",
+                    "gloomy"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": -10
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["s_c"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "The apprentices huddle around the burrow entrance cautiously. But as thunder rolls in over the flat horizon, sending the world into almost night levels of dark, s_c convinces them to go in - they need shelter, they need the protection of walls around them. They have each other, they're going to be fine.",
+                "exp": 20,
+                "weight": 20,
+                "art": "gen_bord_flashflood",
+                "can_have_stat": ["any"],
+                "stat_trait": [
+                    "compassionate",
+                    "charismatic",
+                    "sincere",
+                    "calm"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "comfort"],
+                        "amount": 15
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "app1 sticks {PRONOUN/app1/poss} head into {PRONOUN/app1/poss} new discovery and finds a furious prairie dog. {PRONOUN/app1/subject/CAP} exchange blows and chatter at each other, both escaping unscathed and irritated.",
+                "exp": 20,
+                "weight": 2,
+                "art": "pln_hunt_prairiedog1",
+                "stat_skill": ["FIGHTER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Oh hey cool, what's this? The apprentices gather round the tunnel, investigating. Hey s_c, does this look safe?When s_c nods, app2 scrambles inside - but inside lurks a sleepy wolverine.",
+                "exp": 20,
+                "weight": 10,
+                "art": "pln_bord_tunnel",
+                "can_have_stat": ["app1"],
+                "stat_skill": ["CLEVER,0", "CAMP,0"],
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["constant nightmares"],
+                        "scars": []
+                    }
+                ],
+                "dead_cats":["app2"],
+                "history_text": {
+                    "scar": "",
+                    "reg_death": "m_c was killed when another apprentice made the wrong judgement call on a border patrol.",
+                    "lead_death": "another apprentice made the wrong judgement call on a border patrol"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": -15
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -15
+                    }
+                ]
+            },
+            {
+                "text": "app1 sticks {PRONOUN/app1/poss} head into {PRONOUN/app1/poss} new discovery and finds a furious prairie dog. It delivers a stinging lesson about putting one's head into random holes in the ground.",
+                "exp": 0,
+                "weight": 5,
+                "art": "pln_hunt_prairiedog1",
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["bruises"],
+                        "scars": []
+                    },
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["torn ear"],
+                        "scars": ["LEFTEAR"]
+                    },
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["torn pelt"],
+                        "scars": ["BRIDGE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was injured after disturbing a wrathful prairie dog.",
+                    "reg_death": "This cat was killed after wounds given by a prairie dog progressed to something worse.",
+                    "lead_death": "after wounds given by a prairie dog progressed to something worse"
+                }
+            },
+            {
+                "text": "This burrow is weird. app1's never seen a tunnel with straight walls, or metal ones, for that matter. But c_n can always benefit from knowing about new tunnels, so {PRONOUN/app1/subject} {VERB/app1/creep/creeps} in. The trap door slams shut behind {PRONOUN/app1/object}.",
+                "exp": 0,
+                "weight": 5,
+                "art": "pln_hunt_gonetwolegtrap1",
+                "lost_cats": ["app1"]
+            },
+            {
+                "text": "Oh hey cool, what's this? The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides, digging the soil that's been piled on top of it off, crawling in to claw at the back. The trap shuts with a violent snap.",
+                "exp": 20,
+                "weight": 5,
+                "art": "pln_hunt_gonetwolegtrap1",
+                "lost_cats": ["multi"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["shock"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "",
+                    "reg_death": "This cat was killed by the shock of watching fellow apprentices be kidnapped by Twolegs.",
+                    "lead_death": "the shock of watching fellow apprentices be kidnapped by Twolegs"
+                }
+            },
+            {
+                "text": "Come on, let's check it out! s_c bounds forward to the entrance, tail lashing excitedly. There's a shirek, and something pulls {PRONOUN/s_c/subject} in.",
+                "exp": 0,
+                "weight": 5,
+                "art": "pln_bord_tunnel",
+                "can_have_stat":["any"],
+                "stat_trait": [
+                    "adventurous", 
+                    "rebellious", 
+                    "daring",
+                    "bold",
+                    "childish",
+                    "playful"
+                ],
+                "dead_cats":["s_c"],
+                "history_text": {
+                    "scar": "",
+                    "reg_death": "This cat was killed as an apprentice, patrolling the border and investigating things {PRONOUN/m_c/subject} shouldn't have.",
+                    "lead_death": "patrolling the border and investigating things {PRONOUN/m_c/subject} shouldn't have"
+                }
+            },
+            {
+                "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company.",
+                "exp": 0,
+                "weight": 5,
+                "art": "pln_bord_tunnel",
+                "can_have_stat":["any"],
+                "stat_trait": ["childish", "playful", "adventurous"],
+                "dead_cats": ["s_c"],
+                "history_text": {
+                    "scar": "m_c was injured after disturbing a wolverine in its sett.",
+                    "reg_death": "This cat was killed after an unfortunate meeting with a wolverine.",
+                    "lead_death": "{VERB/m_c/were/was} killed by a predator hiding in its burrow"
+                }
+            },
+            {
+                "text": "Snow half-blocks the entrance. Ugh. With no one wanting to get their paws chilled digging it out, the patrol continues on, as overhead thunder rumbles threateningly. Sleet and hail await them. The apprentices are found in a huddled, soaked, frostbitten ball of misery. Not all of them can be revived back at camp.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_bord_flashflood",
+                "dead_cats": ["multi"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["shock", "constant nightmares"],
+                        "scars": []
+                    },
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTFACE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c went out with a gorup of friends as an apprentice, and they were all caught in sleet, which has left its marks on {PRONOUN/m_c/poss} pelt.",
+                    "reg_death": "This cat was killed as an apprentice, after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm.",
+                    "lead_death": "went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm"
+                }
+            },
+            {
+                "text": "Snow half-blocks the entrance. Ugh. With no one wanting to get their paws chilled digging it out, the patrol continues on, as overhead thunder rumbles threateningly. Sleet and hail await them. The apprentices are found in a huddled, soaked, frostbitten ball of misery. Their bodies are all cold.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_bord_flashflood",
+                "dead_cats": ["patrol"],
+                "history_text": {
+                    "scar": "m_c went out with a gorup of friends as an apprentice, and they were all caught in sleet, which has left its marks on {PRONOUN/m_c/poss} pelt.",
+                    "reg_death": "This cat was killed as an apprentice, after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm.",
+                    "lead_death": "went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm"
+                }
+            },
+            {
+                "text": "Snow half-blocks the entrance. Ugh. With no one wanting to get their paws chilled digging it out, the patrol continues on, as overhead thunder rumbles threateningly. Sleet and hail await them. The apprentices are found in a huddled, soaked, frostbitten ball of misery.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_bord_flashflood",
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["shock", "constant nightmares"],
+                        "scars": []
+                    },
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["cold_injury"],
+                        "scars": ["FROSTFACE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c went out with a gorup of friends as an apprentice, and they were all caught in sleet, which has left its marks on {PRONOUN/m_c/poss} pelt.",
+                    "reg_death": "This cat was killed as an apprentice, after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm.",
+                    "lead_death": "went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm"
                 }
             }
         ]
