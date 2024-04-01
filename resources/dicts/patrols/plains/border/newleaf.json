@@ -18,6 +18,7 @@
                 "text": "There's a good crop of new grass along this border. It's worth noting, and p_l will report the potential hunting spot when they return to camp.",
                 "exp": 30,
                 "weight": 5,
+                "art": "gen_med_herbsmeadow",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -32,6 +33,7 @@
                 "text": "s_c isn't just talented at running fast - {PRONOUN/s_c/subject} {VERB/s_c/have/has} some very good advice and {PRONOUN/s_c/subject} {VERB/s_c/share/shares} {PRONOUN/s_c/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c.",
                 "exp": 40,
                 "weight": 20,
+                "art": "fst_hunt_fun3",
                 "can_have_stat": ["any"],
                 "stat_skill": [
                     "RUNNER,2"
@@ -71,6 +73,7 @@
                 "text": "p_l really pushes them, to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achivement when they come back into camp after dark, panting.",
                 "exp": 50,
                 "weight": 20,
+                "art": "cat running_two",
                   "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -114,6 +117,7 @@
                 "text": "Before they reach the far border itself, p_l spots s_c limping. it's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enoguh to escape. <i>Should.</i>",
                 "exp": 0,
                 "weight": 20,
+                "art": "cat running_two",
                 "can_have_stat": ["not_pl_rc"],
                 "stat_trait": [
                     "troublesome",

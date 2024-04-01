@@ -74,6 +74,7 @@
                 "text": "s_c isn't just talented at running fast - on the plains, you also need to cover lots of ground too, and {PRONOUN/s_c/subject} {VERB/s_c/share/shares} {PRONOUN/s_c/poss} tips for endurance. The other cats purr gratitude at the end of the day. Everyone's exhausted, but they made it the entire length of that far off border thanks to s_c.",
                 "exp": 40,
                 "weight": 20,
+                "art": "fst_hunt_fun3",
                 "can_have_stat": ["any"],
                 "stat_skill": [
                     "RUNNER,2"
@@ -113,6 +114,7 @@
                 "text": "s_c notices r_c beginning to pant as {PRONOUN/r_c/subject} {VERB/r_c/trudge/trudges} under the hot sun. {PRONOUN/s_c/subject/CAP} take the next opportunity to herd the patrol under the shade of a rock with a scrappy bush clinging to it. There's no reason to risk heat stroke here.",
                 "exp": 20,
                 "weight": 20,
+                "art": "fst_hunt_heat",
                 "can_have_stat": ["not_pl_rc"],
                 "stat_trait": [
                     "responsible",
@@ -171,7 +173,8 @@
                 "text": "Before they reach the far border itself, p_l spots s_c limping. it's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enoguh to escape. <i>Should.</i>",
                 "exp": 0,
                 "weight": 20,
-                "can_have_stat": ["not_pl_rc"],
+                "art": "cat running_two",
+                "can_have_stat": ["not_pl"],
                 "stat_trait": [
                     "troublesome",
                     "fierce",
@@ -190,6 +193,7 @@
                 "text": "p_l really pushes them, to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achivement when they come back into camp after dark, panting, but everyone who went out under the hot sun is more tired than they should be, and some have clearly gotten heat stroke.",
                 "exp": 0,
                 "weight": 20,
+                "art":"fst_hunt_heat",
                 "injury": [
                     {
                       "cats": ["patrol"],
@@ -228,6 +232,7 @@
                 "text": "p_l really pushes them, to be able to patrol all the far border in a single patrol. But s_c brings everything to a halt, spotting that some of the patrol are beginning to feel the effects of the heat, and insisting they return home. It saves anyone else from being injured by the heat.",
                 "exp": 0,
                 "weight": 20,
+                "art": "fst_hunt_heat",
                 "can_have_stat": ["not_pl_rc"],
                 "stat_skill": [
                     "HEALER,0"
