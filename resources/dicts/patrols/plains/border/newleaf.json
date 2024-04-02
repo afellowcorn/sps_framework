@@ -73,7 +73,7 @@
                 "text": "p_l really pushes them, to be able to patrol all the far border in a single patrol. They make it, and are congratulated on the achivement when they come back into camp after dark, panting.",
                 "exp": 50,
                 "weight": 20,
-                "art": "cat running_two",
+                "art": "cat_running_two",
                   "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -117,8 +117,8 @@
                 "text": "Before they reach the far border itself, p_l spots s_c limping. it's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enoguh to escape. <i>Should.</i>",
                 "exp": 0,
                 "weight": 20,
-                "art": "cat running_two",
-                "can_have_stat": ["not_pl_rc"],
+                "art": "cat_running_two",
+                "can_have_stat": ["not_pl"],
                 "stat_trait": [
                     "troublesome",
                     "fierce",

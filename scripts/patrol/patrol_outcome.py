@@ -214,7 +214,7 @@ class PatrolOutcome():
             return True
         
         if not allowed_specfic or "not_pl" in allowed_specfic:
-            if kitty in (patrol.patrol_leader):
+            if kitty is patrol.patrol_leader:
                 return False
             return True
         other_cats = [i for i in patrol.patrol_cats if i not in [patrol.patrol_leader, patrol.patrol_random_cat]]
