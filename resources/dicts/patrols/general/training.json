@@ -10253,7 +10253,7 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["dislike"],
-                        "amount": -5
+                        "amount": -6
                     }
                 ]
             },
