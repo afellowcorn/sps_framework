@@ -18,6 +18,7 @@
                 "text": "The snow is disturbed where great towering herbivores have pulled it off to get at the grass underneath. p_l makes note of it. The smaller plant eaters will feast on the leftovers of the big ones. This might make a useful hunting ground, if c_n can get to it before the next snowfall.",
                 "exp": 30,
                 "weight": 5,
+                "art": "gen_speaking_cat_w1",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -130,7 +131,7 @@
                 "text": "Before they reach the far border itself, p_l spots s_c limping. it's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enoguh to escape. <i>Should.</i>",
                 "exp": 0,
                 "weight": 20,
-                "art": "cat_running_two",
+                "art": "running_two_warriors",
                 "can_have_stat": ["not_pl"],
                 "stat_trait": [
                     "troublesome",
@@ -238,7 +239,7 @@
         "season": ["leaf-bare"],
         "types": ["border"],
         "tags": [],
-        "patrol_art": "gen_bord_scentedafox",
+        "patrol_art": "gen_border_dogscent_clanmember",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -251,7 +252,7 @@
                 "text": "p_l bolts back to camp, feet slipping wildly on the frosty ground. It takes a moment for {PRONOUN/p_l/object} to catch {PRONOUN/p_l/poss} breath before {PRONOUN/p_l/subject} are able to manage to gasp out a single word. <i>Coyote!</i>",
                 "exp": 40,
                 "weight": 20,
-                "art": "cat_running_solo",
+                "art": "running_warrior",
                 "relationships": [
                     {
                         "cats_to": ["r_c"],
@@ -266,7 +267,7 @@
                 "text": "p_l bolts back to camp, feet slipping wildly on the frosty ground, {PRONOUN/p_l/poss} heart pounding. {PRONOUN/p_l/subject/CAP} have to tell {PRONOUN/p_l/poss} clanmates. {PRONOUN/p_l/subject/CAP} burst into camp yowling a warning!",
                 "exp": 40,
                 "weight": 10,
-                "art": "cat_running_solo",
+                "art": "running_warrior",
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -281,7 +282,7 @@
                 "text": "Frozen in the face of the large threat, {PRONOUN/s_c/subject} musters a surge of courage. As the coyote comes into sight {PRONOUN/s_c/subject/} {VERB/s_c/manage/manages} to flee from the coyote, sprinting on the snowcrust back to camp to warn the clan.",
                 "exp": 40,
                 "weight": 20,
-                "art": "cat_running_solo",
+                "art": "running_warrior",
                 "stat_trait": ["insecure", "nervous"],
                 "relationships": [
                     {
@@ -304,14 +305,14 @@
                 "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent. {PRONOUN/s_c/subject/CAP} run. Runs as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} see a group of sleeping Thunderbeasts, and dart to them, yowling. As a Thunderbeast slowly stands, the coyote turns tail and flees.",
                 "exp": 40,
                 "weight": 20,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger1",
                 "stat_skill": ["RUNNER,2", "CLEVER,2", "INSIGHTFUL,2"]
             },
             {
                 "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent.  {PRONOUN/s_c/subject/CAP} run. Run as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} see a group of sleeping Thunderbeasts, and dart to them, yowling. s_c watches with a new respect and fear as the Thunderbeasts kill the predator with ease.",
                 "exp": 40,
                 "weight": 10,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger1",
 	            "prey": ["large"],
                 "stat_skill": ["RUNNER,2", "CLEVER,2", "INSIGHTFUL,2"]
             },
@@ -319,7 +320,7 @@
                 "text": "s_c bolts back to camp, easily keeping ahead of the beast, even with the unstable snowy footing. {PRONOUN/s_c/subject/CAP} burst into camp, yowling a warning with plenty of time for c_n to prepare to drive the coyote away.",
                 "exp": 40,
                 "weight": 20,
-                "art": "cat_running_solo",
+                "art": "running_warrior",
                 "stat_skill": ["RUNNER,3"],
                 "relationships": [
                     {
@@ -335,7 +336,7 @@
                 "text": "s_c sets up an ambush for the wandering coyote, bloodying its snout and leading it on a wild chasing dance through midnight snow across the border and out of c_n territory.",
                 "exp": 40,
                 "weight": 20,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger2_w2",
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
                     {
@@ -351,7 +352,7 @@
                 "text": "{PRONOUN/s_c/subject/CAP} {VERB/s_c/don't/doesn't} feel like {PRONOUN/s_c/subject} {VERB/s_c/have/has} anything like the skill or power, but s_c would give {PRONOUN/s_c/poss} life for c_n, charging in to courageously lead the coyote away from c_n territory. Each yip and bark has to be the herald of {PRONOUN/s_c/poss} doom, each rancid breath the last thing {PRONOUN/s_c/subject}'ll ever smell, but somehow, eventually, limbs and lungs burning, {PRONOUN/s_c/subject} {VERB/s_c/leap/leaps} to refuge.",
                 "exp": 40,
                 "weight": 20,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger2_w2",
                 "stat_trait": [
                     "ambitious",
                     "compassionate",
@@ -379,7 +380,8 @@
                 "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/lead/leads} the huge coyote away from the Clan, in {PRONOUN/r_c/poss} heart, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} that's what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing. As darkness closes in around {PRONOUN/r_c/object} and the coyote's jaws descend again, r_c tries to sink {PRONOUN/r_c/poss} claws into its face, and hopes desperately that {PRONOUN/r_c/subject} led it far enough.",
                 "exp": 0,
                 "weight": 10,
-                "art": "cat_running_solo",
+                "art": "gen_dead_cat_EXPLICIT",
+                "art_clean": "gen_coyote_danger2_w2",
                 "dead_cats": ["r_c"],
                 "history_text": {
                     "reg_death": "This cat died to lead a coyote away from c_n.",
@@ -399,7 +401,7 @@
                 "text": "r_c would give their life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge coyote to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the coyote's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
                 "exp": 0,
                 "weight": 10,
-                "art": "cat_running_solo",
+                "art": "gen_coyote_danger2_w2",
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -426,7 +428,7 @@
                 "text": "s_c knows coyotes are dangerous, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} stronger and better than a simple beast. However, s_c underestimates the coyote's power, and slips in the snow. In the struggle, the coyote manages to overpower {PRONOUN/s_c/object} and delivers a vicious bite, leaving {PRONOUN/s_c/object} with a deep wound on {PRONOUN/s_c/poss} leg. {PRONOUN/s_c/subject/CAP} narrowly escapes with {PRONOUN/s_c/poss} life.",
                 "exp": 0,
                 "weight": 20,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger2_w2",
                 "stat_trait": ["ambitious", "arrogant"],
                 "injury": [
                     {
@@ -455,7 +457,8 @@
                 "text": "s_c knows coyotes are dangerous, but {PRONOUN/s_c/subject} {VERB/s_c/are/is} stronger and better than a simple beast. However, s_c underestimates the coyote's power and slips in the snow. In the struggle, the coyote manages to overpower {PRONOUN/s_c/object} and delivers a vicious bite, pulling s_c down to the ground.",
                 "exp": 0,
                 "weight": 10,
-                "art": "cat_running_solo",
+                "art": "gen_dead_cat_EXPLICIT",
+                "art_clean": "gen_coyote_danger2_w2",
                 "stat_trait": ["ambitious", "arrogant"],
                 "dead_cats": ["s_c"],
                 "history_text": {
@@ -467,7 +470,8 @@
                 "text": "Frozen in the face of the large threat, s_c is unable to move as the jaws descend upon {PRONOUN/s_c/object}. c_n will find a tale written in blood on snow in the morning.",
                 "exp": 0,
                 "weight": 10,
-                "art": "fst_hunt_howl",
+                "art": "gen_dead_cat_EXPLICIT",
+                "art_clean": "gen_dead_cat",
                 "stat_trait": ["nervous", "insecure"],
                 "dead_cats": ["s_c"],
                 "history_text": {
@@ -479,7 +483,8 @@
                 "text": "Maybe s_c should have been paying more attention. {PRONOUN/s_c/subject/CAP} see darkness around them, and realize the terrible mistake of their distraction.",
                 "exp": 0,
                 "weight": 20,
-                "art": "fst_hunt_howl",
+                "art": "gen_dead_cat_EXPLICIT",
+                "art_clean": "gen_dead_cat",
                 "dead_cats": ["s_c"],
                 "stat_trait": ["childish", "playful", "insecure", "strange", "oblivious"],
                 "history_text": {
@@ -495,7 +500,7 @@
         "season": ["leaf-bare"],
         "types": ["border"],
         "tags": [],
-        "patrol_art": "gen_bord_scentedafox",
+        "patrol_art": "gen_border_dogscent_clanmember",
         "min_cats": 2,
         "max_cats": 4,
         "min_max_status": {},
@@ -508,7 +513,7 @@
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks to each other with dismay - c_n really doesn't need a breeding pair setting up near them, they need to report this back straight away.",
                 "exp": 60,
                 "weight": 20,
-                "art": "cat_running_two",
+                "art": "running_two_warriors",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -523,7 +528,7 @@
                 "text": "The patrol shadows the coyote, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls they've confirmed that the coyote is leaving the local area, and the patrol has assured c_n's safety.",
                 "exp": 30,
                 "weight": 5,
-                "art": "cat_running_two",
+                "art": "running_two_warriors",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -538,6 +543,7 @@
                 "text": "There's a lone oak near here. p_l darts towards it with the patrol, scrambling up, and yes, there's the scrabbling of paws, the yip of frustration as the coyote reaches them far too late. Well, if they needed confirmation that the beast was both really here and really interested in cat meat, there it is. They wait for the predator to give up, so they can go warn c_n.",
                 "exp": 40,
                 "weight": 10,
+                "art": "gen_coyote2",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -559,7 +565,7 @@
                 "text": "Your patrol gathers their courage and valiantly tries to lead away the coyote. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
                 "exp": 30,
                 "weight": 5,
-                "art": "cat_running_two",
+                "art": "running_two_warriors",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -574,6 +580,7 @@
                 "text": "s_c sets up a careful ambush ahead of the coyote, and the surprising, darting attack bloodies the coyote's flank, dissuading it from heading further into c_n territory.",
                 "exp": 30,
                 "weight": 10,
+                "art": "gen_coyote_danger2_w2",
                 "can_have_stat": ["any"],
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
@@ -597,7 +604,7 @@
                 "text": "With the border here so flat, there's no trees to climb to escape. But s_c thinks of everything, they go to a well known burrow that the apprentices play in all the time. It's not a moment too soon, the coyote wanders straight past the entrance as it hunts for field mice, the cats within crouched and silent.",
                 "exp": 50,
                 "weight": 20,
-                "art": "pln_bord_tunnel",
+                "art": "gen_coyote2",
                 "can_have_stat": ["any"],
                 "stat_skill": ["CLEVER,2"],
                 "relationships": [
@@ -621,6 +628,7 @@
                 "text": "That isn't just the sound of a coyote, that's the sound of coyote calling for a mate, s_c hisses. It's not good, it means there'll be males atttracted in by that female, and the cats return home quickly and silently. c_n needs to know about the danger in the borderlands.",
                 "exp": 50,
                 "weight": 20,
+                "art": "gen_coyote2",
                 "can_have_stat": ["any"],
                 "stat_skill": ["CLEVER,2"],
                 "relationships": [
@@ -644,7 +652,7 @@
                 "text": "s_c selflessly takes the lion's share of the run as the patrol leads the coyote on, exhausting {PRONOUN/s_c/self} almost to the point of danger, but leading the coyote far away from c_n borders. {PRONOUN/s_c/poss/CAP} Clanmates support {PRONOUN/s_c/object} on the long walk home once it's all over, their purrs mixing with s_c's exhausted pants.",
                 "exp": 30,
                 "weight": 10,
-                "art": "cat_running_solo",
+                "art": "running_warrior2",
                 "stat_trait": [
                     "compassionate",
                     "confident",
@@ -670,7 +678,8 @@
             {
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. r_c won't be coming home.",
                 "exp": 0,
-                "art": "fst_hunt_howl",
+                "art": "gen_dead_cat_EXPLICIT",
+                "art_clean": "gen_dead_cat",
                 "weight": 20,
                 "injury": [
                     {
@@ -699,7 +708,7 @@
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift.The patrol runs in to save {PRONOUN/r_c/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside.",
                 "exp": 0,
                 "weight": 40,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger1",
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -707,7 +716,7 @@
                         "scars": []
                     },
                     {
-                        "cats": ["patrol"],
+                        "cats": ["r_c"],
                         "injuries": ["big_bite_injury"],
                         "scars": ["NECKBITE"]
                     }
@@ -731,6 +740,7 @@
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift. s_c runs in to save {PRONOUN/r_c/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}.",
                 "exp": 0,
                 "weight": 40,
+                "art": "gen_coyote_danger2_w2",
                 "can_have_stat": ["not_pl_rc"],
                 "stat_skill": ["FIGHTER,3"],
                 "injury": [
@@ -766,7 +776,7 @@
                 "text": "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. Everyone escapes just fine, but they lose track of the coyote. It could be anywhere still out there, lurking, waiting to attack.",
                 "exp": 0,
                 "weight": 5,
-                "art": "fst_hunt_fun3",
+                "art": "running_warrior",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -781,6 +791,7 @@
                 "text": "s_c tries to take the lion's share of the effort to lead the coyote away, but {PRONOUN/s_c/poss} strength fails {PRONOUN/s_c/object} and the rest of the patrol needs to rescue {PRONOUN/s_c/object}, cutting short the results of the patrol. Instead, everyone knows the coyote could still be lurking on their borders.",
                 "exp": 0,
                 "weight": 5,
+                "art": "gen_coyote_danger1",
                 "stat_trait": ["ambitious", "bloodthirsty", "troublesome", "vengeful"],
                 "relationships": [
                     {
@@ -796,7 +807,8 @@
                 "text": "The patrol tries to lead the coyote away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the coyote as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their Clanmate.",
                 "exp": 0,
                 "weight": 10,
-                "art": "cat_running_two",
+                "art": "gen_dead_cat_EXPLICIT",
+                "art_clean": "gen_dead_cat",
                 "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
@@ -817,7 +829,7 @@
                 "text": "The patrol tries bravely to lead the coyote away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running, and it's all the rest of the patrol can do to distract the coyote long enough to get {PRONOUN/r_c/object} to safety.",
                 "exp": 0,
                 "weight": 10,
-                "art": "cat_running_two",
+                "art": "running_two_warriors",
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -848,7 +860,7 @@
         "season": ["leaf-bare"],
         "types": ["border"],
         "tags": [],
-        "patrol_art": "gen_bord_scentedafox",
+        "patrol_art": "gen_border_dogscent_clanmember",
         "min_cats": 5,
         "max_cats": 6,
         "min_max_status": {},
@@ -861,7 +873,7 @@
                 "text": "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the snow drifts to approach stealthily. r_c starts the battle strong, sinking {PRONOUN/r_c/poss} teeth into the coyote's hamstring, and the rest of the patrol break cover with screeches, driving the coyote away from c_n.",
                 "exp": 60,
                 "weight": 15,
-                "art": "fst_hunt_fun3",
+                "art": "gen_coyote1",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -891,7 +903,7 @@
                 "exp": 70,
                 "weight": 20,
                 "prey": ["small"],
-                "art": "fst_hunt_fun3",
+                "art": "gen_coyote1",
                 "can_have_stat": ["not_pl_rc"],
                 "stat_skill": ["CLEVER,2", "INSIGHTFUL,2", "HUNTER,2"],
                 "relationships": [
@@ -922,7 +934,7 @@
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks to each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol. They report back to camp instead.",
                 "exp": 70,
                 "weight": 20,
-                "art": "cat_running_two",
+                "art": "running_two_warriors",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -944,7 +956,7 @@
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks to each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol, but s_c leads them to attack anyway, and miraculously, the cats drive the pack away from c_n.",
                 "exp": 90,
                 "weight": 10,
-                "art": "fst_hunt_fun3",
+                "art": "gen_coyote1",
                 "can_have_stat": ["p_l"],
                 "stat_trait":[
                     "bloodthirsty",
@@ -991,7 +1003,7 @@
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks to each other with dismay. It's only because s_c is with them, sprinting as fast as the wind in the worse of the life threatening relay race, that they're able to lead the stinking pack away.",
                 "exp": 70,
                 "weight": 20,
-                "art": "cat_running_solo",
+                "art": "running_warrior",
                 "can_have_stat": ["any"],
                 "stat_skill": ["RUNNER,2"],
                 "relationships": [
@@ -1059,7 +1071,7 @@
                 "text": "A yip sounds from close by. s_c has just enough time to yell out a plan, leading the whole large patrol in a skillful battle plan against the coyote that protects the cats from the chance of injury. The coyote tucks tail, and runs for more friendly lands.",
                 "exp": 60,
                 "weight": 10,
-                "art": "fst_hunt_fun3",
+                "art": "gen_coyote1",
                 "stat_skill": ["FIGHTER,3", "INSIGHTFUL,2"],
                 "relationships": [
                     {
@@ -1075,7 +1087,7 @@
                 "text": "s_c selflessly throws {PRONOUN/s_c/self} into the fight, and every time the coyote tries to grab at {PRONOUN/s_c/poss} Clanmates, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} there with claws, fur puffed out to twice {PRONOUN/s_c/poss} normal size. With s_c defending them, the patrol drives the coyote off, yowling triumphantly.",
                 "exp": 50,
                 "weight": 5,
-                "art": "fst_hunt_howl",
+                "art": "gen_angry_cat_warrior",
                 "stat_trait": [
                     "compassionate",
                     "confident",
@@ -1109,7 +1121,7 @@
                 "text": "The warriors share a glance and a nod. They have enough cats to try and tackle this problem. Spreading out, they use a search pattern they've all been trained in to isolate the adult coyote's location, and the cover of the snow to approach stealthily. But r_c misjudges the first attack, and instead the patrol has to focus on defence and getting out of there mostly unscathed.",
                 "exp": 0,
                 "weight": 15,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger2_w2",
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -1127,7 +1139,8 @@
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. r_c won't be coming home.",
                 "exp": 0,
                 "weight": 20,
-                "art": "fst_hunt_howl",
+                "art": "gen_dead_cat_ghost_EXPLICIT",
+                "art_clean": "gen_dead_cat",
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -1155,7 +1168,7 @@
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift. The patrol runs in to save {PRONOUN/r_c/object}, finding refuge crammed in a rabbit burrow as the coyotes howl outside.",
                 "exp": 0,
                 "weight": 10,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger1",
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -1187,7 +1200,7 @@
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. One discovers r_c, and decides that cat would make a nice courting gift. s_c runs in to save {PRONOUN/r_c/object}, fighting like an entire patrol just by {PRONOUN/s_c/self}.",
                 "exp": 0,
                 "weight": 40,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger2_w2",
                 "can_have_stat": ["not_pl_rc"],
                 "stat_skill": ["FIGHTER,3"],
                 "injury": [
@@ -1223,7 +1236,7 @@
                 "text": "That yip seemed a little weird. Ears pricked, the patrol stalks closer, crossing the border. On the other side, a female assesses the males trying to court her. None notice the cats, but the patrol looks to each other with dismay. It's extremely dangerous to attack so many coyotes at once, even with a large border patrol, but s_c leads them to attack anyway. It is a mistake.",
                 "exp": 0,
                 "weight": 20,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger1",
                 "can_have_stat": ["p_l"],
                 "stat_trait":[
                     "bloodthirsty",
@@ -1329,13 +1342,13 @@
                 "text": "The patrol tries to keep watch on the coyote from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though; r_c manages to keep track of the coyote's position, and it doesn't come any further into c_n territory.",
                 "exp": 0,
                 "weight": 5,
-                "art": "fst_hunt_howl"
+                "art": "gen_coyote_danger1"
             },
             {
                 "text": "s_c tries to show off {PRONOUN/s_c/poss} strength as the patrol bounds toward battle, but it gets in the way of the attack. Without everyone committed to driving the coyote off, the patrol has to fall back, but they do so in good order.",
                 "exp": 0,
                 "weight": 5,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger1",
                 "stat_trait": ["ambitious", "bloodthirsty", "troublesome", "vengeful", "insecure", "rebellious"],
                 "relationships": [
                     {
@@ -1351,7 +1364,8 @@
                 "text": "With so many cats all working as one, the coyote started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take {PRONOUN/r_c/object} to StarClan.",
                 "exp": 0,
                 "weight": 5,
-                "art": "fst_hunt_howl",
+                "art": "gen_dead_cat_ghost_EXPLICIT",
+                "art_clean": "gen_coyote_danger2_w2",
                 "dead_cats": ["r_c"],
                 "history_text": {
                     "scar": "This cat is scarred from bravely defending the Clan against a coyote.",
@@ -1372,7 +1386,7 @@
                 "text": "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend {PRONOUN/r_c/object}, and r_c is safely helped back to camp, where the medicine den awaits.",
                 "exp": 0,
                 "weight": 10,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote_danger2_w2",
                 "injury": [
                     {
                         "cats": ["r_c"],
@@ -1454,7 +1468,7 @@
                     "insecure",
                     "gloomy"
                 ],
-                "art": "fst_hunt_fun3",
+                "art": "running_two_warriors",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1528,7 +1542,7 @@
                 "weight": 30,
                 "can_have_stat": ["any"],
                 "stat_skill": ["CAMP,1"],
-                "art": "gen_train_warrior_rainy",
+                "art": "pln_train_sett",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -1561,10 +1575,10 @@
                 ]
             },
             {
-                "text": "The storm hits before the patrol finds the entrance to some tunnels to shelter in. s_c instructs everyone to start sharing tongues. They all need to get their pelts dry and warm again, as soon as possible.",
+                "text": "The storm hits minutes before the patrol finds the entrance to some tunnels to shelter in. Once inside, s_c instructs everyone to start sharing tongues. They all need to get their pelts dry and warm again, as soon as possible.",
                 "exp": 40,
                 "weight": 30,
-                "art": "pln_bord_tunnel2",
+                "art": "pln_bord_tunnel",
                 "can_have_stat": ["any"],
                 "stat_skill": ["HEALER,1"],
                 "relationships": [
@@ -1729,10 +1743,10 @@
                 ]
             },
             {
-                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} do best, racing the wind home. {PRONOUN/s_c/subject/CAP} arrive in one piece. One shivering, sodden piece.",
+                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} do best, racing the wind home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/arrive/arrives} in one piece. One shivering, sodden piece.",
                 "exp": 0,
                 "weight": 20,
-                "art": "gen_bord_flashflood",
+                "art": "gen_train_soggykitty_mad_warrior",
                 "can_have_stat": ["any"],
                 "stat_skill": ["RUNNER,3"],
                 "injury": [
@@ -1856,7 +1870,7 @@
         "season": ["leaf-bare"],
         "types": ["border"],
         "tags": [],
-        "patrol_art": "pln_bord_tunnel2",
+        "patrol_art": "pln_bord_tunnel",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -1964,6 +1978,7 @@
                 "text": "s_c pauses before entering the tunnels. After a careful inspection of the half buried entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. The patrol quickly moves on.",
                 "exp": 20,
                 "weight": 2,
+                "art": "gen_warrior_crouching",
                 "stat_skill": ["HUNTER,3", "CLEVER,1", "TEACHER,3"],
                 "relationships": [
                     {
@@ -1979,6 +1994,7 @@
                 "text": "s_c pauses before entering the tunnels. After a careful inspection of the half buried entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. The patrol quickly moves on.",
                 "exp": 20,
                 "weight": 2,
+                "art": "gen_warrior_crouching",
                 "stat_trait": ["careful", "wise", "patient", "responsible"],
                 "relationships": [
                     {
@@ -2014,7 +2030,7 @@
                 "text": "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. They nearly fall on the young coyote sheltering inside the shallow hole, and there's a shcoked, violent scramble as every animal involved lashes out and retreats, everyone coming out worse for wear.",
                 "exp": 0,
                 "weight": 20,
-                "art": "fst_hunt_howl",
+                "art": "gen_coyote1",
                 "injury": [
                     {
                         "cats": ["patrol"],
@@ -2032,7 +2048,7 @@
                 "text": "p_l and r_c pull snow away from the entrance, digging down to confirm the discovery. Inside, the indignant new owner of the burrow pushes back violently, leaving p_l bleeding as the badger snarls.",
                 "exp": 0,
                 "weight": 20,
-                "art": "bord_general_intro",
+                "art": "gen_scarybadger",
                 "injury": [
                     {
                         "cats": ["p_l"],
@@ -2065,7 +2081,7 @@
         "season": ["leaf-bare"],
         "types": ["border"],
         "tags": [],
-        "patrol_art": "pln_bord_tunnel",
+        "patrol_art": "gen_hunt_mentor_app",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -2081,7 +2097,7 @@
                 "text": "Checking the new tunnels proves a good move - not only are they sound and safe, abet with a pile of snow and grass stalks blown into the sole shallow chamber's terminus, but they immediately prove necessary. A rainstorm rolls in, to warm for snow or sleet but too cold to be out walking in, and p_l and app1 shelter in their newly found refuge.",
                 "exp": 25,
                 "weight": 20,
-                "art": "pln_bord_tunnel2",
+                "art": "pln_bord_tunnel",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2103,7 +2119,7 @@
                 "text": "Checking the new tunnels is cold hard work. Digging in leaf-bare is no fun, whether it's snow, soil, or plant debris, and all of them clog the entrance in a soggy cold mess. But p_l and app1 persist, and when they return to camp, p_l makes sure to tell app1 {PRONOUN/app1/subject}{VERB/app1/'ve/'s} done a good day's work, and to take {PRONOUN/app1/poss} pick from the fresh-kill pile.",
                 "exp": 25,
                 "weight": 20,
-                "art": "pln_bord_tunnel2",
+                "art": "pln_bord_tunnel",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2139,7 +2155,7 @@
                 "text": "The tunnels prove to be a new entrance to a set of tunnels c_n already uses. This could be helpful in the future, c_n can always use another point on their network p_l makes sure to quiz app1 on how to find it again, teaching {PRONOUN/app1/object} the way to mark the location.",
                 "exp": 25,
                 "weight": 5,
-                "art": "gen_hunt_mentor_app",
+                "art": "pln_bord_tunnel",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2161,7 +2177,7 @@
                 "text": "This is worth diverting the patrol for. c_n can always send out another border patrol, but if they lose this discovery (easy to do without a marked path if it snows again soon), the border region doesn't get any safer. The more known, checked, secure refuges near the border, the better, p_l reminds app1.",
                 "exp": 25,
                 "weight": 10,
-                "art": "gen_hunt_mentor_app",
+                "art": "pln_bord_tunnel",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -2183,7 +2199,7 @@
                 "text": "Wait, what? How did app1 miss that, {PRONOUN/app1/subject} padded right past it! p_l shows {PRONOUN/app1/object} the signs {PRONOUN/p_l/subject} spotted, the freshly overturned earth, the dirty blobs of snow. It's a good lesson, but it's still p_l's discovery, not app1's, and the younger cat is clearly jealous.",
                 "exp": 25,
                 "weight": 20,
-                "art": "gen_hunt_mentor_app",
+                "art": "pln_bord_tunnel",
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -2205,7 +2221,7 @@
                 "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's caution.",
                 "exp": 30,
                 "weight": 20,
-                "art": "gen_hunt_mentor_app",
+                "art": "pln_bord_tunnel",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "nervous",
@@ -2234,7 +2250,7 @@
                 "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. What if someone got hurt? {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's selflessness.",
                 "exp": 30,
                 "weight": 20,
-                "art": "gen_hunt_huntassessment",
+                "art": "pln_bord_tunnel",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "responsible",
@@ -2264,7 +2280,7 @@
                 "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, burrow investigation is serious. {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's focus.",
                 "exp": 30,
                 "weight": 20,
-                "art": "gen_hunt_huntassessment",
+                "art": "pln_bord_tunnel",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "wise",
@@ -2397,7 +2413,7 @@
                 "text": "Darting over to p_l's side, app1 shoves in front of {PRONOUN/p_l/object}, determined to be the first into the new burrow. The badger inside is not pleased to meet {PRONOUN/app1/object}, and it's only p_l's lightning fast reflexes that haul app1 out by the scruff fast enough. What was app1 thinking? <i>{VERB/app1/Were/Was} {PRONOUN/app1/subject} even thinking at all?</i>",
                 "exp": 0,
                 "weight": 20,
-                "art": "fst_bord_sett",
+                "art": "gen_scarybadger",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "ambitious",
@@ -2441,7 +2457,7 @@
                 "text": "Darting over to p_l's side, app1 shoves in front of {PRONOUN/p_l/object}, determined to be the first into the new burrow. The badger inside is not pleased to meet {PRONOUN/app1/object}, and it's only p_l's lightning fast reflexes that haul app1 out before it can cuff app1 about too badly. p_l berates app1 all the way back to camp and into the medicine den.",
                 "exp": 0,
                 "weight": 20,
-                "art": "fst_bord_sett",
+                "art": "gen_scarybadger",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "ambitious",
@@ -2507,7 +2523,7 @@
                 "text": "Darting over to p_l's side, app1 shoves in front of {PRONOUN/p_l/object}, determined to be the first into the new burrow. The badger inside is not pleased to meet {PRONOUN/app1/object}, and p_l can't get to app1 in time.",
                 "exp": 0,
                 "weight": 20,
-                "art": "fst_bord_sett",
+                "art": "gen_scarybadger",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "ambitious",
@@ -2557,7 +2573,8 @@
                 "text": "Careful, p_l warns. app1 sneers at them, and bounds forward to check out the new discovery, crawling into the hole. p_l is too far away to do anything when the wolverine inside kills {PRONOUN/app1/object}.",
                 "exp": 30,
                 "weight": 20,
-                "art": "gen_train_soloapp",
+                "art": "gen_dead_cat_EXPLICIT",
+                "art_clean": "gen_train_soloapp",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "rebellious",
@@ -2574,6 +2591,7 @@
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance.",
                 "exp": 0,
                 "weight": 10,
+                "art": "gen_train_patrolapprenticesessionfail",
                 "can_have_stat": ["app1"],
                 "stat_trait": ["childish", "playful", "adventurous"],
                 "relationships": [
@@ -2590,6 +2608,7 @@
                 "text": "As p_l investigates the new tunnel, its owner comes snuffling through the grass. app1 calls out, but p_l has {PRONOUN/p_l/poss} head down the burrow, and app1 runs in instead, distracting the badger, jumping on its back with claws stretched out. It saves p_l's life. It costs app1 {PRONOUN/app1/poss}s.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_scarybadger",
                 "relationships": [
                     {
                         "cats_to": ["app1"],
@@ -2617,6 +2636,7 @@
                 "text": "The tunnels prove to be a currently in-use badger sett. The patrol quickly retreats, but not before p_l gains a nasty wound.",
                 "exp": 0,
                 "weight": 5,
+                "art": "gen_scarybadger",
                 "injury": [
                     {
                         "cats": ["p_l"],
@@ -2652,7 +2672,8 @@
             {
                 "text": "While p_l notes the possible-tunnel's location, {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} leave the safe-ish tracked path of the border. {PRONOUN/p_l/subject/CAP} {VERB/p_l/don't/doesn't} know if snow has built up in that dip in the landscape, if the tunnel is inhabited, if the soil is stable, and alone and vulerable is not the time to investigate.",
                 "exp": 20,
-                "weight": 20
+                "weight": 20,
+                "art": "gen_hunt_strange"
             },
             {
                 "text": "The weather is caving in. The burrow is small, cramped, and hard to wiggle into - but it's out of the wind and cold rain, and that's what counts for the next couple of hours. p_l emerges uncomfortable, covered in dirt, and stinking of rabbit, but safe and sound.",
@@ -2695,26 +2716,26 @@
                 "text": "The tunnels are an abandoned badger sett! No one has been here in a while, this could be a good location to return to.",
                 "exp": 20,
                 "weight": 2,
-                "art": "pln_bord_tunnel2"
+                "art": "gen_hunt_burrow"
             },
             {
                 "text": "The tunnels prove to be a new entrance to a set of tunnels c_n already uses. This could be helpful in the future.",
                 "exp": 20,
                 "weight": 5,
-                "art": "pln_bord_tunnel2"
+                "art": "gen_hunt_burrow"
             },
             {
                 "text": "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. s_c quickly moves on.",
                 "exp": 20,
                 "weight": 20,
-                "art": "pln_bord_tunnel2",
+                "art": "running_warrior",
                 "stat_skill": ["HUNTER,3", "CLEVER,1", "TEACHER,3"]
             },
             {
                 "text": "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. s_c quickly moves on.",
                 "exp": 20,
                 "weight": 20,
-                "art": "pln_bord_tunnel2",
+                "art": "running_warrior",
                 "stat_trait": ["careful", "wise", "responsible"]
             }
         ],
@@ -2754,42 +2775,17 @@
                 ]
             },
             {
-                "text": "The weather is caving in. The burrow is small, cramped, and hard to wiggle into - but it's out of the wind and cold rain, and that's what counts for the next couple of hours. p_l emerges uncomfortable, covered in dirt, and shivering. Ugh.",
-                "exp": 20,
-                "weight": 30,
-                "art": "gen_bord_flashflood",
-                "injury": [
-                    {
-                        "cats": ["patrol"],
-                        "injuries": ["frostbite"],
-                        "scars": ["FROSTMITT"]
-                    }
-                ],
-                "history_text": {
-                    "scar": "The weather caved in while m_c was out patrolling in leaf-bare, causing the cold to bite in a way that marked {PRONOUN/m_c/poss} coat.",
-                    "reg_death": "The weather caved in while m_c was out patrolling in leaf-bare, killing {PRONOUN/m_c/object}.",
-                    "lead_death": "the weather caved in while m_c was out patrolling in leaf-bare"
-                },
-                "relationships": [
-                    {
-                        "cats_to": ["p_l"],
-                        "cats_from": ["app1"],
-                        "mutual": false,
-                        "values": ["trust", "respect"],
-                        "amount": -5
-                    }
-                ]
-            },
-            {
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_hunt_heat",
                 "stat_trait": ["childish", "impulsive", "playful", "adventurous"]
             },
             {
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_hunt_heat",
                 "stat_trait": ["childish", "impulsive", "playful", "adventurous"],
                 "dead_cats": ["s_c"],
                 "history_text": {
@@ -2802,6 +2798,8 @@
                 "text": "It seems this hole is home to a cranky wolverine, a fact that p_l experiences very quickly when it snags p_l's pelt in its jaws. p_l won't be making it back to camp...",
                 "exp": 0,
                 "weight": 5,
+                "art": "gen_dead_cat_EXPLICIT",
+                "art_clean": "gen_dead_cat",
                 "dead_cats": ["p_l"],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wolverine in its sett.",
@@ -2813,6 +2811,7 @@
                 "text": "The tunnels prove to be a currently in-use badger sett. p_l retreats with a nasty wound.",
                 "exp": 0,
                 "weight": 5,
+                "art": "gen_scarybadger",
                 "injury": [
                     {
                         "cats": ["p_l"],
@@ -2849,7 +2848,7 @@
                 "text": "app1 pokes {PRONOUN/app1/poss} head into the shallow cave, one whisker at a time, eyes wide. Huh. Well, there's no one home, and from the look of the soggy grass blown in by the wind and the frost climbing the walls, no one has been home in a while. There's also no c_n scent though. Perhaps because this is too shallow to be a refuge from predators?",
                 "exp": 20,
                 "weight": 20,
-                "art": "pln_bord_tunnel2"
+                "art": "gen_hunt_huntassessment"
             },
             {
                 "text": "This burrow is weird. app1's never seen a tunnel with straight walls, or metal ones, for that matter. Pelt standing up in a little mohawk along {PRONOUN/app1/poss} spine, {PRONOUN/app1/subject} {VERB/app1/back/backs} away.",
@@ -2883,6 +2882,7 @@
                 "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} don't just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around eachother rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
                 "exp": 20,
                 "weight": 10,
+                "art": "gen_angry_cat_app",
                 "stat_trait": [
                     "careful", 
                     "wise", 
@@ -2976,6 +2976,8 @@
                 "text": "As app1 shivers, {PRONOUN/app1/poss} paws cold on the frosty ground, a steam of warm air escapes the unknown tunnel entrance. It's warm in there! {PRONOUN/app1/subject/CAP} {VERB/app1/bound/bounds} forward, but the tunnel is warm because it's inhabitated.",
                 "exp": 0,
                 "weight": 30,
+                "art": "gen_dead_cat_app_EXPLICIT",
+                "art_clean": "gen_dead_cat_app",
                 "dead_cats": ["app1"],
                 "history_text": {
                     "scar": "m_c was injured after disturbing a wolverine in its sett.",
@@ -3077,6 +3079,8 @@
                 "text": "Okay, so that might be a tunnel. app1 should go check it out, right? c_n cares about tunnels and stuff. {PRONOUN/app1/subject/CAP} clamber in, and then there's a sharp pain.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_dead_cat_app_EXPLICIT",
+                "art_clean": "gen_dead_cat_app",
                 "stat_trait": [
                     "oblivious", 
                     "grumpy"
@@ -3092,6 +3096,7 @@
                 "text": "The shallow cave is home to a young badger, inexperienced, far from its natal family, and dangerous. p_l escapes, battered, bruised, and bleeding, but the subadult predator won't follow p_l back to camp, not in territory that's unfamiliar and new to it.",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_scarybadger",
                 "injury": [
                     {
                         "cats": ["p_l"],
@@ -3124,6 +3129,8 @@
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company.",
                 "exp": 0,
                 "weight": 20,
+                "art": "gen_dead_cat_app_EXPLICIT",
+                "art_clean": "gen_dead_cat_app",
                 "stat_trait": ["childish", "playful", "adventurous"],
                 "dead_cats": ["s_c"],
                 "history_text": {
@@ -3171,7 +3178,7 @@
                 "text": "app1 claims the discovery for {PRONOUN/app1/self}, shoving app2 aside with {PRONOUN/app1/poss} shoulder when app2 comes to take a look. What a furball, app2 isn't staying here to be treated like this, {PRONOUN/app2/subject}{VERB/app2/'re/'s} going home!",
                 "exp": 20,
                 "weight": 5,
-                "art": "pln_bord_tunnel",
+                "art": "gen_train_argueAA",
                 "can_have_stat": ["app1"],
                 "stat_trait":[
                     "arrogant",
@@ -3236,7 +3243,7 @@
                 "text": "Oh hey cool, what's this? The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides. s_c suddenly flinches backwards. Get away from that, it's a trap!",
                 "exp": 20,
                 "weight": 10,
-                "art": "pln_hunt_gonetwolegtrap1",
+                "art": "gen_scared_cat_app",
                 "can_have_stat": ["any"],
                 "stat_skill": ["CLEVER,1", "CAMP,0"],
                 "relationships": [
@@ -3257,10 +3264,10 @@
                 ]
             },
             {
-                "text": "The tunnels are marked with c_n scent, already known and therefore less enticing. But s_c refuses to leave their safety, arguing with the rest of the patrol until tunder claps outside. The cold rain that would've soaked them all rather proves {PRONOUN/s_c/poss} point.",
+                "text": "The tunnels are marked with c_n scent, already known and therefore less enticing. But s_c refuses to leave their safety, arguing with the rest of the patrol until thunder claps outside. The cold rain that would've soaked them all rather proves {PRONOUN/s_c/poss} point.",
                 "exp": 20,
                 "weight": 20,
-                "art": "gen_bord_flashflood",
+                "art": "gen_speaking_cat_app",
                 "can_have_stat": ["any"],
                 "stat_trait": [
                     "nervous",
@@ -3349,7 +3356,8 @@
                 "text": "Oh hey cool, what's this? The apprentices gather round the tunnel, investigating. Hey s_c, does this look safe?When s_c nods, app2 scrambles inside - but inside lurks a sleepy wolverine.",
                 "exp": 20,
                 "weight": 10,
-                "art": "pln_bord_tunnel",
+                "art": "gen_dead_cat_app_EXPLICIT",
+                "art_clean": "gen_dead_cat_app",
                 "can_have_stat": ["app1"],
                 "stat_skill": ["CLEVER,0", "CAMP,0"],
                 "injury": [
@@ -3415,7 +3423,19 @@
                 "exp": 0,
                 "weight": 5,
                 "art": "pln_hunt_gonetwolegtrap1",
-                "lost_cats": ["app1"]
+                "lost_cats": ["app1"],
+                "injury": [
+                    {
+                        "cats": ["patrol"],
+                        "injuries": ["shock"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "scar": "",
+                    "reg_death": "This cat was killed by the shock of watching a fellow apprentice be kidnapped by Twolegs.",
+                    "lead_death": "the shock of watching a fellow apprentice be kidnapped by Twolegs"
+                }
             },
             {
                 "text": "Oh hey cool, what's this? The apprentices gather round the weird dead-ended metal tunnel, poking at its rusty sides, digging the soil that's been piled on top of it off, crawling in to claw at the back. The trap shuts with a violent snap.",
@@ -3461,7 +3481,8 @@
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company.",
                 "exp": 0,
                 "weight": 5,
-                "art": "pln_bord_tunnel",
+                "art": "gen_dead_cat_app_EXPLICIT",
+                "art_clean": "gen_dead_cat_app",
                 "can_have_stat":["any"],
                 "stat_trait": ["childish", "playful", "adventurous"],
                 "dead_cats": ["s_c"],
@@ -3475,7 +3496,7 @@
                 "text": "Snow half-blocks the entrance. Ugh. With no one wanting to get their paws chilled digging it out, the patrol continues on, as overhead thunder rumbles threateningly. Sleet and hail await them. The apprentices are found in a huddled, soaked, frostbitten ball of misery. Not all of them can be revived back at camp.",
                 "exp": 0,
                 "weight": 20,
-                "art": "gen_bord_flashflood",
+                "art": "gen_train_soggykitty_mad_app",
                 "dead_cats": ["multi"],
                 "injury": [
                     {
@@ -3511,7 +3532,7 @@
                 "text": "Snow half-blocks the entrance. Ugh. With no one wanting to get their paws chilled digging it out, the patrol continues on, as overhead thunder rumbles threateningly. Sleet and hail await them. The apprentices are found in a huddled, soaked, frostbitten ball of misery.",
                 "exp": 0,
                 "weight": 20,
-                "art": "gen_bord_flashflood",
+                "art": "gen_train_soggykitty_mad_app",
                 "injury": [
                     {
                         "cats": ["patrol"],
