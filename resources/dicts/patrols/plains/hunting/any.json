@@ -9,7 +9,7 @@
         "min_cats": 1,
         "max_cats": 3,
         "min_max_status": {},
-        "weight": 20,
+        "weight": 6,
         "intro_text": "Your patrol comes across a prairie dog.",
         "decline_text": "Your patrol decides to look for other prey.",
         "chance_of_success": 50,
@@ -27,6 +27,331 @@
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_prairiedog_allwarriors1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "pln_hunt_prairiedog1",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+            "normal adult":[2, 3],
+            "apprentice":[-1, -1]
+        },
+        "weight": 20,
+        "intro_text": "A prairie dog is on watch, plopped back on its hindlegs as others forage nearby. It won't be easy getting past its guard.",
+        "decline_text": "The patrol decides to look for other prey.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "r_c performs a flawless approach, using a muddy dip to creep closer below the sentry's view. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bunch/bunches} up {PRONOUN/r_c/poss} hindquarters, building up power, and {VERB/r_c/leap/leaps} from cover, grabbing the outermost, most isolated prairie dog. p_l runs in to help finish it off, tail lashing excitedly as {PRONOUN/p_l/subject} {VERB/p_l/congratulate/congratulates} the muddy victor.",
+                "exp": 15,
+                "weight": 20,
+                "art": "gen_train_soggykitty_happy_warrior",
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "What they need is speed. s_c finds a good, semi-sheltered path to build up momentum and uses it to burst out towards the praire dogs at full sprint, {PRONOUN/s_c/poss} velocity flattening {PRONOUN/s_c/poss} fur against {PRONOUN/s_c/poss} skin. The sentry barks an alarm, but s_c is too fast, taking out a prairie dog in a spinning collision of fur, teeth, and claws.",
+                "exp": 15,
+                "weight": 20,
+                "art": "running_warrior2",
+                "prey": ["medium"],
+                "can_have_stat": ["any"],
+                "stat_skill": ["RUNNER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 7
+                    }
+                ]
+            },
+            {
+                "text": "This is challenging, but s_c can see a little cover downwind. Without {PRONOUN/s_c/poss} scent to betray {PRONOUN/s_c/object}, and relying on {PRONOUN/s_c/poss} talent and the hard work {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} done to nuture it, s_c takes one of the prairie dogs down.",
+                "exp": 15,
+                "weight": 20,
+                "art": "gen_happy_cat",
+                "prey": ["medium"],
+                "can_have_stat": ["any"],
+                "stat_skill": ["HUNTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 7
+                    }
+                ]
+            },
+            {
+                "text": "s_c's got this. {PRONOUN/s_c/poss/CAP} pawsteps are silent, {PRONOUN/s_c/poss} body slinking a whisker above the ground, shoulders dropped, freezing completely as the sentry glances in {PRONOUN/s_c/poss} direciton. it's not quick. But s_c gets to a fox-length away, and in a liquid pounce, takes the sentry out. That's how it's done.",
+                "exp": 15,
+                "weight": 20,
+                "art": "hunt_general_intro",
+                "prey": ["medium"],
+                "can_have_stat": ["any"],
+                "stat_trait": [
+                    "sneaky",
+                    "cunning"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 7
+                    }
+                ]
+            },
+            {
+                "text": "Let's apply some teamwork to this problem, s_c suggests. They have the cats, they don't have to do this alone. Just... like prairie dogs, s_c supposes. It works, using a signal to make the sentry alarm in one direction while attacking from another, and the cats grin to each other in victory.",
+                "exp": 15,
+                "weight": 20,
+                "art": "gen_train_talkingWW",
+                "prey": ["medium"],
+                "can_have_stat": ["any"],
+                "stat_skill": ["CLEVER,0", "INSIGHT,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "r_c performs a flawless approach, using a muddy dip to creep closer below the sentry's view. {PRONOUN/r_c/subject/CAP} {VERB/r_c/bunch/bunches} up {PRONOUN/r_c/poss} hindquarters, building up power, and {VERB/r_c/leap/leaps} from cover, but the sentry alarm barks, and the prairie dogs evapourate into their waiting burrows, leaving r_c muddy and preyless.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_train_soggykitty_mad_warrior",
+                "prey": ["very_small"]
+            },
+            {
+                "text": "Breaking out into a sprint to try and catch the town of prairie dogs off guard, r_c is left weezing and out of breath as the prey chatters angrily from within their burrows. Starsdamnit.",
+                "exp": 0,
+                "weight": 20,
+                "art": "fst_hunt_fun1",
+                "prey": ["very_small"]
+            },
+            {
+                "text": "Ha, watch and learn, everyone! s_c's got this.<br><br>...{PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does} not got this.",
+                "exp": 0,
+                "weight": 20,
+                "art": "fst_hunt_fun1",
+                "prey": ["very_small"],
+                "can_have_stat": ["any"],
+                "stat_trait": [
+                    "bold",
+                    "daring",
+                    "arrogant",
+                    "competitive",
+                    "flamboyant",
+                    "shameless"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_prairiedog_warriorsappmix1",
+        "biome": ["plains"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "pln_hunt_prairiedog1",
+        "min_cats": 2,
+        "max_cats": 3,
+        "min_max_status": {
+            "normal adult":[1, 2],
+            "apprentice":[1, 2]
+        },
+        "weight": 20,
+        "intro_text": "A prairie dog is on watch, plopped back on its hindlegs as others forage nearby. It won't be easy getting past its guard.",
+        "decline_text": "The patrol decides to look for other prey.",
+        "chance_of_success": 50,
+        "success_outcomes": [
+            {
+                "text": "app1 spots a boggy area nearby. Dragging themself through the mud, pressing themself so low it gets on their whiskers, they creep closer below the sentry's view. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} from cover, grabbing the outermost, most isolated prairie dog. p_l runs in to help finish it off, tail lashing excitedly as {PRONOUN/p_l/subject} {VERB/p_l/congratulate/congratulates} the muddy victor.",
+                "exp": 15,
+                "weight": 20,
+                "art": "gen_train_soggykitty_happy_app",
+                "prey": ["medium"],
+                "relationships": [
+                    {
+                        "cats_to": ["app1"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 10
+                    }
+                ]
+            },
+            {
+                "text": "s_c has a need, a need for speed! The sentry barks an alarm, but s_c is too fast, taking out a prairie dog in a spinning collision of fur, teeth, and claws.",
+                "exp": 15,
+                "weight": 20,
+                "art": "running_app2",
+                "prey": ["medium"],
+                "can_have_stat": ["app"],
+                "stat_skill": ["RUNNER,0"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "This is challenging, but s_c can see a little cover downwind. Without {PRONOUN/s_c/poss} scent to betray {PRONOUN/s_c/object}, and relying on {PRONOUN/s_c/poss} hard work {PRONOUN/s_c/subject}{VERB/s_c/'ve/'s} been putting in to studying hunting, s_c takes one of the prairie dogs down.",
+                "exp": 15,
+                "weight": 20,
+                "art": "gen_happy_cat2",
+                "prey": ["medium"],
+                "can_have_stat": ["app"],
+                "stat_skill": ["HUNTER,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "It's a hard approach, but... s_c will give it a try. {PRONOUN/s_c/poss/CAP} pawsteps are silent, shoulders dropped, freezing completely as the sentry glances in {PRONOUN/s_c/poss} direciton. it's not quick. But s_c gets to a fox-length away, and in a clumsy pounce, takes the sentry out!",
+                "exp": 15,
+                "weight": 20,
+                "art": "gen_train_patrolapprenticesessionsuccess",
+                "prey": ["medium"],
+                "can_have_stat": ["app"],
+                "stat_trait": [
+                    "sneaky",
+                    "cunning"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 15
+                    }
+                ]
+            },
+            {
+                "text": "Uh... s_c has an idea? Look, if one of them attacks from one direction and the other form the other direciton at the same time... maybe it'll work? It does!",
+                "exp": 15,
+                "weight": 20,
+                "art": "gen_speaking_cat_app",
+                "prey": ["medium"],
+                "can_have_stat": ["app"],
+                "stat_skill": ["CLEVER,0", "INSIGHT,1"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect", "trust"],
+                        "amount": 5
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 10
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "app1 spots a boggy area nearby. Dragging themself through the mud, pressing themself so low it gets on their whiskers, they creep closer below the sentry's view. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} from cover, but the sentry alarm barks, and the prairie dogs evapourate into their waiting burrows, leaving app1 muddy and preyless.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_train_soggykitty_mad_app",
+                "prey": ["very_small"]
+            },
+            {
+                "text": "Breaking out into a sprint to try and catch the town of prairie dogs off guard, app1 is left weezing and out of breath as the prey chatters angrily from within their burrows. Awww.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_train_patrolapprenticesessionfail",
+                "prey": ["very_small"]
+            },
+            {
+                "text": "Ha, watch and learn, everyone! s_c's got this.<br><br>...{PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does} not got this.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_train_patrolapprenticesessionfail",
+                "prey": ["very_small"],
+                "can_have_stat": ["app"],
+                "stat_trait": [
+                    "bold",
+                    "daring",
+                    "arrogant",
+                    "competitive",
+                    "flamboyant",
+                    "shameless"
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": -10
+                    }
+                ]
             }
         ]
     },
