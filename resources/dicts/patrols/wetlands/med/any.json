@@ -1,8 +1,8 @@
 [
     {
         "patrol_id": "wtlnd_med_soloripples1",
-        "biome": ["wetlands"],
-        "season": ["Any"],
+        "biome": ["wetland"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -68,8 +68,8 @@
     },
     {
         "patrol_id": "wtlnd_med_herblocation1",
-        "biome": ["wetlands"],
-        "season": ["Any"],
+        "biome": ["wetland"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -135,8 +135,8 @@
     },
     {
         "patrol_id": "wtlnd_med_herblocation2",
-        "biome": ["wetlands"],
-        "season": ["Any"],
+        "biome": ["wetland"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -175,7 +175,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort1",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -307,7 +307,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort2",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -339,7 +339,7 @@
                 ]
             },
             {
-                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to carry everything back to camp, but they stick the location in their mind as a place to return to.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -409,7 +409,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort3",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -530,7 +530,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort4",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -662,7 +662,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort5",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -694,7 +694,7 @@
                 ]
             },
             {
-                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to carry everything back to camp, but they stick the location in their mind as a place to return to.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -764,7 +764,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort6",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -885,7 +885,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort7",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -1017,7 +1017,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort8",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -1049,7 +1049,7 @@
                 ]
             },
             {
-                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
+                "text": "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to carry everything back to camp, but they stick the location in their mind as a place to return to.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1119,7 +1119,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort9",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -1240,7 +1240,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort10",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -1372,7 +1372,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort11",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -1404,7 +1404,7 @@
                 ]
             },
             {
-                "text": "Not only is the lungwort intact and still fresh, but there's also a nice patch of plantain nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
+                "text": "Not only is the lungwort intact and still fresh, but there's also a nice patch of plantain nearby. Frustratingly, p_l doesn't have the capacity to carry everything back to camp, but they stick the location in their mind as a place to return to.",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1474,7 +1474,7 @@
     },
     {
         "patrol_id": "wtlnd_med_lungwort12",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": [],
@@ -1595,8 +1595,8 @@
     },
     {
         "patrol_id": "wtlnd_med_rescue1",
-        "biome": ["wetlands"],
-        "season": ["Any"],
+        "biome": ["wetland"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["new_cat"],
         "patrol_art": "med_general_intro",
@@ -1641,7 +1641,7 @@
     },
     {
         "patrol_id": "wtlnd_med_romance1",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
@@ -1724,7 +1724,7 @@
     },
     {
         "patrol_id": "wtlnd_med_romance2",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["newleaf"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
@@ -1808,7 +1808,7 @@
     },
     {
         "patrol_id": "wtlnd_med_romance3",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
@@ -1889,7 +1889,7 @@
     },
     {
         "patrol_id": "wtlnd_med_romance4",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["greenleaf"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
@@ -1971,7 +1971,7 @@
     },
     {
         "patrol_id": "wtlnd_med_romance5",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
@@ -2052,7 +2052,7 @@
     },
     {
         "patrol_id": "wtlnd_med_romance6",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
@@ -2134,7 +2134,7 @@
     },
     {
         "patrol_id": "wtlnd_med_romance7",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
@@ -2215,7 +2215,7 @@
     },
     {
         "patrol_id": "wtlnd_med_romance8",
-        "biome": ["wetlands"],
+        "biome": ["wetland"],
         "season": ["leaf-bare"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
@@ -2297,8 +2297,8 @@
     },
     {
         "patrol_id": "wtlnd_med_appfirstsign1",
-        "biome": ["wetlands"],
-        "season": ["Any"],
+        "biome": ["wetland"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2332,8 +2332,8 @@
     },
     {
         "patrol_id": "wtlnd_med_discussion1",
-        "biome": ["wetlands"],
-        "season": ["Any"],
+        "biome": ["wetland"],
+        "season": ["any"],
         "types": [],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2400,8 +2400,8 @@
     },
     {
         "patrol_id": "wtlnd_med_dwindleherbsgathering1",
-        "biome": ["wetlands"],
-        "season": ["Any"],
+        "biome": ["wetland"],
+        "season": ["any"],
         "types": [],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2510,8 +2510,8 @@
     },
     {
         "patrol_id": "wtlnd_med_medwar_puddles",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["wetland"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",

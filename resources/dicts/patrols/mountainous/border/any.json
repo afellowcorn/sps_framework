@@ -2,7 +2,7 @@
     {
         "patrol_id": "mtn_bord_rogue1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -11,7 +11,7 @@
         "min_max_status": {},
         "weight": 20,
         "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
+        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
         "chance_of_success": 20,
         "success_outcomes": [
             {
@@ -21,14 +21,14 @@
                 "art": "gen_bord_roguerunaway"
             },
             {
-                "text": "s_c immediately leaps to protect their Clanmates, {PRONOUN/s_c/poss} ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
+                "text": "s_c immediately leaps to protect their Clanmates. {PRONOUN/s_c/poss/CAP} ferocity in battle terrifies the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
                 "exp": 30,
                 "weight": 20,
                 "stat_skill": ["FIGHTER,3"],
                 "art": "gen_bord_roguerunaway"
             },
             {
-                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws ready. The rogues are quickly driven away by the patrol.",
+                "text": "s_c revels in the battle, leaping into the fray with {PRONOUN/s_c/poss} teeth bared and claws unsheathed. The rogues are quickly driven away by the patrol.",
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "fierce", "vengeful"],
@@ -127,7 +127,7 @@
                 "art": "gen_bord_otherclan_hostile"
             },
             {
-                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded.",
+                "text": "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion, and eventually the patrol retreats, r_c badly wounded.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -145,7 +145,7 @@
                 "art": "gen_bord_otherclan_hostile"
             },
             {
-                "text": "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters and eventually the patrol is forced to retreat, r_c badly injured.",
+                "text": "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters, and the patrol is forced to retreat, r_c badly injured.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -174,7 +174,7 @@
         ],
         "antag_fail_outcomes": [
             {
-                "text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
+                "text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected, and eventually the patrol is forced to retreat.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_bord_otherclan_hostile"
@@ -248,7 +248,7 @@
     {
         "patrol_id": "mtn_bord_story1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_story",
@@ -275,7 +275,7 @@
                 ]
             },
             {
-                "text": "s_c spins a story, vivid and engaging, telling the tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone.",
+                "text": "s_c spins a vivid, engaging tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, but it also emphasizes the importance of the patrol and motivates everyone.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SPEAKER,1"],
@@ -322,7 +322,7 @@
                 "art": "fst_hunt_heat"
             },
             {
-                "text": "s_c takes r_c aside, and reminds {PRONOUN/r_c/object} coldly to focus on {PRONOUN/r_c/poss} duties.",
+                "text": "s_c takes r_c aside and reminds {PRONOUN/r_c/object} coldly to focus on {PRONOUN/r_c/poss} duties.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["cold", "strict", "righteous", "responsible", "thoughtful", "wise"],
@@ -341,7 +341,7 @@
     {
   "patrol_id": "mnt_bord_waterfall",
   "biome": ["mountainous"],
-  "season": ["Any"],
+  "season": ["any"],
   "types": ["border"],
   "tags": [],
   "patrol_art": "mnt_bord_waterfall",
@@ -350,21 +350,21 @@
   "min_max_status": {},
   "weight": 10,
   "intro_text": "The patrol reaches a river that must be crossed to ensure the borders are thoroughly checked.",
-  "decline_text": "p_l makes the decision to lead the patrol home instead, it's too risky today.",
+  "decline_text": "p_l makes the decision to lead the patrol home instead; it's too risky today.",
   "chance_of_success": 20,
   "success_outcomes": [
     {
-      "text": "With careful determination the patrol crosses the river stepping from stone to stone. Wet paws don't slow the patrol down and the border is secured without issue.",
+      "text": "The patrol crosses the river with careful determination, stepping from stone to stone. Wet paws don't slow the patrol down, and the border is secured without issue.",
       "exp": 30,
       "weight": 20
     },
     {
-      "text": "The patrol finds a shallow part of the river that is mostly clear of any large rocks. They wade through the river safely, each cat staying close to each other to prevent any of them from being swept away.",
+      "text": "The patrol finds a shallow part of the river mostly clear of any large rocks. They wade through the river safely, and each cat stays close to each other to prevent any of them from being swept away.",
       "exp": 20,
       "weight": 5
     },
     {
-      "text": "As the patrol attempts to cross, a particularly nasty current rushes towards them. Acting quickly, s_c navigates the current like a fish, assisting {PRONOUN/s_c/poss} Clanmates to safety. The patrol quickly finishes securing the border and returns to camp a little shaken, but okay, thanks to s_c.",
+      "text": "As the patrol attempts to cross, a particularly nasty current rushes towards them. Acting fast, s_c navigates the current like a fish, assisting {PRONOUN/s_c/poss} Clanmates to safety. The patrol hastily finishes securing the border and returns to camp a little shaken, but okay, thanks to s_c.",
       "exp": 20,
       "weight": 20,
       "stat_skill": ["SWIMMER,3"],
@@ -407,13 +407,13 @@
       "stat_skill": ["SWIMMER,3"]
     },
     {
-      "text": "As the patrol sets out to cross, s_c feels a chill run down {PRONOUN/s_c/poss} spine and whispers fill {PRONOUN/s_c/poss} mind. s_c yells out a warning to the patrol to stop and the cats jump back, startled. Suddenly a large branch is throttled down the river right where the patrol was crossing. s_c shakily whispers thanks to StarClan for their warning.",
+      "text": "As the patrol sets out to cross, a chill runs down s_c's spine and whispers fill {PRONOUN/s_c/poss} mind. s_c yells out a warning to the patrol to stop, and the cats jump back, startled. Suddenly, a large branch sweeps down the river right where the patrol was crossing. s_c shakily whispers thanks to StarClan for their warning.",
       "exp": 0,
       "weight": 20,
       "stat_skill": ["STAR,1", "OMEN,1", "CLAIRVOYANT,1"]
     },
     {
-      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns them with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
+      "text": "After some consideration, the patrol finds a place to cross. As they reach about halfway across, a strong rush of water crashes over them. The current pulls them from safety and churns them with no mercy. The cats are dashed against the sharp river rocks as they feebly try to cling to whatever they can. A mountain river is no place for a cat to be, and despite their best efforts, the cold water wins a battle that was over before it started.",
       "exp": 0,
       "weight": 5,
       "dead_cats": ["patrol"],
@@ -439,7 +439,7 @@
       "lost_cats": ["patrol"]
     },
     {
-      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across a strong rush of water crashes over them. The water mercilessly crashes them against the river's sharp boulders and violently sends them careening over a small waterfall. Thankfully, at the bottom of the waterfall the water is calmer and they wash up on the riverbed, but not without consequence from trying to fight one of nature's strongest forces.",
+      "text": "After some consideration the patrol finds a place to cross. As they reach about halfway across a strong rush of water crashes over them. The water mercilessly crashes them against the river's sharp boulders and violently sends them careening over a small waterfall. Thankfully, at the bottom of the waterfall the water is calmer and they wash up on the riverbed, but not without the consequences of trying to fight one of nature's strongest forces.",
       "exp": 0,
       "weight": 10,
       "injury": [
@@ -455,7 +455,7 @@
       }
     },
     {
-      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water crashes them against the river stones.",
       "exp": 0,
       "weight": 5,
       "stat_trait": ["nervous", "insecure"],
@@ -473,7 +473,7 @@
       "lost_cats": ["multi"]
     },
     {
-      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react and the water crashes them against the river stones.",
+      "text": "The patrol begins to cross with s_c trailing nervously behind. Just as the patrol is almost clear, s_c notices a swell in the river rushing towards the patrol. {PRONOUN/s_c/subject/CAP} almost let out a warning yowl, but {PRONOUN/s_c/subject} {VERB/s_c/hesitate/hesitates}, unsure if it's really rushing water. Unfortunately, this costs the patrol the few seconds they had to react, and the water crashes them against the river stones.",
       "exp": 0,
       "weight": 10,
       "stat_trait": ["nervous", "insecure"],
@@ -494,7 +494,7 @@
 {
     "patrol_id": "mtn_bord_mothman1",
     "biome": ["mountainous"],
-    "season": ["Any"],
+    "season": ["any"],
     "types": ["border"],
     "tags": ["halloween"],
     "patrol_art": "mothman_INTRO",
@@ -574,7 +574,7 @@
 {
 	"patrol_id": "mtn_bord_jerseydevil1",
 	"biome": ["mountainous"],
-	"season": ["Any"],
+	"season": ["any"],
 	"types": ["border"],
 	"tags": ["halloween"],
 	"patrol_art": "jerseydevil_INTRO",

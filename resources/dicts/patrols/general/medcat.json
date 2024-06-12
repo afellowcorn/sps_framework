@@ -1,8 +1,8 @@
 [
     {
         "patrol_id": "gen_med_sunny1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_sunny",
@@ -69,7 +69,6 @@
                 "exp": 20,
                 "weight": 20,
                 "stat_trait": [
-                    "altruistic",
                     "compassionate",
                     "empathetic",
                     "faithful",
@@ -258,8 +257,8 @@
     },
     {
         "patrol_id": "gen_med_sunny2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_sunny",
@@ -369,8 +368,8 @@
     },
     {
         "patrol_id": "gen_med_vision1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_vision",
@@ -681,8 +680,8 @@
     },
     {
         "patrol_id": "gen_med_vision2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_vision",
@@ -698,7 +697,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "It definitely distracts {PRONOUN/p_l/object} from the hunt for cobwebs, but p_l uses the time by {PRONOUN/p_l/self} to put {PRONOUN/p_l/poss} thoughts in order. The sign from {PRONOUN/p_l/poss} ancestors will need acting upon, and {PRONOUN/p_l/subject} return to camp to assemble the leader and deputy.",
+                "text": "It definitely distracts {PRONOUN/p_l/object} from the hunt for cobwebs, but p_l uses the time by {PRONOUN/p_l/self} to put {PRONOUN/p_l/poss} thoughts in order. The sign from {PRONOUN/p_l/poss} ancestors will need acting upon, and {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp to assemble the leader and deputy.",
                 "exp": 20,
                 "weight": 20
             },
@@ -1113,8 +1112,8 @@
     },
     {
         "patrol_id": "gen_med_ghost_star1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_ghost_star",
@@ -1223,8 +1222,8 @@
     },
     {
         "patrol_id": "gen_med_ghost_star2",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_ghost_star",
@@ -1360,8 +1359,8 @@
     },
     {
         "patrol_id": "gen_med_ghost_star3",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_ghost_star",
@@ -1423,8 +1422,8 @@
     },
     {
         "patrol_id": "gen_med_ghost_star4",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_ghost_star",
@@ -1544,8 +1543,8 @@
     },
     {
         "patrol_id": "gen_med_medwar_natureofstarclan",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1628,8 +1627,8 @@
     },
     {
         "patrol_id": "gen_med_medwar_natureofdeath",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1662,7 +1661,7 @@
                 ]
             },
             {
-                "text": "p_l knows why this bothers s_c so much. A powerful connection to StarClan allows them to understand how their legacy would be told again and again to kits in the future. But p_l does {PRONOUN/p_l/poss} best to ease s_c's worries. To c_n, s_c would be a legend worth remembering one day. s_c brightens up at that remark, and the two go back to their herb hunt.",
+                "text": "p_l knows why this bothers s_c so much. A powerful connection to StarClan allows {PRONOUN/p_l/subject} to understand how their legacy would be told again and again to kits in the future. But p_l does {PRONOUN/p_l/poss} best to ease s_c's worries. To c_n, s_c would be a legend worth remembering one day. s_c brightens up at that remark, and the two go back to their herb hunt.",
                 "exp": 10,
                 "weight": 20,
                 "stat_trait": ["ambitious", "bloodthirsty", "insecure"],
@@ -1698,8 +1697,8 @@
     },
     {
         "patrol_id": "gen_med_group_randomherb1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1778,8 +1777,8 @@
     },
     {
         "patrol_id": "gen_med_appgroup_randomherb1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -1852,8 +1851,8 @@
     },
     {
         "patrol_id": "gen_med_appwarrior_bossypants1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_appwarrior_bossypants",
@@ -1919,8 +1918,8 @@
     },
     {
         "patrol_id": "gen_med_medappwarriorapp_siblings1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2018,8 +2017,8 @@
     },
     {
         "patrol_id": "gen_med_medwarrior_siblings1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_medwarrior_siblings",
@@ -2357,8 +2356,8 @@
     },
     {
         "patrol_id": "gen_med_discussion1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_discussion",
@@ -2423,7 +2422,7 @@
                 ]
             },
             {
-                "text": "r_c makes a humming sound, and asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} a particular story the elders are fond of. p_l nods, and r_c asks what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} the moral is. It eventually turns into talking about multiple old stories, which certainly makes for interesting conversation, and it's all too soon that they have their mouths too full of herbs to continue.",
+                "text": "r_c makes a humming sound and asks p_l if {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} a particular story the elders are fond of. p_l nods; r_c asks what {PRONOUN/p_l/subject} {VERB/p_l/think/thinks} the moral is. It eventually turns into talking about multiple old stories, which certainly makes for interesting conversation - it's all too soon that they have their mouths too full of herbs to continue.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
@@ -2468,7 +2467,6 @@
                     }
                 ]
             },
-            
             {
                 "text": "r_c makes a humming sound, and asks p_l if {PRONOUN/p_l/subject} ever {VERB/p_l/ponder/ponders} {PRONOUN/p_l/poss} own mortality. p_l swishes {PRONOUN/p_l/poss} tail, and answers that {PRONOUN/p_l/subject}'d never really thought about it, past knowing {PRONOUN/p_l/subject}'ll go to StarClan when {PRONOUN/p_l/subject} {VERB/p_l/die/dies}. It certainly makes for interesting conversation, and it's all too soon that they pick the herbs and have their mouths too full to continue.",
                 "exp": 20,
@@ -2631,8 +2629,8 @@
     },
     {
         "patrol_id": "gen_med_warappmedapp_herbcontest1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "gen_med_warappmedapp_herbcontest",
@@ -2782,8 +2780,8 @@
     },
     {
         "patrol_id": "gen_med_herbsgathering1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
@@ -2864,8 +2862,8 @@
     },
     {
         "patrol_id": "gen_med_catminthunt_20locked1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["romantic"],
         "patrol_art": "med_general_intro",
@@ -2953,8 +2951,8 @@
     },
     {
     	"patrol_id": "gen_med_deathsheadmoth1",
-    	"biome": ["Any"],
-    	"season": ["Any"],
+    	"biome": ["any"],
+    	"season": ["any"],
     	"types": ["herb_gathering"],
     	"tags": ["halloween"],
     	"patrol_art": "deathsheadmoth_INTRO",
@@ -3000,7 +2998,7 @@
 	},
     {
         "patrol_id": "gen_med_pumpkinpatch1",
-        "biome": ["Any"],
+        "biome": ["any"],
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "halloween"],
@@ -3043,7 +3041,7 @@
     },
     {
         "patrol_id": "gen_med_pumpkinpatch2",
-        "biome": ["Any"],
+        "biome": ["any"],
         "season": ["leaf-fall"],
         "types": ["herb_gathering"],
         "tags": ["romantic", "halloween"],
@@ -3084,8 +3082,8 @@
     },
     {
         "patrol_id": "gen_med_friendly_ghost",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["halloween"],
         "patrol_art": "friendlyghost_INTRO",
@@ -3125,8 +3123,8 @@
     },
     {
         "patrol_id": "gen_med_scary_ghost1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["halloween"],
         "patrol_art": "med_general_intro",
@@ -3164,8 +3162,8 @@
     },
     {
         "patrol_id": "gen_med_witch_cat",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": ["halloween", "random_herbs"],
         "patrol_art": "gen_hunt_strange",
