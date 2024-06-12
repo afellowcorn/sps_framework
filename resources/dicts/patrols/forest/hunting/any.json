@@ -3650,7 +3650,7 @@
     {
         "patrol_id": "fst_hunt_twolegdogsdeer1",
         "biome": ["forest"],
-        "season": ["newleaf"],
+        "season": ["Any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",
@@ -3735,12 +3735,15 @@
     },
     {
         "patrol_id": "fst_hunt_risingclangift_storylorelocked1",
+        "biome": ["forest"],
+        "season": ["Any"],
+        "types": ["hunting"],
+        "tags": [],
         "patrol_art": "fst_hunt_gonetwolegtrap",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
-           "normal adult": [1, 5],
-           "apprentice":[1, 5]
+           "apprentice": [1, 4]
             },
         "weight": 40,
         "chance_of_success": 50,
@@ -3752,7 +3755,7 @@
                     "text": "These Twoleg traps are powerful and dangerous, p_l instructs. Strong enough to hold a rabid fox and with gaps so small not even a flickering plume of scorching fire could escape, no cat should ever wander into their metal jaws. They bring only a little bit of prey home, but the lesson is worth the time it took away from hunting.",
                     "exp": 30,
                     "weight": 20,
-                    "prey": ["small"],
+                    "prey": ["small", "medium", "large", "huge"],
                     "relationships": [
                         {
                             "cats_to": ["p_l"],
