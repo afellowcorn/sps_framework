@@ -61,6 +61,7 @@ def json_load():
                     cat["specsuffix_hidden"] if "specsuffix_hidden" in cat else False
                 ),
                 gender=cat["gender"],
+                species=cat["species"],
                 status=cat["status"],
                 parent1=cat["parent1"],
                 parent2=cat["parent2"],
@@ -320,7 +321,7 @@ def csv_load(all_cats):
             # spec2(29) - moons(30) - mate(31)
             # dead(32) - SPRITE:dead(33) - exp(34) - dead for _ moons(35) - current apprentice(36)
             # (BOOLS, either TRUE OR FALSE) paralyzed(37) - no kits(38) - exiled(39)
-            # genderalign(40) - former apprentices list (41)[FORMER APPS SHOULD ALWAYS BE MOVED TO THE END]
+            # genderalign(40) - species(41) - former apprentices list (42)[FORMER APPS SHOULD ALWAYS BE MOVED TO THE END]
             if i.strip() != "":
                 attr = i.split(",")
                 for x in range(len(attr)):
@@ -465,8 +466,10 @@ def csv_load(all_cats):
                     the_cat.exiled = bool(attr[39])
                 if len(attr) > 40:
                     the_cat.genderalign = attr[40]
-                if len(attr) > 41 and attr[41] is not None:  # KEEP THIS AT THE END
-                    the_cat.former_apprentices = attr[41].split(";")
+                if len(attr) > 41:
+                    the_cat.species = attr[41]
+                if len(attr) > 42 and attr[42] is not None:  # KEEP THIS AT THE END
+                    the_cat.former_apprentices = attr[42].split(";")
         game.switches["error_message"] = (
             "There was an error loading this clan's mentors, apprentices, relationships, or sprite info."
         )

@@ -959,12 +959,14 @@ class MakeClanScreen(Screens):
             self.elements["cat_info"].set_text(
                 selected.gender
                 + "\n"
+                + str(selected.species
+                + "\n"
                 + str(
                     selected.age
                     + "\n"
                     + str(selected.personality.trait)
                     + "\n"
-                    + str(selected.skills.skill_string())
+                    + str(selected.skills.skill_string()))
                 )
             )
             self.elements["cat_info"].show()
@@ -1382,7 +1384,7 @@ class MakeClanScreen(Screens):
         # info for chosen cats:
         self.elements["cat_info"] = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((880, 500), (230, 250))),
+            scale(pygame.Rect((880, 475), (230, 250))),
             visible=False,
             object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
             manager=MANAGER,
@@ -1446,7 +1448,7 @@ class MakeClanScreen(Screens):
         # info for chosen cats:
         self.elements["cat_info"] = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((880, 520), (230, 250))),
+            scale(pygame.Rect((880, 475), (230, 250))),
             visible=False,
             object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
             manager=MANAGER,
@@ -1509,7 +1511,7 @@ class MakeClanScreen(Screens):
         # info for chosen cats:
         self.elements["cat_info"] = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((880, 520), (230, 250))),
+            scale(pygame.Rect((880, 475), (230, 250))),
             visible=False,
             object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
             manager=MANAGER,
@@ -1577,7 +1579,7 @@ class MakeClanScreen(Screens):
         # info for chosen cats:
         self.elements["cat_info"] = pygame_gui.elements.UITextBox(
             "",
-            scale(pygame.Rect((880, 520), (230, 250))),
+            scale(pygame.Rect((880, 475), (230, 250))),
             visible=False,
             object_id=get_text_box_theme("#text_box_22_horizleft_spacing_95"),
             manager=MANAGER,

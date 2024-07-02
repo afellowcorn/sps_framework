@@ -722,6 +722,7 @@ class Pregnancy_Events:
             other_cat = None
 
         blood_parent = None
+        par2species = None
 
         ##### SELECT BACKSTORY #####
         if cat and cat.gender == "female":
@@ -750,6 +751,11 @@ class Pregnancy_Events:
             if _m not in all_adoptive_parents:
                 all_adoptive_parents.append(_m)
 
+        # Generate a par2species in case par2 is None, so all littermates have same species inheritance weights
+        species_list = game.species["species"]
+        weights = game.species["ran_weights"]
+        par2species = random.choices(species_list, weights=weights, k=1)[0]
+
         #############################
 
         #### GENERATE THE KITS ######
@@ -773,6 +779,7 @@ class Pregnancy_Events:
 
                 kit = Cat(
                     parent1=blood_parent.ID,
+                    par2species=par2species,
                     moons=0,
                     backstory=backstory,
                     status='newborn')
@@ -787,7 +794,7 @@ class Pregnancy_Events:
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(
-                    parent1=cat.ID, moons=0, backstory=backstory, status="newborn"
+                    parent1=cat.ID, par2species=par2species, moons=0, backstory=backstory, status="newborn"
                 )
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
 

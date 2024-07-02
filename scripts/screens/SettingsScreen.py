@@ -57,6 +57,9 @@ class SettingsScreen(Screens):
     tooltip_text = []
     with open('resources/credits_text.json', 'r', encoding='utf-8') as f:
         credits_text = ujson.load(f)
+    for string in credits_text["sps_text"]:
+        info_text += string
+        info_text += "<br>"
     for string in credits_text["text"]:
         if string == "{contrib}":
             for contributor in credits_text["contrib"]:
@@ -345,7 +348,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text['info_text_box'].disable()
 
         i = 0
-        y_pos = 690
+        y_pos = 1210
         for tooltip in self.tooltip_text:
             if not tooltip:
                 self.tooltip[f'tip{i}'] = UIImageButton(

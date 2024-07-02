@@ -181,6 +181,9 @@ class Game:
     config = {}
     prey_config = {}
 
+    species_list = {}
+    sprite_folders = set()
+
     rpc = None
 
     is_close_menu_open = False
@@ -200,6 +203,14 @@ class Game:
         if self.config["fun"]["april_fools"]:
             self.config["fun"]["newborns_can_roam"] = True
             self.config["fun"]["newborns_can_patrol"] = True
+
+        with open(f"resources/species.json", 'r') as read_file:
+            self.species = ujson.loads(read_file.read())
+
+        # count amount of folders excluding faded and dicts folder
+        for x in(next(os.walk('sprites'))[1]):
+            if not x in ['faded', 'dicts']:
+                self.sprite_folders.add(x)
 
     def update_game(self):
         if self.current_screen != self.switches["cur_screen"]:

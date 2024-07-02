@@ -1,4 +1,14 @@
 {
+    "sps_text": [
+        "<b>SPS Framework</b>",
+        "",
+        "This is a ClanGen mod framework meant to give an easier and uniform way for modders to create mods with multiple species that use unique spritesheets.",
+        "It also allows for easily adding constraints utlizing the species attribute.",
+        "",
+        "<b>Created by:</b> a.corn(afellowcorn)",
+        "_",
+        ""
+    ],
     "text": [
         "<b>Welcome to Warrior Cats Clan generator!</b>",
         "",

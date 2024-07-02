@@ -151,7 +151,7 @@ if get_version_info().is_source_build:
 else:
     print("Running on PyInstaller build")
 
-print("Version Name: ", VERSION_NAME)
+print("ClanGen Version Name: ", VERSION_NAME)
 print("Running on commit " + get_version_info().version_number)
 
 # Load game
@@ -170,6 +170,22 @@ from scripts.debug_menu import debugmode
 import pygame_gui
 import pygame
 
+print("")
+print("Running on SPS Framework")
+print("    Version: " + get_version_info().sps_version)
+print("    Species detected: " + str(len(game.species["species"])))
+print("    Sprite folders detected: " + str(len(game.sprite_folders)))
+if len(game.species["ran_weights"]) == len(game.species["species"]):
+    print("    ran_weights amount: correct")
+else:
+    print("    ran_weights amount: incorrect")
+if len(game.species["in_weights"]) == len(game.species["species"]):
+    print("    in_weights amount: correct")
+else:
+    print("    in_weights amount: incorrect")
+print("Created by a.corn(afellowcorn)")
+print("Official documentation: https://docs.google.com/document/d/1ZwXM-e1TEsUr7tzTtXxek-AKO8e3gGARRiW6JeevShc")
+print("")
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import (
