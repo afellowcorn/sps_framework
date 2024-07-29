@@ -268,11 +268,11 @@ class Cat:
 
         # species
         if species is None:
-            species_list = game.species["species"]
+            species_dict = game.species["species"]
             weights = game.species["ran_weights"]
             in_weights = game.species["in_weights"]
 
-            Cat.generate_species(self, species_list, weights, in_weights, self.par2species if self.par2species else None, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i])
+            Cat.generate_species(self, species_dict, weights, in_weights, self.par2species if self.par2species else None, [Cat.fetch_cat(i) for i in (self.parent1, self.parent2) if i])
 
         # age and status
         if status is None and moons is None:
@@ -490,9 +490,10 @@ class Cat:
         if not skill_dict:
             self.skills = CatSkills.generate_new_catskills(self.status, self.moons)
 
-    def generate_species(self, species_list, weights, in_weights, par2species, parents:tuple=()):
+    def generate_species(self, species_dict, weights, in_weights, par2species, parents:tuple=()):
+        species_list = list(species_dict)
         if parents:
-            par_species = set()
+            par_species = []
             par_weights = []
             for x in range(0, len(weights)):
                 par_weights.append(0)
@@ -500,21 +501,33 @@ class Cat:
             # collect species of parents
             for p in parents:
                 if p:
-                    par_species.add(p.species)
+                    par_species.append(p.species)
 
             # par2species is generated when parent2 is None
             if par2species:
                 print("par2species: "+par2species)
-                par_species.add(par2species)
+                par_species.append(par2species)
 
             if not par_species:
                 print("Warning - par_species none: species randomized")
                 self.species = choices(species_list, weights=weights, k=1)[0]
 
             print("par_species = "+str(par_species))
-
-            # get inheritance weights and add them together
+            
             for s in par_species:
+                # check dom and rec tag
+                if any("dom_inh" in tag for tag in species_dict[s]):
+                    if not any("dom_inh" in tag for tag in species_dict[par_species[par_species.index(s)-1]]):
+                        par_species = [s]
+                        
+                elif any("rec_inh" in tag for tag in species_dict[s]):
+                    if not any("rec_inh" in tag for tag in species_dict[par_species[par_species.index(s)-1]]):
+                        continue
+                else:
+                    if any("dom_inh" in tag for tag in species_dict[par_species[par_species.index(s)-1]]):
+                        continue
+
+                # get inheritance weights and add them together
                 for x in range(0, len(weights)):
                     add_weight = in_weights[s]
                     par_weights[x] += add_weight[x]

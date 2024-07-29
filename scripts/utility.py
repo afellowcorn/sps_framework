@@ -2380,7 +2380,7 @@ def generate_sprite(
     # generating the sprite
     try:
         # checks index of cat's species in the species list and uses matching folder's sprites
-        n = (game.species["species"].index(cat.species)) + 1 #add 1 because people don't count from 0 smh
+        n = (list(game.species["species"]).index(cat.species)) + 1 #add 1 because people don't count from 0 smh
 
         if cat.pelt.name not in ["Tortie", "Calico"]:
             new_sprite.blit(
