@@ -508,7 +508,7 @@ class Cat:
                 par_species.append(par2species)
 
             if not par_species:
-                print("Warning - par_species none: species randomized")
+                print("[SPS] Warning - par_species none: species randomized")
                 self.species = choices(species_list, weights=weights, k=1)[0]
             
             for s in par_species:
@@ -533,11 +533,15 @@ class Cat:
             try:
                 self.species = choices(species_list, weights=par_weights, k=1)[0]
             except:
-                print("Warning - failed to generate species. Are all inheritance weights set to zero?")
-                print("Parent species: "+str(par_species))
+                print("[SPS] Warning - failed to generate species. Are all inheritance weights set to zero?")
+                print("[SPS] Parent species: "+str(par_species))
                 self.species = species_list[0]
         else:
-            self.species = choices(species_list, weights=weights, k=1)[0]
+            try:
+                self.species = choices(species_list, weights=weights, k=1)[0]
+            except:
+                print("[SPS] Warning - failed to generate species. Are all random weights set to zero?")
+                self.species = species_list[0]
 
     def __repr__(self):
         return "CAT OBJECT:" + self.ID

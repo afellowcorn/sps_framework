@@ -105,7 +105,7 @@ class Sprites:
     def load_all(self):
         # get the width and height of the spritesheet
         if not game.sprite_folders:
-            raise Exception("Cannot find sprite folders or none exist")
+            raise Exception("[SPS] Cannot find sprite folders or none exist")
 
         lineart = pygame.image.load('sprites/1/lineart.png')
         width, height = lineart.get_size()
