@@ -505,20 +505,18 @@ class Cat:
 
             # par2species is generated when parent2 is None
             if par2species:
-                print("par2species: "+par2species)
                 par_species.append(par2species)
 
             if not par_species:
                 print("Warning - par_species none: species randomized")
                 self.species = choices(species_list, weights=weights, k=1)[0]
-
-            print("par_species = "+str(par_species))
             
             for s in par_species:
                 # check dom and rec tag
                 if any("dom_inh" in tag for tag in species_dict[s]):
                     if not any("dom_inh" in tag for tag in species_dict[par_species[par_species.index(s)-1]]):
-                        par_species = [s]
+                        par_weights = in_weights[s]
+                        break
                         
                 elif any("rec_inh" in tag for tag in species_dict[s]):
                     if not any("rec_inh" in tag for tag in species_dict[par_species[par_species.index(s)-1]]):
@@ -531,9 +529,13 @@ class Cat:
                 for x in range(0, len(weights)):
                     add_weight = in_weights[s]
                     par_weights[x] += add_weight[x]
-                print(par_weights)
 
-            self.species = choices(species_list, weights=par_weights, k=1)[0]
+            try:
+                self.species = choices(species_list, weights=par_weights, k=1)[0]
+            except:
+                print("Warning - failed to generate species. Are all inheritance weights set to zero?")
+                print("Parent species: "+str(par_species))
+                self.species = species_list[0]
         else:
             self.species = choices(species_list, weights=weights, k=1)[0]
 

@@ -783,14 +783,20 @@ class Pregnancy_Events:
         weights = game.species["ran_weights"].copy()
 
         for species in species_list:
-            if (
-                any("no_breed" in tag for tag in game.species["species"][species])
-                or any("exc_breed" in tag for tag in game.species["species"][species]) and species != cat.species
-                or any("diff_breed" in tag for tag in game.species["species"][species]) and species == cat.species
-                ):
-                weights.pop((species_list.index(species)))
-                species_list.remove(species)
-                print(species_list)
+            if cat:
+                if (
+                    any("no_breed" in tag for tag in game.species["species"][species])
+                    or any("exc_breed" in tag for tag in game.species["species"][species]) and species != cat.species
+                    or any("diff_breed" in tag for tag in game.species["species"][species]) and species == cat.species
+                    ):
+                    weights.pop((species_list.index(species)))
+                    species_list.remove(species)
+            else:
+                if (
+                    any("no_breed" in tag for tag in game.species["species"][species])
+                    ):
+                    weights.pop((species_list.index(species)))
+                    species_list.remove(species)
 
         par2species = random.choices(species_list, weights=weights, k=1)[0]
 
