@@ -2497,8 +2497,8 @@ def generate_sprite(
         if cat.pelt.name not in ["Tortie", "Calico"]:
             new_sprite.blit(
                 sprites.sprites[
-                    cat.pelt.get_sprites_name() + f'{n}_' + cat.pelt.colour + cat_sprite
-                ],
+                    cat.pelt.get_sprites_name() + f'{n}_' + cat.pelt.colour + cat_sprite],
+                (0, 0),
             )
         else:
             # Base Coat
