@@ -2565,7 +2565,6 @@
                 "can_have_stat": ["r_c"],
                 "stat_trait": [
                 	"compassionate",
-                	"empathetic",
                 	"faithful",
                 	"loving",
                 	"patient",
