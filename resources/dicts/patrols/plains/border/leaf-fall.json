@@ -1764,7 +1764,7 @@
             ]
         },
         {
-            "text": "app1 seems a little freaked out by {PRONOUN/app1/poss} discovery - understandable, considering {PRONOUN/app1/subject} fell into it. s_c sings a nursery song as {PRONOUN/s_c/subject} free app1. Dig a tunnel, dig, dig a tunnel, when you're done, you dig a bigger tunnel, dig a tunnel, dig, dig a tunnel, quick before the hyena come.",
+            "text": "app1 seems a little freaked out by {PRONOUN/app1/poss} discovery - understandable, considering {PRONOUN/app1/subject} fell into it. s_c sings a nursery song as {PRONOUN/s_c/subject} {VERB/s_c/free/frees} app1. Dig a tunnel, dig, dig a tunnel, when you're done, you dig a bigger tunnel, dig a tunnel, dig, dig a tunnel, quick before the hyena come.",
             "exp": 40,
             "weight": 20,
             "art": "gen_train_talkingAW",
