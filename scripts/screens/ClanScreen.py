@@ -109,6 +109,9 @@ class ClanScreen(Screens):
         else:
             self.layout = game.clan.layouts["default"]
 
+        if "cat_shading" not in self.layout:
+            self.layout["cat_shading"] = game.clan.layouts["default"]["cat_shading"]
+
         self.choose_cat_positions()
 
         self.set_disabled_menu_buttons(["camp_screen"])
@@ -152,7 +155,9 @@ class ClanScreen(Screens):
                         )
                         .convert_alpha()
                     )
-                    blend_layer = pygame.transform.box_blur(blend_layer, 10)
+                    blend_layer = pygame.transform.box_blur(
+                        blend_layer, self.layout["cat_shading"]["blur"]
+                    )
 
                     sprite = image.copy()
                     sprite.fill(
@@ -161,7 +166,7 @@ class ClanScreen(Screens):
                     sprite.blit(
                         blend_layer, (0, 0), special_flags=pygame.BLEND_RGBA_MULT
                     )
-                    image.set_alpha(170)
+                    image.set_alpha(self.layout["cat_shading"]["blend_strength"])
                     sprite.blit(image, (0, 0), special_flags=pygame.BLEND_ALPHA_SDL2)
                     sprite.set_alpha(255)
 

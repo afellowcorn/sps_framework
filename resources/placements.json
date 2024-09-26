@@ -1,5 +1,9 @@
 {
     "default": {
+        "cat_shading": {
+            "blur": 20,
+            "blend_strength": 200
+        },
         "leader den": [688, 200],
         "medicine den": [210, 400],
         "nursery": [1240, 400],
@@ -445,6 +449,10 @@
                         [[678, 1146], "xy"], [[576, 1162], "xy"]]
     },
 	"Plainscamp3": {
+        "cat_shading": {
+            "blur": 10,
+            "blend_strength": 170
+        },
         "leader den": [750, 205],
         "medicine den": [190, 310],
         "nursery": [1240, 400],
