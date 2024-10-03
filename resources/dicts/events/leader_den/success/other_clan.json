@@ -192,6 +192,17 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "offend",
+    "event_text": "At the Gathering, m_c rebukes o_c_n's leader for merely driving out the troublemaking rogues on their border, instead of slaughtering every last one of them.",
+    "rel_change": -5,
+    "m_c": { 
+      "skill": ["SPEAKER,1"],
+      "trait": [ "bloodthirsty" ]
+  },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
     "interaction_type": "praise",
     "event_text": "During the Gathering, m_c is constantly singing o_c_n's praises. The other leaders don't seem so impressed, but o_c_n's leader is quite pleased.",
     "rel_change": 2,
@@ -233,6 +244,17 @@
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
+    "event_text": "At the Gathering, m_c spots the moonlit gleam of eyes at the edge of the meeting place. The intruder turns tail and flees, but m_c launches {PRONOUN/m_c/self} off the leader's perch and gives chase, then returns a few heartbeats later with droplets of blood clinging to {PRONOUN/m_c/poss} whiskers and a satisfied look. o_c_n's leader grins approvingly.",
+    "rel_change": 5,
+    "m_c": {
+      "skill": ["RUNNER,1"],
+      "trait": ["bloodthirsty"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["logical", "stoic", "logical", "cunning", "wary", "proud"]
   },
   {
     "interaction_type": "praise",
@@ -649,10 +671,32 @@
   },
   {
     "interaction_type": "provoke",
+    "event_text": "During the Gathering, m_c asks o_c_n's leader if o_c_n teaches its apprentices killing blows, or whether the Clan is full of mouse-hearts that would rather roll over and show their bellies.",
+    "rel_change": -8,
+    "m_c": {
+      "skill": [ "TEACHER,1"],
+      "trait": ["bloodthirsty"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
     "event_text": "During the Gathering, o_c_n's leader brags about recent successes in border skirmishes. m_c remarks that they're obfuscating how badly wounded some warriors are and how overworked their medicine cats seem.",
     "rel_change": -3,
     "m_c": {
       "skill": [ "INSIGHTFUL,1", "SENSE,1"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "During the Gathering, m_c suggests to o_c_n's leader that one of their weaker-looking warriors will probably not survive the next leaf-bare.",
+    "rel_change": -3,
+    "m_c": {
+      "skill": [ "SENSE,1"],
+      "trait": [ "bloodthirsty", "cold" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -814,6 +858,17 @@
   },
   {
     "interaction_type": "befriend",
+    "event_text": "When c_n arrives at the Gathering, m_c launches {PRONOUN/m_c/self} onto the leader's perch with a mighty leap. o_c_n's leader eyes the deep grooves {PRONOUN/m_c/poss} claws left behind in the earth and makes a mental note to stay on c_n's good side.",
+    "rel_change": 5,
+    "m_c": {
+      "skill": [ "CLIMBER,1"],
+      "trait": [ "bloodthirsty" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
     "event_text": "During the Gathering, m_c flatters o_c_n's leader with {PRONOUN/m_c/poss} attention. After all, m_c knows exactly how to handle short tempers and immature behavior.",
     "rel_change": 1,
     "m_c": {
@@ -942,6 +997,17 @@
     "rel_change": 5,
     "m_c": {
       "trait": ["charismatic" ],
+      "skill": ["HUNTER,1"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c offers c_n's allyship to o_c_n's leader and promises that together, they can crush their enemies as easily as crushing a mouse's spine.",
+    "rel_change": 5,
+    "m_c": {
+      "trait": ["bloodthirsty" ],
       "skill": ["HUNTER,1"]
     },
     "player_clan_temper": ["any"],
@@ -1190,6 +1256,17 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "antagonize",
+    "event_text": "At the Gathering, m_c threatens and riles o_c_n's leader to the point of actual violence - o_c_n's leader lashes m_c across the muzzle with a sheathed paw. m_c leaps on o_c_n's leader and tussles with them, spitting. With the truce broken, the Gathering comes to a hasty end",
+    "rel_change": -10,
+    "m_c": {
+      "skill": [ "CLEVER,1" ],
+      "trait": [ "bloodthirsty" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
     "interaction_type": "appease",
     "event_text": "During the Gathering, m_c does {PRONOUN/m_c/poss} best to make peace with o_c_n's leader.",
     "rel_change": 2,
@@ -1410,6 +1487,17 @@
     "m_c": {
       "trait": ["bloodthirsty"],
       "skill": ["STORY,1", "LORE,3"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "antagonize",
+    "event_text": "At the Gathering, m_c remarks on how {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} spent so much time swimming, {PRONOUN/m_c/poss} fur doesn't soak up water the same way. m_c muses aloud whether blood will roll so easily off {PRONOUN/m_c/poss} pelt once {PRONOUN/m_c/subject} {VERB/m_c/soak/soaks} in the blood of o_c_n warriors.",
+    "rel_change": -10,
+    "m_c": {
+      "trait": ["bloodthirsty"],
+      "skill": ["SWIMMER,1"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
