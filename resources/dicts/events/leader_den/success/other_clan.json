@@ -357,6 +357,17 @@
   },
   {
     "interaction_type": "praise",
+    "event_text": "At the Gathering, m_c silkily describes a future where o_c_n and c_n rule all the territories together, using all {PRONOUN/m_c/poss} skill in advising. The eyes of o_c_n's leader glaze over, taken by the vision m_c weaves.",
+    "rel_change": 7,
+    "m_c": {
+      "skill": ["SPEAKER,2", "INSIGHTFUL,2"],
+      "trait": ["bloodthirsty", "cunning", "sneaky"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["proud", "logical", "stoic", "wary", "bloodthirsty"]
+  },
+  {
+    "interaction_type": "praise",
     "event_text": "While trying to scramble up onto the leader's perch at the Gathering, o_c_n's new young leader slips and scrabbles with their hindlegs for purchase. Thinking fast, m_c grabs their scruff and lifts them onto the perch easily. o_c_n's leader breathlessly thanks {PRONOUN/m_c/object}.",
     "rel_change": 5,
     "m_c": {
@@ -1853,6 +1864,17 @@
     "other_clan_temper": ["any"]
   },
   {
+    "interaction_type": "antagonize",
+    "event_text": "At the Gathering, m_c surveys o_c_n's warriors and picks out the weakest-looking among them. m_c shares these insights with o_c_n's leader, explaining how {PRONOUN/m_c/subject} will target them in the next skirmish between their Clans.",
+    "rel_change": -6,
+    "m_c": {
+      "trait": ["bloodthirsty"],
+      "skill": ["SENSE,1"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
     "interaction_type": "befriend",
     "event_text": "o_c_n's leader looks at m_c with a soft sympathy, agreeing graciously to the stuttered offers of friendship.",
     "rel_change": 3,
@@ -1952,7 +1974,7 @@
     "rel_change": 6,
     "m_c": {
       "trait": ["strange", "thoughtful", "calm"],
-      "skill": [ "INSIGHT,1", "CLEVER,3" ]
+      "skill": [ "INSIGHTFUL,1", "CLEVER,3" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["stoic", "logical"]
