@@ -101,7 +101,7 @@
         },
         "weight": 20,
         "intro_text": "p_l heads out, leading a patrol of medicine cats to go find some of the bounty of greenleaf.",
-        "decline_text": "... And {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} called back almost immediately, as one of the elders has started hacking something up.",
+        "decline_text": "...And they're called back almost immediately, as one of the elders has started hacking something up.",
         "chance_of_success": 60,
         "success_outcomes": [
             {
@@ -168,7 +168,7 @@
                 ]
             },
             {
-                "text": "Not only {VERB/p_l/do/does} {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
+                "text": "Not only {VERB/p_l/do/does} {PRONOUN/p_l/subject} not find anything, p_l wants to smother s_c. {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
