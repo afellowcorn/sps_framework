@@ -21,7 +21,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "r_c pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} almost within pouncing distance when the mouse suddenly bolts. With a lash of {PRONOUN/r_c/poss} tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c/poss} tongue.",
+                "text": "r_c pinpoints the location of the prey and begins creeping forward. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} almost within pouncing distance when the mouse bolts. With a lash of {PRONOUN/r_c/poss} tail, r_c leaps after the mouse, snagging it just before it reaches a burrow. {PRONOUN/r_c/subject/CAP} {VERB/r_c/purr/purrs} in satisfaction as prey-blood hits {PRONOUN/r_c/poss} tongue.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["small"]
@@ -68,7 +68,7 @@
                 "prey": ["small"]
             },
             {
-                "text": "app1 leaps onto the mouse, an easy kill! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting!",
+                "text": "app1 leaps onto the mouse and makes the kill easily! {PRONOUN/app1/subject/CAP}{VERB/app1/'re/'s} really getting the hang of hunting!",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["small"]
@@ -252,7 +252,7 @@
                 "prey": ["medium"]
             },
             {
-                "text": "r_c rapidly pads towards the squirrel, {PRONOUN/r_c/poss} tailtip twitching in excitement. The squirrel is alerted to their presence with a bird's alarm call, but r_c launches {PRONOUN/r_c/self} forward and cuts off its escape with a bite to the back of the head.",
+                "text": "r_c rapidly pads towards the squirrel, {PRONOUN/r_c/poss} tailtip twitching in excitement. The squirrel is alerted to their presence by a bird's alarm call, but r_c launches {PRONOUN/r_c/self} forward and cuts off its escape with a bite to the back of the head.",
                 "exp": 10,
                 "weight": 5,
                 "prey": ["medium"]
@@ -1248,7 +1248,7 @@
         "stat_trait": ["wise", "thoughtful", "careful"]
       },
       {
-        "text": "r_c kills the rat easily in its distracted state, but then notices the scent of sickness on its body. Best not to bring this one back, p_l decides; even in leaf-bare, it isn't safe to risk sickness. s_c cocks {PRONOUN/s_c/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, s_c touches {PRONOUN/s_c/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!",
+        "text": "r_c kills the distracted rat easily, but p_l points out the putrid scent. c_n could use the prey, but it isn't safe to risk sickness. s_c cocks {PRONOUN/s_c/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, s_c touches {PRONOUN/s_c/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!",
         "exp": 30,
         "weight": 10,
         "stat_trait": ["childish", "playful" ]
@@ -1756,7 +1756,7 @@
             "weight": 20
         },
         {
-            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kinda hurts.",
+            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kind of hurts.",
             "exp": 0,
             "weight": 20,
             "injury": [
@@ -1826,7 +1826,7 @@
             "weight": 20
         },
         {
-            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kinda hurts.",
+            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kind of hurts.",
             "exp": 0,
             "weight": 20,
             "injury": [
@@ -1896,7 +1896,7 @@
             "weight": 20
         },
         {
-            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kinda hurts.",
+            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kind of hurts.",
             "exp": 0,
             "weight": 20,
             "injury": [
@@ -1966,7 +1966,7 @@
             "weight": 20
         },
         {
-            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kinda hurts.",
+            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kind of hurts.",
             "exp": 0,
             "weight": 20,
             "injury": [
@@ -2036,7 +2036,7 @@
             "weight": 20
         },
         {
-            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kinda hurts.",
+            "text": "app1 lines up what {PRONOUN/app1/subject} {VERB/app1/think/thinks} is a perfect pounce, launches - and goes flying into a rock. Well. At least no one saw that. {PRONOUN/app1/poss/CAP} ear kind of hurts.",
             "exp": 0,
             "weight": 20,
             "injury": [
