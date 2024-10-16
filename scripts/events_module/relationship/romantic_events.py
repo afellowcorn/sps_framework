@@ -299,9 +299,6 @@ class Romantic_Events:
     @staticmethod
     def handle_new_mate_events(cat):
         """Triggers and handles any events that result in a new mate"""
-        # outsiders don't get to have mate events for now
-        if cat.outside:
-            return
 
         # First, check high love confession
         flag = Romantic_Events.handle_confession(cat)
