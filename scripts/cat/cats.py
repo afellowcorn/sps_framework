@@ -2440,8 +2440,8 @@ class Cat:
             return False
 
         # check that outside status matches
-        if self.outside != other_cat.outside:
-            return False
+        # if self.outside != other_cat.outside:
+        #     return False
 
         # check for age
         if age_restriction:
