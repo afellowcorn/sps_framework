@@ -341,7 +341,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "The betony plants have started to dramatically give up on life as leaf-fall progresses, so p_l takes the opportunity to go harvest from {PRONOUN/p_l/object}, bringing along a patrol to help {PRONOUN/p_l/object} carry the leaves back to the herb stores.",
@@ -612,7 +612,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "As leaf-fall arrives, the blackberry plants burst into fruit, and p_l heads out to take advantage, bringing along anyone who isn't busy with other work.",
@@ -884,7 +884,7 @@
         "min_max_status": {
             "medicine cat": [1, 6],
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "As leaf-fall starts to hint at the cold soon to come, the burdock plants begin to wilt. p_l heads out to replenish the Clan's stocks, bringing along anyone who isn't busy with other work.",
@@ -1156,7 +1156,7 @@
         "min_max_status": {
             "medicine cat": [1, 6],
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "As p_l looks at the twitching tails and wide eyes of the patrol set up to 'help' {PRONOUN/p_l/subject} {VERB/p_l/gather/gathers} catmint, {PRONOUN/p_l/poss} heart sinks. These overly-excited warriors don't look like {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} going to be useful, and p_l only has so much time before the catmint dies off at the end of leaf-fall.",
@@ -1421,7 +1421,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "There's still time this leaf-fall to store away a good harvest of dried but potent daisy leaves, in case c_n's elders need it for {PRONOUN/p_l/poss} joints or cats need to unexpectedly travel. p_l assembles a little group of warriors to help {PRONOUN/p_l/object} carry the herbs.",
@@ -1757,7 +1757,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "Yellow flowers poke out from the leaf litter, signaling that the dandelions haven't given up on growing for the season. p_l heads out to look for {PRONOUN/p_l/object}, bringing a group of {PRONOUN/p_l/poss} Clanmates along for the gathering patrol.",
@@ -2122,7 +2122,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "With leaf-fall washing the world in tones of red and brown, p_l feels the need to gather as many elder leaves as possible, before the season turns and the Clan must survive without new stocks during leaf-bare. There's a particular tree in a sheltered dip along a stream {PRONOUN/p_l/subject} {VERB/p_l/want/wants} to check on today, bringing a group of {PRONOUN/p_l/poss} Clanmates with {PRONOUN/p_l/object}.",
@@ -2574,7 +2574,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh goldenrod for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}.",
@@ -2846,7 +2846,7 @@
         "min_max_status": {
             "medicine cat": [1, 6],
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "p_l sniffs the clean fresh morning air, wondering if {PRONOUN/p_l/subject} can smell juniper berries on the breeze. {PRONOUN/p_l/subject/CAP} {VERB/p_l/assemble/assembles} a patrol to investigate.",
@@ -3685,7 +3685,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh mallow for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object}.",
@@ -4027,7 +4027,7 @@
         "min_max_status": {
             "medicine cat": [1, 6],
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "Leaf-fall holds the last chances to stock up on herbs that will die off in leaf-bare, and p_l heads out to gather fresh marigold for the stores with a patrol of {PRONOUN/p_l/poss} Clanmates to assist {PRONOUN/p_l/object} before the plants wither and die off.",
@@ -4363,7 +4363,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "As the mullein towers impressively over the other plants, it's a good time to harvest it.",
@@ -4634,7 +4634,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "As the oaks are washed with brilliant color, p_l heads out on a gathering patrol with warriors to gather {PRONOUN/p_l/poss} last green leaves.",
@@ -4970,10 +4970,10 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
-        "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. The warriors {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} bringing along seem to regard {PRONOUN/p_l/poss} task as more path clearing and less herb gathering, but if it gets them helpers, p_l isn't too fussed about it.",
+        "intro_text": "p_l is always amused by the plantain's enduring cheerfulness in the face of being trodden on, and it's nice that the plants grow with such enthusiasm right to the end of leaf-fall. The warriors {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} bringing along seem to regard {PRONOUN/p_l/poss} task as more path clearing and less herb gathering, but if it gets {PRONOUN/p_l/object} helpers, p_l isn't too fussed about it.",
         "decline_text": "{PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} stopped before {PRONOUN/p_l/subject} {VERB/p_l/leave/leaves} camp - these warriors are needed elsewhere. p_l's expedition will have to wait.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -5241,7 +5241,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "The ragwort plants start to dramatically give up on life as leaf-fall progresses, and p_l takes the opportunity to go harvest from {PRONOUN/p_l/object}, bringing along a patrol to help {PRONOUN/p_l/object} carry the leaves back to the herb stores.",
@@ -5546,7 +5546,7 @@
                 "weight": 10,
                 "dead_cats": ["app1"],
                 "history_text": {
-                    "reg_death": "m_c died before completing their medicine cat training, having accidentally eaten deathberries."
+                    "reg_death": "m_c died before completing {PRONOUN/m_c/poss} medicine cat training, having accidentally eaten deathberries."
                 }
             },
             {
@@ -5561,7 +5561,7 @@
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c died before completing their medicine cat training, having accidentally eaten deathberries."
+                    "reg_death": "m_c died before completing {PRONOUN/m_c/poss} medicine cat training, having accidentally eaten deathberries."
                 }
             }
         ]
@@ -5809,7 +5809,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "As the tansy plants fight on though leaf-fall to fit in as much life as possible before leaf-bare, p_l goes out to harvest them with a gathering patrol.",
@@ -6222,7 +6222,7 @@
         "max_cats": 6,
         "min_max_status": {
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "The thyme plants are running out of growing time - p_l better go harvest {PRONOUN/p_l/object} before leaf-fall is over, bringing a patrol with {PRONOUN/p_l/object} to help.",
@@ -6576,7 +6576,7 @@
         "min_max_status": {
             "medicine cat": [1, 6],
             "healer cats": [1, 6],
-            "normal adult": [1, 6]
+            "normal adult": [2, 6]
         },
         "weight": 20,
         "intro_text": "In the crisp cool air of a leaf-fall morning, it should be easy to find wild garlic by scent. p_l leads a gathering patrol to do just that.",
