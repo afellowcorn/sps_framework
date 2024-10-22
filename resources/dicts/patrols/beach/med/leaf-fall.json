@@ -66,7 +66,7 @@
                 ]
             },
             {
-                "text": "Not only {PRONOUN/p_l/do/does} {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
+                "text": "Not only {VERB/p_l/do/does} {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
@@ -152,7 +152,7 @@
                 ]
             },
             {
-                "text": "Not only {PRONOUN/p_l/do/does} {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
+                "text": "Not only {VERB/p_l/do/does} {PRONOUN/p_l/subject} not find anything, p_l wants to murder s_c. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} obnoxious, troublesome, childish... and simply not someone p_l enjoys interacting with.",
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["troublesome", "childish"],
