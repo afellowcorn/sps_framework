@@ -30,7 +30,7 @@
                 "text": "By the end of the patrol s_c is able to move steadily with the wind and sand, their movements sure and confident",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["calm", "careful", "sneak"]
+                "stat_trait": ["calm", "careful", "sneaky"]
             }
         ],
         "fail_outcomes": [
