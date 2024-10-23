@@ -92,7 +92,7 @@
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to a dead end only a few fox-lengths from the entrance.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["childish", "impulsive", "playful", "adventurous"],
+                "stat_trait": ["childish", "playful", "adventurous"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -199,7 +199,7 @@
                 "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! {PRONOUN/s_c/subject/CAP}{VERB/s_c/'re/'s} brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["childish", "impulsive", "playful", "adventurous"]
+                "stat_trait": ["childish", "playful", "adventurous"]
             },
             {
                 "text": "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when r_c is snagged by the jaws of the predator. r_c won't make it back to camp...",

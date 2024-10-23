@@ -393,7 +393,7 @@
                 "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face-to-face with a skunk! The whole patrol is sprayed!",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bold", "ambitious", "childish", "impulsive"],
+                "stat_trait": ["bold", "ambitious", "childish"],
                 "prey": ["very_small"]
             },
             {
@@ -454,7 +454,7 @@
                 "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole, only to come face-to-face with a skunk! {PRONOUN/s_c/subject/CAP} is sprayed!",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bold", "ambitious", "childish", "impulsive"]
+                "stat_trait": ["bold", "ambitious", "childish"]
             },
             {
                 "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws. With no other cats around to help, r_c is quickly killed by the predator.",
