@@ -2767,8 +2767,8 @@
                 }
             ],
             "new_cat": [
-                ["kittypet", "meeting", "existing"],
-                ["kittypet", "meeting", "existing"]
+                ["kittypet", "meeting", "exists"],
+                ["kittypet", "meeting", "exists"]
             ],
             "art": "gen_angry_cat_warrior",
             "outsider_rep": -1
@@ -2794,7 +2794,7 @@
                 }
             ],
             "new_cat": [
-                ["dead", "meeting", "existing", "kittypet"],
+                ["dead", "meeting", "exists", "kittypet"],
                 ["kittypet", "meeting"]
             ],
             "art": "gen_gen_newcat_hostile",
@@ -2941,8 +2941,8 @@
                 }
             ],
             "new_cat": [
-                ["kittypet", "meeting", "existing"],
-                ["kittypet", "meeting", "existing"]
+                ["kittypet", "meeting", "exists"],
+                ["kittypet", "meeting", "exists"]
             ],
             "art": "gen_angry_cat_warrior",
             "outsider_rep": -1
@@ -2968,7 +2968,7 @@
                 }
             ],
             "new_cat": [
-                ["dead", "meeting", "existing", "kittypet"],
+                ["dead", "meeting", "exists", "kittypet"],
                 ["kittypet", "meeting"]
             ],
             "art": "gen_gen_newcat_hostile",
