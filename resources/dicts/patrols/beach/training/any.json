@@ -134,8 +134,7 @@
                     "patient",
                     "responsible",
                     "thoughtful",
-                    "wise",
-                    "inquisitive"
+                    "wise"
                 ],
                 "relationships": [
                     {
@@ -310,8 +309,7 @@
                     "patient",
                     "responsible",
                     "thoughtful",
-                    "wise",
-                    "inquisitive"
+                    "wise"
                 ],
                 "relationships": [
                     {
@@ -482,8 +480,7 @@
                     "patient",
                     "responsible",
                     "thoughtful",
-                    "wise",
-                    "inquisitive"
+                    "wise"
                 ],
                 "can_have_stat": ["p_l"],
                 "relationships": [
