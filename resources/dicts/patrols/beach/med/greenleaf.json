@@ -211,7 +211,7 @@
                 "herbs": ["mullein"]
             },
             {
-                "text": "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction - seems like {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} caught two prey in one blow on this trip. {PRONOUN/p_l/subject/CAP}'ll remember that plantain for later.",
+                "text": "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction - seems like {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} caught two prey with one blow on this trip. {PRONOUN/p_l/subject/CAP}'ll remember that plantain for later.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["mullein"]
