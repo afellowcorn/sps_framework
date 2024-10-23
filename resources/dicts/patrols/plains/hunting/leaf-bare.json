@@ -3853,7 +3853,7 @@
             {"text": "r_c snarls. {PRONOUN/r_c/subject/CAP} {VERB/r_c/are/is} too cold and too hungry to watch a stupid fox. This will be a hard hunt, r_c snaps, and if the others can't focus, then they should go huddle with the kits at camp.",
             "exp": 0,
             "weight": 15, 
-            "prey": ["very small"],
+            "prey": ["very_small"],
             "relationships": [
                 {
                     "cats_to": ["r_c"],
