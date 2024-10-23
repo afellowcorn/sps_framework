@@ -494,7 +494,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -661,7 +660,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -874,7 +872,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -971,7 +968,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -1060,7 +1056,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -1164,7 +1159,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2360,7 +2354,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2447,7 +2440,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2543,7 +2535,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2634,7 +2625,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2944,7 +2934,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -3308,7 +3297,7 @@
                 "text": "s_c cannot relate to the frankly nightmarish scenes app1 has been tormented by, but {PRONOUN/s_c/subject} can't believe {PRONOUN/s_c/poss} Clanmate has been going through so much without anybody noticing. Wrapping {PRONOUN/s_c/poss} tail around app1's shoulders, {PRONOUN/s_c/subject} tell app1 this will all be alright - {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} going to make sure that app1 doesn't have to shoulder this burden alone.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["calm", "compassionate", "empathetic", "faithful", "strange"],
+                "stat_trait": ["calm", "compassionate", "faithful", "strange"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -3683,7 +3672,6 @@
                 "prey": ["small"],
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -3738,7 +3726,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",

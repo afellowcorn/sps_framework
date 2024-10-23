@@ -437,7 +437,7 @@
                 "text": "The patrol follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c is hesitant, but insists that the patrol at least escort the wounded warrior to the border.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["altruistic", "compassionate", "empathetic", "calm"],
+                "stat_trait": ["altruistic", "compassionate", "calm"],
                 "other_clan_rep": 2
             }
         ],
@@ -536,7 +536,7 @@
                 "text": "s_c follows the scent and finds a wounded o_c_n warrior. It seems the cat had been caught by a dog and chased into c_n territory. The dog is gone now, but the warrior can't make it back across the border on their own. s_c is hesitant, but insists that {PRONOUN/s_c/subject} at least escort the wounded warrior to the border.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["altruistic", "compassionate", "empathetic", "calm"],
+                "stat_trait": ["altruistic", "compassionate", "calm"],
                 "other_clan_rep": 2
             }
         ],
@@ -644,7 +644,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -790,7 +789,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -948,7 +946,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -1112,7 +1109,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -1242,7 +1238,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -1379,7 +1374,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -1525,7 +1519,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -1683,7 +1676,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -1848,7 +1840,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -1977,7 +1968,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2114,7 +2104,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2260,7 +2249,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2418,7 +2406,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2583,7 +2570,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2713,7 +2699,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2850,7 +2835,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -2996,7 +2980,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -3154,7 +3137,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -3319,7 +3301,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
@@ -3449,7 +3430,6 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
                     "patient",
