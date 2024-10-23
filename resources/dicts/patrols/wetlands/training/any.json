@@ -43,7 +43,7 @@
                 "text": "s_c struggles to take the lesson seriously, and the training session ends early with no real progress made.",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["troublesome", "playful", "noisy"]
+                "stat_trait": ["troublesome", "playful"]
             }
         ]
     },
