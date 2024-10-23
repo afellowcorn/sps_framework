@@ -4052,8 +4052,8 @@
                 "text": "s_c rolls {PRONOUN/s_c/poss} eyes. That kind of information is only for very <i>important</i> cats - which doesn't include app2, s_c is quick to inform {PRONOUN/app2/object}. Now run along and help gather herbs like a good little apprentice.",
                 "exp": 10,
                 "weight": 40,
-                "can_have_stat": "healer",
-                "stat_trait": "arrogant",
+                "can_have_stat": ["healer"],
+                "stat_trait": ["arrogant"],
                 "herbs": ["random_herbs"],
                 "relationship": [
                     {
@@ -4075,7 +4075,7 @@
                 "text": "No way, does app2 want to get them both in trouble? They're looking for <i>herbs</i>, not poison. s_c flatly refuses and the apprentices get on with their assignment.",
                 "exp": 10,
                 "weight": 40,
-                "can_have_stat": "healer",
+                "can_have_stat": ["healer"],
                 "stat_trait": [ "loyal", "strict", "responsible", "righteous" ],
                 "herbs": ["random_herbs"],
                 "relationship": [
