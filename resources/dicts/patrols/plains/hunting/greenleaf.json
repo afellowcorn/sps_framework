@@ -2093,7 +2093,7 @@
                         "cats_to": ["r_c"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["respect,trust"],
+                        "values": ["respect", "trust"],
                         "amount": 5
                     }
         ]

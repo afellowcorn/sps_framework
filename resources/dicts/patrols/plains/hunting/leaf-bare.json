@@ -3831,7 +3831,7 @@
                 "cats_to": ["s_c"],
                 "cats_from": ["patrol"],
                 "mutual": false,
-                "values": ["respect, trust, platonic"],
+                "values": ["respect", "trust", "platonic"],
                 "amount": 5
             } ] }, 
         {
@@ -3859,7 +3859,7 @@
                     "cats_to": ["r_c"],
                     "cats_from": ["patrol"],
                     "mutual": true,
-                    "values": ["platonic, respect, trust"],
+                    "values": ["platonic", "respect", "trust"],
                     "amount": -5
                 }
             ]

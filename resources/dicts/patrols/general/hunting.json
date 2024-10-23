@@ -4030,7 +4030,7 @@
 		{
             	"cats_to": ["s_c"],
             	"cats_from": ["r_c"],
-            	"values": ["dislike", "jealousy"],
+            	"values": ["dislike", "jealous"],
             	"amount": -5
 		}
 	    ],

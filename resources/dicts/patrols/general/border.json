@@ -2686,7 +2686,7 @@
                 {
                     "cats_from": ["n_c:0", "n_c:1"],
                     "cats_to": ["patrol"],
-                    "mutual": "true",
+                    "mutual": true,
                     "values": ["platonic", "trust", "comfort"],
                     "amount": 10
                 }
@@ -2860,7 +2860,7 @@
                 {
                     "cats_from": ["n_c:0", "n_c:1"],
                     "cats_to": ["patrol"],
-                    "mutual": "true",
+                    "mutual": true,
                     "values": ["platonic", "trust", "comfort"],
                     "amount": 10
                 }
