@@ -11503,10 +11503,8 @@
                     }
 		],
                 "weight": 10
-            }
+            },
 
-        ]
-    },
     {
                 "text": "Mistiming {PRONOUN/app1/poss} jump, app1 ends up sprawled on the ground after his failed battle move. Even worse, {PRONOUN/app1/subject} {VERB/app1/catch/catches} sight of s_c rolling {PRONOUN/app2/poss} eyes on the sidelines.",
                 "exp": 0,
@@ -11561,7 +11559,9 @@
                     }
 		],
                 "weight": 5
-     },
+     }
+    ]
+    },
      {
         "patrol_id": "gen_train_kittypets_lesson",
         "biome": ["any"],
