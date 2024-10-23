@@ -3815,8 +3815,6 @@
         },
         "weight": 20,
         "chance_of_success": 30,
-        "relationship_constraint": null,
-        "pl_skill_constraint": null,
         "intro_text": "Leaf-bare is taking its toll. The patrol is cold, frustrated, and most of all, hungry. p_l notices something odd. Is that a fox in the distance? Why is it jumping into the snow like that?",
         "decline_text": "First the cold, and the snow, and now a fox? This is too much for one day, p_l decides. Back to camp, another patrol can try again later.",
         "success_outcomes": [
