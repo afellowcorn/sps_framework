@@ -2112,8 +2112,8 @@
                         "amount": -5
                     }
                 ],
-                "injury": 
-    {
+                "injury": [
+                    {
                         "cats": ["r_c"],
                         "injuries": ["snake bite","poisoned"],
                         "scars": ["SNAKE"],
@@ -2123,6 +2123,7 @@
                             "lead_death": "a rattlesnake while hunting."
                         }
                     }
+                ]
                 
             },
             {
@@ -2138,8 +2139,8 @@
                         "amount": -5
                     }
                 ],
-                "injury": 
-    {
+                "injury": [
+                    {
                         "cats": ["r_c"],
                         "injuries": ["snake bite","poisoned","damaged eyes"],
                         "scars": ["RIGHTBLIND","LEFTBLIND","BOTHBLIND"],
@@ -2150,6 +2151,7 @@
                         "lead_death": "a rattlesnake while hunting."}
                         
                     }
+                ]
     
             },
             {

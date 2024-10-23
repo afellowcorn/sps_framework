@@ -4280,10 +4280,12 @@
                     }
                 ],
                 "injury":
-                    {
-                                "cats": [ "app2" ],
-                                "injuries": [ "poisoned" ]
-                    },
+                    [
+                        {
+                            "cats": [ "app2" ],
+                            "injuries": [ "poisoned" ]
+                        }
+                    ],
                 "history_text": {
                         "reg_death": "m_c died after tasting deathberries out of curiosity.",
                         "lead_death": "died after tasting deathberries"

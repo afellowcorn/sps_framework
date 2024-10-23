@@ -161,7 +161,12 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["bloodthirsty", "vengeful", "loyal", "fierce"],
-                "injury":["minor_injury", "minor_injury", "minor_injury"],
+                "injury": [
+                    {
+                        "cats": ["s_c"],
+                        "injuries": ["minor_injury"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
