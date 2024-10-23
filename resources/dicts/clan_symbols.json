@@ -152,8 +152,8 @@
     "tags0": ["plant", "flower"]
   }, 
   "Blotch": {
-    "variants": 0,
-    "tags0": ["descriptor"]
+    "variants": 1,
+    "tags0": ["descriptor", "miscellaneous"]
   }, 
   "Bluebell": {
     "variants": 1, 
@@ -276,8 +276,8 @@
     "tags0": ["plant"]
   },
   "Buttercup": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "flower"]
   },
   "Butterfly": {
     "variants": 1,
@@ -288,8 +288,8 @@
     "tags0": ["animal", "bird"]
   },
   "Canary": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "bird"]
   },
   "Carnation": {
     "variants": 0,
@@ -344,8 +344,8 @@
     "tags0": ["animal", "bug" ]
   },
   "Cinder": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "fire"]
   },
   "Claw": {
     "variants": 0,
@@ -568,8 +568,8 @@
     "tags0": ["animal", "bird"]
   }, 
   "Dusk": {
-    "variants": 0,
-    "tags0": ["miscellaneous"]
+    "variants": 1,
+    "tags0": ["miscellaneous", "element", "light"]
   }, 
   "Eagle": {
     "variants": 1, 
@@ -665,8 +665,8 @@
     "tags0": ["animal", "mammal"]
   },
   "Fig": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant"]
   },
   "Fin": {
     "variants": 1,
@@ -681,7 +681,7 @@
     "tags0": ["plant", "tree"]
   },
   "Fire": {
-    "variants": 0,
+    "variants": 1,
     "tags0": ["element", "fire"]
   },
   "Fish": {
@@ -701,24 +701,24 @@
     "tags0": []
   },
   "Flash": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "light"]
   }, 
   "Flax": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "flower"]
   }, 
   "Fleck": {
     "variants": 1,
     "tags0": ["descriptor"]
   }, 
   "Fleet": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["miscellaneous"]
   }, 
   "Flicker": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["fire", "element"]
   }, 
   "Flight": {
     "variants": 1, 
@@ -733,8 +733,8 @@
     "tags0": []
   }, 
   "Flit": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "fish"]
   }, 
   "Flood": {
     "variants": 1, 
@@ -749,16 +749,16 @@
     "tags0": ["descriptor"]
   }, 
   "Fluffy": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["cat", "animal"]
   },
   "Flurry": {
     "variants": 0,
     "tags0": []
   },
   "Flutter": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "bug"]
   }, 
   "Fly": {
     "variants": 0,
@@ -1198,7 +1198,7 @@
   }, 
   "Lynx": {
     "variants": 1,
-    "tags0": []
+    "tags0": ["animal", "mammal"]
   },
   "Lyre": {
     "variants": 0,
@@ -1781,8 +1781,9 @@
     "tags0": []
   },
   "Shrike": {
-    "variants": 0,
-    "tags0": []
+    "variants": 2,
+    "tags0": ["bird", "animal"],
+    "tags1": ["animal", "mammal"]
   },
   "Shrub": {
     "variants": 1,
