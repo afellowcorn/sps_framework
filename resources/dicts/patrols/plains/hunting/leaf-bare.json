@@ -1343,11 +1343,11 @@
                         "scars": []
                     }
                 ],
-                "history_text": [
-                    {"reg_death": "m_c perished after being frostbitten on patrol."},
-                    {"lead_death": "couldn't recover after freezing on patrol"},
-                    {"scar": "m_c was frostbitten as an apprentice while hunting."}
-                ]
+                "history_text": {
+                    "reg_death": "m_c perished after being frostbitten on patrol.",
+                    "lead_death": "couldn't recover after freezing on patrol",
+                    "scar": "m_c was frostbitten as an apprentice while hunting."
+                }
             }
         ]
     },
