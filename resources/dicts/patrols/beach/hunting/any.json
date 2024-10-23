@@ -5301,7 +5301,7 @@
         "patrol_id": "bch_hunt_frogman1",
         "biome": ["beach"],
         "season": ["any"],
-        "types": ["hunt"],
+        "types": ["hunting"],
         "tags": ["halloween"],
         "patrol_art": "loveland_frog_INTRO",
         "min_cats": 2,
