@@ -1,7 +1,7 @@
 {
   "Adder": {
     "variants": 1,
-    "tags0": ["animal", "other animals"]
+    "tags0": ["animal", "other animal"]
   },
   "Air": {
     "variants": 1,
@@ -25,11 +25,11 @@
   },
   "Apple": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "fruit"]
   },
   "Apricot": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "fruit"]
   },
   "Arch": {
     "variants": 1,
@@ -53,7 +53,7 @@
   },
   "Barley": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   },
   "Basil": {
     "variants": 1,
@@ -89,7 +89,7 @@
   },
   "Beech": {
     "variants": 0,
-    "tags0": ["plant"]
+    "tags0": []
   },
   "Beetle": {
     "variants": 1,
@@ -97,7 +97,7 @@
   },
   "Berry": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "fruit"]
   },
   "Big": {
     "variants": 1, 
@@ -109,7 +109,7 @@
   },
   "Birch": {
     "variants": 0,
-    "tags0": ["plant"]
+    "tags0": []
   },
   "Bird": {
     "variants": 1,
@@ -177,7 +177,7 @@
   }, 
   "Bough": {
     "variants": 1, 
-    "tags0": ["plant"]
+    "tags0": ["plant", "tree"]
   }, 
   "Boulder": {
     "variants": 0,
@@ -189,11 +189,11 @@
   }, 
   "Bracken": {
     "variants": 1, 
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   },
   "Bramble": {
     "variants": 1, 
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   },
   "Branch": {
     "variants": 1,
@@ -233,7 +233,7 @@
   }, 
   "Brush": {
     "variants": 1, 
-    "tags0": ["plant", "location"]
+    "tags0": ["plant", "location", "other plant"]
   }, 
   "Bubbling": {
     "variants": 1, 
@@ -265,7 +265,7 @@
   },
   "Burr": {
     "variants": 1, 
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Burrow": {
     "variants": 1,
@@ -273,7 +273,7 @@
   }, 
   "Bush": {
     "variants": 1, 
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   },
   "Buttercup": {
     "variants": 1,
@@ -293,7 +293,7 @@
   },
   "Carnation": {
     "variants": 0,
-    "tags0": ["plant"]
+    "tags0": []
   }, 
   "Carp": {
     "variants": 1, 
@@ -321,7 +321,7 @@
   }, 
   "Cherry": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "fruit"]
   }, 
   "Chervil": {
     "variants": 1, 
@@ -329,7 +329,7 @@
   }, 
   "Chestnut": {
     "variants": 1, 
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Chirp": {
     "variants": 0,
@@ -337,7 +337,7 @@
   }, 
   "Chive": {
     "variants": 1, 
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Cicada": {
     "variants": 1,
@@ -373,7 +373,7 @@
   },
   "Clover": {
     "variants": 0,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Comfrey": {
     "variants": 1, 
@@ -385,15 +385,15 @@
   }, 
   "Cone": {
     "variants": 1, 
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Conifer": {
     "variants": 0,
-    "tags0": ["plant"]
+    "tags0": []
   }, 
   "Conker": {
     "variants": 1, 
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Copse": {
     "variants": 1, 
@@ -425,7 +425,7 @@
   }, 
   "Cress": {
     "variants": 1, 
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Crest": {
     "variants": 1, 
@@ -461,7 +461,7 @@
   }, 
   "Curlew": {
     "variants": 0,
-    "tags0": ["plant"]
+    "tags0": []
   }, 
   "Curly": {
     "variants": 1,
@@ -509,11 +509,11 @@
   }, 
   "Dawn": {
     "variants": 0,
-    "tags0": ["miscellaneous"]
+    "tags0": ["miscellaneous", "element", "light"]
   },
   "Day": {
     "variants": 1,
-    "tags0": ["miscellaneous"]
+    "tags0": ["miscellaneous", "element", "light"]
   },
   "Dazzle": {
     "variants": 1,
@@ -642,7 +642,7 @@
   }, 
   "Fennel": {
     "variants": 1, 
-    "tags0": ["plant"]
+    "tags0": ["plant", "flower"]
   }, 
   "Fern": {
     "variants": 1,
@@ -654,7 +654,7 @@
   }, 
   "Fickle": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "leaf"]
   },
   "Fidget": {
     "variants": 1,
@@ -666,7 +666,7 @@
   },
   "Fig": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "fruit"]
   },
   "Fin": {
     "variants": 1,
@@ -790,7 +790,7 @@
   }, 
   "Frog": {
     "variants": 1, 
-    "tags0": ["animal", "other animals"]
+    "tags0": ["animal", "other animal"]
   }, 
   "Frond": {
     "variants": 0,
@@ -922,7 +922,7 @@
   }, 
   "Hatch": {
     "variants": 1, 
-    "tags0": ["animal", "other animals"]
+    "tags0": ["animal", "other animal"]
   }, 
   "Haven": {
     "variants": 1, 
@@ -1365,11 +1365,11 @@
   }, 
   "Oak": {
     "variants": 1,
-    "tags0": ["plant", "tree"]
+    "tags0": ["plant", "leaf"]
   }, 
   "Oat": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Odd": {
     "variants": 0,
@@ -1438,7 +1438,7 @@
   }, 
   "Pear": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "fruit"]
   }, 
   "Peat": {
     "variants": 0,
@@ -1614,7 +1614,7 @@
   }, 
   "Reed": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Ridge": {
     "variants": 0, 
@@ -1658,7 +1658,7 @@
   }, 
   "Root": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Rose": {
     "variants": 0, 
@@ -1670,7 +1670,7 @@
   }, 
   "Rowan": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "fruit"]
   }, 
   "Rubble": {
     "variants": 1,
@@ -1690,11 +1690,11 @@
   }, 
   "Rush": {
     "variants": 1,
-    "tags0": ["plant", "location"]
+    "tags0": ["plant", "location", "other plant"]
   }, 
   "Rye": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Sable": {
     "variants": 1,
@@ -1726,11 +1726,11 @@
   },
   "Seed": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Serpent": {
     "variants": 1,
-    "tags0": ["animal", "other animals"]
+    "tags0": ["animal", "other animal"]
   },
   "Shade": {
     "variants": 1,
@@ -1787,7 +1787,7 @@
   },
   "Shrub": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Shy": {
     "variants": 1,
@@ -1840,7 +1840,7 @@
   }, 
   "Sloe": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "fruit"]
   }, 
   "Slope": {
     "variants": 1,
@@ -1860,11 +1860,11 @@
   },
   "Snail": {
     "variants": 1,
-    "tags0": ["animal", "other animals"]
+    "tags0": ["animal", "other animal"]
   }, 
   "Snake": {
     "variants": 1,
-    "tags0": ["animal", "other animals"]
+    "tags0": ["animal", "other animal"]
   }, 
   "Snap": {
     "variants": 1,
@@ -1900,7 +1900,7 @@
   },
   "Sorrel": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "flower"]
   }, 
   "Spark": {
     "variants": 0,
@@ -1936,7 +1936,7 @@
   }, 
   "Spore": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Spot": {
     "variants": 1,
@@ -1952,7 +1952,7 @@
   }, 
   "Sprout": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Spruce": {
     "variants": 1,
@@ -1972,7 +1972,7 @@
   }, 
   "Stem": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Stoat": {
     "variants": 0,
@@ -2020,7 +2020,7 @@
   }, 
   "Swamp": {
     "variants": 1,
-    "tags0": ["plant", "location"]
+    "tags0": ["plant", "other plant", "location"]
   },
   "Swan": {
     "variants": 1,
@@ -2032,7 +2032,7 @@
   }, 
   "Sweet": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "fruit"]
   }, 
   "Swift": {
     "variants": 1,
@@ -2040,13 +2040,13 @@
   }, 
   "Sycamore": {
     "variants": 1,
-    "tags0": ["plant", "tree"]
+    "tags0": ["plant", "leaf"]
   }, 
   "Tadpole": {
     "variants": 3,
-    "tags0": ["animal", "other animals"],
-    "tags1": ["animal", "other animals"],
-    "tags2": ["animal", "other animals"]
+    "tags0": ["animal", "other animal"],
+    "tags1": ["animal", "other animal"],
+    "tags2": ["animal", "other animal"]
   }, 
   "Tall": {
     "variants": 1, 
@@ -2054,7 +2054,7 @@
   }, 
   "Talon": {
     "variants": 1,
-    "tags0": ["animal"]
+    "tags0": ["animal", "other animal"]
   }, 
   "Tangle": {
     "variants": 0,
@@ -2096,7 +2096,7 @@
   }, 
   "Thunder": {
     "variants": 1,
-    "tags0": ["element"]
+    "tags0": ["element", "light"]
   }, 
   "Thyme": {
     "variants": 0,
@@ -2116,7 +2116,7 @@
   }, 
   "Toad": {
     "variants": 1,
-    "tags0": ["animal", "other"]
+    "tags0": ["animal", "other animal"]
   }, 
   "Torn": {
     "variants": 1,
@@ -2158,7 +2158,7 @@
   },
   "Twig": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   },
   "Twilight": {
     "variants": 1,
@@ -2222,7 +2222,7 @@
   }, 
   "Wheat": {
     "variants": 1,
-    "tags0": ["plant"]
+    "tags0": ["plant", "other plant"]
   }, 
   "Whimsy": {
     "variants": 1, 
@@ -2294,7 +2294,7 @@
   }, 
   "Worm": {
     "variants": 1,
-    "tags0": ["other animals", "animal"]
+    "tags0": ["other animal", "animal"]
   }, 
   "Wren": {
     "variants": 0,
