@@ -61,7 +61,7 @@
                 "text": "s_c stops the patrol before they can move to enter the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment but could return soon. The patrol quickly moves on.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["careful", "wise", "patient", "responsible"],
+                "stat_trait": ["careful", "wise", "responsible"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -186,7 +186,7 @@
                 "text": "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment but could return soon. The patrol quickly moves on.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["careful", "wise", "patient", "responsible"]
+                "stat_trait": ["careful", "wise", "responsible"]
             }
         ],
         "fail_outcomes": [
@@ -1552,8 +1552,7 @@
                     "charismatic",
                     "childish",
                     "playful",
-                    "loving",
-                    "patient"
+                    "loving"
                 ],
                 "relationships": [
                     {

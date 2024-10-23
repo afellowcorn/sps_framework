@@ -127,7 +127,6 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise",
@@ -288,7 +287,6 @@
                 "exp": 30,
                 "weight": 20,
                 "stat_trait": [
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise",
@@ -415,7 +413,6 @@
                     "compassionate",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -650,7 +647,6 @@
                     "compassionate",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -821,7 +817,6 @@
                     "compassionate",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"

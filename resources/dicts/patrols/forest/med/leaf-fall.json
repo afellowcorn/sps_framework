@@ -2884,7 +2884,7 @@
                 "text": "Night falls, but still s_c keeps going - {PRONOUN/s_c/subject} just can't let c_n go without. Exhausted, but determined, the medicine cat persists until {PRONOUN/s_c/subject} {VERB/s_c/find/finds} the precious, speckled leaves.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["patient", "ambitious"],
+                "stat_trait": ["ambitious"],
                 "herbs": ["lungwort"],
                 "relationships": [
                     {

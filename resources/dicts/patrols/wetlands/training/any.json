@@ -30,7 +30,7 @@
                 "text": "By the end of the patrol, s_c is able to hide in the water, {PRONOUN/s_c/poss} movements barely creating ripples.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["calm", "careful", "sneaky", "quiet", "patient"]
+                "stat_trait": ["calm", "careful", "sneaky", "quiet"]
             }
         ],
         "fail_outcomes": [
@@ -113,7 +113,6 @@
                     "compassionate",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -256,7 +255,6 @@
                     "compassionate",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
