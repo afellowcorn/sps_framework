@@ -11508,7 +11508,7 @@
     {
                 "text": "Mistiming {PRONOUN/app1/poss} jump, app1 ends up sprawled on the ground after his failed battle move. Even worse, {PRONOUN/app1/subject} {VERB/app1/catch/catches} sight of s_c rolling {PRONOUN/app2/poss} eyes on the sidelines.",
                 "exp": 0,
-		"stat_skill": ["arrogant", "bloodthirsty", "cold", "competitive", "cunning", "fierce", "gloomy", "grumpy", "vengeful"],
+		        "stat_trait": ["arrogant", "bloodthirsty", "cold", "competitive", "cunning", "fierce", "gloomy", "grumpy", "vengeful"],
                 "can_have_stat": ["app2"],
                 "relationships": [
                     {
@@ -11529,7 +11529,7 @@
      {
                 "text": "Though s_c reassures app1 {PRONOUN/app1/poss} battle move was great, app1 can tell {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} just being kind. Honestly, app1 wished {PRONOUN/s_c/subject}'d just call {PRONOUN/app1/object} a mousebrain.",
                 "exp": 0,
-		"stat_skill": ["calm", "careful", "compassionate", "loving", "insecure", "nervous", "thoughtful"],
+		        "stat_trait": ["calm", "careful", "compassionate", "loving", "insecure", "nervous", "thoughtful"],
                 "can_have_stat": ["app2"],
                 "relationships": [
                     {
