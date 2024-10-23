@@ -49,7 +49,7 @@
                 "text": "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["altruistic", "compassionate", "faithful", "loving"],
+                "stat_trait": ["compassionate", "faithful", "loving"],
                 "prey": ["medium"],
                 "relationships": [
                     {
@@ -1793,7 +1793,7 @@
                 "text": "s_c really keeps the patrol on task and motivated through the sharp cold of the leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n.",
                 "exp": 10,
                 "weight": 20,
-                "stat_trait": ["altruistic", "compassionate", "faithful", "loving"],
+                "stat_trait": ["compassionate", "faithful", "loving"],
                 "prey": ["medium"],
                 "relationships": [
                     {
