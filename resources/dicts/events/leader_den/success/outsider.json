@@ -527,7 +527,7 @@
     "rep_change": -3,
     "m_c": {
       "status": [ "former clancat" ],
-      "new_thought": "Thinks bitterly of {PRONOUN/m_c/poss} old Clan, wishing it had protected {PRONOUN/m_c/object",
+      "new_thought": "Thinks bitterly of {PRONOUN/m_c/poss} old Clan, wishing it had protected {PRONOUN/m_c/object}",
       "kit_thought": "Wonders where m_c has gone"
     }
   },
