@@ -12087,6 +12087,21 @@
 	"intro_text": "Since they have three cats, p_l suggests they practice two-on-one fighting.",
 	"decline_text": "r_c announces {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to practice stalking instead.",
 	"success_outcomes": [
+        {
+            "text": "p_l organizes the patrol into a spar, and the cats congratulate after each other on a good fight.",
+            "exp": 5,
+        "weight": 1,
+            "relationships": [
+        {
+                    "cats_to": ["patrol"],
+                    "cats_from": ["patrol"],
+                    "mutual": false,
+                    "values": ["comfort", "respect", "platonic"],
+                    "amount": 5
+        }
+        ],
+        "art": "train_general_intro"
+        },
 		{
             "text": "p_l waggles {PRONOUN/p_l/poss} haunches and dares r_c and s_c to come at {PRONOUN/p_l/object}. The three cats tussle until r_c distracts p_l with a sheathed strike to {PRONOUN/p_l/poss} ear, and s_c pins {PRONOUN/p_l/object} down. They congratulate each other as they head back to camp.",
             "exp": 5,
