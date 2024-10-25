@@ -5,14 +5,14 @@ import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
-from scripts.conditions import (
-    medical_cats_condition_fulfilled,
-    get_amount_cat_for_one_medic,
-)
 from scripts.clan_resources.freshkill import (
     FRESHKILL_ACTIVE,
     MAL_PERCENTAGE,
     STARV_PERCENTAGE,
+)
+from scripts.conditions import (
+    medical_cats_condition_fulfilled,
+    get_amount_cat_for_one_medic,
 )
 from scripts.event_class import Single_Event
 from scripts.events_module.handle_short_events import handle_short_events
@@ -22,7 +22,6 @@ from scripts.utility import (
     event_text_adjust,
     get_alive_status_cats,
     get_leader_life_notice,
-    get_random_moon_cat,
 )
 
 
