@@ -2066,7 +2066,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> {PRONOUN/p_l/subject/CAP} specifically ensure that, when {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp with the additions to the herb stores, the whole camp sees {PRONOUN/p_l/object} praising {PRONOUN/p_l/poss} long-suffering patrol to the leader.",
+                "text": "p_l can't say it's <i>fun,</i> swiping away snow to scrounge for the stems and roots of wilted dandelions below, but what matters currently is that it's <i>possible.</i> {PRONOUN/p_l/subject/CAP} specifically {VERB/p_l/ensure/ensures}  that, when {PRONOUN/p_l/subject} {VERB/p_l/return/returns} to camp with the additions to the herb stores, the whole camp sees {PRONOUN/p_l/object} praising {PRONOUN/p_l/poss} long-suffering patrol to the leader.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["dandelion"],
