@@ -425,7 +425,7 @@ class Pregnancy_Events:
         else:
             event_list.append(choice(events["birth"]["unmated_parent"]))
 
-        involved_cats += kits
+        involved_cats += [k.ID for k in kits]
 
         if clan.game_mode != "classic":
             try:
