@@ -12116,7 +12116,7 @@
                     "amount": 7
         }
         ],
-        "art": "patrol_outcome_art"
+        "art": "train_general_intro"
 },
 {
     "text": "p_l suggests that {PRONOUN/p_l/subject} and r_c team up against s_c. Though s_c does {PRONOUN/s_c/poss} best, {PRONOUN/s_c/subject} {VERB/s_c/do/does}n't stand much of a chance against two of {PRONOUN/s_c/poss} Clanmates.",
