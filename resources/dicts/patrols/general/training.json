@@ -12304,7 +12304,7 @@
             "text": "p_l suggests that {PRONOUN/p_l/subject} and r_c team up against s_c. s_c warily agrees, but {PRONOUN/s_c/subject} {VERB/s_c/have/has} nothing to worry about. Even outnumbered, s_c proves {PRONOUN/s_c/poss} talent in battle, and r_c and p_l heap praise on {PRONOUN/s_c/object} after the bout.",
             "exp": 10,
             "weight": 40,
-            "stat_trait": [ "gloomy", "lonsome", "insecure", "nervous" ],
+            "stat_trait": [ "gloomy", "lonesome", "insecure", "nervous" ],
             "stat_skill": [ "FIGHTER,2"],
             "relationships": [
         {
