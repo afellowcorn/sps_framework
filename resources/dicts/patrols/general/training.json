@@ -12088,7 +12088,7 @@
 	"decline_text": "r_c announces {PRONOUN/r_c/subject} {VERB/r_c/want/wants} to practice stalking instead.",
 	"success_outcomes": [
         {
-            "text": "p_l organizes the patrol into a spar, and the cats congratulate after each other on a good fight.",
+            "text": "p_l organizes the patrol into a spar, and the cats congratulate each other on a good fight.",
             "exp": 5,
         "weight": 1,
             "relationships": [
