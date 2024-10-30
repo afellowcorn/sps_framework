@@ -733,10 +733,12 @@ class Condition_Events:
                             f"WARNING: No entry in gain_permanent_condition_strings for injury '{injury}' causing "
                             f"condition '{condition_got}'. Using default."
                         )
-                        possible_string_list = (
-                            f"After m_c's {injury} healed, {{PRONOUN/m_c/subject}} now {{VERB/m_c/have/has}} "
-                            f"{condition_got}. [Please report this if you see it!]",
-                        )
+                        possible_string_list = [
+                            (
+                                f"After m_c's {injury} healed, {{PRONOUN/m_c/subject}} now {{VERB/m_c/have/has}} "
+                                f"{condition_got}. [Please report this if you see it!]",
+                            )
+                        ]
                     # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = random.randrange(0, len(possible_string_list))
 
