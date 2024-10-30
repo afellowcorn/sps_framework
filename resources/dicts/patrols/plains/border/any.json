@@ -1670,10 +1670,10 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cat_to": ["patrol"],
-                        "cat_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["platonic, comfort"],
+                        "values": ["platonic", "comfort"],
                         "amount": 5
                     }
                     
