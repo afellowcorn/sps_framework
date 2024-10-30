@@ -75,7 +75,6 @@
                     "compassionate",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -247,7 +246,7 @@
                     "shameless",
                     "arrogant",
                     "grumpy",
-                    "oblivous"
+                    "oblivious"
                 ],
                 "relationships": [
                     {
@@ -368,7 +367,7 @@
                     "sneaky",
                     "grumpy",
                     "cunning",
-                    "oblivous"
+                    "oblivious"
                 ]
             }
         ]
@@ -784,7 +783,7 @@
                     "nervous",
                     "insecure",
                     "gloomy",
-                    "oblivous"
+                    "oblivious"
                 ]
             },
             {
@@ -2268,7 +2267,7 @@
                 "text": "s_c sits down and motions for app1 to join {PRONOUN/s_c/object}, looking at {PRONOUN/app1/object} inquisitively. app1 tentatively explains that {PRONOUN/app1/subject}{VERB/app1/'re/'s} curious about herbs but {VERB/app1/are/is} worried that desire to learn is detrimental to {PRONOUN/app1/poss} progress as a warrior. s_c reassures {PRONOUN/app1/object} that nobody would think less of {PRONOUN/app1/object} for that, and it's good to know the basics. s_c promises to teach {PRONOUN/app1/object} when they get back to camp.",
                 "exp": 20,
                 "weight": 20,
-                "stat_trait": ["compassionate", "patient", "wise"],
+                "stat_trait": ["compassionate", "wise"],
                 "herbs": ["random_herbs"],
                 "relationships": [
                     {
@@ -3356,7 +3355,6 @@
                 "stat_trait": [
                     "compassionate",
                     "loving",
-                    "patient",
                     "thoughtful"
                 ],
                 "can_have_stat": ["r_c"],
@@ -3462,7 +3460,6 @@
                 "stat_trait": [
                     "compassionate",
                     "loving",
-                    "patient",
                     "thoughtful"
                 ],
                 "can_have_stat": ["r_c"],
@@ -3570,7 +3567,6 @@
                 "stat_trait": [
                     "compassionate",
                     "loving",
-                    "patient",
                     "thoughtful"
                 ],
                 "can_have_stat": ["p_l"],
