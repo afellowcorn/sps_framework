@@ -142,6 +142,7 @@ class Cat:
         backstory="clanborn",
         parent1=None,
         parent2=None,
+        adoptive_parents=None,
         suffix=None,
         specsuffix_hidden=False,
         ID=None,
@@ -199,7 +200,7 @@ class Cat:
         )
         self.parent1 = parent1
         self.parent2 = parent2
-        self.adoptive_parents = []
+        self.adoptive_parents = adoptive_parents if adoptive_parents else []
         self.pelt = pelt if pelt else Pelt()
         self.former_mentor = []
         self.patrol_with_mentor = 0
@@ -631,7 +632,7 @@ class Cat:
         """
         compiles grief moon event text
         """
-        if body is True:
+        if body:
             body_status = "body"
         else:
             body_status = "no_body"
@@ -687,7 +688,7 @@ class Cat:
                     major_chance -= 1
 
                 # decrease major grief chance if grave herbs are used
-                if not body_treated and "rosemary" in game.clan.herbs:
+                if body and not body_treated and "rosemary" in game.clan.herbs:
                     body_treated = True
                     game.clan.herbs["rosemary"] -= 1
                     if game.clan.herbs["rosemary"] <= 0:
@@ -2679,6 +2680,7 @@ class Cat:
                                 randint(1, 100 - like) == 1
                                 and self.moons > 11
                                 and the_cat.moons > 11
+                                and self.age == the_cat.age
                             ):
                                 romantic_love = randint(15, 30)
                                 comfortable = int(comfortable * 1.3)
@@ -2698,6 +2700,7 @@ class Cat:
                                 randint(1, 100 - like) == 1
                                 and self.moons > 11
                                 and the_cat.moons > 11
+                                and self.age == the_cat.age
                             ):
                                 romantic_love = randint(15, 30)
                                 comfortable = int(comfortable * 1.3)
