@@ -1931,7 +1931,7 @@
                 ]
             },
             {
-                "text": "Not only does the duo end up soaked to the skin, they can't even find any dandelions under the snow. p_l's left so exhausted that {PRONOUN/p_l/subject} {VERB/p_l/collapse/collapses} on the way back to camp, unable to go any further even with app1's help..",
+                "text": "Not only does the duo end up soaked to the skin, they can't even find any dandelions under the snow. p_l's left so exhausted that {PRONOUN/p_l/subject} {VERB/p_l/collapse/collapses} on the way back to camp, unable to go any further even with app1's help.",
                 "exp": 0,
                 "weight": 5,
                 "dead_cats": ["p_l"],
@@ -1956,7 +1956,7 @@
                 ]
             },
             {
-                "text": "Not only does the duo end up soaked to the skin, they can't even find any dandelions under the snow. app1's left so exhausted that {PRONOUN/app1/subject} {VERB/app1/collapse/collapses} on the way back to camp, unable to go any further even with p_l's help..",
+                "text": "Not only does the duo end up soaked to the skin, they can't even find any dandelions under the snow. app1's left so exhausted that {PRONOUN/app1/subject} {VERB/app1/collapse/collapses} on the way back to camp, unable to go any further even with p_l's help.",
                 "exp": 0,
                 "weight": 5,
                 "dead_cats": ["app1"],
