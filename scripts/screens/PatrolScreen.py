@@ -209,6 +209,11 @@ class PatrolScreen(Screens):
             self.update_button()
         elif event.ui_element == self.elements["patrol_start"]:
             self.selected_cat = None
+            if (
+                self.start_patrol_thread is not None
+                and self.start_patrol_thread.is_alive()
+            ):
+                return
             self.start_patrol_thread = self.loading_screen_start_work(
                 self.run_patrol_start, "start"
             )
@@ -257,6 +262,11 @@ class PatrolScreen(Screens):
             inp = "antagonize"
 
         if inp:
+            if (
+                self.proceed_patrol_thread is not None
+                and self.proceed_patrol_thread.is_alive()
+            ):
+                return
             self.proceed_patrol_thread = self.loading_screen_start_work(
                 self.run_patrol_proceed, "proceed", (inp,)
             )
