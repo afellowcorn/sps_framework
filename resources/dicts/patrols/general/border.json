@@ -367,6 +367,7 @@
                 "text": "The patrol gathers their courage and valiantly drives away the dog. Together, working as one, and with all the strength of StarClan behind them, the patrol harries the dog. By keeping up a series of small skirmishes through the entire day, they drive it all the way off c_n territory.",
                 "exp": 20,
                 "weight": 5,
+                "art": "gen_coyote_hostile",
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -381,6 +382,7 @@
                 "text": "s_c has just enough time to yowl out a plan, leading the whole large patrol in a skillful battle maneuver against the dog that protects the cats from the chance of injury. The dog tucks tail and runs for more friendly lands.",
                 "exp": 20,
                 "weight": 20,
+                "art": "gen_coyote_hostile",
                 "stat_skill": ["FIGHTER,3"],
                 "relationships": [
                     {
