@@ -208,7 +208,13 @@ class PatrolScreen(Screens):
                 self.patrol_type = "hunting"
             self.update_button()
         elif event.ui_element == self.elements["patrol_start"]:
+            self.elements["patrol_start"].disable()
             self.selected_cat = None
+            if (
+                    self.start_patrol_thread is not None
+                    and self.start_patrol_thread.is_alive()
+            ):
+                return
             self.start_patrol_thread = self.loading_screen_start_work(
                 self.run_patrol_start, "start"
             )
