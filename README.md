@@ -23,10 +23,18 @@ Download at your own risk here: [ClanGen development download](https://clangen.i
 ## Running from source
 ClanGen uses poetry to manage virtual environments. Therefore it is required to install the dependencies and run the game from source without manual tweaking.
 
+### Installing python
+ClanGen currently supports python versions >=3.8 and <3.13.
+
+Download from the official python website here: https://www.python.org/downloads
+
+Check if python is installed correctly by running `python3 --version`
+
+
 ### Installing poetry
 Follow the instructions for installing poetry from the official website: https://python-poetry.org/docs/#installing-with-pipx
 
-#### Linux, macOS, Windows (WSL
+#### Linux, macOS, Windows (WSL)
 Open a terminal and paste this:
 ```
 python3 -m pip install pipx --user
@@ -75,7 +83,7 @@ After that, ensure that you have the Python extension installed in Visual Studio
 
 Then, open the Command Palette (Ctrl+Shift+P) and search for `Python: Select Interpreter`. Select the virtual environment created by poetry (it should mention a `.venv` somewhere).
 
-Finally, open the `main.py` file and click the green play button in the top right corner to run the game.
+Finally, open the `main.py` file and click the play button in the top right corner to run the game.
 
 
 ## Bug Reporting
