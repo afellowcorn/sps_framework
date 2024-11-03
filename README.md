@@ -66,7 +66,7 @@ Double click the `run.sh` script or open it in the terminal via `./run.sh` with 
 Double click the `run.bat` script
 
 ### Running the game via Visual Studio Code
-To configure poetry to run with Visual Studio Code, open the ClanGen folder and run the following code snippet in the Visual Studio Code terminal window:
+To configure poetry to run with Visual Studio Code, open the ClanGen folder and run the following code snippet in the Visual Studio Code integrated terminal (Ctrl + ` to open the integrated terminal):
 ```
 poetry config virtualenvs.in-project true
 ```
@@ -79,7 +79,8 @@ poetry install --no-root
 It should have created a `.venv` folder in the root directory of the game.
 If you don't see it, remove existing poetry virtual environments by running `poetry env remove python` and try again.
 
-After that, ensure that you have the Python extension installed in Visual Studio Code. You can install it from the Extensions tab on the left sidebar.
+After that, ensure that you have the Python extension installed in Visual Studio Code. You can install it from the Extensions tab on the left sidebar. [(or click here)
+](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
 Then, open the Command Palette (Ctrl+Shift+P) and search for `Python: Select Interpreter`. Select the virtual environment created by poetry (it should mention a `.venv` somewhere).
 
