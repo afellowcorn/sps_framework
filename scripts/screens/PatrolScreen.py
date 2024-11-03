@@ -753,7 +753,11 @@ class PatrolScreen(Screens):
         )
         self.elements["intro_image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((75, 150), (300, 300))),
-            pygame.transform.smoothscale(
+            pygame.transform.scale(
+                self.patrol_obj.get_patrol_art(), ui_scale_dimensions((300, 300))
+            )
+            if game.settings["no sprite antialiasing"]
+            else pygame.transform.smoothscale(
                 self.patrol_obj.get_patrol_art(), ui_scale_dimensions((300, 300))
             ),
         )
@@ -978,7 +982,11 @@ class PatrolScreen(Screens):
                 self.fav[str(i)].disable()
             self.cat_buttons["able_cat" + str(i)] = UISpriteButton(
                 ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
-                pygame.transform.smoothscale(cat.sprite, ui_scale_dimensions((50, 50))),
+                pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50)))
+                if game.settings["no sprite antialiasing"]
+                else pygame.transform.smoothscale(
+                    cat.sprite, ui_scale_dimensions((50, 50))
+                ),
                 cat_object=cat,
                 manager=MANAGER,
             )
@@ -998,7 +1006,9 @@ class PatrolScreen(Screens):
             for cat in self.current_patrol:
                 self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(
                     ui_scale(pygame.Rect((pos_x, pos_y), (50, 50))),
-                    pygame.transform.smoothscale(
+                    pygame.transform.scale(cat.sprite, ui_scale_dimensions((50, 50)))
+                    if game.settings["no sprite antialiasing"]
+                    else pygame.transform.smoothscale(
                         cat.sprite, ui_scale_dimensions((50, 50))
                     ),
                     cat_object=cat,
