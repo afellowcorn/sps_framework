@@ -60,10 +60,10 @@ Then restart your terminal and check if poetry is installed by running `poetry -
 
 ### Running the game via the helper scripts
 #### Linux, macOS
-Double click the `run.sh` script or open it in the terminal via `./run.sh` with the current working directory set to the game's root directory
+Double click the `run.sh` script or open it in the terminal via `./run.sh` with the current working directory set to the game's root directory.
 
 #### Windows
-Double click the `run.bat` script
+Double click the `run.bat` script.
 
 ### Running the game via Visual Studio Code
 To configure poetry to run with Visual Studio Code, open the ClanGen folder and run the following code snippet in the Visual Studio Code integrated terminal (Ctrl + ` to open the integrated terminal):
