@@ -2664,7 +2664,7 @@ class Cat:
                 trust = 0
                 if game.settings["random relation"]:
                     if game.clan:
-                        if the_cat == game.clan.instructor:
+                        if the_cat == game.clan.instructor and game.clan.instructor.dead_for >= self.moons:
                             pass
                         elif randint(1, 20) == 1 and romantic_love < 1:
                             dislike = randint(10, 25)
