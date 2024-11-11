@@ -439,7 +439,6 @@ class Relationship:
 
         # if cats have no romantic relationship already, don't allow romantic decrease
         if not positive and "romantic" in types and not self.cat_from.relationships[self.cat_to.ID].romantic_love:
-            print(f"removed romantic possibility for: {self.cat_from.name} (cat_from) and {self.cat_to.name} (cat_to) due to lack of romantic feeling")
             types.remove("romantic")
 
         rel_type = choice(types)
