@@ -211,8 +211,8 @@ class PatrolScreen(Screens):
             self.elements["patrol_start"].disable()
             self.selected_cat = None
             if (
-                    self.start_patrol_thread is not None
-                    and self.start_patrol_thread.is_alive()
+                self.start_patrol_thread is not None
+                and self.start_patrol_thread.is_alive()
             ):
                 return
             self.start_patrol_thread = self.loading_screen_start_work(
