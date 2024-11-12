@@ -760,11 +760,13 @@ class PatrolScreen(Screens):
         self.elements["intro_image"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((75, 150), (300, 300))),
             pygame.transform.scale(
-                self.patrol_obj.get_patrol_art(), ui_scale_dimensions((300, 300))
+                self.patrol_obj.get_patrol_art().premul_alpha(),
+                ui_scale_dimensions((300, 300)),
             )
             if game.settings["no sprite antialiasing"]
             else pygame.transform.smoothscale(
-                self.patrol_obj.get_patrol_art(), ui_scale_dimensions((300, 300))
+                self.patrol_obj.get_patrol_art().premul_alpha(),
+                ui_scale_dimensions((300, 300)),
             ),
         )
 
