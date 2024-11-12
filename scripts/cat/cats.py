@@ -370,7 +370,6 @@ class Cat:
         :return: None
         """
         self.ID = ID
-        self.name = Name(prefix=prefix, suffix=suffix, cat=self)
         self.parent1 = None
         self.parent2 = None
         self.adoptive_parents = []
@@ -383,6 +382,7 @@ class Cat:
         self.outside = False
         self.exiled = False
         self.inheritance = None  # This should never be used, but just for safety
+        self.name = Name(prefix=prefix, suffix=suffix, cat=self)
         if "df" in kwargs:
             self.df = kwargs["df"]
         else:

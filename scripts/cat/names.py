@@ -2,7 +2,6 @@
 Module that handles the name generation for all cats.
 """
 
-
 import contextlib
 import os
 import random
@@ -83,19 +82,18 @@ class Name:
         self.suffix = suffix
         self.specsuffix_hidden = specsuffix_hidden
 
-        color = None
-        eyes = None
-        pelt = None
-        tortiepattern = None
+        self.cat = cat
 
-        if cat is not None:
-            self.cat = cat
-            cat.status = cat.status
-
+        try:
             color = cat.pelt.colour
             eyes = cat.pelt.eye_colour
             pelt = cat.pelt.name
             tortiepattern = cat.pelt.tortiepattern
+        except AttributeError:
+            color = None
+            eyes = None
+            pelt = None
+            tortiepattern = None
 
         name_fixpref = False
         # Set prefix
@@ -113,24 +111,21 @@ class Name:
 
         if self.suffix and not load_existing_name:
             # Prevent triple letter names from joining prefix and suffix from occurring (ex. Beeeye)
-            triple_letter = False
             possible_three_letter = (
                 self.prefix[-2:] + self.suffix[0],
                 self.prefix[-1] + self.suffix[:2],
             )
-            if all(
+            triple_letter = all(
                 i == possible_three_letter[0][0] for i in possible_three_letter[0]
             ) or all(
-                i == possible_three_letter[1][0] for i in possible_three_letter[1]
-            ):
-                triple_letter = True
+                i == possible_three_letter[1][0]
+                for i in possible_three_letter[1]
             # Prevent double animal names (ex. Spiderfalcon)
-            double_animal = False
-            if (
+            )
+            double_animal = (
                 self.prefix in self.names_dict["animal_prefixes"]
                 and self.suffix in self.names_dict["animal_suffixes"]
-            ):
-                double_animal = True
+            )
             # Prevent the inappropriate names
             nono_name = self.prefix + self.suffix
             # Prevent double names (ex. Iceice)
@@ -168,9 +163,9 @@ class Name:
                     i != possible_three_letter[1][0] for i in possible_three_letter[1]
                 ):
                     triple_letter = False
-                if not (
-                    self.prefix in self.names_dict["animal_prefixes"]
-                    and self.suffix in self.names_dict["animal_suffixes"]
+                if (
+                    self.prefix not in self.names_dict["animal_prefixes"]
+                    or self.suffix not in self.names_dict["animal_suffixes"]
                 ):
                     double_animal = False
                 i += 1
