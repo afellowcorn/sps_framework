@@ -158,9 +158,11 @@ class Name:
                     self.prefix[-1] + self.suffix[:2],
                 )
                 if any(
-                    i != possible_three_letter[0][0] for i in possible_three_letter[0]
+                    i != possible_three_letter[0][0]
+                    for i in possible_three_letter[0]
                 ) and any(
-                    i != possible_three_letter[1][0] for i in possible_three_letter[1]
+                    i != possible_three_letter[1][0]
+                    for i in possible_three_letter[1]
                 ):
                     triple_letter = False
                 if (
@@ -213,14 +215,14 @@ class Name:
         # Try statement stops this form running when initializing.
         with contextlib.suppress(NameError):
             if self.prefix in names.prefix_history:
-                # do this recurively until a name that isn't on the history list is chosses.
+                # do this recursively until a name that isn't on the history list.
                 self.give_prefix(eyes, colour, biome)
                 # prevent infinite recursion
                 if len(names.prefix_history) > 0:
                     names.prefix_history.pop(0)
             else:
                 names.prefix_history.append(self.prefix)
-            # Set the maximun lenth to 8 just to be sure
+            # Set the maximin length to 8 just to be sure
             if len(names.prefix_history) > 8:
                 # removing at zero so the oldest gets removed
                 names.prefix_history.pop(0)
