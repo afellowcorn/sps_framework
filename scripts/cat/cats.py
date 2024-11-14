@@ -2559,6 +2559,7 @@ class Cat:
             if other_cat.ID not in self.relationships:
                 self.create_one_relationship(other_cat)
             self_relationship = self.relationships[other_cat.ID]
+            self_relationship.platonic_like -= randint(10, 30)
             self_relationship.comfortable -= randint(10, 30)
             self_relationship.trust -= randint(5, 15)
 
@@ -2567,6 +2568,7 @@ class Cat:
             if self.ID not in other_cat.relationships:
                 other_cat.create_one_relationship(self)
             other_relationship = other_cat.relationships[self.ID]
+            other_relationship.platonic_like -= randint(10, 30)
             other_relationship.comfortable -= 20
             other_relationship.trust -= 10
             
