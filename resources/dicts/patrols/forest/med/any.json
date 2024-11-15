@@ -2074,7 +2074,7 @@
         "success_outcomes": [
             {
                 "text": "Though p_l checks {PRONOUN/r_c/object} over and doesn't find any injuries, r_c insists that {PRONOUN/r_c/subject} {VERB/r_c/need/needs} to lean on p_l's shoulder all the way back to camp. p_l complies, and r_c purrs the entire way home.",
-                "exp": 15,
+                "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
                 "relationships": [
@@ -2083,14 +2083,14 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["romantic", "platonic", "comfort", "trust"],
-                        "amount": 5
+                        "amount": 10
                     }
                 ]
             },
             {
                 "text": "It's alright, s_c didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
-                "exp": 15,
-                "weight": 20,
+                "exp": 20,
+                "weight": 40,
                 "stat_trait": [
                     "playful",
                     "bold",
@@ -2105,7 +2105,7 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["romantic", "platonic"],
-                        "amount": 5
+                        "amount": 10
                     }
                 ]
             }
@@ -2121,14 +2121,14 @@
                         "cats_from": ["p_l"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": -5
+                        "amount": -10
                     }
                 ]
             },
             {
                 "text": "s_c checks r_c over and, upon confirming that there are no injuries, tells {PRONOUN/r_c/object} that {PRONOUN/r_c/object}{VERB/r_c/'re/'s} fine and to walk it off.",
                 "exp": 0,
-                "weight": 20,
+                "weight": 40,
                 "stat_trait": [
                     "cold",
                     "grumpy",
@@ -2148,7 +2148,7 @@
                         "cats_from": ["s_c"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": -5
+                        "amount": -10
                     }
                 ]
             },
@@ -2159,15 +2159,14 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ]
             },
             {
-                "text": "s_c sees r_c falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <b><i>same</i></b> tree root and {VERB/s_c/end/ends} up joining r_c on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their shared misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home.",
+                "text": "s_c sees r_c falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <i>same</i> tree root and {VERB/s_c/end/ends} up joining r_c on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their shared misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home.",
                 "exp": 0,
-                "weight": 15,
+                "weight": 20,
                 "stat_trait": [
                     "oblivious"
                 ],
@@ -2175,8 +2174,7 @@
                 "injury": [
                     {
                         "cats": ["patrol"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -2190,9 +2188,9 @@
                 ]
             },
             {
-                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <b><i>other</i></b> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
+                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
                 "exp": 0,
-                "weight": 15,
+                "weight": 20,
                 "stat_trait": [
                     "childish"
                 ],
@@ -2200,8 +2198,7 @@
                 "injury": [
                     {
                         "cats": ["patrol"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -2210,7 +2207,7 @@
                         "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["romantic", "platonic", "comfort"],
-                        "amount": -5
+                        "amount": -10
                     }
                 ]
             },
@@ -2221,8 +2218,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["blunt_force_injury"],
-                        "scars": []
+                        "injuries": ["blunt_force_injury"]
                     }
                 ],
                 "history_text": {
@@ -2262,14 +2258,14 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["romantic", "platonic", "comfort", "trust"],
-                        "amount": 5
+                        "amount": 10
                     }
                 ]
             },
             {
                 "text": "It's alright, s_c didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
-                "exp": 15,
-                "weight": 20,
+                "exp": 20,
+                "weight": 40,
                 "stat_trait": [
                     "playful",
                     "bold",
@@ -2284,7 +2280,7 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["romantic", "platonic"],
-                        "amount": 5
+                        "amount": 10
                     }
                 ]
             }
@@ -2307,7 +2303,7 @@
             {
                 "text": "s_c checks r_c over and, upon confirming that there are no injuries, tells {PRONOUN/r_c/object} that {PRONOUN/r_c/object}{VERB/r_c/'re/'s} fine and to walk it off.",
                 "exp": 0,
-                "weight": 20,
+                "weight": 40,
                 "stat_trait": [
                     "cold",
                     "grumpy",
@@ -2338,15 +2334,14 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ]
             },
             {
-                "text": "s_c sees r_c falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <b><i>same</i></b> tree root and {VERB/s_c/end/ends} up joining r_c on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their joint misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home.",
+                "text": "s_c sees r_c falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <i>same</i> tree root and {VERB/s_c/end/ends} up joining r_c on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their joint misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home.",
                 "exp": 0,
-                "weight": 15,
+                "weight": 20,
                 "stat_trait": [
                     "oblivious"
                 ],
@@ -2354,8 +2349,7 @@
                 "injury": [
                     {
                         "cats": ["patrol"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -2369,9 +2363,9 @@
                 ]
             },
             {
-                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <b><i>other</i></b> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
+                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only r_c could see {PRONOUN/r_c/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at r_c's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
                 "exp": 0,
-                "weight": 15,
+                "weight": 20,
                 "stat_trait": [
                     "childish"
                 ],
@@ -2379,8 +2373,7 @@
                 "injury": [
                     {
                         "cats": ["patrol"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -2389,7 +2382,7 @@
                         "cats_from": ["r_c"],
                         "mutual": false,
                         "values": ["romantic", "platonic", "comfort"],
-                        "amount": -5
+                        "amount": -10
                     }
                 ]
             },
@@ -2400,8 +2393,7 @@
                 "injury": [
                     {
                         "cats": ["r_c"],
-                        "injuries": ["blunt_force_injury"],
-                        "scars": []
+                        "injuries": ["blunt_force_injury"]
                     }
                 ],
                 "history_text": {
@@ -2432,7 +2424,7 @@
         "success_outcomes": [
             {
                 "text": "Though p_l has no visible injuries, {PRONOUN/p_l/subject} {VERB/p_l/insist/insists} that {PRONOUN/p_l/subject} {VERB/p_l/need/needs} to lean on r_c's shoulder all the way back to camp. r_c complies, and p_l purrs the entire way home.",
-                "exp": 15,
+                "exp": 20,
                 "weight": 20,
                 "herbs": ["random_herbs"],
                 "relationships": [
@@ -2441,14 +2433,14 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["romantic", "platonic", "comfort", "trust"],
-                        "amount": 5
+                        "amount": 10
                     }
                 ]
             },
             {
                 "text": "It's alright, s_c didn't trip! {PRONOUN/s_c/subject/CAP} {VERB/s_c/were/was} just saying hello to the ground. With {PRONOUN/s_c/poss} face.",
-                "exp": 15,
-                "weight": 20,
+                "exp": 20,
+                "weight": 40,
                 "stat_trait": [
                     "playful",
                     "bold",
@@ -2463,7 +2455,7 @@
                         "cats_from": ["patrol"],
                         "mutual": false,
                         "values": ["romantic", "platonic"],
-                        "amount": 5
+                        "amount": 10
                     }
                 ]
             }
@@ -2484,9 +2476,9 @@
                 ]
             },
             {
-                "text": "s_c may not be a medicine cat, but even <i>{PRONOUN/s_c/subject}</i> can tell that p_l is fine. Already annoyed at having been woken up so early in the star-damned morning just to go pick herbs, s_c rather callously tells the medicine cat to get up and walk it off.",
+                "text": "s_c may not be a medicine cat, but even <i>{PRONOUN/s_c/subject}</i> can tell that p_l is fine. Already annoyed at having been woken up so early in the stars-damned morning just to go pick herbs, s_c rather callously tells the medicine cat to get up and walk it off.",
                 "exp": 0,
-                "weight": 20,
+                "weight": 40,
                 "stat_trait": [
                     "cold",
                     "grumpy",
@@ -2517,15 +2509,14 @@
                 "injury": [
                     {
                         "cats": ["p_l"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ]
             },
             {
-                "text": "s_c sees p_l falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <b><i>same</i></b> tree root and {VERB/s_c/end/ends} up joining p_l on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their shared misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home.",
+                "text": "s_c sees p_l falling and rushes to help. However, before s_c can reach {PRONOUN/s_c/poss} Clanmate, {PRONOUN/s_c/subject} {VERB/s_c/trip/trips} over the <i>same</i> tree root and {VERB/s_c/end/ends} up joining p_l on the ground. Thankfully, neither cat is seriously injured and, after sharing a laugh over their shared misfortune, they decide to call it a day and head back to camp, leaning on each other the whole way home.",
                 "exp": 0,
-                "weight": 15,
+                "weight": 20,
                 "stat_trait": [
                     "oblivious"
                 ],
@@ -2533,8 +2524,7 @@
                 "injury": [
                     {
                         "cats": ["patrol"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
@@ -2548,9 +2538,9 @@
                 ]
             },
             {
-                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only p_l could see {PRONOUN/p_l/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at p_l's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <b><i>other</i></b> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
+                "text": "s_c can't help the <i>mrrps</i> of laughter that escape {PRONOUN/s_c/object} at the sight. Sweet StarClan, if only p_l could see {PRONOUN/p_l/poss} own face! However, karma quickly comes for s_c, who is so busy laughing at p_l's misfortune that {PRONOUN/s_c/subject} completely {VERB/s_c/miss/misses} and trips over the <i>other</i> tree root that just so happens to be directly in {PRONOUN/s_c/poss} path. <i>Meowch!</i>",
                 "exp": 0,
-                "weight": 15,
+                "weight": 20,
                 "stat_trait": [
                     "childish"
                 ],
@@ -2558,14 +2548,13 @@
                 "injury": [
                     {
                         "cats": ["patrol"],
-                        "injuries": ["minor_injury"],
-                        "scars": []
+                        "injuries": ["minor_injury"]
                     }
                 ],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
-                        "cats_from": ["r_c"],
+                        "cats_from": ["p_l"],
                         "mutual": false,
                         "values": ["romantic", "platonic", "comfort"],
                         "amount": -5
@@ -2579,8 +2568,7 @@
                 "injury": [
                     {
                         "cats": ["p_l"],
-                        "injuries": ["blunt_force_injury"],
-                        "scars": []
+                        "injuries": ["blunt_force_injury"]
                     }
                 ],
                 "history_text": {
