@@ -124,7 +124,7 @@
     "tags0": ["descriptor"]
   }, 
   "Bittern": {
-    "variants": 0,
+    "variants": 1,
     "tags0": ["animal", "bird"]
   },
   "Blaze": {
@@ -697,8 +697,10 @@
     "tags0": ["element", "fire"]
   },
   "Flare": {
-    "variants": 0,
-    "tags0": []
+    "variants": 2,
+    "tags0": ["element", "light"],
+    "tags1": ["element", "light"]
+
   },
   "Flash": {
     "variants": 1,
@@ -813,8 +815,9 @@
     "tags0": []
   }, 
   "Furled": {
-    "variants": 0,
-    "tags0": []
+    "variants": 2,
+    "tags0": ["plant", "flower"],
+    "tags1": ["descriptor", "miscellaneous"]
   }, 
   "Furze": {
     "variants": 0,
@@ -841,8 +844,8 @@
     "tags0": []
   }, 
   "Garlic": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "other plant"]
   }, 
   "Gentle": {
     "variants": 1,
@@ -897,8 +900,8 @@
     "tags0": []
   }, 
   "Gull": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "bird"]
   }, 
   "Guppy": {
     "variants": 1,
@@ -1109,20 +1112,20 @@
     "tags0": []
   },
   "Lark": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "bird"]
   }, 
   "Laurel": {
     "variants": 1, 
     "tags0": ["plant", "leaf"]
   }, 
   "Lavender": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "flower"]
   }, 
   "Leaf": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "leaf"]
   }, 
   "Leap": {
     "variants": 0,
@@ -2213,8 +2216,8 @@
     "tags0": []
   }, 
   "Weevil": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["bug", "animal"]
   }, 
   "Wet": {
     "variants": 1,
