@@ -352,8 +352,8 @@
     "tags0": ["miscellaneous"]
   }, 
   "Clay": {
-    "variants": 0,
-    "tags0": ["element", "earth"]
+    "variants": 1,
+    "tags0": ["miscellaneous"]
   }, 
   "Clear": {
     "variants": 1, 
@@ -380,7 +380,7 @@
     "tags0": ["plant", "flower"]
   }, 
   "Condor": {
-    "variants": 0,
+    "variants": 1,
     "tags0": ["animal", "bird"]
   }, 
   "Cone": {
@@ -420,8 +420,8 @@
     "tags0": ["animal", "bird"]
   }, 
   "Creek": {
-    "variants": 0,
-    "tags0": ["location"]
+    "variants": 1,
+    "tags0": ["location", "element", "water"]
   }, 
   "Cress": {
     "variants": 1, 
@@ -468,7 +468,7 @@
     "tags0": ["descriptor"]
   }, 
   "Current": {
-    "variants": 0,
+    "variants": 1,
     "tags0": ["element", "water"]
   }, 
   "Cypress": {
@@ -769,8 +769,8 @@
     "tags0": []
   }, 
   "Foggy": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "air"]
   },
   "Foxglove": {
     "variants": 0,
