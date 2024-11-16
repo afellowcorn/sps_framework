@@ -2083,7 +2083,14 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort", "trust"],
+                        "values": ["romantic", "platonic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
                         "amount": 10
                     }
                 ]
@@ -2259,7 +2266,14 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort", "trust"],
+                        "values": ["romantic", "platonic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["p_l"],
+                        "cats_from": ["r_c"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
                         "amount": 10
                     }
                 ]
@@ -2325,7 +2339,7 @@
                         "cats_from": ["s_c"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": -5
+                        "amount": -10
                     }
                 ]
             },
@@ -2435,7 +2449,14 @@
                         "cats_to": ["patrol"],
                         "cats_from": ["patrol"],
                         "mutual": false,
-                        "values": ["romantic", "platonic", "comfort", "trust"],
+                        "values": ["romantic", "platonic"],
+                        "amount": 10
+                    },
+                    {
+                        "cats_to": ["r_c"],
+                        "cats_from": ["p_l"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
                         "amount": 10
                     }
                 ]
@@ -2501,7 +2522,7 @@
                         "cats_from": ["s_c"],
                         "mutual": false,
                         "values": ["respect"],
-                        "amount": -5
+                        "amount": -10
                     }
                 ]
             },
@@ -2560,7 +2581,7 @@
                         "cats_from": ["p_l"],
                         "mutual": false,
                         "values": ["romantic", "platonic", "comfort"],
-                        "amount": -5
+                        "amount": -10
                     }
                 ]
             },
