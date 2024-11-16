@@ -2064,6 +2064,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
+            "medicine cat apprentice": [-1, -1],
             "medicine cat": [1, 1],
             "normal adult": [1, 1]
         },
@@ -2240,6 +2241,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
+            "medicine cat apprentice": [-1, -1],
             "medicine cat": [2, 2]
         },
         "weight": 20,
@@ -2414,6 +2416,7 @@
         "max_cats": 2,
         "min_max_status": {
             "apprentice": [-1, -1],
+            "medicine cat apprentice": [-1, -1],
             "medicine cat": [1, 1],
             "normal adult": [1, 1]
         },
