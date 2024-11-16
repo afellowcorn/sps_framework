@@ -1748,8 +1748,7 @@
                 "injury": {
                     "cats": ["r_c"],
                     "injuries": ["battle_injury", "battle_injury"]
-                }
-            ],
+                },
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
