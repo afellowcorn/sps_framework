@@ -3655,7 +3655,6 @@
     "art": "gen_bord_twocat_hostile_warrior_warrior"
         }
 	],
-
 	"antag_success_outcomes": [
         {
             "text": "p_l rolls {PRONOUN/p_l/poss} eyes and interrupts the kittypets' argument to tell them both to scram - and to go tell all their kittypet friends to keep their personal lives on the other side of the border.",
@@ -3792,7 +3791,6 @@
                 "art": "gen_bord_twocat_hostile_loner_loner"
         }
 	],
-
 	"antag_fail_outcomes": [
 		{
             "text": "p_l doesn't care about kittypet drama. {PRONOUN/p_l/subject/CAP} {VERB/p_l/interrupt/interrupts} and {VERB/p_l/tell/tells} the kittypets to get lost. One kittypet doesn't appreciate p_l's tone and takes a swipe at {PRONOUN/p_l/object}. r_c jumps in to help a humiliated p_l drive off the kittypets.",
@@ -3883,4 +3881,4 @@
 }
 	]
 }
-
+]
