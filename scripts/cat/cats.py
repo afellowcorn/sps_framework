@@ -35,6 +35,7 @@ from scripts.game_structure.game_essentials import game
 from scripts.game_structure.screen_settings import screen
 from scripts.housekeeping.datadir import get_save_dir
 from scripts.utility import (
+    clamp,
     get_alive_status_cats,
     get_personality_compatibility,
     event_text_adjust,
@@ -3088,12 +3089,7 @@ class Cat:
 
     @staticmethod
     def effect_relation(current_value, effect):
-        new_value = current_value + effect
-        if new_value < 0:
-            new_value = 0
-        elif new_value > 100:
-            new_value = 100
-        return new_value
+        return clamp(current_value + effect, 0, 100)
 
     def set_faded(self):
         """This function is for cats that are faded. It will set the sprite and the faded tag"""
