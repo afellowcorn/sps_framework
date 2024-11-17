@@ -365,7 +365,6 @@ class CatSkills:
 
         new_skill.hidden = hidden_skill
 
-        # TODO: IS this nicer?
         if status == "newborn" or moons <= 0:
             pass
         elif status == "kitten" or moons < 6:
