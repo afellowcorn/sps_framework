@@ -2927,7 +2927,7 @@ class Cat:
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
                     rel2.romantic_love = Cat.effect_relation(
-                        rel1.romantic_love,
+                        rel2.romantic_love,
                         -(randint(ran[0], ran[1]) + bonus) + personality_bonus,
                     )
                     output += "Romantic interest decreased. "
@@ -3083,7 +3083,7 @@ class Cat:
                         rel2.jealousy,
                         -(randint(ran[0], ran[1]) + bonus) - personality_bonus,
                     )
-                    output += "Jealousy decreased . "
+                    output += "Jealousy decreased. "
 
         return output
 
