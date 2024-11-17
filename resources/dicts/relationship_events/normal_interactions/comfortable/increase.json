@@ -5,7 +5,7 @@
 		"interactions": [
 			"m_c finds a bit of fluff that smells like r_c and adds it to {PRONOUN/m_c/poss} nest.",
 			"m_c has a friendly chat with r_c that leaves them both feeling happy.",
-			"r_c's laugh reminds m_c of someone {PRONOUN/m_c/object} {VERB/m_c/miss/misses}.",
+			"r_c's laugh reminds m_c of someone {PRONOUN/m_c/subject} {VERB/m_c/miss/misses}.",
 			"m_c overhears r_c humming a comforting tune.",
 			"r_c brought m_c some dry bedding.",
 			"r_c lets m_c grab a piece of prey first.",
@@ -123,7 +123,7 @@
 			"warrior",
 			"deputy",
 			"leader"
-		]
+		],
 		"reaction_random_cat": {
 			"comfortable": "increase"
 		}
