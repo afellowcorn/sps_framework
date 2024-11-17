@@ -65,7 +65,7 @@
 			"m_c and r_c spend some time together and nearly forget what made them upset with one another in the first place.",
 			"m_c and r_c both apologize to each other at the same time.",
 			"When explaining something, m_c is surprised that r_c understands.",
-			"m_c hesitantly asks to exchange prey with r_c. r_c agrees, since m_c's is {PRONOUN/r_c/poss} favorite kind, anyways.",
+			"m_c hesitantly asks to exchange prey with r_c. r_c agrees, since m_c's prey is {PRONOUN/r_c/poss} favorite kind, anyways.",
 			"The Clan is surprised to see m_c and r_c casually chatting over a meal.",
 			"m_c cheers r_c up after a small disagreement."
 		],
