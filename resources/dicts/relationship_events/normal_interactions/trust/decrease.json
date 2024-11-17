@@ -9,7 +9,7 @@
 			"m_c sees r_c whispering suspiciously to a Clanmate.",
 			"m_c smells something strange on r_c.",
 			"m_c feels like r_c has been quieter than usual.",
-			"m_c notices r_c isn't in {PRONOUN/r_c/poss} nest at night.",
+			"m_c noticed that r_c wasn't in {PRONOUN/r_c/poss} nest last night.",
 			"m_c can't seem to find r_c anywhere, and no one else has seen {PRONOUN/r_c/object} either.",
 			"m_c asks r_c a simple question, but r_c reacts strangely to it.",
 			"r_c forgot something that m_c asked {PRONOUN/r_c/object} to remember.",
@@ -25,14 +25,12 @@
 			"m_c's friend doesn't trust r_c.",
 			"m_c learns that r_c told a Clanmate one of {PRONOUN/m_c/poss} secrets.",
 			"r_c snitches on m_c for something minor.",
-			"r_c seems caught off guard when m_c comes up to chat as usual.",
 			"m_c saw r_c hide something before talking to {PRONOUN/m_c/object}.",
 			"r_c won't tell m_c what {PRONOUN/r_c/subject} ate this morning.",
-			"r_c steels {PRONOUN/r_c/poss} expression when m_c walks up to ask a question.",
+			"r_c gets a strange expression when m_c walks up to ask a question.",
 			"m_c has to snap r_c out of a daze to ask a question.",
 			"m_c subtly accuses r_c of being untruthful about something.",
 			"r_c keeps asking m_c if {PRONOUN/m_c/subject} {VERB/m_c/trust/trusts} {PRONOUN/r_c/object}.",
-			"m_c was convinced that r_c was lying about something, but r_c wasn't.",
 			"m_c finds out something small about r_c that r_c had lied about before."
 
 		],
@@ -44,14 +42,13 @@
 		"id": "trust_de_med1",
 		"interactions": [
 			"m_c knows that r_c just lied!",
-			"r_c neglects a task that m_c assigned to {PRONOUN/r_c/object}.",
 			"r_c gave m_c a gift that doesn't make sense.",
 			"r_c forgot something important about m_c.",
 			"r_c keeps calling m_c by the wrong name.",
 			"r_c sides with a Clanmate instead of m_c on something.",
-			"m_c thinks that r_c spread a little rumor about {PRONOUN/m_c/object}.",
+			"m_c thinks that r_c spread a rumor about {PRONOUN/m_c/object}.",
 			"m_c doesn't think that r_c's intentions are all pure.",
-			"m_c keeps seeing r_c sneaking around the camp at night.",
+			"m_c keeps thinking {PRONOUN/m_c/subject} {VERB/m_c/see/sees} r_c sneaking around the camp at night.",
 			"r_c keeps making excuses about something m_c wants to know.",
 			"m_c can't seem to get a straight answer from r_c lately.",
 			"r_c let m_c down while m_c was counting on {PRONOUN/r_c/object}."
@@ -63,7 +60,6 @@
 			"m_c said {PRONOUN/m_c/subject}'d cover for r_c, but when it came time, {PRONOUN/m_c/subject} got r_c in trouble.",
 			"r_c doesn't want to apologize to m_c for something.",
 			"r_c asks m_c to stop following {PRONOUN/r_c/object} around.",
-			"m_c keeps seeing r_c sneaking around the camp at night.",
 			"r_c keeps avoiding eye contact with m_c.",
 			"m_c learns that r_c has been misleading {PRONOUN/m_c/object} about something trivial.",
 			"r_c does something that badly affects m_c.",
@@ -72,7 +68,8 @@
 			"m_c asks r_c about a lie r_c told, but {PRONOUN/r_c/subject} {VERB/r_c/dodge/dodges} the question.",
 			"m_c realizes that r_c's been avoiding {PRONOUN/m_c/object}.",
 			"m_c knows that r_c is hiding something.",
-			"The Clan realizes that m_c doesn't ask for help from r_c much as of late."
+			"m_c was convinced that r_c was lying about something, but r_c wasn't.",
+			"The Clan realizes that m_c doesn't ask for help from r_c much lately."
 		],
 		"reaction_random_cat": {
 			"trust": "decrease"
@@ -99,7 +96,6 @@
 			"m_c constantly pulling pranks on r_c.",
 			"m_c always shifts the blame to r_c!",
 			"m_c won't stop crying whenever r_c starts winning in a game.",
-			"m_c has convinced an older Clanmate that r_c is evil!",
 			"m_c grins while r_c is being scolded by an older Clanmate.",
 			"m_c is relentlessly pestering r_c."
 		],
@@ -122,8 +118,7 @@
 			"r_c doesn't believe m_c when {PRONOUN/m_c/subject} {VERB/m_c/explain/explains} that a rumor about {PRONOUN/m_c/object} is false.",
 			"m_c learns that r_c has been using {PRONOUN/m_c/object} for something.",
 			"m_c doubts whether r_c even likes {PRONOUN/m_c/object} at all...",
-			"r_c uses a fear against m_c to get the upper hand.",
-			"m_c thinks that r_c has been pitting m_c and a Clanmate against each other.",
+			"r_c uses a fear of m_c's against {PRONOUN/m_c/object}.",
 			"r_c accidentally hurts m_c during an argument between them.",
 			"m_c thinks r_c is trying to steal one of {PRONOUN/m_c/poss} friends!",
 			"m_c turned to r_c in a time of need, only for r_c to abandon {PRONOUN/m_c/object}."
@@ -140,7 +135,7 @@
 			"m_c threatens to blackmail r_c.",
 			"m_c and r_c refuse to trust one another, which nearly leads to one of them getting hurt.",
 			"r_c's prank on m_c almost turned deadly.",
-			"m_c confronts r_c about the death of a Clanmate.",
+			"r_c has been pitting a Clanmate against m_c.",
 			"m_c claims to have had a prophetic dream about r_c betraying the Clan.",
 			"m_c and r_c tell everyone embarrassing secrets about the other.",
 			"r_c destroys something dear to m_c.",

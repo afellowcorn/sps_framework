@@ -8,7 +8,7 @@
 			"m_c is grossed out by something r_c did.",
 			"m_c doesn't like the way r_c interacts with a Clanmate.",
 			"r_c says something in passing that m_c keeps getting worked up about.",
-			"m_c tried to explain something to r_c, but {PRONOUN/r_c/subject} just didn't understand. m_c told r_c to forget it.",
+			"m_c tried to explain something to r_c, but {PRONOUN/r_c/subject} just didn't understand.",
 			"While having a group conversation, r_c makes a rude remark about m_c.",
 			"r_c hit m_c on the face with {PRONOUN/r_c/poss} tail while passing by.",
 			"m_c doesn't think the object that r_c asked {PRONOUN/m_c/object} to find is real.",
@@ -31,8 +31,7 @@
 			"r_c takes the sunny spot that m_c was about to lay in.",
 			"m_c and r_c splash each other in a puddle, but it doesn't look playful...",
 			"m_c's feelings are hurt by something r_c said, but r_c's apology is half-hearted.",
-			"m_c loses in a race against r_c and acts bitterly about it.",
-			"m_c said something really rude to r_c."
+			"m_c loses in a race against r_c and acts bitterly about it."
 		],
 		"reaction_random_cat": {
 			"dislike": "increase"
@@ -43,7 +42,6 @@
 		"intensity": [
 			"m_c wishes r_c would take things more seriously.",
 			"m_c thinks r_c is acting childish lately.",
-			"A storm passes over the camp. In the cleanup, m_c thinks r_c gets in the way more than {PRONOUN/r_c/subject} {VERB/r_c/help/helps}.",
 			"m_c keeps complaining about something r_c did.",
 			"m_c considers spreading a rumor about r_c.",
 			"m_c doesn't like r_c's sense of humor.",
@@ -51,8 +49,7 @@
 			"m_c is tired of interacting with r_c lately.",
 			"After sharing tongues, m_c washed off r_c's scent from {PRONOUN/m_c/poss} pelt.",
 			"A Clanmate notices m_c mocking r_c behind {PRONOUN/r_c/poss} back.",
-			"m_c doesn't ask r_c questions anymore.",
-			"When m_c needs someone to do {PRONOUN/m_c/object} a favor, {PRONOUN/m_c/subject} never ask r_c first."
+			"When m_c needs someone to do {PRONOUN/m_c/object} a favor, {PRONOUN/m_c/subject} never {VERB/m_c/ask/asks} r_c first."
 		]
 	},
 	{
@@ -65,8 +62,8 @@
 			"The Clan notices that m_c and r_c always sit far away from one another.",
 			"Just because they were told to stop bickering doesn't mean m_c and r_c will stop leering at each other.",
 			"m_c didn't warn r_c about a rock on the ground, which caused r_c to trip.",
-			"m_c claimed to give r_c a rotten piece of fresh-kill on accident.",
-			"m_c and r_c spent the day arguing over whether r_c stole something from m_c.",
+			"m_c claimed to give r_c a piece of crowfood on accident.",
+			"m_c spent the day arguing with r_c whether {PRONOUN/r_c/subject} stole something from m_c.",
 			"m_c scoffed loudly at one of r_c's suggestions.",
 			"r_c keeps yawning during m_c's story.",
 			"r_c flicked some sand over m_c's fresh-kill while {PRONOUN/m_c/subject} {VERB/m_c/were/was} eating."
@@ -129,11 +126,11 @@
 			"m_c is irritated by r_c's constant bragging.",
 			"m_c can't believe r_c just said that!",
 			"m_c tells r_c to quiet down, but r_c doesn't listen.",
-			"r_c is boasting about {PRONOUN/r_c/poss} accomplishments to m_c, but m_c isn't impressed.",
-			"r_c gets really close to m_c's face while talking and grosses m_c out with {PRONOUN/r_c/poss} bad breath."
+			"r_c is boasting about {PRONOUN/r_c/poss} accomplishments to m_c, but m_c isn't impressed."
 		],
 		"random_trait_constraint": [
-			"shameless"
+			"shameless",
+			"bold"
 		]
 	},
 	{
@@ -161,11 +158,11 @@
 			"r_c is mocking m_c.",
 			"r_c is bragging about being better than m_c.",
 			"r_c is belittling m_c's accomplishments.",
-			"r_c is always talking about how much {PRONOUN/r_c/subject} dislike m_c.",
-			"r_c's friends are tired of hearing about all of the things {PRONOUN/r_c/subject} hate about m_c.",
+			"r_c is always talking about how much {PRONOUN/r_c/subject} {VERB/r_c/dislike/dislikes} m_c.",
+			"r_c's friends are tired of hearing about all of the things {PRONOUN/r_c/subject} {VERB/r_c/hate/hates} about m_c.",
 			"The Clan is starting to get nervous about how much m_c and r_c dislike one another.",
 			"m_c and r_c argue and fight like it's in their blood to do so.",
-			"The Clan worries about whether r_c would save m_c if something went wrong.",
+			"The Clan worries about whether r_c would help m_c if something went wrong.",
 			"r_c is telling others about how terrible m_c can really be.",
 			"r_c leaves as soon as m_c arrives and refuses to be nearby."
 		]
@@ -205,10 +202,9 @@
 			"m_c gives r_c a particularly hard task, expecting {PRONOUN/r_c/object} to fail.",
 			"m_c threatens r_c with never passing {PRONOUN/r_c/poss} assessment!",
 			"m_c tells other cats that r_c is not doing well in {PRONOUN/r_c/poss} training.",
-			"m_c tells r_c that {PRONOUN/r_c/subject}'ll never be a leader.",
+			"m_c tells r_c that {PRONOUN/r_c/subject}'ll never be the leader.",
 			"m_c always tries to avoid making r_c the leader of a patrol.",
 			"m_c scolds r_c like a kit for something trivial.",
-			"m_c threatens to exile r_c.",
 			"m_c says r_c sets a bad example of a warrior."
 		],
 		"main_status_constraint": [
@@ -230,10 +226,9 @@
 			"m_c accuses r_c of complaining over something trivial and wasting {PRONOUN/m_c/poss} time.",
 			"m_c always tends to r_c last.",
 			"m_c doesn't warn r_c before applying a stinging poultice.",
-			"m_c neglects one of r_c's wounds.",
 			"When r_c comes to m_c with pain, m_c tells {PRONOUN/r_c/object} to suck it up.",
 			"When r_c asks m_c for advice about a prophetic dream, m_c laughs {PRONOUN/r_c/object} away.",
-			"m_c claims to accidentally use the wrong herb on one of r_c's wounds."
+			"m_c claims to accidentally have given r_c the wrong herb."
 		],
 		"main_status_constraint": [
 			"medicine cat apprentice",
@@ -253,7 +248,6 @@
 			"m_c thinks about telling others that r_c broke the code.",
 			"m_c finds fault in everything r_c does.",
 			"m_c always assumes the worst of r_c.",
-			"m_c is surprised at {PRONOUN/m_c/poss} dark thoughts about r_c.",
 			"A Clanmate claims that m_c wants r_c dead.",
 			"The Clan is very uncomfortable whenever m_c talks about r_c.",
 			"m_c makes all kinds of faces whenever r_c is brought up in conversation.",
@@ -269,14 +263,12 @@
 			"m_c and r_c nearly got in a bloody fight if it weren't for the intervention of a Clanmate.",
 			"r_c claims that m_c ignored r_c when {PRONOUN/r_c/subject} got hurt.",
 			"m_c and r_c are always backtalking to each other.",
-			"m_c and r_c snarl at one another over something small.",
+			"m_c and r_c snarl at one another over something trivial.",
 			"r_c told all of m_c's friends something embarrassing about {PRONOUN/m_c/object}.",
 			"m_c accuses r_c of lying about something important.",
 			"The Clan can't believe the things m_c and r_c say to one another.",
-			"m_c put a rotten piece of fresh-kill in r_c's nest.",
 			"m_c insults one of r_c's insecurities.",
-			"m_c does anything in {PRONOUN/m_c/poss} power to make r_c's day worse.",
-			"m_c made an extremely hurtful remark about one of r_c's deceased friends just to spite r_c.",
+			"m_c made an extremely hurtful remark about one of r_c's friends just to spite r_c.",
 			"m_c argues with r_c in front of other cats and reveals something embarrassing."
 		],
 		"reaction_random_cat": {
@@ -354,10 +346,7 @@
 			"m_c threatens r_c with exile.",
 			"m_c makes r_c do a tiring chore for the rest of the moon as punishment for something minor.",
 			"m_c threatens to give r_c a terrible name.",
-			"m_c says {PRONOUN/m_c/subject} spoke with StarClan and heard bad things about r_c.",
-			"m_c makes up a prophecy that makes r_c sound bad.",
-			"During a meeting, m_c calls out r_c for something frivolous and puts {PRONOUN/r_c/object} on the spot.",
-			"m_c and r_c are arguing about something important and risking the Clan's safety."
+			"m_c claims {PRONOUN/m_c/subject} spoke with StarClan and heard bad things about r_c."
 		],
 		"main_status_constraint": [
 			"medicine cat",
@@ -377,8 +366,7 @@
 		"interactions": [
 			"m_c thinks {PRONOUN/m_c/subject} should be deputy instead of r_c.",
 			"m_c is tired from r_c putting {PRONOUN/m_c/object} on so many patrols.",
-			"m_c rolls {PRONOUN/m_c/poss} eyes whenever r_c assigns patrols.",
-			"m_c tries to convince other cats that r_c should step down from being deputy."
+			"m_c rolls {PRONOUN/m_c/poss} eyes whenever r_c assigns patrols."
 		],
 		"relationship_constraint": [
 			"dislike_40"
@@ -400,7 +388,6 @@
 			"m_c sticks {PRONOUN/m_c/poss} tongue out at r_c",
 			"m_c makes stinky faces at r_c for seemingly no reason.",
 			"m_c calls r_c a stinky dirt-face.",
-			"m_c cries that r_c hurt {PRONOUN/m_c/object}, but is lying. The Clanmates believe {PRONOUN/m_c/object}.",
 			"m_c and r_c play hide and seek, but r_c supposedly forgets to look for m_c for hours."
 		],
 		"main_status_constraint": [
@@ -418,7 +405,6 @@
 			"m_c tells older Clanmate that r_c did something bad.",
 			"m_c snitches on r_c to an older Clanmate.",
 			"m_c cries that r_c hurt {PRONOUN/m_c/object}, but is lying.",
-			"m_c and r_c play hide and seek, but m_c supposedly forgets to look for r_c for hours.",
 			"m_c is not playing fairly with r_c!"
 		],
 		"main_status_constraint": [

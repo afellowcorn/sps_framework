@@ -4,13 +4,13 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c appreciates r_c telling {PRONOUN/m_c/object} that {PRONOUN/m_c/subject} had a feather stuck to {PRONOUN/m_c/poss} face.",
-			"r_c follows through on a little promise made with m_c.",
+			"r_c follows through on a small promise made with m_c.",
 			"r_c says something vulnerable to m_c.",
 			"m_c feels a little safer when r_c joins {PRONOUN/m_c/object} in the clearing.",
-			"m_c gets some good advice from r_c about something small.",
+			"m_c gets some good advice from r_c about something trivial.",
 			"r_c respects m_c's opinion despite disagreeing with it.",
-			"r_c vents about something small to m_c.",
-			"r_c asks a Clanmate to help m_c with something {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} struggling with.",
+			"r_c vents about something trivial to m_c.",
+			"r_c sends a Clanmate to help m_c with something {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} struggling with.",
 			"r_c respects m_c's opinion despite disagreeing with it."
 		]
 	},
@@ -18,8 +18,6 @@
 		"id": "trust_inc_low2",
 		"intensity": "low",
 		"interactions": [
-			"r_c tells m_c to get {PRONOUN/m_c/poss} ailment treated as soon as possible.",
-			"r_c is chiding m_c for being so reckless.",
 			"m_c includes r_c in a conversation that r_c struggled to join.",
 			"r_c helps m_c hide from a Clanmate.",
 			"r_c makes a small sacrifice that benefits m_c.",
@@ -50,14 +48,13 @@
 		"interactions": [
 			"m_c thinks about how r_c is always reliable.",
 			"m_c notices how r_c is being helpful around camp.",
-			"m_c notices that r_c has finished all {PRONOUN/r_c/poss} tasks without issues lately.",
-			"m_c has faith in r_c's work.",
+			"m_c has faith in r_c.",
 			"m_c notices that r_c has kept a secret of {PRONOUN/m_c/poss}s.",
 			"r_c seems respectful of m_c's boundaries as of late.",
 			"r_c explained something in detail to m_c that others wouldn't explain to {PRONOUN/m_c/object}.",
 			"m_c overhears r_c dispelling a false rumor about a Clanmate.",
 			"r_c helps m_c fix a matted piece of fur on {PRONOUN/m_c/poss} back.",
-			"m_c finds a twoleg trinket. r_c agrees to keep it a secret.",
+			"m_c finds a Twoleg trinket. r_c agrees to keep it a secret.",
 			"m_c notices how r_c is being helpful around camp."
 		]
 	},
@@ -65,12 +62,10 @@
 		"id": "trust_inc_med2",
 		"interactions": [
 			"m_c comes up with a plan to sneak out of camp with r_c.",
-			"m_c and r_c agree to keep something secret that they found out.",
 			"r_c doesn't entertain a rumor that is being spread about m_c.",
 			"r_c takes m_c's side while m_c is in a debate.",
 			"m_c nearly tripped, but was caught by r_c.",
-			"m_c nearly tripped, but was caught by r_c.",
-			"m_c asks r_c to watch {PRONOUN/m_c/poss} prey for {PRONOUN/m_c/object}.",
+			"m_c asks r_c to watch {PRONOUN/m_c/poss} fresh-kill for {PRONOUN/m_c/object}.",
 			"Only m_c and r_c know the details about a specific piece of Clan drama."
 		],
 		"reaction_random_cat": {
@@ -81,7 +76,7 @@
 		"id": "trust_inc_medpat",
 		"interactions": [
 			"Something embarrassing happens to m_c on a patrol, but r_c promises not to tell anyone.",
-			"m_c lets r_c bring back prey {PRONOUN/m_c/subject} caught on a patrol.",
+			"m_c lets r_c bring back fresh-kill {PRONOUN/m_c/subject} caught on a patrol.",
 			"m_c offers to take r_c's place on a patrol when {PRONOUN/r_c/subject} {VERB/r_c/aren't/isn't} feeling well.",
 			"r_c stands up for m_c during a patrol.",
 			"m_c and r_c find a hidden part of the territory and keep it a secret together.",
@@ -90,20 +85,14 @@
 		"main_status_constraint": [
 			"apprentice",
 			"warrior",
-			"mediator",
-			"medicine cat",
 			"deputy",
-			"medicine cat apprentice",
 			"leader"
 		],
 		"random_status_constraint": [
 			"apprentice",
 			"warrior",
-			"mediator",
-			"medicine cat",
 			"deputy",
-			"leader",
-			"medicine cat apprentice"
+			"leader"
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
@@ -134,7 +123,6 @@
 		"id": "trust_inc_med5",
 		"interactions": [
 			"r_c let m_c lean on {PRONOUN/r_c/poss} shoulder after a recent injury.",
-			"r_c quickly checks on one of m_c's wounds.",
 			"r_c skips eating a meal so m_c can have food.",
 			"r_c offers to take the blame for something that m_c did.",
 			"r_c is poised to help train m_c."
@@ -263,6 +251,7 @@
 			"m_c and r_c chase off a predator on a patrol together.",
 			"m_c and r_c make an elaborate plan to evict a predator from the Clan's territory.",
 			"m_c and r_c volunteer to go on an extra border patrol together.",
+			"m_c notices that r_c has finished all {PRONOUN/r_c/poss} tasks without issues lately.",
 			"During a patrol, m_c and r_c have a long conversation about their beliefs and agree on many things.",
 			"During the last gathering, m_c and r_c defended their Clan against another Clan's heckling."
 		],
@@ -327,7 +316,6 @@
 		"interactions": [
 			"m_c tells r_c about {PRONOUN/m_c/poss} last encounter with StarClan.",
 			"m_c debates about the meaning of a prophetic dream with r_c.",
-			"m_c learns more about the previous holder of their rank from r_c.",
 			"r_c puts a lot of faith into m_c's skill as {PRONOUN/m_c/poss} rank."
 		],
 		"main_status_constraint": [
