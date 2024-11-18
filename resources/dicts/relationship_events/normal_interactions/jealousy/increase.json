@@ -28,7 +28,8 @@
 			"The Clan likes one of r_c's suggestions, but it was just m_c's reworded.",
 			"m_c tries to do something like r_c, but just ends up getting embarrassed.",
 			"A Clanmate accuses m_c of copying one of r_c's jokes.",
-			"m_c wishes {PRONOUN/m_c/subject} {VERB/m_c/look/looks} more like r_c.",
+			"m_c wishes {PRONOUN/m_c/subject} looked more like r_c.",
+
 			"m_c thinks that r_c is more talented than {PRONOUN/m_c/object}.",
 			"r_c has a talent that m_c wants to have.",
 			"m_c tried on an accessory that r_c threw away, but realized r_c looked a lot better in it.",
