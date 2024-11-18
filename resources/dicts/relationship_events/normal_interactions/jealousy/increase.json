@@ -60,7 +60,8 @@
 	{
 		"id": "jealousy_inc_med3",
 		"interactions": [
-			"m_c is jealous that r_c got praised by the leader.",
+			"m_c is jealous that r_c was praised by the leader.",
+
 			"m_c is jealous that r_c got to fight in a border skirmish when {PRONOUN/m_c/subject} didn't.",
 			"m_c is jealous that r_c got to go on border patrol this morning.",
 			"r_c caught a giant piece of prey that m_c wishes {PRONOUN/m_c/subject} did.",
