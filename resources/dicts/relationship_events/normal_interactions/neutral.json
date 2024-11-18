@@ -73,7 +73,8 @@
 			"r_c asks m_c to speak up while chatting together.",
 			"m_c overthinks something {PRONOUN/m_c/subject} said to r_c.",
 			"m_c does something embarrassing in front of r_c, but r_c doesn't seem to mind.",
-			"m_c apologies to r_c, but r_c doesn't know why.",
+			"m_c apologizes to r_c, but r_c doesn't know why.",
+
 			"m_c hyped {PRONOUN/m_c/self} up to have a conversation with r_c, but r_c's gone somewhere else.",
 			"m_c struggles to get a word in during a conversation with r_c.",
 			"m_c hides from r_c to avoid an awkward interaction.",
