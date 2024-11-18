@@ -15,7 +15,8 @@
 			"m_c notices that r_c overslept.",
 			"r_c tells m_c to smile more.",
 			"m_c had a funny dream about r_c and can't take {PRONOUN/r_c/object} seriously now.",
-			"r_c is talking to m_c, but {PRONOUN/m_c/subject} can't stop noticing the mud on r'c pelt."
+			"r_c is talking to m_c, but {PRONOUN/m_c/subject} can't stop noticing the mud on r_c's pelt."
+
 		]
 	},
 	{
