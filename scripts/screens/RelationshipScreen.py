@@ -460,10 +460,10 @@ class RelationshipScreen(Screens):
 
         if self.inspect_cat is not None:
             # NAME LENGTH
-            chosen_name = shorten_text_to_fit(str(self.inspect_cat.name), 125)
+            chosen_name = shorten_text_to_fit(str(self.inspect_cat.name), 180, 18)
 
             self.inspect_cat_elements["name"] = pygame_gui.elements.ui_label.UILabel(
-                ui_scale(pygame.Rect((0, -2), (150, 40))),
+                ui_scale(pygame.Rect((0, 152), (180, 40))),
                 chosen_name,
                 object_id="#text_box_34_horizcenter",
                 container=self.selected_cat_container,
@@ -472,7 +472,7 @@ class RelationshipScreen(Screens):
 
             # Cat Image
             self.inspect_cat_elements["image"] = pygame_gui.elements.UIImage(
-                ui_scale(pygame.Rect((0, 30), (150, 150))),
+                ui_scale(pygame.Rect((0, 0), (150, 150))),
                 pygame.transform.scale(
                     self.inspect_cat.sprite, ui_scale_dimensions((150, 150))
                 ),
