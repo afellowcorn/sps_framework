@@ -8,7 +8,7 @@
             "any"
         ],
         "weight": 5,
-        "event_text": "m_c wandered out of camp, only to come back with a stranger. After explaining how {PRONOUN/m_c/subject} saved {PRONOUN/n_c:0/poss} life, the new cat introduces {PRONOUN/n_c:0/self} as n_c:0, and asks to join c_n.",
+        "event_text": "m_c wandered out of camp, only to come back with a stranger. After explaining how m_c saved {PRONOUN/n_c:0/poss} life, the new cat introduces {PRONOUN/n_c:0/self} as n_c:0, and asks to join c_n.",
         "m_c": {
             "age": [
                 "young adult",
