@@ -104,7 +104,7 @@
             "any"
         ],
         "weight": 5,
-        "event_text": "After going for a walk, m_c returns to camp with a small kitten, explaining that {PRONOUN/m_c/subject} found {PRONOUN/n_c:0/object} abadoned, tucked away under a rocky ledge.",
+        "event_text": "After going for a walk, m_c returns to camp with a small kitten, explaining that {PRONOUN/m_c/subject} found {PRONOUN/n_c:0/object} abandoned, tucked away under a rocky ledge.",
         "m_c": {
             "age": [
                 "young adult",
