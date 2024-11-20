@@ -81,7 +81,7 @@
             "any"
         ],
         "weight": 5,
-        "event_text": "m_c is strolling along the cliffside when {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} a body laying at the bottom. Deciding to investigate, m_c realises the cat is a loner, and is about to return to camp when {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} the sound of mewling kits, discovering a litter of them tucked underneath a rocky ledge. Not wanting to leave them there to starve, m_c takes the piteous group back to camp, where they're offered a place in the Clan.",
+        "event_text": "m_c is strolling along the cliffside when {PRONOUN/m_c/subject} {VERB/m_c/spot/spots} a body laying at the bottom. Deciding to investigate, m_c realises the cat is a loner, and is about to return to camp when {PRONOUN/m_c/subject} {VERB/m_c/hear/hears} the sound of mewling kits, discovering a litter of them tucked underneath a rocky ledge. Not wanting to leave them there to starve, m_c takes the piteous group back to camp, where they're offered a place in c_n.",
         "m_c": {
             "age": [
                 "young adult",
