@@ -2,7 +2,7 @@
     {
         "event_id": "mtn_new_cat_eagle",
         "location": [
-            "beach"
+            "mountainous"
         ],
         "season": [
             "any"
@@ -75,7 +75,7 @@
     {
         "event_id": "mtn_new_cat_litter1",
         "location": [
-            "beach"
+            "mountainous"
         ],
         "season": [
             "any"
