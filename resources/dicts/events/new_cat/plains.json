@@ -2,7 +2,7 @@
    {
         "event_id": "pln_new_cat_litter_deadparent1",
         "location": [
-            "forest"
+            "plains"
         ],
         "season": [
             "any"
@@ -48,7 +48,7 @@
     {
         "event_id": "pln_new_cat_lost_loner1",
         "location": [
-            "forest"
+            "plains"
         ],
         "season": [
             "any"
