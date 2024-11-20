@@ -42,10 +42,142 @@
         ]
     },
     {
+        "id": "adventurous_elder",
+        "thoughts": [
+            "Wishes {PRONOUN/m_c/subject} {VERB/m_c/were/was} young enough to spend the whole day exploring",
+            "Thinks wistfully of all the adventures {PRONOUN/m_c/subject} used to go on",
+            "Is feeling cooped up in camp"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "adventurous"
+        ]
+    },
+    {
+        "id": "adventurous_elder_to_apprentices",
+        "thoughts": [
+            "Tells a group of awe-struck apprentices all the exciting adventures {PRONOUN/m_c/subject} had outside Clan territory",
+            "Reminds an apprentice that there is so, so much more beyond the borders",
+            "Informs an apprentice of all the best landmarks outside c_n territory"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "adventurous"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "ambitious_elder",
+        "thoughts": [
+            "Wonders if elders can still become leader",
+            "Thinks elders should be allowed to patrol",
+            "Feels content with having reached such a highly-respected role"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ]
+    },
+    {
+        "id": "arrogant_elder",
+        "thoughts": [
+            "Yells at anycat within earshot to bring {PRONOUN/m_c/object} fresh moss"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "arrogant"
+        ]
+    },
+    {
+        "id": "arrogant_elder_to_younger_cats",
+        "thoughts": [
+            "Is bossing the younger cats around"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "arrogant"
+        ],
+        "random_age_constraint": [
+            "kitten",
+            "adolescent",
+            "young adult"
+        ],
+    },
+    {
+        "id": "arrogant_elder_leader",
+        "thoughts": [
+            "Gives unsolicited advice to the leader"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "arrogant"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ],
+    },
+    {
+        "id": "mean_elder_to_apprentice",
+        "thoughts": [
+            "Snarls at an apprentice when they bring thorns into the den",
+            "Snaps at an apprentice to hurry up with {PRONOUN/m_c/poss} ticks"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "bloodthirsty",
+            "cold",
+            "grumpy",
+            "strict",
+            "vengeful"
+        ]
+    },
+    {
+        "id": "teacher_elder_to_younger_cats",
+        "thoughts": [
+            "Is happy {PRONOUN/m_c/subject} can pass on {PRONOUN/m_c/poss} knowledge in a new way",
+            "Teaches r_c a skill {PRONOUN/r_c/subject} never knew!",
+            "Teaches young cats the importance of the warrior code"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "random_age_constraint": [
+            "kitten",
+            "adolescent",
+            "young adult"
+        ],
+        "main_skill_constraint": [
+            "TEACHER,1"
+        ]
+    },
+    {
         "id": "elder_to_alive_younger_cats",
         "thoughts": [
             "Is giving advice to the younger cats",
-            "Is bossing the younger cats around",
             "Is telling scary stories to the younger cats",
             "Is sharing wisdom with the younger cats that is... less than helpful",
             "Is recounting daring expeditions for the younger cats",
