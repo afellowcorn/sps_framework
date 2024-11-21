@@ -34,7 +34,8 @@
 			"m_c and r_c find out they have the same favorite prey!",
 			"m_c and r_c come up with a catchy song together.",
 			"m_c listens to r_c's big plans for the day.",
-			"r_c points out to m_c that a spider is in {PRONOUN/m_c/poss} nest before {PRONOUN/m_c/subject} sits in it.",
+			"r_c points out to m_c that a spider is in {PRONOUN/m_c/poss} nest before {PRONOUN/m_c/subject} {VERB/m_c/sit/sits} in it.",
+
 			"m_c and r_c work together to lead a scary bug out of the camp."
 		],
 		"reaction_random_cat": {
