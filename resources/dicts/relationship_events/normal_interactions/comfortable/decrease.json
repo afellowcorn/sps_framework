@@ -209,7 +209,8 @@
 			"m_c swore {PRONOUN/m_c/subject} saw r_c burying something.",
 			"m_c can smell blood on r_c, but there's nothing there.",
 			"m_c sees a darkness in r_c's eyes.",
-			"A heavy feeling of guilt weights on m_c whenever {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} kind to r_c.",
+			"A heavy feeling of guilt weighs on m_c whenever {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} kind to r_c.",
+
 			"The bad dreams that m_c has about r_c are progressively getting worse and worse.",
 			"Why does m_c always see r_c out at night?"
 		],
