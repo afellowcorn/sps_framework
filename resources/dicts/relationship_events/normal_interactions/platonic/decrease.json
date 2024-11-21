@@ -23,13 +23,13 @@
 			"m_c has drawn the ire of r_c by deliberately taking the last of {PRONOUN/r_c/poss} favorite nesting materials for {PRONOUN/m_c/self}.",
 			"m_c and r_c keep talking over each other on accident.",
 			"After m_c tidies up an area, r_c accidentally messes it up again.",
-			"m_c confesses something to r_c, but realizes r_c can't relate at all.",
+			"m_c confesses something to r_c, but realizes {PRONOUN/r_c/subject} can't relate at all.",
 			"When m_c gets a little hurt, r_c giggles before asking if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} okay.",
 			"m_c tells r_c to talk a little quieter.",
 			"m_c keeps asking r_c to explain a joke, but r_c won't do it.",
 			"m_c keeps asking r_c to explain a joke, but r_c just says that m_c had to be there.",
 			"m_c stretched in front of r_c. r_c didn't get a great view.",
-			"r_c asked m_c to turn away while {PRONOUN/m_c/subject} {VERB/m_c/cough/coughs}, so m_c coughed on {PRONOUN/r_c/object} out of spite."
+			"r_c asked m_c to cover {PRONOUN/m_c/poss} mouth while {PRONOUN/m_c/subject} {VERB/m_c/cough/coughs}, so m_c coughed on {PRONOUN/r_c/object} out of spite."
 		],
 		"reaction_random_cat": {
 			"platonic": "decrease"
