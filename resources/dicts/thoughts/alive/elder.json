@@ -137,41 +137,211 @@
         ],
     },
     {
-        "id": "mean_elder_to_apprentice",
+        "id": "bloodthirsty_elder",
         "thoughts": [
-            "Snarls at an apprentice when they bring thorns into the den",
-            "Snaps at an apprentice to hurry up with {PRONOUN/m_c/poss} ticks"
+            "Hates how powerless {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} as an elder",
+            "Misses going on border patrol",
+            "Wishes elder's could fight in battles"
         ],
         "main_age_constraint": [
             "senior adult",
             "senior"
         ],
         "main_trait_constraint": [
-            "bloodthirsty",
-            "cold",
-            "grumpy",
-            "strict",
-            "vengeful"
+            "bloodthirsty"
         ]
     },
     {
-        "id": "teacher_elder_to_younger_cats",
+        "id": "bloodthirsty_elder_to_apprentice",
         "thoughts": [
-            "Is happy {PRONOUN/m_c/subject} can pass on {PRONOUN/m_c/poss} knowledge in a new way",
-            "Teaches r_c a skill {PRONOUN/r_c/subject} never knew!",
-            "Teaches young cats the importance of the warrior code"
+            "Snarls at an apprentice when they bring thorns into the den",
+            "Snaps at an apprentice to hurry up with cleaning the elder's den",
+            "Lectures an apprentice on not holding back in battle"
         ],
         "main_age_constraint": [
             "senior adult",
             "senior"
         ],
-        "random_age_constraint": [
-            "kitten",
-            "adolescent",
-            "young adult"
+        "main_trait_constraint": [
+            "bloodthirsty"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+    },
+    {
+        "id": "bold_elder",
+        "thoughts": [
+            "Boldly gives {PRONOUN/m_c/poss} advice at a Clan meeting",
+            "Insists on going to the next gathering",
+            "Declares that {PRONOUN/m_c/subject} will fight alongside the warriors in battle"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "bold"
+        ]
+    },
+    {
+        "id": "calm_elder",
+        "thoughts": [
+            "Is enjoying the peaceful life of an elder",
+            "Is a soothing presence in the Clan"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "calm"
+        ]
+    },
+    {
+        "id": "careful_elder",
+        "thoughts": [
+            "Reminds a patrol not to be reckless",
+            "Checks the elder's den is secure for the fifth time today"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "careful"
+        ],
+    },
+    {
+        "id": "careful_elder_to_apprentice",
+        "thoughts": [
+            "Asks an apprentice to triple-check there's no thorns in {PRONOUN/m_c/poss} bedding",
+            "Is telling cautionary tales to apprentices"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "careful"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ],
+    },
+    {
+        "id": "charismatic_elder",
+        "thoughts": [
+            "Has everycat engaged in an extravagant story",
+            "Hasn't lost any of {PRONOUN/m_c/poss} charm"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "charismatic"
+        ],
+    },
+    {
+        "id": "childish_elder",
+        "thoughts": [
+            "Whines about {PRONOUN/m_c/poss} nest being too rough",
+            "Is happy {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't have to patrol anymore",
+            "Bats a moss ball around the elder's den"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "childish"
+        ],
+    },
+    {
+        "id": "cold_elder",
+        "thoughts": [
+            "Hates how much {PRONOUN/m_c/subject} {VERB/m_c/have/has} to rely on others",
+            "Flatly refuses to tell a story when a Clanmate asks"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "cold"
+        ],
+    },
+    {
+        "id": "compassionate_elder",
+        "thoughts": [
+            "Insists the warriors eat before {PRONOUN/m_c/object}",
+            "Offers advice to cats who need it"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "compassionate"
+        ],
+    },
+    {
+        "id": "competitive_elder",
+        "thoughts": [
+            "Challenges a Clanmate to a game of moss ball",
+            "Misses the 'friendly' hunting competitions {PRONOUN/m_c/subject} used to compete in",
+            "Is coming up with new competitions for elders"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "competitive"
+        ],
+    },
+    {
+        "id": "confident_elder",
+        "thoughts": [
+            "Is proud of all {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} achieved",
+            "Offers advice to {PRONOUN/m_c/poss} Clanmates",
+            "Brags about all {PRONOUN/m_c/poss} past achievements"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "confident"
+        ],
+    },
+    {
+        "id": "teacher_elder",
+        "thoughts": [
+            "Is happy {PRONOUN/m_c/subject} can pass on {PRONOUN/m_c/poss} knowledge in a new way"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
         ],
         "main_skill_constraint": [
             "TEACHER,1"
+        ]
+    },
+    {
+        "id": "story_elder",
+        "thoughts": [
+            "Tells the best stories",
+            "Has plenty of free time to craft new tales",
+            "Is enjoying {PRONOUN/m_c/poss} new role of Clan storyteller"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "STORY,1"
         ]
     },
     {
