@@ -118,7 +118,7 @@
             "kitten",
             "adolescent",
             "young adult"
-        ],
+        ]
     },
     {
         "id": "arrogant_elder_leader",
@@ -134,7 +134,7 @@
         ],
         "random_status_constraint": [
             "leader"
-        ],
+        ]
     },
     {
         "id": "bloodthirsty_elder",
@@ -167,7 +167,7 @@
         ],
         "random_status_constraint": [
             "apprentice"
-        ],
+        ]
     },
     {
         "id": "bold_elder",
@@ -210,7 +210,7 @@
         ],
         "main_trait_constraint": [
             "careful"
-        ],
+        ]
     },
     {
         "id": "careful_elder_to_apprentice",
@@ -227,7 +227,7 @@
         ],
         "random_status_constraint": [
             "apprentice"
-        ],
+        ]
     },
     {
         "id": "charismatic_elder",
@@ -241,7 +241,7 @@
         ],
         "main_trait_constraint": [
             "charismatic"
-        ],
+        ]
     },
     {
         "id": "childish_elder",
@@ -256,7 +256,7 @@
         ],
         "main_trait_constraint": [
             "childish"
-        ],
+        ]
     },
     {
         "id": "cold_elder",
@@ -270,7 +270,7 @@
         ],
         "main_trait_constraint": [
             "cold"
-        ],
+        ]
     },
     {
         "id": "compassionate_elder",
@@ -284,7 +284,7 @@
         ],
         "main_trait_constraint": [
             "compassionate"
-        ],
+        ]
     },
     {
         "id": "competitive_elder",
@@ -299,14 +299,15 @@
         ],
         "main_trait_constraint": [
             "competitive"
-        ],
+        ]
     },
     {
         "id": "confident_elder",
         "thoughts": [
             "Is proud of all {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} achieved",
             "Offers advice to {PRONOUN/m_c/poss} Clanmates",
-            "Brags about all {PRONOUN/m_c/poss} past achievements"
+            "Brags about all {PRONOUN/m_c/poss} past achievements",
+            "Tells <i>another</i> story about {PRONOUN/m_c/self}"
         ],
         "main_age_constraint": [
             "senior adult",
@@ -314,7 +315,67 @@
         ],
         "main_trait_constraint": [
             "confident"
+        ]
+    },
+    {
+        "id": "cunning_elder",
+        "thoughts": [
+            "Persuades a Clanmate to carry fresh-kill to {PRONOUN/m_c/object}, though {PRONOUN/m_c/subject} could have got it {PRONOUN/m_c/self}"
         ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "cunning"
+        ]
+    },
+    {
+        "id": "cunning_elder_to_apprentices",
+        "thoughts": [
+            "Convinces an apprentice that they get given an easier warrior assessment if they help the elders",
+            "Knows exactly what to say to persuade an apprentice to clean the elder's den"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "cunning"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "daring_elder",
+        "thoughts": [
+            "Is stubbornly refusing the medicine cat's herbs, claiming {PRONOUN/m_c/subject} {VERB/m_c/do/does}n't need them",
+            "Is telling exciting tales from {PRONOUN/m_c/poss} youth",
+            "Insists {PRONOUN/m_c/subject} can race just as well as the warriors"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "daring"
+        ]
+    },
+    {
+        "id": "faithful_elder",
+        "thoughts": [
+            "Is glad {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} served c_n for so long",
+            "Is proud {PRONOUN/m_c/subject} to have followed {PRONOUN/m_c/poss} own beliefs all {PRONOUN/m_c/poss} life",
+            "Reminds {PRONOUN/m_c/poss} Clanmates to follow their hearts"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "faithful"
+        ]
     },
     {
         "id": "teacher_elder",
