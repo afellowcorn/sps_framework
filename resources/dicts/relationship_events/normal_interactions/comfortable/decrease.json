@@ -187,7 +187,8 @@
 			"m_c told r_c to shut up.",
 			"During a conversation with r_c, m_c says something too bluntly.",
 			"m_c calls out r_c for leaving old, rotten prey in the pile.",
-			"r_c thinks m_c is lying when {PRONOUN/r_c/subject} {VERB/r_c/apologize/apologizes}.",
+			"r_c thinks m_c is lying when {PRONOUN/m_c/subject} {VERB/m_c/apologize/apologizes}.",
+
 			"m_c tells r_c that {PRONOUN/r_c/subject} {VERB/r_c/look/looks} terrible today.",
 			"m_c was sarcastic to r_c at an inappropriate time.",
 			"m_c hisses at r_c over something small."
