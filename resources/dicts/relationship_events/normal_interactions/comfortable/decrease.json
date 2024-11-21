@@ -57,7 +57,8 @@
 			"m_c tells {PRONOUN/m_c/poss} Clanmates that something's off about r_c.",
 			"The moon casts a shadow on r_c's face in a way that makes m_c uneasy.",
 			"For a moment, m_c thought r_c's voice sounded like someone else's.",
-			"After r_c finished {PRONOUN/r_c/poss} food, m_c notices {PRONOUN/r_c/subject} made a mess."
+			"After r_c finished {PRONOUN/r_c/poss} food, m_c noticed {PRONOUN/r_c/subject} made a mess."
+
 		]
 	},
 	{
