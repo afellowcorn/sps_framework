@@ -197,7 +197,8 @@
 		]
 	},
 	{
-		"id": "admeration_kit_inc_med2",
+		"id": "admiration_kit_inc_med2",
+
 		"interactions": [
 			"m_c tells r_c that {PRONOUN/m_c/subject} would like to be like {PRONOUN/r_c/object} when {PRONOUN/m_c/subject} grows up.",
 			"m_c can't believe r_c is real and that cool.",
