@@ -176,7 +176,8 @@
 			"m_c has a big smile whenever r_c comes around.",
 			"m_c believes everything r_c says.",
 			"m_c tries to tell jokes as funny as r_c's, but they make little sense.",
-			"r_c lets m_c make a wish on a shooting star, even though {PRONOUN/m_c/subject} saw it first.",
+			"r_c lets m_c make a wish on a shooting star, even though {PRONOUN/r_c/subject} saw it first.",
+
 			"r_c shows m_c that bugs aren't that scary.",
 			"m_c always looks at r_c with wonder in {PRONOUN/m_c/poss} eyes."
 		],
