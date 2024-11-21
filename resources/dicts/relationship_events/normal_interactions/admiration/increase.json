@@ -330,7 +330,8 @@
 			"m_c is amazed at how skilled r_c really is.",
 			"m_c thinks the Clan's ancestors smile upon r_c.",
 			"m_c sees r_c save someone.",
-			"r_c sits in the sunrise, a halo of light around them. m_c takes it as a sign to admire {PRONOUN/r_c/object}.",
+			"r_c sits in the sunrise, a halo of light around {PRONOUN/r_c/object}. m_c takes it as a sign to admire {PRONOUN/r_c/object}.",
+
 			"r_c gets hurt on a patrol but makes sure m_c's sickness is treated first.",
 			"m_c is proud to be in the same Clan as the talented r_c.",
 			"m_c can't believe how talented r_c is!"
