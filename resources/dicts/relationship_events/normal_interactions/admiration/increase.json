@@ -102,8 +102,7 @@
 			"m_c and r_c debate about something interesting. Though they disagree, they stay amicable.",
 			"m_c and r_c tell increasingly scary stories to one another.",
 			"m_c and r_c repair some nests together.",
-			"m_c compliments r_c on their bravery today.",
-			"Upon hearing a yowl at the edge of camp, m_c and r_c are the first on the scene. They don't find anyone there.",
+			"m_c compliments r_c on {PRONOUN/r_c/poss} bravery today.",
 			"Even after an argument, m_c and r_c help an injured Clanmate together."
 		],
 		"reaction_random_cat": {
@@ -329,10 +328,6 @@
 			"m_c is impressed by r_c's competence in any situation.",
 			"m_c is amazed at how skilled r_c really is.",
 			"m_c thinks the Clan's ancestors smile upon r_c.",
-			"m_c sees r_c save someone.",
-			"r_c sits in the sunrise, a halo of light around {PRONOUN/r_c/object}. m_c takes it as a sign to admire {PRONOUN/r_c/object}.",
-
-			"r_c gets hurt on a patrol but makes sure m_c's sickness is treated first.",
 			"m_c is proud to be in the same Clan as the talented r_c.",
 			"m_c can't believe how talented r_c is!"
 		],
