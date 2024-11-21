@@ -119,7 +119,8 @@
 			"r_c talks to m_c a bit too enthusiastically about how best to kill prey.",
 			"r_c started a fight with m_c.",
 			"m_c was startled after r_c snarled viciously during a trivial disagreement.",
-			"m_c notices that r_c hasn't groomed fresh kill blood off {PRONOUN/r_c/poss} paw.",
+			"m_c notices that r_c hasn't groomed fresh-kill blood off {PRONOUN/r_c/poss} paw.",
+
 			"m_c notices that r_c is playing with {PRONOUN/r_c/poss} fresh-kill.",
 			"m_c notices that r_c looks a little too entertained by a Clanmate's unsettling story."
 		],
