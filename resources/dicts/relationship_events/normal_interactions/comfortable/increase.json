@@ -8,13 +8,11 @@
 			"r_c's laugh reminds m_c of someone {PRONOUN/m_c/subject} {VERB/m_c/miss/misses}.",
 			"m_c overhears r_c humming a comforting tune.",
 			"r_c brought m_c some dry bedding.",
-			"r_c lets m_c grab a piece of prey first.",
-			"r_c helps m_c to the medicine den.",
+			"r_c lets m_c grab a piece of fresh-kill first.",
 			"m_c had a good dream about r_c.",
 			"m_c remembers something nice that r_c did.",
 			"m_c sees a pretty flower in r_c's nest.",
-			"m_c noticed r_c soaking up a puddle with moss.",
-			"m_c heard a story about something generous r_c did."
+			"m_c heard a story about something kind r_c did."
 		]
 	},
 	{
@@ -25,11 +23,11 @@
 			"m_c has been spending time with r_c lately.",
 			"m_c shares a joke about a neighboring Clan with r_c.",
 			"m_c reassures r_c about something that was bothering {PRONOUN/r_c/object}.",
-			"m_c likes to sit near r_c during meetings.",
-			"m_c and r_c look at each other and smile knowingly about something.",
+			"m_c likes to sit near r_c during conversations.",
+			"m_c and r_c often look at each other and smile knowingly about something.",
 			"m_c and r_c enjoy the rain together.",
 			"r_c gives advice to m_c. It's not good advice, but m_c appreciates the effort.",
-			"r_c picks up something that m_c dropped for {PRONOUN/m_c/object}",
+			"r_c gives m_c something that {PRONOUN/m_c/subject} dropped.",
 			"m_c learns that r_c is scared of thunder, too.",
 			"m_c and r_c drink from the same puddle.",
 			"m_c and r_c make each other laugh."
@@ -66,9 +64,8 @@
 			"r_c is the only one who gets m_c's joke.",
 			"m_c overhears something about r_c that {PRONOUN/m_c/subject} can relate to.",
 			"m_c calms down when realizing r_c is nearby.",
-			"r_c's advice for m_c is more helpful than {PRONOUN/m_c/subject} expected.",
+			"r_c's advice is more helpful than m_c expected.",
 			"r_c motivates m_c to do something difficult.",
-			"r_c comforts m_c after {PRONOUN/m_c/subject} had a bad dream.",
 			"r_c doesn't laugh when m_c does something embarrassing.",
 			"r_c doesn't judge m_c for being anxious about a bad dream.",
 			"When m_c gets hurt, r_c is the first to ask if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} okay.",
@@ -135,7 +132,7 @@
 			"r_c is listening to m_c's troubles.",
 			"r_c always knows what to say to comfort m_c.",
 			"m_c is surprised that r_c is so quick to comfort {PRONOUN/m_c/object}.",
-			"m_c is flattered by how intently r_c listens to {PRONOUN/m_c/object} vents.",
+			"m_c is comforted by how intently r_c listens to {PRONOUN/m_c/object} complaints.",
 			"r_c noticed m_c was struggling, and offered to help {PRONOUN/m_c/object}."
 		],
 		"random_trait_constraint": [
@@ -165,7 +162,6 @@
 			"r_c is listening to m_c's problems.",
 			"r_c complimented m_c on something nobody else did.",
 			"r_c gives m_c the coziest piece of nest material {PRONOUN/r_c/subject} {VERB/r_c/have/has}.",
-			"On a cold night, r_c let m_c borrow {PRONOUN/r_c/poss} warmer nest.",
 			"m_c likes something r_c has, so r_c tells {PRONOUN/m_c/object} to keep it.",
 			"r_c gives m_c an item {PRONOUN/m_c/subject} may like."
 		],
@@ -180,7 +176,7 @@
 			"r_c calmly explains hunting techniques to m_c again for the fourth time today.",
 			"r_c lets m_c cry on {PRONOUN/r_c/subject} for a while.",
 			"r_c stays with m_c until {PRONOUN/m_c/subject} fall asleep.",
-			"As m_c tells r_c a long story, {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} questions always {VERB/r_c/look/looks} engaged.",
+			"As m_c tells r_c a long story, {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} interesting, engaged questions.",
 			"r_c helps m_c with a tedious task and it makes the whole day a lot easier."
 		],
 		"random_trait_constraint": [
@@ -205,7 +201,6 @@
 			"m_c hides somewhere with r_c, giggling together about something.",
 			"r_c lets m_c stalk {PRONOUN/r_c/poss} tail, pretending not to see {PRONOUN/m_c/object}.",
 			"m_c mimics some of the training techniques r_c is doing.",
-			"r_c cleans a booger off of m_c's face.",
 			"m_c is hiding under a bush from r_c, but {PRONOUN/m_c/subject} can't stop giggling."
 		],
 		"main_status_constraint": [
@@ -223,9 +218,8 @@
 			"m_c makes r_c {PRONOUN/m_c/poss} deputy in a game of KittenClan.",
 			"m_c and r_c play a prank on an older cat together.",
 			"The Clan looks all over for m_c and r_c and find out they have a secret hiding place.",
-			"m_c and r_c roleplay. r_c's dying of fifty million diseases, but m_c is the best medicine cat ever.",
-			"r_c cleans a booger off of m_c's face.",
-			"m_c and r_c spend the whole day playing hide and seek. m_c gets stuck somewhere.",
+			"m_c and r_c are playing KittenClan. r_c's dying of a hundred diseases, but m_c is the best medicine cat ever.",
+			"m_c and r_c spend the whole day playing hide-n-seek.",
 			"m_c takes a nap with r_c after a long day playing moss-ball."
 		],
 		"main_status_constraint": [
@@ -264,11 +258,10 @@
 		"interactions": [
 			"m_c thanks r_c for checking when {PRONOUN/r_c/subject} {VERB/r_c/ask/asks} if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} feeling alright.",
 			"m_c drops into the medicine den to ask r_c if {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} eaten yet.",
-			"m_c brings r_c a piece of prey after a long day of healing work.",
+			"m_c brings r_c a piece of fresh-kill after a long day of healing work.",
 			"m_c helps r_c fix nests in the medicine den.",
 			"m_c lets r_c vent to {PRONOUN/m_c/object} about the difficulties as a healer.",
-			"After a rough storm gets into the medicine den, m_c helps r_c pick up herbs.",
-			"As r_c heals a Clanmate, m_c stays with {PRONOUN/r_c/object} for support."
+			"After a rough storm gets into the medicine den, m_c helps r_c pick up herbs."
 		],
 		"random_status_constraint": [
 			"medicine cat",
@@ -305,9 +298,8 @@
 			"m_c and r_c spend a few minutes complimenting one another.",
 			"m_c spends the day helping around the camp with r_c.",
 			"m_c and r_c gossip about drama nobody else knows.",
-			"m_c asks r_c to look at a rash on {PRONOUN/m_c/poss} leg and see if it looks bad.",
 			"m_c talks to r_c about a mutual friend they have both been worrying about.",
-			"m_c asks r_c to look at a wound on {PRONOUN/m_c/poss} body before going to the medicine den.",
+			"m_c asks r_c to look at a little cut on {PRONOUN/m_c/poss} leg.",
 			"After something happens, m_c and r_c find comfort in one another's company."
 		],
 		"reaction_random_cat": {
