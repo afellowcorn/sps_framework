@@ -596,20 +596,7 @@
         "colours": {"normal_text": "#EFE5CE"}
     },
     "#blank_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/blank.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/blank.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/blank.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/blank.png"
-            }
-        }
+        "font": {"name": "notosans", "size": "14"}
     },
     "#blank_button_small": {
         "images": {
