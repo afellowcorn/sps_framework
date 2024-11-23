@@ -2069,10 +2069,11 @@ class SelectFocusClans(UIWindow):
             object_id="#exit_window_button",
             container=self,
         )
-        self.save_button = UIImageButton(
+        self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((80, 180), (139, 30))),
-            "",
-            object_id="#change_focus_button",
+            "Change Focus",
+            get_button_dict(ButtonStyles.SQUOVAL, (139, 30)),
+            object_id="@buttonstyles_squoval",
             container=self,
         )
         self.save_button.disable()
