@@ -755,16 +755,16 @@
     "tags0": ["cat", "animal"]
   },
   "Flurry": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "water"]
   },
   "Flutter": {
     "variants": 1,
     "tags0": ["animal", "bug"]
   }, 
   "Fly": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "bug"]
   }, 
   "Fog": {
     "variants": 0,
@@ -787,8 +787,8 @@
     "tags0": []
   },
   "Fringe": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["descriptor", "miscellaneous"]
   }, 
   "Frog": {
     "variants": 1, 
