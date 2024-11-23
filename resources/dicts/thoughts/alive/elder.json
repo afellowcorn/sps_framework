@@ -818,7 +818,8 @@
         "id": "strict_elder",
         "thoughts": [
             "Gives the sternest lectures of any c_n cat!",
-            "Isn't afraid to berate rule-breakers"
+            "Isn't afraid to berate rule-breakers",
+            "Is sure {PRONOUN/m_c/subject} didn't break the rules this much when <i>{PRONOUN/m_c/subject}</i> was younger"
         ],
         "main_age_constraint": [
             "senior adult",
@@ -928,6 +929,84 @@
         ],
         "main_skill_constraint": [
             "STORY,1"
+        ]
+    },
+    {
+        "id": "lore_elder",
+        "thoughts": [
+            "Is passing on stories of old to the next generation",
+            "Seems to know everything there is to know about c_n's history!"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "LORE,1"
+        ]
+    },
+    {
+        "id": "camp_elder",
+        "thoughts": [
+            "Still enjoys helping out around camp",
+            "Is teaching {PRONOUN/m_c/poss} Clanmates the art of building a waterproof den!",
+            "Helps the warriors to reinforce the camp walls"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "CAMP,1"
+        ]
+    },
+    {
+        "id": "camp_elder_to_apprentice",
+        "thoughts": [
+            "Teaches an apprentice how to build the comfiest nests",
+            "Watches an apprentice try and construct {PRONOUN/m_c/poss} nest, knowing {PRONOUN/m_c/subject} could do a far better job"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "CAMP,1"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "kitsitter_elder",
+        "thoughts": [
+            "Spends the day collecting trinkets around camp for kits to play with",
+            "Helps to reinforce the nursery"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "KIT,1"
+        ]
+    },
+    {
+        "id": "kitsitter_elder_to_kits",
+        "thoughts": [
+            "Offers to watch over the kits for the day",
+            "Comes up with new games for the kits to play",
+            "Keeps all the kits entertained with exciting stories"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_skill_constraint": [
+            "KIT,1"
+        ],
+        "random_status_constraint": [
+            "kitten"
         ]
     },
     {
