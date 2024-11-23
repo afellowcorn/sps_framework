@@ -60,7 +60,7 @@
         "id": "adventurous_elder_to_apprentices",
         "thoughts": [
             "Tells a group of awe-struck apprentices all the exciting adventures {PRONOUN/m_c/subject} had outside Clan territory",
-            "Reminds an apprentice that there is so, so much more beyond the borders",
+            "Reminds an apprentice that there is so, so much more than life within the borders",
             "Informs an apprentice of all the best landmarks outside c_n territory"
         ],
         "main_age_constraint": [
@@ -90,9 +90,26 @@
         ]
     },
     {
+        "id": "ambitious_elder_to_leader",
+        "thoughts": [
+            "Is eager to give advice to the leader"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "ambitious"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ]
+    },
+    {
         "id": "arrogant_elder",
         "thoughts": [
-            "Yells at anycat within earshot to bring {PRONOUN/m_c/object} fresh moss"
+            "Yells at anycat within earshot to bring {PRONOUN/m_c/object} fresh moss",
+            "Is telling stories - only about {PRONOUN/m_c/self}, of course"
         ],
         "main_age_constraint": [
             "senior adult",
@@ -121,7 +138,7 @@
         ]
     },
     {
-        "id": "arrogant_elder_leader",
+        "id": "arrogant_elder_to_leader",
         "thoughts": [
             "Gives unsolicited advice to the leader"
         ],
@@ -141,7 +158,7 @@
         "thoughts": [
             "Hates how powerless {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} as an elder",
             "Misses going on border patrol",
-            "Wishes elder's could fight in battles"
+            "Insists that elders can fight in battles"
         ],
         "main_age_constraint": [
             "senior adult",
@@ -395,6 +412,23 @@
         ]
     },
     {
+        "id": "fierce_elder",
+        "thoughts": [
+            "Thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still young enough to take a fox",
+            "Thinks {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} still young enough to take a dog",
+            "Is telling stories to epic battles",
+            "Misses going on border patrol",
+            "Wishes elders could fight in battles"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "fierce"
+        ]
+    },
+    {
         "id": "flamboyant_elder",
         "thoughts": [
             "Is telling extravagant tales of {PRONOUN/m_c/poss} adventures",
@@ -406,6 +440,55 @@
         ],
         "main_trait_constraint": [
             "flamboyant"
+        ]
+    },
+    {
+        "id": "rebellious_elder",
+        "thoughts": [
+            "Thinks that the Clan used to be run better, and isn't affraid to say it!",
+            "Is telling stories that portray leadership in a... less than flattering light",
+            "Takes full advantage of {PRONOUN/m_c/poss} status as elder"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ]
+    },
+    {
+        "id": "rebellious_elder_to_apprentice",
+        "thoughts": [
+            "Reminds r_c that leaders aren't always right",
+            "Advises r_c to always do what <i>{PRONOUN/r_c/subject}</i> {VERB/r_c/think/thinks} is right"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ],
+        "random_status_constraint": [
+            "apprentice"
+        ]
+    },
+    {
+        "id": "rebellious_elder_to_leader",
+        "thoughts": [
+            "Is giving even more unsolicited advice to the leader",
+            "Is <i>always</i> around to offer some advice to r_c"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "rebellious"
+        ],
+        "random_status_constraint": [
+            "leader"
         ]
     },
     {
@@ -553,7 +636,7 @@
     {
         "id": "nervous_elder",
         "thoughts": [
-            "Worries that {PRONOUN/m_c/subject} would now be defenceless in battle",
+            "Worries that {PRONOUN/m_c/subject} would be defenceless in battle",
             "Frets that a fox might break into the elder's den"
         ],
         "main_age_constraint": [
@@ -646,7 +729,7 @@
         "id": "righteous_elder",
         "thoughts": [
             "Gives unsolicited advice due to {PRONOUN/m_c/poss} own morals",
-            "Advices {PRONOUN/m_c/poss} Clanmates to stick to what they believe is right"
+            "Advises {PRONOUN/m_c/poss} Clanmates to stick to what they believe is right"
         ],
         "main_age_constraint": [
             "senior adult",
@@ -674,8 +757,9 @@
     {
         "id": "sincere_elder",
         "thoughts": [
-            "Thinks hard about how best to advice every cat",
-            "Gives r_c {PRONOUN/m_c/poss} honest advice"
+            "Thinks hard about how best to advise every cat",
+            "Gives r_c {PRONOUN/m_c/poss} honest advice",
+            "Offers stories of {PRONOUN/m_c/poss} past failures to reassure a Clanmate"
         ],
         "main_age_constraint": [
             "senior adult",
@@ -705,7 +789,8 @@
         "id": "sneaky_elder",
         "thoughts": [
             "Always seems to find out every cat's secret",
-            "Finds <i>another</i> secret exit near the elder's den"
+            "Finds <i>another</i> secret exit near the elder's den",
+            "Never seems to be in the elder's den..."
         ],
         "main_age_constraint": [
             "senior adult",
@@ -713,6 +798,108 @@
         ],
         "main_trait_constraint": [
             "sneaky"
+        ]
+    },
+    {
+        "id": "strange_elder",
+        "thoughts": [
+            "Tells stories... but no cat can quite tell if they're true",
+            "Insists on only having moss from a certain tree"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "strange"
+        ]
+    },
+    {
+        "id": "strict_elder",
+        "thoughts": [
+            "Gives the sternest lectures of any c_n cat!",
+            "Isn't afraid to berate rule-breakers"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "strict"
+        ]
+    },
+    {
+        "id": "thoughtful_elder",
+        "thoughts": [
+            "Thinks for a long time about how best to offer advice",
+            "Spends the evening planning out a story",
+            "Took the time to clean out {PRONOUN/m_c/poss} own bedding today, so other cats don't have to"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "thoughtful"
+        ]
+    },
+    {
+        "id": "thoughtful_elder_to_leader",
+        "thoughts": [
+            "Is planning how best to present an issue to the leader"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "thoughtful"
+        ],
+        "random_status_constraint": [
+            "leader"
+        ]
+    },
+    {
+        "id": "troublesome_elder",
+        "thoughts": [
+            "Keeps moving the nests in the warriors den while they're out patrolling... just to annoy everyone",
+            "Is finding elder life <i>sooooo</i> boring"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "troublesome"
+        ]
+    },
+    {
+        "id": "vengeful_elder",
+        "thoughts": [
+            "Wonders if {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} the only cat who remembers a past wrongdoing",
+            "Is still glaring at a certain cat after they brought {PRONOUN/m_c/object} bedding with thorns in it"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "vengeful"
+        ]
+    },
+    {
+        "id": "wise_elder",
+        "thoughts": [
+            "Is being asked for advice for the fifth time today",
+            "Is more than happy to grant advice to cats who ask for it",
+            "Thinks back to a time no other cat remembers when solving a problem"
+        ],
+        "main_age_constraint": [
+            "senior adult",
+            "senior"
+        ],
+        "main_trait_constraint": [
+            "wise"
         ]
     },
     {
