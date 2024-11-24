@@ -512,7 +512,7 @@
             "Snarls when a cat suggests {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} too old to do something",
             "Hisses that {PRONOUN/m_c/poss} nest has thorns in it",
             "Refuses to tell a story when asked",
-            "Grouchily agrees to tell a story... just this one"
+            "Grouchily agrees to tell a story... just this once"
         ],
         "main_age_constraint": [
             "senior adult",
