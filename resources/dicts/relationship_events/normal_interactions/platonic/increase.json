@@ -45,7 +45,6 @@
 			"m_c thinks r_c has interesting things to talk about.",
 			"m_c is fascinated by one of r_c's stories.",
 			"m_c likes the way r_c laughs.",
-			"m_c thinks that r_c is good at leading others.",
 			"m_c is impressed by some of r_c's advice.",
 			"r_c reminds m_c to grab something from the fresh-kill pile if {PRONOUN/r_c/subject} {VERB/r_c/have/has}n't already."
 		]
@@ -110,7 +109,6 @@
 		],
 		"random_trait_constraint": [
 			"charismatic",
-			"bold",
 			"confident"
 		]
 	},
@@ -541,7 +539,7 @@
 			"m_c dispels a bad rumor about r_c.",
 			"m_c and r_c plan all their days together.",
 			"m_c and r_c always have something to share with each other.",
-			"The whole Clan notices how close m_c and r_c are being lately.",
+			"The whole Clan notices how close m_c and r_c are lately.",
 			"m_c is happy to run into r_c today."
 		],
 		"reaction_random_cat": {
