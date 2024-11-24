@@ -505,7 +505,9 @@ class SettingsScreen(Screens):
             self.tooltip[f"tip{i}"] = UIImageButton(
                 ui_scale(pygame.Rect((0, 0), (200, 26))),
                 self.info_text[1][i],
-                object_id="#blank_button",
+                object_id="#blank_button_dark"
+                if self.toggled_theme == "dark"
+                else "#blank_button",
                 container=self.checkboxes_text["info_container"],
                 manager=MANAGER,
                 tool_tip_text=tooltip if tooltip else None,
