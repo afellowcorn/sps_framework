@@ -7,7 +7,6 @@
 			"m_c notices one of {PRONOUN/m_c/poss} friends laughing with r_c.",
 			"m_c wants to asks a Clanmate to eat with {PRONOUN/m_c/object}, but they're busy with r_c.",
 			"A Clanmate that m_c wanted to get to know better is already friends with r_c.",
-
 			"m_c thinks Clanmates talk more highly of r_c than {PRONOUN/m_c/object}.",
 			"m_c suspects that r_c gets special treatment.",
 			"m_c sees a Clanmate complimenting r_c and feels a pang of envy.",
@@ -29,7 +28,6 @@
 			"m_c tries to do something like r_c, but just ends up getting embarrassed.",
 			"A Clanmate accuses m_c of copying one of r_c's jokes.",
 			"m_c wishes {PRONOUN/m_c/subject} looked more like r_c.",
-
 			"m_c thinks that r_c is more talented than {PRONOUN/m_c/object}.",
 			"r_c has a talent that m_c wants to have.",
 			"m_c tried on an accessory that r_c threw away, but realized r_c looked a lot better in it.",
@@ -61,7 +59,6 @@
 		"id": "jealousy_inc_med3",
 		"interactions": [
 			"m_c is jealous that r_c was praised by the leader.",
-
 			"m_c is jealous that r_c got to fight in a border skirmish when {PRONOUN/m_c/subject} didn't.",
 			"m_c is jealous that r_c got to go on border patrol this morning.",
 			"r_c caught a giant piece of prey that m_c wishes {PRONOUN/m_c/subject} did.",
@@ -69,7 +66,7 @@
 			"m_c wishes {PRONOUN/m_c/subject} could be as good a fighter as r_c.",
 			"m_c tries not to get envious hearing one of r_c's crazy patrol stories.",
 			"m_c had a plan during a patrol, but r_c's was a lot better.",
-			"The leader was more impressed by what r_c brought back from a patrol than what m_c did.",
+			"The leader was more impressed by what r_c brought back from a hunting patrol than what m_c did.",
 			"m_c is jealous that r_c went on patrol without {PRONOUN/m_c/object}.",
 			"m_c doesn't understand how r_c got so good at hunting."
 		],
@@ -107,7 +104,7 @@
 			"m_c hisses at r_c for getting a bigger piece of prey.",
 			"m_c tells r_c {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} deserve all the attention from the older cats.",
 			"m_c says r_c's name is stupid, but m_c is just jealous.",
-			"An older Clanmate tells m_c and r_c to get along."
+			"An older Clanmate tells m_c to be nice to r_c."
 		],
 		"main_status_constraint": [
 			"kitten"
