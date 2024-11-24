@@ -190,7 +190,7 @@
         "id": "bold_elder",
         "thoughts": [
             "Boldly gives {PRONOUN/m_c/poss} advice at a Clan meeting",
-            "Insists on going to the next gathering",
+            "Insists on going to the next Gathering",
             "Declares that {PRONOUN/m_c/subject} will fight alongside the warriors in battle"
         ],
         "main_age_constraint": [
