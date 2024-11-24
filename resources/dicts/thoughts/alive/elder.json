@@ -495,7 +495,7 @@
         "id": "gloomy_elder",
         "thoughts": [
             "Wonders if {PRONOUN/m_c/subject} could have achieved more...",
-            "Finds it harder and harder to get out {PRONOUN/m_c/poss} next",
+            "Finds it harder and harder to get out of {PRONOUN/m_c/poss} nest",
             "Feels surprisingly peaceful in the elder's den"
         ],
         "main_age_constraint": [
