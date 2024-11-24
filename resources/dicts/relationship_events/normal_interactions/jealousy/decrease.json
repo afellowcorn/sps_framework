@@ -19,7 +19,7 @@
 		"interactions": [
 			"r_c surprises m_c with something nice.",
 			"r_c goes out of {PRONOUN/r_c/poss} way to help m_c with something without being asked.",
-			"r_c brings m_c herbs from the medicine den.",
+			"r_c brings m_c herbs from the medicine den for a headache.",
 			"r_c tells a Clanmate that m_c did a great job today.",
 			"m_c is grateful for something r_c did."
 		]
@@ -30,7 +30,7 @@
 			"m_c swaps favorite prey with r_c.",
 			"m_c and r_c bring each other prey.",
 			"m_c shares nest material with r_c.",
-			"m_c and r_c take turns in a small patch of sun.",
+			"m_c and r_c take turns in a small patch of sunlight.",
 			"m_c shares a bit of shelter from the rain with r_c.",
 			"m_c helps r_c figure out how to word something.",
 			"m_c can't remember a word for the life of {PRONOUN/m_c/object}, but r_c helps {PRONOUN/m_c/object} remember it.",
@@ -73,7 +73,7 @@
 			"m_c and r_c exchange stories about their mentors.",
 			"After going on a patrol together, m_c and r_c excitedly gush about how cool it is to be an apprentice.",
 			"r_c messes something up during training, so m_c reassures {PRONOUN/r_c/object} that it's okay to make mistakes.",
-			"m_c and r_c have a long conversation about what their warrior names should be."
+			"m_c and r_c have a long conversation about what they want their warrior names to be."
 		],
 		"main_status_constraint": [
 			"apprentice",
@@ -129,7 +129,7 @@
 			"m_c hears r_c crying over something everyone downplayed the severity of.",
 			"m_c realizes that r_c would put {PRONOUN/r_c/poss} life on the line for a Clanmate.",
 			"m_c learns how much effort r_c put into learning something.",
-			"m_c can hear the truth in r_c's words when {PRONOUN/r_c/subject} {VERB/r_c/speak/speaks} about protecting others."
+			"m_c can hear the truth in r_c's words when {PRONOUN/r_c/subject} {VERB/r_c/talk/talks} about protecting others."
 		]
 	},
 	{
@@ -141,8 +141,7 @@
 			"m_c and r_c share stories of a Clanmate they didn't realize they both miss.",
 			"Both m_c and r_c enthusiastically congratulate another Clanmate on something.",
 			"When m_c and r_c realize they've been grooming their pelts the same way, they laugh about it.",
-			"m_c and r_c learn a skill from each other that they've been envious about for ages.",
-			"m_c tries to insult r_c on something {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} jealous about, but r_c laughs and says {PRONOUN/r_c/subject} {VERB/r_c/are/is} jealous of m_c!",
+			"m_c and r_c learn a skill from each other that they've been envious about.",
 			"m_c learns some pelt-grooming techniques from r_c, and tells r_c some of {PRONOUN/m_c/poss} own."
 		],
 		"reaction_random_cat": {
