@@ -273,6 +273,10 @@
 		"random_status_constraint": [
 			"elder"
 		],
+		"random_age_constraint": [
+			"senior adult",
+			"senior"
+		],
 		"also_influences": {
 			"jealousy": "increase"
 		}
