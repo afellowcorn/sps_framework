@@ -535,11 +535,9 @@ class Inheritance:
                 grand_parent_cat = self.cat.fetch_cat(inter_parent_id)
                 if len(self.parents_siblings[inter_id]["additional"]) > 0:
                     add_info = self.parents_siblings[inter_id]["additional"][0]
-                    # adds a check to avoid duplicate names appearing
-                    if str(grand_parent_cat.name) not in add_info:
-                        self.parents_siblings[inter_id]["additional"][0] = (
-                            add_info + ", " + str(grand_parent_cat.name)
-                        )
+                    self.parents_siblings[inter_id]["additional"][0] = (
+                        add_info + ", " + str(grand_parent_cat.name)
+                    )
                 else:
                     self.parents_siblings[inter_id]["additional"].append(
                         f"child of {str(grand_parent_cat.name)}"
