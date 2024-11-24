@@ -2859,7 +2859,7 @@ def apply_opacity(surface, opacity):
 def chunks(L, n):
     return [L[x : x + n] for x in range(0, len(L), n)]
 
-def clamp(value: float | int, minimum_value: float | int, maximum_value: float | int):
+def clamp(value: float, minimum_value: float, maximum_value: float) ->float: 
     """
     Takes a value and return it constrained to a certain range
     """
