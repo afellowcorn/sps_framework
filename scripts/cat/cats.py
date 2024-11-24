@@ -1271,9 +1271,8 @@ class Cat:
                 # pick the oldest leader in SC
                 ancient_leader = True
                 if starclan:
-                    sc_cats = game.clan.starclan_cats.copy().sort(
-                        key=lambda x: -1 * int(x.dead_for)
-                    )
+                    sc_cats = game.clan.starclan_cats.copy()
+                    sc_cats.sort(key=lambda x: -1 * int(x.dead_for))
                     for kitty in sc_cats:
                         if (
                             self.fetch_cat(kitty)
@@ -1282,9 +1281,8 @@ class Cat:
                             life_giving_leader = kitty
                             break
                 else:
-                    df_kitties = game.clan.darkforest_cats.copy().sort(
-                        key=lambda x: -1 * int(x.dead_for)
-                    )
+                    df_kitties = game.clan.darkforest_cats.copy()
+                    df_kitties.sort(key=lambda x: -1 * int(x.dead_for))
                     for kitty in df_kitties:
                         if (
                             self.fetch_cat(kitty)
@@ -1295,9 +1293,8 @@ class Cat:
             else:
                 # pick previous leader
                 if starclan:
-                    sc_cats = game.clan.starclan_cats.copy().sort(
-                        key=lambda x: int(x.dead_for)
-                    )
+                    sc_cats = game.clan.starclan_cats.copy()
+                    sc_cats.sort(key=lambda x: int(x.dead_for))
                     for kitty in sc_cats:
                         if (
                             self.fetch_cat(kitty)
@@ -1306,9 +1303,8 @@ class Cat:
                             life_giving_leader = kitty
                             break
                 else:
-                    df_kitties = game.clan.darkforest_cats.copy().sort(
-                        key=lambda x: int(x.dead_for)
-                    )
+                    df_kitties = game.clan.darkforest_cats.copy()
+                    df_kitties.sort(key=lambda x: int(x.dead_for))
                     for kitty in df_kitties:
                         if (
                             self.fetch_cat(kitty)
