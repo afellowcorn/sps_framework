@@ -787,9 +787,10 @@
     "tags0": []
   },
   "Fringe": {
-    "variants": 1,
-    "tags0": ["descriptor", "miscellaneous"]
-  }, 
+    "variants": 2,
+    "tags0": ["descriptor", "miscellaneous"],
+    "tags1": ["plant", "flower"]
+  },
   "Frog": {
     "variants": 1, 
     "tags0": ["animal", "other animal"]
@@ -815,9 +816,8 @@
     "tags0": []
   }, 
   "Furled": {
-    "variants": 2,
-    "tags0": ["plant", "flower"],
-    "tags1": ["descriptor", "miscellaneous"]
+    "variants": 1,
+    "tags0": ["descriptor", "miscellaneous"]
   }, 
   "Furze": {
     "variants": 0,
