@@ -2109,6 +2109,22 @@
             }
         }
     },
+    "#beach_biome_button": {
+        "images": {
+            "normal_image": {
+                "path": "resources\/images\/buttons\/beach.png"
+            },
+            "hovered_image": {
+                "path": "resources\/images\/buttons\/beach_hover.png"
+            },
+            "selected_image": {
+                "path": "resources\/images\/buttons\/beach_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources\/images\/buttons\/beach_unavailable.png"
+            }
+        }
+    },
     "#freshkill_pile_empty": {
         "images": {
             "normal_image": {
