@@ -63,7 +63,8 @@
 			"Just because they were told to stop bickering doesn't mean m_c and r_c will stop leering at each other.",
 			"m_c didn't warn r_c about a rock on the ground, which caused r_c to trip.",
 			"m_c claimed to give r_c a piece of crowfood on accident.",
-			"m_c spent the day arguing with r_c whether {PRONOUN/r_c/subject} stole something from m_c.",
+			"m_c spent the day arguing with r_c about whether {PRONOUN/r_c/subject} stole something from m_c.",
+
 			"m_c scoffed loudly at one of r_c's suggestions.",
 			"r_c keeps yawning during m_c's story.",
 			"r_c flicked some sand over m_c's fresh-kill while {PRONOUN/m_c/subject} {VERB/m_c/were/was} eating."
