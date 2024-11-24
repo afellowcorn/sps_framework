@@ -23,7 +23,6 @@
 			"r_c makes a small sacrifice that benefits m_c.",
 			"r_c lets m_c know that a Clanmate was talking badly about {PRONOUN/m_c/object}.",
 			"r_c tells m_c that {PRONOUN/r_c/subject} was worried for {PRONOUN/m_c/object}.",
-			"r_c apologized to m_c for possibly hurting {PRONOUN/m_c/poss} feelings."
 		],
 		"reaction_random_cat": {
 			"trust": "increase"
@@ -41,6 +40,18 @@
 		},
 		"main_status_constraint": [
 			"elder"
+		]
+	},
+	{
+		"id": "trust_inc_low4",
+		"intensity": "low",
+		"interactions": [
+			"r_c tells m_c to get {PRONOUN/m_c/poss} ailment treated as soon as possible.",
+			"r_c is chiding m_c for being so reckless.",
+			"r_c apologized to m_c for possibly hurting {PRONOUN/m_c/poss} feelings."
+		],
+		"random_trait_constraint": [
+			"careful"
 		]
 	},
 	{
@@ -283,7 +294,7 @@
 			"m_c tells r_c a deep, dark secret.",
 			"m_c confesses something to r_c.",
 			"m_c depends on r_c to back {PRONOUN/m_c/object} up during a debate.",
-			"m_c and r_c swap deep, dark secrets with each other."
+			"m_c and r_c swap secrets with each other."
 		],
 		"relationship_constraint": [
 			"trust_30"
