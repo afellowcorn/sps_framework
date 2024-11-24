@@ -94,7 +94,7 @@
 			"m_c constantly pulling pranks on r_c.",
 			"m_c always shifts the blame to r_c!",
 			"m_c won't stop crying whenever r_c starts winning in a game.",
-			"m_c grins while r_c is being scolded by an older .",
+			"m_c grins while r_c is being scolded by an older Clanmate.",
 			"m_c is relentlessly pestering r_c."
 		],
 		"relationship_constraint": [
@@ -116,7 +116,7 @@
 			"r_c doesn't believe m_c when {PRONOUN/m_c/subject} {VERB/m_c/explain/explains} that a rumor about {PRONOUN/m_c/object} is false.",
 			"m_c learns that r_c has been using {PRONOUN/m_c/object} for something.",
 			"m_c doubts whether r_c even likes {PRONOUN/m_c/object} at all...",
-			"r_c uses a fear of m_c's against {PRONOUN/m_c/object}.",
+			"r_c uses one of m_c's fears against {PRONOUN/m_c/object}.",
 			"r_c accidentally hurts m_c during an argument between them.",
 			"m_c thinks r_c is trying to steal one of {PRONOUN/m_c/poss} friends!",
 			"m_c turned to r_c in a time of need, only for r_c to abandon {PRONOUN/m_c/object}."
@@ -155,6 +155,7 @@
 			"m_c accuses r_c of not taking care of cats properly.",
 			"m_c doesn't bother to ask r_c for help with a minor injury, worried that {PRONOUN/r_c/subject} might make it worse.",
 			"m_c complains that r_c doesn't seem to understand signs from StarClan very well.",
+			"m_c feels worse after r_c gave {PRONOUN/m_c/object} the wrong treatment for something minor.",
 			"m_c thinks that r_c gave {PRONOUN/m_c/object} the wrong herbs."
 		],
 		"random_status_constraint": [
