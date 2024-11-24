@@ -46,7 +46,7 @@
         }
     },
     {
-        "event_id": "pln_new_cat_lost_loner1",
+        "event_id": "pln_new_cat_lost_kittypet1",
         "location": [
             "plains"
         ],
@@ -54,7 +54,7 @@
             "any"
         ],
         "weight": 5,
-        "event_text": "m_c found a kittypet hopelessly lost in some tunnels and guided {PRONOUN/n_c:0/object} out. Surprising m_c, though, the impressed kittypet asks to join the Clan, explaining that {PRONOUN/n_c:0/subject} {VERB/n_c:0/don't/doesn't} want to get lost again, and clearly c_n cats know what they're doing!",
+        "event_text": "m_c rescued a kittypet hopelessly lost in some tunnels, who is so impressed, {PRONOUN/n_c:0/subject} {VERB/n_c:0/ask/asks} to join the Clan!",
         "m_c": {
             "age": [
                 "young adult",
