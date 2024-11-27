@@ -1140,6 +1140,14 @@
         "main_trait_constraint": [
             "compassionate"
         ],
+        "main_status_constraint": [
+            "apprentice",
+            "mediator apprentice",
+            "warrior",
+            "mediator",
+            "deputy",
+            "leader"
+        ],
         "random_living_status": [
             "living"
         ]
