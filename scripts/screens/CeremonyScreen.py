@@ -33,17 +33,19 @@ class CeremonyScreen(Screens):
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
         if self.the_cat.status == "leader":
             self.header = pygame_gui.elements.UITextBox(
-                str(self.the_cat.name) + "'s Leadership Ceremony",
+                "screens.ceremony.heading_leader",
                 ui_scale(pygame.Rect((100, 90), (600, -1))),
                 object_id=get_text_box_theme(),
                 manager=MANAGER,
+                text_kwargs={"cat": str(self.the_cat.name)},
             )
         else:
             self.header = pygame_gui.elements.UITextBox(
-                str(self.the_cat.name) + " has no ceremonies to view.",
+                "screens.ceremony.heading_none",
                 ui_scale(pygame.Rect((100, 90), (600, -1))),
                 object_id=get_text_box_theme(),
                 manager=MANAGER,
+                text_kwargs={"cat": str(self.the_cat.name)},
             )
         if self.the_cat.status == "leader" and not self.the_cat.dead:
             self.life_text = History.get_lead_ceremony(self.the_cat)
@@ -66,10 +68,11 @@ class CeremonyScreen(Screens):
         self.text.disable()
         self.back_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (105, 30))),
-            get_arrow(2) + " Back",
+            "buttons.back",
             get_button_dict(ButtonStyles.SQUOVAL, (105, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
+            text_kwargs={"arrowleft": get_arrow(2), "arrowright": ""},
         )
         self.scroll_container.set_scrollable_area_dimensions(
             (

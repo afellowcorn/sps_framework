@@ -1,0 +1,107 @@
+{
+    "en": {
+        "cat_moons": {
+            "one": "1 moon",
+            "many": "%{count} moons"
+        },
+        "leader": {
+            "one": "leader",
+            "many": "leaders"
+        },
+        "deputy": {
+            "one": "deputy",
+            "many": "deputies"
+        },
+        "warrior": {
+            "one": "warrior",
+            "many": "warriors"
+        },
+        "medicine cat": {
+            "one": "medicine cat",
+            "many": "medicine cats"
+        },
+        "mediator": {
+            "one": "mediator",
+            "many": "mediators"
+        },
+        "apprentice": {
+            "one": "apprentice",
+            "many": "apprentices"
+        },
+        "medicine cat apprentice": {
+            "one": "medicine cat apprentice",
+            "many": "medicine cat apprentices"
+        },
+        "mediator apprentice": {
+            "one": "mediator apprentice",
+            "many": "mediator apprentices"
+        },
+        "queen": {
+            "one": "queen",
+            "many": "queens"
+        },
+        "newborn": {
+            "one": "newborn",
+            "many": "newborns"
+        },
+        "kitten": {
+            "one": "kitten",
+            "many": "kittens"
+        },
+        "kit": {
+            "one": "kit",
+            "many": "kits"
+        },
+        "elder": {
+            "one": "elder",
+            "many": "elders"
+        },
+        "loner": {
+            "one": "loner",
+            "many": "loners"
+        },
+        "rogue": {
+            "one": "rogue",
+            "many": "rogues"
+        },
+        "kittypet": {
+            "one": "kittypet",
+            "many": "kittypets"
+        },
+        "former Clancat": {
+            "one": "former Clancat",
+            "many": "former Clancats"
+        },
+        "exiled": {
+            "one": "exiled",
+            "many": "exiled"
+        },
+        "mate": {
+            "one": "mate",
+            "many": "mates"
+        },
+        "she-cat": "she-cat",
+        "tom": "tom",
+        "cat": "cat",
+        "is": "is",
+        "are": "are",
+        "warriors_den": "warriors' den",
+        "leader_den": "leader den",
+        "medicine_cat_den": "medicine cat den",
+        "elders_den": "elders' den",
+        "nursery": "nursery",
+        "clearing": "clearing",
+        "apprentices_den": "apprentices' den",
+        "can_work": "This cat can work",
+        "cant_work": "This cat isn't able to work",
+        "newleaf": "newleaf",
+        "greenleaf": "greenleaf",
+        "leaffall": "leaf-fall",
+        "leaf-bare": "leaf-bare",
+        "relation_BLOOD": "",
+        "relation_ADOPTIVE": "adoptive",
+        "relation_HALF_BLOOD": "half sibling",
+        "relation_NOT_BLOOD": "not blood related",
+        "relation_RELATED": "blood related"
+    }
+}

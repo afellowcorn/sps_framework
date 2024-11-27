@@ -11,6 +11,7 @@ import sys
 from random import choice, randint, sample, random, getrandbits, randrange
 from typing import Dict, List, Any
 
+import i18n
 import ujson  # type: ignore
 
 from scripts.cat.history import History
@@ -3366,6 +3367,16 @@ class Cat:
 
     def is_baby(self):
         return self.age in ["kitten", "newborn"]
+
+    def get_info_block(self):
+        return "\n".join(
+            [
+                i18n.t("general.cat_moons", count=self.moons),
+                i18n.t(f"general.{self.status.lower()}", count=1),
+                self.genderalign,
+                i18n.t(f"personality.{self.personality.trait}"),
+            ]
+        )
 
     def get_save_dict(self, faded=False):
         if faded:

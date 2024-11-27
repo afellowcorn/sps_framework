@@ -1,0 +1,11 @@
+{
+    "en": {
+        "heading": "Change %{name}'s Gender",
+        "description": "<br>You can set this to anything! Gender identity does not affect gameplay.",
+        "add_pronouns": "Add New Pronouns",
+        "current_pronouns": "Current Pronouns",
+        "saved_pronouns": "Saved Pronouns",
+        "demo": "Demo: %{pronoun_id}<br>%{subject} %{conju} quick.<br>Everyone saw %{object}.<br>%{poss} paw slipped.<br>That den is %{inposs}.<br>This cat hunts by %{self}.",
+        "identity_changed_confirmation": "Gender identity changed!"
+    }
+}

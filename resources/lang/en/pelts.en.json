@@ -1,0 +1,109 @@
+{
+    "en": {
+        "WHITE": {
+            "one": "pale",
+            "many": "pale"
+        },
+        "PALEGREY": {
+            "one": "gray",
+            "many": "pale gray"
+        },
+        "SILVER": {
+            "one": "silver",
+            "many": "silver"
+        },
+        "GREY": {
+            "one": "gray",
+            "many": "gray"
+        },
+        "DARKGREY": {
+            "one": "gray",
+            "many": "dark gray"
+        },
+        "GHOST": {
+            "one": "black",
+            "many": "black"
+        },
+        "BLACK": {
+            "one": "black",
+            "many": "black"
+        },
+        "CREAM": {
+            "one": "cream",
+            "many": "cream"
+        },
+        "PALEGINGER": {
+            "one": "ginger",
+            "many": "pale ginger"
+        },
+        "GOLDEN": {
+            "one": "golden",
+            "many": "golden"
+        },
+        "GINGER": {
+            "one": "ginger",
+            "many": "ginger"
+        },
+        "DARKGINGER": {
+            "one": "ginger",
+            "many": "dark ginger"
+        },
+        "SIENNA": {
+            "one": "ginger",
+            "many": "dark ginger"
+        },
+        "LIGHTBROWN": {
+            "one": "brown",
+            "many": "light brown"
+        },
+        "LILAC": {
+            "one": "brown",
+            "many": "light brown"
+        },
+        "BROWN": {
+            "one": "brown",
+            "many": "brown"
+        },
+        "GOLDEN-BROWN": {
+            "one": "brown",
+            "many": "golden brown"
+        },
+        "DARKBROWN": {
+            "one": "brown",
+            "many": "dark brown"
+        },
+        "CHOCOLATE": {
+            "one": "brown",
+            "many": "dark brown"
+        },
+        "Tabby": "%{color} tabby",
+        "Speckled": "speckled %{color}",
+        "Bengal": "unusually dappled %{color}",
+        "Marbled": "%{color} tabby",
+        "Ticked": "%{color} ticked",
+        "Smoke": "%{color} smoke",
+        "Mackerel": "%{color} tabby",
+        "Classic": "%{color} tabby",
+        "Agouti": "%{color} tabby",
+        "Singlestripe": "dorsal-striped %{color}",
+        "Rosette": "unusually spotted %{color}",
+        "Sokoke": "%{color} tabby",
+        "Masked": "masked %{color} tabby",
+        "tabby_base": " tabby",
+        "calico": "calico",
+        "tortie": "tortie",
+        "mottled": {
+            "one": "mottled",
+            "many": "%{patches} mottled %{color}"
+        },
+        "NOTAIL": "no tail",
+        "HALFTAIL": "half a tail",
+        "NOPAW": "three legs",
+        "NOLEFTEAR": "a missing ear",
+        "NORIGHTEAR": "a missing ear",
+        "NOEAR": "no ears",
+        "vitiligo": "vitiligo",
+        "long_furred": "long-furred %{color}",
+        "scarred": "scarred %{color}"
+    }
+}

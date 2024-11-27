@@ -1,0 +1,53 @@
+{
+    "en": {
+        "help_tooltip": "This screen allows you to check on the other cats who live nearby, both Outsiders and other Clan cats.  You can control how the leader of your Clan will treat other leaders at Gatherings, but keep in mind that you can only determine one interaction each moon! Likewise, you can consider whether to drive out or invite in Outsider cats.  If you drive out a cat, they will no longer appear in the Cats Outside the Clans list.  If you invite in a cat, they might join your Clan!",
+        "clans": "Clans",
+        "outsiders": "Outsiders",
+        "clan_notice_text": {
+            "one": "%{leader} is considering how to handle the next Gathering.",
+            "many": "%{leader} and %{helper} are discussing how to handle the next Gathering."
+        },
+        "outsider_notice_text": {
+            "one": "%{leader} is considering what to do about nearby Outsiders.",
+            "many": "%{leader} and %{helper} are discussing what to do about nearby Outsiders."
+        },
+        "no_cats_clan": "No one is left to attend a Gathering.",
+        "no_cats_outsider": "Outsiders do not concern themselves with a dead Clan.",
+        "no_leader_clan": "With no one to lead, the Clan can't focus on what to say at the Gathering.",
+        "no_leader_outsider": "With no one to lead, the Clan can't concern themselves with Outsiders.",
+        "leader_sick_clan": "There is no one to attend the next Gathering. %{leader} must hope to recover in time for the next one.",
+        "leader_sick_outsider": "%{leader} is considering what to do about nearby Outsiders.",
+        "action_clan": "%{leader} has decided to %{interaction} %{clan}Clan.",
+        "action_outsider": "%{leader} has decided to %{interaction} %{outsider}",
+        "temper_text": "The other Clans think %{clan}Clan is %{temper}.",
+        "outsider_rep": "Outsiders view your Clan as %{reputation}",
+        "outsider_skill": "Skills: %{skill}",
+        "cunning": "cunning",
+        "proud": "proud",
+        "bloodthirsty": "bloodthirsty",
+        "amiable": "amiable",
+        "stoic": "stoic",
+        "wary": "wary",
+        "gracious": "gracious",
+        "mellow": "mellow",
+        "logical": "logical",
+        "welcoming": "welcoming",
+        "ally": "ally",
+        "neutral": "neutral",
+        "hostile": "hostile",
+        "offend": "offend",
+        "praise": "praise",
+        "provoke": "provoke",
+        "befriend": "befriend",
+        "antagonize": "antagonize",
+        "appease": "appease",
+        "declare": "declare",
+        "hunt_down": "hunt down",
+        "hunt_down_tooltip": "This cat will be killed if found.",
+        "drive_off": "drive off",
+        "drive_off_tooltip": "This cat will be driven out of the area if found (they will no longer be accessible in-game).",
+        "invite_in": "invite in",
+        "search_for": "search for",
+        "invite_in_tooltip": "This cat will join the Clan if found."
+    }
+}

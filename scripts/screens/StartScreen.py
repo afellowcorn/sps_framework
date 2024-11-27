@@ -184,14 +184,14 @@ class StartScreen(Screens):
 
         self.continue_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 310), (200, 30))),
-            "continue",
+            "buttons.continue",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
         )
         self.switch_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
-            "switch clan",
+            "buttons.switch_clan",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
@@ -199,7 +199,7 @@ class StartScreen(Screens):
         )
         self.new_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
-            "new clan",
+            "buttons.new_clan",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
@@ -207,7 +207,7 @@ class StartScreen(Screens):
         )
         self.settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
-            "settings + info",
+            "buttons.settings_info",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
@@ -215,7 +215,7 @@ class StartScreen(Screens):
         )
         self.quit = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
-            "quit",
+            "buttons.quit",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
@@ -227,14 +227,14 @@ class StartScreen(Screens):
             "",
             object_id="#twitter_button",
             manager=MANAGER,
-            tool_tip_text="Check out our Twitter!",
+            tool_tip_text="screens.start.tooltip_twitter",
         )
         self.social_buttons["tumblr_button"] = UIImageButton(
             ui_scale(pygame.Rect((5, 647), (40, 40))),
             "",
             object_id="#tumblr_button",
             manager=MANAGER,
-            tool_tip_text="Check out our Tumblr!",
+            tool_tip_text="screens.start.tooltip_tumblr",
             anchors={"left_target": self.social_buttons["twitter_button"]},
         )
 
@@ -243,7 +243,7 @@ class StartScreen(Screens):
             "",
             object_id="#discord_button",
             manager=MANAGER,
-            tool_tip_text="Join our Discord!",
+            tool_tip_text="screens.start.tooltip_discord",
             anchors={"left_target": self.social_buttons["tumblr_button"]},
         )
         errorimg = image_cache.load_image(
@@ -267,9 +267,7 @@ class StartScreen(Screens):
         )
 
         self.error_gethelp = pygame_gui.elements.UITextBox(
-            "Please join the Discord server and ask for technical support. "
-            "We'll be happy to help! Please include the error message and the traceback below (if available). "
-            '<br><a href="https://discord.gg/clangen">Discord</a>',  # pylint: disable=line-too-long
+            "screens.start.error_gethelp",  # pylint: disable=line-too-long
             ui_scale(pygame.Rect((527, 215), (175, 300))),
             object_id="#text_box_22_horizleft",
             starting_height=3,
@@ -278,7 +276,7 @@ class StartScreen(Screens):
 
         self.open_data_directory_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((527, 511), (178, 30))),
-            "Open Data Directory",
+            "buttons.open_data_directory",
             get_button_dict(ButtonStyles.SQUOVAL, (178, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -304,7 +302,7 @@ class StartScreen(Screens):
 
         self.update_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((577, 25), (153, 30))),
-            "Update Available!",
+            "buttons.update_available",
             get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -362,7 +360,7 @@ class StartScreen(Screens):
                     write_file.write(get_version_info().version_number)
 
         self.warning_label = pygame_gui.elements.UITextBox(
-            "Warning: This game contains mild depictions of gore, canon-typical violence and animal abuse.",
+            "screens.start.content_warning",
             ui_scale(pygame.Rect((0, 600), (800, 40))),
             object_id=ObjectID("#text_box_30_horizcenter", "#dark"),
             manager=MANAGER,
@@ -385,9 +383,7 @@ class StartScreen(Screens):
             self.switch_clan_button.disable()
 
         if game.switches["error_message"]:
-            error_text = (
-                f"There was an error loading the game: {game.switches['error_message']}"
-            )
+            error_text = "screens.start.error_text"
             if game.switches["traceback"]:
                 print("Traceback:")
                 print(game.switches["traceback"])
@@ -400,7 +396,9 @@ class StartScreen(Screens):
                         )
                     )
                 )  # pylint: disable=line-too-long
-            self.error_label.set_text(error_text)
+            self.error_label.set_text(
+                error_text, text_kwargs={"error": str(game.switches["error_message"])}
+            )
             self.error_box.show()
             self.error_label.show()
             self.error_gethelp.show()
