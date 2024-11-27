@@ -340,7 +340,7 @@
                 "herbs": ["many_herbs", "betony"]
             },
             {
-                "text": "As ever, s_c's keen eyes pick out {PRONOUN/s_c/poss} target quickly, and {PRONOUN/s_c/subject} {VERB/s_c/bring/brings} back a great haul of betony for the herb stores.",
+                "text": "As keen as ever, s_c picks out {PRONOUN/s_c/poss} target quickly, and {PRONOUN/s_c/subject} {VERB/s_c/bring/brings} back a great haul of betony for the herb stores.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -421,7 +421,7 @@
                 ]
             },
             {
-                "text": "As ever, s_c's keen eyes pick out {PRONOUN/s_c/poss} target quickly. {PRONOUN/s_c/subject/CAP} {VERB/s_c/point/points} it out to app1, and the two bring back a great haul of betony for the herb stores.",
+                "text": "As keen as ever, s_c picks out {PRONOUN/s_c/poss} target quickly. {PRONOUN/s_c/subject/CAP} {VERB/s_c/point/points} it out to app1, and the two bring back a great haul of betony for the herb stores.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -533,7 +533,7 @@
                 ]
             },
             {
-                "text": "As ever, s_c's keen eyes pick out {PRONOUN/s_c/poss} target quickly, and {PRONOUN/s_c/subject} {VERB/s_c/organize/organizes} {PRONOUN/s_c/poss} patrol to bring back a great haul of betony for the herb stores.",
+                "text": "As keen as ever, s_c picks out {PRONOUN/s_c/poss} target quickly, and {PRONOUN/s_c/subject} {VERB/s_c/organize/organizes} {PRONOUN/s_c/poss} patrol to bring back a great haul of betony for the herb stores.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
