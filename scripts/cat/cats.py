@@ -331,16 +331,12 @@ class Cat:
         # load_existing_name is needed so existing cats don't get their names changed/fixed for no reason
         if self.pelt is not None:
             self.name = Name(
-                status,
                 prefix,
                 suffix,
-                self.pelt.colour,
-                self.pelt.eye_colour,
-                self.pelt.name,
-                self.pelt.tortiepattern,
                 biome=biome,
                 specsuffix_hidden=self.specsuffix_hidden,
                 load_existing_name=loading_cat,
+                cat=self,
             )
         else:
             self.name = Name(
@@ -349,6 +345,7 @@ class Cat:
                 suffix,
                 specsuffix_hidden=self.specsuffix_hidden,
                 load_existing_name=loading_cat,
+                cat=self,
             )
 
         # Private Sprite
@@ -361,7 +358,7 @@ class Cat:
             Cat.insert_cat(self)
 
     def init_faded(self, ID, status, prefix, suffix, moons, **kwargs):
-        """Perform faded-specific initialisation
+        """Perform faded-specific initialization
 
         :param ID: Cat ID
         :param status: Cat status
@@ -373,7 +370,6 @@ class Cat:
         :return: None
         """
         self.ID = ID
-        self.name = Name(status, prefix=prefix, suffix=suffix)
         self.parent1 = None
         self.parent2 = None
         self.adoptive_parents = []
@@ -386,6 +382,7 @@ class Cat:
         self.outside = False
         self.exiled = False
         self.inheritance = None  # This should never be used, but just for safety
+        self.name = Name(prefix=prefix, suffix=suffix, cat=self)
         if "df" in kwargs:
             self.df = kwargs["df"]
         else:
@@ -502,8 +499,8 @@ class Cat:
         return "CAT OBJECT:" + self.ID
 
     def __eq__(self, other):
-        return self.ID == other.ID if isinstance(other, Cat) else False
-    
+        return False if not isinstance(other, Cat) else self.ID == other.ID
+
     def __hash__(self):
         return hash(self.ID)
 
@@ -1274,7 +1271,9 @@ class Cat:
                 # pick the oldest leader in SC
                 ancient_leader = True
                 if starclan:
-                    for kitty in reversed(game.clan.starclan_cats):
+                    sc_cats = game.clan.starclan_cats.copy()
+                    sc_cats.sort(key=lambda x: -1 * int(Cat.fetch_cat(x).dead_for))
+                    for kitty in sc_cats:
                         if (
                             self.fetch_cat(kitty)
                             and self.fetch_cat(kitty).status == "leader"
@@ -1282,7 +1281,9 @@ class Cat:
                             life_giving_leader = kitty
                             break
                 else:
-                    for kitty in reversed(game.clan.darkforest_cats):
+                    df_kitties = game.clan.darkforest_cats.copy()
+                    df_kitties.sort(key=lambda x: -1 * int(Cat.fetch_cat(x).dead_for))
+                    for kitty in df_kitties:
                         if (
                             self.fetch_cat(kitty)
                             and self.fetch_cat(kitty).status == "leader"
@@ -1292,7 +1293,9 @@ class Cat:
             else:
                 # pick previous leader
                 if starclan:
-                    for kitty in game.clan.starclan_cats:
+                    sc_cats = game.clan.starclan_cats.copy()
+                    sc_cats.sort(key=lambda x: int(Cat.fetch_cat(x).dead_for))
+                    for kitty in sc_cats:
                         if (
                             self.fetch_cat(kitty)
                             and self.fetch_cat(kitty).status == "leader"
@@ -1300,7 +1303,9 @@ class Cat:
                             life_giving_leader = kitty
                             break
                 else:
-                    for kitty in game.clan.darkforest_cats:
+                    df_kitties = game.clan.darkforest_cats.copy()
+                    df_kitties.sort(key=lambda x: int(Cat.fetch_cat(x).dead_for))
+                    for kitty in df_kitties:
                         if (
                             self.fetch_cat(kitty)
                             and self.fetch_cat(kitty).status == "leader"
@@ -2549,7 +2554,7 @@ class Cat:
             other_relationship.comfortable += 20
             other_relationship.trust += 10
             other_relationship.mate = True
-            
+
     def unset_adoptive_parent(self, other_cat: Cat):
         """Unset the adoptive parent from self"""
         self.adoptive_parents.remove(other_cat.ID)
@@ -2563,7 +2568,6 @@ class Cat:
             self_relationship.comfortable -= randint(10, 30)
             self_relationship.trust -= randint(5, 15)
 
-
         if not other_cat.dead:
             if self.ID not in other_cat.relationships:
                 other_cat.create_one_relationship(self)
@@ -2571,7 +2575,7 @@ class Cat:
             other_relationship.platonic_like -= 20
             other_relationship.comfortable -= 20
             other_relationship.trust -= 10
-            
+
     def set_adoptive_parent(self, other_cat: Cat):
         """Sets up a parent-child relationship between self and other_cat."""
         self.adoptive_parents.append(other_cat.ID)
@@ -2586,10 +2590,9 @@ class Cat:
             self_relationship.comfortable += 20
             self_relationship.trust += 10
 
-
         if not other_cat.dead:
             if self.ID not in other_cat.relationships:
-                other_cat.create_one_relationship(self)               
+                other_cat.create_one_relationship(self)
             other_relationship = other_cat.relationships[self.ID]
             other_relationship.platonic_like += 20
             other_relationship.comfortable += 20
@@ -2675,7 +2678,10 @@ class Cat:
                 trust = 0
                 if game.settings["random relation"]:
                     if game.clan:
-                        if the_cat == game.clan.instructor and game.clan.instructor.dead_for >= self.moons:
+                        if (
+                            the_cat == game.clan.instructor
+                            and game.clan.instructor.dead_for >= self.moons
+                        ):
                             pass
                         elif randint(1, 20) == 1 and romantic_love < 1:
                             dislike = randint(10, 25)
@@ -2788,12 +2794,8 @@ class Cat:
                             cat_to=cat_to,
                             mates=rel["mates"] or False,
                             family=rel["family"] or False,
-                            romantic_love=(
-                                rel["romantic_love"] or 0
-                            ),
-                            platonic_like=(
-                                rel["platonic_like"] or 0
-                            ),
+                            romantic_love=(rel["romantic_love"] or 0),
+                            platonic_like=(rel["platonic_like"] or 0),
                             dislike=rel["dislike"] or 0,
                             admiration=rel["admiration"] or 0,
                             comfortable=rel["comfortable"] or 0,
@@ -3402,9 +3404,7 @@ class Cat:
                 "former_mentor": (
                     list(self.former_mentor) if self.former_mentor else []
                 ),
-                "patrol_with_mentor": (
-                    self.patrol_with_mentor or 0
-                ),
+                "patrol_with_mentor": (self.patrol_with_mentor or 0),
                 "mate": self.mate,
                 "previous_mates": self.previous_mates,
                 "dead": self.dead,
@@ -3423,9 +3423,7 @@ class Cat:
                 "sprite_senior": self.pelt.cat_sprites["senior"],
                 "sprite_para_adult": self.pelt.cat_sprites["para_adult"],
                 "eye_colour": self.pelt.eye_colour,
-                "eye_colour2": (
-                    self.pelt.eye_colour2 or None
-                ),
+                "eye_colour2": (self.pelt.eye_colour2 or None),
                 "reverse": self.pelt.reverse,
                 "white_patches": self.pelt.white_patches,
                 "vitiligo": self.pelt.vitiligo,

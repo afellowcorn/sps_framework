@@ -376,7 +376,7 @@ class Pregnancy_Events:
                 if cat.exiled:
                     kit.status = "loner"
                     name = choice(names.names_dict["normal_prefixes"])
-                    kit.name = Name("loner", prefix=name, suffix="")
+                    kit.name = Name(prefix=name, suffix="", cat=kit)
                 if other_cat and not other_cat.outside:
                     kit.backstory = "outsider2"
                 if cat.outside and not cat.exiled:
@@ -422,6 +422,8 @@ class Pregnancy_Events:
         ):
             involved_cats.append(other_cat.ID)
             event_list.append(choice(events["birth"]["affair"]))
+            if len(cat.mate) > 0:
+                event_list.append(choice(events["birth"]["affair_mated"]))
         else:
             event_list.append(choice(events["birth"]["unmated_parent"]))
 
