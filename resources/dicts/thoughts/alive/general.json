@@ -2139,7 +2139,7 @@
             "Gets an injured Clanmate a piece of fresh-kill",
             "Reassures an apprentice who's nervous to go on patrol",
             "Looks out for r_c",
-            "Asks a Clanmate at the outskirts of camp if they want to share prey with {PRONOUN/m_c/object",
+            "Asks a Clanmate at the outskirts of camp if they want to share prey with {PRONOUN/m_c/object}",
             "Wonders how r_c is doing",
             "Compliments r_c on {PRONOUN/r_c/poss} grooming",
             "Plucks birds on the fresh-kill pile and uses the feathers to line {PRONOUN/m_c/poss} Clanmates' nests"
