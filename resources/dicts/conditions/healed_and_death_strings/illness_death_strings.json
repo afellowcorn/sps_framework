@@ -61,8 +61,7 @@
         "m_c couldn't go on any longer and collapsed from starvation.",
         "Starvation has killed m_c.",
         "m_c's body couldn't continue on without nourishment, and {PRONOUN/m_c/subject} never woke up from {PRONOUN/m_c/poss} sleep.",
-        "Starvation finally caught up to m_c.",
-        "Skinny and exhausted, m_c could no longer continue without food.",
-        "The lack of food has finally killed m_c."
+        "m_c finally succumbed to starvation.",
+        "Frail and exhausted from the lack of food, m_c died of starvation."
     ]
 }
