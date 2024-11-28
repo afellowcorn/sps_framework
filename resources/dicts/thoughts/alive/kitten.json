@@ -67,6 +67,9 @@
             "Doesn't want to play with r_c",
             "Is pretending to be prey for r_c to hunt and chase"
         ],
+        "main_status_constraint": [
+            "kitten"
+        ],
         "random_status_constraint":[
             "kitten"
         ],
@@ -142,6 +145,9 @@
         ],
         "season": [
             "Greenleaf"
+        ],
+        "main_status_constraint": [
+            "kitten"
         ]
     },
     {
@@ -152,6 +158,9 @@
         ],
         "season": [
             "Leaf-bare"
+        ],
+        "main_status_constraint": [
+            "kitten"
         ]
     },
     {
