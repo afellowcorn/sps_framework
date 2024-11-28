@@ -1616,9 +1616,6 @@
             "deputy",
             "leader"
         ],
-        "random_status_constraint": [
-            "elder"
-        ],
         "main_trait_constraint": [
             "loyal"
         ],
@@ -1641,6 +1638,9 @@
             "medicine cat apprentice",
             "deputy",
             "leader"
+        ],
+        "random_status_constraint": [
+            "elder"
         ]
     },
     {
@@ -1961,32 +1961,6 @@
         ],
         "main_trait_constraint": [
             "sincere"
-        ]
-    },
-    {
-        "id": "sneaky_gen",
-        "thoughts": [
-            "Took an extra piece of fresh-kill from the pile without anyone noticing",
-            "Taunted a dog stuck behind a Twoleg fence",
-            "Sits quietly on the far side of camp",
-            "Acts suspicious",
-            "Found another secret exit out of camp... somehow",
-            "Sniffs the edges of the camp wall suspiciously",
-            "Smells like {PRONOUN/m_c/subject} may have rolled in catmint recently",
-            "Eavesdrops on two Clanmates, ears pricked",
-            "Avoids the conversation topic at paw",
-            "Spreads rumors about {PRONOUN/m_c/poss} Clanmates",
-            "Whispers with a fellow Clanmate at the edges of camp",
-            "Recently spent the night outside of camp",
-            "Licks {PRONOUN/m_c/poss} chops after an unknown tasty treat",
-            "Leaves camp, not telling anyone what {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} planning to do",
-            "Snoops around",
-            "Startles cats by appearing suddenly",
-            "Knows that even the most paranoid rabbit would be no match for {PRONOUN/m_c/object}",
-            "Hasn't been seen in a while"
-        ],
-        "main_trait_constraint": [
-            "sneaky"
         ]
     },
     {
