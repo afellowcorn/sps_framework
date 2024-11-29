@@ -34,7 +34,7 @@
                 ]
             },
             {
-                "text": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} {VERB/p_l/were/was} never at fault for their death. p_l's shoulders sag with the weight of {PRONOUN/p_l/poss} relief, and p_l feels the burden of the death lift from over {PRONOUN/p_l/poss} head.",
+                "text": "p_l is greeted with the vision of a cat {PRONOUN/p_l/subject} had failed to save, content and happy in StarClan. The cat gives them a gentle smile, softly telling p_l that {PRONOUN/p_l/subject} {VERB/p_l/were/was} never at fault for their death. p_l's shoulders sag with the weight of {PRONOUN/p_l/poss} relief, and p_l feels the burden of the death lift from over {PRONOUN/p_l/poss} head.",
                 "exp": 10,
                 "weight": 5,
                 "relationships": [
