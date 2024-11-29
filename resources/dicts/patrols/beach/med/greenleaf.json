@@ -1419,7 +1419,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed on leaves are useless to c_n.",
+                "text": "Frustratingly, some herbivore has come through and feasted on the daisies p_l targets. The plants will recover, but these half-chewed leaves are useless to c_n.",
                 "exp": 0,
                 "weight": 20
             }
