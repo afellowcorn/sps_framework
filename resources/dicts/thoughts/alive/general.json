@@ -538,7 +538,7 @@
             "Has been imitating the Clan leader's behaviour recently",
             "Knows {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} a shoo-in for deputy",
             "Wonders if the Clan leader talks about {PRONOUN/m_c/object} when {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} not around",
-            "Tells lead_name {PRONOUN/lead_name/subject}{VERB/lead_name/'ve/'s} been doing a wonderful job leading"
+            "Tells r_c {PRONOUN/r_c/subject}{VERB/r_c/'ve/'s} been doing a wonderful job leading"
         ],
         "main_trait_constraint": [
             "ambitious"
