@@ -610,6 +610,10 @@ class EventsScreen(Screens):
 
         prev_panel_anchor = {"top": "top"}
 
+        alternate_color = (pygame.Color(87, 76, 55)
+                    if game.settings["dark mode"]
+                    else pygame.Color(167, 148, 111))
+
         for i, event_object in enumerate(self.display_events):
             if not isinstance(event_object.text, str):
                 print(
@@ -626,19 +630,13 @@ class EventsScreen(Screens):
                 element_id="event_panel",
                 object_id="#dark" if game.settings["dark mode"] else None,
                 margins={"top": 0, "bottom": 0, "left": 0, "right": 0},
-                anchors=(
-                    prev_panel_anchor
-                ),
+                anchors=prev_panel_anchor,
             )
 
             self.event_display_elements.append(display_element_container)
 
             if i % 2 == 0:
-                display_element_container.background_colour = (
-                    pygame.Color(87, 76, 55)
-                    if game.settings["dark mode"]
-                    else pygame.Color(167, 148, 111)
-                )
+                display_element_container.background_colour = alternate_color
                 display_element_container.rebuild()
 
             # TEXT BOX
