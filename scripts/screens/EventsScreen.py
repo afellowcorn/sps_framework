@@ -595,14 +595,6 @@ class EventsScreen(Screens):
         if game.clan.age == 0:
             return
 
-        for event_object in self.display_events:
-            if not isinstance(event_object.text, str):
-                print(
-                    f"Incorrectly Formatted Event: {event_object.text}, {type(event_object)}"
-                )
-                self.display_events.remove(event_object)
-                continue
-
         default_rect = pygame.Rect(
             ui_scale_offset((5, 0)),
             (
@@ -612,8 +604,19 @@ class EventsScreen(Screens):
                 ui_scale_value(300),
             ),
         )
+
+        catbutton_rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
+        catbutton_rect.topright = ui_scale_offset((-10, 5))
+
         for i, event_object in enumerate(self.display_events):
-            self.event_display_elements[f"container{i}"] = pygame_gui.elements.UIPanel(
+            if not isinstance(event_object.text, str):
+                print(
+                    f"Incorrectly Formatted Event: {event_object.text}, {type(event_object)}"
+                )
+                self.display_events.remove(event_object)
+                continue
+
+            display_element_container = pygame_gui.elements.UIPanel(
                 default_rect,
                 5,
                 MANAGER,
@@ -627,55 +630,53 @@ class EventsScreen(Screens):
                     else {"top": "top"}
                 ),
             )
+
+            self.event_display_elements[f"container{i}"] = display_element_container
+
+
+
             if i % 2 == 0:
-                self.event_display_elements[f"container{i}"].background_colour = (
+                display_element_container.background_colour = (
                     pygame.Color(87, 76, 55)
                     if game.settings["dark mode"]
                     else pygame.Color(167, 148, 111)
                 )
-                self.event_display_elements[f"container{i}"].rebuild()
+                display_element_container.rebuild()
 
-        for i, event_object in enumerate(self.display_events):
             # TEXT BOX
-            self.event_display_elements[f"event{i}"] = pygame_gui.elements.UITextBox(
+            display_element_event = pygame_gui.elements.UITextBox(
                 event_object.text,
                 ui_scale(pygame.Rect((0, 0), (509, -1))),
                 object_id=get_text_box_theme("#text_box_30_horizleft"),
                 starting_height=1,
-                container=self.event_display_elements[f"container{i}"],
+                container=display_element_container,
                 manager=MANAGER,
                 anchors={"left": "left", "right": "right"},
             )
+            self.event_display_elements[f"event{i}"] = display_element_event
 
-        catbutton_rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
-        catbutton_rect.topright = ui_scale_offset((-10, 5))
-        for i, event_object in enumerate(self.display_events):
-            if not event_object.cats_involved:
-                continue
+            if event_object.cats_involved:
+                self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
+                    catbutton_rect,
+                    Icon.CAT_HEAD,
+                    get_button_dict(ButtonStyles.ICON, (34, 34)),
+                    ids=event_object.cats_involved,
+                    layer_starting_height=3,
+                    object_id="@buttonstyles_icon",
+                    parent_element=display_element_container,
+                    container=display_element_container,
+                    manager=MANAGER,
+                    anchors={
+                        "right": "right",
+                        "top_target": display_element_event,
+                    },
+                )
 
-            self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
-                catbutton_rect,
-                Icon.CAT_HEAD,
-                get_button_dict(ButtonStyles.ICON, (34, 34)),
-                ids=event_object.cats_involved,
-                layer_starting_height=3,
-                object_id="@buttonstyles_icon",
-                parent_element=self.event_display_elements[f"container{i}"],
-                container=self.event_display_elements[f"container{i}"],
-                manager=MANAGER,
-                anchors={
-                    "right": "right",
-                    "top_target": self.event_display_elements[f"event{i}"],
-                },
-            )
-        del catbutton_rect
-
-        for i, event_object in enumerate(self.display_events):
-            self.event_display_elements[f"container{i}"].set_dimensions(
+            display_element_container.set_dimensions(
                 (
                     default_rect[2],
                     (
-                        self.event_display_elements[f"event{i}"].get_relative_rect()[3]
+                        display_element_event.get_relative_rect()[3]
                         + (
                             self.involved_cat_buttons[
                                 f"cat_button{i}"
@@ -683,12 +684,11 @@ class EventsScreen(Screens):
                             + ui_scale_value(10)
                         )
                         if f"cat_button{i}" in self.involved_cat_buttons
-                        else self.event_display_elements[
-                            f"event{i}"
-                        ].get_relative_rect()[3]
+                        else display_element_event.get_relative_rect()[3]
                     ),
                 )
             )
+        del catbutton_rect
 
         # this HAS TO UPDATE before saved scroll position can be set
         self.event_display.scrollable_container.update(1)
