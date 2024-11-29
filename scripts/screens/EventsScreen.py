@@ -71,7 +71,8 @@ class EventsScreen(Screens):
         self.alert = {}
 
         self.event_display = None
-        self.event_display_elements = []
+        self.event_display_containers = []
+        self.event_display_boxes = []
         self.cat_profile_buttons = []
         self.involved_cat_container = None
         self.involved_cat_buttons = []
@@ -416,8 +417,8 @@ class EventsScreen(Screens):
                     ),
                 )
             for ele in self.cat_profile_buttons:
-                self.cat_profile_buttons[ele].kill()
-            self.cat_profile_buttons = {}
+                ele.kill()
+            self.cat_profile_buttons = []
             return
         # now check if the involved cat display is already open somewhere
         # if so, shrink that back to original size
@@ -439,8 +440,8 @@ class EventsScreen(Screens):
         if self.involved_cat_container:
             self.involved_cat_container.kill()
         for ele in self.cat_profile_buttons:
-            self.cat_profile_buttons[ele].kill()
-        self.cat_profile_buttons = {}
+            ele.kill()
+        self.cat_profile_buttons = []
 
         container = button_pressed.parent_element
 
@@ -475,6 +476,7 @@ class EventsScreen(Screens):
 
         # make the cat profiles
         if scrollbar_needed:
+            anchor = {"left": "left"}
             for i, cat_id in enumerate(button_pressed.ids):
                 rect = ui_scale(pygame.Rect((0 if i == 0 else 5, 0), (120, 34)))
                 cat_ob = Cat.fetch_cat(cat_id)
@@ -483,7 +485,7 @@ class EventsScreen(Screens):
                     name = str(cat_ob.name)
                     short_name = shorten_text_to_fit(name, 80, 13, "clangen")
 
-                    self.cat_profile_buttons[f"profile_button{i}"] = CatButton(
+                    cat_profile_button = CatButton(
                         rect,
                         text=short_name,
                         cat_id=cat_id,
@@ -491,17 +493,12 @@ class EventsScreen(Screens):
                         object_id="#events_cat_profile_button",
                         starting_height=1,
                         manager=MANAGER,
-                        anchors=(
-                            {
-                                "left_target": self.cat_profile_buttons[
-                                    f"profile_button{i - 1}"
-                                ]
-                            }
-                            if i > 0
-                            else {"left": "left"}
-                        ),
+                        anchors=anchor
                     )
+                    self.cat_profile_buttons.append(cat_profile_button)
+                anchor = { "left_target": cat_profile_button }
         else:
+            anchor = {"right": "right"}
             rect = ui_scale(pygame.Rect((0, 0), (120, 34)))
             for i, cat_id in enumerate(reversed(button_pressed.ids)):
                 rect.topright = ui_scale_offset((0 if i == 0 else -125, 0))
@@ -519,16 +516,10 @@ class EventsScreen(Screens):
                         object_id="#events_cat_profile_button",
                         starting_height=1,
                         manager=MANAGER,
-                        anchors=(
-                            {
-                                "left_target": self.cat_profile_buttons[
-                                    f"profile_button{i - 1}"
-                                ]
-                            }
-                            if i > 0
-                            else {"right": "right"}
-                        ),
+                        anchors=anchor,
                     )
+                    self.cat_profile_buttons.append(cat_profile_button)
+                anchor = { "left_target": cat_profile_button }
         del rect
         self.involved_cat_container.set_view_container_dimensions(
             (
@@ -579,9 +570,13 @@ class EventsScreen(Screens):
 
         self.make_event_scrolling_container()
 
-        for ele in self.event_display_elements:
+        for ele in self.event_display_containers:
             ele.kill()
-        self.event_display_elements = []
+        self.event_display_containers = []
+
+        for ele in self.event_display_boxes:
+            ele.kill()
+        self.event_display_boxes = []
 
         for ele in self.cat_profile_buttons:
             ele.kill()
@@ -608,7 +603,7 @@ class EventsScreen(Screens):
         catbutton_rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
         catbutton_rect.topright = ui_scale_offset((-10, 5))
 
-        prev_panel_anchor = {"top": "top"}
+        anchor = {"top": "top"}
 
         alternate_color = (pygame.Color(87, 76, 55)
                     if game.settings["dark mode"]
@@ -630,10 +625,10 @@ class EventsScreen(Screens):
                 element_id="event_panel",
                 object_id="#dark" if game.settings["dark mode"] else None,
                 margins={"top": 0, "bottom": 0, "left": 0, "right": 0},
-                anchors=prev_panel_anchor,
+                anchors=anchor,
             )
 
-            self.event_display_elements.append(display_element_container)
+            self.event_display_containers.append(display_element_container)
 
             if i % 2 == 0:
                 display_element_container.background_colour = alternate_color
@@ -650,7 +645,7 @@ class EventsScreen(Screens):
                 anchors={"left": "left", "right": "right"},
             )
 
-            self.event_display_elements.append(display_element_event)
+            self.event_display_boxes.append(display_element_event)
 
             if event_object.cats_involved:
                 involved_cat_button = IDImageButton(
@@ -685,7 +680,7 @@ class EventsScreen(Screens):
                 )
             )
 
-            prev_panel_anchor = {"top_target": display_element_container}
+            anchor = {"top_target": display_element_container}
 
         del catbutton_rect
 
