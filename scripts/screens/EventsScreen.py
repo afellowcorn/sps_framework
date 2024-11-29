@@ -71,10 +71,10 @@ class EventsScreen(Screens):
         self.alert = {}
 
         self.event_display = None
-        self.event_display_elements = {}
-        self.cat_profile_buttons = {}
+        self.event_display_elements = []
+        self.cat_profile_buttons = []
         self.involved_cat_container = None
-        self.involved_cat_buttons = {}
+        self.involved_cat_buttons = []
 
         # Stores the involved cat button that currently has its cat profile buttons open
         self.open_involved_cat_button = None
@@ -128,9 +128,9 @@ class EventsScreen(Screens):
                 self.events_thread = self.loading_screen_start_work(
                     events_class.one_moon
                 )
-            elif element in self.involved_cat_buttons.values():
+            elif element in self.involved_cat_buttons:
                 self.make_cat_buttons(element)
-            elif element in self.cat_profile_buttons.values():
+            elif element in self.cat_profile_buttons:
                 self.save_scroll_position()
                 game.switches["cat"] = element.cat_id
                 self.change_screen("profile screen")
@@ -580,16 +580,16 @@ class EventsScreen(Screens):
         self.make_event_scrolling_container()
 
         for ele in self.event_display_elements:
-            self.event_display_elements[ele].kill()
-        self.event_display_elements = {}
+            ele.kill()
+        self.event_display_elements = []
 
         for ele in self.cat_profile_buttons:
-            self.cat_profile_buttons[ele].kill()
-        self.cat_profile_buttons = {}
+            ele.kill()
+        self.cat_profile_buttons = []
 
         for ele in self.involved_cat_buttons:
-            self.involved_cat_buttons[ele].kill()
-        self.involved_cat_buttons = {}
+            ele.kill()
+        self.involved_cat_buttons = []
 
         # Stop if Clan is new, so that events from previously loaded Clan don't show up
         if game.clan.age == 0:
@@ -608,6 +608,8 @@ class EventsScreen(Screens):
         catbutton_rect = ui_scale(pygame.Rect((0, 0), (34, 34)))
         catbutton_rect.topright = ui_scale_offset((-10, 5))
 
+        prev_panel_anchor = {"top": "top"}
+
         for i, event_object in enumerate(self.display_events):
             if not isinstance(event_object.text, str):
                 print(
@@ -625,15 +627,11 @@ class EventsScreen(Screens):
                 object_id="#dark" if game.settings["dark mode"] else None,
                 margins={"top": 0, "bottom": 0, "left": 0, "right": 0},
                 anchors=(
-                    {"top_target": self.event_display_elements[f"container{i - 1}"]}
-                    if i > 0
-                    else {"top": "top"}
+                    prev_panel_anchor
                 ),
             )
 
-            self.event_display_elements[f"container{i}"] = display_element_container
-
-
+            self.event_display_elements.append(display_element_container)
 
             if i % 2 == 0:
                 display_element_container.background_colour = (
@@ -653,10 +651,11 @@ class EventsScreen(Screens):
                 manager=MANAGER,
                 anchors={"left": "left", "right": "right"},
             )
-            self.event_display_elements[f"event{i}"] = display_element_event
+
+            self.event_display_elements.append(display_element_event)
 
             if event_object.cats_involved:
-                self.involved_cat_buttons[f"cat_button{i}"] = IDImageButton(
+                involved_cat_button = IDImageButton(
                     catbutton_rect,
                     Icon.CAT_HEAD,
                     get_button_dict(ButtonStyles.ICON, (34, 34)),
@@ -671,6 +670,7 @@ class EventsScreen(Screens):
                         "top_target": display_element_event,
                     },
                 )
+                self.involved_cat_buttons.append(involved_cat_button)
 
             display_element_container.set_dimensions(
                 (
@@ -678,16 +678,17 @@ class EventsScreen(Screens):
                     (
                         display_element_event.get_relative_rect()[3]
                         + (
-                            self.involved_cat_buttons[
-                                f"cat_button{i}"
-                            ].get_relative_rect()[3]
+                            involved_cat_button.get_relative_rect()[3]
                             + ui_scale_value(10)
                         )
-                        if f"cat_button{i}" in self.involved_cat_buttons
+                        if event_object.cats_involved
                         else display_element_event.get_relative_rect()[3]
                     ),
                 )
             )
+
+            prev_panel_anchor = {"top_target": display_element_container}
+
         del catbutton_rect
 
         # this HAS TO UPDATE before saved scroll position can be set
