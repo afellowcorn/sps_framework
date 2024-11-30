@@ -53,6 +53,7 @@ body:
     id: patrol
     attributes:
       label: Patrol ID + Outcome Print (if applicable)
+      placeholder: If you don't know what this means, you probably don't need to fill it out.
   - type: input
     id: version
     attributes:
@@ -63,9 +64,9 @@ body:
     id: additional_context
     attributes:
       label: Additional context
-      description: Add any other context about the problem here.
+      placeholder: Add any other context about the problem here.
   - type: textarea
     id: screenshots
     attributes: 
       label: Screenshots
-      description: If applicable, add screenshots to help explain your problem.
+      placeholder: If applicable, add screenshots to help explain your problem.
