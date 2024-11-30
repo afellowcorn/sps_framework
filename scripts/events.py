@@ -1186,6 +1186,7 @@ class Events:
                 return
 
         self.coming_out(cat)
+
         Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
         # Stop the timeskip if the cat died in childbirth
         if cat.dead:
@@ -2440,41 +2441,27 @@ class Events:
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
         # TODO: should figure out how to handle these as a ShortEvent, we don't want hardcoded text
-        if cat.genderalign == cat.gender:
-            if cat.moons < 6:
-                return
+        if cat.age in ["kitten", "newborn"]:
+            return
 
-            involved_cats = [cat.ID]
-            if cat.age == "adolescent":
-                transing_chance = random.getrandbits(8)  # 2/256
-            elif cat.age == "young adult":
-                transing_chance = random.getrandbits(9)  # 2/512
-            else:
-                # adult, senior adult, elder
-                transing_chance = random.getrandbits(10)  # 2/1028
+        random_cat = get_random_moon_cat(Cat, main_cat=cat)
 
-            if transing_chance:
-                # transing_chance != 0, no trans kitties today...    L
-                return
+        transing_chance = game.config["transition_generation"]
+        chance = transing_chance["base_trans_chance"]
+        if cat.age in ["adolescent"]:
+            chance += transing_chance["adolescent_modifier"]
+        elif cat.age in ["adult", "senior adult", "senior"]:
+            chance += transing_chance["older_modifier"]
 
-            if random.getrandbits(1):  # 50/50
-                if cat.gender == "male":
-                    cat.genderalign = "trans female"
-                    cat.pronouns = [cat.default_pronouns[1].copy()]
-                else:
-                    cat.genderalign = "trans male"
-                    cat.pronouns = [cat.default_pronouns[2].copy()]
-            else:
-                cat.genderalign = "nonbinary"
-                cat.pronouns = [cat.default_pronouns[0].copy()]
+        if not int(random.random() * chance):
+            sub_type = ["transition"]
+            handle_short_events.handle_event(event_type="misc",
+                                             main_cat=cat,
+                                             random_cat=random_cat,
+                                             sub_type=sub_type,
+                                             freshkill_pile=game.clan.freshkill_pile)
 
-            if cat.gender == "male":
-                gender = "tom"
-            else:
-                gender = "she-cat"
-            text = f"{cat.name} has realized that {gender} doesn't describe how they feel anymore."
-            game.cur_events_list.append(Single_Event(text, "misc", involved_cats))
-            # game.misc_events_list.append(text)
+        return
 
     def check_and_promote_leader(self):
         """Checks if a new leader need to be promoted, and promotes them, if needed."""
