@@ -521,6 +521,8 @@ def create_new_cat_block(
         status = cat_type
         new_name = False
         thought = "Is wondering about those new cats"
+        if age <= 6:
+            chosen_backstory = "outsider1"
 
     # IS THE CAT DEAD?
     alive = True
