@@ -193,7 +193,7 @@
       "skill": [
         "MEDIATOR,1"
       ],
-      "new_thought": "Wishes the Clan cats had listened to {PRONOUN/m_c/object",
+      "new_thought": "Wishes the Clan cats had listened to {PRONOUN/m_c/object}",
       "kit_thought": "Is unsure why {PRONOUN/m_c/poss} parent hasn't come back."
     }
   },
