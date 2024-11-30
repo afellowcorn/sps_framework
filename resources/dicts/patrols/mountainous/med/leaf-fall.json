@@ -5118,7 +5118,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Best to have tansy, good for all coughs, stocked up in abundance before leaf-bare hits. Better to have ragwort too, and hope that their tastebuds recover before newleaf. p_l quizzes app1 on whitecough symptoms and diagnosis as {PRONOUN/app1/subject} {VERB/p_l/work/works}.",
+                "text": "Best to have tansy, good for all coughs, stocked up in abundance before leaf-bare hits. Better to have ragwort too, and hope that their tastebuds recover before newleaf. p_l quizzes app1 on whitecough symptoms and diagnosis as they work.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["tansy", "ragwort"],
