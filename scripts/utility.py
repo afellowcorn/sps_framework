@@ -504,9 +504,7 @@ def create_new_cat_block(
             stor = [
                 x for x in match.group(1).split(",") if x in BACKSTORIES["backstories"]
             ]
-            if not stor:
-                bs_override = True
-                continue
+            bs_override = True
             chosen_backstory = choice(stor)
             break
 
@@ -521,7 +519,7 @@ def create_new_cat_block(
         status = cat_type
         new_name = False
         thought = "Is wondering about those new cats"
-        if age <= 6:
+        if age <= 6 and not bs_override:
             chosen_backstory = "outsider1"
 
     # IS THE CAT DEAD?
