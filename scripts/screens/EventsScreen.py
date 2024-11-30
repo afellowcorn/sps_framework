@@ -508,7 +508,7 @@ class EventsScreen(Screens):
                     name = str(cat_ob.name)
                     short_name = shorten_text_to_fit(name, 80, 13, "clangen")
 
-                    self.cat_profile_buttons[f"profile_button{i}"] = CatButton(
+                    cat_profile_button = CatButton(
                         rect,
                         text=short_name,
                         cat_id=cat_id,
