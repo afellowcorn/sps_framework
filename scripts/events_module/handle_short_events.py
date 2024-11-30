@@ -92,6 +92,7 @@ class HandleShortEvents:
         self.involved_cats = [self.main_cat.ID]
 
         # check for war and assign self.other_clan accordingly
+        ## if game.clan.war.get("at_war", False) and sub_type != "mediator":    TODO test this
         if game.clan.war.get("at_war", False):
             enemy_clan = get_warring_clan()
             self.other_clan = enemy_clan
