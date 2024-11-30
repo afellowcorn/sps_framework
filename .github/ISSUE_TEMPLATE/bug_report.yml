@@ -67,5 +67,5 @@ body:
   - type: textarea
     id: screenshots
     attributes: 
-      label: Additional context
+      label: Screenshots
       description: If applicable, add screenshots to help explain your problem.
