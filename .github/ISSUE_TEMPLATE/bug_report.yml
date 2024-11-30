@@ -9,7 +9,7 @@ body:
       description: What kind of issue are you experiencing?
       options:
       - Please choose an option...
-      - UI - anything to do with the user interface. maybe a button is not working, or the way some assets are formatted seems to be off. 
+      - UI - anything to do with the user interface - maybe a button is not working, or the way some assets are formatted seems to be off. 
       - Sprite - an issue with the art in the game
       - Audio - issues related to the audio system
       - Code - general bugs related to how the game runs and responds to you. 
