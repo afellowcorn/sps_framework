@@ -13,7 +13,7 @@ body:
       - Sprite - an issue with the art in the game
       - Audio - issues related to the audio system
       - Code - general bugs related to how the game runs and responds to you. 
-      - "Typo - misspellings or incorrect grammar - IMPORTANT: \"bugs\" of this type are collected here: https://github.com/ClanGenOfficial/clangen/issues/1818"
+      - 'Typo - misspellings or incorrect grammar - IMPORTANT: "bugs" of this type are collected here: https://github.com/ClanGenOfficial/clangen/issues/1818'
     validations:
       required: true
   - type: textarea
