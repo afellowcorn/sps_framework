@@ -230,7 +230,7 @@
   },
   {
     "interaction_type": "hunt",
-    "event_text": "m_c keeps regularly upstaging c_n's hunting patrols. Obviously, c_n doesn't take too kindly to some outsider stealing what they consider to be <b><i>their</i></b> prey, so they decide to... get rid of the issue. It may be brutal, but c_n needs to put c_n first.",
+    "event_text": "m_c keeps upstaging c_n's hunting patrols. Obviously, c_n doesn't take too kindly to some outsider stealing what they consider to be <b><i>their</i></b> prey, so they decide to... get rid of the issue. It may be brutal, but c_n needs to put c_n first.",
     "reputation": ["any"],
     "rep_change": -10,
     "m_c": {
