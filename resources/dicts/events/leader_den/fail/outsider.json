@@ -9,6 +9,44 @@
       "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}",
       "relationships": [
         {
+          "cats_to": [ "clan" ],
+          "cats_from": ["m_c"],
+          "values": ["dislike"],
+          "amount": 15
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "No matter how much c_n searches, they can't find a hair on m_c's pelt.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "former Clancat"],
+      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}",
+      "relationships": [
+        {
+          "cats_to": [ "clan" ],
+          "cats_from": ["m_c"],
+          "values": ["dislike"],
+          "amount": 15
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "hunt",
+    "event_text": "c_n's search for m_c turns up nothing.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "former Clancat"],
+      "new_thought": "Heard rumors that a Clan was hunting for {PRONOUN/m_c/object}",
+      "relationships": [
+        {
+          "cats_to": [ "clan" ],
+          "cats_from": ["m_c"],
           "values": ["dislike"],
           "amount": 15
         }
@@ -154,6 +192,42 @@
   },
   {
     "interaction_type": "drive",
+    "event_text": "No matter how much c_n searches, they can't find a hair on m_c's pelt.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "former Clancat"],
+      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}",
+      "relationships": [
+        {
+          "cats_to": [ "clan" ],
+          "cats_from": ["m_c"],
+          "values": ["dislike"],
+          "amount": 15
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
+    "event_text": "c_n's search for m_c turns up nothing.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "former Clancat"],
+      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}",
+      "relationships": [
+        {
+          "cats_to": [ "clan" ],
+          "cats_from": ["m_c"],
+          "values": ["dislike"],
+          "amount": 15
+        }
+      ]
+    }
+  },
+  {
+    "interaction_type": "drive",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
     "reputation": ["any"],
     "rep_change": -1,
@@ -236,6 +310,26 @@
   },
   {
     "interaction_type": "invite",
+    "event_text": "No matter how much c_n searches, they can't find a hair on m_c's pelt.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "former Clancat"],
+      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}"
+      }
+  },
+  {
+    "interaction_type": "invite",
+    "event_text": "c_n's search for m_c turns up nothing.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["loner", "rogue", "kittypet", "former Clancat"],
+      "new_thought": "Heard rumors that a Clan was looking for {PRONOUN/m_c/object}"
+    }
+  },
+  {
+    "interaction_type": "invite",
     "event_text": "Despite a long search, m_c could not be found by the Clan.",
     "reputation": ["any"],
     "rep_change": 1,
@@ -258,6 +352,26 @@
           "amount": 5
         }
       ]
+    }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "No matter how much c_n searches, they can't find a hair on m_c's pelt.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Wonders if {PRONOUN/m_c/subject} will ever find {PRONOUN/m_c/poss} way back"
+    }
+  },
+  {
+    "interaction_type": "search",
+    "event_text": "c_n's search for m_c turns up nothing.",
+    "reputation": ["any"],
+    "rep_change": -2,
+    "m_c": {
+      "status": ["lost"],
+      "new_thought": "Wonders if {PRONOUN/m_c/subject} will ever find {PRONOUN/m_c/poss} way back"
     }
   },
   {
