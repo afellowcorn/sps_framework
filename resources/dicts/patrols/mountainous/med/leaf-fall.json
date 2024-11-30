@@ -824,7 +824,7 @@
                 ]
             },
             {
-                "text": "s_c shows {PRONOUN/s_c/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. {PRONOUN/s_c/subject/CAP}{VERB/p_l/'re/'s} leading the way back when they also spot some plantain growing nearby. With a purr, they make sure to gather some of that as well, since it's good for all sorts of stings.",
+                "text": "s_c shows {PRONOUN/s_c/poss} usual talent for spotting herbs, trotting straight over to a burdock plant and digging at its foot. {PRONOUN/s_c/subject/CAP}{VERB/p_l/'re/'s} leading the way back when {PRONOUN/s_c/subject} also {VERB/s_c/spot/spots} some plantain growing nearby. With a purr, {PRONOUN/s_c/subject} {VERB/s_c/make/makes} sure to gather some of that as well, since it's good for all sorts of stings.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -1593,7 +1593,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. p_l smiles fondly as {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} watching app1 playing with them just a few short moons ago. Then another scent touches {PRONOUN/p_l/poss} nose, drawing {PRONOUN/p_l/object} from {PRONOUN/p_l/poss} thoughts, and they soon sniff out the wild garlic that was hidden a short distance away. It would be pretty funny to see how app1 will react to this stinky herb!",
+                "text": "Truly, dandelions are an essential herb to keep in stock, crucial for poisons and stings. Both the potent milk in their roots and stems, and the fast acting leaves... even the fluffy dandelion heads are useful as a c_n kitten's favorite, short-lived toy. p_l smiles fondly as {PRONOUN/p_l/subject} {VERB/p_l/remember/remembers} watching app1 playing with them just a few short moons ago. Then another scent touches {PRONOUN/p_l/poss} nose, drawing {PRONOUN/p_l/object} from {PRONOUN/p_l/poss} thoughts, and {PRONOUN/p_l/subject} soon {VERB/p_l/sniff/sniffs} out the wild garlic that was hidden a short distance away. It would be pretty funny to see how app1 will react to this stinky herb!",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["dandelion", "wild_garlic"],
@@ -2423,7 +2423,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them. As {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} {VERB/p_l/notice/notices} a fallen oak branch nearby and {VERB/p_l/stop/stops} to collect a few undamaged leaves. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} starting to turn colors, but the leaves are still usable.",
+                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them. As {PRONOUN/p_l/subject} {VERB/p_l/pad/pads} home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} {VERB/p_l/notice/notices} a fallen oak branch nearby and {VERB/p_l/stop/stops} to collect a few undamaged leaves. They're starting to turn colors, but the leaves are still usable.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["oak_leaves", "juniper"]
@@ -2472,7 +2472,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them, and p_l spends a quiet, but happy afternoon with app1. As they pad home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} notice a fallen oak branch nearby and stop to collect a few undamaged leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/explain/explains} to app1 that while they're starting to turn colors, the leaves are still usable.",
+                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. There's a lot to enjoy about gathering them, and p_l spends a quiet, but happy afternoon with app1. As they pad home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} {VERB/p_l/notice/notices} a fallen oak branch nearby and stop to collect a few undamaged leaves. {PRONOUN/p_l/subject/CAP} {VERB/p_l/explain/explains} to app1 that while they're starting to turn colors, the leaves are still usable.",
                 "exp": 20,
                 "weight": 20,
                 "herbs": ["oak_leaves", "juniper"],
@@ -2494,7 +2494,7 @@
                 ]
             },
             {
-                "text": "Juniper berries are useful for so many things, from calming minds and easing breathing to soothing aching bellies. p_l will always feel better having a good solid store of the stuff to use. app1 seems impressed when p_l tells {PRONOUN/app1/object} how long the berries will last in storage. {PRONOUN/p_l/subject/CAP} pass a lone, gnarled oak tree on the way back to camp and make sure to stop to gather some of the leaves while they're there. Oak leaves are great for fighting infections.",
+                "text": "Juniper berries are useful for so many things, from calming minds and easing breathing to soothing aching bellies. p_l will always feel better having a good solid store of the stuff to use. app1 seems impressed when p_l tells {PRONOUN/app1/object} how long the berries will last in storage. CAP} pass a lone, gnarled oak tree on the way back to camp and make sure to stop to gather some of the leaves while they're there. Oak leaves are great for fighting infections.",
                 "exp": 20,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves", "juniper"],
@@ -2516,7 +2516,7 @@
                 ]
             },
             {
-                "text": "s_c follows not {PRONOUN/s_c/poss} eyes, but {PRONOUN/s_c/poss} nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. As {PRONOUN/s_c/subject} {VERB/s_c/work/works}, {PRONOUN/s_c/subject} {VERB/s_c/chat/chats} with app1 about juniper's calming effects. This is one of the few herbs {PRONOUN/s_c/poss} Clanmates compete to go on patrols to help collect, as everyone enjoys the scent. s_c climbs into the low-growing tree to better reach the berries. From {PRONOUN/s_c/poss} vantage point, {PRONOUN/s_c/subject} {VERB/s_c/are/is} able to reach a low oak branch. {PRONOUN/s_c/subject/CAP} are astounded the branch has a healthy collection of still-green oak leaves. {PRONOUN/s_c/subject/CAP} take the opportunity to gather a pawful, asking app1 to help carry the precious leaves back to camp.",
+                "text": "s_c follows not {PRONOUN/s_c/poss} eyes, but {PRONOUN/s_c/poss} nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. As {PRONOUN/s_c/subject} {VERB/s_c/work/works}, {PRONOUN/s_c/subject} {VERB/s_c/chat/chats} with app1 about juniper's calming effects. This is one of the few herbs {PRONOUN/s_c/poss} Clanmates compete to go on patrols to help collect, as everyone enjoys the scent. s_c climbs into the low-growing tree to better reach the berries. From {PRONOUN/s_c/poss} vantage point, {PRONOUN/s_c/subject} {VERB/s_c/are/is} able to reach a low oak branch. {PRONOUN/s_c/subject/CAP} are astounded the branch has a healthy collection of still-green oak leaves. {PRONOUN/s_c/subject/CAP} {VERB/s_c/take/takes} the opportunity to gather a pawful, asking app1 to help carry the precious leaves back to camp.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
@@ -2583,7 +2583,7 @@
         "chance_of_success": 30,
         "success_outcomes": [
             {
-                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. They manage to gather a good amount, even while chatting. As they pad home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} notice a fallen oak branch nearby and stop to collect a few undamaged leaves. {PRONOUN/p_l/subject/CAP} explain that while they're starting to turn colors, the leaves are still usable.",
+                "text": "Leaf-fall brings with it gleaming dots of blue as the juniper trees deck themselves with their hard-fleshed berries, wafting their pleasant scent from their branches. They manage to gather a good amount, even while chatting. As they pad home, p_l's worries that leaf-bare will strip the territory of precious herbs grows. {PRONOUN/p_l/subject/CAP} {VERB/p_l/notice/notices} a fallen oak branch nearby and stop to collect a few undamaged leaves. {PRONOUN/p_l/subject/CAP} explain that while they're starting to turn colors, the leaves are still usable.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["oak_leaves", "juniper"],
@@ -2605,7 +2605,7 @@
                 ]
             },
             {
-                "text": "Juniper berries are useful for so many things, from calming minds and easing breathing to soothing aching bellies. p_l will always feel better having a good solid store of the stuff to use. {PRONOUN/p_l/subject/CAP} pass a lone, gnarled oak tree on the way back to camp and make sure to stop to gather some of the leaves while they're there. Oak leaves are great for fighting infections.",
+                "text": "Juniper berries are useful for so many things, from calming minds and easing breathing to soothing aching bellies. p_l will always feel better having a good solid store of the stuff to use. {PRONOUN/p_l/subject/CAP} {VERB/p_l/pass/passes} a lone, gnarled oak tree on the way back to camp and {VERB/p_l/make/makes} sure to stop to gather some of the leaves while they're there. Oak leaves are great for fighting infections.",
                 "exp": 10,
                 "weight": 5,
                 "herbs": ["many_herbs", "oak_leaves", "juniper"],
@@ -2627,7 +2627,7 @@
                 ]
             },
             {
-                "text": "s_c follows not {PRONOUN/s_c/poss} eyes, but {PRONOUN/s_c/poss} nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. s_c climbs into the low-growing tree to better reach the berries. From {PRONOUN/s_c/poss} vantage point, {PRONOUN/s_c/subject} {VERB/s_c/are/is} able to reach a low oak branch. {PRONOUN/s_c/subject/CAP} are astounded the branch has a healthy collection of still-green oak leaves. {PRONOUN/s_c/subject/CAP} take the opportunity to gather a pawful, asking the warriors to help carry the precious leaves back to camp.",
+                "text": "s_c follows not {PRONOUN/s_c/poss} eyes, but {PRONOUN/s_c/poss} nose, tracking the juniper trees by the scent of their fragrant berries to find an excellent crop. s_c climbs into the low-growing tree to better reach the berries. From {PRONOUN/s_c/poss} vantage point, {PRONOUN/s_c/subject} {VERB/s_c/are/is} able to reach a low oak branch. {PRONOUN/s_c/subject/CAP} {VERB/s_c/are/is} astounded the branch has a healthy collection of still-green oak leaves. {PRONOUN/s_c/subject/CAP} {VERB/s_c/take/takes} the opportunity to gather a pawful, asking the warriors to help carry the precious leaves back to camp.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": ["SENSE,2"],
