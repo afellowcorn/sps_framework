@@ -1186,7 +1186,6 @@ class Events:
                 return
 
         self.coming_out(cat)
-
         Pregnancy_Events.handle_having_kits(cat, clan=game.clan)
         # Stop the timeskip if the cat died in childbirth
         if cat.dead:
@@ -2440,13 +2439,13 @@ class Events:
 
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
-        # TODO: should figure out how to handle these as a ShortEvent, we don't want hardcoded text
+
         if cat.age in ["kitten", "newborn"]:
             return
 
         random_cat = get_random_moon_cat(Cat, main_cat=cat)
 
-        transing_chance = game.config["transition_generation"]
+        transing_chance = game.config["transition_related"]
         chance = transing_chance["base_trans_chance"]
         if cat.age in ["adolescent"]:
             chance += transing_chance["adolescent_modifier"]
