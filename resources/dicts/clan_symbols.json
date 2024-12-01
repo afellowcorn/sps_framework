@@ -142,7 +142,11 @@
   "Blizzard": {
     "variants": 0,
     "tags0": ["element"]
-  }, 
+  },
+  "Blood": {
+    "variants": 1,
+    "tags0": ["element", "water"]
+  },
   "Bloom": {
     "variants": 1, 
     "tags0": ["plant", "flower"]
@@ -408,7 +412,7 @@
     "tags0": ["animal", "mammal"]
   }, 
   "Coyote": {
-    "variants": 0,
+    "variants": 1,
     "tags0": ["animal", "mammal"]
   }, 
   "Crag": {
@@ -862,12 +866,12 @@
     "tags0": []
   }, 
   "Glade": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "flower"]
   },
   "Glint": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["descriptor"]
   },
   "Goose": {
     "variants": 1,
@@ -880,8 +884,8 @@
 
   }, 
   "Gorse": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "flower"]
   },
   "Gossamer": {
     "variants": 1,
@@ -1036,28 +1040,28 @@
     "tags0": ["plant", "flower"]
   },
   "Ibis": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["bird", "animal"]
   },
   "Ice": {
     "variants": 1,
     "tags0": ["element", "water"]
   },
   "Icicle": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "water"]
   },
   "Icy": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "water"]
   },
   "Iris": {
     "variants": 1,
     "tags0": ["plant", "flower"]
   }, 
   "Ivy": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "leaf"]
   }, 
   "Jackdaw": {
     "variants": 2,
@@ -1090,8 +1094,8 @@
     "tags0": ["animal", "bird"]
   }, 
   "Juniper": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "fruit"]
   }, 
   "Kestrel": {
     "variants": 1,
@@ -1104,7 +1108,11 @@
   "Kite": {
     "variants": 1,
     "tags0": ["bird", "animal"]
-  }, 
+  },
+  "Kitty": {
+    "variants": 1,
+    "tags0": ["miscellaneous"]
+  },
   "Lake": {
     "variants": 1, 
     "tags0": ["location", "element", "water"]
@@ -1154,8 +1162,8 @@
     "tags0": ["element", "light"]
   }, 
   "Lilac": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "flower"]
   }, 
   "Lily": {
     "variants": 1,
@@ -1202,8 +1210,8 @@
     "tags0": []
   }, 
   "Lupine": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "flower"]
   }, 
   "Lynx": {
     "variants": 1,
@@ -1230,8 +1238,8 @@
     "tags0": ["plant", "leaf"]
   }, 
   "Marigold": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "flower"]
   }, 
   "Marsh": {
     "variants": 1,
@@ -1262,12 +1270,12 @@
     "tags0": []
   }, 
   "Minnow": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "fish"]
   },
   "Mist": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "air"]
   },
   "Mistle": {
     "variants": 0,
@@ -1438,8 +1446,8 @@
     "tags0": ["flower", "plant"]
   },
   "Peach": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "fruit"]
   },
   "Peak": {
     "variants": 1,
@@ -1638,8 +1646,8 @@
     "tags0": []
   },
   "Rindle": {
-    "variants": 0, 
-    "tags0": []
+    "variants": 1,
+    "tags0": ["water", "element"]
   }, 
   "Ripple": {
     "variants": 1,
