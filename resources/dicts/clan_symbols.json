@@ -538,8 +538,8 @@
     "tags0": ["animal", "bird"]
   },
   "Doe": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["animal", "mammal"]
   },
   "Down": {
     "variants": 1,
@@ -643,7 +643,7 @@
     "tags0": ["animal", "mammal"]
   }, 
   "Feather": {
-    "variants": 0,
+    "variants": 1,
     "tags0": ["animal", "bird"]
   }, 
   "Fennel": {
@@ -984,8 +984,8 @@
     "tags0": ["animal", "bird"]
   },
   "Hickory": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["plant", "other plant"]
   },
   "Hill": {
     "variants": 1, 
@@ -1307,9 +1307,10 @@
     "tags0": []
   }, 
   "Moss": {
-    "variants": 1,
-    "tags0": ["plant", "other plant"]
-  }, 
+    "variants": 2,
+    "tags0": ["plant", "other plant"],
+    "tags1": ["plant", "other plant"]
+  },
   "Mossy": {
     "variants": 1,
     "tags0": ["plant", "other plant"]
@@ -1590,8 +1591,8 @@
     "tags0": []
   }, 
   "Quill": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["miscellaneous"]
   }, 
   "Quiver": {
     "variants": 0,
@@ -1666,8 +1667,8 @@
     "tags0": ["animal", "mammal"]
   },
   "Rock": {
-    "variants": 0,
-    "tags0": []
+    "variants": 1,
+    "tags0": ["element", "earth"]
   },
   "Rook": {
     "variants": 1,
