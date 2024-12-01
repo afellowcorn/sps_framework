@@ -341,13 +341,13 @@ def create_new_cat_block(
             else:
                 parent2 = event.new_cats[index][0]
 
-        adoptive_indexes = [int(index) if index.isdigit() else index for index in adoptive_indexes]
+        adoptive_indexes = [
+            int(index) if index.isdigit() else index for index in adoptive_indexes
+        ]
         for index in adoptive_indexes:
             if in_event_cats[index].ID not in adoptive_parents:
                 adoptive_parents.append(in_event_cats[index].ID)
                 adoptive_parents.extend(in_event_cats[index].mate)
-
-
 
     # gather mates
     give_mates = []
@@ -519,7 +519,7 @@ def create_new_cat_block(
         status = cat_type
         new_name = False
         thought = "Is wondering about those new cats"
-        if age <= 6 and not bs_override:
+        if age is not None and age <= 6 and not bs_override:
             chosen_backstory = "outsider1"
 
     # IS THE CAT DEAD?
@@ -603,7 +603,7 @@ def create_new_cat_block(
             outside=outside,
             parent1=parent1.ID if parent1 else None,
             parent2=parent2.ID if parent2 else None,
-            adoptive_parents=adoptive_parents if adoptive_parents else None
+            adoptive_parents=adoptive_parents if adoptive_parents else None,
         )
 
         # NEXT
@@ -711,7 +711,7 @@ def create_new_cat(
     outside: bool = False,
     parent1: str = None,
     parent2: str = None,
-    adoptive_parents: list = None
+    adoptive_parents: list = None,
 ) -> list:
     """
     This function creates new cats and then returns a list of those cats
@@ -798,7 +798,7 @@ def create_new_cat(
                 backstory=backstory,
                 parent1=parent1,
                 parent2=parent2,
-                adoptive_parents=adoptive_parents if adoptive_parents else []
+                adoptive_parents=adoptive_parents if adoptive_parents else [],
             )
         else:
             # grab starting names and accs for loners/kittypets
@@ -806,8 +806,8 @@ def create_new_cat(
                 name = choice(names.names_dict["loner_names"])
                 if bool(getrandbits(1)):
                     accessory = choice(Pelt.collars)
-            elif (
-                loner and bool(getrandbits(1))
+            elif loner and bool(
+                getrandbits(1)
             ):  # try to give name from full loner name list
                 name = choice(names.names_dict["loner_names"])
             else:
@@ -833,7 +833,7 @@ def create_new_cat(
                         backstory=backstory,
                         parent1=parent1,
                         parent2=parent2,
-                        adoptive_parents=adoptive_parents if adoptive_parents else []
+                        adoptive_parents=adoptive_parents if adoptive_parents else [],
                     )
                 else:  # completely new name
                     new_cat = Cat(
@@ -843,7 +843,7 @@ def create_new_cat(
                         backstory=backstory,
                         parent1=parent1,
                         parent2=parent2,
-                        adoptive_parents=adoptive_parents if adoptive_parents else []
+                        adoptive_parents=adoptive_parents if adoptive_parents else [],
                     )
             # these cats keep their old names
             else:
@@ -856,7 +856,7 @@ def create_new_cat(
                     backstory=backstory,
                     parent1=parent1,
                     parent2=parent2,
-                    adoptive_parents=adoptive_parents if adoptive_parents else []
+                    adoptive_parents=adoptive_parents if adoptive_parents else [],
                 )
 
         # give em a collar if they got one
@@ -1359,7 +1359,7 @@ def gather_cat_objects(
     """
     gathers cat objects from list of abbreviations used within an event format block
     :param Cat Cat: Cat class
-    :param list[str] abbr_list: The list of abbreviations, supports "m_c", "r_c", "p_l", "s_c", "app1" through "app6", 
+    :param list[str] abbr_list: The list of abbreviations, supports "m_c", "r_c", "p_l", "s_c", "app1" through "app6",
     "clan", "some_clan", "patrol", "multi", "n_c{index}"
     :param event: the controlling class of the event (e.g. Patrol, HandleShortEvents), default None
     :param Cat stat_cat: if passing the Patrol class, must include stat_cat separately
@@ -2212,8 +2212,6 @@ def event_text_adjust(
 
     # prey lists
     text = adjust_prey_abbr(text)
-
-
 
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:
