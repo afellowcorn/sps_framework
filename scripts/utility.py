@@ -519,7 +519,7 @@ def create_new_cat_block(
         status = cat_type
         new_name = False
         thought = "Is wondering about those new cats"
-        if age is not None and not bs_override and age <= 6:
+        if age is not None and age <= 6 and not bs_override:
             chosen_backstory = "outsider1"
 
     # IS THE CAT DEAD?
@@ -711,7 +711,7 @@ def create_new_cat(
     outside: bool = False,
     parent1: str = None,
     parent2: str = None,
-        adoptive_parents: list = None,
+    adoptive_parents: list = None,
 ) -> list:
     """
     This function creates new cats and then returns a list of those cats
@@ -807,7 +807,7 @@ def create_new_cat(
                 if bool(getrandbits(1)):
                     accessory = choice(Pelt.collars)
             elif loner and bool(
-                    getrandbits(1)
+                getrandbits(1)
             ):  # try to give name from full loner name list
                 name = choice(names.names_dict["loner_names"])
             else:
