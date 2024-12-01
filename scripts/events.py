@@ -2074,7 +2074,6 @@ class Events:
 
         random_cat = get_random_moon_cat(Cat, main_cat=cat)
 
-        print("misc event running (with potential for mediator event)...")
         handle_short_events.handle_event(event_type="misc",
                                          main_cat=cat,
                                          random_cat=random_cat,
