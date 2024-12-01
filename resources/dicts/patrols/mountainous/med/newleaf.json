@@ -210,7 +210,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Hang on. Has p_l identified the betony correctly? It's difficult to tell without the distinctive purple blossoms. {PRONOUN/p_l/subject}{VERB/p_l/'re/'s} not sure, and not willing to risk it. Better to be safe than sorry.",
+                "text": "Hang on. Has p_l identified the betony correctly? It's difficult to tell without the distinctive purple blossoms. {PRONOUN/p_l/subject/CAP}{VERB/p_l/'re/'s} not sure, and not willing to risk it. Better to be safe than sorry.",
                 "exp": 0,
                 "weight": 20
             }
