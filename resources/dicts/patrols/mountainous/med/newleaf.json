@@ -2096,7 +2096,7 @@
         "chance_of_success": 70,
         "success_outcomes": [
             {
-                "text": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. Before long, {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s finished {PRONOUN/p_l/poss} work, and it's still light enough that {PRONOUN/p_l/subject} {VERB/p_l/are/is} able to make quick work of finding some marigold, which {PRONOUN/p_l/subject} swiftly - but carefully - {VERB/p_l/dig/digs} up by the roots and {VERB/p_l/add/adds} to {PRONOUN/p_l/poss} herb bundle. That's good enough for today.",
+                "text": "The many stems of goldenrod surround p_l as {PRONOUN/p_l/subject} {VERB/p_l/work/works}, snipping off stems and clumps of tiny yellow flowers to bring back to c_n's herb stores. Before long, {PRONOUN/p_l/subject}{VERB/p_l/'ve/'s} finished {PRONOUN/p_l/poss} work, and it's still light enough that {PRONOUN/p_l/subject} {VERB/p_l/are/is} able to make quick work of finding some marigold, which {PRONOUN/p_l/subject} swiftly - but carefully - {VERB/p_l/dig/digs} up by the roots and {VERB/p_l/add/adds} to {PRONOUN/p_l/poss} herb bundle. That's good enough for today.",
                 "exp": 10,
                 "weight": 20,
                 "herbs": ["goldenrod", "marigold"]
