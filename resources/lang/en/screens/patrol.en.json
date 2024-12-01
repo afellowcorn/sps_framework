@@ -1,0 +1,15 @@
+{
+    "en": {
+        "random_patrol": "random patrol type",
+        "training": "training",
+        "hunting": "hunting",
+        "border": "border",
+        "herb_gathering": "herb gathering",
+        "choose_cats_info": "Choose up to six cats to take on patrol.\nSmaller patrols help cats gain more experience, but larger patrols are safer.",
+        "go_on_patrol": "Go On Patrol",
+        "current_prey": "current prey: %{prey}",
+        "needed_prey": "needed prey: %{prey}",
+        "label_patrol_info": "patrol leader: %{leader}\npatrol members: %{members}\npatrol skills: %{skills}\npatrol traits: %{traits}",
+        "current_patrol_info": "Current patrol skills: %{skills}\nCurrent patrol traits: %{traits}"
+    }
+}

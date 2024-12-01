@@ -302,9 +302,9 @@ class ListScreen(Screens):
             if game.clan.clan_settings["show fav"]
             else "#fav_cat_toggle_off",
             container=self.cat_list_bar,
-            tool_tip_text="hide favorite cat indicators"
+            tool_tip_text="screens.list.favorite_hide_tooltip"
             if game.clan.clan_settings["show fav"]
-            else "show favorite cat indicators",
+            else "screens.list.favorite_show_tooltip",
             starting_height=1,
         )
 
@@ -323,7 +323,7 @@ class ListScreen(Screens):
         ] = pygame_gui.elements.UITextEntryLine(
             ui_scale(pygame.Rect((45, 4), (122, 27))),
             object_id="#search_entry_box",
-            placeholder_text="name search",
+            placeholder_text="general.name_search",
             container=self.cat_list_bar,
             manager=MANAGER,
         )
@@ -336,9 +336,9 @@ class ListScreen(Screens):
             if self.death_status != "dead"
             else "#show_living_button",
             container=self.cat_list_bar,
-            tool_tip_text="view cats in the afterlife"
+            tool_tip_text="screens.list.view_dead_tooltip"
             if self.death_status != "dead"
-            else "view cats in the living world",
+            else "screens.list.view_living_tooltip",
             manager=MANAGER,
             starting_height=1,
         )
@@ -349,7 +349,7 @@ class ListScreen(Screens):
         # CHOOSE GROUP DROPDOWN
         self.cat_list_bar_elements["choose_group_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((273, 0), (190, 34))),
-            "choose group to view:",
+            "screens.list.choose_group",
             get_button_dict(ButtonStyles.DROPDOWN, (190, 34)),
             container=self.cat_list_bar,
             object_id="@buttonstyles_dropdown",
@@ -368,8 +368,8 @@ class ListScreen(Screens):
 
         y_pos = 0
         for text, object_id in (
-            ["Your Clan", "#view_your_clan_button"],
-            ["Cats Outside the Clan", "#view_cotc_button"],
+            ["screens.list.your_clan", "#view_your_clan_button"],
+            ["screens.list.cotc", "#view_cotc_button"],
         ):
             self.choose_group_buttons[object_id.strip("#")] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, y_pos), (190, 34))),
@@ -407,9 +407,9 @@ class ListScreen(Screens):
 
         y_pos = 0
         for name, object_id in (
-            ["StarClan", "#view_starclan_button"],
-            ["Unknown Residence", "#view_unknown_residence_button"],
-            ["Dark Forest", "#view_dark_forest_button"],
+            ["general.starclan", "#view_starclan_button"],
+            ["general.unknown_residence", "#view_unknown_residence_button"],
+            ["general.dark_forest", "#view_dark_forest_button"],
         ):
             self.choose_group_buttons[object_id.strip("#")] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, y_pos), (190, 34))),
@@ -622,7 +622,7 @@ class ListScreen(Screens):
         """
         self.current_listed_cats = []
 
-        # make sure cat list is the same every where else in the game.
+        # make sure cat list is the same everywhere else in the game.
         Cat.sort_cats(self.full_cat_list)
         Cat.sort_cats(Cat.all_cats_list)
 
@@ -735,16 +735,16 @@ class ListScreen(Screens):
             self.update_heading_text(self.clan_name)
         elif self.current_group == "cotc":
             self.set_bg(None)
-            self.update_heading_text("Cats Outside the Clan")
+            self.update_heading_text("screens.list.cotc")
         elif self.current_group == "sc":
             self.set_bg("sc")
-            self.update_heading_text("StarClan")
+            self.update_heading_text("general.starclan")
         elif self.current_group == "ur":
             self.set_bg("ur")
-            self.update_heading_text("Unknown Residence")
+            self.update_heading_text("general.unknown_residence")
         elif self.current_group == "df":
             self.set_bg("df")
-            self.update_heading_text("Dark Forest")
+            self.update_heading_text("general.dark_forest")
 
     def get_cat_list(self):
         """

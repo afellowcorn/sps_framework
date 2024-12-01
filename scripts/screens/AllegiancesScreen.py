@@ -191,7 +191,7 @@ class AllegiancesScreen(Screens):
             _box = ["", ""]
             _box[
                 0
-            ] = f"<b><u>{i18n.t('general.medicine_cat', count=len(living_meds)).upper()}</u></b>"
+            ] = f"<b><u>{i18n.t('general.medicine cat', count=len(living_meds)).upper()}</u></b>"
 
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_meds])
             outputs.append(_box)

@@ -3368,7 +3368,31 @@ class Cat:
     def is_baby(self):
         return self.age in ["kitten", "newborn"]
 
-    def get_info_block(self):
+    def get_info_block(self, *, make_clan=False, patrol=False):
+        if make_clan:
+            return "\n".join(
+                [
+                    self.genderalign,
+                    i18n.t(f"general.{self.age}"),
+                    i18n.t(f"personality.{self.personality.trait}"),
+                    i18n.t(f"skills.{self.skills.skill_string()}"),
+                ]
+            )
+        elif patrol:
+            return "\n".join(
+                [
+                    i18n.t(f"general.{self.status.lower()}", count=1),
+                    i18n.t(f"personality.{self.personality.trait}"),
+                    i18n.t(f"skills.{self.skills.skill_string()}"),
+                    i18n.t(f"skills.{str(self.experience_level)}")
+                    + (
+                        f" ({str(self.experience)})"
+                        if game.clan.clan_settings["showxp"]
+                        else ""
+                    ),
+                ]
+            )
+
         return "\n".join(
             [
                 i18n.t("general.cat_moons", count=self.moons),

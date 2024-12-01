@@ -11,7 +11,14 @@
         "update_available": "Update Available!",
         "back": "⬅┓ Back",
         "next_cat": "Next Cat ┏🢜⮕",
+        "next_step": "Next Step ┏🢜⮕",
         "previous_cat": "← Previous Cat",
-        "save": "Save"
+        "previous_step": "← Previous Step",
+        "done": "Done ┏🢜🢜🢜⮕",
+        "save": "Save",
+        "main_menu": "⬅🢜┓  Main Menu",
+        "add_cat": "Add Cat",
+        "remove_cat": "Remove Cat",
+        "proceed": "proceed"
     }
 }

@@ -48,6 +48,10 @@
             "one": "kitten",
             "many": "kittens"
         },
+        "young adult": "young adult",
+        "adult": "adult",
+        "senior adult": "senior adult",
+        "senior": "senior",
         "kit": {
             "one": "kit",
             "many": "kits"
@@ -94,6 +98,7 @@
         "apprentices_den": "apprentices' den",
         "can_work": "This cat can work",
         "cant_work": "This cat isn't able to work",
+        "exp": "exp: %{exp}",
         "newleaf": "newleaf",
         "greenleaf": "greenleaf",
         "leaffall": "leaf-fall",
@@ -102,6 +107,31 @@
         "relation_ADOPTIVE": "adoptive",
         "relation_HALF_BLOOD": "half sibling",
         "relation_NOT_BLOOD": "not blood related",
-        "relation_RELATED": "blood related"
+        "relation_RELATED": "blood related",
+        "niece": "niece",
+        "nephew": "nephew",
+        "siblings_child": "sibling's child",
+        "aunt": "aunt",
+        "uncle": "uncle",
+        "parents_sibling": "parent's sibling",
+        "grandparent": "grandparent",
+        "grandchild": "grandchild",
+        "parent": "parent",
+        "child": "child",
+        "sibling": "sibling",
+        "cousin": "cousin",
+        "starclan": "StarClan",
+        "dark_forest": "Dark Forest",
+        "unknown_residence": "Unknown Residence",
+        "empty": "empty",
+        "none": "none",
+        "name_search": "name search",
+        "has_a_mate": "has a mate",
+        "cats_mate": "%{name}'s mate",
+        "mate_none": "mate: none",
+        "mentor": {
+            "one": "mentor",
+            "many": "mentors"
+        }
     }
 }

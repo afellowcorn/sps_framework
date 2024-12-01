@@ -1,0 +1,32 @@
+{
+    "en": {
+        "romantic": {
+            "one": "romantic like:",
+            "many": "romantic love:"
+        },
+        "platonic": {
+            "one": "platonic like:",
+            "many": "platonic love:"
+        },
+        "dislike": {
+            "one": "dislike:",
+            "many": "hate:"
+        },
+        "admire": {
+            "one": "respect:",
+            "many": "admiration:"
+        },
+        "comfortable": {
+            "one": "comfortable:",
+            "many": "security:"
+        },
+        "jealous": {
+            "one": "jealousy:",
+            "many": "resentment:"
+        },
+        "trust": {
+            "one": "trust:",
+            "many": "reliance:"
+        }
+    }
+}
