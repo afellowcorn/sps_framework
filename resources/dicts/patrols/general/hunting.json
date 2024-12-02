@@ -1946,7 +1946,7 @@
             "prey": ["large"]
         },
         {
-            "text": "app1 leans on {PRONOUN/app1/poss} strengths, choosing to go hunting, which {PRONOUN/app1/subject} {VERB/app1/know/knows} is one of {PRONOUN/app1/poss} talents. And it's critical to c_n too, making {PRONOUN/app1/poss} heart swell with pride as {PRONOUN/app1/subject} {VERB/app1/see/sees} dep_name blink in surprise at {PRONOUN/app1/poss} hunting haul.",
+            "text": "app1 leans on {PRONOUN/app1/poss} strengths, choosing to go hunting, which {PRONOUN/app1/subject} {VERB/app1/know/knows} is one of {PRONOUN/app1/poss} talents. And it's critical to c_n too, making {PRONOUN/app1/poss} heart swell with pride as {PRONOUN/app1/subject} {VERB/app1/see/sees} another cat blink in surprise at {PRONOUN/app1/poss} hunting haul.",
             "exp": 20,
             "weight": 20,
             "stat_skill": ["HUNTER,0"],
@@ -3237,7 +3237,7 @@
     },
     "weight": 1,
     "intro_text": "Maybe they <i>should</i> bring along one of their mentors, but they don't <i>want</i> to. There's no reason to always need an adult around, they aren't <i>kits</i>.",
-    "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "decline_text": "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
     "chance_of_success": 50,
     "success_outcomes": [
         {
@@ -3353,7 +3353,7 @@
     },
     "weight": 1,
     "intro_text": "On a dare, the apprentices sneak out in the middle of the night. They're going to prove who's the best hunter!",
-    "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "decline_text": "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
     "chance_of_success": 50,
     "success_outcomes": [
         {
@@ -3476,7 +3476,7 @@
     },
     "weight": 1,
     "intro_text": "Sometimes, it's a lot easier to work on their hunting techniques without a warrior around. Not that there's anything wrong with the warriors! Just... sometimes there's less pressure hunting as an apprentice-only patrol.",
-    "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "decline_text": "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
     "chance_of_success": 50,
     "success_outcomes": [
         {
@@ -3590,7 +3590,7 @@
     },
     "weight": 1,
     "intro_text": "A hunting patrol of just apprentices! This is going to go great!",
-    "decline_text": "dep_name spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
+    "decline_text": "Another cat spots the group of apprentices definitely-not-sneaking-out and orders them back to camp.",
     "chance_of_success": 50,
     "success_outcomes": [
         {
