@@ -18,8 +18,10 @@
         "save": "Save",
         "save_settings": "Save Settings",
         "main_menu": "⬅🢜┓  Main Menu",
+        "quit_game": "⬅┓ Quit Game",
         "add_cat": "Add Cat",
         "remove_cat": "Remove Cat",
-        "proceed": "proceed"
+        "proceed": "proceed",
+        "cancel": "cancel"
     }
 }

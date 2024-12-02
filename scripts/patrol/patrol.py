@@ -617,6 +617,11 @@ class Patrol:
                 possible_patrols, biome, camp, current_season, patrol_type
             )
 
+            if not filtered_patrols:
+                raise Exception(
+                    "No matching patrols found! This may be a localization issue."
+                )
+
         return filtered_patrols, romantic_patrols
 
     def generate_patrol_events(self, patrol_dict):

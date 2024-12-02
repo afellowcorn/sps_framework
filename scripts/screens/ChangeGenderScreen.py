@@ -208,7 +208,6 @@ class ChangeGenderScreen(Screens):
     def get_sample_text(self, pronouns):
         text = i18n.t(
             "screens.change_gender.demo",
-            pronoun_id=pronouns["ID"],
             subject=pronouns["subject"],
             conju=i18n.t("general.are")
             if pronouns["conju"] == 1
@@ -216,7 +215,7 @@ class ChangeGenderScreen(Screens):
             object=pronouns["object"],
             poss=pronouns["poss"],
             inposs=pronouns["inposs"],
-            self=pronouns["self"],
+            catself=pronouns["self"],
         )
         return text
 
