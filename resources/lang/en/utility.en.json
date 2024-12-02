@@ -1,0 +1,8 @@
+{
+    "en": {
+        "items": {
+            "one": "%{item1}",
+            "many": "%{item1} and %{item2}"
+        }
+    }
+}

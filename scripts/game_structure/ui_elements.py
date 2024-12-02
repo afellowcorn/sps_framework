@@ -264,14 +264,18 @@ class UIImageButton(pygame_gui.elements.UIButton):
         generate_click_events_from: Iterable[int] = frozenset([pygame.BUTTON_LEFT]),
         visible: int = 1,
         sound_id=None,
+        text_kwargs=None,
+        tool_tip_text_kwargs=None,
     ):
         self.sound_id = sound_id
         super().__init__(
             relative_rect=relative_rect,
             text=text,
+            text_kwargs=text_kwargs,
             manager=manager,
             container=container,
             tool_tip_text=tool_tip_text,
+            tool_tip_text_kwargs=tool_tip_text_kwargs,
             starting_height=starting_height,
             parent_element=parent_element,
             object_id=ObjectID(class_id="@image_button", object_id=object_id)

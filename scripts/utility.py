@@ -14,6 +14,7 @@ from random import choice, choices, randint, random, sample, randrange, getrandb
 from sys import exit as sys_exit
 from typing import List, Tuple
 
+import i18n
 import pygame
 import ujson
 from pygame_gui.core import ObjectID
@@ -1778,14 +1779,16 @@ def adjust_list_text(list_of_items) -> str:
     :return: the new string
     """
     if len(list_of_items) == 1:
-        insert = f"{list_of_items[0]}"
+        item1 = list_of_items[0]
+        item2 = ""
     elif len(list_of_items) == 2:
-        insert = f"{list_of_items[0]} and {list_of_items[1]}"
+        item1 = list_of_items[0]
+        item2 = list_of_items[1]
     else:
-        item_line = ", ".join(list_of_items[:-1])
-        insert = f"{item_line}, and {list_of_items[-1]}"
+        item1 = ", ".join(list_of_items[:-1])
+        item2 = list_of_items[-1]
 
-    return insert
+    return i18n.t("utility.items", count=len(list_of_items), item1=item1, item2=item2)
 
 
 def adjust_prey_abbr(patrol_text):

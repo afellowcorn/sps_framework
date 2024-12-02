@@ -540,7 +540,7 @@ class MediationScreen(Screens):
                     ),
                 )
 
-        col1 = i18n.t("general.cat_moons", count=cat.moons)
+        col1 = i18n.t("general.moons_age", count=cat.moons)
         t = i18n.t(f"personality.{cat.personality.trait}")
         if len(t) > 15:
             col1 += "\n" + t[:12] + "..."
@@ -656,7 +656,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"romantic_text{tag}"
             ] = pygame_gui.elements.UITextBox(
-                "relationships.romantic",
+                "relationships.romantic_label",
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 5),
@@ -683,7 +683,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"plantonic_text{tag}"
             ] = pygame_gui.elements.UITextBox(
-                "relationships.platonic",
+                "relationships.platonic_label",
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 5),
@@ -711,7 +711,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"dislike_text{tag}"
             ] = pygame_gui.elements.UITextBox(
-                "relationships.dislike",
+                "relationships.dislike_label",
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 5),
@@ -739,7 +739,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"admiration_text{tag}"
             ] = pygame_gui.elements.UITextBox(
-                "relationships.admire",
+                "relationships.admire_label",
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 5),
@@ -767,7 +767,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"comfortable_text{tag}"
             ] = pygame_gui.elements.UITextBox(
-                "relationships.comfortable",
+                "relationships.comfortable_label",
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 5),
@@ -795,7 +795,7 @@ class MediationScreen(Screens):
             self.selected_cat_elements[
                 f"jealous_text{tag}"
             ] = pygame_gui.elements.UITextBox(
-                "relationships.jealous",
+                "relationships.jealous_label",
                 ui_scale(
                     pygame.Rect(
                         (x + x_start, y + y_start + (barbar * bar_count) - 5),

@@ -25,7 +25,6 @@ from ..game_structure.screen_settings import (
 from ..housekeeping.datadir import get_data_dir
 from ..housekeeping.version import get_version_info
 from ..ui.generate_button import get_button_dict, ButtonStyles
-from ..ui.get_arrow import get_arrow
 
 logger = logging.getLogger(__name__)
 with open("resources/gamesettings.json", "r", encoding="utf-8") as f:
@@ -220,14 +219,14 @@ class SettingsScreen(Screens):
 
         self.general_settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((100, 100), (150, 30))),
-            "general settings",
+            "screens.settings.general",
             get_button_dict(ButtonStyles.MENU_LEFT, (150, 30)),
             object_id="@buttonstyles_menu_left",
             manager=MANAGER,
         )
         self.audio_settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 100), (150, 30))),
-            "audio settings",
+            "screens.settings.audio",
             get_button_dict(ButtonStyles.MENU_MIDDLE, (150, 30)),
             object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
@@ -235,7 +234,7 @@ class SettingsScreen(Screens):
         )
         self.info_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 100), (150, 30))),
-            "info",
+            "screens.settings.info",
             get_button_dict(ButtonStyles.MENU_MIDDLE, (150, 30)),
             object_id="@buttonstyles_menu_middle",
             manager=MANAGER,
@@ -243,7 +242,7 @@ class SettingsScreen(Screens):
         )
         self.language_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 100), (150, 30))),
-            "language",
+            "screens.settings.language",
             get_button_dict(ButtonStyles.MENU_RIGHT, (150, 30)),
             object_id="@buttonstyles_menu_right",
             manager=MANAGER,
@@ -251,36 +250,33 @@ class SettingsScreen(Screens):
         )
         self.save_settings_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 550), (150, 30))),
-            "Save Settings",
+            "buttons.save_settings",
             get_button_dict(ButtonStyles.SQUOVAL, (150, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
             anchors={"centerx": "centerx"},
         )
 
-        screentext = "windowed" if game.settings["fullscreen"] else "fullscreen"
         self.fullscreen_toggle = UIImageButton(
             ui_scale(pygame.Rect((617, 25), (158, 36))),
             "",
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
-            tool_tip_text=(
-                f"This will put the game into {screentext} mode."
-                "<br><br>"
-                "<b>Important:</b> This also saves all changed settings!"
-            ),
+            tool_tip_text="buttons.toggle_fullscreen_tooltip",
+            tool_tip_text_kwargs={
+                "screentext": "windowed"
+                if game.settings["fullscreen"]
+                else "fullscreen"
+            },
         )
-        del screentext
 
         self.open_data_directory_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 645), (178, 30))),
-            "Open Data Directory",
+            "buttons.open_data_directory",
             get_button_dict(ButtonStyles.SQUOVAL, (178, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
-            tool_tip_text="Opens the data directory. "
-            "This is where save files "
-            "and logs are stored.",
+            tool_tip_text="buttons.open_data_directory_tooltip",
         )
 
         if get_version_info().is_sandboxed:
@@ -289,7 +285,7 @@ class SettingsScreen(Screens):
         self.update_save_button()
         self.main_menu_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((25, 25), (152, 30))),
-            get_arrow(3) + " Main Menu",
+            "buttons.main_menu",
             get_button_dict(ButtonStyles.SQUOVAL, (152, 30)),
             manager=MANAGER,
             object_id="@buttonstyles_squoval",
@@ -378,8 +374,7 @@ class SettingsScreen(Screens):
         )
 
         self.checkboxes_text["instr"] = pygame_gui.elements.UITextBox(
-            """Change the general settings of your game here.\n"""
-            """More settings are available in the settings page of your Clan.""",
+            "screens.settings.general_info",
             ui_scale(pygame.Rect((100, 160), (600, 100))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
@@ -399,7 +394,7 @@ class SettingsScreen(Screens):
         self.save_settings_button.show()
 
         self.volume_elements["audio_settings_info"] = pygame_gui.elements.UITextBox(
-            "Change the settings for the game audio here.",
+            "screens.settings.audio_info",
             ui_scale(pygame.Rect((0, 160), (600, 50))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
@@ -407,7 +402,7 @@ class SettingsScreen(Screens):
         )
 
         self.volume_elements["music_volume_text"] = pygame_gui.elements.UITextBox(
-            "Music Volume:",
+            "screens.settings.music_volume",
             ui_scale(pygame.Rect((175, 250), (200, 30))),
             object_id=get_text_box_theme("#text_box_30"),
             manager=MANAGER,
@@ -432,7 +427,7 @@ class SettingsScreen(Screens):
         )
 
         self.volume_elements["sound_volume_text"] = pygame_gui.elements.UITextBox(
-            "Sound Effect Volume:",
+            "screens.settings.sfx_volume",
             ui_scale(pygame.Rect((175, 15), (200, 30))),
             object_id=get_text_box_theme("#text_box_30"),
             manager=MANAGER,
@@ -543,7 +538,7 @@ class SettingsScreen(Screens):
         self.save_settings_button.show()
 
         self.checkboxes_text["instr"] = pygame_gui.elements.UITextBox(
-            "Change the language of the game here. This has not been implemented yet.",
+            "screens.settings.language_info",
             ui_scale(pygame.Rect((100, 160), (600, 50))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
@@ -570,7 +565,7 @@ class SettingsScreen(Screens):
             )
             self.checkboxes["spanish"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((310, 0), (180, 37))),
-                "spanish",
+                "screens.settings.lang_spanish",
                 get_button_dict(ButtonStyles.LADDER_MIDDLE, (180, 37)),
                 object_id="@buttonstyles_ladder_middle",
                 manager=MANAGER,
@@ -578,7 +573,7 @@ class SettingsScreen(Screens):
             )
             self.checkboxes["german"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((310, 0), (180, 37))),
-                "german",
+                "screens.settings.lang_german",
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (180, 37)),
                 object_id="@buttonstyles_ladder_bottom",
                 manager=MANAGER,

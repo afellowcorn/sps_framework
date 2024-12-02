@@ -402,8 +402,6 @@ class Screens:
             container=cls.menu_buttons["moons_n_seasons"],
         )
 
-        moons_text = "moon" if game.clan.age == 1 else "moons"
-
         cls.moons_n_seasons_moon = UIImageButton(
             ui_scale(pygame.Rect((14, 10), (24, 24))),
             "",
@@ -412,11 +410,12 @@ class Screens:
             container=cls.menu_buttons["moons_n_seasons"],
         )
         cls.moons_n_seasons_text = pygame_gui.elements.UITextBox(
-            f"{game.clan.age} {moons_text}",
+            "general.moons_age",
             ui_scale(pygame.Rect((42, 6), (100, 30))),
             container=cls.menu_buttons["moons_n_seasons"],
             manager=MANAGER,
             object_id="#text_box_30_horizleft_light",
+            text_kwargs={"count": game.clan.age},
         )
 
         if game.clan.current_season == "Newleaf":
@@ -438,7 +437,7 @@ class Screens:
             container=cls.menu_buttons["moons_n_seasons"],
         )
         cls.moons_n_seasons_text2 = pygame_gui.elements.UITextBox(
-            f"{game.clan.current_season}",
+            f"general.{game.clan.current_season.lower()}".capitalize(),
             ui_scale(pygame.Rect((42, 36), (100, 30))),
             container=cls.menu_buttons["moons_n_seasons"],
             manager=MANAGER,
@@ -470,11 +469,6 @@ class Screens:
             container=cls.menu_buttons["moons_n_seasons"],
         )
 
-        if game.clan.age == 1:
-            moons_text = "moon"
-        else:
-            moons_text = "moons"
-
         cls.moons_n_seasons_moon = UIImageButton(
             ui_scale(pygame.Rect((14, 10), (24, 24))),
             "",
@@ -482,7 +476,8 @@ class Screens:
             object_id="#mns_image_moon",
             container=cls.menu_buttons["moons_n_seasons"],
             starting_height=2,
-            tool_tip_text=f"{game.clan.age} {moons_text}",
+            tool_tip_text=f"general.moons_age",
+            tool_tip_text_kwargs={"count": game.clan.age},
         )
 
         if game.clan.current_season == "Newleaf":

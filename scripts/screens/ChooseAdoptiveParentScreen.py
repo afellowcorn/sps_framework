@@ -703,7 +703,7 @@ class ChooseAdoptiveParentScreen(Screens):
 
         info = "\n".join(
             [
-                i18n.t("general.cat_moons", count=self.the_cat.moons),
+                i18n.t("general.moons_age", count=self.the_cat.moons),
                 i18n.t(f"general.{self.the_cat.status.lower()}", count=1),
                 self.the_cat.genderalign,
                 i18n.t(f"personality.{self.the_cat.personality.trait}"),
@@ -883,7 +883,7 @@ class ChooseAdoptiveParentScreen(Screens):
 
         info = "\n".join(
             [
-                i18n.t("general.cat_moons", count=self.selected_cat.moons),
+                i18n.t("general.moons_age", count=self.selected_cat.moons),
                 i18n.t(f"general.{self.selected_cat.status.lower()}", count=1),
                 self.selected_cat.genderalign,
                 i18n.t(f"personality.{self.selected_cat.personality.trait}"),

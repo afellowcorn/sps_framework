@@ -3368,7 +3368,7 @@ class Cat:
     def is_baby(self):
         return self.age in ["kitten", "newborn"]
 
-    def get_info_block(self, *, make_clan=False, patrol=False):
+    def get_info_block(self, *, make_clan=False, patrol=False, relationship=False):
         if make_clan:
             return "\n".join(
                 [
@@ -3392,10 +3392,18 @@ class Cat:
                     ),
                 ]
             )
+        elif relationship:
+            return "\n".join(
+                [
+                    i18n.t("general.moons_age", count=self.moons),
+                    self.genderalign,
+                    i18n.t(f"personality.{self.personality.trait}"),
+                ]
+            )
 
         return "\n".join(
             [
-                i18n.t("general.cat_moons", count=self.moons),
+                i18n.t("general.moons_age", count=self.moons),
                 i18n.t(f"general.{self.status.lower()}", count=1),
                 self.genderalign,
                 i18n.t(f"personality.{self.personality.trait}"),

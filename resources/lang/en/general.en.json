@@ -1,9 +1,10 @@
 {
     "en": {
-        "cat_moons": {
+        "moons_age": {
             "one": "1 moon",
             "many": "%{count} moons"
         },
+        "moon_date": "moon %{moon}",
         "leader": {
             "one": "leader",
             "many": "leaders"
@@ -89,13 +90,6 @@
         "cat": "cat",
         "is": "is",
         "are": "are",
-        "warriors_den": "warriors' den",
-        "leader_den": "leader den",
-        "medicine_cat_den": "medicine cat den",
-        "elders_den": "elders' den",
-        "nursery": "nursery",
-        "clearing": "clearing",
-        "apprentices_den": "apprentices' den",
         "can_work": "This cat can work",
         "cant_work": "This cat isn't able to work",
         "exp": "exp: %{exp}",
@@ -108,6 +102,7 @@
         "relation_HALF_BLOOD": "half sibling",
         "relation_NOT_BLOOD": "not blood related",
         "relation_RELATED": "blood related",
+        "related_label": "related: %{relation}",
         "niece": "niece",
         "nephew": "nephew",
         "siblings_child": "sibling's child",
@@ -119,6 +114,7 @@
         "parent": "parent",
         "child": "child",
         "sibling": "sibling",
+        "sibling_littermate": "sibling (littermate)",
         "cousin": "cousin",
         "starclan": "StarClan",
         "dark_forest": "Dark Forest",
@@ -132,6 +128,14 @@
         "mentor": {
             "one": "mentor",
             "many": "mentors"
-        }
+        },
+        "mentor_label": "mentor: %{mentor}",
+        "apprentice_label": {
+            "one": "apprentice: %{apprentices}",
+            "many": "apprentices: %{apprentices}"
+        },
+        "dead_label": "%{name} (dead)",
+        "mark_favorite": "Mark as favorite",
+        "remove_favorite": "Remove favorite"
     }
 }
