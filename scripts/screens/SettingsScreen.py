@@ -87,6 +87,7 @@ class SettingsScreen(Screens):
                     contributors_start = (
                         i - 1
                     )  # to account for the seniors and contributors tags we skip
+
                     continue
                 info_text[info_text_index].append(contributor)
                 tooltip_text.append(credits_text["contrib"][contributor])
@@ -545,8 +546,8 @@ class SettingsScreen(Screens):
         )
 
         self.checkboxes_text["info_text_seniors"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((0, 20), (300, 30))),
-            "Senior Developers",
+            ui_scale(pygame.Rect((0, 20), (400, 30))),
+            "Current + Former Senior Developers",
             {"normal": get_button_dict(ButtonStyles.ROUNDED_RECT, (300, 30))["normal"]},
             object_id="@buttonstyles_rounded_rect",
             container=self.checkboxes_text["info_container"],
@@ -559,8 +560,7 @@ class SettingsScreen(Screens):
         self.checkboxes_text["info_text_seniors"].disable()
 
         self.checkboxes_text["info_text_box"].disable()
-        normal_rows = [-200, 0, 200]
-        short_rows = {0: [-200, 0, 200], 1: [0], 2: [-200, 200]}
+        rows = [-200, 0, 200]
         contributors_block = False
         contributors_index = 0
         final_row_seniors = self.contributors_start % 3
@@ -569,11 +569,9 @@ class SettingsScreen(Screens):
             # determine position
             if contributors_block:
                 position = (
-                    normal_rows[i % 3]
-                    if i < len(self.tooltip_text) - final_row_contribs
-                    else short_rows[final_row_contribs][
-                        abs(len(self.tooltip_text) - final_row_contribs - i)
-                    ],
+                    0
+                    if final_row_contribs == 1 and i == len(self.tooltip_text) - 1
+                    else rows[contributors_index % 3],
                     # y-axis
                     10
                     if contributors_index
@@ -582,11 +580,9 @@ class SettingsScreen(Screens):
                 )
             else:
                 position = (
-                    normal_rows[i % 3]
-                    if i < self.contributors_start - final_row_seniors
-                    else short_rows[final_row_seniors][
-                        abs(self.contributors_start - i)
-                    ],
+                    0
+                    if final_row_seniors == 1 and (i == self.contributors_start - 1)
+                    else rows[i % 3],
                     10
                     if i < 3  # first rows have a bit of space below the header
                     else 0,
@@ -622,9 +618,7 @@ class SettingsScreen(Screens):
                         "info_text_contributors"
                     ]  # contributors first row
                     if contributors_index < 3
-                    else self.tooltip[
-                        f"tip{(floor(i / 3) * 3) - 1}"
-                    ],  # contributors other rows
+                    else self.tooltip[f"tip{i - 3}"],  # contributors other rows
                 },
             )
 
