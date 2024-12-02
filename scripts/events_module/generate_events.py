@@ -2,6 +2,7 @@
 # -*- coding: ascii -*-
 import random
 
+import i18n
 import ujson
 
 from scripts.game_structure.game_essentials import game
@@ -11,7 +12,9 @@ from scripts.utility import (
     get_alive_status_cats,
 )
 
-resource_directory = "resources/dicts/events/"
+
+def get_resource_directory():
+    return f"resources/lang/{i18n.config.get('locale')}/events/"
 
 
 # ---------------------------------------------------------------------------- #
@@ -63,7 +66,7 @@ class GenerateEvents:
     @staticmethod
     def get_death_reaction_dicts(family_relation, rel_value):
         try:
-            file_path = f"{resource_directory}/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
+            file_path = f"{get_resource_directory()}/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
             with open(
                 file_path,
                 "r",
@@ -79,7 +82,7 @@ class GenerateEvents:
     @staticmethod
     def get_lead_den_event_dicts(event_type: str, success: bool):
         try:
-            file_path = f"{resource_directory}/leader_den/{'success' if success else 'fail'}/{event_type}.json"
+            file_path = f"{get_resource_directory()}/leader_den/{'success' if success else 'fail'}/{event_type}.json"
             with open(file_path, "r") as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -96,7 +99,7 @@ class GenerateEvents:
 
     @staticmethod
     def generate_short_events(event_triggered, biome):
-        file_path = f"{resource_directory}{event_triggered}/{biome}.json"
+        file_path = f"{get_resource_directory()}{event_triggered}/{biome}.json"
 
         try:
             if file_path in GenerateEvents.loaded_events:
@@ -151,7 +154,7 @@ class GenerateEvents:
 
     @staticmethod
     def generate_ongoing_events(event_type, biome, specific_event=None):
-        file_path = f"resources/dicts/events/{event_type}/{biome}.json"
+        file_path = f"{get_resource_directory()}/{event_type}/{biome}.json"
 
         if file_path in GenerateEvents.loaded_events:
             return GenerateEvents.loaded_events[file_path]
@@ -976,7 +979,8 @@ class GenerateEvents:
                         if "lost" not in cat_info["status"]:
                             continue
                     elif (
-                        cat.status.casefold() not in [x.casefold() for x in cat_info["status"]]
+                        cat.status.casefold()
+                        not in [x.casefold() for x in cat_info["status"]]
                         and "any" not in cat_info["status"]
                     ):
                         continue

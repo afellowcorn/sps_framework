@@ -3598,7 +3598,9 @@ with open(
 ) as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
-resource_directory = "resources/dicts/events/death/death_reactions/"
+resource_directory = (
+    f"resources/lang/{i18n.config.get('locale')}/events/death/death_reactions/"
+)
 
 with open(f"{resource_directory}minor_major.json", "r", encoding="utf-8") as read_file:
     MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
