@@ -501,11 +501,18 @@ def create_new_cat_block(
     for _tag in attribute_list:
         match = re.match(r"backstory:(.+)", _tag)
         if match:
-            stor = [
-                x for x in match.group(1).split(",") if x in BACKSTORIES["backstories"]
-            ]
+            bs_list = [x for x in match.group(1).split(",")]
+            stor = []
+            for story in bs_list:
+                if story in BACKSTORIES["backstories"]:
+                    stor.append(story)
+                elif story in BACKSTORIES["backstory_categories"]:
+                    stor.extend(BACKSTORIES["backstory_categories"][story])
             bs_override = True
-            chosen_backstory = choice(stor)
+            try:
+                chosen_backstory = choice(stor)
+            except IndexError:
+                print(f"given backstories: {_tag}")
             break
 
     # KITTEN THOUGHT
