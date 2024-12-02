@@ -182,6 +182,7 @@
                 "exp": 0,
                 "weight": 20,
                 "stat_trait": ["childish", "playful" ],
+                "can_have_stat": ["not_pl_rc"],
                 "prey": ["very_small"],
                 "injury": [
                     {
@@ -1251,7 +1252,8 @@
         "text": "r_c kills the distracted rat easily, but p_l points out the putrid scent. c_n could use the prey, but it isn't safe to risk sickness. s_c cocks {PRONOUN/s_c/poss} head. If they aren't going to eat it, can they at least name it? Before p_l can figure out how to reply to that, s_c touches {PRONOUN/s_c/poss} nose to the body of the rat. Henceforth, this rat will be known as Stinkyrat, honored for its stinkiness. Stinkyrat! Stinkyrat!",
         "exp": 30,
         "weight": 10,
-        "stat_trait": ["childish", "playful" ]
+        "stat_trait": ["childish", "playful" ],
+        "can_have_stat": ["r_c"]
       }
     ],
     "fail_outcomes": [
