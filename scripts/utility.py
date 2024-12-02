@@ -509,10 +509,6 @@ def create_new_cat_block(
                 elif story in BACKSTORIES["backstory_categories"]:
                     stor.extend(BACKSTORIES["backstory_categories"][story])
             bs_override = True
-            try:
-                chosen_backstory = choice(stor)
-            except IndexError:
-                print(f"given backstories: {_tag}")
             break
 
     # KITTEN THOUGHT
