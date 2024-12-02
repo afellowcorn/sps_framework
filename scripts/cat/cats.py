@@ -3375,20 +3375,20 @@ class Cat:
                     self.genderalign,
                     i18n.t(f"general.{self.age}"),
                     i18n.t(f"personality.{self.personality.trait}"),
-                    i18n.t(f"skills.{self.skills.skill_string()}"),
+                    self.skills.skill_string(),
                 ]
             )
         elif patrol:
-            return "\n".join(
+            return "<br>".join(
                 [
                     i18n.t(f"general.{self.status.lower()}", count=1),
                     i18n.t(f"personality.{self.personality.trait}"),
-                    i18n.t(f"skills.{self.skills.skill_string()}"),
-                    i18n.t(f"skills.{str(self.experience_level)}")
+                    self.skills.skill_string(),
+                    self.experience_level
                     + (
-                        f" ({str(self.experience)})"
+                        f" ({str(self.experience)})\n"
                         if game.clan.clan_settings["showxp"]
-                        else ""
+                        else "\n"
                     ),
                 ]
             )

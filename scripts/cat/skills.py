@@ -427,7 +427,8 @@ class CatSkills:
         if not output:
             return "???"
 
-        return " & ".join(output)
+        out = " & ".join(output)
+        return out
 
     def mentor_influence(self, mentor):
         """Handles mentor influence on the cat's skill

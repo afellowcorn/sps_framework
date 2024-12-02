@@ -1165,7 +1165,7 @@ class PatrolScreen(Screens):
 
             self.elements["selected_bio"] = pygame_gui.elements.UITextBox(
                 self.selected_cat.get_info_block(patrol=True),
-                ui_scale(pygame.Rect((0, -5), (200, 110))),
+                ui_scale(pygame.Rect((0, -5), (190, 110))),
                 object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
                 manager=MANAGER,
                 anchors={

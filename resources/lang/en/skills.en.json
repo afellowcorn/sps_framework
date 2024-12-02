@@ -1,5 +1,12 @@
 {
     "en": {
+        "untrained": "untrained",
+        "trainee": "trainee",
+        "prepared": "prepared",
+        "competent": "competent",
+        "proficient": "proficient",
+        "expert": "expert",
+        "master": "master",
         "teaching": "teaching",
         "quick to help": "quick to help",
         "good teacher": "good teacher",
