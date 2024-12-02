@@ -149,15 +149,10 @@ class ClanScreen(Screens):
                 try:
                     image = Cat.all_cats[x].sprite.convert_alpha()
                     blend_layer = (
-                        getattr(
-                            self,
-                            game.clan.current_season.lower().replace("-", "") + "_bg",
-                        )
+                        self.game_bgs[self.active_bg]
                         .subsurface(
-                            scale(
-                                pygame.Rect(
-                                    tuple(Cat.all_cats[x].placement), (100, 100)
-                                )
+                            ui_scale(
+                                pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50))
                             )
                         )
                         .convert_alpha()
@@ -260,14 +255,13 @@ class ClanScreen(Screens):
         self.label_toggle = UIImageButton(
             ui_scale(pygame.Rect((25, 641), (32, 32))),
             "",
-            object_id="@checked_checkbox"
-        ,
+            object_id="@checked_checkbox",
         )
 
         self.save_button = UIImageButton(
             ui_scale(pygame.Rect(((343, 643), (114, 30)))),
-            "", object_id="#save_button"
-        ,
+            "",
+            object_id="#save_button",
             sound_id="save",
         )
         self.save_button.enable()
