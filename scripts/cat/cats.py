@@ -11,6 +11,7 @@ import sys
 from random import choice, randint, sample, random, getrandbits, randrange
 from typing import Dict, List, Any
 
+import i18n.config
 import ujson  # type: ignore
 
 from scripts.cat.history import History
@@ -48,6 +49,7 @@ class Cat:
 
     dead_cats = []
     used_screen = screen
+    current_lang = None
 
     ages = [
         "newborn",
@@ -519,6 +521,22 @@ class Cat:
                 f"Mentor ID {mentor_id} of type {type(mentor_id)} isn't valid :("
                 "\nCat.mentor has to be either None (no mentor) or the mentor's ID as a string."
             )
+
+    def get_genderalign_string(self):
+        # translate it if it's default
+        if self.genderalign in [
+            "female",
+            "male",
+            "trans female",
+            "trans male",
+            "nonbinary",
+        ]:
+            return i18n.t(f"general.{self.genderalign}")
+        # otherwise, it's custom - just return it directly
+        return self.genderalign
+
+    def get_gender_string(self):
+        return i18n.t(f"general.{self.gender}")
 
     def is_alive(self):
         """Check if this cat is alive
@@ -3543,7 +3561,7 @@ game.cat_class = cat_class
 # ---------------------------------------------------------------------------- #
 
 resource_directory = "resources/dicts/conditions/"
-
+lang = i18n.config.get("locale")
 with open(f"{resource_directory}illnesses.json", "r", encoding="utf-8") as read_file:
     ILLNESSES = ujson.loads(read_file.read())
 
@@ -3555,15 +3573,23 @@ with open(
 ) as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
-resource_directory = "resources/dicts/events/death/death_reactions/"
+resource_directory = f"resources/lang/{lang}/"
 
-with open(f"{resource_directory}minor_major.json", "r", encoding="utf-8") as read_file:
+with open(
+    f"{resource_directory}events/death/death_reactions/minor_major.json",
+    "r",
+    encoding="utf-8",
+) as read_file:
     MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
 
-with open("resources/dicts/lead_ceremony_sc.json", "r", encoding="utf-8") as read_file:
+with open(
+    f"{resource_directory}lead_ceremony_sc.json", "r", encoding="utf-8"
+) as read_file:
     LEAD_CEREMONY_SC = ujson.loads(read_file.read())
 
-with open("resources/dicts/lead_ceremony_df.json", "r", encoding="utf-8") as read_file:
+with open(
+    f"{resource_directory}lead_ceremony_df.json", "r", encoding="utf-8"
+) as read_file:
     LEAD_CEREMONY_DF = ujson.loads(read_file.read())
 
 with open("resources/dicts/backstories.json", "r", encoding="utf-8") as read_file:

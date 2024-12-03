@@ -24,7 +24,6 @@ class Relation_Events:
 
     base_path = os.path.join("resources", "dicts", "relationship_events")
 
-    GROUP_TYPES = {}
     types_path = os.path.join(base_path, "group_interactions", "group_types.json")
     with open(types_path, "r") as read_file:
         GROUP_TYPES = ujson.load(read_file)
