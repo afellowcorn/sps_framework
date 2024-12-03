@@ -177,7 +177,7 @@ class ClanScreen(Screens):
                             ui_scale(
                                 pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50))
                             ),
-                            Cat.all_cats[x].sprite,
+                            sprite,
                             cat_id=x,
                             starting_height=i,
                         )

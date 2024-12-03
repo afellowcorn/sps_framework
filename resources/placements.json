@@ -962,8 +962,8 @@
     },
     "Plainscamp3": {
         "cat_shading": {
-            "blur": 10,
-            "blend_strength": 170
+            "blur": 20,
+            "blend_strength": 180
         },
         "leader den": [375, 102],
         "medicine den": [95, 155],
