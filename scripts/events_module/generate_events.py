@@ -4,6 +4,7 @@ import random
 
 import ujson
 
+from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
@@ -1033,36 +1034,3 @@ class GenerateEvents:
 
 generate_events = GenerateEvents()
 
-
-
-
-class OngoingEvent:
-    def __init__(
-        self,
-        event=None,
-        camp=None,
-        season=None,
-        tags=None,
-        priority="secondary",
-        duration=None,
-        current_duration=0,
-        rarity=0,
-        trigger_events=None,
-        progress_events=None,
-        conclusion_events=None,
-        secondary_disasters=None,
-        collateral_damage=None,
-    ):
-        self.event = event
-        self.camp = camp
-        self.season = season
-        self.tags = tags
-        self.priority = priority
-        self.duration = duration
-        self.current_duration = current_duration
-        self.rarity = rarity
-        self.trigger_events = trigger_events
-        self.progress_events = progress_events
-        self.conclusion_events = conclusion_events
-        self.secondary_disasters = secondary_disasters
-        self.collateral_damage = collateral_damage
