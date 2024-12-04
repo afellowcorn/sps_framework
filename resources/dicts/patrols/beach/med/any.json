@@ -2944,7 +2944,7 @@
     {
         "patrol_id": "bch_med_medwar_puddles",
         "biome": ["Any"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
         "patrol_art": "med_general_intro",
