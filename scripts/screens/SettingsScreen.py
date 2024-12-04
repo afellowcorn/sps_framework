@@ -78,7 +78,7 @@ class SettingsScreen(Screens):
             info_text_index = "ogs"
         elif string == "{contrib}":
             # removing the previous newline
-            info_text[info_text_index] = info_text[info_text_index][:-4]
+            info_text[info_text_index] = info_text[info_text_index][:-2]
             info_text_index = "contribs"
             for i, contributor in enumerate(credits_text["contrib"]):
                 if contributor == "<SENIORS>":
