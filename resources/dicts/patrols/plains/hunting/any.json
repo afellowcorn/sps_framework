@@ -108,7 +108,7 @@
                 ]
             },
             {
-                "text": "s_c's got this. {PRONOUN/s_c/poss/CAP} pawsteps are silent, {PRONOUN/s_c/poss} body slinking a whisker above the ground, shoulders dropped, freezing completely as the sentry glances in {PRONOUN/s_c/poss} direciton. it's not quick. But s_c gets to a fox-length away, and in a liquid pounce, takes the sentry out. That's how it's done.",
+                "text": "s_c's got this. {PRONOUN/s_c/poss/CAP} pawsteps are silent, {PRONOUN/s_c/poss} body slinking a whisker above the ground, shoulders dropped, freezing completely as the sentry glances in {PRONOUN/s_c/poss} direction. It's not quick. But s_c gets to a fox-length away, and in a liquid pounce, takes the sentry out. That's how it's done.",
                 "exp": 15,
                 "weight": 20,
                 "art": "hunt_general_intro",
@@ -267,7 +267,7 @@
                 ]
             },
             {
-                "text": "It's a hard approach, but... s_c will give it a try. {PRONOUN/s_c/poss/CAP} pawsteps are silent, shoulders dropped, freezing completely as the sentry glances in {PRONOUN/s_c/poss} direciton. it's not quick. But s_c gets to a fox-length away, and in a clumsy pounce, takes the sentry out!",
+                "text": "It's a hard approach, but... s_c will give it a try. {PRONOUN/s_c/poss/CAP} pawsteps are silent, shoulders dropped, freezing completely as the sentry glances in {PRONOUN/s_c/poss} direction. It's not quick. But s_c gets to a fox-length away, and in a clumsy pounce, takes the sentry out!",
                 "exp": 15,
                 "weight": 20,
                 "art": "gen_train_patrolapprenticesessionsuccess",

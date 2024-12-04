@@ -135,7 +135,7 @@
     ],
     "fail_outcomes": [
         {
-            "text": "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c limping. it's nothing, {PRONOUN/r_c/subject} {VERB/r_c/say/says}, just sleeping on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off.",
+            "text": "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c limping. It's nothing, {PRONOUN/r_c/subject} {VERB/r_c/say/says}, just sleeping on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off.",
             "exp": 0,
             "weight": 10,
             "art": "gen_train_sunset",
@@ -156,7 +156,7 @@
             ]
         },
         {
-            "text": "Before they reach the far border itself, p_l spots s_c limping. it's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enoguh to escape. <i>Should.</i>",
+            "text": "Before they reach the far border itself, p_l spots s_c limping. It's nothing, {PRONOUN/s_c/subject} {VERB/s_c/say/says}, and refuses to stop. But in these far reaches, in territory not commonly checked, other predators intrude. When a young, inexperienced cougar charges the patrol, s_c <i>should</i> have been able to run fast enoguh to escape. <i>Should.</i>",
             "exp": 0,
             "weight": 20,
             "art": "running_two_warriors",
