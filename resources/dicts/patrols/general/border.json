@@ -460,7 +460,7 @@
                 "stat_skill": ["FIGHTER,0"]
             },
             {
-                "text": "s_c stops the patrol, narrowing {PRONOUN/s_c/poss} eyes. That isn't a Twoleg! {PRONOUN/s_c/subject} came across one before during {PRONOUN/s_c/object} time outside the Clan. It's a 'scarecrow', {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, meant to protect the Twoleg fields from harm. The patrol continues on their way, giving the scarecrow a wide berth.",
+                "text": "s_c stops the patrol, narrowing {PRONOUN/s_c/poss} eyes. That isn't a Twoleg! {PRONOUN/s_c/subject/CAP} came across one before during {PRONOUN/s_c/object} time outside the Clan. It's a 'scarecrow', {PRONOUN/s_c/subject} {VERB/s_c/explain/explains}, meant to protect the Twoleg fields from harm. The patrol continues on their way, giving the scarecrow a wide berth.",
                 "exp": 10,
                 "weight": 20,
                 "stat_skill": [
