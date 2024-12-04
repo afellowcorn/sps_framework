@@ -216,7 +216,7 @@
                 "text": "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
                 "exp": 30,
                 "weight": 20,
-                "stat_trait": ["bold", "confident", "charming"],
+                "stat_trait": ["bold", "confident"],
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -553,8 +553,8 @@
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
+                    "lead_death": "died from an injury inflicted by an invading rogue"
                 }
             }
         ]
@@ -693,7 +693,11 @@
                         "scars": ["BRIDGE"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." },
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
+                    "lead_death": "died from an injury inflicted by an invading rogue"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -840,7 +844,11 @@
                         "scars": ["BRIDGE"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." },
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
+                    "lead_death": "died from an injury inflicted by an invading rogue"
+                },
                 "relationships": [
                     {
                         "cats_to": ["patrol"],
@@ -922,7 +930,11 @@
                         "scars": ["CHEEK"]
                     }
                 ],
-                "history_text": { "scar": "m_c was scarred by an invading rogue." }
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "reg_death": "m_c died from an injury inflicted by an invading rogue.",
+                    "lead_death": "died from an injury inflicted by an invading rogue"
+                }
             }
         ]
     },
@@ -1320,9 +1332,7 @@
                     "charismatic",
                     "childish",
                     "playful",
-                    "empathetic",
-                    "loving",
-                    "patient"
+                    "loving"
                 ],
                 "relationships": [
                     {
@@ -1438,10 +1448,10 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cat_to": ["patrol"],
-                        "cat_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["platonic, comfort"],
+                        "values": ["platonic", "comfort"],
                         "amount": 5
                     }
                     

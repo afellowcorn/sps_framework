@@ -554,7 +554,7 @@
                 "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face-to-face with a skunk! The whole patrol is sprayed!",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bold", "ambitious", "childish", "impulsive"],
+                "stat_trait": ["bold", "ambitious", "childish"],
                 "prey": ["very_small"]
             },
             {
@@ -613,7 +613,7 @@
                 "text": "s_c sticks {PRONOUN/s_c/poss} nose into the hole only to come face-to-face with a skunk! The whole patrol is sprayed!",
                 "exp": 0,
                 "weight": 20,
-                "stat_trait": ["bold", "ambitious", "childish", "impulsive"]
+                "stat_trait": ["bold", "ambitious", "childish"]
             },
             {
                 "text": "Oh no! The burrow was home to a wolverine, now angry at the disturbance. r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws. With no other cats around to help, {PRONOUN/r_c/subject} is quickly killed by the predator.",
@@ -773,7 +773,6 @@
                     "nervous",
                     "sneaky",
                     "strange",
-                    "patient",
                     "thoughtful",
                     "wise"
                 ],
@@ -867,7 +866,6 @@
                     "nervous",
                     "sneaky",
                     "strange",
-                    "patient",
                     "thoughtful",
                     "wise"
                 ],
@@ -937,7 +935,6 @@
                     "nervous",
                     "sneaky",
                     "strange",
-                    "patient",
                     "thoughtful",
                     "wise"
                 ],
@@ -1007,7 +1004,6 @@
                     "nervous",
                     "sneaky",
                     "strange",
-                    "patient",
                     "thoughtful",
                     "wise"
                 ],
@@ -1293,10 +1289,8 @@
                 "weight": 10,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -1367,10 +1361,8 @@
                 "weight": 10,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -1443,10 +1435,8 @@
                 "weight": 10,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -1513,10 +1503,8 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -1597,10 +1585,8 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -1723,10 +1709,8 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -1854,10 +1838,8 @@
                 "weight": 20,
                 "stat_trait": [
                     "compassionate",
-                    "empathetic",
                     "faithful",
                     "loving",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -2058,7 +2040,6 @@
                     "nervous",
                     "sneaky",
                     "strange",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -2148,7 +2129,6 @@
                     "nervous",
                     "sneaky",
                     "strange",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -2237,7 +2217,6 @@
                     "nervous",
                     "sneaky",
                     "strange",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -2321,7 +2300,6 @@
                     "nervous",
                     "sneaky",
                     "strange",
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise"
@@ -2592,7 +2570,6 @@
                 "exp": 25,
                 "weight": 20,
                 "stat_trait": [
-                    "patient",
                     "responsible",
                     "thoughtful",
                     "wise",
@@ -3055,10 +3032,10 @@
                 "weight": 20,
                 "relationships": [
                     {
-                        "cat_to": ["patrol"],
-                        "cat_from": ["patrol"],
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
                         "mutual": true,
-                        "values": ["platonic, comfort"],
+                        "values": ["platonic", "comfort"],
                         "amount": 5
                     }
                     

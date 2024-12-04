@@ -121,6 +121,10 @@ class Events:
             # get the moonskip freshkill
             self.get_moon_freshkill()
 
+        # Adding in any potential lead den events that have been saved
+        if "lead_den_interaction" in game.clan.clan_settings:
+            if game.clan.clan_settings["lead_den_interaction"]:
+                self.handle_lead_den_event()
 
         # checking if a lost cat returns on their own
         rejoin_upperbound = game.config["lost_cat"]["rejoin_chance"]
@@ -133,11 +137,6 @@ class Events:
                 self.one_moon_cat(cat)
             else:
                 self.one_moon_outside_cat(cat)
-
-        # Adding in any potential lead den events that have been saved
-        if "lead_den_interaction" in game.clan.clan_settings:
-            if game.clan.clan_settings["lead_den_interaction"]:
-                self.handle_lead_den_event()
 
         # keeping this commented out till disasters are more polished
         # self.disaster_events.handle_disasters()
@@ -205,7 +204,7 @@ class Events:
                         shaken_cats = random.sample(
                             alive_cats,
                             k=max(
-                                int((len(alive_cats) * random.choice([4, 5, 6])) / 100),
+                                int((len(alive_cats) * random.randint(4, 6)) / 100),
                                 1,
                             ),
                         )
@@ -437,13 +436,10 @@ class Events:
                                 invited_cat.status = invited_cat.age
                                 if not invited_cat.name.suffix:
                                     invited_cat.name = Name(
-                                        invited_cat.status,
                                         invited_cat.name.prefix,
                                         invited_cat.name.suffix,
-                                        invited_cat.pelt.colour,
-                                        invited_cat.pelt.name,
-                                        invited_cat.pelt.tortiepattern,
                                         game.clan.biome,
+                                        cat=invited_cat,
                                     )
                                     invited_cat.name.give_suffix(
                                         pelt=None,
@@ -597,11 +593,11 @@ class Events:
                                                    sort=True)
             for med in meds_available:
                 if game.clan.current_season in ["Newleaf", "Greenleaf"]:
-                    amount = random.choices([1, 2, 3, 4], [1, 2, 2, 2], k=1)
+                    amount = random.choices([1, 2, 3, 4], weights=[1, 2, 2, 2], k=1)
                 elif game.clan.current_season == "Leaf-fall":
-                    amount = random.choices([0, 1, 2], [3, 2, 1], k=1)
+                    amount = random.choices([0, 1, 2], weights=[3, 2, 1], k=1)
                 else:
-                    amount = random.choices([0, 1], [3, 1], k=1)
+                    amount = random.choices([0, 1], weights=[3, 1], k=1)
                 if amount[0] != 0:
                     herbs_found = random.sample(HERBS, k=amount[0])
                     herb_display = []
@@ -609,9 +605,9 @@ class Events:
                         if herb in ["blackberry"]:
                             continue
                         if game.clan.current_season in ["Newleaf", "Greenleaf"]:
-                            amount = random.choices([2, 5, 8], [3, 3, 1], k=1)
+                            amount = random.choices([2, 5, 8], weights=[3, 3, 1], k=1)
                         else:
-                            amount = random.choices([2, 4], [4, 1], k=1)
+                            amount = random.choices([2, 4], weights=[4, 1], k=1)
                         if herb in game.clan.herbs:
                             game.clan.herbs[herb] += amount[0]
                         else:
@@ -1364,7 +1360,7 @@ class Events:
                         f"promising a new era for the Clans."
                     )
                 else:
-                    c = random.choice([1, 2, 3])
+                    c = random.randint(1, 3)
                     if c == 1:
                         text = (
                             str(game.clan.deputy.name.prefix)
@@ -2443,42 +2439,28 @@ class Events:
 
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
-        # TODO: should figure out how to handle these as a ShortEvent, we don't want hardcoded text
-        if cat.genderalign == cat.gender:
-            if cat.moons < 6:
-                return
 
-            involved_cats = [cat.ID]
-            if cat.age == "adolescent":
-                transing_chance = random.getrandbits(8)  # 2/256
-            elif cat.age == "young adult":
-                transing_chance = random.getrandbits(9)  # 2/512
-            else:
-                # adult, senior adult, elder
-                transing_chance = random.getrandbits(10)  # 2/1028
+        if cat.age in ["kitten", "newborn"]:
+            return
 
-            if transing_chance:
-                # transing_chance != 0, no trans kitties today...    L
-                return
+        random_cat = get_random_moon_cat(Cat, main_cat=cat)
 
-            if random.getrandbits(1):  # 50/50
-                if cat.gender == "male":
-                    cat.genderalign = "trans female"
-                    cat.pronouns = [cat.default_pronouns[1].copy()]
-                else:
-                    cat.genderalign = "trans male"
-                    cat.pronouns = [cat.default_pronouns[2].copy()]
-            else:
-                cat.genderalign = "nonbinary"
-                cat.pronouns = [cat.default_pronouns[0].copy()]
+        transing_chance = game.config["transition_related"]
+        chance = transing_chance["base_trans_chance"]
+        if cat.age in ["adolescent"]:
+            chance += transing_chance["adolescent_modifier"]
+        elif cat.age in ["adult", "senior adult", "senior"]:
+            chance += transing_chance["older_modifier"]
 
-            if cat.gender == "male":
-                gender = "tom"
-            else:
-                gender = "she-cat"
-            text = f"{cat.name} has realized that {gender} doesn't describe how they feel anymore."
-            game.cur_events_list.append(Single_Event(text, "misc", involved_cats))
-            # game.misc_events_list.append(text)
+        if not int(random.random() * chance):
+            sub_type = ["transition"]
+            handle_short_events.handle_event(event_type="misc",
+                                             main_cat=cat,
+                                             random_cat=random_cat,
+                                             sub_type=sub_type,
+                                             freshkill_pile=game.clan.freshkill_pile)
+
+        return
 
     def check_and_promote_leader(self):
         """Checks if a new leader need to be promoted, and promotes them, if needed."""

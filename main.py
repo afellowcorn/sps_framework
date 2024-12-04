@@ -337,7 +337,7 @@ while 1:
                 MANAGER.print_layer_debug()
             elif event.key == pygame.K_F3:
                 debugmode.toggle_console()
-            elif event.key == pygame.K_F4:
+            elif event.key == pygame.K_F11:
                 scripts.game_structure.screen_settings.toggle_fullscreen(
                     source_screen=getattr(
                         AllScreens, game.switches["cur_screen"].replace(" ", "_")
@@ -355,7 +355,7 @@ while 1:
         game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
-    if not pygame.mixer.music.get_busy() and not game.settings["audio_mute"]:
+    if not pygame.mixer.music.get_busy() and not music_manager.muted:
         music_manager.play_queued()
 
     debugmode.update1(clock)
