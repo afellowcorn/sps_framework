@@ -3054,7 +3054,7 @@
                 ]
             },
             {
-                "text": "p_l's fur bristles, feeling r_c staring at {PRONOUN/p_l/object} <i>still</i>. With a hiss, p_l demands that r_c stops staring at {PRONOUN/p_l/object} and make {PRONOUN/r_c/self} useful by actually gathering herbs.",
+                "text": "p_l's fur bristles, feeling r_c <i>still</i> staring at {PRONOUN/p_l/object}. With a hiss, p_l demands that r_c stops staring at {PRONOUN/p_l/object} and make {PRONOUN/r_c/self} useful by actually gathering herbs.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
