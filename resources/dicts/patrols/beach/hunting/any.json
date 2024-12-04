@@ -5374,7 +5374,7 @@
     {
         "patrol_id": "bch_hunt_fish2",
         "biome": ["beach"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_fish",
