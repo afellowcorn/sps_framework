@@ -3075,7 +3075,7 @@
                 ]
             },
             {
-                "text": "r_c splashes water from a puddle at p_l. p_l turns around and hisses at r_c that they don't have time to waste fooling around! r_c tries to explain that they were just trying to cheer p_l up. Well <i>perfect</i>, now p_l is probably going to come down with whitecough, just what p_l needed to help with the destroyed herb plants.",
+                "text": "r_c splashes water from a puddle at p_l. p_l turns around and hisses at r_c that they don't have time to waste fooling around! r_c tries to explain that {PRONOUN/r_c/subject} {VERB/r_c/were/was} just trying to cheer p_l up. Well <i>perfect</i>, now p_l is probably going to come down with whitecough, just what {PRONOUN/p_L/subject} needed to help with the destroyed herb plants.",
                 "exp": 0,
                 "weight": 20,
                 "can_have_stat": ["p_l"],
