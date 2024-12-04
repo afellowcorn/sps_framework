@@ -3040,7 +3040,7 @@
                 ]
             },
             {
-                "text": "r_c can't think of anything to be able to help p_l's mood, and as the patrol continues, p_l's foul mood infects r_c, making {PRONOUN/r_c/object} grumpy and irritable as well, until the patrol is called off.",
+                "text": "r_c can't think of anything to be able to help p_l's mood. As the patrol continues, p_l's foul mood infects r_c, making {PRONOUN/r_c/object} grumpy and irritable as well, until the patrol is called off.",
                 "exp": 0,
                 "weight": 20,
                 "relationships": [
