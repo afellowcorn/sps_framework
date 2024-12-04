@@ -2943,7 +2943,7 @@
     },
     {
         "patrol_id": "bch_med_medwar_puddles",
-        "biome": ["Any"],
+        "biome": ["any"],
         "season": ["any"],
         "types": ["herb_gathering"],
         "tags": [],
