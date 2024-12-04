@@ -329,7 +329,7 @@
                 ]
             },
             {
-                "text": "Astutely, s_c recognizes the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit.",
+                "text": "Astutely, s_c recognizes the cranberries and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["CLEVER,2"],
