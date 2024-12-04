@@ -1,3 +1,4 @@
+
 class OngoingEvent:
     """
     Moon events meant to be spread across multiple moons in a preset order.
