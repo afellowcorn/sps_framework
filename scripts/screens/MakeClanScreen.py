@@ -1547,7 +1547,7 @@ class MakeClanScreen(Screens):
 
         self.elements["select_cat"] = UIImageButton(
             ui_scale(pygame.Rect((234, 348), (332, 52))),
-            "",
+            "screens.make_clan.choose_leader",
             object_id="#nine_lives_button",
             starting_height=2,
             visible=False,
@@ -1603,7 +1603,7 @@ class MakeClanScreen(Screens):
 
         self.elements["select_cat"] = UIImageButton(
             ui_scale(pygame.Rect((209, 348), (384, 52))),
-            "",
+            "screens.make_clan.choose_deputy",
             object_id="#support_leader_button",
             starting_height=2,
             visible=False,
@@ -1657,7 +1657,7 @@ class MakeClanScreen(Screens):
 
         self.elements["select_cat"] = UIImageButton(
             ui_scale(pygame.Rect((260, 342), (306, 58))),
-            "",
+            "screens.make_clan.choose_medcat",
             object_id="#aid_clan_button",
             starting_height=2,
             visible=False,
@@ -1780,25 +1780,25 @@ class MakeClanScreen(Screens):
         # Biome buttons
         self.elements["forest_biome"] = UIImageButton(
             ui_scale(pygame.Rect((196, 100), (100, 46))),
-            "",
+            "screens.make_clan.Forest",
             object_id="#forest_biome_button",
             manager=MANAGER,
         )
         self.elements["mountain_biome"] = UIImageButton(
             ui_scale(pygame.Rect((304, 100), (106, 46))),
-            "",
+            "screens.make_clan.Mountainous",
             object_id="#mountain_biome_button",
             manager=MANAGER,
         )
         self.elements["plains_biome"] = UIImageButton(
             ui_scale(pygame.Rect((424, 100), (88, 46))),
-            "",
+            "screens.make_clan.Plains",
             object_id="#plains_biome_button",
             manager=MANAGER,
         )
         self.elements["beach_biome"] = UIImageButton(
             ui_scale(pygame.Rect((520, 100), (82, 46))),
-            "",
+            "screens.make_clan.Beach",
             object_id="#beach_biome_button",
             manager=MANAGER,
         )

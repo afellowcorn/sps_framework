@@ -108,10 +108,9 @@ def backstory_text(cat):
     backstory = cat.backstory
     if backstory is None:
         return ""
-    bs_category = None
 
-    for category in BACKSTORIES["backstory_categories"]:
-        if backstory in category:
+    for category, values in BACKSTORIES["backstory_categories"].items():
+        if backstory in values:
             return i18n.t(f"backstories.{category}")
     raise Exception(f"No matching short backstory for {backstory}")
 
@@ -124,6 +123,9 @@ class ProfileScreen(Screens):
     conditions_tab = image_cache.load_image(
         "resources/images/conditions_tab_backdrop.png"
     ).convert_alpha()
+
+    df = image_cache.load_image("resources/images/buttons/exile_df.png").convert_alpha()
+    sc = image_cache.load_image("resources/images/buttons/guide_sc.png").convert_alpha()
 
     # Keep track of current tabs open. Can be used to keep tabs open when pages are switched, and
     # helps with exiting the screen
@@ -240,7 +242,6 @@ class ProfileScreen(Screens):
                 )
             else:
                 self.handle_tab_events(event)
-
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
             if event.key == pygame.K_LEFT:
                 if isinstance(Cat.fetch_cat(self.previous_cat), Cat):
@@ -750,7 +751,7 @@ class ProfileScreen(Screens):
         if the_cat.age == "kitten":
             output += i18n.t("general.kitten_profile")
         else:
-            output += i18n.t(f"general.{the_cat.age}")
+            output += i18n.t(f"general.{the_cat.age}", count=1)
         # NEWLINE ----------
         output += "\n"
 
@@ -906,13 +907,13 @@ class ProfileScreen(Screens):
         # Optional - Only shows up if the cat has previous apprentice(s)
         if the_cat.former_apprentices:
             apprentices = [
-                Cat.fetch_cat(i)
+                str(Cat.fetch_cat(i).name)
                 for i in the_cat.former_apprentices
                 if isinstance(Cat.fetch_cat(i), Cat)
             ]
 
             if len(apprentices) > 2:
-                apps = [str(i.name) for i in apprentices[:2]]
+                apps = [i for i in apprentices[:2]]
                 apps.append(i18n.t("general.apprentice_extra", count=len(apps) - 2))
                 apps = apps
             else:
@@ -982,8 +983,8 @@ class ProfileScreen(Screens):
                     game.clan.freshkill_pile.add_cat_to_nutrition(the_cat)
                     nutr = game.clan.freshkill_pile.nutrition_info[the_cat.ID]
                 output += i18n.t(
-                    "screens.clearing.nutrition_info",
-                    nutrition_info=nutr.nutrition_text,
+                    "screens.clearing.nutrition_text",
+                    nutrition_text=nutr.nutrition_text,
                 )
                 if game.clan.clan_settings["showxp"]:
                     output += " (" + str(int(nutr.percentage)) + ")"
@@ -1235,20 +1236,26 @@ class ProfileScreen(Screens):
         cat_dict = {"m_c": (str(self.the_cat.name), choice(self.the_cat.pronouns))}
         bs_blurb = None
         if self.the_cat.backstory:
-            bs_blurb = BACKSTORIES["backstories"][self.the_cat.backstory]
+            bs_blurb = i18n.t(f"backstories.{self.the_cat.backstory}")
         if (
             self.the_cat.status in ["kittypet", "loner", "rogue", "former Clancat"]
             and self.the_cat.dead
         ):
-            bs_blurb = f"This cat was a {self.the_cat.status} in life."
+            bs_blurb = i18n.t(
+                "backstories.cats_outside_the_clan_dead",
+                status=i18n.t(f"general.{self.the_cat.status}", count=1),
+            )
         elif self.the_cat.status in ["kittypet", "loner", "rogue", "former Clancat"]:
-            bs_blurb = f"This cat is a {self.the_cat.status} and currently resides outside of the Clans."
+            bs_blurb = i18n.t(
+                "backstories.cats_outside_the_clan",
+                status=i18n.t(f"general.{self.the_cat.status}", count=1),
+            )
 
         if bs_blurb is not None:
             adjust_text = str(bs_blurb).replace("This cat", str(self.the_cat.name))
             text = adjust_text
         else:
-            text = str(self.the_cat.name) + "'s past history is unknown."
+            text = i18n.t("backstories.unknown", name=self.the_cat.name)
 
         if not self.the_cat.dead and self.the_cat.status not in [
             "kittypet",
@@ -1258,21 +1265,20 @@ class ProfileScreen(Screens):
         ]:
             beginning = History.get_beginning(self.the_cat)
             if beginning:
+                text += " "
                 if beginning["clan_born"]:
-                    text += (
-                        " {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} born on Moon "
-                        + str(beginning["moon"])
-                        + " during "
-                        + str(beginning["birth_season"])
-                        + "."
+                    text += i18n.t(
+                        "backstories.beginning_clanborn",
+                        birth_moon=beginning["moon"],
+                        birth_season=i18n.t(
+                            f"general.{beginning['birth_season'].lower()}"
+                        ).capitalize(),
                     )
                 else:
-                    text += (
-                        " {PRONOUN/m_c/subject/CAP} joined the Clan on Moon "
-                        + str(beginning["moon"])
-                        + " at the age of "
-                        + str(beginning["age"])
-                        + " Moons."
+                    text += i18n.t(
+                        "backstories.beginning_cotc",
+                        moon=beginning["moon"],
+                        join_age=i18n.t("general.moons_age", count=beginning["age"]),
                     )
 
         text = process_text(text, cat_dict)
@@ -1357,17 +1363,20 @@ class ProfileScreen(Screens):
             influence_history = i18n.t("history.training_app")
         else:
             valid_former_mentors = [
-                Cat.fetch_cat(i)
+                str(Cat.fetch_cat(i).name)
                 for i in self.the_cat.former_mentor
                 if isinstance(Cat.fetch_cat(i), Cat)
             ]
 
-            influence_history += i18n.t(
-                "history.training_mentors",
-                count=len(valid_former_mentors) if valid_former_mentors else 0,
-                mentors=adjust_list_text(
-                    valid_former_mentors if valid_former_mentors else [""]
-                ),
+            influence_history += (
+                i18n.t(
+                    "history.training_mentors",
+                    count=len(valid_former_mentors) if valid_former_mentors else 0,
+                    mentors=adjust_list_text(
+                        valid_former_mentors if valid_former_mentors else [""]
+                    ),
+                )
+                + " "
             )
 
             # Second, do the facet/personality effect
@@ -1414,12 +1423,12 @@ class ProfileScreen(Screens):
                         continue
 
                     string_snippet = adjust_list_text(
-                        mentor_influence["trait"][_mentor].get("strings")
+                        mentor_influence["skill"][_mentor].get("strings")
                     )
 
                     skill_influence.append(
                         i18n.t(
-                            "history.training_mentor_trait_influence",
+                            "history.training_mentor_skill_influence",
                             mentor=ment_obj.name,
                             influence=string_snippet,
                         )
@@ -1460,7 +1469,7 @@ class ProfileScreen(Screens):
         text = ""
         # Doing this is two steps
         all_real_apprentices = [
-            Cat.fetch_cat(i)
+            str(Cat.fetch_cat(i).name)
             for i in self.the_cat.former_apprentices
             if isinstance(Cat.fetch_cat(i), Cat)
         ]
@@ -1587,6 +1596,7 @@ class ProfileScreen(Screens):
                         life_text = i18n.t(
                             "history.leader_death_cardinal",
                             cardinal=adjust_list_text(lives),
+                            count=len(lives),
                         )
                 elif death_number > 1:
                     # for retired leaders
@@ -1924,11 +1934,11 @@ class ProfileScreen(Screens):
             )
 
             if self.the_cat.illnesses[name]["infectiousness"] != 0:
-                text_list.append("infectious!")
+                text_list.append(i18n.t("screens.profile.infectious_warning"))
 
             # can or can't patrol
             if self.the_cat.illnesses[name]["severity"] != "minor":
-                text_list.append("Can't work with this condition")
+                text_list.append(i18n.t("general.cant_work_condition"))
 
         text = "<br><br>".join(text_list)
         return text
@@ -1948,7 +1958,7 @@ class ProfileScreen(Screens):
             self.open_tab = "relations"
             self.family_tree_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 450), (172, 36))),
-                "family tree",
+                "screens.profile.family_tree",
                 get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
                 object_id="@buttonstyles_ladder_top",
                 starting_height=2,
@@ -1956,7 +1966,7 @@ class ProfileScreen(Screens):
             )
             self.change_adoptive_parent_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 486), (172, 36))),
-                "adoptive parents",
+                "screens.profile.adoptive_parents",
                 get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
                 object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
@@ -1964,7 +1974,7 @@ class ProfileScreen(Screens):
             )
             self.see_relationships_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 522), (172, 36))),
-                "see relationships",
+                "screens.profile.relationships",
                 get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
                 object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
@@ -1972,7 +1982,7 @@ class ProfileScreen(Screens):
             )
             self.choose_mate_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((50, 558), (172, 36))),
-                "choose mate",
+                "screens.profile.mate",
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
                 object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
@@ -1995,7 +2005,7 @@ class ProfileScreen(Screens):
 
             self.manage_roles = UISurfaceImageButton(
                 ui_scale(pygame.Rect((226, 450), (172, 36))),
-                "manage roles",
+                "screens.profile.manage_roles",
                 get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
                 object_id="@buttonstyles_ladder_top",
                 starting_height=2,
@@ -2003,7 +2013,7 @@ class ProfileScreen(Screens):
             )
             self.change_mentor_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((226, 486), (172, 36))),
-                "change mentor",
+                "screens.profile.mentor",
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
                 object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
@@ -2025,7 +2035,7 @@ class ProfileScreen(Screens):
             self.open_tab = "personal"
             self.change_name_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((402, 450), (172, 36))),
-                "change name",
+                "screens.profile.name",
                 get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
                 object_id="@buttonstyles_ladder_top",
                 starting_height=2,
@@ -2044,7 +2054,7 @@ class ProfileScreen(Screens):
             )
             self.specify_gender_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((402, 0), (172, 36))),
-                "specify gender",
+                "screens.profile.gender",
                 get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
                 object_id="@buttonstyles_ladder_middle",
                 starting_height=2,
@@ -2053,7 +2063,7 @@ class ProfileScreen(Screens):
             )
             self.cat_toggles_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((402, 0), (172, 36))),
-                "cat toggles",
+                "screens.profile.toggles",
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
                 object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
@@ -2077,17 +2087,24 @@ class ProfileScreen(Screens):
             self.open_tab = "dangerous"
             self.exile_cat_button = UIImageButton(
                 ui_scale(pygame.Rect((578, 450), (172, 36))),
-                "",
+                "screens.profile.exile",
                 object_id="#exile_cat_button",
-                tool_tip_text="This cannot be reversed.",
+                tool_tip_text="screens.profile.exile_tooltip",
                 starting_height=2,
                 manager=MANAGER,
             )
+            self.exile_layer = pygame_gui.elements.UIImage(
+                ui_scale(pygame.Rect((578, 450), (172, 36))),
+                pygame.transform.scale(
+                    self.df,
+                    ui_scale_dimensions((172, 36)),
+                ),
+            )
             self.kill_cat_button = UIImageButton(
                 ui_scale(pygame.Rect((578, 486), (172, 36))),
-                "",
+                "screens.profile.kill_cat",
                 object_id="#kill_cat_button",
-                tool_tip_text="This will open a confirmation window and allow you to input a death reason",
+                tool_tip_text="screens.profile.kill_cat_tooltip",
                 starting_height=2,
                 manager=MANAGER,
             )
@@ -2176,49 +2193,41 @@ class ProfileScreen(Screens):
             # Button to exile cat
             if self.exile_cat_button:
                 self.exile_cat_button.kill()
-            if not self.the_cat.dead:
-                self.exile_cat_button = UIImageButton(
-                    ui_scale(pygame.Rect((578, 450), (172, 36))),
-                    "",
-                    object_id="#exile_cat_button",
-                    tool_tip_text="This cannot be reversed.",
-                    starting_height=2,
-                    manager=MANAGER,
-                )
-                if self.the_cat.exiled or self.the_cat.outside:
-                    self.exile_cat_button.disable()
-            elif self.the_cat.dead:
-                object_id = "#exile_df_button"
+                self.exile_layer.kill()
+
+            self.exile_cat_button = UISurfaceImageButton(
+                ui_scale(pygame.Rect((578, 450), (172, 36))),
+                "",
+                get_button_dict(ButtonStyles.LADDER_TOP, (172, 36)),
+                object_id="@buttonstyles_ladder_top",
+                tool_tip_text="screens.profile.exile_guide_tooltip"
+                if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID
+                else "screens.profile.exile_tooltip",
+                starting_height=2,
+                manager=MANAGER,
+            )
+            text = "screens.profile.exile"
+            if self.the_cat.dead:
+                text = "screens.profile.exile_df"
+                layer = self.df
                 if self.the_cat.df:
-                    object_id = "#guide_sc_button"
-                if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-                    self.exile_cat_button = UIImageButton(
-                        ui_scale(pygame.Rect((578, 450), (172, 46))),
-                        "",
-                        object_id=object_id,
-                        tool_tip_text="Changing where this cat resides will change "
-                        "where your Clan goes after death. ",
-                        starting_height=2,
-                        manager=MANAGER,
-                    )
-                else:
-                    self.exile_cat_button = UIImageButton(
-                        ui_scale(pygame.Rect((578, 450), (172, 46))),
-                        "",
-                        object_id=object_id,
-                        starting_height=2,
-                        manager=MANAGER,
-                    )
-            else:
-                self.exile_cat_button = UIImageButton(
-                    ui_scale(pygame.Rect((578, 450), (172, 36))),
-                    "",
-                    object_id="#exile_cat_button",
-                    tool_tip_text="This cannot be reversed.",
+                    text = "screens.profile.guide_sc"
+                    layer = self.sc
+
+                self.exile_layer = pygame_gui.elements.UIImage(
+                    ui_scale(pygame.Rect((578, 450), (172, 46))),
+                    pygame.transform.scale(
+                        layer,
+                        ui_scale_dimensions((172, 46)),
+                    ),
                     starting_height=2,
-                    manager=MANAGER,
                 )
+            self.exile_cat_button.set_text(text)
+            if self.the_cat.exiled or self.the_cat.outside:
                 self.exile_cat_button.disable()
+
+            if self.the_cat.dead:
+                self.exile_cat_button.join_focus_sets(self.exile_layer)
 
             if not self.the_cat.dead:
                 self.kill_cat_button.enable()
@@ -2363,6 +2372,8 @@ class ProfileScreen(Screens):
         elif self.open_tab == "dangerous":
             self.kill_cat_button.kill()
             self.exile_cat_button.kill()
+            if hasattr(self, "exile_layer"):
+                self.exile_layer.kill()
             self.destroy_accessory_button.kill()
         elif self.open_tab == "history":
             self.backstory_background.kill()

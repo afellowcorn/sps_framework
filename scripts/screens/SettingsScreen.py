@@ -259,7 +259,7 @@ class SettingsScreen(Screens):
 
         self.fullscreen_toggle = UIImageButton(
             ui_scale(pygame.Rect((617, 25), (158, 36))),
-            "",
+            "buttons.toggle_fullscreen",
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
             tool_tip_text="buttons.toggle_fullscreen_tooltip",

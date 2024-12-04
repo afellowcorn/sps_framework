@@ -23,7 +23,7 @@
         },
         "leader_death_retired": "lost {PRONOUN/m_c/poss} last remaining life",
         "leader_death_default": "lost a life",
-        "death_cause": "%{death} when {PRONOUN/m_c/subject} %{text}",
+        "death_cause": "%{death} when {PRONOUN/m_c/subject} %{text}.",
         "murdered": "%{name} murdered %{victims}."
     }
 }

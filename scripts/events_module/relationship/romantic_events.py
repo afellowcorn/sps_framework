@@ -40,7 +40,7 @@ class RomanticEvents:
 
     @staticmethod
     def get_resource_directory(*, lang=None, fallback=False):
-        return f"resources/lang/{lang if lang is not None else i18n.config.get('fallback' if fallback else 'locale')}/relationship_events/"
+        return f"resources/lang/{lang if lang is not None else i18n.config.get('fallback' if fallback else 'locale')}/events/relationship_events/"
 
     @classmethod
     def rebuild_dicts(cls, *, lang=None):

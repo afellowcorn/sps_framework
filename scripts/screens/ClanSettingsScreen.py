@@ -187,7 +187,7 @@ class ClanSettingsScreen(Screens):
         rect.bottomright = ui_scale_offset((-5, -25))
         self.fullscreen_toggle = UIImageButton(
             rect,
-            "",
+            "buttons.toggle_fullscreen",
             object_id="#toggle_fullscreen_button",
             manager=MANAGER,
             starting_height=2,

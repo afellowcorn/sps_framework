@@ -11,7 +11,7 @@ import sys
 from random import choice, randint, sample, random, getrandbits, randrange
 from typing import Dict, List, Any
 
-import i18n.config
+import i18n
 import ujson  # type: ignore
 
 from scripts.cat.history import History
@@ -3384,6 +3384,48 @@ class Cat:
 
     def is_baby(self):
         return self.age in ["kitten", "newborn"]
+
+    def get_info_block(self, *, make_clan=False, patrol=False, relationship=False):
+        if make_clan:
+            return "\n".join(
+                [
+                    self.genderalign,
+                    i18n.t(f"general.{self.age}"),
+                    i18n.t(f"personality.{self.personality.trait}"),
+                    self.skills.skill_string(),
+                ]
+            )
+        elif patrol:
+            return "<br>".join(
+                [
+                    i18n.t(f"general.{self.status.lower()}", count=1),
+                    i18n.t(f"personality.{self.personality.trait}"),
+                    self.skills.skill_string(),
+                    self.experience_level
+                    + (
+                        f" ({str(self.experience)})\n"
+                        if game.clan.clan_settings["showxp"]
+                        else "\n"
+                    ),
+                ]
+            )
+        elif relationship:
+            return "\n".join(
+                [
+                    i18n.t("general.moons_age", count=self.moons),
+                    self.genderalign,
+                    i18n.t(f"personality.{self.personality.trait}"),
+                ]
+            )
+
+        return "\n".join(
+            [
+                i18n.t("general.moons_age", count=self.moons),
+                i18n.t(f"general.{self.status.lower()}", count=1),
+                self.genderalign,
+                i18n.t(f"personality.{self.personality.trait}"),
+            ]
+        )
 
     def get_save_dict(self, faded=False):
         if faded:

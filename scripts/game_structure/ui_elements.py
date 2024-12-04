@@ -145,6 +145,7 @@ class UISurfaceImageButton(pygame_gui.elements.UIButton):
                 anchors=self.anchors,
                 line_spacing=0.95,
             )
+            self.join_focus_sets(self.text_layer)
             self.text_layer.disable()
 
             if self._is_tab:

@@ -332,14 +332,14 @@ class ClearingScreen(Screens):
         )
         self.hungry_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((490, 409), (80, 35))),
-            "screens.clearing.hungry",
+            "screens.clearing.hungry_tab",
             get_button_dict(ButtonStyles.HORIZONTAL_TAB, (80, 35)),
             object_id="@buttonstyles_horizontal_tab",
             manager=MANAGER,
         )
         self.satisfied_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((587, 409), (95, 35))),
-            "screens.clearing.satisfied",
+            "screens.clearing.satisfied_tab",
             get_button_dict(ButtonStyles.HORIZONTAL_TAB, (95, 35)),
             object_id="@buttonstyles_horizontal_tab",
             manager=MANAGER,
@@ -502,7 +502,7 @@ class ClearingScreen(Screens):
         if self.focus_cat_object.ID in nutrition_info:
             nutrition_text = i18n.t(
                 "screens.clearing.nutrition_text",
-                nutrition_info=nutrition_info[self.focus_cat_object.ID].nutrition_text,
+                nutrition_text=nutrition_info[self.focus_cat_object.ID].nutrition_text,
             )
             if game.clan.clan_settings["showxp"]:
                 nutrition_text += f" ({str(int(nutrition_info[self.focus_cat_object.ID].percentage))})"
@@ -568,7 +568,7 @@ class ClearingScreen(Screens):
                 if cat.ID in nutrition_info:
                     full_text = i18n.t(
                         "screens.clearing.nutrition_text",
-                        nutrition_info=nutrition_info[
+                        nutrition_text=nutrition_info[
                             self.focus_cat_object.ID
                         ].nutrition_text,
                     )

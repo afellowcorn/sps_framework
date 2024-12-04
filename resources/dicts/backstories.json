@@ -1,18 +1,4 @@
 {
-  "backstory_display": {
-    "clan_founder_backstories": "Clan founder",
-    "clanborn_backstories": "Clanborn",
-    "outsider_roots_backstories": "outsider roots",
-    "half_clan_backstories": "half-Clan",
-    "loner_backstories": "formerly a loner",
-    "rogue_backstories": "formerly a rogue",
-    "kittypet_backstories": "formerly a kittypet",
-    "outsider_backstories": "formerly an outsider",
-    "former_clancat_backstories": "originally from another Clan",
-    "orphaned_backstories": "orphaned",
-    "abandoned_backstories": "abandoned"
-  },
-
   "backstory_categories": {
     "clan_founder_backstories": [
       "clan_founder"

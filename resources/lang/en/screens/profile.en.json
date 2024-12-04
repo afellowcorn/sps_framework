@@ -6,6 +6,22 @@
         "tab_dangerous": "dangerous",
         "tab_history": "history",
         "tab_conditions": "conditions",
+        "family_tree": "family tree",
+        "relationships": "see relationships",
+        "mate": "choose mate",
+        "manage_roles": "manage roles",
+        "mentor": "change mentor",
+        "name": "change name",
+        "gender": "specify gender",
+        "toggles": "cat toggles",
+        "exile": "exile cat",
+        "exile_df": "exile to dark forest",
+        "guide_sc": "guide into starclan",
+        "exile_tooltip": "This cannot be reversed.",
+        "exile_guide_tooltip": "Changing where this cat resides will change where your Clan goes after death.",
+        "kill_cat": "kill cat",
+        "kill_cat_tooltip": "This will open a confirmation window and allow you to input a death reason",
+        "adoptive_parents": "adoptive parents",
         "user_notes": "Click the check mark to enter notes about your cat!",
         "guide_thought_sc": "Hello. I am here to guide the dead cats of %{clan}Clan into StarClan.",
         "guide_thought_df": "Hello. I am here to drag the dead cats of %{clan}Clan into the Dark Forest.",
@@ -26,6 +42,7 @@
         "no_moons_tooltip": "Show the Moon that certain history events occurred on",
         "show_moons_tooltip": "Stop showing the Moon that certain history events occurred on",
         "sick_for": "has been sick for %{moons}",
-        "grieving_for": "has been grieving for %{moons}"
+        "grieving_for": "has been grieving for %{moons}",
+        "infectious_warning": "infectious!"
     }
 }

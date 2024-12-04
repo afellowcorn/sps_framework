@@ -656,70 +656,6 @@
             }
         }
     },
-    "#greenleaf_toggle_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/greenleaf_toggle.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/greenleaf_toggle_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/greenleaf_toggle_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/greenleaf_toggle_unavailable.png"
-            }
-        }
-    },
-    "#newleaf_toggle_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/newleaf_toggle.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/newleaf_toggle_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/newleaf_toggle_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/newleaf_toggle_unavailable.png"
-            }
-        }
-    },
-    "#leafbare_toggle_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/leafbare_toggle.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/leafbare_toggle_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/leafbare_toggle_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/leafbare_toggle_unavailable.png"
-            }
-        }
-    },
-    "#leaffall_toggle_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/leaffall_toggle.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/leaffall_toggle_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/leaffall_toggle_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/leaffall_toggle_unavailable.png"
-            }
-        }
-    },
     "#grandparents_button": {
         "images": {
             "normal_image": {
@@ -2418,36 +2354,6 @@
     "event_panel": {
         "colours": {"dark_bg": "rgb(206, 194, 168)"},
         "misc": {"border_width": "0", "shadow_width": "0"}
-    },
-    "#mute_button": {
-        "prototype": "@image_button",
-        "images": {
-            "normal_image": {"path": "resources\/images\/buttons\/mute.png"},
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/mute_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/mute_hover.png"
-            },
-            "disabled_image": {"path": "resources\/images\/buttons\/mute.png"}
-        }
-    },
-    "#unmute_button": {
-        "prototype": "@image_button",
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/unmute.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/unmute_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/unmute_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/unmute.png"
-            }
-        }
     },
     "#audio_settings_button": {
         "prototype": "@image_button",
