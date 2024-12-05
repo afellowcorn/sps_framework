@@ -361,7 +361,7 @@
                 ]
             },
             {
-                "text": "While plucking them from the bush, r_c is surprised to find they taste pretty good. Before anyone can stop {PRONOUN/r_c/object}, {PRONOUN/r_c/subject} {VERB/r_c/eat/eats} a few, and {PRONOUN/r_c/are/is} rushed back to camp for deathberry poisoning.",
+                "text": "While plucking them from the bush, r_c is surprised to find they taste pretty good. Before anyone can stop {PRONOUN/r_c/object}, {PRONOUN/r_c/subject} {VERB/r_c/eat/eats} a few, and {VERB/r_c/are/is} rushed back to camp for deathberry poisoning.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
