@@ -278,7 +278,7 @@ class GenerateEvents:
                 continue
 
             # check tags
-            if not self.event_for_tags(Cat_class, event.tags, cat):
+            if not self.event_for_tags(event.tags, cat):
                 continue
 
             prevent_bypass = "skill_trait_required" in event.tags
@@ -316,174 +316,23 @@ class GenerateEvents:
                 continue
 
             if event.m_c:
-                if cat.age not in event.m_c["age"] and "any" not in event.m_c["age"]:
-                    continue
-                if (
-                        cat.status not in event.m_c["status"]
-                        and "any" not in event.m_c["status"]
+                if not self.event_for_cat(
+                    cat_info=event.m_c,
+                    cat=cat,
+                    cat_group=[cat, random_cat] if random_cat else None,
+                    event_id=event.event_id
                 ):
                     continue
-                if event.m_c["relationship_status"]:
-                    if not filter_relationship_type(
-                            group=[cat, random_cat],
-                            filter_types=event.m_c["relationship_status"],
-                            event_id=event.event_id,
-                    ):
-                        continue
-
-                # check cat trait and skill
-                if (
-                        int(random.random() * trait_skill_bypass) or prevent_bypass
-                ):  # small chance to bypass
-                    has_trait = False
-                    if event.m_c["trait"]:
-                        if cat.personality.trait in event.m_c["trait"]:
-                            has_trait = True
-
-                    has_skill = False
-                    if event.m_c["skill"]:
-                        for _skill in event.m_c["skill"]:
-                            split = _skill.split(",")
-
-                            if len(split) < 2:
-                                print("Cat skill incorrectly formatted", _skill)
-                                continue
-
-                            if cat.skills.meets_skill_requirement(
-                                    split[0], int(split[1])
-                            ):
-                                has_skill = True
-                                break
-
-                    if event.m_c["trait"] and event.m_c["skill"]:
-                        if not has_trait or has_skill:
-                            continue
-                    elif event.m_c["trait"]:
-                        if not has_trait:
-                            continue
-                    elif event.m_c["skill"]:
-                        if not has_skill:
-                            continue
-
-                    # check cat negate trait and skill
-                    has_trait = False
-                    if event.m_c["not_trait"]:
-                        if cat.personality.trait in event.m_c["not_trait"]:
-                            has_trait = True
-
-                    has_skill = False
-                    if event.m_c["not_skill"]:
-                        for _skill in event.m_c["not_skill"]:
-                            split = _skill.split(",")
-
-                            if len(split) < 2:
-                                print("Cat skill incorrectly formatted", _skill)
-                                continue
-
-                            if cat.skills.meets_skill_requirement(
-                                    split[0], int(split[1])
-                            ):
-                                has_skill = True
-                                break
-
-                    if has_trait or has_skill:
-                        continue
-
-                # check backstory
-                if event.m_c["backstory"]:
-                    if cat.backstory not in event.m_c["backstory"]:
-                        continue
-
-                # check gender for transition events
-                if event.m_c["gender"]:
-                    if (
-                            cat.gender not in event.m_c["gender"]
-                            and "any" not in event.m_c["gender"]
-                    ):
-                        continue
 
             # check that a random_cat is available to use for r_c
             if event.r_c and random_cat:
-                if (
-                        random_cat.age not in event.r_c["age"]
-                        and "any" not in event.r_c["age"]
+                if not self.event_for_cat(
+                    cat_info=event.r_c,
+                    cat=random_cat,
+                    cat_group=[random_cat, cat],
+                    event_id=event.event_id
                 ):
                     continue
-                if (
-                        random_cat.status not in event.r_c["status"]
-                        and "any" not in event.r_c["status"]
-                ):
-                    continue
-                if event.r_c["relationship_status"]:
-                    if not filter_relationship_type(
-                            group=[cat, random_cat],
-                            filter_types=event.r_c["relationship_status"],
-                            event_id=event.event_id,
-                    ):
-                        continue
-
-                # check cat trait and skill
-                if (
-                        int(random.random() * trait_skill_bypass) or prevent_bypass
-                ):  # small chance to bypass
-                    has_trait = False
-                    if event.r_c["trait"]:
-                        if random_cat.personality.trait in event.r_c["trait"]:
-                            has_trait = True
-
-                    has_skill = False
-                    if event.r_c["skill"]:
-                        for _skill in event.r_c["skill"]:
-                            split = _skill.split(",")
-
-                            if len(split) < 2:
-                                print("random_cat skill incorrectly formatted", _skill)
-                                continue
-
-                            if random_cat.skills.meets_skill_requirement(
-                                    split[0], int(split[1])
-                            ):
-                                has_skill = True
-                                break
-
-                    if event.r_c["trait"] and event.r_c["skill"]:
-                        if not has_trait or has_skill:
-                            continue
-                    elif event.r_c["trait"]:
-                        if not has_trait:
-                            continue
-                    elif event.r_c["skill"]:
-                        if not has_skill:
-                            continue
-
-                    # check cat negate trait and skill
-                    has_trait = False
-                    if event.r_c["not_trait"]:
-                        if random_cat.personality.trait in event.r_c["not_trait"]:
-                            has_trait = True
-
-                    has_skill = False
-                    if event.r_c["not_skill"]:
-                        for _skill in event.r_c["not_skill"]:
-                            split = _skill.split(",")
-
-                            if len(split) < 2:
-                                print("random_cat skill incorrectly formatted", _skill)
-                                continue
-
-                            if random_cat.skills.meets_skill_requirement(
-                                    split[0], int(split[1])
-                            ):
-                                has_skill = True
-                                break
-
-                    if has_trait or has_skill:
-                        continue
-
-                # check backstory
-                if event.r_c["backstory"]:
-                    if random_cat.backstory not in event.r_c["backstory"]:
-                        continue
 
             # check that injury is possible
             if event.injury:
@@ -585,10 +434,10 @@ class GenerateEvents:
                             continue
 
                         if not self.event_for_freshkill_supply(
-                            game.clan.freshkill_pile,
-                            trigger,
-                            freshkill_trigger_factor,
-                            clan_size
+                                game.clan.freshkill_pile,
+                                trigger,
+                                freshkill_trigger_factor,
+                                clan_size
                         ):
                             discard = True
                             break
@@ -601,7 +450,7 @@ class GenerateEvents:
                             break
                         else:
                             discard = False
-                        
+
                 if discard:
                     continue
 
@@ -779,7 +628,7 @@ class GenerateEvents:
         else:
             return False
 
-    def event_for_tags(self, Cat_class, tags: list, main_cat) -> bool:
+    def event_for_tags(self, tags: list, cat) -> bool:
         """
         checks if current tags disqualify the event
         """
@@ -791,7 +640,7 @@ class GenerateEvents:
                 return False
 
         # check leader life tags
-        if main_cat.status == "leader":
+        if cat.status == "leader":
             leader_lives = game.clan.leader_lives
 
             life_lookup = {
@@ -816,25 +665,25 @@ class GenerateEvents:
             for rank in ranks:
                 if rank == "apps":
                     if not get_alive_status_cats(
-                            Cat_class,
+                            cat,
                             ["apprentice", "medicine cat apprentice", "mediator apprentice"]):
                         return False
                     else:
                         continue
 
-                if rank in ["leader", "deputy"] and not get_alive_status_cats(Cat_class, [rank]):
+                if rank in ["leader", "deputy"] and not get_alive_status_cats(cat, [rank]):
                     return False
 
-                elif not len(get_alive_status_cats(Cat_class, [rank])) >= 2:
+                elif not len(get_alive_status_cats(cat, [rank])) >= 2:
                     return False
 
         # check if main cat will allow for adoption
         if "adoption" in tags:
-            if main_cat.no_kits:
+            if cat.no_kits:
                 return False
-            if main_cat.moons <= 14 + main_cat.age_moons["kitten"][1]:
+            if cat.moons <= 14 + cat.age_moons["kitten"][1]:
                 return False
-            if any(Cat_class.fetch_cat(i).no_kits for i in main_cat.mate):
+            if any(cat.fetch_cat(i).no_kits for i in cat.mate):
                 return False
 
         return True
@@ -911,7 +760,7 @@ class GenerateEvents:
         # if it hasn't returned by now, it doesn't qualify
         return False
 
-    def event_for_herb_supply(self, trigger, supply_type, clan_size):
+    def event_for_herb_supply(self, trigger, supply_type, clan_size) -> bool:
         """
         checks if clan's herb supply qualifies for event
         """
@@ -934,11 +783,14 @@ class GenerateEvents:
                 return True
             elif "low" in trigger and len([x for x in herb_supply if herb_supply[x] < half_amount]) == num_of_herbs:
                 return True
-            elif "adequate" in trigger and len([x for x in herb_supply if herb_supply[x] < needed_amount]) == num_of_herbs:
+            elif "adequate" in trigger and len(
+                    [x for x in herb_supply if herb_supply[x] < needed_amount]) == num_of_herbs:
                 return True
-            elif "full" in trigger and len([x for x in herb_supply if herb_supply[x] < needed_amount * 2]) == num_of_herbs:
+            elif "full" in trigger and len(
+                    [x for x in herb_supply if herb_supply[x] < needed_amount * 2]) == num_of_herbs:
                 return True
-            elif "excess" in trigger and len([x for x in herb_supply if needed_amount * 2 < herb_supply[x]]) == num_of_herbs:
+            elif "excess" in trigger and len(
+                    [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]) == num_of_herbs:
                 return True
             else:
                 return False
@@ -975,18 +827,130 @@ class GenerateEvents:
             else:
                 return False
 
+    def event_for_cat(self, cat_info: dict, cat, cat_group: list, event_id: str = None, p_l = None) -> bool:
+        """
+        checks if a cat is suitable for the event
+        :param cat_info: cat's dict of constraints
+        :param cat: the cat object of the cat being checked
+        :param cat_group: the group of cats being included within the event
+        :param event_id: if event comes with an id, include it here
+        :param p_l: if event is a patrol, include patrol leader object here
+        """
 
+        func_lookup = {
+            "age": self._check_cat_age(cat, cat_info["age"]),
+            "status": self._check_cat_status(cat, cat_info["status"]),
+            "trait": self._check_cat_trait(cat, cat_info["trait"], cat_info["not_trait"]),
+            "skills": self._check_cat_skills(cat, cat_info["skill"], cat_info["not_skill"]),
+            "backstory": self._check_cat_backstory(cat, cat_info["backstory"]),
+            "gender": self._check_cat_gender(cat, cat_info["gender"])
+        }
 
+        for func in func_lookup:
+            if not func_lookup[func]:
+                return False
 
+        if cat_info["relationship_status"]:
+            if not filter_relationship_type(
+                group=cat_group,
+                filter_types=cat_info["relationship_statu"],
+                event_id=event_id,
+                patrol_leader=p_l
+            ):
+                return False
 
+        return True
 
+    def _check_cat_age(self, cat, ages: list) -> bool:
+        """
+        checks if a cat's age is within ages list
+        """
+        if "any" in ages:
+            return True
 
+        if cat.age in ages:
+            return True
+        else:
+            return False
 
+    def _check_cat_status(self, cat, statuses: list) -> bool:
+        """
+        checks if cat's status is within statuses list
+        """
+        if "any" in statuses:
+            return True
 
+        if cat.status in statuses:
+            return True
+        else:
+            return False
 
+    def _check_cat_trait(self, cat, traits: list, not_traits: list) -> bool:
+        """
+        checks if cat has the correct traits for traits and not_traits lists
+        """
+        cat_trait = cat.personality.trait
 
+        if cat_trait in traits and cat_trait not in not_traits:
+            return True
+        else:
+            return False
 
+    def _check_cat_skills(self, cat, skills: list, not_skills: list) -> bool:
+        """
+        checks if the cat has the correct skills for skills and not skills lists
+        """
+        has_good_skill = False
+        has_bad_skill = False
 
+        for _skill in skills:
+            skill_info = _skill.split(",")
+
+            if len(skill_info) < 2:
+                print("Cat skill incorrectly formatted", _skill)
+                continue
+
+            if cat.skills.meets_skill_requirement(
+                skill_info[0], int(skill_info[1])
+            ):
+                has_good_skill = True
+                break
+
+        for _skill in not_skills:
+            skill_info = _skill.split(",")
+
+            if len(skill_info) < 2:
+                print("Cat skill incorrectly formatted", _skill)
+                continue
+
+            if cat.skills.meets_skill_requirement(
+                    skill_info[0], int(skill_info[1])
+            ):
+                has_bad_skill = True
+                break
+
+        if has_good_skill and not has_bad_skill:
+            return True
+        else:
+            return False
+
+    def _check_cat_backstory(self, cat, backstories: list) -> bool:
+        """
+        checks if cat has the correct backstory
+        """
+        if cat.backstory in backstories:
+            return True
+        else:
+            return False
+
+    def _check_cat_gender(self, cat, genders: list) -> bool:
+        """
+        checks if cat has the correct gender
+        """
+        if cat.gender in genders:
+            return True
+        else:
+            return False
 
 
 generate_events = GenerateEvents()
