@@ -651,11 +651,43 @@
   },
   {
     "interaction_type": "befriend",
+    "event_text": "Just as o_c_n arrives at the Gathering, m_c leaps forward and hauls o_c_n's leader backward by the scruff. A heartbeat later, a dead branch plummets to the ground where o_c_n's leader was standing. o_c_n's leader scrambles to their paws, humiliated and irritated.",
+    "rel_change": -2,
+    "m_c": {
+      "trait": [ "cold", "shameless", "bold", "daring" ],
+      "skill": [ "SENSE,1", "CLAIRVOYANT,1" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, m_c expresses a great deal of interest in o_c_n's leader's dreams. o_c_n's leader finds it unsettling and offputting, considering how aloof m_c normally is.",
+    "rel_change": -2,
+    "m_c": {
+      "trait": [ "cold" ],
+      "skill": [ "DREAM,1" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
     "event_text": "At the Gathering, m_c warns o_c_n's leader that {PRONOUN/m_c/subject} had a glimpse of the coming moons, and o_c_n may be headed for conflict with another Clan. o_c_n's leader interprets this as a threat, not an offer of allyship.",
     "rel_change": -4,
     "m_c": {
       "trait": [ "fierce" ],
       "skill": [ "CLAIRVOYANT,1" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "At the Gathering, o_c_n's leader announces a prophecy that the o_c_n medicine cats received. m_c offers {PRONOUN/m_c/poss} interpretation, but o_c_n's leader coolly replies that o_c_n will handle it alone.",
+    "rel_change": -2,
+    "m_c": {
+      "skill": [ "PROPHET,1" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -733,6 +765,17 @@
      },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "befriend",
+    "event_text": "During the Gathering, m_c tries to impress o_c_n by describing how c_n uncovered a burrow of baby rabbits and killed them all. o_c_n's leader makes a face at m_c's gory descriptions.",
+    "rel_change": -1,
+    "m_c": {
+      "skill": ["HUNTER,1"],
+      "trait": ["cold", "oblivious"]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["amiable", "gracious", "mellow", "proud"]
   },
   {
     "interaction_type": "befriend",
