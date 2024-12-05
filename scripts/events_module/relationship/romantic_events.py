@@ -9,10 +9,10 @@ import ujson
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
 from scripts.cat_relations.relationship import (
-    INTERACTION_MASTER_DICT,
     rel_fulfill_rel_constraints,
     cats_fulfill_single_interaction_constraints,
 )
+import scripts.cat_relations.interaction as interactions
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
@@ -33,6 +33,8 @@ class RomanticEvents:
     #                                LOAD RESOURCES                                #
     # ---------------------------------------------------------------------------- #
 
+    MATE_DICTS = {}
+    POLY_MATE_DICTS = {}
     current_loaded_lang = None
     ROMANTIC_EVENTS: Dict = {}
     ROMANTIC_INTERACTIONS: Dict = {}
@@ -69,6 +71,8 @@ class RomanticEvents:
                 ) as read_file:
                     setattr(cls, resource, ujson.loads(read_file.read()))
 
+            interactions.rebuild_relationship_dicts()
+
         # ---------------------------------------------------------------------------- #
         #            build up dictionaries which can be used for moon events           #
         #         because there may be less romantic/mate relevant interactions,       #
@@ -81,7 +85,7 @@ class RomanticEvents:
 
         # Use the overall master interaction dictionary and filter for mate tag
         cls.MATE_RELEVANT_INTERACTIONS = {}
-        for val_type, dictionary in INTERACTION_MASTER_DICT.items():
+        for val_type, dictionary in interactions.INTERACTION_MASTER_DICT.items():
             cls.MATE_RELEVANT_INTERACTIONS[val_type] = {}
             cls.MATE_RELEVANT_INTERACTIONS[val_type]["increase"] = list(
                 filter(
@@ -115,7 +119,7 @@ class RomanticEvents:
         # Use the overall master interaction dictionary and filter for any interactions, which requires a certain
         # amount of romantic
         cls.ROMANTIC_RELEVANT_INTERACTIONS = {}
-        for val_type, dictionary in INTERACTION_MASTER_DICT.items():
+        for val_type, dictionary in interactions.INTERACTION_MASTER_DICT.items():
             cls.ROMANTIC_RELEVANT_INTERACTIONS[val_type] = {}
 
             # if it's the romantic interaction type add all interactions
@@ -932,6 +936,10 @@ class RomanticEvents:
     @staticmethod
     def get_mate_string(key, poly, cat_from, cat_to):
         """Returns the mate string with the certain key, cats and poly."""
+        if RomanticEvents.current_loaded_lang != i18n.config.get("locale"):
+            RomanticEvents.rebuild_dicts()
+            RomanticEvents.current_loaded_lang = i18n.config.get("locale")
+
         if not poly:
             return choice(RomanticEvents.MATE_DICTS[key])
         else:

@@ -1,6 +1,7 @@
 import random
 from copy import deepcopy
 
+import i18n
 import ujson
 
 from scripts.cat.cats import Cat
@@ -34,16 +35,14 @@ class Condition_Events:
     """All events with a connection to conditions."""
 
     resource_directory = "resources/dicts/conditions/"
+    current_loaded_lang = None
 
-    ILLNESSES = None
     with open(f"{resource_directory}illnesses.json", "r") as read_file:
         ILLNESSES = ujson.loads(read_file.read())
 
-    INJURIES = None
     with open(f"{resource_directory}injuries.json", "r") as read_file:
         INJURIES = ujson.loads(read_file.read())
 
-    PERMANENT = None
     with open(
         f"resources/dicts/conditions/permanent_conditions.json", "r"
     ) as read_file:
@@ -52,11 +51,9 @@ class Condition_Events:
     #                                    CHANCE                                    #
     # ---------------------------------------------------------------------------- #
 
-    ILLNESSES_SEASON_LIST = None
     with open(f"resources/dicts/conditions/illnesses_seasons.json", "r") as read_file:
         ILLNESSES_SEASON_LIST = ujson.loads(read_file.read())
 
-    INJURY_DISTRIBUTION = None
     with open(
         f"resources/dicts/conditions/event_injuries_distribution.json", "r"
     ) as read_file:
@@ -67,72 +64,67 @@ class Condition_Events:
     # ---------------------------------------------------------------------------- #
 
     PERM_CONDITION_RISK_STRINGS = None
-    with open(
-        f"resources/dicts/conditions/risk_strings/permanent_condition_risk_strings.json",
-        "r",
-    ) as read_file:
-        PERM_CONDITION_RISK_STRINGS = ujson.loads(read_file.read())
-
     ILLNESS_RISK_STRINGS = None
-    with open(
-        f"resources/dicts/conditions/risk_strings/illness_risk_strings.json", "r"
-    ) as read_file:
-        ILLNESS_RISK_STRINGS = ujson.loads(read_file.read())
-
     INJURY_RISK_STRINGS = None
-    with open(
-        f"resources/dicts/conditions/risk_strings/injuries_risk_strings.json", "r"
-    ) as read_file:
-        INJURY_RISK_STRINGS = ujson.loads(read_file.read())
-
     CONGENITAL_CONDITION_GOT_STRINGS = None
-    with open(
-        f"resources/dicts/conditions/condition_got_strings/gain_congenital_condition_strings.json",
-        "r",
-    ) as read_file:
-        CONGENITAL_CONDITION_GOT_STRINGS = ujson.loads(read_file.read())
-
     PERMANENT_CONDITION_GOT_STRINGS = None
-    with open(
-        f"resources/dicts/conditions/condition_got_strings/gain_permanent_condition_strings.json",
-        "r",
-    ) as read_file:
-        PERMANENT_CONDITION_GOT_STRINGS = ujson.loads(read_file.read())
-
     ILLNESS_GOT_STRINGS = None
-    with open(
-        f"resources/dicts/conditions/condition_got_strings/gain_illness_strings.json",
-        "r",
-    ) as read_file:
-        ILLNESS_GOT_STRINGS = ujson.loads(read_file.read())
-
     ILLNESS_HEALED_STRINGS = None
-    with open(
-        f"resources/dicts/conditions/healed_and_death_strings/illness_healed_strings.json",
-        "r",
-    ) as read_file:
-        ILLNESS_HEALED_STRINGS = ujson.loads(read_file.read())
-
     INJURY_HEALED_STRINGS = None
-    with open(
-        f"resources/dicts/conditions/healed_and_death_strings/injury_healed_strings.json",
-        "r",
-    ) as read_file:
-        INJURY_HEALED_STRINGS = ujson.loads(read_file.read())
-
     INJURY_DEATH_STRINGS = None
-    with open(
-        f"resources/dicts/conditions/healed_and_death_strings/injury_death_strings.json",
-        "r",
-    ) as read_file:
-        INJURY_DEATH_STRINGS = ujson.loads(read_file.read())
-
     ILLNESS_DEATH_STRINGS = None
-    with open(
-        f"resources/dicts/conditions/healed_and_death_strings/illness_death_strings.json",
-        "r",
-    ) as read_file:
-        ILLNESS_DEATH_STRINGS = ujson.loads(read_file.read())
+
+    @classmethod
+    def rebuild_strings(cls):
+        resource_directory = f"resources/lang/{i18n.config.get('locale')}/conditions/"
+        fallback_directory = f"resources/lang/{i18n.config.get('fallback')}/conditions/"
+        resources = [
+            (
+                "PERM_CONDITION_RISK_STRINGS",
+                "risk_strings/permanent_condition_risk_strings.json",
+            ),
+            ("ILLNESS_RISK_STRINGS", "risk_strings/illness_risk_strings.json"),
+            ("INJURY_RISK_STRINGS", "risk_strings/injuries_risk_strings.json"),
+            (
+                "CONGENITAL_CONDITION_GOT_STRINGS",
+                "condition_got_strings/gain_congenital_condition_strings.json",
+            ),
+            (
+                "PERMANENT_CONDITION_GOT_STRINGS",
+                "condition_got_strings/gain_permanent_condition_strings.json",
+            ),
+            ("ILLNESS_GOT_STRINGS", "condition_got_strings/gain_illness_strings.json"),
+            (
+                "ILLNESS_HEALED_STRINGS",
+                "healed_and_death_strings/illness_healed_strings.json",
+            ),
+            (
+                "INJURY_HEALED_STRINGS",
+                "healed_and_death_strings/injury_healed_strings.json",
+            ),
+            (
+                "INJURY_DEATH_STRINGS",
+                "healed_and_death_strings/injury_death_strings.json",
+            ),
+            (
+                "ILLNESS_DEATH_STRINGS",
+                "healed_and_death_strings/illness_death_strings.json",
+            ),
+        ]
+
+        for class_property, file in resources:
+            try:
+                with open(
+                    resource_directory + file,
+                    "r",
+                ) as read_file:
+                    setattr(cls, class_property, ujson.loads(read_file.read()))
+            except FileNotFoundError:
+                with open(
+                    fallback_directory + file,
+                    "r",
+                ) as read_file:
+                    setattr(cls, class_property, ujson.loads(read_file.read()))
 
     @staticmethod
     def handle_nutrient(cat: Cat, nutrition_info: dict) -> None:
@@ -164,6 +156,10 @@ class Condition_Events:
         event = None
         illness = None
         heal = False
+
+        if Condition_Events.current_loaded_lang != i18n.config.get("locale"):
+            Condition_Events.current_loaded_lang = i18n.config.get("locale")
+            Condition_Events.rebuild_strings()
 
         # handle death first, if percentage is 0 or lower, the cat will die
         if cat_nutrition.percentage <= 0:
@@ -525,6 +521,9 @@ class Condition_Events:
             "stomachache": "diarrhea",
             "grief stricken": "lasting grief",
         }
+        if Condition_Events.current_loaded_lang != i18n.config.get("locale"):
+            Condition_Events.current_loaded_lang = i18n.config.get("locale")
+            Condition_Events.rebuild_strings()
         # ---------------------------------------------------------------------------- #
         #                         handle currently sick cats                           #
         # ---------------------------------------------------------------------------- #
@@ -537,7 +536,11 @@ class Condition_Events:
 
             # use herbs
             Condition_Events.use_herbs(
-                cat, illness, illnesses, Condition_Events.ILLNESSES
+                cat,
+                illness,
+                illnesses,
+                Condition_Events.ILLNESSES,
+                i18n.t(f"illnesses.{illness}"),
             )
 
             # moon skip to try and kill or heal cat
@@ -632,6 +635,10 @@ class Condition_Events:
         This function handles, when the cat is already injured
         Returns: True if an event was triggered, False if nothing happened
         """
+        if Condition_Events.current_loaded_lang != i18n.config.get("locale"):
+            Condition_Events.current_loaded_lang = i18n.config.get("locale")
+            Condition_Events.rebuild_strings()
+
         triggered = False
         event_list = []
 
@@ -645,7 +652,13 @@ class Condition_Events:
             if injury in game.switches["skip_conditions"]:
                 continue
 
-            Condition_Events.use_herbs(cat, injury, injuries, Condition_Events.INJURIES)
+            Condition_Events.use_herbs(
+                cat,
+                injury,
+                injuries,
+                Condition_Events.INJURIES,
+                i18n.t(f"injuries.{injury}"),
+            )
 
             skipped = cat.moon_skip_injury(injury)
             if skipped:
@@ -797,6 +810,10 @@ class Condition_Events:
 
         event_list = []
 
+        if Condition_Events.current_loaded_lang != i18n.config.get("locale"):
+            Condition_Events.current_loaded_lang = i18n.config.get("locale")
+            Condition_Events.rebuild_strings()
+
         condition_progression = {
             "one bad eye": "failing eyesight",
             "failing eyesight": "blind",
@@ -894,7 +911,11 @@ class Condition_Events:
                 chance = 3
             if not int(random.random() * chance):
                 Condition_Events.use_herbs(
-                    cat, condition, conditions, Condition_Events.PERMANENT
+                    cat,
+                    condition,
+                    conditions,
+                    Condition_Events.PERMANENT,
+                    i18n.t(f"permanent_conditions.{condition}"),
                 )
 
             # give risks
@@ -968,9 +989,8 @@ class Condition_Events:
                 if not int(random.random() * chance):
                     retire_involved = [cat.ID]
                     if cat.age == "adolescent":
-                        event = (
-                            f"{cat.name} decides they'd rather spend their time helping around camp and entertaining the "
-                            f"kits, they're warmly welcomed into the elders' den."
+                        event = i18n.t(
+                            "hardcoded.condition_retire_adolescent", name=cat.name
                         )
                     elif game.clan.leader is not None:
                         if (
@@ -980,34 +1000,35 @@ class Condition_Events:
                             and cat.moons < 120
                         ):
                             retire_involved.append(game.clan.leader.ID)
-                            event = (
-                                f"{game.clan.leader.name}, seeing {cat.name} struggling the last few moons "
-                                f"approaches them and promises them that no one would think less of them for "
-                                f"retiring early and that they would still be a valuable member of the Clan "
-                                f"as an elder. {cat.name} agrees and later that day their elder ceremony "
-                                f"is held."
-                            )
+                            event = i18n.t("hardcoded.condition_retire_normal")
                         else:
-                            event = f"{cat.name} has decided to retire from normal Clan duty."
+                            event = i18n.t("hardcoded.condition_retire_no_leader")
                     else:
-                        event = (
-                            f"{cat.name} has decided to retire from normal Clan duty."
-                        )
+                        event = i18n.t("hardcoded.condition_retire_no_leader")
 
                     if cat.age == "adolescent":
-                        event += (
-                            f" They are given the name {cat.name.prefix}{cat.name.suffix} in honor "
-                            f"of their contributions to {game.clan.name}Clan."
+                        event += i18n.t(
+                            "hardcoded.condition_retire_adolescent_ceremony",
+                            clan=game.clan.name,
+                            newname=cat.name.prefix + cat.name.suffix,
                         )
 
                     cat.retire_cat()
-                    # Don't add this to the condition event list: instead make it it's own event, a ceremony.
+                    # Don't add this to the condition event list: instead make it its own event, a ceremony.
                     game.cur_events_list.append(
-                        Single_Event(event, "ceremony", retire_involved)
+                        Single_Event(
+                            event_text_adjust(Cat, event, main_cat=cat),
+                            "ceremony",
+                            retire_involved,
+                        )
                     )
 
     @staticmethod
     def give_risks(cat, event_list, condition, progression, conditions, dictionary):
+        if Condition_Events.current_loaded_lang != i18n.config.get("locale"):
+            Condition_Events.current_loaded_lang = i18n.config.get("locale")
+            Condition_Events.rebuild_strings()
+
         event_triggered = False
         if dictionary == cat.permanent_condition:
             event_triggered = True
@@ -1115,7 +1136,7 @@ class Condition_Events:
                     print(
                         f"WARNING: {condition} couldn't be found in the risk strings! placeholder string was used"
                     )
-                    event = "m_c's condition has gotten worse."
+                    event = i18n.t("permanent_conditions.unknown_condition_risk_given")
 
                 event = event_text_adjust(
                     Cat, event, main_cat=cat, random_cat=med_cat
@@ -1155,7 +1176,7 @@ class Condition_Events:
                 break
 
     @staticmethod
-    def use_herbs(cat, condition, conditions, source):
+    def use_herbs(cat, condition, conditions, source, translated_name):
         # herbs that can be used for the condition and the Clan has available
         clan_herbs = set()
         needed_herbs = set()
@@ -1164,7 +1185,7 @@ class Condition_Events:
             needed_herbs.update(source[condition]["herbs"])
         except KeyError:
             print(
-                f"WARNING: {condition} does not exist in it's condition dict! if the condition is 'thorn in paw' or "
+                f"WARNING: {condition} does not exist in its condition dict! if the condition is 'thorn in paw' or "
                 "'splinter', disregard this! otherwise, check that your condition is in the correct dict or report "
                 "this as a bug."
             )
@@ -1231,25 +1252,28 @@ class Condition_Events:
 
             effect_message = "this should not show up"
             if effect == "mortality":
-                effect_message = "They will be less likely to die."
+                effect_message = i18n.t("herbs.mortality_down")
                 conditions[condition]["mortality"] += (
                     11 - modifier + int(amount_used * 1.5)
                 )
                 if conditions[condition]["mortality"] < 1:
                     conditions[condition]["mortality"] = 1
             elif effect == "duration":
-                effect_message = "They will heal sooner."
+                effect_message = i18n.t("herbs.duration_down")
                 conditions[condition]["duration"] -= 1
             elif effect == "risks":
-                effect_message = (
-                    "The risks associated with their condition are lowered."
-                )
+                effect_message = i18n.t("herbs.risks_down")
                 for risk in conditions[condition]["risks"]:
                     risk["chance"] += 11 - modifier + int(amount_used * 1.5)
                     if risk["chance"] < 0:
                         risk["chance"] = 0
 
-            text = f"{cat.name} was given {herb_used.replace('_', ' ')} as treatment for {condition}. {effect_message}"
+            text = i18n.t(
+                "herbs.herb_used",
+                herb=i18n.t(f"herbs.{herb_used}", count=2),
+                condition=translated_name,
+                effect=effect_message,
+            )
             game.herb_events_list.append(text)
         else:
             # if they didn't get any herbs, make them more likely to die!! kill the kitties >:)

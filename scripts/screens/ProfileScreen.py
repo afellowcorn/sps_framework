@@ -791,7 +791,7 @@ class ProfileScreen(Screens):
             output += i18n.t(
                 "screens.profile.parent_label",
                 count=len(all_parents),
-                parents=adjust_list_text([cat.name for cat in all_parents]),
+                parents=adjust_list_text([str(cat.name) for cat in all_parents]),
             )
 
         # MOONS

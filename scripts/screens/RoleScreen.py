@@ -244,7 +244,7 @@ class RoleScreen(Screens):
         )
 
         text = [
-            "<b>" + i18n.t(f"general.{self.the_cat.status}") + "</b>",
+            "<b>" + i18n.t(f"general.{self.the_cat.status}", count=1) + "</b>",
             i18n.t(f"personality.{self.the_cat.personality.trait}"),
             i18n.t("general.moons_age", count=self.the_cat.moons)
             + "  |  "

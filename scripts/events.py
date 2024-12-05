@@ -7,6 +7,7 @@ TODO: Docs
 """
 
 import random
+
 # pylint: enable=line-too-long
 import traceback
 from collections import Counter
@@ -1376,44 +1377,19 @@ class Events:
                 game.clan.leader_lives = 9
                 text = ""
                 if game.clan.deputy.personality.trait == "bloodthirsty":
-                    text = (
-                        f"{game.clan.deputy.name} has become the new leader. "
-                        f"They stare down at their Clanmates with unsheathed claws, "
-                        f"promising a new era for the Clans."
-                    )
+                    text = i18n.t("hardcoded.ceremony_leader_bloodthirsty")
                 else:
                     c = random.randint(1, 3)
-                    if c == 1:
-                        text = (
-                            str(game.clan.deputy.name.prefix)
-                            + str(game.clan.deputy.name.suffix)
-                            + " has been promoted to the new leader of the Clan. "
-                            "They travel immediately to the Moonstone to get their "
-                            "nine lives and are hailed by their new name, "
-                            + str(game.clan.deputy.name)
-                            + "."
-                        )
-                    elif c == 2:
-                        text = (
-                            f"{game.clan.deputy.name} has become the new leader of the Clan. "
-                            f"They vow that they will protect the Clan, "
-                            f"even at the cost of their nine lives."
-                        )
-                    elif c == 3:
-                        text = (
-                            f"{game.clan.deputy.name} has received "
-                            f"their nine lives and became the "
-                            f"new leader of the Clan. They feel like "
-                            f"they are not ready for this new "
-                            f"responsibility, but will try their best "
-                            f"to do what is right for the Clan."
-                        )
+                    text = i18n.t(
+                        f"hardcoded.ceremony_leader_{c}",
+                        oldname=game.clan.deputy.name,
+                        newname=cat.name,
+                    )
 
                 # game.ceremony_events_list.append(text)
-                text += (
-                    f"\nVisit {game.clan.deputy.name}'s "
-                    "profile to see their full leader ceremony."
-                )
+                text += i18n.t("hardcoded.ceremony_closer")
+
+                text = event_text_adjust(Cat, text, main_cat=cat)
 
                 game.cur_events_list.append(
                     Single_Event(text, "ceremony", game.clan.deputy.ID)
@@ -1620,10 +1596,22 @@ class Events:
         """
         if self.CEREMONY_TXT is not None:
             return
-
-        resource_dir = f"resources/lang/{i18n.config.get('locale')}/events/ceremonies/"
-        with open(f"{resource_dir}ceremony-master.json", encoding="ascii") as read_file:
-            self.CEREMONY_TXT = ujson.loads(read_file.read())
+        try:
+            resource_dir = (
+                f"resources/lang/{i18n.config.get('locale')}/events/ceremonies/"
+            )
+            with open(
+                f"{resource_dir}ceremony-master.json", encoding="ascii"
+            ) as read_file:
+                self.CEREMONY_TXT = ujson.loads(read_file.read())
+        except FileNotFoundError:
+            resource_dir = (
+                f"resources/lang/{i18n.config.get('fallback')}/events/ceremonies/"
+            )
+            with open(
+                f"{resource_dir}ceremony-master.json", encoding="ascii"
+            ) as read_file:
+                self.CEREMONY_TXT = ujson.loads(read_file.read())
 
         self.ceremony_id_by_tag = {}
         # Sorting.
@@ -1825,15 +1813,24 @@ class Events:
         # getting the random honor if it's needed
         random_honor = None
         if promoted_to in ["warrior", "mediator", "medicine cat"]:
-            resource_dir = "resources/dicts/events/ceremonies/"
-            with open(
-                f"{resource_dir}ceremony_traits.json", encoding="ascii"
-            ) as read_file:
-                TRAITS = ujson.loads(read_file.read())
+            resource_dir = (
+                f"resources/lang/{i18n.config.get('locale')}/events/ceremonies/"
+            )
+            try:
+                with open(
+                    f"{resource_dir}ceremony_traits.json", encoding="ascii"
+                ) as read_file:
+                    TRAITS = ujson.loads(read_file.read())
+            except FileNotFoundError:
+                with open(
+                    f"resources/lang/{i18n.config.get('fallback')}/events/ceremonies/ceremony_traits.json",
+                    encoding="ascii",
+                ) as read_file:
+                    TRAITS = ujson.loads(read_file.read())
             try:
                 random_honor = random.choice(TRAITS[cat.personality.trait])
             except KeyError:
-                random_honor = "hard work"
+                random_honor = i18n.t("defaults.ceremony_honor")
 
         if cat.status in ["warrior", "medicine cat", "mediator"]:
             History.add_app_ceremony(cat, random_honor)
@@ -1891,7 +1888,7 @@ class Events:
         involved_cats = list(set(involved_cats))
 
         game.cur_events_list.append(
-            Single_Event(f"{ceremony_text}", "ceremony", involved_cats)
+            Single_Event(ceremony_text, "ceremony", involved_cats)
         )
         # game.ceremony_events_list.append(f'{cat.name}{ceremony_text}')
 

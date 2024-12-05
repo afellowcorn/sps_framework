@@ -1,10 +1,10 @@
 import os
 
+import i18n
 import ujson
 
 
 class SingleInteraction:
-
     def __init__(
         self,
         interact_id,
@@ -32,10 +32,7 @@ class SingleInteraction:
         self.interactions = (
             interactions
             if interactions
-            else [
-                f"This is a default interaction! "
-                f"ID: {interact_id} with cats (m_c), (r_c)"
-            ]
+            else [i18n.t("defaults.interaction", id=interact_id)]
         )
         self.get_injuries = get_injuries if get_injuries else {}
         self.has_injuries = has_injuries if has_injuries else {}
@@ -66,7 +63,6 @@ class SingleInteraction:
 
 
 class GroupInteraction:
-
     def __init__(
         self,
         interact_id,
@@ -93,10 +89,7 @@ class GroupInteraction:
         self.interactions = (
             interactions
             if interactions
-            else [
-                f"This is a default interaction! "
-                f"ID: {interact_id} with cats (m_c), (r_c)"
-            ]
+            else [i18n.t("defaults.single_interaction", id=interact_id)]
         )
         self.get_injuries = get_injuries if get_injuries else {}
         self.has_injuries = has_injuries if has_injuries else {}
@@ -415,6 +408,7 @@ INTERACTION_MASTER_DICT = {
     "jealousy": {},
     "trust": {},
 }
+NEUTRAL_INTERACTIONS = []
 rel_types = [
     "romantic",
     "platonic",
@@ -424,17 +418,61 @@ rel_types = [
     "jealousy",
     "trust",
 ]
-base_path = os.path.join(
-    "resources", "dicts", "relationship_events", "normal_interactions"
-)
-for rel in rel_types:
-    with open(os.path.join(base_path, rel, "increase.json"), "r") as read_file:
-        loaded_list = ujson.loads(read_file.read())
-        INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(loaded_list)
-    with open(os.path.join(base_path, rel, "decrease.json"), "r") as read_file:
-        loaded_list = ujson.loads(read_file.read())
-        INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(loaded_list)
 
-with open(os.path.join(base_path, "neutral.json"), "r") as read_file:
-    loaded_list = ujson.loads(read_file.read())
-    NEUTRAL_INTERACTIONS = create_interaction(loaded_list)
+
+def rebuild_relationship_dicts():
+    global INTERACTION_MASTER_DICT, NEUTRAL_INTERACTIONS
+    base_path = os.path.join(
+        "resources",
+        "lang",
+        i18n.config.get("locale"),
+        "events",
+        "relationship_events",
+        "normal_interactions",
+    )
+    fallback_path = os.path.join(
+        "resources",
+        "lang",
+        i18n.config.get("fallback"),
+        "events",
+        "relationship_events",
+        "normal_interactions",
+    )
+    for rel in rel_types:
+        try:
+            with open(os.path.join(base_path, rel, "increase.json"), "r") as read_file:
+                loaded_list = ujson.loads(read_file.read())
+                INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(
+                    loaded_list
+                )
+        except FileNotFoundError:
+            with open(
+                os.path.join(fallback_path, rel, "increase.json"), "r"
+            ) as read_file:
+                loaded_list = ujson.loads(read_file.read())
+                INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(
+                    loaded_list
+                )
+        try:
+            with open(os.path.join(base_path, rel, "decrease.json"), "r") as read_file:
+                loaded_list = ujson.loads(read_file.read())
+                INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(
+                    loaded_list
+                )
+        except FileNotFoundError:
+            with open(
+                os.path.join(fallback_path, rel, "decrease.json"), "r"
+            ) as read_file:
+                loaded_list = ujson.loads(read_file.read())
+                INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(
+                    loaded_list
+                )
+
+    try:
+        with open(os.path.join(base_path, "neutral.json"), "r") as read_file:
+            loaded_list = ujson.loads(read_file.read())
+            NEUTRAL_INTERACTIONS = create_interaction(loaded_list)
+    except FileNotFoundError:
+        with open(os.path.join(fallback_path, "neutral.json"), "r") as read_file:
+            loaded_list = ujson.loads(read_file.read())
+            NEUTRAL_INTERACTIONS = create_interaction(loaded_list)
