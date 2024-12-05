@@ -1,0 +1,36 @@
+{
+    "po": {
+        "help_tooltip": "potato",
+        "hurt_sick_title": "potato",
+        "log_title": "potato",
+        "meds_cover": {
+            "zero": "potato",
+            "one": "potato",
+            "many": "potato"
+        },
+        "herb_amount_zero": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "herb_amount_very_low": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "herb_amount_low": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "herb_amount_average": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "herb_amount_high": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "herb_amount_very_high": {
+            "one": "potato",
+            "many": "potato"
+        }
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "po": {
+        "herb_used": "potato",
+        "mortality_down": "potato",
+        "duration_down": "potato",
+        "risks_down": "potato",
+        "elder_leaves": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "cobwebs": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "daisy": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "horsetail": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "juniper": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "lungwort": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "mallow": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "marigold": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "moss": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "oak_leaves": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "ragwort": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "raspberry": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "tansy": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "thyme": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "wild_garlic": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "dandelion": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "mullein": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "rosemary": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "burdock": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "blackberry": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "betony": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "goldenrod": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "poppy": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "plantain": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "catmint": {
+            "one": "potato",
+            "many": "potato"
+        }
+    }
+}

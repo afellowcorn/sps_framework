@@ -1,0 +1,28 @@
+{
+    "po": {
+        "help_tooltip": "potato",
+        "feed_all_hungry": "potato",
+        "feed_one": "potato",
+        "feed_max": "potato",
+        "nutrition_title": "potato",
+        "log_title": "potato",
+        "tactic_title": "potato",
+        "cats_tab": "potato",
+        "log_tab": "potato",
+        "tactic_tab": "potato",
+        "hungry_tab": "potato",
+        "satisfied_tab": "potato",
+        "nutrition_text": "potato",
+        "cant_work_hunger": "potato",
+        "prey_amount_info": "potato",
+        "prey_amount_none": "potato",
+        "prey_amount_very_low": "potato",
+        "prey_amount_low": "potato",
+        "prey_amount_average": "potato",
+        "prey_amount_high": "potato",
+        "prey_amount_very_high": "potato",
+        "freshkill_pile_tooltip": "potato",
+        "additional_prey_text": "potato",
+        "condition_increase_text": "potato"
+    }
+}

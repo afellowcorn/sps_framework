@@ -1,0 +1,18 @@
+{
+    "po": {
+        "kit_amount": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "pregnant_secret": "potato",
+        "leader_kitting_death": "potato",
+        "leader_kitting_death_severe": "potato",
+        "kitting_death": "potato",
+        "kitting_death_severe": "potato",
+        "half_blood_kitting_thought": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "new_kit_thought": "potato"
+    }
+}

@@ -735,7 +735,7 @@ class ClearingScreen(Screens):
                 x_val += 40
 
             self.tactic_text[code] = pygame_gui.elements.UITextBox(
-                desc[0],
+                f"settings.{code}",
                 ui_scale(pygame.Rect((x_val, n * 45), (500, 39))),
                 container=self.tactic_text["container_general"],
                 object_id="#text_box_30_horizleft_pad_0_8",
@@ -883,7 +883,7 @@ class ClearingScreen(Screens):
                     "",
                     object_id=box_type,
                     container=self.additional_text["container_" + sub_menu],
-                    tool_tip_text=desc[1],
+                    tool_tip_text=f"settings.{code}_tooltip",
                 )
 
                 if disabled:

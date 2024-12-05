@@ -1,0 +1,193 @@
+{
+    "po": {
+        "moons_age": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "moons_age_in_death": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "moons_age_in_life": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "moon_date": "potato",
+        "leader": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "deputy": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "warrior": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "medicine cat": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "mediator": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "apprentice": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "medicine cat apprentice": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "mediator apprentice": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "queen": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "newborn": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "kitten": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "kitten_profile": "potato",
+        "adolescent": "potato",
+        "young adult": "potato",
+        "adult": "potato",
+        "senior adult": "potato",
+        "senior": "potato",
+        "kit": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "elder": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "loner": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "rogue": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "kittypet": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "former Clancat": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "exiled": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "lost": "potato",
+        "mate": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "she-cat": "potato",
+        "tom": "potato",
+        "cat": "potato",
+        "female": "potato",
+        "male": "potato",
+        "trans female": "potato",
+        "trans male": "potato",
+        "nonbinary": "potato",
+        "is": "potato",
+        "are": "potato",
+        "can_work": "potato",
+        "cant_work": "potato",
+        "cant_work_condition": "potato",
+        "exp": "potato",
+        "newleaf": "potato",
+        "greenleaf": "potato",
+        "leaffall": "potato",
+        "leaf-bare": "potato",
+        "relation_BLOOD": "potato",
+        "relation_ADOPTIVE": "potato",
+        "relation_HALF_BLOOD": "potato",
+        "relation_NOT_BLOOD": "potato",
+        "relation_RELATED": "potato",
+        "related_label": "potato",
+        "niece": "potato",
+        "nephew": "potato",
+        "siblings_child": "potato",
+        "aunt": "potato",
+        "uncle": "potato",
+        "parents_sibling": "potato",
+        "grandparent": "potato",
+        "grandchild": "potato",
+        "parent": "potato",
+        "child": "potato",
+        "sibling": "potato",
+        "sibling_littermate": "potato",
+        "cousin": "potato",
+        "starclan": "potato",
+        "dark_forest": "potato",
+        "unknown_residence": "potato",
+        "empty": "potato",
+        "none": "potato",
+        "name_search": "potato",
+        "has_a_mate": "potato",
+        "cats_mate": "potato",
+        "mate_none": "potato",
+        "mate_living": "potato",
+        "mate_dead": "potato",
+        "mate_away": "potato",
+        "mate_label": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "mate_extra": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "mentor": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "mentor_label": "potato",
+        "apprentice_label": {
+            "zero": "potato",
+            "one": "potato",
+            "many": "potato"
+        },
+        "former_apprentice_label": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "apprentice_extra": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "dead_label": "potato",
+        "mark_favorite": "potato",
+        "remove_favorite": "potato",
+        "has_permanent_condition": "potato",
+        "born_with": "potato",
+        "had_perm_condition_for": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "had_injury_for": "potato",
+        "pregnant_for": "potato",
+        "recovering_from_birth_for": "potato",
+        "sick": "potato",
+        "injured": "potato",
+        "grieving": "potato",
+        "fleas": "potato",
+        "is_infected": "potato",
+        "is_festering": "potato"
+    }
+}

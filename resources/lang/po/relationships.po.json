@@ -1,0 +1,32 @@
+{
+    "po": {
+        "romantic_label": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "platonic_label": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "dislike_label": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "admire_label": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "comfortable_label": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "jealous_label": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "trust_label": {
+            "one": "potato",
+            "many": "potato"
+        }
+    }
+}

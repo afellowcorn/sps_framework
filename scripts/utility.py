@@ -503,7 +503,15 @@ def create_new_cat_block(
         match = re.match(r"backstory:(.+)", _tag)
         if match:
             stor = [
-                x for x in match.group(1).split(",") if x in BACKSTORIES["backstories"]
+                x
+                for x in match.group(1).split(",")
+                if x
+                in set(
+                    [
+                        backstory.values()
+                        for backstory in BACKSTORIES["backstory_categories"]
+                    ]
+                )
             ]
             bs_override = True
             chosen_backstory = choice(stor)

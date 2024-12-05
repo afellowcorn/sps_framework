@@ -46,28 +46,50 @@ class GroupEvents:
         )
 
         cls.GROUP_INTERACTION_MASTER_DICT = {}
-        for cat_amount in os.listdir(base_path):
-            if cat_amount == "group_types.json":
-                continue
-            cls.GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
-            for file in ["neutral.json", "positive.json", "negative.json"]:
-                try:
-                    with open(
-                        os.path.join(base_path, cat_amount, file), "r"
-                    ) as read_file:
-                        welcome_list = ujson.load(read_file)
-                        cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
-                            file[:-5]
-                        ] = create_group_interaction(welcome_list)
-                except FileNotFoundError:
-                    with open(
-                        os.path.join(fallback_path, cat_amount, file), "r"
-                    ) as read_file:
-                        welcome_list = ujson.load(read_file)
-                        cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
-                            file[:-5]
-                        ] = create_group_interaction(welcome_list)
-
+        try:
+            for cat_amount in os.listdir(base_path):
+                if cat_amount == "group_types.json":
+                    continue
+                cls.GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
+                for file in ["neutral.json", "positive.json", "negative.json"]:
+                    try:
+                        with open(
+                            os.path.join(base_path, cat_amount, file), "r"
+                        ) as read_file:
+                            welcome_list = ujson.load(read_file)
+                            cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
+                                file[:-5]
+                            ] = create_group_interaction(welcome_list)
+                    except FileNotFoundError:
+                        with open(
+                            os.path.join(fallback_path, cat_amount, file), "r"
+                        ) as read_file:
+                            welcome_list = ujson.load(read_file)
+                            cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
+                                file[:-5]
+                            ] = create_group_interaction(welcome_list)
+        except FileNotFoundError:
+            for cat_amount in os.listdir(fallback_path):
+                if cat_amount == "group_types.json":
+                    continue
+                cls.GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
+                for file in ["neutral.json", "positive.json", "negative.json"]:
+                    try:
+                        with open(
+                            os.path.join(base_path, cat_amount, file), "r"
+                        ) as read_file:
+                            welcome_list = ujson.load(read_file)
+                            cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
+                                file[:-5]
+                            ] = create_group_interaction(welcome_list)
+                    except FileNotFoundError:
+                        with open(
+                            os.path.join(fallback_path, cat_amount, file), "r"
+                        ) as read_file:
+                            welcome_list = ujson.load(read_file)
+                            cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
+                                file[:-5]
+                            ] = create_group_interaction(welcome_list)
         del base_path
 
     @staticmethod

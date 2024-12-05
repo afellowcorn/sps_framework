@@ -13,8 +13,8 @@ from scripts.utility import (
 )
 
 
-def get_resource_directory():
-    return f"resources/lang/{i18n.config.get('locale')}/events/"
+def get_resource_directory(fallback=False):
+    return f"resources/lang/{i18n.config.get('locale') if not fallback else i18n.config.get('fallback')}/events/"
 
 
 # ---------------------------------------------------------------------------- #
@@ -39,13 +39,20 @@ class GenerateEvents:
     def get_short_event_dicts(file_path):
         try:
             with open(
-                file_path,
+                get_resource_directory() + file_path,
                 "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
-            print(f"ERROR: Unable to load {file_path}.")
-            return None
+            try:
+                with open(
+                    get_resource_directory(fallback=True) + file_path,
+                    "r",
+                ) as read_file:
+                    events = ujson.loads(read_file.read())
+            except:
+                print(f"ERROR: Unable to load {file_path}.")
+                return None
 
         return events
 
@@ -65,19 +72,25 @@ class GenerateEvents:
 
     @staticmethod
     def get_death_reaction_dicts(family_relation, rel_value):
+        file_path = f"/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
         try:
-            file_path = f"{get_resource_directory()}/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
             with open(
-                file_path,
+                get_resource_directory() + file_path,
                 "r",
             ) as read_file:
-                events = ujson.loads(read_file.read())
-        except:
-            events = None
-            print(
-                f"ERROR: Unable to load death reaction events for {family_relation}_{rel_value}."
-            )
-        return events
+                return ujson.loads(read_file.read())
+        except FileNotFoundError:
+            try:
+                with open(
+                    get_resource_directory(fallback=True) + file_path,
+                    "r",
+                ) as read_file:
+                    return ujson.loads(read_file.read())
+            except:
+                print(
+                    f"ERROR: Unable to load death reaction events for {family_relation}_{rel_value}."
+                )
+                return None
 
     @staticmethod
     def get_lead_den_event_dicts(event_type: str, success: bool):
@@ -99,7 +112,7 @@ class GenerateEvents:
 
     @staticmethod
     def generate_short_events(event_triggered, biome):
-        file_path = f"{get_resource_directory()}{event_triggered}/{biome}.json"
+        file_path = f"{event_triggered}/{biome}.json"
 
         try:
             if file_path in GenerateEvents.loaded_events:
@@ -159,7 +172,7 @@ class GenerateEvents:
         if file_path in GenerateEvents.loaded_events:
             return GenerateEvents.loaded_events[file_path]
         else:
-            events_dict = GenerateEvents.get_ongoing_event_dicts(file_path)
+            events_dict = GenerateEvents.get_short_event_dicts(file_path)
 
             if not specific_event:
                 event_list = []

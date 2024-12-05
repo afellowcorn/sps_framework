@@ -1,0 +1,548 @@
+{
+    "po": {
+        "INFO": [
+            "potato",
+            "potato"
+        ],
+        "MAPLE LEAF": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "HOLLY": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLUE BERRIES": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "FORGET ME NOTS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "RYE STALK": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "LAUREL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLUEBELLS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "NETTLE": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "POPPY": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "LAVENDER": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "HERBS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "PETALS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "DRY HERBS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "DRY CATMINT": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "DRY NETTLES": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "DRY LAURELS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "OAK LEAVES": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CATMINT": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "MAPLE SEED": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "JUNIPER": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "RED FEATHERS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLUE FEATHERS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "JAY FEATHERS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "MOTH WINGS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CICADA WINGS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "ORANGE POPPY": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CYAN POPPY": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "WHITE POPPY": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "PINK POPPY": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CLOVER": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "DAISY": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "LILY OF THE VALLEY": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "HEATHER": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "SNAPDRAGON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "GORSE": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BULB WHITE": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BULB YELLOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BULB ORANGE": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BULB PINK": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BULB BLUE": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "RASPBERRY": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CATTAIL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "GULL FEATHERS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "SPARROW FEATHERS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "ROSY MOTH WINGS": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "MORPHO BUTTERFLY": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "MONARCH BUTTERFLY": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLACK CICADA": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CRIMSON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLUE": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CYAN": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "YELLOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "LIME": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "GREEN": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "RED": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "RAINBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLACK": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "SPIKES": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "WHITE": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "PINK": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "PURPLE": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "MULTI": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "INDIGO": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CRIMSONBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLUEBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CYANBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "YELLOWBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "LIMEBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "GREENBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "REDBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "RAINBOWBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLACKBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "SPIKESBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "WHITEBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "PINKBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "PURPLEBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "MULTIBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "INDIGOBELL": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CRIMSONBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLUEBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CYANBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "YELLOWBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "LIMEBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "GREENBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "REDBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "RAINBOWBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLACKBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "SPIKESBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "WHITEBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "PINKBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "PURPLEBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "MULTIBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "INDIGOBOW": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CRIMSONNYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLUENYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "CYANNYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "YELLOWNYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "LIMENYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "GREENNYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "REDNYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "RAINBOWNYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "BLACKNYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "SPIKESNYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "WHITENYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "PINKNYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "PURPLENYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "MULTINYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        },
+        "INDIGONYLON": {
+            "zero": "potato",
+            "many": "potato",
+            "one": "potato"
+        }
+    }
+}

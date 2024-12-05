@@ -1,0 +1,29 @@
+{
+    "po": {
+        "training_kit": "potato",
+        "training_app": "potato",
+        "training_mentors": {
+            "zero": "potato",
+            "one": "potato",
+            "many": "potato"
+        },
+        "training_mentor_trait_influence": "potato",
+        "training_mentor_skill_influence": "potato",
+        "graduation_honor": "potato",
+        "graduation_early": "potato",
+        "graduation_normal": "potato",
+        "graduation_late": "potato",
+        "mentored": "potato",
+        "leader_death_final": "potato",
+        "leader_death_all": "potato",
+        "leader_death_remaining": "potato",
+        "leader_death_cardinal": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "leader_death_retired": "potato",
+        "leader_death_default": "potato",
+        "death_cause": "potato",
+        "murdered": "potato"
+    }
+}

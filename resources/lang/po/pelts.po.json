@@ -1,0 +1,125 @@
+{
+    "po": {
+        "WHITE": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "PALEGREY": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "SILVER": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "GREY": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "DARKGREY": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "GHOST": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "BLACK": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "CREAM": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "PALEGINGER": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "GOLDEN": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "GINGER": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "DARKGINGER": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "SIENNA": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "LIGHTBROWN": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "LILAC": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "BROWN": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "GOLDEN-BROWN": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "DARKBROWN": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "CHOCOLATE": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "Tabby": "potato",
+        "Tabby_long": "potato",
+        "Speckled": "potato",
+        "Speckled_long": "potato",
+        "Bengal": "potato",
+        "Bengal_long": "potato",
+        "Marbled": "potato",
+        "Marbled_long": "potato",
+        "Ticked": "potato",
+        "Ticked_long": "potato",
+        "Smoke": "potato",
+        "Smoke_long": "potato",
+        "Mackerel": "potato",
+        "Mackerel_long": "potato",
+        "Classic": "potato",
+        "Classic_long": "potato",
+        "Agouti": "potato",
+        "Agouti_long": "potato",
+        "Singlestripe": "potato",
+        "Singlestripe_long": "potato",
+        "Rosette": "potato",
+        "Rosette_long": "potato",
+        "Sokoke": "potato",
+        "Sokoke_long": "potato",
+        "Masked": "potato",
+        "Masked_long": "potato",
+        "tabby_base": "potato",
+        "Calico": "potato",
+        "Tortie": "potato",
+        "mottled": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "NOTAIL": "potato",
+        "HALFTAIL": "potato",
+        "NOPAW": "potato",
+        "NOLEFTEAR": "potato",
+        "NORIGHTEAR": "potato",
+        "NOEAR": "potato",
+        "vitiligo": "potato",
+        "long_furred": "potato",
+        "scarred": "potato",
+        "fur_short": "potato",
+        "fur_medium": "potato",
+        "fur_long": "potato"
+    }
+}

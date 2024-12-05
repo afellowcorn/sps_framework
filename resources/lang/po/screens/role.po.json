@@ -1,0 +1,25 @@
+{
+    "po": {
+        "promote_leader": "potato",
+        "blurb_leader": "potato",
+        "promote_deputy": "potato",
+        "blurb_deputy": "potato",
+        "switch_warrior": "potato",
+        "blurb_warrior": "potato",
+        "retire": "potato",
+        "blurb_elder": "potato",
+        "switch_medicine_cat": "potato",
+        "blurb_medicine_cat": "potato",
+        "switch_mediator": "potato",
+        "blurb_mediator": "potato",
+        "switch_app": "potato",
+        "blurb_apprentice": "potato",
+        "switch_medcat_app": "potato",
+        "blurb_medcat_app": "potato",
+        "switch_mediator_app": "potato",
+        "blurb_mediator_app": "potato",
+        "blurb_kitten": "potato",
+        "blurb_newborn": "potato",
+        "blurb_unknown": "potato"
+    }
+}

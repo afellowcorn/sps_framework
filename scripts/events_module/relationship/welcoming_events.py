@@ -144,6 +144,7 @@ class Welcoming_Events:
             "resources",
             "lang",
             i18n.config.get("locale"),
+            "events",
             "relationship_events",
             "welcoming_events",
         )
@@ -151,21 +152,32 @@ class Welcoming_Events:
             "resources",
             "lang",
             i18n.config.get("fallback"),
+            "events",
             "relationship_events",
             "welcoming_events",
         )
-
-        for file in os.listdir(base_path):
-            if "general.json" == file:
-                continue
-            status = file.split(".")[0]
-            try:
-                with open(os.path.join(base_path, file), "r") as read_file:
-                    welcome_list = ujson.load(read_file)
-                    WELCOMING_MASTER_DICT[status] = create_welcome_interaction(
-                        welcome_list
-                    )
-            except FileNotFoundError:
+        try:
+            for file in os.listdir(base_path):
+                if "general.json" == file:
+                    continue
+                status = file.split(".")[0]
+                try:
+                    with open(os.path.join(base_path, file), "r") as read_file:
+                        welcome_list = ujson.load(read_file)
+                        WELCOMING_MASTER_DICT[status] = create_welcome_interaction(
+                            welcome_list
+                        )
+                except FileNotFoundError:
+                    with open(os.path.join(fallback_path, file), "r") as read_file:
+                        welcome_list = ujson.load(read_file)
+                        WELCOMING_MASTER_DICT[status] = create_welcome_interaction(
+                            welcome_list
+                        )
+        except FileNotFoundError:
+            for file in os.listdir(fallback_path):
+                if "general.json" == file:
+                    continue
+                status = file.split(".")[0]
                 with open(os.path.join(fallback_path, file), "r") as read_file:
                     welcome_list = ujson.load(read_file)
                     WELCOMING_MASTER_DICT[status] = create_welcome_interaction(

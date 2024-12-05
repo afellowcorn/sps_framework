@@ -1,0 +1,53 @@
+{
+    "po": {
+        "help_tooltip": "potato",
+        "clans": "potato",
+        "outsiders": "potato",
+        "clan_notice_text": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "outsider_notice_text": {
+            "one": "potato",
+            "many": "potato"
+        },
+        "no_cats_clan": "potato",
+        "no_cats_outsider": "potato",
+        "no_leader_clan": "potato",
+        "no_leader_outsider": "potato",
+        "leader_sick_clan": "potato",
+        "leader_sick_outsider": "potato",
+        "action_clan": "potato",
+        "action_outsider": "potato",
+        "temper_text": "potato",
+        "outsider_rep": "potato",
+        "outsider_skill": "potato",
+        "cunning": "potato",
+        "proud": "potato",
+        "bloodthirsty": "potato",
+        "amiable": "potato",
+        "stoic": "potato",
+        "wary": "potato",
+        "gracious": "potato",
+        "mellow": "potato",
+        "logical": "potato",
+        "welcoming": "potato",
+        "ally": "potato",
+        "neutral": "potato",
+        "hostile": "potato",
+        "offend": "potato",
+        "praise": "potato",
+        "provoke": "potato",
+        "befriend": "potato",
+        "antagonize": "potato",
+        "appease": "potato",
+        "declare": "potato",
+        "hunt_down": "potato",
+        "hunt_down_tooltip": "potato",
+        "drive_off": "potato",
+        "drive_off_tooltip": "potato",
+        "invite_in": "potato",
+        "search_for": "potato",
+        "invite_in_tooltip": "potato"
+    }
+}
