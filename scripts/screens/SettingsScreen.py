@@ -356,7 +356,7 @@ class SettingsScreen(Screens):
 
         for i, (code, desc) in enumerate(settings_dict["general"].items()):
             self.checkboxes_text[code] = pygame_gui.elements.UITextBox(
-                desc[0],
+                f"settings.{code}",
                 ui_scale(pygame.Rect((225, 34 if i < 0 else 0), (500, 34))),
                 container=self.checkboxes_text["container_general"],
                 object_id=get_text_box_theme("#text_box_30_horizleft_vertcenter"),
@@ -598,7 +598,7 @@ class SettingsScreen(Screens):
                     "",
                     object_id=box_type,
                     container=self.checkboxes_text["container_" + self.sub_menu],
-                    tool_tip_text=desc[1],
+                    tool_tip_text=f"settings.{code}_tooltip",
                     anchors={
                         "top_target": self.checkboxes_text[list(self.checkboxes)[-1]]
                     }

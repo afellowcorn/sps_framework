@@ -632,6 +632,21 @@ class UISpriteButton:
         tool_tip_text=None,
         anchors=None,
     ):
+        # The transparent button. This a subclass that UIButton that also hold the cat_id.
+
+        self.button = CatButton(
+            relative_rect,
+            "",
+            object_id=ObjectID("#cat_button", object_id),
+            visible=visible,
+            cat_id=cat_id,
+            cat_object=cat_object,
+            starting_height=starting_height,
+            manager=manager,
+            tool_tip_text=tool_tip_text,
+            container=container,
+            anchors=anchors,
+        )
         input_sprite = sprite.premul_alpha()
         # if it's going to be small on the screen, smoothscale out the crunch
         input_sprite = (
@@ -655,24 +670,8 @@ class UISpriteButton:
             object_id=object_id,
             anchors=anchors,
         )
-        self.image.disable()
         del input_sprite
-
-        # The transparent button. This a subclass that UIButton that also hold the cat_id.
-
-        self.button = CatButton(
-            relative_rect,
-            "",
-            object_id="#cat_button",
-            visible=visible,
-            cat_id=cat_id,
-            cat_object=cat_object,
-            starting_height=starting_height,
-            manager=manager,
-            tool_tip_text=tool_tip_text,
-            container=container,
-            anchors=anchors,
-        )
+        self.button.join_focus_sets(self.image)
 
     def return_cat_id(self):
         return self.button.return_cat_id()

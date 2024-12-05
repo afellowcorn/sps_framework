@@ -800,7 +800,7 @@ class MakeClanScreen(Screens):
                 )
                 symbol_name = self.symbol_selected.replace("symbol", "")
                 self.text["selected"].set_text(
-                    "screens.make_clan.symbol_select_text",
+                    "screens.make_clan.symbol_selected",
                     text_kwargs={"symbol": symbol_name},
                 )
                 self.elements["selected_symbol"].show()
@@ -1287,7 +1287,7 @@ class MakeClanScreen(Screens):
     def _get_cat_tooltip_string(self, cat: Cat):
         """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
 
-        return f"<b>{cat.name}</b><br>{cat.genderalign}<br>{i18n.t('general.' + cat.age)}<br>{i18n.t('personality.' + cat.personality.trait)}"
+        return f"<b>{cat.name}</b><br>{cat.genderalign}<br>{i18n.t('general.' + cat.age, count=1)}<br>{i18n.t('personality.' + cat.personality.trait)}"
 
     def open_game_mode(self):
         # Clear previous screen
@@ -1321,13 +1321,13 @@ class MakeClanScreen(Screens):
         )
         self.elements["expanded_mode_button"] = UIImageButton(
             ui_scale(pygame.Rect((94, 320), (162, 34))),
-            "",
+            "screens.make_clan.expanded_label",
             object_id="#expanded_mode_button",
             manager=MANAGER,
         )
         self.elements["cruel_mode_button"] = UIImageButton(
             ui_scale(pygame.Rect((100, 400), (150, 30))),
-            "",
+            "screens.make_clan.cruel_season_label",
             object_id="#cruel_mode_button",
             manager=MANAGER,
         )
@@ -1657,7 +1657,8 @@ class MakeClanScreen(Screens):
 
         self.elements["select_cat"] = UIImageButton(
             ui_scale(pygame.Rect((260, 342), (306, 58))),
-            "screens.make_clan.choose_medcat",
+            i18n.t("screens.make_clan.choose_medcat")
+            + "    ",  # it's necessary for centering...
             object_id="#aid_clan_button",
             starting_height=2,
             visible=False,

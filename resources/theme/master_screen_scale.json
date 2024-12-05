@@ -1716,6 +1716,7 @@
         }
     },
     "#kill_cat_button": {
+        "prototype": "@buttonstyles_ladder_middle",
         "images": {
             "normal_image": {
                 "path": "resources\/images\/buttons\/kill_cat.png"
@@ -1966,6 +1967,10 @@
             "selected_image": {
                 "path": "resources\/images\/buttons\/grant_lives_hover.png"
             }
+        },
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "20"
         }
     },
     "#support_leader_button": {
@@ -1979,6 +1984,10 @@
             "selected_image": {
                 "path": "resources\/images\/buttons\/support_leader_hover.png"
             }
+        },
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "18"
         }
     },
     "#aid_clan_button": {
@@ -1992,9 +2001,20 @@
             "selected_image": {
                 "path": "resources\/images\/buttons\/aid_clan_hover.png"
             }
+        },
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "15"
+        }
+    },
+    "biome_button_prototype": {
+        "misc": {
+            "text_vert_alignment": "top",
+            "text_vert_alignment_padding": "23"
         }
     },
     "#forest_biome_button": {
+        "prototype": "biome_button_prototype",
         "images": {
             "normal_image": {
                 "path": "resources\/images\/buttons\/forest.png"
@@ -2011,6 +2031,7 @@
         }
     },
     "#mountain_biome_button": {
+        "prototype": "biome_button_prototype",
         "images": {
             "normal_image": {
                 "path": "resources\/images\/buttons\/mountain.png"
@@ -2027,6 +2048,7 @@
         }
     },
     "#plains_biome_button": {
+        "prototype": "biome_button_prototype",
         "images": {
             "normal_image": {
                 "path": "resources\/images\/buttons\/plains.png"
@@ -2043,6 +2065,7 @@
         }
     },
     "#beach_biome_button": {
+        "prototype": "biome_button_prototype",
         "images": {
             "normal_image": {
                 "path": "resources\/images\/buttons\/beach.png"

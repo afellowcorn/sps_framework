@@ -826,11 +826,6 @@ class ProfileScreen(Screens):
                 else:
                     mate_names.append(f"{str(mate_ob.name)}")
 
-            if len(the_cat.mate) == 1:
-                output += "mate: "
-            else:
-                output += "mates: "
-
             mate_block = ", ".join(mate_names)
 
             if len(the_cat.mate) > 2:
@@ -841,7 +836,9 @@ class ProfileScreen(Screens):
                     item2=i18n.t("general.mate_extra", count=len(the_cat.mate) - 2),
                 )
 
-            output += mate_block
+            output += i18n.t(
+                "general.mate_label", count=len(mate_names), mates=mate_block
+            )
 
         if not the_cat.dead:
             # NEWLINE ----------
@@ -2110,7 +2107,7 @@ class ProfileScreen(Screens):
             )
             self.destroy_accessory_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((578, 0), (172, 36))),
-                "destroy accessory",
+                "screens.profile.destroy_accessory",
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (172, 36)),
                 object_id="@buttonstyles_ladder_bottom",
                 starting_height=2,
@@ -2164,28 +2161,34 @@ class ProfileScreen(Screens):
         elif self.open_tab == "personal":
             # Button to trans or cis the cats.
             if self.the_cat.gender == "male" and self.the_cat.genderalign == "male":
-                self.cis_trans_button.set_text("change to trans\nfemale")
+                self.cis_trans_button.set_text(
+                    "screens.profile.change_gender_transfemale"
+                )
             elif (
                 self.the_cat.gender == "female" and self.the_cat.genderalign == "female"
             ):
-                self.cis_trans_button.set_text("change to trans\nmale")
+                self.cis_trans_button.set_text(
+                    "screens.profile.change_gender_trans_female"
+                )
             elif self.the_cat.genderalign in ["trans female", "trans male"]:
-                self.cis_trans_button.set_text("change to\nnonbinary")
+                self.cis_trans_button.set_text(
+                    "screens.profile.change_gender_nonbinary"
+                )
             elif self.the_cat.genderalign not in [
                 "female",
                 "trans female",
                 "male",
                 "trans male",
             ]:
-                self.cis_trans_button.set_text("change to \ncisgender")
+                self.cis_trans_button.set_text("screens.profile.change_gender_cis")
             elif self.the_cat.gender == "male" and self.the_cat.genderalign == "female":
-                self.cis_trans_button.set_text("change to \ncisgender")
+                self.cis_trans_button.set_text("screens.profile.change_gender_cis")
             elif self.the_cat.gender == "female" and self.the_cat.genderalign == "male":
-                self.cis_trans_button.set_text("change to \ncisgender")
+                self.cis_trans_button.set_text("screens.profile.change_gender_cis")
             elif self.the_cat.genderalign:
-                self.cis_trans_button.set_text("change to \ncisgender")
+                self.cis_trans_button.set_text("screens.profile.change_gender_cis")
             else:
-                self.cis_trans_button.set_text("change to \ncisgender")
+                self.cis_trans_button.set_text("screens.profile.change_gender_cis")
                 self.cis_trans_button.disable()
 
         # Dangerous Tab
@@ -2266,14 +2269,14 @@ class ProfileScreen(Screens):
                     ui_scale(pygame.Rect((52, 514), (34, 34))),
                     "",
                     object_id="@unchecked_checkbox",
-                    tool_tip_text="Show the Moon that certain history events occurred on",
+                    tool_tip_text="screens.profile.show_moons_tooltip",
                     manager=MANAGER,
                 )
                 self.show_moons = UIImageButton(
                     ui_scale(pygame.Rect((52, 514), (34, 34))),
                     "",
                     object_id="@checked_checkbox",
-                    tool_tip_text="Stop showing the Moon that certain history events occurred on",
+                    tool_tip_text="screens.profile.no_moons_tooltip",
                     manager=MANAGER,
                 )
                 if game.switches["show_history_moons"]:
@@ -2303,24 +2306,14 @@ class ProfileScreen(Screens):
                     "",
                     object_id="#help_button",
                     manager=MANAGER,
-                    tool_tip_text="The notes section has limited html capabilities.<br>"
-                    "Use the following commands with < and > in place of the apostrophes.<br>"
-                    "-'br' to start a new line.<br>"
-                    "-Encase text between 'b' and '/b' to bold.<br>"
-                    "-Encase text between 'i' and '/i' to italicize.<br>"
-                    "-Encase text between 'u' and '/u' to underline.<br><br>"
-                    "The following font related codes can be used, "
-                    "but keep in mind that not all font faces will work.<br>"
-                    "-Encase text between 'font face = name of font you wish to use' and '/font' to change the font face.<br>"
-                    "-Encase text between 'font color= #hex code of the color' and '/font' to change the color of the text.<br>"
-                    "-Encase text between 'font size=number of size' and '/font' to change the text size.",
+                    tool_tip_text="screens.profile.text_entry_help_tooltip",
                 )
                 if self.editing_notes is True:
                     self.save_text = UIImageButton(
                         ui_scale(pygame.Rect((52, 514), (34, 34))),
                         "",
                         object_id="@unchecked_checkbox",
-                        tool_tip_text="lock and save text",
+                        tool_tip_text="screens.profile.text_entry_help_tooltip",
                         manager=MANAGER,
                     )
 
@@ -2335,7 +2328,7 @@ class ProfileScreen(Screens):
                         ui_scale(pygame.Rect((52, 514), (34, 34))),
                         "",
                         object_id="@checked_checkbox_smalltooltip",
-                        tool_tip_text="edit text",
+                        tool_tip_text="screens.profile.text_entry_edit_tooltip",
                         manager=MANAGER,
                     )
 

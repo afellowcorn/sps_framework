@@ -1778,7 +1778,10 @@ def adjust_list_text(list_of_items) -> str:
     :param list_of_items: the list of items you want converted
     :return: the new string
     """
-    if len(list_of_items) == 1:
+    if len(list_of_items) == 0:
+        item1 = ""
+        item2 = ""
+    elif len(list_of_items) == 1:
         item1 = list_of_items[0]
         item2 = ""
     elif len(list_of_items) == 2:

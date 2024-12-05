@@ -24,11 +24,11 @@
             "one": "The medicine cat is content with how many herbs {PRONOUN/med_cat/subject} {VERB/med_cat/has/have} stocked up.",
             "many": "The medicine cats are content with how many herbs they have stocked up."
         },
-        "herbs_amount_high": {
+        "herb_amount_high": {
             "one": "The herb stores are overflowing and the medicine cat has little worry.",
             "many": "The herb stores are overflowing and the medicine cats have little worry."
         },
-        "herbs_amount_very_high": {
+        "herb_amount_very_high": {
             "one": "StarClan has blessed them with plentiful herbs and the medicine cat sends {PRONOUN/med_cat/poss} thanks to Silverpelt.",
             "many": "StarClan has blessed them with plentiful herbs and the medicine cats send their thanks to Silverpelt."
         }

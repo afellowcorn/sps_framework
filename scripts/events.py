@@ -1252,8 +1252,13 @@ class Events:
 
     def load_war_resources(self):
         resource_dir = f"resources/lang/{i18n.config.get('locale')}/events/"
-        with open(f"{resource_dir}war.json", encoding="ascii") as read_file:
-            self.WAR_TXT = ujson.loads(read_file.read())
+        fallback_dir = f"resources/lang/{i18n.config.get('fallback')}/events/"
+        try:
+            with open(f"{resource_dir}war.json", encoding="ascii") as read_file:
+                self.WAR_TXT = ujson.loads(read_file.read())
+        except FileNotFoundError:
+            with open(f"{fallback_dir}war.json", encoding="ascii") as read_file:
+                self.WAR_TXT = ujson.loads(read_file.read())
 
     def check_war(self):
         """

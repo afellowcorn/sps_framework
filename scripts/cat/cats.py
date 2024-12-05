@@ -3390,7 +3390,12 @@ class Cat:
             return "\n".join(
                 [
                     self.genderalign,
-                    i18n.t(f"general.{self.age}"),
+                    i18n.t(
+                        f"general.{self.age}"
+                        if self.age != "kitten"
+                        else "general.kitten_profile",
+                        count=1,
+                    ),
                     i18n.t(f"personality.{self.personality.trait}"),
                     self.skills.skill_string(),
                 ]
@@ -3615,24 +3620,44 @@ with open(
 ) as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
+fallback_directory = f"resources/lang/{i18n.config.get('fallback')}/"
 resource_directory = f"resources/lang/{lang}/"
+try:
+    with open(
+        f"{resource_directory}events/death/death_reactions/minor_major.json",
+        "r",
+        encoding="utf-8",
+    ) as read_file:
+        MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
+except FileNotFoundError:
+    with open(
+        f"{fallback_directory}events/death/death_reactions/minor_major.json",
+        "r",
+        encoding="utf-8",
+    ) as read_file:
+        MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
 
-with open(
-    f"{resource_directory}events/death/death_reactions/minor_major.json",
-    "r",
-    encoding="utf-8",
-) as read_file:
-    MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
+try:
+    with open(
+        f"{resource_directory}lead_ceremony_sc.json", "r", encoding="utf-8"
+    ) as read_file:
+        LEAD_CEREMONY_SC = ujson.loads(read_file.read())
+except FileNotFoundError:
+    with open(
+        f"{fallback_directory}lead_ceremony_sc.json", "r", encoding="utf-8"
+    ) as read_file:
+        LEAD_CEREMONY_SC = ujson.loads(read_file.read())
 
-with open(
-    f"{resource_directory}lead_ceremony_sc.json", "r", encoding="utf-8"
-) as read_file:
-    LEAD_CEREMONY_SC = ujson.loads(read_file.read())
-
-with open(
-    f"{resource_directory}lead_ceremony_df.json", "r", encoding="utf-8"
-) as read_file:
-    LEAD_CEREMONY_DF = ujson.loads(read_file.read())
+try:
+    with open(
+        f"{resource_directory}lead_ceremony_df.json", "r", encoding="utf-8"
+    ) as read_file:
+        LEAD_CEREMONY_DF = ujson.loads(read_file.read())
+except FileNotFoundError:
+    with open(
+        f"{fallback_directory}lead_ceremony_df.json", "r", encoding="utf-8"
+    ) as read_file:
+        LEAD_CEREMONY_DF = ujson.loads(read_file.read())
 
 with open("resources/dicts/backstories.json", "r", encoding="utf-8") as read_file:
     BACKSTORIES = ujson.loads(read_file.read())
