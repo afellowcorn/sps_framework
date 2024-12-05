@@ -333,6 +333,17 @@
   },
   {
     "interaction_type": "praise",
+    "event_text": "At the Gathering, m_c senses a bitter, hateful spirit hovering around o_c_n's leader. m_c congratulates o_c_n's leader on dealing with traitors, but o_c_n's leader's eyes flash darkly. Sore subject, apparently.",
+    "rel_change": -3,
+    "m_c": { 
+      "trait": [ "bloodthirsty" ],
+      "skill": [ "GHOST,1" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "praise",
     "event_text": "At the Gathering, m_c notes that o_c_n's leader has very pronounced, long toes and tells them they'd be a great runner with those grippy helpers. m_c winces the moment the words are out of {PRONOUN/m_c/poss} mouth, and sure enough, o_c_n's leader doesn't seem to find this a great compliment.",
     "rel_change": -1,
     "m_c": { 
@@ -557,6 +568,16 @@
     "rel_change": 0,
     "m_c": {
       "trait": ["shameless", "troublesome", "childish", "cold", "bold", "grumpy", "flamboyant", "rebellious", "arrogant" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
+    "interaction_type": "provoke",
+    "event_text": "At the Gathering, m_c flexes {PRONOUN/m_c/poss} claws and prepares some threatening remarks - but gets distracted by an otherworldly presence and misses {PRONOUN/m_c/poss} chance to insult o_c_n.",
+    "rel_change": 0,
+    "m_c": {
+      "skill": ["GHOST,1"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -877,8 +898,21 @@
     "other_clan_temper": ["gracious", "amiable", "mellow"]
   },
   {
+    "interaction_type": "befriend",
+    "event_text": "In their Gathering speech, o_c_n's leader announces the birth of new kittens. m_c promises them that c_n will help rip out the throat of anyone that poses a threat to these kits. o_c_n's leader is put off by m_c's zeal.",
+    "rel_change": -1,
+    "m_c": {
+      "trait": [
+        "fierce", "bloodthirsty"
+      ],
+      "skill": [ "KIT,1" ]
+    },
+    "player_clan_temper": ["any"],
+    "other_clan_temper": ["any"]
+  },
+  {
     "interaction_type": "antagonize",
-    "event_text": "During the Gathering, m_c makes scathing comments about o_c_n. o_c_n's leader is quite blatantly ignoring {PRONOUN/m_c/object} though.",
+    "event_text": "During the Gathering, m_c makes scathing comments about o_c_n. o_c_n's leader blatantly ignores {PRONOUN/m_c/object}.",
     "rel_change": 0,
     "m_c": {},
     "player_clan_temper": ["any"],
