@@ -317,20 +317,19 @@ class GenerateEvents:
 
             if event.m_c:
                 if not self.event_for_cat(
-                    cat_info=event.m_c,
-                    cat=cat,
-                    cat_group=[cat, random_cat] if random_cat else None,
-                    event_id=event.event_id
+                        cat_info=event.m_c,
+                        cat=cat,
+                        cat_group=[cat, random_cat] if random_cat else None,
+                        event_id=event.event_id
                 ):
                     continue
 
-            # check that a random_cat is available to use for r_c
             if event.r_c and random_cat:
                 if not self.event_for_cat(
-                    cat_info=event.r_c,
-                    cat=random_cat,
-                    cat_group=[random_cat, cat],
-                    event_id=event.event_id
+                        cat_info=event.r_c,
+                        cat=random_cat,
+                        cat_group=[random_cat, cat],
+                        event_id=event.event_id
                 ):
                     continue
 
@@ -445,7 +444,10 @@ class GenerateEvents:
                             discard = False
 
                     else:  # if supply type wasn't freshkill, then it must be a herb type
-                        if not self.event_for_herb_supply(trigger, supply_type, clan_size):
+                        if not self.event_for_herb_supply(
+                                trigger,
+                                supply_type,
+                                clan_size):
                             discard = True
                             break
                         else:
@@ -546,48 +548,11 @@ class GenerateEvents:
                     continue
 
             cat_info = event["m_c"]
-            if "status" in cat_info:
-                # special lost cat check
-                if event_type == "outsider":
-                    if cat.status not in [
-                        "loner",
-                        "rogue",
-                        "kittypet",
-                        "former Clancat",
-                        "exiled",
-                    ]:
-                        if "lost" not in cat_info["status"]:
-                            continue
-                    elif (
-                            cat.status.casefold() not in [x.casefold() for x in cat_info["status"]]
-                            and "any" not in cat_info["status"]
-                    ):
-                        continue
-                elif (
-                        cat.status not in cat_info["status"]
-                        and "any" not in cat_info["status"]
-                ):
-                    continue
-            if "age" in cat_info:
-                if cat.age not in cat_info["age"]:
-                    continue
-            if "trait" in cat_info:
-                if cat.personality.trait not in cat_info["trait"]:
-                    continue
-            if "skill" in cat_info:
-                has_skill = False
-                for _skill in cat_info["skill"]:
-                    split = _skill.split(",")
-
-                    if len(split) < 2:
-                        print("Cat skill incorrectly formatted", _skill)
-                        continue
-
-                    if cat.skills.meets_skill_requirement(split[0], int(split[1])):
-                        has_skill = True
-                        break
-                if not has_skill:
-                    continue
+            if not self.event_for_cat(
+                    cat_info=cat_info,
+                    cat=cat
+            ):
+                continue
 
             possible_events.append(event)
 
@@ -827,7 +792,7 @@ class GenerateEvents:
             else:
                 return False
 
-    def event_for_cat(self, cat_info: dict, cat, cat_group: list, event_id: str = None, p_l = None) -> bool:
+    def event_for_cat(self, cat_info: dict, cat, cat_group: list = None, event_id: str = None, p_l=None) -> bool:
         """
         checks if a cat is suitable for the event
         :param cat_info: cat's dict of constraints
@@ -852,10 +817,10 @@ class GenerateEvents:
 
         if cat_info["relationship_status"]:
             if not filter_relationship_type(
-                group=cat_group,
-                filter_types=cat_info["relationship_statu"],
-                event_id=event_id,
-                patrol_leader=p_l
+                    group=cat_group,
+                    filter_types=cat_info["relationship_statu"],
+                    event_id=event_id,
+                    patrol_leader=p_l
             ):
                 return False
 
@@ -911,7 +876,7 @@ class GenerateEvents:
                 continue
 
             if cat.skills.meets_skill_requirement(
-                skill_info[0], int(skill_info[1])
+                    skill_info[0], int(skill_info[1])
             ):
                 has_good_skill = True
                 break
