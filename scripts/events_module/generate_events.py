@@ -3,6 +3,7 @@
 import random
 
 import ujson
+import re
 
 from scripts.events_module.ongoing.ongoing_event import OngoingEvent
 from scripts.events_module.short.short_event import ShortEvent
@@ -26,7 +27,7 @@ class GenerateEvents:
 
     INJURY_DISTRIBUTION = None
     with open(
-        f"resources/dicts/conditions/event_injuries_distribution.json", "r"
+            f"resources/dicts/conditions/event_injuries_distribution.json", "r"
     ) as read_file:
         INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 
@@ -38,8 +39,8 @@ class GenerateEvents:
     def get_short_event_dicts(file_path):
         try:
             with open(
-                file_path,
-                "r",
+                    file_path,
+                    "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -53,8 +54,8 @@ class GenerateEvents:
         events = None
         try:
             with open(
-                file_path,
-                "r",
+                    file_path,
+                    "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -67,8 +68,8 @@ class GenerateEvents:
         try:
             file_path = f"{resource_directory}/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
             with open(
-                file_path,
-                "r",
+                    file_path,
+                    "r",
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -222,16 +223,16 @@ class GenerateEvents:
 
         return event_list
 
-    @staticmethod
     def filter_possible_short_events(
-        Cat_class,
-        possible_events,
-        cat,
-        random_cat,
-        other_clan,
-        freshkill_active,
-        freshkill_trigger_factor,
-        sub_types=None,
+            self,
+            Cat_class,
+            possible_events,
+            cat,
+            random_cat,
+            other_clan,
+            freshkill_active,
+            freshkill_trigger_factor,
+            sub_types=None,
     ):
         final_events = []
         incorrect_format = []
@@ -246,12 +247,12 @@ class GenerateEvents:
         for event in possible_events:
             if event.history:
                 if (
-                    not isinstance(event.history, list)
-                    or "cats" not in event.history[0]
+                        not isinstance(event.history, list)
+                        or "cats" not in event.history[0]
                 ):
                     if (
-                        f"{event.event_id} history formatted incorrectly"
-                        not in incorrect_format
+                            f"{event.event_id} history formatted incorrectly"
+                            not in incorrect_format
                     ):
                         incorrect_format.append(
                             f"{event.event_id} history formatted incorrectly"
@@ -259,8 +260,8 @@ class GenerateEvents:
             if event.injury:
                 if not isinstance(event.injury, list) or "cats" not in event.injury[0]:
                     if (
-                        f"{event.event_id} injury formatted incorrectly"
-                        not in incorrect_format
+                            f"{event.event_id} injury formatted incorrectly"
+                            not in incorrect_format
                     ):
                         incorrect_format.append(
                             f"{event.event_id} injury formatted incorrectly"
@@ -279,57 +280,17 @@ class GenerateEvents:
             if wrong_type:
                 continue
 
-            discard = True
-            for location in event.location:
-                if location == "any":
-                    discard = False
-                    break
-                if ":" in location:
-                    location_info = location.split(":")
-                    req_biome = location_info[0]
-                    req_camps = location_info[1].split("_")
-                else:
-                    req_biome = location
-                    req_camps = ["any"]
-
-                if req_biome == game.clan.biome.lower():
-                    discard = False
-                else:
-                    continue
-
-                if game.clan.camp_bg in req_camps or "any" in req_camps:
-                    discard = False
-                else:
-                    continue
-
-                if not discard:
-                    break
-
-            if discard:
+            if not self.event_for_location(event.location):
                 continue
 
-            # check season
-            if (
-                game.clan.current_season.lower() not in event.season
-                and "any" not in event.season
-            ):
+            if not self.event_for_season(event.season):
                 continue
 
             # check tags
-            prevent_bypass = "skill_trait_required" in event.tags
+            if not self.event_for_tags(Cat_class, event.tags, cat):
+                continue
 
-            # some events are classic only
-            if (
-                game.clan.game_mode in ["expanded", "cruel season"]
-                and "classic" in event.tags
-            ):
-                continue
-            # cruel season only events
-            if (
-                game.clan.game_mode in ["classic", "expanded"]
-                and "cruel_season" in event.tags
-            ):
-                continue
+            prevent_bypass = "skill_trait_required" in event.tags
 
             # make complete leader death less likely until the leader is over 150 moons (or unless it's a murder)
             if cat.status == "leader":
@@ -337,61 +298,17 @@ class GenerateEvents:
                     if int(cat.moons) < 150 and int(random.random() * 5):
                         continue
 
-                leader_lives = game.clan.leader_lives
-
-                # make sure that 'some lives' and "lives_remain" events don't show up if the leader doesn't have
-                # multiple lives to spare
-                if "some_lives" in event.tags and leader_lives <= 3:
-                    continue
-                if "lives_remain" in event.tags and leader_lives < 2:
-                    continue
-
-                # check leader life count
-                if "high_lives" in event.tags and leader_lives not in [7, 8, 9]:
-                    continue
-                elif "mid_lives" in event.tags and leader_lives not in [4, 5, 6]:
-                    continue
-                elif "low_lives" in event.tags and leader_lives not in [1, 2, 3]:
-                    continue
-
-            discard = False
-            for rank in Cat_class.rank_sort_order:
-                if f"clan:{rank}" in event.tags:
-                    if rank in ["leader", "deputy"] and not get_alive_status_cats(
-                        Cat_class, [rank]
-                    ):
-                        discard = True
-                    elif not len(get_alive_status_cats(Cat_class, [rank])) >= 2:
-                        discard = True
-            if discard:
-                continue
-
-            if "clan_apps" in event.tags and not get_alive_status_cats(
-                Cat_class,
-                ["apprentice", "medicine cat apprentice", "mediator apprentice"],
-            ):
-                continue
-
-            # If the cat or any of their mates have "no kits" toggled, forgo the adoption event.
-            if "adoption" in event.tags:
-                if cat.no_kits:
-                    continue
-                if cat.moons <= 14 + cat.age_moons["kitten"][1]:
-                    continue
-                if any(Cat_class.fetch_cat(i).no_kits for i in cat.mate):
-                    continue
-
             # check for old age
             if (
-                "old_age" in event.sub_type
-                and cat.moons < game.config["death_related"]["old_age_death_start"]
+                    "old_age" in event.sub_type
+                    and cat.moons < game.config["death_related"]["old_age_death_start"]
             ):
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
             if (
-                "old_age" not in event.sub_type
-                and cat.moons > game.config["death_related"]["old_age_death_start"]
-                and int(random.random() * 3)
+                    "old_age" not in event.sub_type
+                    and cat.moons > game.config["death_related"]["old_age_death_start"]
+                    and int(random.random() * 3)
             ):
                 continue
 
@@ -402,8 +319,8 @@ class GenerateEvents:
 
             # check if already trans
             if (
-                "transition" in event.sub_type
-                and cat.gender != cat.genderalign
+                    "transition" in event.sub_type
+                    and cat.gender != cat.genderalign
             ):
                 continue
 
@@ -411,21 +328,21 @@ class GenerateEvents:
                 if cat.age not in event.m_c["age"] and "any" not in event.m_c["age"]:
                     continue
                 if (
-                    cat.status not in event.m_c["status"]
-                    and "any" not in event.m_c["status"]
+                        cat.status not in event.m_c["status"]
+                        and "any" not in event.m_c["status"]
                 ):
                     continue
                 if event.m_c["relationship_status"]:
                     if not filter_relationship_type(
-                        group=[cat, random_cat],
-                        filter_types=event.m_c["relationship_status"],
-                        event_id=event.event_id,
+                            group=[cat, random_cat],
+                            filter_types=event.m_c["relationship_status"],
+                            event_id=event.event_id,
                     ):
                         continue
 
                 # check cat trait and skill
                 if (
-                    int(random.random() * trait_skill_bypass) or prevent_bypass
+                        int(random.random() * trait_skill_bypass) or prevent_bypass
                 ):  # small chance to bypass
                     has_trait = False
                     if event.m_c["trait"]:
@@ -442,7 +359,7 @@ class GenerateEvents:
                                 continue
 
                             if cat.skills.meets_skill_requirement(
-                                split[0], int(split[1])
+                                    split[0], int(split[1])
                             ):
                                 has_skill = True
                                 break
@@ -473,7 +390,7 @@ class GenerateEvents:
                                 continue
 
                             if cat.skills.meets_skill_requirement(
-                                split[0], int(split[1])
+                                    split[0], int(split[1])
                             ):
                                 has_skill = True
                                 break
@@ -489,35 +406,34 @@ class GenerateEvents:
                 # check gender for transition events
                 if event.m_c["gender"]:
                     if (
-                        cat.gender not in event.m_c["gender"]
-                        and "any" not in event.m_c["gender"]
+                            cat.gender not in event.m_c["gender"]
+                            and "any" not in event.m_c["gender"]
                     ):
                         continue
-
 
             # check that a random_cat is available to use for r_c
             if event.r_c and random_cat:
                 if (
-                    random_cat.age not in event.r_c["age"]
-                    and "any" not in event.r_c["age"]
+                        random_cat.age not in event.r_c["age"]
+                        and "any" not in event.r_c["age"]
                 ):
                     continue
                 if (
-                    random_cat.status not in event.r_c["status"]
-                    and "any" not in event.r_c["status"]
+                        random_cat.status not in event.r_c["status"]
+                        and "any" not in event.r_c["status"]
                 ):
                     continue
                 if event.r_c["relationship_status"]:
                     if not filter_relationship_type(
-                        group=[cat, random_cat],
-                        filter_types=event.r_c["relationship_status"],
-                        event_id=event.event_id,
+                            group=[cat, random_cat],
+                            filter_types=event.r_c["relationship_status"],
+                            event_id=event.event_id,
                     ):
                         continue
 
                 # check cat trait and skill
                 if (
-                    int(random.random() * trait_skill_bypass) or prevent_bypass
+                        int(random.random() * trait_skill_bypass) or prevent_bypass
                 ):  # small chance to bypass
                     has_trait = False
                     if event.r_c["trait"]:
@@ -534,7 +450,7 @@ class GenerateEvents:
                                 continue
 
                             if random_cat.skills.meets_skill_requirement(
-                                split[0], int(split[1])
+                                    split[0], int(split[1])
                             ):
                                 has_skill = True
                                 break
@@ -565,7 +481,7 @@ class GenerateEvents:
                                 continue
 
                             if random_cat.skills.meets_skill_requirement(
-                                split[0], int(split[1])
+                                    split[0], int(split[1])
                             ):
                                 has_skill = True
                                 break
@@ -609,16 +525,16 @@ class GenerateEvents:
                     for injury in block["injuries"]:
                         if injury in GenerateEvents.INJURIES:
                             if (
-                                GenerateEvents.INJURIES[injury]["severity"]
-                                != allowed_severity
+                                    GenerateEvents.INJURIES[injury]["severity"]
+                                    != allowed_severity
                             ):
                                 discard = True
                                 break
 
                             if "m_c" in block["cats"]:
                                 if injury == "mangled tail" and (
-                                    "NOTAIL" in cat.pelt.scars
-                                    or "HALFTAIL" in cat.pelt.scars
+                                        "NOTAIL" in cat.pelt.scars
+                                        or "HALFTAIL" in cat.pelt.scars
                                 ):
                                     continue
 
@@ -626,14 +542,14 @@ class GenerateEvents:
                                     continue
                             if "r_c" in block["cats"]:
                                 if injury == "mangled tail" and (
-                                    "NOTAIL" in random_cat.pelt.scars
-                                    or "HALFTAIL" in random_cat.pelt.scars
+                                        "NOTAIL" in random_cat.pelt.scars
+                                        or "HALFTAIL" in random_cat.pelt.scars
                                 ):
                                     continue
 
                                 if (
-                                    injury == "torn ear"
-                                    and "NOEAR" in random_cat.pelt.scars
+                                        injury == "torn ear"
+                                        and "NOEAR" in random_cat.pelt.scars
                                 ):
                                     continue
 
@@ -642,30 +558,15 @@ class GenerateEvents:
 
             # check if outsider event is allowed
             if event.outsider:
-                # don't waste time checking rep if any rep is allowed
-                if "any" not in event.outsider["current_rep"]:
-                    # hostile
-                    if (
-                        1 <= game.clan.reputation <= 30
-                        and "hostile" not in event.outsider["current_rep"]
-                    ):
-                        continue
-                    # neutral
-                    elif (
-                        31 <= game.clan.reputation <= 70
-                        and "neutral" not in event.outsider["current_rep"]
-                    ):
-                        continue
-                    # welcoming
-                    elif (
-                        71 <= game.clan.reputation <= 100
-                        and "welcoming" not in event.outsider["current_rep"]
-                    ):
-                        continue
+                if not self.event_for_reputation(event.outsider["current_rep"]):
+                    continue
 
             # other Clan related checks
             if event.other_clan:
                 if not other_clan:
+                    continue
+
+                if not self.event_for_clan_relations(event.other_clan["current_rep"], other_clan):
                     continue
 
                 # during a war we want to encourage the clans to have positive events
@@ -673,202 +574,43 @@ class GenerateEvents:
                 if "war" in event.sub_type:
                     rel_change_type = game.switches["war_rel_change_type"]
                     if (
-                        event.other_clan["changed"] < 0
-                        and rel_change_type != "rel_down"
-                    ):
-                        continue
-
-                # don't waste time checking rep if any rep is allowed
-                if "any" not in event.other_clan["current_rep"]:
-                    # ally
-                    if (
-                        "ally" in event.other_clan["current_rep"]
-                        and int(other_clan.relations) < 17
-                    ):
-                        continue
-                    # neutral
-                    elif "neutral" in event.other_clan["current_rep"] and (
-                        int(other_clan.relations) <= 7
-                        or int(other_clan.relations) >= 17
-                    ):
-                        continue
-                    # hostile
-                    elif (
-                        "hostile" in event.other_clan["current_rep"]
-                        and int(other_clan.relations) > 7
+                            event.other_clan["changed"] < 0
+                            and rel_change_type != "rel_down"
                     ):
                         continue
 
             # clans below a certain age can't have their supplies messed with
             if game.clan.age < 5 and event.supplies:
                 continue
+
             elif event.supplies:
                 clan_size = get_living_clan_cat_count(Cat_class)
-                discard = True
+                discard = False
                 for supply in event.supplies:
                     trigger = supply["trigger"]
                     supply_type = supply["type"]
                     if supply_type == "freshkill":
-                        # classic mode doesn't do freshkill
-                        # TODO: consider if events could still be allowed as "flavor" rather than actual supply changes
-                        if game.clan.game_mode == "classic":
-                            continue
-
-                        pile = game.clan.freshkill_pile
-                        needed_amount = pile.amount_food_needed()
                         if not freshkill_active:
                             continue
 
-                        if "always" in trigger:
+                        if not self.event_for_freshkill_supply(
+                            game.clan.freshkill_pile,
+                            trigger,
+                            freshkill_trigger_factor,
+                            clan_size
+                        ):
+                            discard = True
+                            break
+                        else:
                             discard = False
 
-                        # "low" means total_amount must be less than half what is needed
-                        if "low" in trigger:
-                            if needed_amount / 2 > pile.total_amount:
-                                discard = False
-
-                        # "adequate" means total_amount must be greater than half needed,
-                        # but not greater than 1 moons worth of food
-                        if "adequate" in trigger:
-                            if needed_amount / 2 < pile.total_amount < needed_amount:
-                                discard = False
-
-                        # now do the math to find how much is too much prey
-                        trigger_factor = freshkill_trigger_factor
-                        divider = 35 if game.clan.game_mode == "expanded" else 20
-                        trigger_factor = trigger_factor - round(
-                            pow((clan_size / divider), 2)
-                        )
-                        if trigger_factor < 2 and game.clan.game_mode == "expanded":
-                            trigger_factor = 2
-                        if (
-                            trigger_factor < 1.2
-                            and game.clan.game_mode == "cruel season"
-                        ):
-                            trigger_factor = 1.2
-
-                        trigger_value = round(trigger_factor * needed_amount, 2)
-
-                        # "full" means total_amount is enough for 1 moons worth, but is not over the multiplier
-                        if "full" in trigger:
-                            # check this quick to see if we can skip the math
-                            if needed_amount < pile.total_amount < trigger_value:
-                                discard = False
-
-                        # "excess" means total_amount is over the multiplier and there's too much food!
-                        if "excess" in trigger:
-                            if pile.total_amount > trigger_value:
-                                discard = False
-
-                        if discard:
-                            break
-
                     else:  # if supply type wasn't freshkill, then it must be a herb type
-                        herbs = game.clan.herbs
-                        needed_amount = int(clan_size * 3)
-                        entire_supply_needed_amount = needed_amount * len(herbs.keys())
-                        discard = True
-
-                        if not herbs:
+                        if not self.event_for_herb_supply(trigger, supply_type, clan_size):
+                            discard = True
                             break
-
-                        if supply_type == "all_herb":
-                            if "always" in trigger:
-                                discard = False
-                                break
-                            if "low" in trigger:
-                                for herb in herbs:
-                                    if herbs[herb] < entire_supply_needed_amount / 2:
-                                        discard = False
-                                    else:
-                                        discard = True
-                                        break
-                            if "adequate" in trigger:
-                                for herb in herbs:
-                                    if (
-                                        entire_supply_needed_amount / 2
-                                        < herbs[herb]
-                                        < entire_supply_needed_amount
-                                    ):
-                                        discard = False
-                                    else:
-                                        discard = True
-                                        break
-                            if "full" in trigger:
-                                for herb in herbs:
-                                    if (
-                                        entire_supply_needed_amount
-                                        < herbs[herb]
-                                        < entire_supply_needed_amount * 2
-                                    ):
-                                        discard = False
-                                    else:
-                                        discard = True
-                                        break
-                            if "excess" in trigger:
-                                for herb in herbs:
-                                    if entire_supply_needed_amount * 2 < herbs[herb]:
-                                        discard = False
-                                    else:
-                                        discard = True
-                                        break
-                        elif supply_type == "any_herb":
-                            for herb in herbs.keys():
-                                if "always" in trigger:
-                                    discard = False
-                                    break
-                                if "low" in trigger and herbs[herb] < needed_amount / 2:
-                                    discard = False
-                                    break
-                                if (
-                                    "adequate" in trigger
-                                    and needed_amount / 2 < herbs[herb] < needed_amount
-                                ):
-                                    discard = False
-                                    break
-                                if (
-                                    "full" in trigger
-                                    and needed_amount < herbs[herb] < needed_amount * 2
-                                ):
-                                    discard = False
-                                    break
-                                if (
-                                    "excess" in trigger
-                                    and needed_amount * 2 < herbs[herb]
-                                ):
-                                    discard = False
-                                    break
-                            if discard:
-                                break
                         else:
-                            chosen_herb = supply_type
-                            if chosen_herb not in herbs:
-                                continue
-                            if "always" in trigger:
-                                discard = False
-                            if "low" in trigger:
-                                if herbs[chosen_herb] < needed_amount / 2:
-                                    discard = False
-                            if "adequate" in trigger:
-                                if (
-                                    needed_amount / 2
-                                    < herbs[chosen_herb]
-                                    < needed_amount
-                                ):
-                                    discard = False
-                            if "full" in trigger:
-                                if (
-                                    needed_amount
-                                    < herbs[chosen_herb]
-                                    < needed_amount * 2
-                                ):
-                                    discard = False
-                            if "excess" in trigger:
-                                if needed_amount * 2 < herbs[chosen_herb]:
-                                    discard = False
-
-                            if discard:
-                                break
+                            discard = False
+                        
                 if discard:
                     continue
 
@@ -923,13 +665,13 @@ class GenerateEvents:
         return possible_events
 
     def possible_lead_den_events(
-        self,
-        cat,
-        event_type: str,
-        interaction_type: str,
-        success: bool,
-        other_clan_temper=None,
-        player_clan_temper=None,
+            self,
+            cat,
+            event_type: str,
+            interaction_type: str,
+            success: bool,
+            other_clan_temper=None,
+            player_clan_temper=None,
     ) -> list:
         """
         finds and generates a list of possible leader den events
@@ -949,38 +691,18 @@ class GenerateEvents:
 
             if "other_clan_temper" in event or "player_clan_temper" in event:
                 if (
-                    other_clan_temper not in event["other_clan_temper"]
-                    and "any" not in event["other_clan_temper"]
+                        other_clan_temper not in event["other_clan_temper"]
+                        and "any" not in event["other_clan_temper"]
                 ):
                     continue
                 if (
-                    player_clan_temper not in event["player_clan_temper"]
-                    and "any" not in event["player_clan_temper"]
+                        player_clan_temper not in event["player_clan_temper"]
+                        and "any" not in event["player_clan_temper"]
                 ):
                     continue
 
             elif "reputation" in event:
-                reputation = game.clan.reputation
-                # hostile
-                if (
-                    1 <= reputation <= 30
-                    and "hostile" not in event["reputation"]
-                    and "any" not in event["reputation"]
-                ):
-                    continue
-                # neutral
-                elif (
-                    31 <= reputation <= 70
-                    and "neutral" not in event["reputation"]
-                    and "any" not in event["reputation"]
-                ):
-                    continue
-                # welcoming
-                elif (
-                    71 <= reputation <= 100
-                    and "welcoming" not in event["reputation"]
-                    and "any" not in event["reputation"]
-                ):
+                if not self.event_for_reputation(event["reputation"]):
                     continue
 
             cat_info = event["m_c"]
@@ -997,13 +719,13 @@ class GenerateEvents:
                         if "lost" not in cat_info["status"]:
                             continue
                     elif (
-                        cat.status.casefold() not in [x.casefold() for x in cat_info["status"]]
-                        and "any" not in cat_info["status"]
+                            cat.status.casefold() not in [x.casefold() for x in cat_info["status"]]
+                            and "any" not in cat_info["status"]
                     ):
                         continue
                 elif (
-                    cat.status not in cat_info["status"]
-                    and "any" not in cat_info["status"]
+                        cat.status not in cat_info["status"]
+                        and "any" not in cat_info["status"]
                 ):
                     continue
             if "age" in cat_info:
@@ -1031,6 +753,249 @@ class GenerateEvents:
 
         return possible_events
 
+    def event_for_location(self, locations: list) -> bool:
+        """
+        checks if the clan is within the given locations
+        """
+        if "any" in locations:
+            return True
+
+        for place in locations:
+            if ":" in place:
+                info = place.split(":")
+                req_biome = info[0]
+                req_camps = info[1].split("_")
+            else:
+                req_biome = place
+                req_camps = ["any"]
+
+            if req_biome == game.clan.biome.lower():
+                if "any" in req_camps or game.clan.camp_bg in req_camps:
+                    return True
+                else:
+                    return False
+            else:
+                return False
+
+    def event_for_season(self, seasons: list) -> bool:
+        """
+        checks if the clan is within the given seasons
+        """
+        if "any" in seasons:
+            return True
+        elif game.clan.current_season.lower() in seasons:
+            return True
+        else:
+            return False
+
+    def event_for_tags(self, Cat_class, tags: list, main_cat) -> bool:
+        """
+        checks if current tags disqualify the event
+        """
+        # some events are mode specific
+        mode = game.clan.game_mode
+        possible_modes = ["classic", "expanded", "cruel_season"]
+        for _poss in possible_modes:
+            if _poss in tags and mode != _poss:
+                return False
+
+        # check leader life tags
+        if main_cat.status == "leader":
+            leader_lives = game.clan.leader_lives
+
+            life_lookup = {
+                "some_lives": 4,
+                "lives_remain": 2,
+                "high_lives": 7,
+                "mid_lives": 4,
+                "low_lives": 1
+            }
+
+            for _con, _val in life_lookup.items():
+                if _con in tags and leader_lives < _val:
+                    return False
+
+        # check for required ranks within the clan
+        for _tag in tags:
+            rank_match = re.match(r"clan:(.+)", _tag)
+            if not rank_match:
+                continue
+            ranks = [x for x in rank_match.split(",")]
+
+            for rank in ranks:
+                if rank == "apps":
+                    if not get_alive_status_cats(
+                            Cat_class,
+                            ["apprentice", "medicine cat apprentice", "mediator apprentice"]):
+                        return False
+                    else:
+                        continue
+
+                if rank in ["leader", "deputy"] and not get_alive_status_cats(Cat_class, [rank]):
+                    return False
+
+                elif not len(get_alive_status_cats(Cat_class, [rank])) >= 2:
+                    return False
+
+        # check if main cat will allow for adoption
+        if "adoption" in tags:
+            if main_cat.no_kits:
+                return False
+            if main_cat.moons <= 14 + main_cat.age_moons["kitten"][1]:
+                return False
+            if any(Cat_class.fetch_cat(i).no_kits for i in main_cat.mate):
+                return False
+
+        return True
+
+    def event_for_reputation(self, required_rep: list) -> bool:
+        """
+        checks if the clan has reputation matching required_rep
+        """
+        if "any" in required_rep:
+            return True
+
+        clan_rep = game.clan.reputation
+
+        if "hostile" in required_rep and 0 <= clan_rep <= 30:
+            return True
+        elif "neutral" in required_rep and 31 <= clan_rep <= 70:
+            return True
+        elif "welcoming" in required_rep and 71 <= clan_rep:
+            return True
+        else:
+            return False
+
+    def event_for_clan_relations(self, required_rel: list, other_clan) -> bool:
+        """
+        checks if the clan has clan relations matching required_rel
+        """
+        if "any" in required_rel:
+            return True
+
+        current_rel = other_clan.relations
+
+        if "hostile" in required_rel and 0 <= current_rel <= 6:
+            return True
+        elif "neutral" in required_rel and 7 <= current_rel <= 17:
+            return True
+        elif "ally" in required_rel and 18 <= current_rel:
+            return True
+        else:
+            return False
+
+    def event_for_freshkill_supply(self, pile, trigger, factor, clan_size) -> bool:
+        """
+        checks if clan has the correct amount of freshkill for event
+        """
+        if game.clan.game_mode == "classic":
+            return False
+
+        needed_amount = pile.amount_food_needed()
+        half_amount = needed_amount / 2
+
+        if "always" in trigger:
+            return True
+        if "low" in trigger and half_amount > pile.total_amount:
+            return True
+        if "adequate" in trigger and half_amount < pile.total_amount < needed_amount:
+            return True
+
+        # find how much is too much freshkill
+        # it would probably be good to move this section of finding trigger_value to the freshkill class
+        divider = 35 if game.clan.game_mode == "expanded" else 20
+        factor = factor - round(
+            pow((clan_size / divider), 2)
+        )
+        if factor < 2 and game.clan.game_mode == "expanded":
+            factor = 2
+
+        trigger_value = round(factor * needed_amount, 2)
+
+        if "full" in trigger and needed_amount < pile.total_amount < trigger_value:
+            return True
+        if "excess" in trigger and pile.total_amount > trigger_value:
+            return True
+
+        # if it hasn't returned by now, it doesn't qualify
+        return False
+
+    def event_for_herb_supply(self, trigger, supply_type, clan_size):
+        """
+        checks if clan's herb supply qualifies for event
+        """
+        herb_supply = game.clan.herbs.copy()
+        possible_herbs = game.clan.HERBS
+        num_of_herbs = len(possible_herbs)
+
+        if not herb_supply and "low" in trigger:
+            return True
+
+        for herb in possible_herbs:
+            if herb not in herb_supply:
+                herb_supply[herb] = 0
+
+        needed_amount = clan_size * 2
+        half_amount = needed_amount / 2
+
+        if supply_type == "all_herb":
+            if "always" in trigger:
+                return True
+            elif "low" in trigger and len([x for x in herb_supply if herb_supply[x] < half_amount]) == num_of_herbs:
+                return True
+            elif "adequate" in trigger and len([x for x in herb_supply if herb_supply[x] < needed_amount]) == num_of_herbs:
+                return True
+            elif "full" in trigger and len([x for x in herb_supply if herb_supply[x] < needed_amount * 2]) == num_of_herbs:
+                return True
+            elif "excess" in trigger and len([x for x in herb_supply if needed_amount * 2 < herb_supply[x]]) == num_of_herbs:
+                return True
+            else:
+                return False
+
+        elif supply_type == "any_herb":
+            if "always" in trigger:
+                return True
+            elif "low" in trigger and [x for x in herb_supply if herb_supply[x] < half_amount]:
+                return True
+            elif "adequate" in trigger and [x for x in herb_supply if herb_supply[x] < needed_amount]:
+                return True
+            elif "full" in trigger and [x for x in herb_supply if herb_supply[x] < needed_amount * 2]:
+                return True
+            elif "excess" in trigger and [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]:
+                return True
+            else:
+                return False
+
+        else:
+            chosen_herb = supply_type
+            if chosen_herb not in possible_herbs:
+                print(f"WARNING: possible typo in supply constraint: {chosen_herb}")
+                return False
+            elif "always" in trigger:
+                return True
+            elif "low" in trigger and herb_supply[chosen_herb] < half_amount:
+                return True
+            elif "adequate" in trigger and herb_supply[chosen_herb] < needed_amount:
+                return True
+            elif "full" in trigger and herb_supply[chosen_herb] < needed_amount * 2:
+                return True
+            elif "excess" in trigger and needed_amount * 2 < herb_supply[chosen_herb]:
+                return True
+            else:
+                return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 generate_events = GenerateEvents()
-
