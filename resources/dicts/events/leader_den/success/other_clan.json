@@ -485,7 +485,7 @@
     "rel_change": 10,
     "m_c": {
       "trait": ["sincere"],
-      "skill": ["CLAIRVOYANT,4"]
+      "skill": ["CLAIRVOYANT,3"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -1779,7 +1779,7 @@
     "event_text": "At the Gathering, m_c brings up an old tale of a tyrannical mouse-brain that nearly destroyed their own Clan with warmongering. o_c_n's leader is snarling by the end of the story.",
     "rel_change": -3,
     "m_c": {
-      "skill": [ "STORY,1", "LORE,2", "SPEAKER,4" ]
+      "skill": [ "STORY,1", "LORE,2", "SPEAKER,3" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -2034,7 +2034,7 @@
     "event_text": "At the Gathering, o_c_n's leader gets in m_c's face. m_c squares {PRONOUN/m_c/poss} shoulders and lets {PRONOUN/m_c/poss} muscular physique speak for itself; o_c_n's leader suddenly acquires an appetite for peace. m_c's Clanmates giddily report the next morning that the leader looked like a kit next to {PRONOUN/m_c/object}.",
     "rel_change": 3,
     "m_c": {
-      "skill": [ "SWIMMER,3", "CLIMBER,3", "RUNNER,3", "FIGHTER,4" ],
+      "skill": [ "SWIMMER,2", "CLIMBER,2", "RUNNER,2", "FIGHTER,3" ],
       "trait": [ "bold", "shameless", "daring", "cold", "vengeful", "fierce", "arrogant", "competitive", "cunning", "troublesome", "confident", "adventurous", "loyal", "responsible" ]
     },
     "player_clan_temper": ["any"],
@@ -2066,7 +2066,7 @@
     "event_text": "At the Gathering, m_c speaks passionately of the destruction war wreaks - of young kits growing up fearing their own borders, apprentices thrown into battles too early, and especially leaders throwing away life after life in the service of pointless bloodshed. o_c_n's leader bows their head, vowing to bury the past.",
     "rel_change": 10,
     "m_c": {
-      "skill": [ "MEDIATOR,4", "SPEAKER,4" ]
+      "skill": [ "MEDIATOR,3", "SPEAKER,3" ]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -2088,7 +2088,7 @@
     "rel_change": -10,
     "m_c": {
       "trait": ["lonesome"],
-      "skill": ["PROPHET,4"]
+      "skill": ["PROPHET,3"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["any"]
@@ -2430,7 +2430,7 @@
     "event_text": "m_c dreams the night before the Gathering and hears the whispers of {PRONOUN/m_c/poss} ancestors. When {PRONOUN/m_c/subject} speak at the Gathering o_c_n's leader shows open disdain, only for clouds to begin covering the moon. The Gathering ends quickly as the enemy leader stutters a worried apology.",
     "rel_change": 10,
     "m_c": {
-      "skill": ["STAR,4"]
+      "skill": ["STAR,3"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["wary"]
@@ -2451,7 +2451,7 @@
     "event_text": "m_c dreams the night before the Gathering and hears the whispers of {PRONOUN/m_c/poss} ancestors. When {PRONOUN/m_c/subject} {VERB/m_c/speak/speaks} at the Gathering, o_c_n's leader shows open disdain, only for clouds to begin covering the moon. The Gathering ends quickly as the enemy leader blusters and the other Clans rally behind c_n.",
     "rel_change": 8,
     "m_c": {
-      "skill": ["STAR,4"]
+      "skill": ["STAR,3"]
     },
     "player_clan_temper": ["any"],
     "other_clan_temper": ["bloodthirsty"]
@@ -2506,7 +2506,7 @@
     "rel_change": 10,
     "m_c": {
       "age": ["young adult", "adult", "senior adult", "senior"],
-      "skill": [ "DREAM,4"],
+      "skill": [ "DREAM,3"],
       "trait": [ "troublesome", "flamboyant", "shameless" ]
     },
     "player_clan_temper": ["any"],
