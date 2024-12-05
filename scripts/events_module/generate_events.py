@@ -268,16 +268,7 @@ class GenerateEvents:
                         )
 
             # check for event sub_type
-            wrong_type = False
-            for sub in sub_types:
-                if sub not in event.sub_type:
-                    wrong_type = True
-
-            for sub in event.sub_type:
-                if sub not in sub_types:
-                    wrong_type = True
-
-            if wrong_type:
+            if set(event.sub_type) != set(sub_types):
                 continue
 
             if not self.event_for_location(event.location):
