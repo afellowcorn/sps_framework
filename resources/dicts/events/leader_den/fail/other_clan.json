@@ -218,7 +218,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, o_c_n's leader somberly announces one of their warrior is battling life-threatening infection. m_c suggests they should lighten up! Sometimes laughter is the best medicine. o_c_n's leader certainly doesn't look like laughing.",
+    "event_text": "At the Gathering, o_c_n's leader somberly announces one of their warriors is battling life-threatening infection. m_c suggests they should lighten up! Sometimes laughter is the best medicine. o_c_n's leader certainly doesn't look like laughing.",
     "rel_change": -2,
     "m_c": {
       "skill": ["HEALER,1"],
