@@ -1,6 +1,7 @@
 from enum import Enum
 
 import ujson
+from strenum import StrEnum
 
 
 class HerbSupply:
