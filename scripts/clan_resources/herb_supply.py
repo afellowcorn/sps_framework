@@ -1,3 +1,5 @@
+from enum import Enum
+
 import ujson
 
 
@@ -13,6 +15,8 @@ class HerbSupply:
 
         # a dict of herbs collected this moon
         self.herbs_collected: dict = {}
+
+        self.required_herb_count: int = 0
 
     """
     - return helpful info
@@ -48,10 +52,13 @@ class HerbSupply:
 
         return total
 
-    def handle_moon(self):
+    def handle_moon(self, clan_size):
         """
         handle cycling of herbs during moon skip
         """
+        # set herb count
+        self.required_herb_count = clan_size * 2
+
         # add herbs acquired last moon
         for herb in self.herbs_collected:
             self.herb_supply.get(herb, []).insert(0, self.herbs_collected[herb])
