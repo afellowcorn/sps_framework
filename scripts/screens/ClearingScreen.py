@@ -310,7 +310,7 @@ class ClearingScreen(Screens):
         self.log_box.hide()
         self.cats_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((40, 460), (100, 30))),
-            "screens.clearing.cats_tab",
+            Icon.CAT_HEAD + i18n.t("screens.clearing.cats_tab"),
             get_button_dict(ButtonStyles.VERTICAL_TAB, (100, 30)),
             object_id="@buttonstyles_vertical_tab",
             manager=MANAGER,
@@ -318,14 +318,14 @@ class ClearingScreen(Screens):
         self.cats_tab.disable()
         self.log_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((40, 500), (100, 30))),
-            "screens.clearing.log_tab",
+            Icon.NOTEPAD + i18n.t("screens.clearing.log_tab"),
             get_button_dict(ButtonStyles.VERTICAL_TAB, (100, 30)),
             object_id="@buttonstyles_vertical_tab",
             manager=MANAGER,
         )
         self.tactic_tab = UISurfaceImageButton(
             ui_scale(pygame.Rect((40, 540), (100, 30))),
-            "screens.clearing.tactic_tab",
+            Icon.MAGNIFY + i18n.t("screens.clearing.tactic_tab"),
             get_button_dict(ButtonStyles.VERTICAL_TAB, (100, 30)),
             object_id="@buttonstyles_vertical_tab",
             manager=MANAGER,
@@ -736,7 +736,7 @@ class ClearingScreen(Screens):
 
             self.tactic_text[code] = pygame_gui.elements.UITextBox(
                 f"settings.{code}",
-                ui_scale(pygame.Rect((x_val, n * 45), (500, 39))),
+                ui_scale(pygame.Rect((x_val, n * 45), (160, 39))),
                 container=self.tactic_text["container_general"],
                 object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER,
@@ -765,7 +765,7 @@ class ClearingScreen(Screens):
 
                 self.additional_text[code] = pygame_gui.elements.UITextBox(
                     f"settings.{code}",
-                    ui_scale(pygame.Rect((x_val, n * 30), (500, 39))),
+                    ui_scale(pygame.Rect((x_val, n * 30), (200, -1))),
                     container=self.additional_text["container_general"],
                     object_id="#text_box_30_horizleft_pad_0_8",
                     manager=MANAGER,
@@ -775,7 +775,7 @@ class ClearingScreen(Screens):
         x_val = 22
         self.additional_text["condition_increase"] = pygame_gui.elements.UITextBox(
             "screens.clearing.additional_prey_text",
-            ui_scale(pygame.Rect((x_val, n * 25 + 5), (500, 39))),
+            ui_scale(pygame.Rect((x_val, n * 25 + 5), (250, 39))),
             container=self.additional_text["container_general"],
             object_id="#text_box_30_horizleft_pad_0_8",
             manager=MANAGER,
@@ -785,13 +785,27 @@ class ClearingScreen(Screens):
         feeding_order = game.prey_config["feeding_order"]
         for status in feeding_order:
             amount = prey_requirement[status]
-            self.additional_text["condition_increase"] = pygame_gui.elements.UITextBox(
+            self.additional_text[
+                f"condition_increase_{n}"
+            ] = pygame_gui.elements.UITextBox(
                 "screens.clearing.condition_increase_text",
-                ui_scale(pygame.Rect((x_val, n * 22 + 27), (500, 39))),
+                ui_scale(pygame.Rect((x_val, 0), (250, -1))),
                 container=self.additional_text["container_general"],
                 object_id="#text_box_30_horizleft_pad_0_8",
                 manager=MANAGER,
-                text_kwargs={"number": str(n), "prey": str(amount)},
+                text_kwargs={
+                    "number": str(n),
+                    "status": i18n.t(
+                        f"general.{status}",
+                        count=2 if status not in ["leader", "deputy"] else 1,
+                    ),
+                    "prey": i18n.t("screens.clearing.prey_count", count=amount),
+                },
+                anchors={
+                    "top_target": self.additional_text[f"condition_increase_{n-1}"]
+                    if n > 1
+                    else self.additional_text["condition_increase"]
+                },
             )
             n += 1
 
@@ -848,7 +862,7 @@ class ClearingScreen(Screens):
                 "",
                 object_id=box_type,
                 container=self.tactic_text["container_" + sub_menu],
-                tool_tip_text=desc[1],
+                tool_tip_text=f"settings.{code}_tooltip",
             )
 
             if disabled:

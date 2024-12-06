@@ -325,7 +325,10 @@ class LeaderDenScreen(Screens):
             html_text="screens.leader_den.temper_text",
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
-            text_kwargs={"temper": i18n.t(f"screens.leader_den.{self.clan_temper}")},
+            text_kwargs={
+                "temper": i18n.t(f"screens.leader_den.{self.clan_temper}"),
+                "clan": game.clan.name,
+            },
         )
 
         # INITIAL DISPLAY - display currently chosen interaction OR first clan in list
@@ -686,7 +689,7 @@ class LeaderDenScreen(Screens):
             "screens.leader_den.action_clan",
             text_kwargs={
                 "leader": self.leader_name,
-                "interaction": interaction,
+                "interaction": i18n.t(interaction),
                 "clan": other_clan,
             },
         )

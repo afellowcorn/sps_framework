@@ -95,7 +95,7 @@ class GenerateEvents:
     @staticmethod
     def get_lead_den_event_dicts(event_type: str, success: bool):
         try:
-            file_path = f"{get_resource_directory()}/leader_den/{'success' if success else 'fail'}/{event_type}.json"
+            file_path = f"{get_resource_directory()}leader_den/{'success' if success else 'fail'}/{event_type}.json"
             with open(file_path, "r") as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -156,7 +156,7 @@ class GenerateEvents:
                         outsider=event["outsider"] if "outsider" in event else {},
                         other_clan=event["other_clan"] if "other_clan" in event else {},
                         supplies=event["supplies"] if "supplies" in event else [],
-                        new_gender=event["new_gender"] if "new_gender" in event else []
+                        new_gender=event["new_gender"] if "new_gender" in event else [],
                     )
                     event_list.append(event)
 
@@ -415,10 +415,7 @@ class GenerateEvents:
                     continue
 
             # check if already trans
-            if (
-                "transition" in event.sub_type
-                and cat.gender != cat.genderalign
-            ):
+            if "transition" in event.sub_type and cat.gender != cat.genderalign:
                 continue
 
             if event.m_c:
@@ -507,7 +504,6 @@ class GenerateEvents:
                         and "any" not in event.m_c["gender"]
                     ):
                         continue
-
 
             # check that a random_cat is available to use for r_c
             if event.r_c and random_cat:
@@ -1075,7 +1071,7 @@ class ShortEvent:
         outsider=None,
         other_clan=None,
         supplies=None,
-        new_gender=None
+        new_gender=None,
     ):
         if not event_id:
             print("WARNING: moon event has no event_id")

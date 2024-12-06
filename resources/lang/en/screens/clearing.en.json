@@ -7,9 +7,9 @@
         "nutrition_title": "Nutrition Overview",
         "log_title": "Freshkill Pile Log",
         "tactic_title": "Feeding Tactic",
-        "cats_tab": "\uD83D\uDC31 Cats",
-        "log_tab": "\uD83D\uDCC5 Log",
-        "tactic_tab": "\uD83D\uDD0D Tactics",
+        "cats_tab": " Cats",
+        "log_tab": " Log",
+        "tactic_tab": "Tactics",
         "hungry_tab": "Hungry",
         "satisfied_tab": "Satisfied",
         "nutrition_text": "nutrition: %{nutrition_text}",
@@ -23,6 +23,10 @@
         "prey_amount_very_high": "StarClan has blessed the Clan with plentiful prey and the leader sends their thanks to Silverpelt.",
         "freshkill_pile_tooltip": "<b>Current amount:</b> %{current_prey_amount}<br><b>Needed amount:</b> %{needed_amount}",
         "additional_prey_text": "<b>Status-order + needed amount:</b>",
-        "condition_increase_text": "%{number}. %{prey} prey"
+        "condition_increase_text": "%{number}. %{status} - %{prey}",
+        "prey_count": {
+            "one": "%{count} piece",
+            "many": "%{count} pieces"
+        }
     }
 }

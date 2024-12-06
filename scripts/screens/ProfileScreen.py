@@ -1781,7 +1781,10 @@ class ProfileScreen(Screens):
         # we just kind of brute-force it
         for cond in all_illness_injuries:
             for i in ["injuries.", "illnesses.", "permanent_conditions."]:
-                cond[0] = i18n.t(i + cond[0])
+                temp = i18n.t(i + cond[0])
+                if temp != i + cond[0]:
+                    cond[0] = temp
+                    break
 
         all_illness_injuries = chunks(all_illness_injuries, 4)
 
@@ -1869,7 +1872,7 @@ class ProfileScreen(Screens):
                 )
 
             # is permanent
-            text_list.append(i18n.t("permanent_conditions.permanent_condition"))
+            text_list.append(i18n.t("permanent_conditions.permanent condition"))
 
             # infected or festering
             complication = self.the_cat.permanent_condition[name].get(

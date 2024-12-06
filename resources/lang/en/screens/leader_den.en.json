@@ -20,7 +20,7 @@
         "action_clan": "%{leader} has decided to %{interaction} %{clan}Clan.",
         "action_outsider": "%{leader} has decided to %{interaction} %{outsider}",
         "temper_text": "The other Clans think %{clan}Clan is %{temper}.",
-        "outsider_rep": "Outsiders view your Clan as %{reputation}",
+        "outsider_rep": "Outsiders view your Clan as %{reputation}.",
         "outsider_skill": "Skills: %{skill}",
         "cunning": "cunning",
         "proud": "proud",

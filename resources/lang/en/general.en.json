@@ -49,6 +49,10 @@
             "one": "queen",
             "many": "queens"
         },
+        "queen/pregnant": {
+            "one": "queen/pregnant cat",
+            "many": "queens/pregnant cats"
+        },
         "newborn": {
             "one": "newborn",
             "many": "newborns"
