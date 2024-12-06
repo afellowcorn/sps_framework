@@ -11,7 +11,7 @@ from scripts.clan_resources.freshkill import (
     FRESHKILL_EVENT_TRIGGER_FACTOR,
 )
 from scripts.event_class import Single_Event
-from scripts.events_module.generate_events import GenerateEvents
+from scripts.events_module.generate_events import GenerateEvents, generate_events
 from scripts.events_module.relationship.relation_events import Relation_Events
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
@@ -127,7 +127,7 @@ class HandleShortEvents:
             event_type = "injury"
         possible_short_events = GenerateEvents.possible_short_events(event_type)
 
-        final_events = GenerateEvents.filter_possible_short_events(
+        final_events = generate_events.filter_possible_short_events(
             Cat_class=Cat,
             possible_events=possible_short_events,
             cat=self.main_cat,

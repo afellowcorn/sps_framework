@@ -1,5 +1,7 @@
 import re
 
+import ujson
+
 from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     get_alive_status_cats,
@@ -44,10 +46,13 @@ def event_for_season(seasons: list) -> bool:
         return False
 
 
-def event_for_tags(tags: list, cat) -> bool:
+def event_for_tags(tags: list, cat, other_cat=None) -> bool:
     """
         checks if current tags disqualify the event
         """
+    if not tags:
+        return True
+
     # some events are mode specific
     mode = game.clan.game_mode
     possible_modes = ["classic", "expanded", "cruel_season"]
@@ -76,7 +81,7 @@ def event_for_tags(tags: list, cat) -> bool:
         rank_match = re.match(r"clan:(.+)", _tag)
         if not rank_match:
             continue
-        ranks = [x for x in rank_match.split(",")]
+        ranks = [x for x in rank_match.group(1).split(",")]
 
         for rank in ranks:
             if rank == "apps":
@@ -101,6 +106,9 @@ def event_for_tags(tags: list, cat) -> bool:
             return False
         if any(cat.fetch_cat(i).no_kits for i in cat.mate):
             return False
+
+    if other_cat and "romantic" in tags and not other_cat.is_potential_mate(cat):
+        return False
 
     return True
 
@@ -152,12 +160,13 @@ def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
 
     needed_amount = pile.amount_food_needed()
     half_amount = needed_amount / 2
+    clan_supply = pile.total_amount
 
     if "always" in trigger:
         return True
-    if "low" in trigger and half_amount > pile.total_amount:
+    if "low" in trigger and half_amount > clan_supply:
         return True
-    if "adequate" in trigger and half_amount < pile.total_amount < needed_amount:
+    if "adequate" in trigger and half_amount < clan_supply < needed_amount:
         return True
 
     # find how much is too much freshkill
@@ -171,9 +180,9 @@ def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
 
     trigger_value = round(factor * needed_amount, 2)
 
-    if "full" in trigger and needed_amount < pile.total_amount < trigger_value:
+    if "full" in trigger and needed_amount < clan_supply < trigger_value:
         return True
-    if "excess" in trigger and pile.total_amount > trigger_value:
+    if "excess" in trigger and clan_supply > trigger_value:
         return True
 
     # if it hasn't returned by now, it doesn't qualify
@@ -184,8 +193,11 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
     """
     checks if clan's herb supply qualifies for event
     """
+    if "always" in trigger:
+        return True
+
     herb_supply = game.clan.herbs.copy()
-    possible_herbs = game.clan.HERBS
+    possible_herbs = HERBS
     num_of_herbs = len(possible_herbs)
 
     if not herb_supply and "low" in trigger:
@@ -199,9 +211,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
     half_amount = needed_amount / 2
 
     if supply_type == "all_herb":
-        if "always" in trigger:
-            return True
-        elif "low" in trigger and len([x for x in herb_supply if herb_supply[x] < half_amount]) == num_of_herbs:
+        if "low" in trigger and len([x for x in herb_supply if herb_supply[x] < half_amount]) == num_of_herbs:
             return True
         elif "adequate" in trigger and len(
                 [x for x in herb_supply if herb_supply[x] < needed_amount]) == num_of_herbs:
@@ -216,9 +226,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
             return False
 
     elif supply_type == "any_herb":
-        if "always" in trigger:
-            return True
-        elif "low" in trigger and [x for x in herb_supply if herb_supply[x] < half_amount]:
+        if "low" in trigger and [x for x in herb_supply if herb_supply[x] < half_amount]:
             return True
         elif "adequate" in trigger and [x for x in herb_supply if herb_supply[x] < needed_amount]:
             return True
@@ -234,9 +242,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
         if chosen_herb not in possible_herbs:
             print(f"WARNING: possible typo in supply constraint: {chosen_herb}")
             return False
-        elif "always" in trigger:
-            return True
-        elif "low" in trigger and herb_supply[chosen_herb] < half_amount:
+        if "low" in trigger and herb_supply[chosen_herb] < half_amount:
             return True
         elif "adequate" in trigger and herb_supply[chosen_herb] < needed_amount:
             return True
@@ -259,12 +265,12 @@ def event_for_cat(cat_info: dict, cat, cat_group: list = None, event_id: str = N
         """
 
     func_lookup = {
-        "age": _check_cat_age(cat, cat_info["age"]),
-        "status": _check_cat_status(cat, cat_info["status"]),
-        "trait": _check_cat_trait(cat, cat_info["trait"], cat_info["not_trait"]),
-        "skills": _check_cat_skills(cat, cat_info["skill"], cat_info["not_skill"]),
-        "backstory": _check_cat_backstory(cat, cat_info["backstory"]),
-        "gender": _check_cat_gender(cat, cat_info["gender"])
+        "age": _check_cat_age(cat, cat_info.get("age", [])),
+        "status": _check_cat_status(cat, cat_info.get("status", [])),
+        "trait": _check_cat_trait(cat, cat_info.get("trait", []), cat_info.get("not_trait", [])),
+        "skills": _check_cat_skills(cat, cat_info.get("skill", []), cat_info.get("not_skill", [])),
+        "backstory": _check_cat_backstory(cat, cat_info.get("backstory", [])),
+        "gender": _check_cat_gender(cat, cat_info.get("gender", []))
     }
 
     for func in func_lookup:
@@ -274,7 +280,7 @@ def event_for_cat(cat_info: dict, cat, cat_group: list = None, event_id: str = N
     if cat_info["relationship_status"]:
         if not filter_relationship_type(
                 group=cat_group,
-                filter_types=cat_info["relationship_statu"],
+                filter_types=cat_info["relationship_status"],
                 event_id=event_id,
                 patrol_leader=p_l
         ):
@@ -287,7 +293,7 @@ def _check_cat_age(cat, ages: list) -> bool:
     """
         checks if a cat's age is within ages list
         """
-    if "any" in ages:
+    if "any" in ages or not ages:
         return True
 
     if cat.age in ages:
@@ -300,7 +306,7 @@ def _check_cat_status(cat, statuses: list) -> bool:
     """
         checks if cat's status is within statuses list
         """
-    if "any" in statuses:
+    if "any" in statuses or not statuses:
         return True
 
     if cat.status in statuses:
@@ -313,6 +319,9 @@ def _check_cat_trait(cat, traits: list, not_traits: list) -> bool:
     """
     checks if cat has the correct traits for traits and not_traits lists
     """
+    if not traits and not not_traits:
+        return True
+
     cat_trait = cat.personality.trait
 
     if cat_trait in traits and cat_trait not in not_traits:
@@ -325,6 +334,9 @@ def _check_cat_skills(cat, skills: list, not_skills: list) -> bool:
     """
         checks if the cat has the correct skills for skills and not skills lists
         """
+    if not skills and not not_skills:
+        return True
+
     has_good_skill = False
     has_bad_skill = False
 
@@ -364,6 +376,9 @@ def _check_cat_backstory(cat, backstories: list) -> bool:
     """
         checks if cat has the correct backstory
         """
+    if not backstories:
+        return True
+
     if cat.backstory in backstories:
         return True
     else:
@@ -374,7 +389,15 @@ def _check_cat_gender(cat, genders: list) -> bool:
     """
         checks if cat has the correct gender
         """
+    if not genders:
+        return True
+
     if cat.gender in genders:
         return True
     else:
         return False
+
+
+# until we make a herbs class, this will have to live here too to avoid a circular import. i am screaming.
+with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:
+    HERBS = ujson.loads(read_file.read())

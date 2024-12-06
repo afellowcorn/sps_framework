@@ -285,7 +285,7 @@ class GenerateEvents:
                 continue
 
             # check tags
-            if not event_for_tags(event.tags, cat):
+            if not event_for_tags(event.tags, cat, random_cat):
                 continue
 
             # TODO: just remove this tag man its not a useful feature
@@ -310,11 +310,6 @@ class GenerateEvents:
                     and int(random.random() * 3)
             ):
                 continue
-
-            # if the event is marked as changing romantic interest, check that the cats are allowed to be romantic
-            if random_cat:
-                if "romantic" in event.tags and not random_cat.is_potential_mate(cat):
-                    continue
 
             # check if already trans
             if (
