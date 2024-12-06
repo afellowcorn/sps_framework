@@ -41,6 +41,7 @@ from scripts.utility import (
     event_text_adjust,
     update_sprite,
     leader_ceremony_text_adjust,
+    load_string_resource,
 )
 
 
@@ -653,6 +654,8 @@ class Cat:
         body_treated = False
         text = None
 
+        load_grief_reactions()
+
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
             if cat.dead or cat.outside or cat.moons < 1:
@@ -1157,6 +1160,8 @@ class Cat:
 
     def generate_lead_ceremony(self):
         """Create a leader ceremony and add it to the history"""
+
+        load_leader_ceremonies()
 
         # determine which dict we're pulling from
         if game.clan.instructor.df:
@@ -3608,7 +3613,6 @@ game.cat_class = cat_class
 # ---------------------------------------------------------------------------- #
 
 resource_directory = "resources/dicts/conditions/"
-lang = i18n.config.get("locale")
 with open(f"{resource_directory}illnesses.json", "r", encoding="utf-8") as read_file:
     ILLNESSES = ujson.loads(read_file.read())
 
@@ -3620,44 +3624,37 @@ with open(
 ) as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
-fallback_directory = f"resources/lang/{i18n.config.get('fallback')}/"
-resource_directory = f"resources/lang/{lang}/"
-try:
-    with open(
-        f"{resource_directory}events/death/death_reactions/minor_major.json",
-        "r",
-        encoding="utf-8",
-    ) as read_file:
-        MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
-except FileNotFoundError:
-    with open(
-        f"{fallback_directory}events/death/death_reactions/minor_major.json",
-        "r",
-        encoding="utf-8",
-    ) as read_file:
-        MINOR_MAJOR_REACTION = ujson.loads(read_file.read())
+MINOR_MAJOR_REACTION = None
+grief_lang = None
 
-try:
-    with open(
-        f"{resource_directory}lead_ceremony_sc.json", "r", encoding="utf-8"
-    ) as read_file:
-        LEAD_CEREMONY_SC = ujson.loads(read_file.read())
-except FileNotFoundError:
-    with open(
-        f"{fallback_directory}lead_ceremony_sc.json", "r", encoding="utf-8"
-    ) as read_file:
-        LEAD_CEREMONY_SC = ujson.loads(read_file.read())
 
-try:
-    with open(
-        f"{resource_directory}lead_ceremony_df.json", "r", encoding="utf-8"
-    ) as read_file:
-        LEAD_CEREMONY_DF = ujson.loads(read_file.read())
-except FileNotFoundError:
-    with open(
-        f"{fallback_directory}lead_ceremony_df.json", "r", encoding="utf-8"
-    ) as read_file:
-        LEAD_CEREMONY_DF = ujson.loads(read_file.read())
+def load_grief_reactions():
+    global MINOR_MAJOR_REACTION, grief_lang
+    if grief_lang == i18n.config.get("locale"):
+        return
+    MINOR_MAJOR_REACTION = load_string_resource(
+        "events/death/death_reactions/minor_major.json"
+    )
+    grief_lang = i18n.config.get("locale")
+
+
+load_grief_reactions()
+
+LEAD_CEREMONY_SC = None
+LEAD_CEREMONY_DF = None
+lead_ceremony_lang = None
+
+
+def load_leader_ceremonies():
+    global LEAD_CEREMONY_SC, LEAD_CEREMONY_DF, lead_ceremony_lang
+    if lead_ceremony_lang == i18n.config.get("locale"):
+        return
+    LEAD_CEREMONY_SC = load_string_resource("lead_ceremony_sc.json")
+    LEAD_CEREMONY_DF = load_string_resource("lead_ceremony_df.json")
+    lead_ceremony_lang = i18n.config.get("locale")
+
+
+load_leader_ceremonies()
 
 with open("resources/dicts/backstories.json", "r", encoding="utf-8") as read_file:
     BACKSTORIES = ujson.loads(read_file.read())

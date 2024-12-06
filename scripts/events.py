@@ -15,6 +15,7 @@ from collections import Counter
 import i18n
 import ujson
 
+from scripts import utility
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.history import History
 from scripts.cat.names import Name
@@ -48,6 +49,7 @@ from scripts.utility import (
     get_other_clan,
     history_text_adjust,
     unpack_rel_block,
+    load_string_resource,
 )
 
 
@@ -62,6 +64,8 @@ class Events:
     ceremony_accessory = False
     CEREMONY_TXT = None
     WAR_TXT = None
+    ceremony_lang = None
+    war_lang = None
 
     def __init__(self):
         self.load_ceremonies()
@@ -1251,14 +1255,10 @@ class Events:
         game.switches["skip_conditions"].clear()
 
     def load_war_resources(self):
-        resource_dir = f"resources/lang/{i18n.config.get('locale')}/events/"
-        fallback_dir = f"resources/lang/{i18n.config.get('fallback')}/events/"
-        try:
-            with open(f"{resource_dir}war.json", encoding="ascii") as read_file:
-                self.WAR_TXT = ujson.loads(read_file.read())
-        except FileNotFoundError:
-            with open(f"{fallback_dir}war.json", encoding="ascii") as read_file:
-                self.WAR_TXT = ujson.loads(read_file.read())
+        if Events.war_lang == i18n.config.get("locale"):
+            return
+        self.WAR_TXT = load_string_resource("events/war.json")
+        Events.war_lang = i18n.config.get("locale")
 
     def check_war(self):
         """
@@ -1599,24 +1599,12 @@ class Events:
         """
         TODO: DOCS
         """
-        if self.CEREMONY_TXT is not None:
+        if Events.ceremony_lang == i18n.config.get("locale"):
             return
-        try:
-            resource_dir = (
-                f"resources/lang/{i18n.config.get('locale')}/events/ceremonies/"
-            )
-            with open(
-                f"{resource_dir}ceremony-master.json", encoding="ascii"
-            ) as read_file:
-                self.CEREMONY_TXT = ujson.loads(read_file.read())
-        except FileNotFoundError:
-            resource_dir = (
-                f"resources/lang/{i18n.config.get('fallback')}/events/ceremonies/"
-            )
-            with open(
-                f"{resource_dir}ceremony-master.json", encoding="ascii"
-            ) as read_file:
-                self.CEREMONY_TXT = ujson.loads(read_file.read())
+
+        self.CEREMONY_TXT = load_string_resource(
+            "events/ceremonies/ceremony-master.json"
+        )
 
         self.ceremony_id_by_tag = {}
         # Sorting.
@@ -1627,9 +1615,11 @@ class Events:
                 else:
                     self.ceremony_id_by_tag[tag] = {ID}
 
+        Events.ceremony_lang = i18n.config.get("locale")
+
     def ceremony(self, cat, promoted_to, preparedness="prepared"):
         """
-        promote cats and add to event list
+        promote cats and add to events list
         """
         # ceremony = []
 
@@ -1643,6 +1633,10 @@ class Events:
         involved_cats = [cat.ID]  # Clearly, the cat the ceremony is about is involved.
 
         # Time to gather ceremonies. First, lets gather all the ceremony ID's.
+
+        # ensure the right ceremonies are loaded for the given language
+        self.load_ceremonies()
+
         possible_ceremonies = set()
         dead_mentor = None
         mentor = None
@@ -1818,22 +1812,10 @@ class Events:
         # getting the random honor if it's needed
         random_honor = None
         if promoted_to in ["warrior", "mediator", "medicine cat"]:
-            resource_dir = (
-                f"resources/lang/{i18n.config.get('locale')}/events/ceremonies/"
-            )
+            traits = load_string_resource("events/ceremonies/ceremony_traits.json")
+
             try:
-                with open(
-                    f"{resource_dir}ceremony_traits.json", encoding="ascii"
-                ) as read_file:
-                    TRAITS = ujson.loads(read_file.read())
-            except FileNotFoundError:
-                with open(
-                    f"resources/lang/{i18n.config.get('fallback')}/events/ceremonies/ceremony_traits.json",
-                    encoding="ascii",
-                ) as read_file:
-                    TRAITS = ujson.loads(read_file.read())
-            try:
-                random_honor = random.choice(TRAITS[cat.personality.trait])
+                random_honor = random.choice(traits[cat.personality.trait])
             except KeyError:
                 random_honor = i18n.t("defaults.ceremony_honor")
 
@@ -2513,11 +2495,13 @@ class Events:
 
         if not int(random.random() * chance):
             sub_type = ["transition"]
-            handle_short_events.handle_event(event_type="misc",
-                                             main_cat=cat,
-                                             random_cat=random_cat,
-                                             sub_type=sub_type,
-                                             freshkill_pile=game.clan.freshkill_pile)
+            handle_short_events.handle_event(
+                event_type="misc",
+                main_cat=cat,
+                random_cat=random_cat,
+                sub_type=sub_type,
+                freshkill_pile=game.clan.freshkill_pile,
+            )
 
         return
 

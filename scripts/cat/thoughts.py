@@ -4,6 +4,8 @@ from random import choice
 import i18n
 import ujson
 
+from scripts.utility import load_string_resource
+
 
 class Thoughts:
     @staticmethod
@@ -367,38 +369,16 @@ class Thoughts:
         # newborns only pull from their status thoughts. this is done for convenience
         try:
             if main_cat.age == "newborn":
-                try:
-                    with open(
-                        f"{base_path}{life_dir}{spec_dir}/newborn.json", "r"
-                    ) as read_file:
-                        thoughts = ujson.loads(read_file.read())
-                except FileNotFoundError:
-                    with open(
-                        f"{fallback_path}{life_dir}{spec_dir}/newborn.json", "r"
-                    ) as read_file:
-                        thoughts = ujson.loads(read_file.read())
-                loaded_thoughts = thoughts
+                loaded_thoughts = load_string_resource(
+                    f"{life_dir}{spec_dir}/newborn.json"
+                )
             else:
-                try:
-                    with open(
-                        f"{base_path}{life_dir}{spec_dir}/{status}.json", "r"
-                    ) as read_file:
-                        thoughts = ujson.loads(read_file.read())
-                except FileNotFoundError:
-                    with open(
-                        f"{fallback_path}{life_dir}{spec_dir}/{status}.json", "r"
-                    ) as read_file:
-                        thoughts = ujson.loads(read_file.read())
-                try:
-                    with open(
-                        f"{base_path}{life_dir}{spec_dir}/general.json", "r"
-                    ) as read_file:
-                        genthoughts = ujson.loads(read_file.read())
-                except FileNotFoundError:
-                    with open(
-                        f"{fallback_path}{life_dir}{spec_dir}/general.json", "r"
-                    ) as read_file:
-                        genthoughts = ujson.loads(read_file.read())
+                thoughts = load_string_resource(
+                    f"thoughts/{life_dir}{spec_dir}/{status}.json"
+                )
+                genthoughts = load_string_resource(
+                    f"thoughts/{life_dir}{spec_dir}/general.json"
+                )
                 loaded_thoughts = thoughts + genthoughts
 
             final_thoughts = Thoughts.create_thoughts(
@@ -452,28 +432,13 @@ class Thoughts:
         THOUGHTS: []
         try:
             if lives_left > 0:
-                try:
-                    with open(
-                        f"{base_path}{spec_dir}/leader_life.json", "r"
-                    ) as read_file:
-                        THOUGHTS = ujson.loads(read_file.read())
-                except FileNotFoundError:
-                    with open(
-                        f"{fallback_path}{spec_dir}/leader_life.json", "r"
-                    ) as read_file:
-                        THOUGHTS = ujson.loads(read_file.read())
+                loaded_thoughts = load_string_resource(
+                    f"thoughts/ondeath{spec_dir}/leader_life.json"
+                )
             else:
-                try:
-                    with open(
-                        f"{base_path}{spec_dir}/leader_death.json", "r"
-                    ) as read_file:
-                        THOUGHTS = ujson.loads(read_file.read())
-                except FileNotFoundError:
-                    with open(
-                        f"{fallback_path}{spec_dir}/leader_death.json", "r"
-                    ) as read_file:
-                        THOUGHTS = ujson.loads(read_file.read())
-            loaded_thoughts = THOUGHTS
+                loaded_thoughts = load_string_resource(
+                    f"thoughts/ondeath{spec_dir}/leader_death.json"
+                )
             thought_group = choice(
                 Thoughts.create_death_thoughts(self, loaded_thoughts)
             )
@@ -496,13 +461,9 @@ class Thoughts:
             spec_dir = "/darkforest"
         THOUGHTS: []
         try:
-            try:
-                with open(f"{base_path}{spec_dir}/general.json", "r") as read_file:
-                    THOUGHTS = ujson.loads(read_file.read())
-            except FileNotFoundError:
-                with open(f"{fallback_path}{spec_dir}/general.json", "r") as read_file:
-                    THOUGHTS = ujson.loads(read_file.read())
-            loaded_thoughts = THOUGHTS
+            loaded_thoughts = load_string_resource(
+                f"thoughts/ondeath{spec_dir}/general.json"
+            )
             thought_group = choice(
                 Thoughts.create_death_thoughts(self, loaded_thoughts)
             )

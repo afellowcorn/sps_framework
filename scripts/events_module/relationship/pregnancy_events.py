@@ -18,6 +18,8 @@ from scripts.utility import (
     get_personality_compatibility,
     change_relationship_values,
     get_alive_status_cats,
+    load_string_resource,
+    adjust_list_text,
 )
 
 
@@ -30,18 +32,12 @@ class Pregnancy_Events:
 
     @staticmethod
     def rebuild_strings():
-        try:
-            with open(
-                f"resources/lang/{i18n.config.get('locale')}/conditions/pregnancy.json",
-                "r",
-            ) as read_file:
-                Pregnancy_Events.PREGNANT_STRINGS = ujson.loads(read_file.read())
-        except FileNotFoundError:
-            with open(
-                f"resources/lang/{i18n.config.get('fallback')}/conditions/pregnancy.json",
-                "r",
-            ) as read_file:
-                Pregnancy_Events.PREGNANT_STRINGS = ujson.loads(read_file.read())
+        if Pregnancy_Events.currently_loaded_lang == i18n.config.get("locale"):
+            return
+        Pregnancy_Events.PREGNANT_STRINGS = load_string_resource(
+            "conditions/pregnancy.json"
+        )
+        Pregnancy_Events.currently_loaded_lang = i18n.config.get("locale")
 
     @staticmethod
     def set_biggest_family():
@@ -176,24 +172,24 @@ class Pregnancy_Events:
             amount, None, None, clan, adoptive_parents=adoptive_parents
         )
 
-        insert = "this should not display"
-        insert2 = "this should not display"
-        if amount == 1:
-            insert = "a single kitten"
-            insert2 = "it"
-        if amount > 1:
-            insert = f"a litter of {amount} kits"
-            insert2 = "them"
-
-        print_event = f"{cat.name} found {insert} and decides to adopt {insert2}."
+        event = "hardcoded.adoption_kittens_single"
+        cats_names = str(cat.name)
         if other_cat:
-            print_event = f"{cat.name} and {other_cat.name} found {insert} and decided to adopt {insert2}."
+            event = "hardcoded.adoption_kittens_pair"
+            cats_names = adjust_list_text([str(cat.name), str(other_cat.name)])
+
+        print_event = i18n.t(
+            event,
+            names=cats_names,
+            insert=i18n.t("pregnancy.kit_amount", count=amount),
+            count=amount,
+        )
 
         cats_involved = [cat.ID]
         if other_cat:
             cats_involved.append(other_cat.ID)
         for kit in kits:
-            kit.thought = f"Snuggles up to the belly of {cat.name}"
+            kit.thought = "hardcoded.new_kit_thought"
 
         # Normally, birth cooldown is only applied to cat who gave birth
         # However, if we don't apply birth cooldown to adoption, we get
@@ -225,9 +221,7 @@ class Pregnancy_Events:
         if (cat and cat.no_kits) or (other_cat and other_cat.no_kits):
             return
 
-        if Pregnancy_Events.currently_loaded_lang != i18n.config.get("locale"):
-            Pregnancy_Events.currently_loaded_lang = i18n.config.get("locale")
-            Pregnancy_Events.rebuild_strings()
+        Pregnancy_Events.rebuild_strings()
 
         if clan.clan_settings["same sex birth"]:
             # 50/50 for single cats to get pregnant or just bring a litter back
@@ -803,13 +797,13 @@ class Pregnancy_Events:
                 kit = Cat(
                     parent1=cat.ID, parent2=other_cat.ID, moons=0, status="newborn"
                 )
-                kit.thought = i18n.t("pregnancy.new_kit_thought", name=cat)
+                kit.thought = i18n.t("hardcoded.new_kit_thought", name=cat)
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(
                     parent1=cat.ID, moons=0, backstory=backstory, status="newborn"
                 )
-                kit.thought = i18n.t("pregnancy.new_kit_thought", name=cat)
+                kit.thought = i18n.t("hardcoded.new_kit_thought", name=cat)
 
             # Prevent duplicate prefixes in the same litter
             while kit.name.prefix in [kitty.name.prefix for kitty in all_kitten]:

@@ -20,6 +20,7 @@ from scripts.utility import (
     event_text_adjust,
     get_personality_compatibility,
     process_text,
+    load_string_resource,
 )
 
 
@@ -40,17 +41,13 @@ class RomanticEvents:
     ROMANTIC_INTERACTIONS: Dict = {}
     MATE_INTERACTIONS = []
 
-    @staticmethod
-    def get_resource_directory(*, lang=None, fallback=False):
-        return f"resources/lang/{lang if lang is not None else i18n.config.get('fallback' if fallback else 'locale')}/events/relationship_events/"
-
     @classmethod
-    def rebuild_dicts(cls, *, lang=None):
+    def rebuild_dicts(cls):
         """
-        Rebuild the event dicts after a language change. Uses the i18n language currently in use.
-        If a file for the language is not found, it will use the i18n-specified fallback language
-        :param lang: 2-letter ISO 639-1 language code specifying the language to use
+        Rebuild the event dicts after a language change.
         """
+        if RomanticEvents.current_loaded_lang == i18n.config.get("locale"):
+            return
 
         resources = [
             ("MATE_DICTS", "become_mates.json"),
@@ -60,18 +57,14 @@ class RomanticEvents:
             ),
         ]
         for resource, location in resources:
-            try:
-                with open(
-                    cls.get_resource_directory(lang=lang) + location, "r"
-                ) as read_file:
-                    setattr(cls, resource, ujson.loads(read_file.read()))
-            except FileNotFoundError:
-                with open(
-                    cls.get_resource_directory(fallback=True) + location, "r"
-                ) as read_file:
-                    setattr(cls, resource, ujson.loads(read_file.read()))
+            setattr(
+                cls,
+                resource,
+                load_string_resource(f"events/relationship_events/{location}"),
+            )
 
-            interactions.rebuild_relationship_dicts()
+        RomanticEvents.current_loaded_lang = i18n.config.get("locale")
+        interactions.rebuild_relationship_dicts()
 
         # ---------------------------------------------------------------------------- #
         #            build up dictionaries which can be used for moon events           #
@@ -936,10 +929,7 @@ class RomanticEvents:
     @staticmethod
     def get_mate_string(key, poly, cat_from, cat_to):
         """Returns the mate string with the certain key, cats and poly."""
-        if RomanticEvents.current_loaded_lang != i18n.config.get("locale"):
-            RomanticEvents.rebuild_dicts()
-            RomanticEvents.current_loaded_lang = i18n.config.get("locale")
-
+        RomanticEvents.rebuild_dicts()
         if not poly:
             return choice(RomanticEvents.MATE_DICTS[key])
         else:

@@ -10,6 +10,7 @@ from scripts.utility import (
     filter_relationship_type,
     get_living_clan_cat_count,
     get_alive_status_cats,
+    load_string_resource,
 )
 
 
@@ -72,25 +73,9 @@ class GenerateEvents:
 
     @staticmethod
     def get_death_reaction_dicts(family_relation, rel_value):
-        file_path = f"/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
-        try:
-            with open(
-                get_resource_directory() + file_path,
-                "r",
-            ) as read_file:
-                return ujson.loads(read_file.read())
-        except FileNotFoundError:
-            try:
-                with open(
-                    get_resource_directory(fallback=True) + file_path,
-                    "r",
-                ) as read_file:
-                    return ujson.loads(read_file.read())
-            except:
-                print(
-                    f"ERROR: Unable to load death reaction events for {family_relation}_{rel_value}."
-                )
-                return None
+        return load_string_resource(
+            f"events/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
+        )
 
     @staticmethod
     def get_lead_den_event_dicts(event_type: str, success: bool):

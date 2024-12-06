@@ -2901,6 +2901,31 @@ def quit(savesettings=False, clearevents=False):
     sys_exit()
 
 
+def load_string_resource(location: str):
+    """
+    Get a string resource from the resources/lang folder for the loaded language
+    :param location: Relative location from the resources/lang/[language]/ folder. do not include slash.
+    :return: Whatever resource was there
+    """
+    resource_directory = f"resources/lang/{i18n.config.get('locale')}/"
+    fallback_directory = f"resources/lang/{i18n.config.get('fallback')}/"
+    location = location.lstrip("\\/")  # just in case someone is an egg and does add it
+    try:
+        with open(
+            f"{resource_directory}{location}",
+            "r",
+            encoding="utf-8",
+        ) as string_file:
+            return ujson.loads(string_file.read())
+    except FileNotFoundError:
+        with open(
+            f"{fallback_directory}{location}",
+            "r",
+            encoding="utf-8",
+        ) as string_file:
+            return ujson.loads(string_file.read())
+
+
 with open(f"resources/dicts/conditions/permanent_conditions.json", "r") as read_file:
     PERMANENT = ujson.loads(read_file.read())
 

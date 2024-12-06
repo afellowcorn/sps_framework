@@ -3,6 +3,8 @@ import os
 import i18n
 import ujson
 
+from scripts.utility import load_string_resource
+
 
 class SingleInteraction:
     def __init__(
@@ -419,60 +421,28 @@ rel_types = [
     "trust",
 ]
 
+relationship_lang = None
+
 
 def rebuild_relationship_dicts():
-    global INTERACTION_MASTER_DICT, NEUTRAL_INTERACTIONS
-    base_path = os.path.join(
-        "resources",
-        "lang",
-        i18n.config.get("locale"),
-        "events",
-        "relationship_events",
-        "normal_interactions",
-    )
-    fallback_path = os.path.join(
-        "resources",
-        "lang",
-        i18n.config.get("fallback"),
-        "events",
-        "relationship_events",
-        "normal_interactions",
-    )
-    for rel in rel_types:
-        try:
-            with open(os.path.join(base_path, rel, "increase.json"), "r") as read_file:
-                loaded_list = ujson.loads(read_file.read())
-                INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(
-                    loaded_list
-                )
-        except FileNotFoundError:
-            with open(
-                os.path.join(fallback_path, rel, "increase.json"), "r"
-            ) as read_file:
-                loaded_list = ujson.loads(read_file.read())
-                INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(
-                    loaded_list
-                )
-        try:
-            with open(os.path.join(base_path, rel, "decrease.json"), "r") as read_file:
-                loaded_list = ujson.loads(read_file.read())
-                INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(
-                    loaded_list
-                )
-        except FileNotFoundError:
-            with open(
-                os.path.join(fallback_path, rel, "decrease.json"), "r"
-            ) as read_file:
-                loaded_list = ujson.loads(read_file.read())
-                INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(
-                    loaded_list
-                )
+    global INTERACTION_MASTER_DICT, NEUTRAL_INTERACTIONS, relationship_lang
+    if relationship_lang == i18n.config.get("locale"):
+        return
 
-    try:
-        with open(os.path.join(base_path, "neutral.json"), "r") as read_file:
-            loaded_list = ujson.loads(read_file.read())
-            NEUTRAL_INTERACTIONS = create_interaction(loaded_list)
-    except FileNotFoundError:
-        with open(os.path.join(fallback_path, "neutral.json"), "r") as read_file:
-            loaded_list = ujson.loads(read_file.read())
-            NEUTRAL_INTERACTIONS = create_interaction(loaded_list)
+    for rel in rel_types:
+        INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(
+            load_string_resource(
+                f"events/relationship_events/normal_interactions/{rel}/increase.json"
+            )
+        )
+        INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(
+            load_string_resource(
+                f"events/relationship_events/normal_interactions/{rel}/decrease.json"
+            )
+        )
+
+    NEUTRAL_INTERACTIONS = create_interaction(
+        load_string_resource(
+            f"events/relationship_events/normal_interactions/neutral.json"
+        )
+    )

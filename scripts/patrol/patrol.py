@@ -798,16 +798,9 @@ class Patrol:
         ]
         for patrol_property, location in resources:
             try:
-                with open(resource_dir + location, "r", encoding="ascii") as read_file:
-                    setattr(self, patrol_property, ujson.loads(read_file.read()))
-            except FileNotFoundError:
-                try:
-                    with open(
-                        fallback_dir + location, "r", encoding="ascii"
-                    ) as read_file:
-                        setattr(self, patrol_property, ujson.loads(read_file.read()))
-                except:
-                    raise Exception("Something went wrong loading patrols!")
+                setattr(self, patrol_property, f"patrols/{location}")
+            except:
+                raise Exception("Something went wrong loading patrols!")
 
     def balance_hunting(self, possible_patrols: list):
         """Filter the incoming hunting patrol list to balance the different kinds of hunting patrols.

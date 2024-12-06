@@ -8,7 +8,11 @@ import ujson
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import change_relationship_values, event_text_adjust
+from scripts.utility import (
+    change_relationship_values,
+    event_text_adjust,
+    load_string_resource,
+)
 
 
 class Welcoming_Events:
@@ -140,14 +144,6 @@ class Welcoming_Events:
     @staticmethod
     def rebuild_dicts():
         global WELCOMING_MASTER_DICT, GENERAL_WELCOMING
-        base_path = os.path.join(
-            "resources",
-            "lang",
-            i18n.config.get("locale"),
-            "events",
-            "relationship_events",
-            "welcoming_events",
-        )
         fallback_path = os.path.join(
             "resources",
             "lang",
@@ -156,42 +152,23 @@ class Welcoming_Events:
             "relationship_events",
             "welcoming_events",
         )
-        try:
-            for file in os.listdir(base_path):
-                if "general.json" == file:
-                    continue
-                status = file.split(".")[0]
-                try:
-                    with open(os.path.join(base_path, file), "r") as read_file:
-                        welcome_list = ujson.load(read_file)
-                        WELCOMING_MASTER_DICT[status] = create_welcome_interaction(
-                            welcome_list
-                        )
-                except FileNotFoundError:
-                    with open(os.path.join(fallback_path, file), "r") as read_file:
-                        welcome_list = ujson.load(read_file)
-                        WELCOMING_MASTER_DICT[status] = create_welcome_interaction(
-                            welcome_list
-                        )
-        except FileNotFoundError:
-            for file in os.listdir(fallback_path):
-                if "general.json" == file:
-                    continue
-                status = file.split(".")[0]
-                with open(os.path.join(fallback_path, file), "r") as read_file:
-                    welcome_list = ujson.load(read_file)
-                    WELCOMING_MASTER_DICT[status] = create_welcome_interaction(
-                        welcome_list
-                    )
+        for file in os.listdir(
+            fallback_path
+        ):  # always use fallback bcs english must exist
+            if "general.json" == file:
+                continue
+            status = file.split(".")[0]
+            WELCOMING_MASTER_DICT[status] = create_welcome_interaction(
+                load_string_resource(
+                    f"events/relationship_events/welcoming_events/{file}"
+                )
+            )
 
-        try:
-            with open(os.path.join(base_path, "general.json"), "r") as read_file:
-                loaded_list = ujson.loads(read_file.read())
-                GENERAL_WELCOMING = create_welcome_interaction(loaded_list)
-        except FileNotFoundError:
-            with open(os.path.join(fallback_path, "general.json"), "r") as read_file:
-                loaded_list = ujson.loads(read_file.read())
-                GENERAL_WELCOMING = create_welcome_interaction(loaded_list)
+        GENERAL_WELCOMING = create_welcome_interaction(
+            load_string_resource(
+                "events/relationship_events/welcoming_events/general.json"
+            )
+        )
 
     @staticmethod
     def filter_welcome_interactions(welcome_interactions: list, new_cat: Cat) -> list:

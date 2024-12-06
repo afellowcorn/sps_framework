@@ -23,6 +23,7 @@ from scripts.utility import (
     event_text_adjust,
     get_alive_status_cats,
     get_leader_life_notice,
+    load_string_resource,
 )
 
 
@@ -113,18 +114,7 @@ class Condition_Events:
         ]
 
         for class_property, file in resources:
-            try:
-                with open(
-                    resource_directory + file,
-                    "r",
-                ) as read_file:
-                    setattr(cls, class_property, ujson.loads(read_file.read()))
-            except FileNotFoundError:
-                with open(
-                    fallback_directory + file,
-                    "r",
-                ) as read_file:
-                    setattr(cls, class_property, ujson.loads(read_file.read()))
+            setattr(cls, class_property, load_string_resource(f"conditions/{file}"))
 
     @staticmethod
     def handle_nutrient(cat: Cat, nutrition_info: dict) -> None:

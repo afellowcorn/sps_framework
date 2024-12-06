@@ -14,7 +14,11 @@ from scripts.cat_relations.interaction import (
 )
 from scripts.event_class import Single_Event
 from scripts.game_structure.game_essentials import game
-from scripts.utility import change_relationship_values, process_text
+from scripts.utility import (
+    change_relationship_values,
+    process_text,
+    load_string_resource,
+)
 
 
 class GroupEvents:
@@ -28,69 +32,20 @@ class GroupEvents:
     # ---------------------------------------------------------------------------- #
     @classmethod
     def rebuild_dicts(cls):
-        base_path = os.path.join(
-            "resources",
-            "lang",
-            i18n.config.get("locale"),
-            "events",
-            "relationship_events",
-            "group_interactions",
-        )
-        fallback_path = os.path.join(
-            "resources",
-            "lang",
-            i18n.config.get("fallback"),
-            "events",
-            "relationship_events",
-            "group_interactions",
-        )
-
         cls.GROUP_INTERACTION_MASTER_DICT = {}
-        try:
-            for cat_amount in os.listdir(base_path):
-                if cat_amount == "group_types.json":
-                    continue
-                cls.GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
-                for file in ["neutral.json", "positive.json", "negative.json"]:
-                    try:
-                        with open(
-                            os.path.join(base_path, cat_amount, file), "r"
-                        ) as read_file:
-                            welcome_list = ujson.load(read_file)
-                            cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
-                                file[:-5]
-                            ] = create_group_interaction(welcome_list)
-                    except FileNotFoundError:
-                        with open(
-                            os.path.join(fallback_path, cat_amount, file), "r"
-                        ) as read_file:
-                            welcome_list = ujson.load(read_file)
-                            cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
-                                file[:-5]
-                            ] = create_group_interaction(welcome_list)
-        except FileNotFoundError:
-            for cat_amount in os.listdir(fallback_path):
-                if cat_amount == "group_types.json":
-                    continue
-                cls.GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
-                for file in ["neutral.json", "positive.json", "negative.json"]:
-                    try:
-                        with open(
-                            os.path.join(base_path, cat_amount, file), "r"
-                        ) as read_file:
-                            welcome_list = ujson.load(read_file)
-                            cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
-                                file[:-5]
-                            ] = create_group_interaction(welcome_list)
-                    except FileNotFoundError:
-                        with open(
-                            os.path.join(fallback_path, cat_amount, file), "r"
-                        ) as read_file:
-                            welcome_list = ujson.load(read_file)
-                            cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
-                                file[:-5]
-                            ] = create_group_interaction(welcome_list)
-        del base_path
+        directory = "events/relationship_events/group_interactions"
+        for cat_amount in os.listdir(
+            os.path.join("resources", "lang", i18n.config.get("fallback"), directory)
+        ):  # use the fallback path because English strings will always exist or something has gone DREADFULLY wrong
+            if cat_amount == "group_types.json":
+                continue
+            cls.GROUP_INTERACTION_MASTER_DICT[cat_amount] = {}
+            for file in ["neutral.json", "positive.json", "negative.json"]:
+                cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
+                    file[:-5]
+                ] = create_group_interaction(
+                    load_string_resource(f"{directory}/{cat_amount}/{file}")
+                )
 
     @staticmethod
     def start_interaction(cat: Cat, interact_cats: list) -> list:
