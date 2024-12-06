@@ -622,7 +622,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, o_c_n's leader announces that their medicine cats received an prophecy. m_c proposes an extremely literal interpretation, which the medicine cats admit they hadn't considered.",
+    "event_text": "At the Gathering, o_c_n's leader announces that their medicine cats received a prophecy. m_c proposes an extremely literal interpretation, which the medicine cats admit they hadn't considered.",
     "rel_change": 5,
     "m_c": {
       "trait": ["childish", "oblivious"],
