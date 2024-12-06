@@ -1,27 +1,102 @@
-[
-  "elder_leaves",
-  "cobwebs",
-  "daisy",
-  "horsetail",
-  "juniper",
-  "lungwort",
-  "mallow",
-  "marigold",
-  "moss",
-  "oak_leaves",
-  "ragwort",
-  "raspberry",
-  "tansy",
-  "thyme",
-  "wild_garlic",
-  "dandelion",
-  "mullein",
-  "rosemary",
-  "burdock",
-  "blackberry",
-  "betony",
-  "goldenrod",
-  "poppy",
-  "plantain",
-  "catmint"
-]
+{
+  "elder_leaves": {
+    "expiration": 12,
+    "display": "elder leaves"
+  },
+  "cobwebs": {
+    "expiration": 24,
+    "display": "cobwebs"
+  },
+  "daisy": {
+    "expiration": 12,
+    "display": "daisy"
+  },
+  "horsetail": {
+    "expiration": 12,
+    "display": "horsetail"
+  },
+  "juniper": {
+    "expiration": 12,
+    "display": "juniper"
+  },
+  "lungwort": {
+    "expiration": 12,
+    "display": "lungwort"
+  },
+  "mallow": {
+    "expiration": 12,
+    "display": "mallow"
+  },
+  "marigold": {
+    "expiration": 12,
+    "display": "marigold"
+  },
+  "moss": {
+    "expiration": 24,
+    "display": "moss"
+  },
+  "oak_leaves": {
+    "expiration": 12,
+    "display": "oak leaves"
+  },
+  "ragwort": {
+    "expiration": 12,
+    "display": "ragwort"
+  },
+  "raspberry": {
+    "expiration": 12,
+    "display": "raspberry leaves"
+  },
+  "tansy": {
+    "expiration": 12,
+    "display": "tansy"
+  },
+  "thyme": {
+    "expiration": 12,
+    "display": "thyme"
+  },
+  "wild_garlic": {
+    "expiration": 12,
+    "display": "wild garlic"
+  },
+  "dandelion": {
+    "expiration": 12,
+    "display": "dandelion"
+  },
+  "mullein": {
+    "expiration": 12,
+    "display": "mullein"
+  },
+  "rosemary": {
+    "expiration": 12,
+    "display": "rosemary"
+  },
+  "burdock": {
+    "expiration": 12,
+    "display": "burdock"
+  },
+  "blackberry": {
+    "expiration": 12,
+    "display": "blackberry leaves"
+  },
+  "betony": {
+    "expiration": 12,
+    "display": "betony"
+  },
+  "goldenrod": {
+    "expiration": 12,
+    "display": "goldenrod"
+  },
+  "poppy": {
+    "expiration": 12,
+    "display": "poppy"
+  },
+  "plantain": {
+    "expiration": 12,
+    "display": "plantain"
+  },
+  "catmint": {
+    "expiration": 12,
+    "display": "catmint"
+  }
+}
