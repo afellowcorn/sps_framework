@@ -229,7 +229,7 @@
   },
   {
     "interaction_type": "praise",
-    "event_text": "At the Gathering, o_c_n's leader announces that their medicine cats received an omen. m_c proposes an extremely literal interpretation, which the medicine cats sigh and assure m_c they had already considered.",
+    "event_text": "At the Gathering, o_c_n's leader announces that their medicine cats received an omen. m_c proposes an extremely literal interpretation, at which the medicine cats sigh and assure m_c they had already considered it.",
     "rel_change": -3,
     "m_c": {
       "trait": ["childish", "oblivious"],
