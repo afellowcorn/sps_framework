@@ -277,7 +277,7 @@ def event_for_cat(cat_info: dict, cat, cat_group: list = None, event_id: str = N
         if not func_lookup[func]:
             return False
 
-    if cat_info["relationship_status"]:
+    if cat_info.get("relationship_status", []):
         if not filter_relationship_type(
                 group=cat_group,
                 filter_types=cat_info["relationship_status"],
