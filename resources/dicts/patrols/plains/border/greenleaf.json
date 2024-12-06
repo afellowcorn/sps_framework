@@ -4543,7 +4543,7 @@
                 "outsider_rep": 0
             },
             {
-                "text": "n_c:0 need some help, they continue. They have some kittens they're looking after, and they're SO hungry. Can s_c help? What? Where? s_c comes forward, wondering what the outsider is talking about - and flinches backwards as the loner attacks. This is no innocent flirtation!",
+                "text": "{PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/need/needs} some help, {PRONOUN/n_c:0/subject} {VERB/n_c:0/continue/continues}. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/have/has} some kittens {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} looking after, and they're SO hungry. Can s_c help? What? Where? s_c comes forward, wondering what the outsider is talking about - and flinches backwards as the loner attacks. This is no innocent flirtation!",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_battle_warrior_loner",
