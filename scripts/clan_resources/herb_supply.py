@@ -15,10 +15,6 @@ class HerbSupply:
         self.herbs_collected: dict = {}
 
     """
-    this needs to:
-    - track expiration of herbs
-        - do so via a dict of lists. key is the herb, list is a buffer of herb amt collected with each item being a moon of time
-    - handle removal of expired herbs
     - return helpful info
         - if supply is enough for clan
     """
@@ -51,6 +47,20 @@ class HerbSupply:
             total += herb
 
         return total
+
+    def handle_moon(self):
+        """
+        handle cycling of herbs during moon skip
+        """
+        # add herbs acquired last moon
+        for herb in self.herbs_collected:
+            self.herb_supply.get(herb, []).insert(0, self.herbs_collected[herb])
+
+        # remove expired herbs
+        # TODO: consider how to inform player of expiration
+        for herb in self.herb_supply.copy():
+            if len(self.herb_supply[herb]) > HERBS[herb]["expiration"]:
+                self.herb_supply.pop(-1)
 
     def get_single_herb_total(self, herb: str) -> int:
         """
