@@ -140,6 +140,16 @@ class HerbSupply:
 
         return total
 
+    def add_herb(self, herb: str, num_collected: int):
+        """
+        adds herb given to count for that moon
+        """
+
+        if self.herbs_collected.get(herb, []):
+            self.herbs_collected[herb] += num_collected
+        else:
+            self.herbs_collected[herb] = num_collected
+            
     def remove_herb(self, herb: str, num_removed: int):
         """
         removes herb given from count for that moon, then from supply if necessary
