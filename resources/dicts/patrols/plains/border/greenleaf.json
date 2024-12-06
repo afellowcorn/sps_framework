@@ -4074,7 +4074,7 @@
                 ]
             },
             {
-                "text": "app1 is running so fast to catch up with the others that when {PRONOUN/app1/subject} {VERB/app1/put/puts} a paw down into a rabbit burrow entrance, it yawks {PRONOUN/app1/object} down. {PRONOUN/app1/subject/CAP} {VERB/app1/slam/slams} agaisnt the ground, air whooshing out of {PRONOUN/app1/poss} lungs, biting {PRONOUN/app1/poss} tongue as {PRONOUN/app1/poss} jaw hits the dirt. Ow...",
+                "text": "app1 is running so fast to catch up with the others that when {PRONOUN/app1/subject} {VERB/app1/put/puts} a paw down into a rabbit burrow entrance, it yanks {PRONOUN/app1/object} down. {PRONOUN/app1/subject/CAP} {VERB/app1/slam/slams} against the ground, air whooshing out of {PRONOUN/app1/poss} lungs, biting {PRONOUN/app1/poss} tongue as {PRONOUN/app1/poss} jaw hits the dirt. Ow...",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_train_patrolapprenticesessionfail",
