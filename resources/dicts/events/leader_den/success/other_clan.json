@@ -989,7 +989,7 @@
   },
   {
     "interaction_type": "provoke",
-    "event_text": "During the Gathering, m_c wrinkles {PRONOUN/m_c/poss} nose and demands to know why o_c_n's leader stinks of lavender. o_c_n's leader looks wounded and replies that their dead mother used to wear lavender in her pelt.",
+    "event_text": "During the Gathering, m_c wrinkles {PRONOUN/m_c/poss} nose and demands to know why o_c_n's leader stinks of lavender. o_c_n's leader looks wounded and replies that their dead mother used to wear lavender on her pelt.",
     "rel_change": -5,
     "m_c": {
       "skill": [ "GHOST,1"],
