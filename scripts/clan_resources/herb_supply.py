@@ -14,9 +14,6 @@ class HerbSupply:
         # a dict of herbs collected this moon
         self.herbs_collected: dict = {}
 
-        # total of all herbs: both stored and collected this moon
-        self.total_herb_count: int = self.get_supply_total()
-
     """
     this needs to:
     - track expiration of herbs
@@ -32,7 +29,7 @@ class HerbSupply:
         """
 
         # just getting a starting number I know will be higher than any herb's stock
-        lowest_total = self.get_supply_total()
+        lowest_total = self.supply_total
         chosen_herb = None
 
         for herb in self.herb_supply:
@@ -41,17 +38,8 @@ class HerbSupply:
 
         return chosen_herb
 
-    def check_supply(self, herb: str) -> int:
-        """
-        checks for given herb and returns current int of supply
-        """
-        full_count = 0
-        for stock in self.herb_supply[herb]:
-            full_count += stock
-
-        return full_count
-
-    def get_supply_total(self) -> int:
+    @property
+    def supply_total(self) -> int:
         """
         return total int of all herb inventory
         """
