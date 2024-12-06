@@ -1,5 +1,6 @@
 {
-    "comment": "at some point, this file should become empty and unnecessary.",
+    "po": {
+        "comment": "at some point, this file should become empty and unnecessary.",
     "condition_retire_adolescent": "m_c decides {PRONOUN\/m_c\/subject}'d rather spend {PRONOUN\/m_c\/poss} time helping around camp and entertaining the kits; {PRONOUN\/m_c\/subject}{VERB\/m_c\/'re\/'s} warmly welcomed into the elders' den.",
     "condition_retire_adolescent_ceremony": " {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/are\/is} given the name %{newname} in honor of {PRONOUN\/m_c\/poss} contributions to %{clan}Clan.",
     "condition_retire_no_leader": "m_c has decided to retire from normal Clan duty.",
@@ -10,4 +11,5 @@
     "ceremony_leader_2": "%{oldname} has become the new leader of the Clan. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/vow\/vows} to protect the Clan, even at the cost of {PRONOUN\/m_c\/poss} nine lives.",
     "ceremony_leader_3": "%{oldname} has received {PRONOUN\/m_c\/poss} nine lives and become the new leader of the Clan. {PRONOUN\/m_c\/subject\/CAP} {VERB\/m_c\/feel\/feels} like {PRONOUN\/m_c\/subject} {VERB\/are\/is}n't ready for this new responsibility, but will try {PRONOUN\/m_c\/poss} best to do what is right for the Clan.",
     "ceremony_closer": "Visit %{name}'s profile to see {PRONOUN\/m_c\/poss} full leader ceremony."
+    }
 }

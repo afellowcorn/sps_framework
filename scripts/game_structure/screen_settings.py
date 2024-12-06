@@ -285,7 +285,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         scale,
         None,
         enable_live_theme_updates=False,
-        starting_language="po",
+        starting_language="en",
         translation_directory_paths=["resources/lang/en", "resources/lang/po"],
     )
     manager.add_font_paths(

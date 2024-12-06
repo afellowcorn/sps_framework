@@ -505,7 +505,9 @@ def create_new_cat_block(
             bs_list = [x for x in match.group(1).split(",")]
             stor = []
             for story in bs_list:
-                if story in set([backstory for backstory in BACKSTORIES["backstory_categories"]]):
+                if story in set(
+                    [backstory for backstory in BACKSTORIES["backstory_categories"]]
+                ):
                     stor.append(story)
                 elif story in BACKSTORIES["backstory_categories"]:
                     stor.extend(BACKSTORIES["backstory_categories"][story])
