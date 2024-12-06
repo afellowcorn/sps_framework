@@ -25,6 +25,21 @@ class HerbSupply:
     - return helpful info
         - if supply is enough for clan
     """
+    @property
+    def lowest_supply(self) -> str:
+        """
+        returns the herb with the lowest current supply + collected
+        """
+
+        # just getting a starting number I know will be higher than any herb's stock
+        lowest_total = self.get_supply_total()
+        chosen_herb = None
+
+        for herb in self.herb_supply:
+            if self.get_single_herb_total(herb) + self.herbs_collected[herb] < lowest_total:
+                chosen_herb = herb
+
+        return chosen_herb
 
     def check_supply(self, herb: str) -> int:
         """
@@ -61,16 +76,6 @@ class HerbSupply:
             total += amt
 
         return total
-
-    def add_herb(self, herb: str, num_collected: int):
-        """
-        adds herb given to count for that moon
-        """
-
-        if self.herbs_collected.get(herb, []):
-            self.herbs_collected[herb] += num_collected
-        else:
-            self.herbs_collected[herb] = num_collected
 
     def remove_herb(self, herb: str, num_removed: int):
         """
