@@ -4272,7 +4272,7 @@
                 ]
             },
             {
-                "text": "app1 tries to retake the lead as the apprentices race along the border, but app2 shoves them off the track. That coyote-heart! app1 regains their feet and pounces, sending app2 tumbling, and then app2 rears up with claws extended, and by the time the other apprentices break up the fight blood has been shed and grudges created.",
+                "text": "app1 tries to retake the lead as the apprentices race along the border, but app2 shoves them off the track. That coyote-heart! app1 regains {PRONOUN/app1/poss} feet and pounces, sending app2 tumbling, and then app2 rears up with claws extended, and by the time the other apprentices break up the fight blood has been shed and grudges created.",
                 "exp": 20,
                 "weight": 30,
                 "art": "gen_battle_app_app",
