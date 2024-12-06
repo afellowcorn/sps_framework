@@ -192,6 +192,9 @@ class SettingsScreen(Screens):
             for key, value in self.checkboxes.items():
                 if value == event.ui_element:
                     if self.sub_menu == "language":
+                        self.checkboxes[MANAGER.get_locale()].enable()
+                        MANAGER.set_locale(key)
+                        self.checkboxes[key].disable()
                         game.settings["language"] = key
                     else:
                         game.switch_setting(key)
@@ -729,35 +732,35 @@ class SettingsScreen(Screens):
 
         # CHECKBOXES (ehhh) FOR LANGUAGES
         if self.sub_menu == "language":
-            self.checkboxes["english"] = UIImageButton(
+            self.checkboxes["en"] = UIImageButton(
                 ui_scale(pygame.Rect((310, 200), (180, 51))),
                 "",
                 object_id="#english_lang_button",
                 manager=MANAGER,
             )
-            self.checkboxes["spanish"] = UISurfaceImageButton(
+            self.checkboxes["es"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((310, 0), (180, 37))),
-                "screens.settings.lang_spanish",
+                "español",
                 get_button_dict(ButtonStyles.LADDER_MIDDLE, (180, 37)),
                 object_id="@buttonstyles_ladder_middle",
                 manager=MANAGER,
-                anchors={"top_target": self.checkboxes["english"]},
+                anchors={"top_target": self.checkboxes["en"]},
             )
-            self.checkboxes["german"] = UISurfaceImageButton(
+            self.checkboxes["po"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((310, 0), (180, 37))),
-                "screens.settings.lang_german",
+                "deutsch",
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (180, 37)),
                 object_id="@buttonstyles_ladder_bottom",
                 manager=MANAGER,
-                anchors={"top_target": self.checkboxes["spanish"]},
+                anchors={"top_target": self.checkboxes["es"]},
             )
-
-            if game.settings["language"] == "english":
-                self.checkboxes["english"].disable()
-            elif game.settings["language"] == "spanish":
-                self.checkboxes["spanish"].disable()
-            elif game.settings["language"] == "german":
-                self.checkboxes["german"].disable()
+            language = MANAGER.get_locale()
+            if language == "en":  # English
+                self.checkboxes["en"].disable()
+            elif language == "es":  # Spanish
+                self.checkboxes["es"].disable()
+            elif language == "po":  # German TODO: replace with "de"
+                self.checkboxes["po"].disable()
 
         else:
             for i, (code, desc) in enumerate(settings_dict[self.sub_menu].items()):

@@ -22,6 +22,7 @@ from scripts.utility import (
     ui_scale_dimensions,
     ui_scale_value,
     ui_scale_offset,
+    load_string_resource,
 )
 from scripts.utility import ui_scale
 from .Screens import Screens
@@ -29,13 +30,11 @@ from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import PronounCreation
 from ..ui.generate_button import get_button_dict, ButtonStyles
 
-with open("resources/dicts/pronouns.json", "r", encoding="utf-8") as f:
-    pronouns_dict = ujson.load(f)
-
 
 class ChangeGenderScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
+        self.pronouns_dict = None
         self.next_cat_button = None
         self.previous_cat_button = None
         self.back_button = None
@@ -128,6 +127,11 @@ class ChangeGenderScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
+        temp = load_string_resource("pronouns.{lang}.json")
+        self.pronouns_dict = [
+            pronoun_dict for pronoun_dict in temp[next(iter(temp))].values()
+        ]
+
         self.next_cat_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((622, 25), (153, 30))),
             "buttons.next_cat",
@@ -453,10 +457,8 @@ class ChangeGenderScreen(Screens):
         n = 0
         pronoun_frame = "resources/images/pronoun_frame.png"
 
-        all_pronouns = pronouns_dict["default_pronouns"] + [
-            x
-            for x in game.clan.custom_pronouns
-            if x not in pronouns_dict["default_pronouns"]
+        all_pronouns = self.pronouns_dict + [
+            x for x in game.clan.custom_pronouns if x not in Cat.default_pronouns
         ]
         for pronounset in all_pronouns:
             displayname = (
@@ -465,7 +467,7 @@ class ChangeGenderScreen(Screens):
             )
             short_name = shorten_text_to_fit(displayname, 140, 13)
 
-            if pronounset in pronouns_dict["default_pronouns"]:
+            if pronounset in self.pronouns_dict:
                 dict_name_core = f"default_pronouns_{n}"
             else:
                 dict_name_core = f"custom_pronouns_{n}"
@@ -506,7 +508,7 @@ class ChangeGenderScreen(Screens):
             )
             # though we've made the remove button visible, it needs to be disabled so that the user cannnot remove
             # the defaults.  button is only visible here for UI consistency
-            if pronounset in pronouns_dict["default_pronouns"]:
+            if pronounset in self.pronouns_dict:
                 self.deletebuttons[dict_name_core].disable()
 
             # the "add" button

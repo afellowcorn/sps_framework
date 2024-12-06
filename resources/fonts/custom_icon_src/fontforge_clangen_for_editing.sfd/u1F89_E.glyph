@@ -1,0 +1,15 @@
+StartChar: u1F89E
+Encoding: 129182 129182 127
+Width: 512
+GlyphClass: 2
+Flags: W
+LayerCount: 3
+Fore
+SplineSet
+512 469 m 1,0,-1
+ 512 217 l 1,1,-1
+ 0 215 l 1,2,-1
+ 0 469 l 1,3,-1
+ 512 469 l 1,0,-1
+EndSplineSet
+EndChar

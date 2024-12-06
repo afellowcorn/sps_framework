@@ -1740,6 +1740,8 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
             return pro
         elif inner_details[0].upper() == "VERB":
             return inner_details[d["conju"] + 1]
+        elif inner_details[0].upper() == "ADJ":
+            return inner_details[(d["gender"] + 1) if "gender" in d else 1]
 
         if raise_exception:
             raise KeyError(
@@ -2919,16 +2921,19 @@ def load_string_resource(location: str):
     resource_directory = f"resources/lang/{i18n.config.get('locale')}/"
     fallback_directory = f"resources/lang/{i18n.config.get('fallback')}/"
     location = location.lstrip("\\/")  # just in case someone is an egg and does add it
+
     try:
         with open(
-            f"{resource_directory}{location}",
+            f"{resource_directory}{location.replace('{lang}', i18n.config.get('locale'))}",
             "r",
             encoding="utf-8",
         ) as string_file:
             return ujson.loads(string_file.read())
     except FileNotFoundError:
+        location2 = location
+        location2.replace("{lang}", i18n.config.get("fallback"))
         with open(
-            f"{fallback_directory}{location}",
+            f"{fallback_directory}{location.replace('{lang}', i18n.config.get('fallback'))}",
             "r",
             encoding="utf-8",
         ) as string_file:
