@@ -1,7 +1,7 @@
-from enum import Enum
 
 import ujson
-from strenum import StrEnum
+
+from scripts.clan_resources.supply import Supply
 
 
 class HerbSupply:
@@ -17,12 +17,9 @@ class HerbSupply:
         # a dict of herbs collected this moon
         self.herbs_collected: dict = {}
 
+        # herb count required for clan
         self.required_herb_count: int = 0
 
-    """
-    - return helpful info
-        - if supply is enough for clan
-    """
     @property
     def lowest_supply(self) -> str:
         """
@@ -52,6 +49,66 @@ class HerbSupply:
             total += herb
 
         return total
+
+    @property
+    def low_qualifier(self) -> int:
+        """
+        returns the lowest qualifier for a low supply
+        """
+        return 0
+
+    @property
+    def adequate_qualifier(self) -> int:
+        """
+        returns the lowest qualifier for an adequate supply
+        """
+        return round(self.required_herb_count / 2)
+
+    @property
+    def full_qualifier(self) -> int:
+        """
+        returns the lowest qualifier for a full supply
+        """
+        return self.required_herb_count
+
+    @property
+    def excess_qualifier(self) -> int:
+        """
+        returns the lowest qualifier for an adequate supply
+        """
+        return self.required_herb_count * 2
+
+    def get_supply_rating(self, all_herbs: bool = True, herb: str = None):
+        """
+        returns the rating of given supply, aka how "full" the supply is compared to clan size
+        :param all_herbs: if true, returns rating of entire herb supply
+        :param herb: if str name of herb is given, returns rating of that herb's supply
+        """
+        if all_herbs:
+            rating = None
+            for single_herb in self.herb_supply:
+                total = self.get_single_herb_total(single_herb)
+                if self.low_qualifier < total <= self.adequate_qualifier and rating not in [Supply.ADEQUATE,
+                                                                                            Supply.FULL,
+                                                                                            Supply.EXCESS]:
+                    rating = Supply.LOW
+                elif self.adequate_qualifier < total <= self.full_qualifier and rating not in [Supply.FULL,
+                                                                                               Supply.EXCESS]:
+                    rating = Supply.ADEQUATE
+                elif self.full_qualifier < total <= self.excess_qualifier and rating != Supply.EXCESS:
+                    rating = Supply.EXCESS
+            return rating
+
+        else:
+            total = self.get_single_herb_total(herb)
+            if self.low_qualifier < total <= self.adequate_qualifier:
+                return Supply.LOW
+            elif self.adequate_qualifier < total <= self.full_qualifier:
+                return Supply.ADEQUATE
+            elif self.full_qualifier < total <= self.excess_qualifier:
+                return Supply.FULL
+            elif self.excess_qualifier < total:
+                return Supply.EXCESS
 
     def handle_moon(self, clan_size):
         """
