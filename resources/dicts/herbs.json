@@ -1,102 +1,827 @@
 {
   "elder_leaves": {
     "expiration": 12,
-    "display": "elder leaves"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "elder leaf",
+      "plural": "elder leaves"
+    }
   },
   "cobwebs": {
     "expiration": 24,
-    "display": "cobwebs"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "cobweb",
+      "plural": "cobwebs"
+    }
   },
   "daisy": {
     "expiration": 12,
-    "display": "daisy"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "daisy",
+      "plural": "daisies"
+    }
   },
   "horsetail": {
     "expiration": 12,
-    "display": "horsetail"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "horsetail",
+      "plural": "horsetail"
+    }
   },
   "juniper": {
     "expiration": 12,
-    "display": "juniper"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "juniper",
+      "plural": "juniper"
+    }
   },
   "lungwort": {
     "expiration": 12,
-    "display": "lungwort"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "lungwort",
+      "plural": "lungwort"
+    }
   },
   "mallow": {
     "expiration": 12,
-    "display": "mallow"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "mallow",
+      "plural": "mallow"
+    }
   },
   "marigold": {
     "expiration": 12,
-    "display": "marigold"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "marigold",
+      "plural": "marigold"
+    }
   },
   "moss": {
     "expiration": 24,
-    "display": "moss"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "moss clump",
+      "plural": "moss clumps"
+    }
   },
   "oak_leaves": {
     "expiration": 12,
-    "display": "oak leaves"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "oak leaf",
+      "plural": "oak leaves"
+    }
   },
   "ragwort": {
     "expiration": 12,
-    "display": "ragwort"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "ragwort",
+      "plural": "ragwort"
+    }
   },
   "raspberry": {
     "expiration": 12,
-    "display": "raspberry leaves"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "raspberry",
+      "plural": "raspberry"
+    }
   },
   "tansy": {
     "expiration": 12,
-    "display": "tansy"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "tansy",
+      "plural": "tansy"
+    }
   },
   "thyme": {
     "expiration": 12,
-    "display": "thyme"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "thyme",
+      "plural": "thyme"
+    }
   },
   "wild_garlic": {
     "expiration": 12,
-    "display": "wild garlic"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "wild garlic",
+      "plural": "wild garlic"
+    }
   },
   "dandelion": {
     "expiration": 12,
-    "display": "dandelion"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "dandelion",
+      "plural": "dandelions"
+    }
   },
   "mullein": {
     "expiration": 12,
-    "display": "mullein"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "mullein",
+      "plural": "mullein"
+    }
   },
   "rosemary": {
     "expiration": 12,
-    "display": "rosemary"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "rosemary",
+      "plural": "rosemary"
+    }
   },
   "burdock": {
     "expiration": 12,
-    "display": "burdock"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "burdock root",
+      "plural": "burdock roots"
+    }
   },
   "blackberry": {
     "expiration": 12,
-    "display": "blackberry leaves"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "blackberry",
+      "plural": "blackberry"
+    }
   },
   "betony": {
     "expiration": 12,
-    "display": "betony"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "betony",
+      "plural": "betony"
+    }
   },
   "goldenrod": {
     "expiration": 12,
-    "display": "goldenrod"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "goldenrod",
+      "plural": "goldenrod"
+    }
   },
   "poppy": {
     "expiration": 12,
-    "display": "poppy"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "dose of poppy seed",
+      "plural": "doses of poppy seed"
+    }
   },
   "plantain": {
     "expiration": 12,
-    "display": "plantain"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "plantain leaf",
+      "plural": "plantain leaves"
+    }
   },
   "catmint": {
     "expiration": 12,
-    "display": "catmint"
+    "rarity": {
+      "forest": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "mountainous": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "plains": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      },
+      "beach": {
+        "newleaf": 1,
+        "greenleaf": 1,
+        "leaf-fall": 1,
+        "leaf-bare": 1
+      }
+    },
+    "display": {
+      "singular": "catmint",
+      "plural": "catmint"
+    }
   }
 }
