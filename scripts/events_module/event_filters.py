@@ -214,10 +214,10 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
         if "low" in trigger and len([x for x in herb_supply if herb_supply[x] < half_amount]) == num_of_herbs:
             return True
         elif "adequate" in trigger and len(
-                [x for x in herb_supply if herb_supply[x] < needed_amount]) == num_of_herbs:
+                [x for x in herb_supply if half_amount < herb_supply[x] <= needed_amount]) == num_of_herbs:
             return True
         elif "full" in trigger and len(
-                [x for x in herb_supply if herb_supply[x] < needed_amount * 2]) == num_of_herbs:
+                [x for x in herb_supply if needed_amount < herb_supply[x] <= needed_amount * 2]) == num_of_herbs:
             return True
         elif "excess" in trigger and len(
                 [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]) == num_of_herbs:
@@ -228,9 +228,9 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
     elif supply_type == "any_herb":
         if "low" in trigger and [x for x in herb_supply if herb_supply[x] < half_amount]:
             return True
-        elif "adequate" in trigger and [x for x in herb_supply if herb_supply[x] < needed_amount]:
+        elif "adequate" in trigger and [x for x in herb_supply if half_amount < herb_supply[x] <= needed_amount]:
             return True
-        elif "full" in trigger and [x for x in herb_supply if herb_supply[x] < needed_amount * 2]:
+        elif "full" in trigger and [x for x in herb_supply if needed_amount < herb_supply[x] <= needed_amount * 2]:
             return True
         elif "excess" in trigger and [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]:
             return True
@@ -244,9 +244,9 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
             return False
         if "low" in trigger and herb_supply[chosen_herb] < half_amount:
             return True
-        elif "adequate" in trigger and herb_supply[chosen_herb] < needed_amount:
+        elif "adequate" in trigger and half_amount < herb_supply[chosen_herb] <= needed_amount:
             return True
-        elif "full" in trigger and herb_supply[chosen_herb] < needed_amount * 2:
+        elif "full" in trigger and needed_amount < herb_supply[chosen_herb] <= needed_amount * 2:
             return True
         elif "excess" in trigger and needed_amount * 2 < herb_supply[chosen_herb]:
             return True
