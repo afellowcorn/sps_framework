@@ -48,45 +48,8 @@ def accessory_display_name(cat):
 
     if accessory is None:
         return ""
-    acc_display = accessory.lower()
 
-    if accessory in Pelt.collars:
-        collar_colors = {
-            "crimson": "red",
-            "blue": "blue",
-            "yellow": "yellow",
-            "cyan": "cyan",
-            "red": "orange",
-            "lime": "lime",
-            "green": "green",
-            "rainbow": "rainbow",
-            "black": "black",
-            "spikes": "spiky",
-            "white": "white",
-            "pink": "pink",
-            "purple": "purple",
-            "multi": "multi",
-            "indigo": "indigo",
-        }
-        collar_color = next(
-            (color for color in collar_colors if acc_display.startswith(color)), None
-        )
-
-        if collar_color:
-            if acc_display.endswith("bow") and not collar_color == "rainbow":
-                acc_display = collar_colors[collar_color] + " bow"
-            elif acc_display.endswith("bell"):
-                acc_display = collar_colors[collar_color] + " bell collar"
-            else:
-                acc_display = collar_colors[collar_color] + " collar"
-
-    elif accessory in Pelt.wild_accessories:
-        if acc_display == "blue feathers":
-            acc_display = "crow feathers"
-        elif acc_display == "red feathers":
-            acc_display = "cardinal feathers"
-
-    return acc_display
+    return i18n.t(f"accessories.{accessory}", count=0)
 
 
 # ---------------------------------------------------------------------------- #
@@ -2171,7 +2134,7 @@ class ProfileScreen(Screens):
                 self.the_cat.gender == "female" and self.the_cat.genderalign == "female"
             ):
                 self.cis_trans_button.set_text(
-                    "screens.profile.change_gender_trans_female"
+                    "screens.profile.change_gender_transmale"
                 )
             elif self.the_cat.genderalign in ["trans female", "trans male"]:
                 self.cis_trans_button.set_text(

@@ -1803,6 +1803,11 @@ def adjust_prey_abbr(patrol_text):
     """
     checks for prey abbreviations and returns adjusted text
     """
+    global PREY_LISTS
+    if langs["prey"] != i18n.config.get("locale"):
+        langs["prey"] = i18n.config.get("locale")
+        PREY_LISTS = load_string_resource("prey_text_replacements.json")
+
     for abbr in PREY_LISTS["abbreviations"]:
         if abbr in patrol_text:
             chosen_list = PREY_LISTS["abbreviations"].get(abbr)
@@ -1835,6 +1840,10 @@ def get_special_snippet_list(
     :return: a list of the chosen items from chosen_list or a formatted string if format is True
     """
     biome = game.clan.biome.casefold()
+    global SNIPPETS
+    if langs["snippet"] != i18n.config.get("locale"):
+        langs["snippet"] = i18n.config.get("locale")
+        SNIPPETS = load_string_resource("snippet_collections.json")
 
     # these lists don't get sense specific snippets, so is handled first
     if chosen_list in ["dream_list", "story_list"]:
@@ -2227,13 +2236,13 @@ def event_text_adjust(
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:
         text = text.replace(
-            "acc_plural", str(ACC_DISPLAY[main_cat.pelt.accessory]["plural"])
+            "acc_plural", i18n.t(f"accessories.{main_cat.pelt.accessory}", count=2)
         )
 
     # acc_singular (only works for main_cat's acc)
     if "acc_singular" in text:
         text = text.replace(
-            "acc_singular", str(ACC_DISPLAY[main_cat.pelt.accessory]["singular"])
+            "acc_singular", i18n.t(f"accessories.{main_cat.pelt.accessory}", count=1)
         )
 
     if "given_herb" in text:
@@ -2929,14 +2938,10 @@ def load_string_resource(location: str):
 with open(f"resources/dicts/conditions/permanent_conditions.json", "r") as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
-with open(f"resources/dicts/acc_display.json", "r") as read_file:
-    ACC_DISPLAY = ujson.loads(read_file.read())
+langs = {"snippet": None, "prey": None}
 
-with open(f"resources/dicts/snippet_collections.json", "r") as read_file:
-    SNIPPETS = ujson.loads(read_file.read())
-
-with open(f"resources/dicts/prey_text_replacements.json", "r") as read_file:
-    PREY_LISTS = ujson.loads(read_file.read())
+SNIPPETS = None
+PREY_LISTS = None
 
 with open(f"resources/dicts/backstories.json", "r") as read_file:
     BACKSTORIES = ujson.loads(read_file.read())

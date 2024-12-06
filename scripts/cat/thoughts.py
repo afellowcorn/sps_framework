@@ -335,10 +335,7 @@ class Thoughts:
 
     @staticmethod
     def load_thoughts(main_cat, other_cat, game_mode, biome, season, camp):
-        base_path = f"resources/lang/{i18n.config.get('locale')}/thoughts/"
-        fallback_path = f"resources/lang/{i18n.config.get('fallback')}/thoughts/"
         status = main_cat.status
-
         status = status.replace(" ", "_")
         # match status:
         #     case "medicine cat apprentice":
@@ -370,7 +367,7 @@ class Thoughts:
         try:
             if main_cat.age == "newborn":
                 loaded_thoughts = load_string_resource(
-                    f"{life_dir}{spec_dir}/newborn.json"
+                    f"thoughts/{life_dir}{spec_dir}/newborn.json"
                 )
             else:
                 thoughts = load_string_resource(

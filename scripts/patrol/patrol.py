@@ -9,7 +9,6 @@ from typing import List, Tuple, Optional
 
 import i18n
 import pygame
-import ujson
 
 from scripts.cat.cats import Cat
 from scripts.clan import Clan
@@ -25,6 +24,7 @@ from scripts.utility import (
     find_special_list_types,
     filter_relationship_type,
     get_special_snippet_list,
+    load_string_resource,
 )
 
 # ---------------------------------------------------------------------------- #
@@ -39,7 +39,7 @@ class Patrol:
     used_patrols = []
 
     def __init__(self):
-        self.patrol_event: PatrolEvent = None
+        self.patrol_event: Optional[PatrolEvent] = None
 
         self.patrol_leader = None
         self.random_cat = None
@@ -798,7 +798,9 @@ class Patrol:
         ]
         for patrol_property, location in resources:
             try:
-                setattr(self, patrol_property, f"patrols/{location}")
+                setattr(
+                    self, patrol_property, load_string_resource(f"patrols/{location}")
+                )
             except:
                 raise Exception("Something went wrong loading patrols!")
 
