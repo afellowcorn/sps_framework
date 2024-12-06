@@ -1870,7 +1870,7 @@
   },
   {
     "interaction_type": "antagonize",
-    "event_text": "At the Gathering, m_c threatens and riles o_c_n's leader to the point of actual violence - o_c_n's leader lashes m_c across the muzzle with a sheathed paw. m_c leaps on o_c_n's leader and tussles with them, spitting. With the truce broken, the Gathering comes to a hasty end",
+    "event_text": "At the Gathering, m_c threatens and riles o_c_n's leader to the point of actual violence - o_c_n's leader lashes m_c across the muzzle with a sheathed paw. m_c leaps on o_c_n's leader and tussles with them, spitting. With the truce broken, the Gathering comes to a hasty end.",
     "rel_change": -10,
     "m_c": {
       "skill": [ "CLEVER,1" ],
