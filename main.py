@@ -300,7 +300,10 @@ while 1:
     game.all_screens[game.current_screen].on_use()
     # EVENTS
     for event in pygame.event.get():
-        game.all_screens[game.current_screen].handle_event(event)
+        if event.type == pygame.KEYDOWN and debug_mode.debug_menu.visible:
+            pass
+        else:
+            game.all_screens[game.current_screen].handle_event(event)
         sound_manager.handle_sound_events(event)
 
         if event.type == pygame.QUIT:

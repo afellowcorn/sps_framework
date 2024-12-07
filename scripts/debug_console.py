@@ -172,10 +172,8 @@ class DebugMode:
         if self.debug_menu.visible == 0:
             self.debug_menu.show()
             self.debug_menu.command_line.focus()
-            self.debug_menu.set_blocking(True)
         else:
             self.debug_menu.hide()
-            self.debug_menu.set_blocking(False)
 
     def rebuild_console(self):
         """
