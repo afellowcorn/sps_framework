@@ -153,6 +153,21 @@ class HerbSupply:
 
         return total
 
+    def get_highest_herb_in_group(self, group) -> str:
+        """
+        returns the herb in group that has the highest supply
+        """
+        chosen_herb = group[0]
+        highest_supply = 0
+
+        for herb in group:
+            total = self.get_single_herb_total(herb)
+            if total > highest_supply:
+                highest_supply = total
+                chosen_herb = herb
+
+        return chosen_herb
+
     def add_herb(self, herb: str, num_collected: int):
         """
         adds herb given to count for that moon
@@ -164,30 +179,36 @@ class HerbSupply:
 
     def remove_herb(self, herb: str, num_removed: int):
         """
-        removes herb given from count for that moon, then from supply if necessary
+        removes given amount of given herb from the oldest supply first, then collection for that moon
+        :param herb: herb to remove
+        :param num_removed: POSITIVE number of herbs to remove
         """
-        surplus = 0
+        surplus = self._remove_from_supply(herb, num_removed)
 
-        if self.herbs_collected.get(herb, []):
-            self.herbs_collected[herb] += num_removed
+        if surplus and self.herbs_collected.get(herb, []):
+            self.herbs_collected[herb] -= surplus
             if self.herbs_collected[herb] < 0:
-                num_removed = abs(self.herbs_collected[herb])
                 self.herbs_collected[herb] = 0
-            else:
                 return
 
         if num_removed:
             self._get_from_supply(herb, num_removed)
 
     def _get_from_supply(self, herb: str, needed_num: int):
+    def _remove_from_supply(self, herb: str, needed_num: int) -> int:
         """
-        removes needed_num of given herb from supply until needed_num is met or supply is empty
+        removes needed_num of given herb from supply until needed_num is met or supply is empty, if supply runs out
+        before needed_num is met, returns excess
         """
         while needed_num > 0 and self.herb_supply[herb]:
+            # remove from oldest stock
             self.herb_supply[herb][-1] -= needed_num
-            if self.herb_supply[herb][-1] > 0:
+            # if that stock runs out, move to next oldest stock
+            if self.herb_supply[herb][-1] < 0:
                 needed_num = abs(self.herb_supply[herb][-1])
                 self.herb_supply[herb].pop(-1)
+
+        return needed_num
 
 
 with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:
