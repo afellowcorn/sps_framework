@@ -2,7 +2,8 @@ from random import choice, randint
 
 import ujson
 
-from scripts.clan_resources.herb import Herb
+from scripts.cat.cats import ILLNESSES, INJURIES, PERMANENT
+from scripts.clan_resources.herb.herb import Herb
 from scripts.clan_resources.supply import Supply
 from scripts.game_structure.game_essentials import game
 
@@ -123,9 +124,9 @@ class HerbSupply:
             elif self.excess_qualifier < total:
                 return Supply.EXCESS
 
-    def handle_moon(self, clan_size):
+    def handle_moon(self, clan_size, clan_cats):
         """
-        handle cycling of herbs during moon skip
+        handle herbs on moon skip: add collected to supply, use herbs where needed, expire old herbs, look for new herbs
         """
         # set herb count
         self.required_herb_count = clan_size * 2
@@ -134,11 +135,38 @@ class HerbSupply:
         for herb in self.herbs_collected:
             self.herb_supply.get(herb, []).insert(0, self.herbs_collected[herb])
 
+        # TODO: this is where we should handle using herbs
+        severity_ranking = {
+            "severe": [],
+            "major": [],
+            "minor": []
+        }
+        cats_to_treat = [kitty for kitty in clan_cats if kitty.is_ill() or kitty.is_injured() or kitty.is_disabled()]
+        for kitty in cats_to_treat:
+            severities = []
+            conditions = kitty.permeanent_conditions
+            conditions.update(kitty.injuries)
+            conditions.update(kitty.illnesses)
+            for con in conditions:
+                severities.append(conditions[con]["severity"])
+            if "severe" in severities:
+                severity_ranking["severe"].append(kitty)
+            elif "major" in severities:
+                severity_ranking["major"].append(kitty)
+            elif "minor" in severities:
+                severity_ranking["minor"].append(kitty)
+
+        treatment_cats = severity_ranking["severe"] + severity_ranking["major"] + severity_ranking["minor"]
+        for kitty in treatment_cats:
+            self.use_herbs(kitty)
+
         # remove expired herbs
         # TODO: consider how to inform player of expiration
-        for herb in self.herb_supply.copy():
-            if len(self.herb_supply[herb]) > HERBS[herb]["expiration"]:
+        for herb_name in self.herb_supply.copy():
+            if len(self.herb_supply[herb_name]) > self.herb[herb_name].expiration:
                 self.herb_supply.pop(-1)
+
+        # TODO: this is where we should handle looking for new herbs that moon
 
     def get_single_herb_total(self, herb: str) -> int:
         """
@@ -189,12 +217,97 @@ class HerbSupply:
             self.herbs_collected[herb] -= surplus
             if self.herbs_collected[herb] < 0:
                 self.herbs_collected[herb] = 0
+
+    def use_herbs(self, treatment_cat):
+        """
+        utilize current herb supply on given condition
+        """
+        # collate all cat's conditions
+        condition_dict = treatment_cat.injuries
+        condition_dict.update(treatment_cat.illnesses)
+        condition_dict.update(treatment_cat.permanent_condition)
+
+        # collate all the source info for conditions
+        source_dict = ILLNESSES
+        source_dict.update(INJURIES)
+        source_dict.update(PERMANENT)
+
+        for condition in condition_dict:
+            # get the herbs that the condition allows as treatment
+            try:
+                required_herbs = source_dict[condition]["herbs"]
+            except KeyError:
+                print(
+                    f"WARNING: {condition} does not exist in it's condition dict! That condition may have been removed "
+                    f"from the game. If not intentional, check that your condition is in the correct dict or report "
+                    f"this as a bug. "
+                )
                 return
 
-        if num_removed:
-            self._get_from_supply(herb, num_removed)
+            # if condition has no herbs listed, return
+            if not required_herbs:
+                return
 
-    def _get_from_supply(self, herb: str, needed_num: int):
+            # find which required herbs the clan currently has
+            herbs_available = [herb for herb in required_herbs if self.get_single_herb_total(herb) > 0]
+
+            if herbs_available or game.clan.game_mode == "classic":
+                # find the possible effects of herb for the condition
+                possible_effects = []
+                current_condition_info = condition_dict[condition]
+
+                if current_condition_info.get("mortality", 0):
+                    possible_effects.append("mortality")
+                if current_condition_info.get("risks", []):
+                    possible_effects.append("risks")
+                if current_condition_info.get("duration", 0) > 1:
+                    possible_effects.append("duration")
+
+                if not possible_effects:
+                    return
+
+                chosen_effect = choice(possible_effects)
+
+                herb_used = self.get_highest_herb_in_group(herbs_available)
+                total_herb_amount = self.get_single_herb_total(herb_used)
+
+                # TODO: consider making this a flat 1
+                amount_used = randint(1, total_herb_amount if total_herb_amount < 4 else 4)
+
+                self.remove_herb(herb_used, amount_used)
+
+                self.apply_herb_effect(treatment_cat, condition, herb_used, chosen_effect, amount_used)
+
+    def apply_herb_effect(self, treated_cat, condition, herb_used, effect, amount_used):
+
+        if condition in treated_cat.illnesses:
+            con_info = treated_cat.illnesses[condition]
+        elif condition in treated_cat.injuries:
+            con_info = treated_cat.injuries[condition]
+        else:
+            con_info = treated_cat.permanent_condition[condition]
+
+        # TODO: hook this up to the herb strength for that condition
+        strength_modifier = 1
+        amt_modifier = int(amount_used * 1.5)
+
+        if effect == "mortality":
+            con_info["mortality"] += (
+                3 * strength_modifier + amt_modifier
+            )
+        elif effect == "duration":
+            # duration doesn't get amt_modifier, as that would be far too strong an affect
+            con_info["duration"] -= (
+                1 * strength_modifier
+            )
+            if con_info["duration"] < 0:
+                con_info["duration"] = 0
+        elif effect == "risks":
+            for risk in con_info["risks"]:
+                con_info[risk]["chance"] += (
+                    3 * strength_modifier + amt_modifier
+                )
+
     def _remove_from_supply(self, herb: str, needed_num: int) -> int:
         """
         removes needed_num of given herb from supply until needed_num is met or supply is empty, if supply runs out
