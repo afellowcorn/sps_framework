@@ -1,3 +1,6 @@
+"""
+Stores the DebugMenu class and the DebugMode class
+"""
 import pygame
 import pygame_gui
 import html
@@ -25,14 +28,14 @@ class DebugMenu(UIWindow):
             resizable=False,
             visible=0
         )
-        self.set_blocking(True)
+        self.set_blocking(False)
         set_debug_class(self)
 
         self.log = UITextBox(
             "",
             relative_rect=ui_scale(
                 pygame.Rect(
-                    (2, 2), 
+                    (2, 2),
                     (self.get_container().get_size()[0]-4, self.get_container().get_size()[1]-36)
                 )
             ),
@@ -44,7 +47,7 @@ class DebugMenu(UIWindow):
         self.command_line = UITextEntryLine(
             relative_rect=ui_scale(
                 pygame.Rect(
-                    (2, -32), 
+                    (2, -32),
                     (self.get_container().get_size()[0]-4, 30)
                 )
             ),
@@ -120,7 +123,7 @@ class DebugMenu(UIWindow):
 
     def process_event(self, event: pygame.Event):
         if (
-            event.type == pygame_gui.UI_TEXT_ENTRY_FINISHED 
+            event.type == pygame_gui.UI_TEXT_ENTRY_FINISHED
             and event.ui_element == self.command_line
         ):
             pygame.event.post(

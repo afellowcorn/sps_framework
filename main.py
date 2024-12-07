@@ -300,9 +300,7 @@ while 1:
     game.all_screens[game.current_screen].on_use()
     # EVENTS
     for event in pygame.event.get():
-        if not debug_mode.debug_menu.visible:
-            #only handle events if the console is disabled, mostly used to combat the game switching screens when typing commands
-            game.all_screens[game.current_screen].handle_event(event)
+        game.all_screens[game.current_screen].handle_event(event)
         sound_manager.handle_sound_events(event)
 
         if event.type == pygame.QUIT:
