@@ -114,7 +114,6 @@ def set_display_mode(
         if old_scale != screen_scale:
             from scripts.screens.all_screens import AllScreens
             import scripts.screens.screens_core.screens_core
-            import scripts.debug_menu
 
             game.save_settings(currentscreen=source_screen)
             source_screen.exit_screen()
