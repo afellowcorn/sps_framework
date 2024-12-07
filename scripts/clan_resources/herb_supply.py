@@ -1,8 +1,10 @@
+from random import choice, randint
 
 import ujson
 
 from scripts.clan_resources.herb import Herb
 from scripts.clan_resources.supply import Supply
+from scripts.game_structure.game_essentials import game
 
 
 class HerbSupply:
@@ -25,7 +27,11 @@ class HerbSupply:
 
         self.herb = {}
         for name in HERBS:
-            self.herb[name] = Herb(name)
+            self.herb[name] = Herb(
+                name,
+                biome=game.clan.biome,
+                season=game.clan.current_season
+            )
 
     @property
     def lowest_supply(self) -> str:

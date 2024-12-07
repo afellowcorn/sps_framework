@@ -8,15 +8,15 @@ class Herb:
             season,
             biome
             ):
-        self.herb_name: str = herb_name
-        self.herb_dict: dict = HERBS.get(self.herb_name, {})
+        self.name: str = herb_name
+        self.herb_dict: dict = HERBS.get(self.name, {})
 
         self.clan_biome: str = season.casefold()
         self.game_season: str = biome.casefold()
 
         self.display_dict = self.herb_dict.get("display", {})
-        self.singular_display = self.display_dict.get("singular", self.herb_name)
-        self.plural_display = self.display_dict.get("plural", self.herb_name)
+        self.singular_display = self.display_dict.get("singular", self.name)
+        self.plural_display = self.display_dict.get("plural", self.name)
 
         self.expiration: int = self.herb_dict.get("expiration", 1)
 
