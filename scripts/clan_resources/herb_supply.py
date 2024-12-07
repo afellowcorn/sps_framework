@@ -1,13 +1,16 @@
 
 import ujson
 
+from scripts.clan_resources.herb import Herb
 from scripts.clan_resources.supply import Supply
 
 
 class HerbSupply:
     """Handles managing the Clan's herb supply."""
 
-    def __init__(self, herb_supply: dict = None):
+    def __init__(self,
+                 herb_supply: dict = None
+                 ):
         """
         Initialize the class
         """
@@ -19,6 +22,10 @@ class HerbSupply:
 
         # herb count required for clan
         self.required_herb_count: int = 0
+
+        self.herb = {}
+        for name in HERBS:
+            self.herb[name] = Herb(name)
 
     @property
     def lowest_supply(self) -> str:
@@ -144,12 +151,11 @@ class HerbSupply:
         """
         adds herb given to count for that moon
         """
-
         if self.herbs_collected.get(herb, []):
             self.herbs_collected[herb] += num_collected
         else:
             self.herbs_collected[herb] = num_collected
-            
+
     def remove_herb(self, herb: str, num_removed: int):
         """
         removes herb given from count for that moon, then from supply if necessary
