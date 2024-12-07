@@ -4,6 +4,7 @@ import ujson
 
 from scripts.cat.cats import ILLNESSES, INJURIES, PERMANENT
 from scripts.clan_resources.herb.herb import Herb
+from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
 from scripts.game_structure.game_essentials import game
 
@@ -257,11 +258,11 @@ class HerbSupply:
                 current_condition_info = condition_dict[condition]
 
                 if current_condition_info.get("mortality", 0):
-                    possible_effects.append("mortality")
+                    possible_effects.append(HerbEffect.MORTALITY)
                 if current_condition_info.get("risks", []):
-                    possible_effects.append("risks")
+                    possible_effects.append(HerbEffect.RISK)
                 if current_condition_info.get("duration", 0) > 1:
-                    possible_effects.append("duration")
+                    possible_effects.append(HerbEffect.DURATION)
 
                 if not possible_effects:
                     return
@@ -291,19 +292,19 @@ class HerbSupply:
         strength_modifier = 1
         amt_modifier = int(amount_used * 1.5)
 
-        if effect == "mortality":
-            con_info["mortality"] += (
+        if effect == HerbEffect.MORTALITY:
+            con_info[effect] += (
                 3 * strength_modifier + amt_modifier
             )
-        elif effect == "duration":
+        elif effect == HerbEffect.DURATION:
             # duration doesn't get amt_modifier, as that would be far too strong an affect
-            con_info["duration"] -= (
+            con_info[effect] -= (
                 1 * strength_modifier
             )
             if con_info["duration"] < 0:
                 con_info["duration"] = 0
-        elif effect == "risks":
-            for risk in con_info["risks"]:
+        elif effect == HerbEffect.RISK:
+            for risk in con_info[effect]:
                 con_info[risk]["chance"] += (
                     3 * strength_modifier + amt_modifier
                 )
