@@ -166,7 +166,8 @@ from scripts.clan import clan_class
 from scripts.utility import (
     quit,
 )  # pylint: disable=redefined-builtin
-from scripts.debug_menu import debugmode
+# from scripts.debug_menu import debugmode
+from scripts.debug_console import debug_mode
 import pygame
 
 
@@ -336,7 +337,8 @@ while 1:
             if event.key == pygame.K_F2:
                 MANAGER.print_layer_debug()
             elif event.key == pygame.K_F3:
-                debugmode.toggle_console()
+                debug_mode.toggle_debug_mode()
+                #debugmode.toggle_console()
             elif event.key == pygame.K_F11:
                 scripts.game_structure.screen_settings.toggle_fullscreen(
                     source_screen=getattr(
@@ -358,11 +360,11 @@ while 1:
     if not pygame.mixer.music.get_busy() and not music_manager.muted:
         music_manager.play_queued()
 
-    debugmode.update1(clock)
+    debug_mode.pre_update(clock)
     # END FRAME
 
     MANAGER.draw_ui(screen)
 
-    debugmode.update2(screen)
+    debug_mode.post_update(screen)
 
     pygame.display.update()
