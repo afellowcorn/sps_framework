@@ -30,15 +30,27 @@ class HerbSupply:
         self.required_herb_count: int = 0
 
         self.herb = {}
-        for name in HERBS:
-            self.herb[name] = Herb(
-                name,
-                biome=game.clan.biome,
-                season=game.clan.current_season
-            )
+        if game.clan:
+            for name in HERBS:
+                self.herb[name] = Herb(
+                    name,
+                    biome=game.clan.biome,
+                    season=game.clan.current_season
+                )
 
         # med den log for current moon
         self.log = []
+
+    @property
+    def combined_supply(self) -> dict:
+        """
+        returns a dict containing both the storage and the collected herb dicts
+        """
+        combined_supply = {
+            "storage": self.storage,
+            "collected": self.collected
+        }
+        return combined_supply
 
     @property
     def sorted_by_lowest(self) -> list:
@@ -91,6 +103,14 @@ class HerbSupply:
         returns the lowest qualifier for an adequate supply
         """
         return self.required_herb_count * 2
+
+    def start_storage(self, herb_list):
+        """
+        used to start a new storage dict if the clan had old save file to convert
+        """
+        for herb, count in herb_list.items():
+            if herb in HERBS:
+                self.storage[herb] = [count]
 
     def handle_moon(self, clan_size: int, clan_cats: list, med_cats: list):
         """
@@ -267,6 +287,10 @@ class HerbSupply:
 
             # store if no meds managed to store better
             self.storage.get(herb, []).insert(0, count)
+
+        # add empty "clump" to all uncollected herb stores
+        for herb in [x for x in HERBS if x not in self.collected]:
+            self.storage.get(herb, []).insert(0, 0)
 
         # clear collection dict
         self.collected = {}
