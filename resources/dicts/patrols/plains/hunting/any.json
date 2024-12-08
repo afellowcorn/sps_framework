@@ -315,7 +315,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "app1 spots a boggy area nearby. Dragging themself through the mud, pressing themself so low it gets on their whiskers, they creep closer below the sentry's view. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} from cover, but the sentry alarm barks, and the prairie dogs evapourate into their waiting burrows, leaving app1 muddy and preyless.",
+                "text": "app1 spots a boggy area nearby. Dragging {PRONOUN/app1/self} through the mud, pressing {PRONOUN/app1/self} so low it gets on {PRONOUN/app1/poss} whiskers, {PRONOUN/app1/subject} creep closer below the sentry's view. {PRONOUN/app1/subject/CAP} {VERB/app1/leap/leaps} from cover, but the sentry alarm barks, and the prairie dogs evaporate into their waiting burrows, leaving app1 muddy and preyless.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_soggykitty_mad_app",
