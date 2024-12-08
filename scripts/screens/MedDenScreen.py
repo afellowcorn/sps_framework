@@ -2,7 +2,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.clan import HERBS
+from scripts.clan_resources.herb.herb_supply import HERBS
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
@@ -338,12 +338,12 @@ class MedDenScreen(Screens):
                 insert = "medicine cat"
             else:
                 insert = "medicine cats"
-            meds_cover = f"Your {insert} can care for a Clan of up to {number} members, including themselves."
+            meds_cover = f"The {insert} can care for a Clan of up to {number} members."
             if game.clan.game_mode == "classic":
                 meds_cover = ""
 
             if len(self.meds) >= 1 and number == 0:
-                meds_cover = f"You have no medicine cats who are able to work. Your Clan will be at a higher risk of death and disease."
+                meds_cover = f"There are no medicine cats who are able to work. The Clan will be at a higher risk of death and disease."
 
             herb_amount = sum(game.clan.herbs.values())
             needed_amount = int(get_living_clan_cat_count(Cat) * 4)
@@ -380,7 +380,7 @@ class MedDenScreen(Screens):
             self.meds_messages.set_text("<br>".join(med_messages))
 
         else:
-            meds_cover = f"You have no medicine cats, your clan will be at higher risk of death and sickness."
+            meds_cover = f"There are no medicine cats, the Clan will be at higher risk of death and sickness."
             self.meds_messages.set_text(meds_cover)
 
     def handle_tab_toggles(self):

@@ -1110,10 +1110,9 @@ class Clan:
         if not clan.herb_supply:
             return
 
-        supply = clan.herb_supply.combined_supply
         game.safe_save(
             f"{get_save_dir()}/{game.clan.name}/herb_supply.json",
-            supply
+            clan.herb_supply.combined_supply
         )
 
     def load_freshkill_pile(self, clan):
