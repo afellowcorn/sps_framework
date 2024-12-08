@@ -150,37 +150,38 @@ class HerbSupply:
         for meddie in med_cats:
             herbs_gathered = self._gather_herbs(meddie)
 
-    def get_supply_rating(self, all_herbs: bool = True, herb: str = None):
+    def get_supply_rating(self):
         """
         returns the rating of given supply, aka how "full" the supply is compared to clan size
-        :param all_herbs: if true, returns rating of entire herb supply
-        :param herb: if str name of herb is given, returns rating of that herb's supply
         """
-        if all_herbs:
-            rating = None
-            for single_herb in self.stored:
-                total = self.get_single_herb_total(single_herb)
-                if self.low_qualifier < total <= self.adequate_qualifier and rating not in [Supply.ADEQUATE,
-                                                                                            Supply.FULL,
-                                                                                            Supply.EXCESS]:
-                    rating = Supply.LOW
-                elif self.adequate_qualifier < total <= self.full_qualifier and rating not in [Supply.FULL,
-                                                                                               Supply.EXCESS]:
-                    rating = Supply.ADEQUATE
-                elif self.full_qualifier < total <= self.excess_qualifier and rating != Supply.EXCESS:
-                    rating = Supply.EXCESS
-            return rating
+        rating = None
+        for single_herb in self.stored:
+            total = self.get_single_herb_total(single_herb)
+            if self.low_qualifier < total <= self.adequate_qualifier and rating not in [Supply.ADEQUATE,
+                                                                                        Supply.FULL,
+                                                                                        Supply.EXCESS]:
+                rating = Supply.LOW
+            elif self.adequate_qualifier < total <= self.full_qualifier and rating not in [Supply.FULL,
+                                                                                           Supply.EXCESS]:
+                rating = Supply.ADEQUATE
+            elif self.full_qualifier < total <= self.excess_qualifier and rating != Supply.EXCESS:
+                rating = Supply.EXCESS
+        return rating
 
-        else:
-            total = self.get_single_herb_total(herb)
-            if self.low_qualifier < total <= self.adequate_qualifier:
-                return Supply.LOW
-            elif self.adequate_qualifier < total <= self.full_qualifier:
-                return Supply.ADEQUATE
-            elif self.full_qualifier < total <= self.excess_qualifier:
-                return Supply.FULL
-            elif self.excess_qualifier < total:
-                return Supply.EXCESS
+    def get_herb_rating(self, herb):
+        """
+        returns the rating of given herb, aka how "full" the supply is compared to clan size
+        """
+
+        total = self.get_single_herb_total(herb)
+        if self.low_qualifier < total <= self.adequate_qualifier:
+            return Supply.LOW
+        elif self.adequate_qualifier < total <= self.full_qualifier:
+            return Supply.ADEQUATE
+        elif self.full_qualifier < total <= self.excess_qualifier:
+            return Supply.FULL
+        elif self.excess_qualifier < total:
+            return Supply.EXCESS
 
     def get_single_herb_total(self, herb: str) -> int:
         """
