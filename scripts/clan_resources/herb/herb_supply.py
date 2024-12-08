@@ -21,7 +21,7 @@ class HerbSupply:
         Initialize the class
         """
         # a dict of current stored herbs - herbs collected this moon
-        self.stored: dict = herb_supply if herb_supply else {}
+        self.storage: dict = herb_supply if herb_supply else {}
 
         # a dict of herbs collected this moon
         self.collected: dict = {}
@@ -45,7 +45,7 @@ class HerbSupply:
         """
         returns list of herbs ordered from the least supply to most
         """
-        sort_list = [x for x in self.stored]
+        sort_list = [x for x in self.storage]
         sort_list.sort(key=lambda list_herb: self.get_single_herb_total(list_herb) + self.collected[list_herb])
 
         return sort_list
@@ -56,8 +56,8 @@ class HerbSupply:
         return total int of all herb inventory
         """
         total = 0
-        for herb in self.stored:
-            for stock in self.stored[herb]:
+        for herb in self.storage:
+            for stock in self.storage[herb]:
                 total += stock
         for herb in self.collected:
             total += herb
@@ -103,38 +103,13 @@ class HerbSupply:
         self.required_herb_count = clan_size * 2
 
         # add herbs acquired last moon
-        for herb, count in self.collected.items():
-            # check if any meds can use a skill to store herbs better (aka, reduce time to expire)
-            for med in med_cats:
-                if herb not in self.stored:
-                    # herbs can't be stored better if there isn't an existing store of that herb
-                    break
-
-                # we base this modifier on their path points,
-                # this means there's skill variation even within cats with matching tiers
-                if med.skill.primary_path == SkillPath.CAMP:
-                    modifier = med.skill.primary_points
-                elif med.skill.secondary_path == SkillPath.CAMP:
-                    modifier = med.skill.secondary_points
-                else:
-                    continue
-
-                # attempt the better storage
-                if randint(1, 35 - modifier) == 1:
-                    self.stored[herb][0] += count
-                    continue
-
-            # store if no meds had needed skill
-            self.stored.get(herb, []).insert(0, self.collected[herb])
-
-        # clear collection dict
-        self.collected = {}
+        self._add_collection_to_storage(med_cats)
 
         # look for new herbs
         for med in med_cats:
             self._gather_herbs(med)
 
-        # TODO: this is where we should handle using herbs
+        # check if herbs can be used
         severity_ranking = {
             "severe": [],
             "major": [],
@@ -160,11 +135,11 @@ class HerbSupply:
             self._use_herbs(kitty)
 
         # remove expired herbs
-        for herb_name in self.stored.copy():
+        for herb_name in self.storage.copy():
             expired = []
-            if len(self.stored[herb_name]) > self.herb[herb_name].expiration:
+            if len(self.storage[herb_name]) > self.herb[herb_name].expiration:
                 expired.append(self.herb[herb_name])
-                self.stored.pop(-1)
+                self.storage.pop(-1)
 
             # add log entry to inform player of removal
             if expired:
@@ -173,14 +148,12 @@ class HerbSupply:
                     f"{adjust_list_text([herb.plural_display for herb in expired])} "
                     f"were too old to be of use anymore.")
 
-
-
     def get_supply_rating(self):
         """
         returns the rating of given supply, aka how "full" the supply is compared to clan size
         """
         rating = None
-        for single_herb in self.stored:
+        for single_herb in self.storage:
             total = self.get_single_herb_total(single_herb)
             if self.low_qualifier < total <= self.adequate_qualifier and rating not in [Supply.ADEQUATE,
                                                                                         Supply.FULL,
@@ -210,10 +183,10 @@ class HerbSupply:
 
     def get_single_herb_total(self, herb: str) -> int:
         """
-        returns int total stock of given herb
+        returns int total supply of given herb
         """
         total = 0
-        for stock in self.stored[herb]:
+        for stock in self.storage[herb]:
             total += stock
 
         for amt in self.collected[herb]:
@@ -251,12 +224,41 @@ class HerbSupply:
         :param herb: herb to remove
         :param num_removed: POSITIVE number of herbs to remove
         """
-        surplus = self._remove_from_supply(herb, num_removed)
+        surplus = self._remove_from_storage(herb, num_removed)
 
         if surplus and self.collected.get(herb, []):
             self.collected[herb] -= surplus
             if self.collected[herb] < 0:
                 self.collected[herb] = 0
+
+    def _add_collection_to_storage(self, med_cats):
+        for herb, count in self.collected.items():
+            # check if any meds can use a skill to store herbs better (aka, reduce time to expire)
+            for med in med_cats:
+                if herb not in self.storage:
+                    # herbs can't be stored better if there isn't an existing store of that herb
+                    break
+
+                # we base this modifier on their path points,
+                # this means there's skill variation even within cats with matching tiers
+                if med.skill.primary_path == SkillPath.CAMP:
+                    modifier = med.skill.primary_points
+                elif med.skill.secondary_path == SkillPath.CAMP:
+                    modifier = med.skill.secondary_points
+                else:
+                    continue
+
+                # attempt the better storage
+                if randint(1, 35 - modifier) == 1:
+                    # TODO: should log inform if med did good job storing?
+                    self.storage[herb][0] += count
+                    continue
+
+            # store if no meds managed to store better
+            self.storage.get(herb, []).insert(0, count)
+
+        # clear collection dict
+        self.collected = {}
 
     def _use_herbs(self, treatment_cat):
         """
@@ -272,13 +274,13 @@ class HerbSupply:
         source_dict.update(INJURIES)
         source_dict.update(PERMANENT)
 
-        for condition in condition_dict:
+        for name, condition in condition_dict.items():
             # get the herbs that the condition allows as treatment
             try:
-                required_herbs = source_dict[condition]["herbs"]
+                required_herbs = source_dict[name]["herbs"]
             except KeyError:
                 print(
-                    f"WARNING: {condition} does not exist in it's condition dict! That condition may have been removed "
+                    f"WARNING: {name} does not exist in it's condition dict! That condition may have been removed "
                     f"from the game. If not intentional, check that your condition is in the correct dict or report "
                     f"this as a bug. "
                 )
@@ -288,26 +290,26 @@ class HerbSupply:
             if not required_herbs:
                 return
 
+            # find the possible effects of herb for the condition
+            possible_effects = []
+
+            # effects are weighted mortality most likely, then risks, then duration
+            if condition.get("mortality", 0):
+                possible_effects.extend(HerbEffect.MORTALITY * 3)
+            if condition.get("risks", []):
+                possible_effects.extend(HerbEffect.RISK * 2)
+            if condition.get("duration", 0) > 1:
+                possible_effects.append(HerbEffect.DURATION)
+
+            if not possible_effects:
+                return
+
+            chosen_effect = choices(population=possible_effects)
+
             # find which required herbs the clan currently has
             herbs_available = [herb for herb in required_herbs if self.get_single_herb_total(herb) > 0]
 
             if herbs_available or game.clan.game_mode == "classic":
-                # find the possible effects of herb for the condition
-                possible_effects = []
-                current_condition_info = condition_dict[condition]
-
-                if current_condition_info.get("mortality", 0):
-                    possible_effects.append(HerbEffect.MORTALITY)
-                if current_condition_info.get("risks", []):
-                    possible_effects.append(HerbEffect.RISK)
-                if current_condition_info.get("duration", 0) > 1:
-                    possible_effects.append(HerbEffect.DURATION)
-
-                if not possible_effects:
-                    return
-
-                chosen_effect = choice(possible_effects)
-
                 herb_used = self.get_highest_herb_in_group(herbs_available)
                 total_herb_amount = self.get_single_herb_total(herb_used)
 
@@ -316,11 +318,14 @@ class HerbSupply:
 
                 self.remove_herb(herb_used, amount_used)
 
-                self.__apply_herb_effect(treatment_cat, condition, herb_used, chosen_effect, amount_used)
+                self.__apply_herb_effect(treatment_cat, name, herb_used, chosen_effect, amount_used)
+
+            else:
+                self.__apply_lack_of_herb(treatment_cat, name, chosen_effect)
 
     def _gather_herbs(self, med_cat):
         """
-        finds out what herbs that an individual med cat gathered during moon skip and adds those herbs to collection
+        finds out what herbs an individual med cat gathered during moon skip and adds those herbs to collection
         and log
         """
         # meds with relevant skills will get a boost to the herbs they find
@@ -376,27 +381,31 @@ class HerbSupply:
                 else:
                     list_of_herb_strs.append(f"{count} {self.herb[herb].singular_display}")
 
+            # add found herbs to log
             self.log.append(f"{med_cat.name} collected {adjust_list_text(list_of_herb_strs)} during this moon.")
         else:
             self.log.append(f"{med_cat.name} didn't collect any herbs this moon.")
 
-    def _remove_from_supply(self, herb: str, needed_num: int) -> int:
+    def _remove_from_storage(self, herb: str, needed_num: int) -> int:
         """
-        removes needed_num of given herb from supply until needed_num is met or supply is empty, if supply runs out
+        removes needed_num of given herb from storage until needed_num is met or storage is empty, if storage runs out
         before needed_num is met, returns excess
         """
-        while needed_num > 0 and self.stored[herb]:
+        while needed_num > 0 and self.storage[herb]:
             # remove from oldest stock
-            self.stored[herb][-1] -= needed_num
+            self.storage[herb][-1] -= needed_num
             # if that stock runs out, move to next oldest stock
-            if self.stored[herb][-1] < 0:
-                needed_num = abs(self.stored[herb][-1])
-                self.stored[herb].pop(-1)
+            if self.storage[herb][-1] < 0:
+                needed_num = abs(self.storage[herb][-1])
+                self.storage[herb].pop(-1)
 
         return needed_num
 
     @staticmethod
-    def __apply_herb_effect(treated_cat, condition, herb_used, effect, amount_used):
+    def __apply_herb_effect(treated_cat, condition: str, herb_used, effect, amount_used):
+        """
+        applies the given effect to the treated_cat
+        """
         # TODO: you'll need herb_used for determining strength
 
         # grab the correct condition dict so that we can modify it
@@ -409,7 +418,7 @@ class HerbSupply:
 
         # TODO: hook this up to the herb strength for that condition
         strength_modifier = 1
-        amt_modifier = int(amount_used * 1.5)
+        amt_modifier = int(amount_used * .5) if int(amount_used * .5) >= 1 else 1
 
         # apply mortality effect
         if effect == HerbEffect.MORTALITY:
@@ -429,11 +438,37 @@ class HerbSupply:
         # apply risk effect
         elif effect == HerbEffect.RISK:
             for risk in con_info[effect]:
-                con_info[risk]["chance"] += (
+                risk["chance"] += (
                         3 * strength_modifier + amt_modifier
                 )
 
         # TODO: set up the effect log messages
+
+    @staticmethod
+    def __apply_lack_of_herb(treatment_cat, condition: str, effect):
+        """
+        if the condition is a perm condition, give some consequence for not treated it
+        """
+        # TODO: this kinda feels like something that should happen within a theoretical condition class...
+
+        # only perm conditions and redcough can degenerate
+        if condition in treatment_cat.illnesses and condition != "redcough":
+            return
+        elif condition in treatment_cat.injuries:
+            return
+
+        # grab the correct condition dict so that we can modify it
+        con_info = treatment_cat.permanent_condition[condition]
+
+        if effect == HerbEffect.RISK:
+            for risk in con_info[effect]:
+                risk["chance"] -= randint(2, 4)
+                if risk["chance"] <= 1:
+                    risk["chance"] = 2
+        elif effect == HerbEffect.MORTALITY:
+            con_info[effect] -= randint(2, 4)
+            if con_info[effect] <= 1:
+                con_info[effect] = 2
 
 
 with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:
