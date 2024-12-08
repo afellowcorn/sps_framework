@@ -7,6 +7,7 @@ from scripts.clan_resources.herb.herb import Herb
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
 from scripts.game_structure.game_essentials import game
+from scripts.utility import adjust_list_text
 
 
 class HerbSupply:
@@ -19,10 +20,10 @@ class HerbSupply:
         Initialize the class
         """
         # a dict of current stored herbs - herbs collected this moon
-        self.herb_supply: dict = herb_supply if herb_supply else {}
+        self.stored: dict = herb_supply if herb_supply else {}
 
         # a dict of herbs collected this moon
-        self.herbs_collected: dict = {}
+        self.collected: dict = {}
 
         # herb count required for clan
         self.required_herb_count: int = 0
@@ -35,6 +36,9 @@ class HerbSupply:
                 season=game.clan.current_season
             )
 
+        # med den log for current moon
+        self.log = []
+
     @property
     def lowest_supply(self) -> str:
         """
@@ -45,8 +49,8 @@ class HerbSupply:
         lowest_total = self.supply_total
         chosen_herb = None
 
-        for herb in self.herb_supply:
-            if self.get_single_herb_total(herb) + self.herbs_collected[herb] < lowest_total:
+        for herb in self.stored:
+            if self.get_single_herb_total(herb) + self.collected[herb] < lowest_total:
                 chosen_herb = herb
 
         return chosen_herb
@@ -57,10 +61,10 @@ class HerbSupply:
         return total int of all herb inventory
         """
         total = 0
-        for herb in self.herb_supply:
-            for stock in self.herb_supply[herb]:
+        for herb in self.stored:
+            for stock in self.stored[herb]:
                 total += stock
-        for herb in self.herbs_collected:
+        for herb in self.collected:
             total += herb
 
         return total
@@ -101,7 +105,7 @@ class HerbSupply:
         """
         if all_herbs:
             rating = None
-            for single_herb in self.herb_supply:
+            for single_herb in self.stored:
                 total = self.get_single_herb_total(single_herb)
                 if self.low_qualifier < total <= self.adequate_qualifier and rating not in [Supply.ADEQUATE,
                                                                                             Supply.FULL,
@@ -129,12 +133,15 @@ class HerbSupply:
         """
         handle herbs on moon skip: add collected to supply, use herbs where needed, expire old herbs, look for new herbs
         """
+        # clear log
+        self.log = []
+
         # set herb count
         self.required_herb_count = clan_size * 2
 
         # add herbs acquired last moon
-        for herb in self.herbs_collected:
-            self.herb_supply.get(herb, []).insert(0, self.herbs_collected[herb])
+        for herb in self.collected:
+            self.stored.get(herb, []).insert(0, self.collected[herb])
 
         # TODO: this is where we should handle using herbs
         severity_ranking = {
@@ -162,10 +169,18 @@ class HerbSupply:
             self.use_herbs(kitty)
 
         # remove expired herbs
-        # TODO: consider how to inform player of expiration
-        for herb_name in self.herb_supply.copy():
-            if len(self.herb_supply[herb_name]) > self.herb[herb_name].expiration:
-                self.herb_supply.pop(-1)
+        for herb_name in self.stored.copy():
+            expired = []
+            if len(self.stored[herb_name]) > self.herb[herb_name].expiration:
+                expired.append(self.herb[herb_name])
+                self.stored.pop(-1)
+
+            # add log entry to inform player of removal
+            if expired:
+                self.log.append(
+                    f"It was discovered that some stores of "
+                    f"{adjust_list_text([herb.plural_display for herb in expired])} "
+                    f"were too old to be of use anymore.")
 
         # TODO: this is where we should handle looking for new herbs that moon
 
@@ -174,10 +189,10 @@ class HerbSupply:
         returns int total stock of given herb
         """
         total = 0
-        for stock in self.herb_supply[herb]:
+        for stock in self.stored[herb]:
             total += stock
 
-        for amt in self.herbs_collected[herb]:
+        for amt in self.collected[herb]:
             total += amt
 
         return total
@@ -201,10 +216,10 @@ class HerbSupply:
         """
         adds herb given to count for that moon
         """
-        if self.herbs_collected.get(herb, []):
-            self.herbs_collected[herb] += num_collected
+        if self.collected.get(herb, []):
+            self.collected[herb] += num_collected
         else:
-            self.herbs_collected[herb] = num_collected
+            self.collected[herb] = num_collected
 
     def remove_herb(self, herb: str, num_removed: int):
         """
@@ -214,10 +229,10 @@ class HerbSupply:
         """
         surplus = self._remove_from_supply(herb, num_removed)
 
-        if surplus and self.herbs_collected.get(herb, []):
-            self.herbs_collected[herb] -= surplus
-            if self.herbs_collected[herb] < 0:
-                self.herbs_collected[herb] = 0
+        if surplus and self.collected.get(herb, []):
+            self.collected[herb] -= surplus
+            if self.collected[herb] < 0:
+                self.collected[herb] = 0
 
     def use_herbs(self, treatment_cat):
         """
@@ -280,7 +295,9 @@ class HerbSupply:
                 self.apply_herb_effect(treatment_cat, condition, herb_used, chosen_effect, amount_used)
 
     def apply_herb_effect(self, treated_cat, condition, herb_used, effect, amount_used):
+        # TODO: you'll need herb_used for determining strength
 
+        # grab the correct condition dict so that we can modify it
         if condition in treated_cat.illnesses:
             con_info = treated_cat.illnesses[condition]
         elif condition in treated_cat.injuries:
@@ -292,10 +309,13 @@ class HerbSupply:
         strength_modifier = 1
         amt_modifier = int(amount_used * 1.5)
 
+        # apply mortality effect
         if effect == HerbEffect.MORTALITY:
             con_info[effect] += (
                 3 * strength_modifier + amt_modifier
             )
+
+        # apply duration effect
         elif effect == HerbEffect.DURATION:
             # duration doesn't get amt_modifier, as that would be far too strong an affect
             con_info[effect] -= (
@@ -303,24 +323,28 @@ class HerbSupply:
             )
             if con_info["duration"] < 0:
                 con_info["duration"] = 0
+
+        # apply risk effect
         elif effect == HerbEffect.RISK:
             for risk in con_info[effect]:
                 con_info[risk]["chance"] += (
                     3 * strength_modifier + amt_modifier
                 )
 
+        # TODO: set up the effect log messages
+
     def _remove_from_supply(self, herb: str, needed_num: int) -> int:
         """
         removes needed_num of given herb from supply until needed_num is met or supply is empty, if supply runs out
         before needed_num is met, returns excess
         """
-        while needed_num > 0 and self.herb_supply[herb]:
+        while needed_num > 0 and self.stored[herb]:
             # remove from oldest stock
-            self.herb_supply[herb][-1] -= needed_num
+            self.stored[herb][-1] -= needed_num
             # if that stock runs out, move to next oldest stock
-            if self.herb_supply[herb][-1] < 0:
-                needed_num = abs(self.herb_supply[herb][-1])
-                self.herb_supply[herb].pop(-1)
+            if self.stored[herb][-1] < 0:
+                needed_num = abs(self.stored[herb][-1])
+                self.stored[herb].pop(-1)
 
         return needed_num
 
