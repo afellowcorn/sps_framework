@@ -1,0 +1,30 @@
+{
+  "low": [
+    "m_c worries over the herb stores, there isn't nearly enough for the whole Clan.",
+    "m_c doesn't think the the current herb supply can handle all the possible ailments {PRONOUN/m_c/poss} Clanmates may face.",
+    "m_c tells {PRONOUN/m_c/poss} Clanmates to be careful this moon, {PRONOUN/m_c/subject} can't afford to waste herbs on unnecessary injury.",
+    "m_c worriedly recounts the herbs; the Clan can't afford to waste even the driest leaves.",
+    "m_c looks at the mostly-empty stores and wonders if {PRONOUN/m_c/subject}'ll have to ask for other Clans' help."
+  ],
+  "adequate": [
+    "m_c is content with how many herbs the Clan has stocked up.",
+    "It's not enough for an emergency, but m_c thinks the Clan has enough herbs for now.",
+    "This herb supply can handle most problems, though m_c wonders if it can support the Clan in every situation.",
+    "There's enough herbs for now, but m_c considers gathering some more... just in case.",
+    "Though there's plenty of room for more, m_c is happy enough with how many herbs the Clan has for now.",
+    "Though the supply is decent, m_c knows there aren't enough herbs to face an outbreak if one occurs."
+  ],
+  "full": [
+    "There's plenty of herbs in the den and m_c looks over them approvingly.",
+    "m_c has the herb supply well managed, it seems like there's plenty for all manner of ailments.",
+    "m_c feels happy with the amount of herbs stored and thinks the Clan is well prepared for any emergency.",
+    "m_c looks over the stores with satisfaction; {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} confident that {PRONOUN/m_c/subject} can handle any emergency."
+  ],
+  "excess": [
+    "The Clan has been blessed with plentiful herbs and m_c struggles to find places to store them all.",
+    "The herb stores are overflowing and m_c feels little worry.",
+    "The Clan has nothing to worry about, m_c has more than enough herbs for every conceivable problem.",
+    "With more herbs than places to store them, m_c wryly wonders if it's possible to have too much of a good thing.",
+    "There are so many herbs stored that m_c's only worry is finding the specific herb {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} looking for."
+  ]
+}

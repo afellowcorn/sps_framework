@@ -8,7 +8,7 @@ from scripts.clan_resources.herb.herb import Herb
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
 from scripts.game_structure.game_essentials import game
-from scripts.utility import adjust_list_text, get_alive_status_cats
+from scripts.utility import adjust_list_text, event_text_adjust
 
 
 class HerbSupply:
@@ -180,6 +180,17 @@ class HerbSupply:
             return Supply.FULL
         elif self.excess_qualifier < total:
             return Supply.EXCESS
+
+    def get_status_message(self, med_cat):
+        """
+        returns med den message for current herb supply status
+        """
+        return event_text_adjust(
+            Cat=med_cat,
+            text=choice(STATUS[choice(self.get_supply_rating())]),
+            main_cat=med_cat,
+            clan=game.clan
+        )
 
     def get_single_herb_total(self, herb: str) -> int:
         """
@@ -473,3 +484,6 @@ class HerbSupply:
 
 with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:
     HERBS = ujson.loads(read_file.read())
+
+with open("resources/dicts/med_den_messages.json", "r", encoding="utf-8") as read_file:
+    STATUS = ujson.loads(read_file.read())
