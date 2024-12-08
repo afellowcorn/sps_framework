@@ -1,6 +1,7 @@
 from math import ceil
 from typing import Union, Dict, Optional
 
+import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
@@ -64,6 +65,7 @@ class ListScreen(Screens):
             "view_button": None,
             "choose_group_button": None,
             "sort_by_button": None,
+            "sort_by_label": None,
         }
 
         self.dead_groups_container = None
@@ -114,11 +116,11 @@ class ListScreen(Screens):
             if element == self.cat_list_bar_elements["fav_toggle"]:
                 if "#fav_cat_toggle_on" in event.ui_element.get_object_ids():
                     element.change_object_id("#fav_cat_toggle_off")
-                    element.tool_tip_text = "show favorite cat indicators"
+                    element.set_tooltip("screens.list.favorite_show_tooltip")
                     game.clan.clan_settings["show fav"] = False
                 else:
                     element.change_object_id("#fav_cat_toggle_on")
-                    element.tool_tip_text = "hide favorite cat indicators"
+                    element.set_tooltip("screens.list.favorite_hide_tooltip")
                     game.clan.clan_settings["show fav"] = True
                 self.update_cat_list(
                     self.cat_list_bar_elements["search_bar_entry"].get_text()
@@ -133,22 +135,22 @@ class ListScreen(Screens):
                 self.choose_dead_dropdown.close()
                 self.choose_living_dropdown.close()
 
-                if "#show_dead_button" in event.ui_element.get_object_ids():
-                    element.change_object_id("#show_living_button")
-                    element.tool_tip_text = "view cats in the living world"
+                if event.ui_element.text == "screens.list.view_dead":
+                    element.set_text("screens.list.view_living")
+                    element.set_tooltip("screens.list.view_living_tooltip")
                     self.death_status = "dead"
                     self.get_sc_cats()
                 else:
-                    element.change_object_id("#show_dead_button")
-                    element.tool_tip_text = "view cats in the afterlife"
+                    element.set_text("screens.list.view_dead")
+                    element.set_tooltip("screens.list.view_dead_tooltip")
                     self.death_status = "living"
                     if (
-                        "#filter_by_death_button"
-                        in self.cat_list_bar_elements["sort_by_button"].get_object_ids()
+                        i18n.t("screens.list.filter_death")
+                        in self.cat_list_bar_elements["sort_by_button"].text
                     ):
                         game.sort_type = "rank"
-                        self.cat_list_bar_elements["sort_by_button"].change_object_id(
-                            "#filter_by_rank_button"
+                        self.cat_list_bar_elements["sort_by_button"].set_text(
+                            "screens.list.filter_rank"
                         )
                     self.get_your_clan_cats()
 
@@ -217,8 +219,8 @@ class ListScreen(Screens):
                 sort_type = sort_type.replace("_button", "")
                 game.sort_type = sort_type
 
-                self.cat_list_bar_elements["sort_by_button"].change_object_id(
-                    f"#filter_by_{sort_type}_button"
+                self.cat_list_bar_elements["sort_by_button"].set_text(
+                    f"screens.list.filter_{sort_type}"
                 )
                 self.update_cat_list(
                     self.cat_list_bar_elements["search_bar_entry"].get_text()
@@ -329,12 +331,13 @@ class ListScreen(Screens):
         )
 
         # SHOW LIVING/DEAD
-        self.cat_list_bar_elements["view_button"] = UIImageButton(
+        self.cat_list_bar_elements["view_button"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((172, 0), (103, 34))),
-            "",
-            object_id="#show_dead_button"
+            "screens.list.view_dead"
             if self.death_status != "dead"
-            else "#show_living_button",
+            else "screens.list.view_living",
+            get_button_dict(ButtonStyles.DROPDOWN, (103, 34)),
+            object_id="@buttonstyles_dropdown",
             container=self.cat_list_bar,
             tool_tip_text="screens.list.view_dead_tooltip"
             if self.death_status != "dead"

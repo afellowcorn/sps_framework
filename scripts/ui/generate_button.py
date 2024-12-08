@@ -16,6 +16,7 @@ class ButtonStyles(Enum):
     MENU_LEFT = "menu_left"
     MENU_MIDDLE = "menu_middle"
     MENU_RIGHT = "menu_right"
+    FILTER_DROPDOWN = "filter_dropdown"
     PROFILE_LEFT = "profile_left"
     PROFILE_MIDDLE = "profile_middle"
     PROFILE_RIGHT = "profile_right"
@@ -110,6 +111,22 @@ buttonstyles = {
         ).convert_alpha(),
         "disabled": pygame.image.load(
             "resources/images/generated_buttons/menu_right_disabled.png"
+        ).convert_alpha(),
+        "ninetile": False,
+        "scale_only": False,
+    },
+    "filter_dropdown": {
+        "normal": pygame.image.load(
+            "resources/images/generated_buttons/filter_dropdown_normal.png"
+        ).convert_alpha(),
+        "hovered": pygame.image.load(
+            "resources/images/generated_buttons/filter_dropdown_hovered.png"
+        ).convert_alpha(),
+        "selected": pygame.image.load(
+            "resources/images/generated_buttons/filter_dropdown_normal.png"
+        ).convert_alpha(),
+        "disabled": pygame.image.load(
+            "resources/images/generated_buttons/filter_dropdown_normal.png"
         ).convert_alpha(),
         "ninetile": False,
         "scale_only": False,

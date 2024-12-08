@@ -1,8 +1,8 @@
 StartChar: dotlessi
 Encoding: 305 305 134
 Width: 271
-Flags: WO
-LayerCount: 3
+Flags: W
+LayerCount: 2
 Fore
 SplineSet
 200 0 m 1,0,-1

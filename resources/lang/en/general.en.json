@@ -113,7 +113,7 @@
         "can_work": "This cat can work",
         "cant_work": "This cat isn't able to work",
         "cant_work_condition": "Can't work with this condition",
-        "exp": "exp: %{exp}",
+        "exp_label": "exp: %{exp}",
         "newleaf": "newleaf",
         "greenleaf": "greenleaf",
         "leaf-fall": "leaf-fall",
