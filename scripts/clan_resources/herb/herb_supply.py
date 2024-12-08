@@ -41,7 +41,7 @@ class HerbSupply:
         self.log = []
 
     @property
-    def sorted_list_lowest(self) -> list:
+    def sorted_by_lowest(self) -> list:
         """
         returns list of herbs ordered from the least supply to most
         """
@@ -91,38 +91,6 @@ class HerbSupply:
         returns the lowest qualifier for an adequate supply
         """
         return self.required_herb_count * 2
-
-    def get_supply_rating(self, all_herbs: bool = True, herb: str = None):
-        """
-        returns the rating of given supply, aka how "full" the supply is compared to clan size
-        :param all_herbs: if true, returns rating of entire herb supply
-        :param herb: if str name of herb is given, returns rating of that herb's supply
-        """
-        if all_herbs:
-            rating = None
-            for single_herb in self.stored:
-                total = self.get_single_herb_total(single_herb)
-                if self.low_qualifier < total <= self.adequate_qualifier and rating not in [Supply.ADEQUATE,
-                                                                                            Supply.FULL,
-                                                                                            Supply.EXCESS]:
-                    rating = Supply.LOW
-                elif self.adequate_qualifier < total <= self.full_qualifier and rating not in [Supply.FULL,
-                                                                                               Supply.EXCESS]:
-                    rating = Supply.ADEQUATE
-                elif self.full_qualifier < total <= self.excess_qualifier and rating != Supply.EXCESS:
-                    rating = Supply.EXCESS
-            return rating
-
-        else:
-            total = self.get_single_herb_total(herb)
-            if self.low_qualifier < total <= self.adequate_qualifier:
-                return Supply.LOW
-            elif self.adequate_qualifier < total <= self.full_qualifier:
-                return Supply.ADEQUATE
-            elif self.full_qualifier < total <= self.excess_qualifier:
-                return Supply.FULL
-            elif self.excess_qualifier < total:
-                return Supply.EXCESS
 
     def handle_moon(self, clan_size: int, clan_cats: list, med_cats: list):
         """
@@ -181,6 +149,38 @@ class HerbSupply:
         # TODO: this is where we should handle looking for new herbs that moon
         for meddie in med_cats:
             herbs_gathered = self._gather_herbs(meddie)
+
+    def get_supply_rating(self, all_herbs: bool = True, herb: str = None):
+        """
+        returns the rating of given supply, aka how "full" the supply is compared to clan size
+        :param all_herbs: if true, returns rating of entire herb supply
+        :param herb: if str name of herb is given, returns rating of that herb's supply
+        """
+        if all_herbs:
+            rating = None
+            for single_herb in self.stored:
+                total = self.get_single_herb_total(single_herb)
+                if self.low_qualifier < total <= self.adequate_qualifier and rating not in [Supply.ADEQUATE,
+                                                                                            Supply.FULL,
+                                                                                            Supply.EXCESS]:
+                    rating = Supply.LOW
+                elif self.adequate_qualifier < total <= self.full_qualifier and rating not in [Supply.FULL,
+                                                                                               Supply.EXCESS]:
+                    rating = Supply.ADEQUATE
+                elif self.full_qualifier < total <= self.excess_qualifier and rating != Supply.EXCESS:
+                    rating = Supply.EXCESS
+            return rating
+
+        else:
+            total = self.get_single_herb_total(herb)
+            if self.low_qualifier < total <= self.adequate_qualifier:
+                return Supply.LOW
+            elif self.adequate_qualifier < total <= self.full_qualifier:
+                return Supply.ADEQUATE
+            elif self.full_qualifier < total <= self.excess_qualifier:
+                return Supply.FULL
+            elif self.excess_qualifier < total:
+                return Supply.EXCESS
 
     def get_single_herb_total(self, herb: str) -> int:
         """
@@ -292,46 +292,6 @@ class HerbSupply:
 
                 self.__apply_herb_effect(treatment_cat, condition, herb_used, chosen_effect, amount_used)
 
-    @staticmethod
-    def __apply_herb_effect(treated_cat, condition, herb_used, effect, amount_used):
-        # TODO: you'll need herb_used for determining strength
-
-        # grab the correct condition dict so that we can modify it
-        if condition in treated_cat.illnesses:
-            con_info = treated_cat.illnesses[condition]
-        elif condition in treated_cat.injuries:
-            con_info = treated_cat.injuries[condition]
-        else:
-            con_info = treated_cat.permanent_condition[condition]
-
-        # TODO: hook this up to the herb strength for that condition
-        strength_modifier = 1
-        amt_modifier = int(amount_used * 1.5)
-
-        # apply mortality effect
-        if effect == HerbEffect.MORTALITY:
-            con_info[effect] += (
-                    3 * strength_modifier + amt_modifier
-            )
-
-        # apply duration effect
-        elif effect == HerbEffect.DURATION:
-            # duration doesn't get amt_modifier, as that would be far too strong an affect
-            con_info[effect] -= (
-                    1 * strength_modifier
-            )
-            if con_info["duration"] < 0:
-                con_info["duration"] = 0
-
-        # apply risk effect
-        elif effect == HerbEffect.RISK:
-            for risk in con_info[effect]:
-                con_info[risk]["chance"] += (
-                        3 * strength_modifier + amt_modifier
-                )
-
-        # TODO: set up the effect log messages
-
     def _gather_herbs(self, meddie):
         """
         returns the herbs that an individual med cat gathered during moon skip
@@ -356,7 +316,7 @@ class HerbSupply:
             quantity_modifier = 2
 
         # list of the herbs, sorted by lowest currently stored
-        herb_list = self.sorted_list_lowest
+        herb_list = self.sorted_by_lowest
 
         # dict where key is herb name and value is the quantity found of that herb
         found_herbs = {}
@@ -404,6 +364,46 @@ class HerbSupply:
                 self.stored[herb].pop(-1)
 
         return needed_num
+
+    @staticmethod
+    def __apply_herb_effect(treated_cat, condition, herb_used, effect, amount_used):
+        # TODO: you'll need herb_used for determining strength
+
+        # grab the correct condition dict so that we can modify it
+        if condition in treated_cat.illnesses:
+            con_info = treated_cat.illnesses[condition]
+        elif condition in treated_cat.injuries:
+            con_info = treated_cat.injuries[condition]
+        else:
+            con_info = treated_cat.permanent_condition[condition]
+
+        # TODO: hook this up to the herb strength for that condition
+        strength_modifier = 1
+        amt_modifier = int(amount_used * 1.5)
+
+        # apply mortality effect
+        if effect == HerbEffect.MORTALITY:
+            con_info[effect] += (
+                    3 * strength_modifier + amt_modifier
+            )
+
+        # apply duration effect
+        elif effect == HerbEffect.DURATION:
+            # duration doesn't get amt_modifier, as that would be far too strong an affect
+            con_info[effect] -= (
+                    1 * strength_modifier
+            )
+            if con_info["duration"] < 0:
+                con_info["duration"] = 0
+
+        # apply risk effect
+        elif effect == HerbEffect.RISK:
+            for risk in con_info[effect]:
+                con_info[risk]["chance"] += (
+                        3 * strength_modifier + amt_modifier
+                )
+
+        # TODO: set up the effect log messages
 
 
 with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:
