@@ -116,7 +116,7 @@
         "exp": "exp: %{exp}",
         "newleaf": "newleaf",
         "greenleaf": "greenleaf",
-        "leaffall": "leaf-fall",
+        "leaf-fall": "leaf-fall",
         "leaf-bare": "leaf-bare",
         "relation_BLOOD": "",
         "relation_ADOPTIVE": "adoptive",
