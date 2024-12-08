@@ -1,13 +1,14 @@
-from random import choice, randint
+from random import choice, randint, choices
 
 import ujson
 
 from scripts.cat.cats import ILLNESSES, INJURIES, PERMANENT
+from scripts.cat.skills import SkillPath
 from scripts.clan_resources.herb.herb import Herb
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
 from scripts.game_structure.game_essentials import game
-from scripts.utility import adjust_list_text
+from scripts.utility import adjust_list_text, get_alive_status_cats
 
 
 class HerbSupply:
@@ -40,20 +41,14 @@ class HerbSupply:
         self.log = []
 
     @property
-    def lowest_supply(self) -> str:
+    def sorted_list_lowest(self) -> list:
         """
-        returns the herb with the lowest current supply + collected
+        returns list of herbs ordered from the least supply to most
         """
+        sort_list = [x for x in self.stored]
+        sort_list.sort(key=lambda list_herb: self.get_single_herb_total(list_herb) + self.collected[list_herb])
 
-        # just getting a starting number I know will be higher than any herb's stock
-        lowest_total = self.supply_total
-        chosen_herb = None
-
-        for herb in self.stored:
-            if self.get_single_herb_total(herb) + self.collected[herb] < lowest_total:
-                chosen_herb = herb
-
-        return chosen_herb
+        return sort_list
 
     @property
     def supply_total(self) -> int:
@@ -129,7 +124,7 @@ class HerbSupply:
             elif self.excess_qualifier < total:
                 return Supply.EXCESS
 
-    def handle_moon(self, clan_size, clan_cats):
+    def handle_moon(self, clan_size: int, clan_cats: list, med_cats: list):
         """
         handle herbs on moon skip: add collected to supply, use herbs where needed, expire old herbs, look for new herbs
         """
@@ -139,6 +134,7 @@ class HerbSupply:
         # set herb count
         self.required_herb_count = clan_size * 2
 
+        # TODO: this is where CAMP cats should have a chance to "combine" clumps to postpone expiration
         # add herbs acquired last moon
         for herb in self.collected:
             self.stored.get(herb, []).insert(0, self.collected[herb])
@@ -166,7 +162,7 @@ class HerbSupply:
 
         treatment_cats = severity_ranking["severe"] + severity_ranking["major"] + severity_ranking["minor"]
         for kitty in treatment_cats:
-            self.use_herbs(kitty)
+            self._use_herbs(kitty)
 
         # remove expired herbs
         for herb_name in self.stored.copy():
@@ -183,6 +179,8 @@ class HerbSupply:
                     f"were too old to be of use anymore.")
 
         # TODO: this is where we should handle looking for new herbs that moon
+        for meddie in med_cats:
+            herbs_gathered = self._gather_herbs(meddie)
 
     def get_single_herb_total(self, herb: str) -> int:
         """
@@ -234,7 +232,7 @@ class HerbSupply:
             if self.collected[herb] < 0:
                 self.collected[herb] = 0
 
-    def use_herbs(self, treatment_cat):
+    def _use_herbs(self, treatment_cat):
         """
         utilize current herb supply on given condition
         """
@@ -292,9 +290,10 @@ class HerbSupply:
 
                 self.remove_herb(herb_used, amount_used)
 
-                self.apply_herb_effect(treatment_cat, condition, herb_used, chosen_effect, amount_used)
+                self.__apply_herb_effect(treatment_cat, condition, herb_used, chosen_effect, amount_used)
 
-    def apply_herb_effect(self, treated_cat, condition, herb_used, effect, amount_used):
+    @staticmethod
+    def __apply_herb_effect(treated_cat, condition, herb_used, effect, amount_used):
         # TODO: you'll need herb_used for determining strength
 
         # grab the correct condition dict so that we can modify it
@@ -312,14 +311,14 @@ class HerbSupply:
         # apply mortality effect
         if effect == HerbEffect.MORTALITY:
             con_info[effect] += (
-                3 * strength_modifier + amt_modifier
+                    3 * strength_modifier + amt_modifier
             )
 
         # apply duration effect
         elif effect == HerbEffect.DURATION:
             # duration doesn't get amt_modifier, as that would be far too strong an affect
             con_info[effect] -= (
-                1 * strength_modifier
+                    1 * strength_modifier
             )
             if con_info["duration"] < 0:
                 con_info["duration"] = 0
@@ -328,10 +327,68 @@ class HerbSupply:
         elif effect == HerbEffect.RISK:
             for risk in con_info[effect]:
                 con_info[risk]["chance"] += (
-                    3 * strength_modifier + amt_modifier
+                        3 * strength_modifier + amt_modifier
                 )
 
         # TODO: set up the effect log messages
+
+    def _gather_herbs(self, meddie):
+        """
+        returns the herbs that an individual med cat gathered during moon skip
+        """
+
+        # meds with relevant skills will get a boost to the herbs they find
+        # SENSE finds larger amount of herbs
+        # CLEVER finds greater quantity of herbs
+        primary = meddie.skills.primary_path
+        secondary = meddie.skills.secondary_path
+        amount_modifier = 1
+        quantity_modifier = 1
+
+        if primary == SkillPath.SENSE:
+            amount_modifier = 3
+        elif primary == SkillPath.CLEVER:
+            quantity_modifier = 3
+
+        if secondary == SkillPath.SENSE:
+            amount_modifier = 2
+        elif secondary == SkillPath.CLEVER:
+            quantity_modifier = 2
+
+        # list of the herbs, sorted by lowest currently stored
+        herb_list = self.sorted_list_lowest
+
+        # dict where key is herb name and value is the quantity found of that herb
+        found_herbs = {}
+
+        # the amount of herb types the med has found
+        amount_of_herbs = choices(population=[1, 2, 3], weights=[3, 2, 1], k=1)[0] + amount_modifier
+
+        # now we find what herbs have actually been found and their quantity
+        for herb in herb_list:
+            if amount_of_herbs == 0:
+                break
+
+            # rarity is set to 0 if the herb can't be found in the current season
+            if not self.herb[herb].rarity:
+                continue
+
+            # chance to find a herb is based on it's rarity
+            if randint(1, self.herb[herb].rarity) == 1:
+                found_herbs[herb] = choices(population=[1, 2, 3], weights=[3, 2, 1], k=1)[0] * quantity_modifier
+                amount_of_herbs -= 1
+
+        if found_herbs:
+            list_of_herb_strs = []
+            for herb, count in found_herbs.items():
+                if count > 1:
+                    list_of_herb_strs.append(f"{count} {self.herb[herb].plural_display}")
+                else:
+                    list_of_herb_strs.append(f"{count} {self.herb[herb].singular_display}")
+
+            self.log.append(f"{meddie.name} collected {adjust_list_text(list_of_herb_strs)} during this moon.")
+        else:
+            self.log.append(f"{meddie.name} didn't collect any herbs this moon.")
 
     def _remove_from_supply(self, herb: str, needed_num: int) -> int:
         """
