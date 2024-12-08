@@ -102,10 +102,37 @@ class HerbSupply:
         # set herb count
         self.required_herb_count = clan_size * 2
 
-        # TODO: this is where CAMP cats should have a chance to "combine" clumps to postpone expiration
         # add herbs acquired last moon
-        for herb in self.collected:
+        for herb, count in self.collected.items():
+            # check if any meds can use a skill to store herbs better (aka, reduce time to expire)
+            for med in med_cats:
+                if herb not in self.stored:
+                    # herbs can't be stored better if there isn't an existing store of that herb
+                    break
+
+                # we base this modifier on their path points,
+                # this means there's skill variation even within cats with matching tiers
+                if med.skill.primary_path == SkillPath.CAMP:
+                    modifier = med.skill.primary_points
+                elif med.skill.secondary_path == SkillPath.CAMP:
+                    modifier = med.skill.secondary_points
+                else:
+                    continue
+
+                # attempt the better storage
+                if randint(1, 35 - modifier) == 1:
+                    self.stored[herb][0] += count
+                    continue
+
+            # store if no meds had needed skill
             self.stored.get(herb, []).insert(0, self.collected[herb])
+
+        # clear collection dict
+        self.collected = {}
+
+        # look for new herbs
+        for med in med_cats:
+            self._gather_herbs(med)
 
         # TODO: this is where we should handle using herbs
         severity_ranking = {
@@ -146,9 +173,7 @@ class HerbSupply:
                     f"{adjust_list_text([herb.plural_display for herb in expired])} "
                     f"were too old to be of use anymore.")
 
-        # TODO: this is where we should handle looking for new herbs that moon
-        for meddie in med_cats:
-            herbs_gathered = self._gather_herbs(meddie)
+
 
     def get_supply_rating(self):
         """
@@ -293,16 +318,16 @@ class HerbSupply:
 
                 self.__apply_herb_effect(treatment_cat, condition, herb_used, chosen_effect, amount_used)
 
-    def _gather_herbs(self, meddie):
+    def _gather_herbs(self, med_cat):
         """
-        returns the herbs that an individual med cat gathered during moon skip
+        finds out what herbs that an individual med cat gathered during moon skip and adds those herbs to collection
+        and log
         """
-
         # meds with relevant skills will get a boost to the herbs they find
         # SENSE finds larger amount of herbs
         # CLEVER finds greater quantity of herbs
-        primary = meddie.skills.primary_path
-        secondary = meddie.skills.secondary_path
+        primary = med_cat.skills.primary_path
+        secondary = med_cat.skills.secondary_path
         amount_modifier = 1
         quantity_modifier = 1
 
@@ -342,14 +367,18 @@ class HerbSupply:
         if found_herbs:
             list_of_herb_strs = []
             for herb, count in found_herbs.items():
+                # add it to the collection
+                self.add_herb(herb, count)
+
+                # figure out how grammar needs to work in log
                 if count > 1:
                     list_of_herb_strs.append(f"{count} {self.herb[herb].plural_display}")
                 else:
                     list_of_herb_strs.append(f"{count} {self.herb[herb].singular_display}")
 
-            self.log.append(f"{meddie.name} collected {adjust_list_text(list_of_herb_strs)} during this moon.")
+            self.log.append(f"{med_cat.name} collected {adjust_list_text(list_of_herb_strs)} during this moon.")
         else:
-            self.log.append(f"{meddie.name} didn't collect any herbs this moon.")
+            self.log.append(f"{med_cat.name} didn't collect any herbs this moon.")
 
     def _remove_from_supply(self, herb: str, needed_num: int) -> int:
         """
