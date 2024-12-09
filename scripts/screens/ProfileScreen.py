@@ -874,7 +874,9 @@ class ProfileScreen(Screens):
 
             if len(apprentices) > 2:
                 apps = [i for i in apprentices[:2]]
-                apps.append(i18n.t("general.apprentice_extra", count=len(apps) - 2))
+                apps.append(
+                    i18n.t("general.apprentice_extra", count=len(apprentices) - 2)
+                )
                 apps = apps
             else:
                 apps = apprentices

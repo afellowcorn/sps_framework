@@ -172,6 +172,7 @@
             "many": "former apprentices: %{apprentices}"
         },
         "apprentice_extra": {
+            "zero": "",
             "one": "1 other",
             "many": "%{count} others"
         },

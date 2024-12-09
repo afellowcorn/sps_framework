@@ -102,7 +102,7 @@ class WarriorDenScreen(Screens):
                             and self.save_button.is_enabled
                         ):
                             meds = get_alive_status_cats(
-                                Cat, ["medicine cat", "medicine cat apprentice"]
+                                Cat(), ["medicine cat", "medicine cat apprentice"]
                             )
                             if len(meds) < 1:
                                 self.save_button.disable()
@@ -313,8 +313,8 @@ class WarriorDenScreen(Screens):
                     [f"{clan}clan" for clan in game.clan.clans_in_focus]
                 ),
             )
-        last_change_text = "unknown"
-        next_change = "0 moons"
+        last_change_text = ""
+        next_change = ""
         if game.clan.last_focus_change:
             last_change_text = i18n.t(
                 "general.moon_date", moon=str(game.clan.last_focus_change)
@@ -324,7 +324,12 @@ class WarriorDenScreen(Screens):
                 + game.config["focus"]["duration"]
                 - game.clan.age
             )
-            next_change = i18n.t("general.moons_age", count=moons)
+            moons = moons if moons > 0 else 0
+            next_change = i18n.t(
+                "screens.warrior_den.next_change",
+                moons=i18n.t("general.moons_age", count=moons),
+                count=moons,
+            )
 
         focus = [
             i18n.t("screens.warrior_den.current_focus", name=name, desc=desc),
@@ -362,7 +367,7 @@ class WarriorDenScreen(Screens):
 
         # create the new info text
         self.focus_information["side_text"] = pygame_gui.elements.UITextBox(
-            i18n.t("screens.warrior_den.selected_info"),
+            "screens.warrior_den.selected_info",
             ui_scale(pygame.Rect((415, 466), (318, 130))),
             wrap_to_height=True,
             object_id="#text_box_30_horizcenter_vertcenter_spacing_95",

@@ -19,10 +19,13 @@
         "save": "Save",
         "save_settings": "Save Settings",
         "main_menu": "⬅🢜┓  Main Menu",
-        "quit_game": "⬅┓ Quit Game",
+        "main_menu_lower": "⬅🢜┓  main menu",
+        "quit_game": "⬅┓ quit game",
         "add_cat": "add cat",
         "remove_cat": "remove cat",
-        "proceed": "proceed",
-        "cancel": "cancel"
+        "cancel": "cancel",
+        "save_clan": "save clan",
+        "saving": "saving...",
+        "clan_saved": "saved!"
     }
 }

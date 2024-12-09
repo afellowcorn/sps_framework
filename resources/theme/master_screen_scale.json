@@ -1253,54 +1253,6 @@
             }
         }
     },
-    "#patrol_cats_tab": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/patrol2.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/patrol2_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/patrol2_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/patrol2_unavailable.png"
-            }
-        }
-    },
-    "#skills_cats_tab": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/skills_traits.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/skills_traits_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/skills_traits_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/skills_traits_unavailable.png"
-            }
-        }
-    },
-    "#remove_all_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/remove_all.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/remove_all_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/remove_all_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/remove_all_unavailable.png"
-            }
-        }
-    },
     "#patrol_select_button": {
         "images": {
             "normal_image": {
@@ -1757,22 +1709,6 @@
             }
         }
     },
-    "#previous_step_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/last_step.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/last_step_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/last_step_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/last_step_unavailable.png"
-            }
-        }
-    },
     "#nine_lives_button": {
         "images": {
             "normal_image": {
@@ -2010,38 +1946,6 @@
             }
         }
     },
-    "#show_dead_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/show_dead.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/show_dead_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/show_dead_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/show_dead_unavailable.png"
-            }
-        }
-    },
-    "#show_living_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/show_living.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/show_living_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/show_living_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/show_living_unavailable.png"
-            }
-        }
-    },
     "#vertical_slider_down_arrow_button": {
         "images": {
             "normal_image": {
@@ -2194,23 +2098,6 @@
     "event_panel": {
         "colours": {"dark_bg": "rgb(206, 194, 168)"},
         "misc": {"border_width": "0", "shadow_width": "0"}
-    },
-    "#audio_settings_button": {
-        "prototype": "@image_button",
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/audio_settings.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/audio_settings_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/audio_settings.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/audio_settings_unavailable.png"
-            }
-        }
     },
     "horizontal_slider": {
         "colours": {

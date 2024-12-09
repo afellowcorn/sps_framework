@@ -258,28 +258,39 @@ class ClanScreen(Screens):
             object_id="@checked_checkbox",
         )
 
-        self.save_button = UIImageButton(
+        save_buttons = get_button_dict(ButtonStyles.SQUOVAL, (114, 30))
+        save_buttons["normal"] = image_cache.load_image(
+            "resources/images/buttons/save_clan.png"
+        )
+        self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect(((343, 643), (114, 30)))),
-            "",
-            object_id="#save_button",
+            "buttons.save_clan",
+            save_buttons,
+            object_id="@buttonstyles_squoval",
             sound_id="save",
         )
         self.save_button.enable()
-        self.save_button_saved_state = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((343, 643), (114, 30))),
-            pygame.transform.scale(
-                image_cache.load_image("resources/images/save_clan_saved.png"),
-                ui_scale_dimensions((114, 30)),
-            ),
+        self.save_button_saved_state = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 643), (114, 30))),
+            "buttons.clan_saved",
+            {
+                "normal": pygame.transform.scale(
+                    image_cache.load_image("resources/images/save_clan_saved.png"),
+                    ui_scale_dimensions((114, 30)),
+                )
+            },
+            object_id="@buttonstyles_squoval",
+            anchors={"centerx": "centerx"},
         )
         self.save_button_saved_state.hide()
-        self.save_button_saving_state = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((343, 643), (114, 30))),
-            pygame.transform.scale(
-                image_cache.load_image("resources/images/save_clan_saving.png"),
-                ui_scale_dimensions((114, 30)),
-            ),
+        self.save_button_saving_state = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 643), (114, 30))),
+            "buttons.saving",
+            {"normal": get_button_dict(ButtonStyles.SQUOVAL, (114, 30))["normal"]},
+            object_id="@buttonstyles_squoval",
+            anchors={"centerx": "centerx"},
         )
+        self.save_button_saving_state.disable()
         self.save_button_saving_state.hide()
 
         self.update_buttons_and_text()

@@ -8,12 +8,19 @@
         "choose_cats_info": "Choose up to six cats to take on patrol.\nSmaller patrols help cats gain more experience, but larger patrols are safer.",
         "able_cats_label": "able cats",
         "patrol_label": "patrol",
+        "select": "select",
+        "unavailable": "unavailable",
         "skills_traits_label":  "skills & traits",
         "remove_all_label": "remove all",
         "go_on_patrol": "go on patrol",
         "current_prey": "current prey: %{prey}",
         "needed_prey": "needed prey: %{prey}",
         "label_patrol_info": "patrol leader: %{leader}\npatrol members: %{members}\npatrol skills: %{skills}\npatrol traits: %{traits}",
-        "current_patrol_info": "current patrol skills: %{skills}\ncurrent patrol traits: %{traits}"
+        "current_patrol_info": "current patrol skills: %{skills}\ncurrent patrol traits: %{traits}",
+        "proceed": "proceed",
+        "dont_proceed": "do not proceed",
+        "antagonize": "antagonize",
+        "patrol_again": "patrol again",
+        "back_to_clan": "back to clan"
     }
 }

@@ -223,7 +223,7 @@ class SaveCheck(UIWindow):
             self.mm_btn.disable()
             self.main_menu_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((0, 155), (152, 30))),
-                "buttons.main_menu",
+                i18n.t("buttons.main_menu_lower"),
                 get_button_dict(ButtonStyles.SQUOVAL, (152, 30)),
                 manager=MANAGER,
                 object_id="@buttonstyles_squoval",
@@ -249,35 +249,48 @@ class SaveCheck(UIWindow):
             object_id="#text_box_30_horizcenter",
             container=self,
         )
-
-        self.save_button = UIImageButton(
+        save_buttons = get_button_dict(ButtonStyles.SQUOVAL, (114, 30))
+        save_buttons["normal"] = image_cache.load_image(
+            "resources/images/buttons/save_clan.png"
+        )
+        self.save_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 115), (114, 30))),
-            "",
-            object_id="#save_button",
+            "buttons.save_clan",
+            save_buttons,
+            object_id="@buttonstyles_squoval",
             starting_height=top_stack_menu_layer_height,
             container=self,
             anchors={"centerx": "centerx"},
         )
-        self.save_button_saved_state = pygame_gui.elements.UIImage(
+        self.save_button_saved_state = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 115), (114, 30))),
-            pygame.transform.scale(
-                image_cache.load_image("resources/images/save_clan_saved.png"),
-                ui_scale_dimensions((114, 30)),
-            ),
+            "buttons.clan_saved",
+            {
+                "normal": pygame.transform.scale(
+                    image_cache.load_image("resources/images/save_clan_saved.png"),
+                    ui_scale_dimensions((114, 30)),
+                )
+            },
             starting_height=top_stack_menu_layer_height + 2,
             container=self,
             anchors={"centerx": "centerx"},
         )
         self.save_button_saved_state.hide()
-        self.save_button_saving_state = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((93, 115), (114, 30))),
-            pygame.transform.scale(
-                image_cache.load_image("resources/images/save_clan_saving.png"),
-                ui_scale_dimensions((114, 30)),
-            ),
+        self.save_button_saving_state = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 115), (114, 30))),
+            "buttons.saving",
+            {
+                "normal": pygame.transform.scale(
+                    image_cache.load_image("resources/images/save_clan_saving.png"),
+                    ui_scale_dimensions((114, 30)),
+                )
+            },
+            object_id="@buttonstyles_squoval",
             starting_height=top_stack_menu_layer_height + 1,
             container=self,
+            anchors={"centerx": "centerx"},
         )
+        self.save_button_saving_state.disable()
         self.save_button_saving_state.hide()
 
         self.back_button = UIImageButton(

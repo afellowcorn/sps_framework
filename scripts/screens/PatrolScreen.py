@@ -886,7 +886,7 @@ class PatrolScreen(Screens):
         ##################### Buttons:
         self.elements["proceed"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((550, 433), (172, 30))),
-            "buttons.proceed",
+            "screens.patrol.proceed",
             get_button_dict(ButtonStyles.DROPDOWN, (172, 30)),
             object_id="@buttonstyles_dropdown",
             starting_height=2,
@@ -894,7 +894,7 @@ class PatrolScreen(Screens):
         )
         self.elements["not_proceed"] = UIImageButton(
             ui_scale(pygame.Rect((550, 461), (172, 30))),
-            "",
+            "screens.patrol.dont_proceed",
             object_id="#not_proceed_button",
             starting_height=2,
             manager=MANAGER,
@@ -902,7 +902,7 @@ class PatrolScreen(Screens):
 
         self.elements["antagonize"] = UIImageButton(
             ui_scale(pygame.Rect((550, 490), (172, 36))),
-            "",
+            "screens.patrol.antagonize",
             object_id="#antagonize_button",
             sound_id="antagonize",
             manager=MANAGER,
@@ -941,13 +941,13 @@ class PatrolScreen(Screens):
 
         self.elements["clan_return"] = UIImageButton(
             ui_scale(pygame.Rect((400, 137), (162, 30))),
-            "",
+            "screens.patrol.back_to_clan",
             object_id="#return_to_clan",
             manager=MANAGER,
         )
         self.elements["patrol_again"] = UIImageButton(
             ui_scale(pygame.Rect((560, 137), (162, 30))),
-            "",
+            "screens.patrol.patrol_again",
             object_id="#patrol_again",
             manager=MANAGER,
         )
@@ -1245,7 +1245,9 @@ class PatrolScreen(Screens):
                 )
                 self.elements["mate_button"] = UIImageButton(
                     ui_scale(pygame.Rect((148, -4), (104, 26))),
-                    "",
+                    "screens.patrol.select"
+                    if self.mate in self.able_cats
+                    else "screens.patrol.unavailable",
                     object_id="#patrol_select_button",
                     manager=MANAGER,
                     anchors={"top_target": self.elements["mate_frame"]},
@@ -1337,7 +1339,9 @@ class PatrolScreen(Screens):
                     # Button to switch to that cat
                     self.elements["app_mentor_button"] = UIImageButton(
                         ui_scale(pygame.Rect((548, -4), (104, 26))),
-                        "",
+                        "screens.patrol.select"
+                        if self.app_mentor in self.able_cats
+                        else "screens.patrol.unavailable",
                         object_id="#patrol_select_button",
                         manager=MANAGER,
                         anchors={"top_target": self.elements["app_mentor_frame"]},
