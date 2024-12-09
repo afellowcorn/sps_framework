@@ -557,12 +557,28 @@ class PatrolScreen(Screens):
 
         # Frames
         self.elements["able_frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((40, 460), (270, 201))),
-            self.able_box,
+            ui_scale(pygame.Rect((40, 490), (270, 171))),
+            get_box(BoxStyles.ROUNDED_BOX, (270, 171)),
             starting_height=1,
             manager=MANAGER,
         )
         self.elements["able_frame"].disable()
+
+        label_pos = ui_scale(pygame.Rect((0, 0), (270, 30)))
+        label_pos.bottomleft = ui_scale_dimensions((40, 0))
+        self.elements["able_label"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((40, 460), (270, 30))),
+            "screens.patrol.able_cats_label",
+            {
+                "normal": get_button_dict(ButtonStyles.HORIZONTAL_TAB, (100, 30))[
+                    "disabled"
+                ]
+            },
+            object_id="@buttonstyles_horizontal_tab",
+            anchors={
+                "bottom_target": self.elements["able_frame"],
+            },
+        )
 
         self.elements["patrol_frame"] = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((490, 490), (270, 140))),
@@ -668,29 +684,49 @@ class PatrolScreen(Screens):
         )
 
         # Tabs for the current patrol
-        self.elements["patrol_tab"] = UIImageButton(
-            ui_scale(pygame.Rect((505, 460), (80, 35))),
-            "",
+        tab_rect = ui_scale(pygame.Rect((0, 0), (80, 35)))
+        tab_rect.bottomleft = ui_scale_dimensions((505, 4))
+        self.elements["patrol_tab"] = UISurfaceImageButton(
+            tab_rect,
+            "screens.patrol.patrol_label",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (80, 35)),
+            object_id="@buttonstyles_horizontal_tab",
             starting_height=2,
-            object_id="#patrol_cats_tab",
             manager=MANAGER,
+            anchors={
+                "bottom": "bottom",
+                "left": "left",
+                "bottom_target": self.elements["patrol_frame"],
+            },
         )
         self.elements["patrol_tab"].disable()  # We start on the patrol_cats_tab
-        self.elements["skills"] = UIImageButton(
-            ui_scale(pygame.Rect((590, 460), (154, 35))),
-            "",
+
+        tab_rect = ui_scale(pygame.Rect((0, 0), (154, 35)))
+        tab_rect.bottomleft = ui_scale_dimensions((590, 4))
+        self.elements["skills"] = UISurfaceImageButton(
+            tab_rect,
+            "screens.patrol.skills_traits_label",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB, (154, 35)),
+            object_id="@buttonstyles_horizontal_tab",
             starting_height=2,
-            object_id="#skills_cats_tab",
             manager=MANAGER,
+            anchors={
+                "bottom": "bottom",
+                "left": "left",
+                "bottom_target": self.elements["patrol_frame"],
+            },
         )
+        del tab_rect
 
         # Remove all button
-        self.elements["remove_all"] = UIImageButton(
-            ui_scale(pygame.Rect((560, 627), (124, 35))),
-            "",
+        self.elements["remove_all"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((560, -4), (124, 35))),
+            "screens.patrol.remove_all_label",
+            get_button_dict(ButtonStyles.HORIZONTAL_TAB_MIRRORED, (124, 35)),
             starting_height=2,
-            object_id="#remove_all_button",
+            object_id="@buttonstyles_horizontal_tab_mirrored",
             manager=MANAGER,
+            anchors={"left": "left", "top_target": self.elements["patrol_frame"]},
         )
 
         # Text box for skills and traits. Hidden for now, and with no text in it

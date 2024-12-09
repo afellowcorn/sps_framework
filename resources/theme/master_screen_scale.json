@@ -177,6 +177,15 @@
             "state_transitions": {"hovered_normal": "0"}
         }
     },
+    "@buttonstyles_horizontal_tab_mirrored": {
+        "prototype": "buttonstyles_prototype",
+        "misc": {
+            "text_vert_alignment": "bottom",
+            "text_vert_alignment_padding": "0",
+            "padding": "5, 5",
+            "state_transitions": {"hovered_normal": "0"}
+        }
+    },
     "@buttonstyles_vertical_tab": {
         "prototype": "buttonstyles_prototype",
         "misc": {"padding": "10, 5", "state_transitions": {"hovered_normal": "0"}}

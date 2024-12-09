@@ -23,6 +23,7 @@ class ButtonStyles(Enum):
     ROUNDED_RECT = "rounded_rect"
     DROPDOWN = "dropdown"
     HORIZONTAL_TAB = "horizontal_tab"
+    HORIZONTAL_TAB_MIRRORED = "horizontal_tab_mirrored"
     VERTICAL_TAB = "vertical_tab"
     LADDER_TOP = "ladder_top"
     LADDER_MIDDLE = "ladder_middle"
@@ -227,6 +228,39 @@ buttonstyles = {
         "ninetile": False,
         "scale_only": False,
         "tab_movement": {"hovered": False, "disabled": True, "amount": (0, -4)},
+    },
+    "horizontal_tab_mirrored": {
+        "normal": pygame.transform.flip(
+            pygame.image.load(
+                "resources/images/generated_buttons/horizontal_tab_normal.png"
+            ).convert_alpha(),
+            False,
+            True,
+        ),
+        "hovered": pygame.transform.flip(
+            pygame.image.load(
+                "resources/images/generated_buttons/horizontal_tab_hovered.png"
+            ).convert_alpha(),
+            False,
+            True,
+        ),
+        "selected": pygame.transform.flip(
+            pygame.image.load(
+                "resources/images/generated_buttons/horizontal_tab_normal.png"
+            ).convert_alpha(),
+            False,
+            True,
+        ),
+        "disabled": pygame.transform.flip(
+            pygame.image.load(
+                "resources/images/generated_buttons/horizontal_tab_disabled.png"
+            ).convert_alpha(),
+            False,
+            True,
+        ),
+        "ninetile": False,
+        "scale_only": False,
+        "tab_movement": {"hovered": False, "disabled": True, "amount": (0, 4)},
     },
     "vertical_tab": {
         "normal": pygame.image.load(
