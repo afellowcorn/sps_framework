@@ -1243,7 +1243,7 @@ class MakeClanScreen(Screens):
         for symbol in display_symbols:
             self.elements[f"{symbol}"] = pygame_gui.elements.UIImage(
                 ui_scale(pygame.Rect((x_pos, y_pos), (50, 50))),
-                sprites.sprites[symbol],
+                sprites.dark_mode_symbol(sprites.sprites[symbol]) if game.settings["dark mode"] else sprites.sprites[symbol],
                 object_id=f"#{symbol}",
                 starting_height=3,
                 manager=MANAGER,
