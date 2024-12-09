@@ -11,7 +11,7 @@
         "cotc": "Cats Outside the Clan",
         "filter_label": "sort by:",
         "filter_age": "age \u2191",
-        "filter_age_reverse": "age \u2193",
+        "filter_reverse_age": "age \u2193",
         "filter_death": "death",
         "filter_exp": "EXP",
         "filter_id": "ID",

@@ -12,7 +12,7 @@ from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
 from sys import exit as sys_exit
-from typing import List, Tuple
+from typing import List, Tuple, TYPE_CHECKING, Type
 
 import i18n
 import pygame
@@ -27,6 +27,9 @@ from scripts.cat.pelts import Pelt
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 import scripts.game_structure.screen_settings  # must be done like this to get updates when we change screen size etc
+
+if TYPE_CHECKING:
+    from scripts.cat.cats import Cat
 
 
 # ---------------------------------------------------------------------------- #
@@ -2038,7 +2041,7 @@ def ongoing_event_text_adjust(Cat, text, clan=None, other_clan_name=None):
 
 
 def event_text_adjust(
-    Cat,
+    Cat: Type["Cat"],
     text,
     *,
     patrol_leader=None,
@@ -2393,17 +2396,10 @@ def ceremony_text_adjust(
     return adjust_text, random_living_parent, random_dead_parent
 
 
-def get_pronouns(Cat):
+def get_pronouns(Cat: "Cat"):
     """Get a cat's pronoun even if the cat has faded to prevent crashes (use gender-neutral pronouns when the cat has faded)"""
-    if Cat.pronouns == []:
-        return {
-            "subject": "they",
-            "object": "them",
-            "poss": "their",
-            "inposs": "theirs",
-            "self": "themself",
-            "conju": 1,
-        }
+    if Cat.pronouns == {}:
+        return Cat.default_pronouns[0]
     else:
         return choice(Cat.pronouns)
 

@@ -6,7 +6,8 @@ import ujson
 def replace_values_with_potato(json_data):
     if isinstance(json_data, dict):
         return {
-            key: replace_values_with_potato(value) if "thoughts" in key else value
+            key: replace_values_with_potato(value)
+            # if "thoughts" in key else value
             for key, value in json_data.items()
         }
     elif isinstance(json_data, list):
@@ -32,7 +33,7 @@ def process_json_file(input_path, output_path):
 # Folder setup
 file_dir = os.path.dirname(os.path.realpath("__file__"))
 print(file_dir)
-folder = "thoughts/alive"
+folder = "screens/"
 input_folder = os.path.join(file_dir, f"../en/{folder}")
 output_folder = os.path.join(file_dir, f"./{folder}")
 
