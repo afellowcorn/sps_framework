@@ -423,6 +423,7 @@ class HerbSupply:
         finds out what herbs an individual med cat gathered during moon skip and adds those herbs to collection
         and log
         """
+        # TODO: decide how to simplify for classic
         # meds with relevant skills will get a boost to the herbs they find
         # SENSE finds larger amount of herbs
         # CLEVER finds greater quantity of herbs
@@ -447,8 +448,14 @@ class HerbSupply:
         # dict where key is herb name and value is the quantity found of that herb
         found_herbs = {}
 
+        # adjust weighting according to season
+        if game.clan.current_season in ["Newleaf", "Greenleaf"]:
+            weight = [1, 2, 3]
+        else:
+            weight = [5, 2, 1]
+
         # the amount of herb types the med has found
-        amount_of_herbs = choices(population=[1, 2, 3], weights=[3, 2, 1], k=1)[0] + amount_modifier
+        amount_of_herbs = choices(population=[1, 2, 3], weights=weight, k=1)[0] + amount_modifier
 
         # now we find what herbs have actually been found and their quantity
         for herb in herb_list:
@@ -461,7 +468,7 @@ class HerbSupply:
 
             # chance to find a herb is based on it's rarity
             if randint(1, self.herb[herb].rarity) == 1:
-                found_herbs[herb] = choices(population=[1, 2, 3], weights=[3, 2, 1], k=1)[0] * quantity_modifier
+                found_herbs[herb] = choices(population=[1, 2, 3], weights=weight, k=1)[0] * quantity_modifier
                 amount_of_herbs -= 1
 
         if found_herbs:
