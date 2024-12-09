@@ -1112,7 +1112,7 @@ class Clan:
 
         game.safe_save(
             f"{get_save_dir()}/{game.clan.name}/herb_supply.json",
-            clan.herb_supply.combined_supply
+            clan.herb_supply.combined_supply_dict
         )
 
         # delete old herb save file if it exists

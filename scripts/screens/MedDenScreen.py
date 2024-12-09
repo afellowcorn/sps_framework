@@ -1,3 +1,5 @@
+from random import choice
+
 import pygame
 import pygame_gui
 
@@ -345,38 +347,9 @@ class MedDenScreen(Screens):
             if len(self.meds) >= 1 and number == 0:
                 meds_cover = f"There are no medicine cats who are able to work. The Clan will be at a higher risk of death and disease."
 
-            herb_amount = sum(game.clan.herbs.values())
-            needed_amount = int(get_living_clan_cat_count(Cat) * 4)
-            med_concern = f"This should not appear."
-            if herb_amount == 0:
-                med_concern = (
-                    f"The herb stores are empty and bare, this does not bode well."
-                )
-            elif 0 < herb_amount <= needed_amount / 4:
-                if len(self.meds) == 1:
-                    med_concern = f"The medicine cat worries over the herb stores, they don't have nearly enough for the Clan."
-                else:
-                    med_concern = f"The medicine cats worry over the herb stores, they don't have nearly enough for the Clan."
-            elif needed_amount / 4 < herb_amount <= needed_amount / 2:
-                med_concern = f"The herb stores are small, but it's enough for now."
-            elif needed_amount / 2 < herb_amount <= needed_amount:
-                if len(self.meds) == 1:
-                    med_concern = f"The medicine cat is content with how many herbs they have stocked up."
-                else:
-                    med_concern = f"The medicine cats are content with how many herbs they have stocked up."
-            elif needed_amount < herb_amount <= needed_amount * 2:
-                if len(self.meds) == 1:
-                    med_concern = f"The herb stores are overflowing and the medicine cat has little worry."
-                else:
-                    med_concern = f"The herb stores are overflowing and the medicine cats have little worry."
-            elif needed_amount * 2 < herb_amount:
-                if len(self.meds) == 1:
-                    med_concern = f"StarClan has blessed them with plentiful herbs and the medicine cat sends their thanks to Silverpelt."
-                else:
-                    med_concern = f"StarClan has blessed them with plentiful herbs and the medicine cats send their thanks to Silverpelt."
-
             med_messages.append(meds_cover)
-            med_messages.append(med_concern)
+            if self.meds:
+                med_messages.append(game.clan.herb_supply.get_status_message(choice(self.meds)))
             self.meds_messages.set_text("<br>".join(med_messages))
 
         else:
@@ -573,15 +546,20 @@ class MedDenScreen(Screens):
             i += 1
 
     def draw_med_den(self):
-        sorted_dict = dict(sorted(game.clan.herbs.items()))
-        herbs_stored = sorted_dict.items()
+
         herb_list = []
-        for herb in herbs_stored:
-            amount = str(herb[1])
-            type = str(herb[0].replace("_", " "))
-            herb_list.append(f"{amount} {type}")
-        if not herbs_stored:
-            herb_list.append("Empty")
+        herb_supply = game.clan.herb_supply
+
+        if not herb_supply.total:
+            herb_list = ["Empty"]
+
+        else:
+            for herb, count in herb_supply.entire_supply.items():
+                if count <= 0:
+                    continue
+                display = herb_supply.herb[herb].plural_display if count > 1 else herb_supply.herb[herb].singular_display
+                herb_list.append(f"{count} {display}")
+
         if len(herb_list) <= 10:
             # classic doesn't display herbs
             if game.clan.game_mode == "classic":
@@ -631,7 +609,7 @@ class MedDenScreen(Screens):
 
         if game.clan.game_mode == "classic":
             num_drawn = 0
-            herb_amount = sum(game.clan.herbs.values())
+            herb_amount = sum(herb_supply.entire_supply.values())
 
             # draw x different herbs where x is how many herbs you have
             herbs = {}
@@ -644,8 +622,11 @@ class MedDenScreen(Screens):
                     break
         else:
             # otherwise draw the herbs you have
-            herbs = game.clan.herbs
-        for herb in herbs:
+            herbs = game.clan.herb_supply.entire_supply
+
+        for herb, count in herbs.items():
+            if count <= 0:
+                continue
             if herb == "cobwebs":
                 self.herbs["cobweb1"] = pygame_gui.elements.UIImage(
                     ui_scale(pygame.Rect((108, 95), (396, 224))),
@@ -657,7 +638,7 @@ class MedDenScreen(Screens):
                     ),
                     manager=MANAGER,
                 )
-                if herbs["cobwebs"] > 1:
+                if count > 1:
                     self.herbs["cobweb2"] = pygame_gui.elements.UIImage(
                         ui_scale(pygame.Rect((108, 95), (396, 224))),
                         pygame.transform.scale(

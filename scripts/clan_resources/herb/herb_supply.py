@@ -42,7 +42,7 @@ class HerbSupply:
         self.log = []
 
     @property
-    def combined_supply(self) -> dict:
+    def combined_supply_dict(self) -> dict:
         """
         returns a dict containing both the storage and the collected herb dicts
         """
@@ -53,17 +53,18 @@ class HerbSupply:
         return combined_supply
 
     @property
-    def sorted_by_lowest(self) -> list:
+    def entire_supply(self) -> dict:
         """
-        returns list of herbs ordered from the least supply to most
+        Dict of the storage and collected herbs combined and totaled. Key is herb name, value is total of that herb
+        within the supply.
         """
-        sort_list = [x for x in self.storage]
-        sort_list.sort(key=lambda list_herb: self.get_single_herb_total(list_herb) + self.collected[list_herb])
-
-        return sort_list
+        supply = {}
+        for herb in HERBS:
+            supply[herb] = self.total_of_herb(herb)
+        return supply
 
     @property
-    def supply_total(self) -> int:
+    def total(self) -> int:
         """
         return total int of all herb inventory
         """
@@ -75,6 +76,16 @@ class HerbSupply:
             total += herb
 
         return total
+
+    @property
+    def sorted_by_lowest(self) -> list:
+        """
+        returns list of herbs ordered from the least supply to most
+        """
+        sort_list = [x for x in self.storage]
+        sort_list.sort(key=lambda list_herb: self.get_single_herb_total(list_herb) + self.collected[list_herb])
+
+        return sort_list
 
     @property
     def low_qualifier(self) -> int:
@@ -168,11 +179,28 @@ class HerbSupply:
                     f"{adjust_list_text([herb.plural_display for herb in expired])} "
                     f"were too old to be of use anymore.")
 
+    def total_of_herb(self, herb) -> int:
+        """
+        return total int of given herb in storage and collected
+        """
+        total = 0
+        if herb in self.storage:
+            for stock in self.storage[herb]:
+                total += stock
+        if herb in self.collected:
+            total += self.collected[herb]
+
+        return total
+
     def get_supply_rating(self):
         """
         returns the rating of given supply, aka how "full" the supply is compared to clan size
         """
-        rating = None
+        rating = Supply.LOW
+
+        if not self.storage:
+            return rating
+
         for single_herb in self.storage:
             total = self.get_single_herb_total(single_herb)
             if self.low_qualifier < total <= self.adequate_qualifier and rating not in [Supply.ADEQUATE,
@@ -184,6 +212,7 @@ class HerbSupply:
                 rating = Supply.ADEQUATE
             elif self.full_qualifier < total <= self.excess_qualifier and rating != Supply.EXCESS:
                 rating = Supply.EXCESS
+
         return rating
 
     def get_herb_rating(self, herb):
@@ -207,7 +236,7 @@ class HerbSupply:
         """
         return event_text_adjust(
             Cat=med_cat,
-            text=choice(STATUS[choice(self.get_supply_rating())]),
+            text=choice(STATUS[self.get_supply_rating()]),
             main_cat=med_cat,
             clan=game.clan
         )
@@ -217,10 +246,10 @@ class HerbSupply:
         returns int total supply of given herb
         """
         total = 0
-        for stock in self.storage[herb]:
+        for stock in self.storage.get(herb, []):
             total += stock
 
-        for amt in self.collected[herb]:
+        for amt in self.collected.get(herb, []):
             total += amt
 
         return total
