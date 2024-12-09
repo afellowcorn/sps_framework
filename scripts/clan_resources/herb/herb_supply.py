@@ -29,6 +29,9 @@ class HerbSupply:
         # herb count required for clan
         self.required_herb_count: int = 0
 
+        # herbs the clan needs for treatment of current clan ailments
+        self.in_need_of: list = []
+
         self.herb = {}
         if game.clan:
             for name in HERBS:
@@ -82,10 +85,29 @@ class HerbSupply:
         """
         returns list of herbs ordered from the least supply to most
         """
-        sort_list = [x for x in self.storage]
-        sort_list.sort(key=lambda list_herb: self.get_single_herb_total(list_herb) + self.collected[list_herb])
+        sort_list = [x for x in self.entire_supply]
+        sort_list.sort(key=lambda list_herb: self.entire_supply[list_herb])
 
         return sort_list
+
+    @property
+    def sorted_by_need(self) -> list:
+        """
+        returns list of herbs sorted by what is most needed and has the least supply
+        """
+        final_sort_list = []
+        extra = []
+
+        if not self.in_need_of:
+            return self.sorted_by_lowest
+
+        for herb in self.sorted_by_lowest:
+            if herb in self.in_need_of:
+                final_sort_list.append(herb)
+            else:
+                extra.append(herb)
+
+        return final_sort_list + extra
 
     @property
     def low_qualifier(self) -> int:
@@ -203,9 +225,9 @@ class HerbSupply:
 
         for single_herb in self.storage:
             total = self.get_single_herb_total(single_herb)
-            if self.low_qualifier < total <= self.adequate_qualifier and rating not in [Supply.ADEQUATE,
-                                                                                        Supply.FULL,
-                                                                                        Supply.EXCESS]:
+            if self.low_qualifier <= total <= self.adequate_qualifier and rating not in [Supply.ADEQUATE,
+                                                                                         Supply.FULL,
+                                                                                         Supply.EXCESS]:
                 rating = Supply.LOW
             elif self.adequate_qualifier < total <= self.full_qualifier and rating not in [Supply.FULL,
                                                                                            Supply.EXCESS]:
@@ -363,6 +385,8 @@ class HerbSupply:
             if not required_herbs:
                 return
 
+            self.in_need_of.extend([x for x in required_herbs if x not in self.in_need_of])
+
             # find the possible effects of herb for the condition
             possible_effects = []
 
@@ -419,8 +443,8 @@ class HerbSupply:
         elif secondary == SkillPath.CLEVER:
             quantity_modifier = 2
 
-        # list of the herbs, sorted by lowest currently stored
-        herb_list = self.sorted_by_lowest
+        # list of the herbs, sorted by most need
+        herb_list = self.sorted_by_need
 
         # dict where key is herb name and value is the quantity found of that herb
         found_herbs = {}
@@ -523,6 +547,7 @@ class HerbSupply:
                    f"{self.herb[herb_used].plural_display if amount_used > 1 else self.herb[herb_used].singular_display}"
                    f" this moon as treatment for: {condition}. "
                    f"{effect_message}")
+
         message = event_text_adjust(
             Cat=treated_cat,
             text=message,
