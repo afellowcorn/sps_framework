@@ -92,7 +92,7 @@ class HerbSupply:
         """
         returns the lowest qualifier for a low supply
         """
-        return 0
+        return 1
 
     @property
     def adequate_qualifier(self) -> int:
@@ -192,11 +192,11 @@ class HerbSupply:
 
         return total
 
-    def get_supply_rating(self):
+    def get_overall_rating(self):
         """
         returns the rating of given supply, aka how "full" the supply is compared to clan size
         """
-        rating = Supply.LOW
+        rating = Supply.EMPTY
 
         if not self.storage:
             return rating
@@ -221,6 +221,8 @@ class HerbSupply:
         """
 
         total = self.get_single_herb_total(herb)
+        if not total:
+            return Supply.EMPTY
         if self.low_qualifier < total <= self.adequate_qualifier:
             return Supply.LOW
         elif self.adequate_qualifier < total <= self.full_qualifier:
@@ -234,9 +236,16 @@ class HerbSupply:
         """
         returns med den message for current herb supply status
         """
+        messages: list = STATUS[self.get_overall_rating()]
+        for message in messages.copy():
+            if "lead_name" in message and not game.clan.leader or game.clan.leader.dead or game.clan.leader.outside:
+                messages.remove(message)
+            if "dep_name" in message and not game.clan.deputy or game.clan.deputy.dead or game.clan.deputy.outside:
+                messages.remove(message)
+
         return event_text_adjust(
             Cat=med_cat,
-            text=choice(STATUS[self.get_supply_rating()]),
+            text=choice(messages),
             main_cat=med_cat,
             clan=game.clan
         )
@@ -465,8 +474,7 @@ class HerbSupply:
 
         return needed_num
 
-    @staticmethod
-    def __apply_herb_effect(treated_cat, condition: str, herb_used, effect, amount_used):
+    def __apply_herb_effect(self, treated_cat, condition: str, herb_used, effect, amount_used):
         """
         applies the given effect to the treated_cat
         """
@@ -484,11 +492,13 @@ class HerbSupply:
         strength_modifier = 1
         amt_modifier = int(amount_used * .5) if int(amount_used * .5) >= 1 else 1
 
+        effect_message = "this should not show up"
         # apply mortality effect
         if effect == HerbEffect.MORTALITY:
             con_info[effect] += (
                     3 * strength_modifier + amt_modifier
             )
+            effect_message = "{PRONOUN/m_c/subject/CAP} be less likely to die."
 
         # apply duration effect
         elif effect == HerbEffect.DURATION:
@@ -498,6 +508,7 @@ class HerbSupply:
             )
             if con_info["duration"] < 0:
                 con_info["duration"] = 0
+            effect_message = "{PRONOUN/m_c/subject/CAP} will heal sooner."
 
         # apply risk effect
         elif effect == HerbEffect.RISK:
@@ -505,8 +516,20 @@ class HerbSupply:
                 risk["chance"] += (
                         3 * strength_modifier + amt_modifier
                 )
+                effect_message = "The risks associated with {PRONOUN/m_c/poss} condition are lowered."
 
-        # TODO: set up the effect log messages
+        # create and append log message
+        message = (f"m_c was given "
+                   f"{self.herb[herb_used].plural_display if amount_used > 1 else self.herb[herb_used].singular_display}"
+                   f" this moon as treatment for: {condition}. "
+                   f"{effect_message}")
+        message = event_text_adjust(
+            Cat=treated_cat,
+            text=message,
+            main_cat=treated_cat,
+            clan=game.clan
+        )
+        self.log.append(message)
 
     @staticmethod
     def __apply_lack_of_herb(treatment_cat, condition: str, effect):
