@@ -4,7 +4,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.clan_resources.herb.herb_supply import HERBS
+from scripts.clan_resources.herb.herb_supply import HERBS, MESSAGES
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,
@@ -17,7 +17,7 @@ from scripts.utility import (
     ui_scale,
     get_alive_status_cats,
     shorten_text_to_fit,
-    get_living_clan_cat_count,
+    get_living_clan_cat_count, event_text_adjust,
 )
 from .Screens import Screens
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
@@ -344,17 +344,28 @@ class MedDenScreen(Screens):
             if game.clan.game_mode == "classic":
                 meds_cover = ""
 
-            if len(self.meds) >= 1 and number == 0:
-                meds_cover = f"There are no medicine cats who are able to work. The Clan will be at a higher risk of death and disease."
+            if len(self.meds) == 1 and number == 0:
+                meds_cover = event_text_adjust(
+                    Cat=Cat,
+                    text=choice(MESSAGES["single_not_working"]),
+                    main_cat=self.meds[0],
+                    clan=game.clan
+                )
+            if len(self.meds) >= 2 and number == 0:
+                meds_cover = event_text_adjust(
+                    Cat=Cat,
+                    text=choice(MESSAGES["many_not_working"]),
+                    clan=game.clan
+                )
 
             med_messages.append(meds_cover)
+
             if self.meds:
                 med_messages.append(game.clan.herb_supply.get_status_message(choice(self.meds)))
             self.meds_messages.set_text("<br>".join(med_messages))
 
         else:
-            meds_cover = f"There are no medicine cats, the Clan will be at higher risk of death and sickness."
-            self.meds_messages.set_text(meds_cover)
+            self.meds_messages.set_text(choice(MESSAGES["no_meds_warning"]))
 
     def handle_tab_toggles(self):
         if self.open_tab == "cats":

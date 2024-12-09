@@ -195,11 +195,9 @@ class HerbSupply:
                 self.storage.pop(-1)
 
             # add log entry to inform player of removal
+            message = choice(MESSAGES["expiration"]).replace("[herbs]", adjust_list_text([herb.plural_display for herb in expired]))
             if expired:
-                self.log.append(
-                    f"It was discovered that some stores of "
-                    f"{adjust_list_text([herb.plural_display for herb in expired])} "
-                    f"were too old to be of use anymore.")
+                self.log.append(message)
 
     def total_of_herb(self, herb) -> int:
         """
@@ -258,7 +256,7 @@ class HerbSupply:
         """
         returns med den message for current herb supply status
         """
-        messages: list = STATUS[self.get_overall_rating()]
+        messages: list = MESSAGES["storage_status"][self.get_overall_rating()]
         for message in messages.copy():
             if "lead_name" in message and not game.clan.leader or game.clan.leader.dead or game.clan.leader.outside:
                 messages.remove(message)
@@ -587,4 +585,4 @@ with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:
     HERBS = ujson.loads(read_file.read())
 
 with open("resources/dicts/med_den_messages.json", "r", encoding="utf-8") as read_file:
-    STATUS = ujson.loads(read_file.read())
+    MESSAGES = ujson.loads(read_file.read())
