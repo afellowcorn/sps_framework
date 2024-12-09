@@ -1086,7 +1086,7 @@ class Clan:
                 ) as save_file:
                     herbs = ujson.load(save_file)
                     clan.herb_supply = HerbSupply()
-                    clan.herb_supply.storage = clan.herb_supply.start_storage(herbs)
+                    clan.herb_supply.start_storage(herbs)
 
             # load the current file path, if it exists in save
             elif os.path.exists(current_file_path):
@@ -1114,6 +1114,11 @@ class Clan:
             f"{get_save_dir()}/{game.clan.name}/herb_supply.json",
             clan.herb_supply.combined_supply
         )
+
+        # delete old herb save file if it exists
+        if os.path.exists(get_save_dir() + f"/{game.clan.name}/herbs.json"):
+            os.remove(get_save_dir() + f"/{game.clan.name}/herbs.json")
+
 
     def load_freshkill_pile(self, clan):
         """
