@@ -1135,6 +1135,9 @@ class ShortEvent:
         self.supplies = supplies if supplies else []
         self.new_gender = new_gender
 
+    def __repr__(self):
+        return f"ShortEvent ID: {self.event_id}, text: {self.text}"
+
 
 class OngoingEvent:
     def __init__(

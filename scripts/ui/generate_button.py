@@ -115,22 +115,22 @@ buttonstyles = {
         "ninetile": False,
         "scale_only": False,
     },
-    "filter_dropdown": {
-        "normal": pygame.image.load(
-            "resources/images/generated_buttons/filter_dropdown_normal.png"
-        ).convert_alpha(),
-        "hovered": pygame.image.load(
-            "resources/images/generated_buttons/filter_dropdown_hovered.png"
-        ).convert_alpha(),
-        "selected": pygame.image.load(
-            "resources/images/generated_buttons/filter_dropdown_normal.png"
-        ).convert_alpha(),
-        "disabled": pygame.image.load(
-            "resources/images/generated_buttons/filter_dropdown_normal.png"
-        ).convert_alpha(),
-        "ninetile": False,
-        "scale_only": False,
-    },
+    # "filter_dropdown": {
+    #     "normal": pygame.image.load(
+    #         "resources/images/generated_buttons/filter_dropdown_normal.png"
+    #     ).convert_alpha(),
+    #     "hovered": pygame.image.load(
+    #         "resources/images/generated_buttons/filter_dropdown_hovered.png"
+    #     ).convert_alpha(),
+    #     "selected": pygame.image.load(
+    #         "resources/images/generated_buttons/filter_dropdown_normal.png"
+    #     ).convert_alpha(),
+    #     "disabled": pygame.image.load(
+    #         "resources/images/generated_buttons/filter_dropdown_normal.png"
+    #     ).convert_alpha(),
+    #     "ninetile": False,
+    #     "scale_only": False,
+    # },
     "profile_left": {
         "normal": pygame.image.load(
             "resources/images/generated_buttons/profile_left_normal.png"

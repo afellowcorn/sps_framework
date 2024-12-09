@@ -18,6 +18,7 @@ import subprocess
 import traceback
 from html import escape
 
+import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID
@@ -384,10 +385,11 @@ class StartScreen(Screens):
 
         if game.switches["error_message"]:
             error_text = "screens.start.error_text"
+            traceback_text = ""
             if game.switches["traceback"]:
                 print("Traceback:")
                 print(game.switches["traceback"])
-                error_text += "<br><br>" + escape(
+                traceback_text = "<br><br>" + escape(
                     "".join(
                         traceback.format_exception(
                             game.switches["traceback"],
@@ -397,7 +399,11 @@ class StartScreen(Screens):
                     )
                 )  # pylint: disable=line-too-long
             self.error_label.set_text(
-                error_text, text_kwargs={"error": str(game.switches["error_message"])}
+                error_text,
+                text_kwargs={
+                    "error": str(game.switches["error_message"]),
+                    "traceback": traceback_text,
+                },
             )
             self.error_box.show()
             self.error_label.show()

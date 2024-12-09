@@ -421,12 +421,13 @@ class Cat:
         else:
             # Assigning pronouns based on gender
             if self.genderalign in ["female", "trans female"]:
-                self.pronouns = [i18n.t("pronouns.1")]
+                i18n.resource_loader.search_translation("pronouns.1")
+                self.pronouns = [self.default_pronouns[1].copy()]
             elif self.genderalign in ["male", "trans male"]:
-                self.pronouns = [i18n.t("pronouns.2")]
+                self.pronouns = [self.default_pronouns[2].copy()]
             else:
                 self.genderalign = "nonbinary"
-                self.pronouns = [i18n.t("pronouns.0")]
+                self.pronouns = [self.default_pronouns[0].copy()]
 
         # APPEARANCE
         self.pelt = Pelt.generate_new_pelt(
@@ -1643,7 +1644,11 @@ class Cat:
         )
 
         chosen_thought = event_text_adjust(
-            Cat, chosen_thought, main_cat=self, random_cat=other_cat, clan=game.clan
+            self.__class__,
+            chosen_thought,
+            main_cat=self,
+            random_cat=other_cat,
+            clan=game.clan,
         )
 
         # insert thought
