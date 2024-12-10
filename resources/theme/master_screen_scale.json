@@ -1468,22 +1468,6 @@
             }
         }
     },
-    "#save_button": {
-        "images": {
-            "normal_image": {
-                "path": "resources\/images\/buttons\/save_clan.png"
-            },
-            "hovered_image": {
-                "path": "resources\/images\/buttons\/save_clan_hover.png"
-            },
-            "selected_image": {
-                "path": "resources\/images\/buttons\/save_clan_hover.png"
-            },
-            "disabled_image": {
-                "path": "resources\/images\/buttons\/save_clan_unavailable.png"
-            }
-        }
-    },
     "#kill_cat_button": {
         "prototype": "@buttonstyles_ladder_middle",
         "images": {

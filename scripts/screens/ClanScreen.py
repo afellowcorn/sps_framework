@@ -34,6 +34,7 @@ class ClanScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.show_den_labels_text = None
         self.show_den_labels = None
         self.show_den_text = None
         self.label_toggle = None
@@ -249,7 +250,11 @@ class ClanScreen(Screens):
                 image_cache.load_image("resources/images/show_den_labels.png"),
                 ui_scale_dimensions((167, 34)),
             ),
-            object_id=ObjectID(class_id="@buttonstyles_rounded_rect", object_id=None),
+        )
+        self.show_den_labels_text = pygame_gui.elements.UILabel(
+            ui_scale(pygame.Rect((60, 641), (130, 34))),
+            "screens.clan.show_dens",
+            object_id="@buttonstyles_rounded_rect",
         )
         self.show_den_labels.disable()
         self.label_toggle = UIImageButton(
@@ -326,6 +331,8 @@ class ClanScreen(Screens):
         del self.label_toggle
         self.show_den_labels.kill()
         del self.show_den_labels
+        self.show_den_labels_text.kill()
+        del self.show_den_labels_text
 
         # reset save status
         game.switches["saved_clan"] = False

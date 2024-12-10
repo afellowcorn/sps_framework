@@ -1744,7 +1744,7 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
         elif inner_details[0].upper() == "VERB":
             return inner_details[d["conju"] + 1]
         elif inner_details[0].upper() == "ADJ":
-            return inner_details[(d["gender"] + 1) if "gender" in d else 1]
+            return inner_details[(d["gender"] + 2) if "gender" in d else 2]
 
         if raise_exception:
             raise KeyError(

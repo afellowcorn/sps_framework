@@ -18,6 +18,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     get_living_clan_cat_count,
     event_text_adjust,
+    ui_scale_offset,
 )
 from .Screens import Screens
 from ..conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
@@ -200,36 +201,52 @@ class MedDenScreen(Screens):
                 manager=MANAGER,
             )
             self.log_box.hide()
-            self.cats_tab = UIImageButton(
-                ui_scale(pygame.Rect((109, 462), (35, 75))),
-                "",
-                object_id="#hurt_sick_cats_button",
+            tab_rect = ui_scale(pygame.Rect((109, 462), (100, 30)))
+            tab_rect.topright = ui_scale_offset((0, 462))
+            self.cats_tab = UISurfaceImageButton(
+                tab_rect,
+                Icon.CAT_HEAD + i18n.t("screens.med_den.hurt_sick_label"),
+                get_button_dict(ButtonStyles.VERTICAL_TAB, (100, 30)),
+                object_id="@buttonstyles_vertical_tab",
                 manager=MANAGER,
+                anchors={"right": "right", "right_target": self.cat_bg},
             )
             self.cats_tab.disable()
-            self.log_tab = UIImageButton(
-                ui_scale(pygame.Rect((109, 552), (35, 64))),
-                "",
-                object_id="#med_den_log_button",
+            tab_rect = ui_scale(pygame.Rect((0, 0), (100, 30)))
+            tab_rect.topright = ui_scale_offset((0, 10))
+            self.log_tab = UISurfaceImageButton(
+                tab_rect,
+                Icon.NOTEPAD + i18n.t("screens.med_den.log_label"),
+                get_button_dict(ButtonStyles.VERTICAL_TAB, (100, 30)),
+                object_id="@buttonstyles_vertical_tab",
                 manager=MANAGER,
+                anchors={
+                    "right": "right",
+                    "right_target": self.cat_bg,
+                    "top_target": self.cats_tab,
+                },
             )
-            self.in_den_tab = UIImageButton(
+            del tab_rect
+            self.in_den_tab = UISurfaceImageButton(
                 ui_scale(pygame.Rect((370, 409), (75, 35))),
-                "",
-                object_id="#in_den_tab",
+                "screens.med_den.in_den",
+                get_button_dict(ButtonStyles.HORIZONTAL_TAB, (75, 35)),
+                object_id="@buttonstyles_horizontal_tab",
                 manager=MANAGER,
             )
             self.in_den_tab.disable()
-            self.out_den_tab = UIImageButton(
+            self.out_den_tab = UISurfaceImageButton(
                 ui_scale(pygame.Rect((460, 409), (112, 35))),
-                "",
-                object_id="#out_den_tab",
+                "screens.med_den.out_den",
+                get_button_dict(ButtonStyles.HORIZONTAL_TAB, (112, 35)),
+                object_id="@buttonstyles_horizontal_tab",
                 manager=MANAGER,
             )
-            self.minor_tab = UIImageButton(
+            self.minor_tab = UISurfaceImageButton(
                 ui_scale(pygame.Rect((587, 409), (70, 35))),
-                "",
-                object_id="#minor_tab",
+                "screens.med_den.minor",
+                get_button_dict(ButtonStyles.HORIZONTAL_TAB, (70, 35)),
+                object_id="@buttonstyles_horizontal_tab",
                 manager=MANAGER,
             )
             self.tab_showing = self.in_den_tab

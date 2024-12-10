@@ -279,12 +279,7 @@ class SaveCheck(UIWindow):
         self.save_button_saving_state = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 115), (114, 30))),
             "buttons.saving",
-            {
-                "normal": pygame.transform.scale(
-                    image_cache.load_image("resources/images/save_clan_saving.png"),
-                    ui_scale_dimensions((114, 30)),
-                )
-            },
+            {"normal": get_button_dict(ButtonStyles.SQUOVAL, (114, 30))["normal"]},
             object_id="@buttonstyles_squoval",
             starting_height=top_stack_menu_layer_height + 1,
             container=self,

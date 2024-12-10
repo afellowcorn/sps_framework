@@ -23,6 +23,7 @@ from scripts.utility import (
     ui_scale_dimensions,
     ui_scale_blit,
     ui_scale_offset,
+    event_text_adjust,
 )
 from .Screens import Screens
 from ..cat_relations.relationship import Relationship
@@ -427,6 +428,7 @@ class RelationshipScreen(Screens):
             "screens.relationship.heading",
             ui_scale(pygame.Rect((75, 75), (400, 50))),
             object_id=get_text_box_theme("#text_box_34_horizleft"),
+            text_kwargs={"m_c": self.the_cat},
         )
         self.focus_cat_elements["details"] = pygame_gui.elements.UITextBox(
             self.the_cat.get_info_block(relationship=True),

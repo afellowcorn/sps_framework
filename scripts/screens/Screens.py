@@ -353,9 +353,9 @@ class Screens:
                     cls.menu_buttons[den].show()
 
     @classmethod
-    def update_heading_text(cls, text):
+    def update_heading_text(cls, text, text_kwargs=None):
         """Updates the menu heading text"""
-        cls.menu_buttons["heading"].set_text(text)
+        cls.menu_buttons["heading"].set_text(text, text_kwargs=text_kwargs)
 
         # Update if moons and seasons UI is on
 
