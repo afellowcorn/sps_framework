@@ -4074,7 +4074,7 @@
                 ]
             },
             {
-                "text": "app1 is running so fast to catch up with the others that when {PRONOUN/app1/subject} {VERB/app1/put/puts} a paw down into a rabbit burrow entrance, it yawks {PRONOUN/app1/object} down. {PRONOUN/app1/subject/CAP} {VERB/app1/slam/slams} agaisnt the ground, air whooshing out of {PRONOUN/app1/poss} lungs, biting {PRONOUN/app1/poss} tongue as {PRONOUN/app1/poss} jaw hits the dirt. Ow...",
+                "text": "app1 is running so fast to catch up with the others that when {PRONOUN/app1/subject} {VERB/app1/put/puts} a paw down into a rabbit burrow entrance, it yanks {PRONOUN/app1/object} down. {PRONOUN/app1/subject/CAP} {VERB/app1/slam/slams} against the ground, air whooshing out of {PRONOUN/app1/poss} lungs, biting {PRONOUN/app1/poss} tongue as {PRONOUN/app1/poss} jaw hits the dirt. Ow...",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_train_patrolapprenticesessionfail",
@@ -4272,7 +4272,7 @@
                 ]
             },
             {
-                "text": "app1 tries to retake the lead as the apprentices race along the border, but app2 shoves them off the track. That coyote-heart! app1 regains their feet and pounces, sending app2 tumbling, and then app2 rears up with claws extended, and by the time the other apprentices break up the fight blood has been shed and grudges created.",
+                "text": "app1 tries to retake the lead as the apprentices race along the border, but app2 shoves them off the track. That coyote-heart! app1 regains {PRONOUN/app1/poss} feet and pounces, sending app2 tumbling, and then app2 rears up with claws extended, and by the time the other apprentices break up the fight blood has been shed and grudges created.",
                 "exp": 20,
                 "weight": 30,
                 "art": "gen_battle_app_app",
@@ -4407,7 +4407,7 @@
                 "outsider_rep": 1
             },
             {
-                "text": "Wow, if s_c was a fly, {PRONOUN/s_c/subject}'d be all over n_c:0, because {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} hot dung, s_c snarks back. Now, give that prey back, before anyone has to draw their claws. Ouch, n_c:0 laughs. Beautiful <i>and</i> clever, s_c is the whole package. Pity about the Clancat bit. The banter continues as s_c escorts n_c:0 to the broder, lingering just a little too long.",
+                "text": "Wow, if s_c was a fly, {PRONOUN/s_c/subject}'d be all over n_c:0, because {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} hot dung, s_c snarks back. Now, give that prey back, before anyone has to draw their claws. Ouch, n_c:0 laughs. Beautiful <i>and</i> clever, s_c is the whole package. Pity about the Clancat bit. The banter continues as s_c escorts n_c:0 to the border, lingering just a little too long.",
                 "exp": 15,
                 "weight": 20,
                 "art": "gen_train_talkingWL",
@@ -4543,7 +4543,7 @@
                 "outsider_rep": 0
             },
             {
-                "text": "n_c:0 need some help, they continue. They have some kittens they're looking after, and they're SO hungry. Can s_c help? What? Where? s_c comes forward, wondering what the outsider is talking about - and flinches backwards as the loner attacks. This is no innocent flirtation!",
+                "text": "{PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/need/needs} some help, {PRONOUN/n_c:0/subject} {VERB/n_c:0/continue/continues}. {PRONOUN/n_c:0/subject/CAP} {VERB/n_c:0/have/has} some kittens {PRONOUN/n_c:0/subject}{VERB/n_c:0/'re/'s} looking after, and they're SO hungry. Can s_c help? What? Where? s_c comes forward, wondering what the outsider is talking about - and flinches backwards as the loner attacks. This is no innocent flirtation!",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_battle_warrior_loner",

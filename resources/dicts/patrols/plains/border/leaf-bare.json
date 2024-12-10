@@ -10,7 +10,7 @@
         "max_cats": 6,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Here on the plains, the reaches of c_n's territory is vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass (under the blanket of snow) but no permanent water sources.",
+        "intro_text": "Here on the plains, the reaches of c_n's territory are vast, particularly in the direction p_l and {PRONOUN/p_l/poss} patrol are heading, where there is endless grass (under the blanket of snow) but no permanent water sources.",
         "decline_text": "The patrol is interrupted by a hunting patrol that needs help carrying prey back to camp - border marking will wait til later.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -108,7 +108,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c limping. It's nothing, {PRONOUN/r_c/subject} {VERB/r_c/say/says}, just sleeping on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off.",
+                "text": "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c limping. It's nothing, {PRONOUN/r_c/subject} {VERB/r_c/say/says}, just slept on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -264,7 +264,7 @@
                 ]
             },
             {
-                "text": "p_l bolts back to camp, feet slipping wildly on the frosty ground, {PRONOUN/p_l/poss} heart pounding. {PRONOUN/p_l/subject/CAP} have to tell {PRONOUN/p_l/poss} clanmates. {PRONOUN/p_l/subject/CAP} burst into camp yowling a warning!",
+                "text": "p_l bolts back to camp, feet slipping wildly on the frosty ground, {PRONOUN/p_l/poss} heart pounding. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} to tell {PRONOUN/p_l/poss} Clanmates. {PRONOUN/p_l/subject/CAP} {VERB/p_l/burst/bursts} into camp yowling a warning!",
                 "exp": 40,
                 "weight": 10,
                 "art": "running_warrior",
@@ -279,7 +279,7 @@
                 ]
             },
             {
-                "text": "Frozen in the face of the large threat, {PRONOUN/s_c/subject} musters a surge of courage. As the coyote comes into sight {PRONOUN/s_c/subject/} {VERB/s_c/manage/manages} to flee from the coyote, sprinting on the snowcrust back to camp to warn the clan.",
+                "text": "Frozen in the face of the large threat, {PRONOUN/s_c/subject} {VERB/s_c/muster/musters} a surge of courage. As the coyote comes into sight {PRONOUN/s_c/subject/} {VERB/s_c/manage/manages} to flee from the coyote, sprinting on the snowcrust back to camp to warn the Clan.",
                 "exp": 40,
                 "weight": 20,
                 "art": "running_warrior",
@@ -309,7 +309,7 @@
                 "stat_skill": ["RUNNER,2", "CLEVER,2", "INSIGHTFUL,2"]
             },
             {
-                "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent.  {PRONOUN/s_c/subject/CAP} run. Run as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} see a group of sleeping Thunderbeasts, and dart to them, yowling. s_c watches with a new respect and fear as the Thunderbeasts kill the predator with ease.",
+                "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/run/runs}. {VERB/s_c/Run/Runs} as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} see a group of sleeping Thunderbeasts, and dart to them, yowling. s_c watches with a new respect and fear as the Thunderbeasts kill the predator with ease.",
                 "exp": 40,
                 "weight": 10,
                 "art": "gen_coyote_danger1",
