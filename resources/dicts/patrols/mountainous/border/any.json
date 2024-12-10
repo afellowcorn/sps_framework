@@ -936,7 +936,7 @@
       "history_text": {
         "scar": "This cat bears a mangled leg from a confrontation with a large wolf.",
         "reg_death": "This cat died from a confrontation with a large wolf.",
-        "lead_death": "lost a life to a large wolf"
+        "lead_death": "died from a confrontation with a large wolf"
       },
       "relationships": [
         {
@@ -956,7 +956,7 @@
       "dead_cats": ["s_c"],
       "history_text": {
         "reg_death": "This cat died from a confrontation with a large wolf.",
-        "lead_death": "lost a life to a large wolf"
+        "lead_death": "died from a confrontation with a large wolf"
       }
     },
     {
@@ -967,7 +967,7 @@
       "dead_cats": ["s_c"],
       "history_text": {
         "reg_death": "This cat died from a confrontation with a large wolf.",
-        "lead_death": "lost a life to a large wolf"
+        "lead_death": "died from a confrontation with a large wolf"
       }
     },
     {
@@ -984,7 +984,7 @@
       "history_text": {
         "scar": "This cat is missing half their tail from a large wolf biting it off.",
         "reg_death": "This cat died from the wounds suffered in a confrontation with a large wolf.",
-        "lead_death": "lost a life to a large wolf"
+        "lead_death": "died from a confrontation with a large wolf"
       }
     },
     {
@@ -995,7 +995,7 @@
       "stat_trait": ["childish", "playful", "insecure", "strange", "oblivious"],
       "history_text": {
         "reg_death": "This cat died due to a large wolf.",
-        "lead_death": "lost a life to a large wolf"
+        "lead_death": "died from a confrontation with a large wolf"
       }
     }
   ]

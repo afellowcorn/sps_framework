@@ -2959,8 +2959,8 @@
                     }
                 ],
                 "new_cat": [
-                    ["kittypet", "meeting", "existing"],
-                    ["kittypet", "meeting", "existing"]
+                    ["kittypet", "meeting", "exists"],
+                    ["kittypet", "meeting", "exists"]
                 ],
                 "outsider_rep": -2
             },
@@ -2986,7 +2986,7 @@
                     }
                 ],
                 "new_cat": [
-                    ["dead", "meeting", "existing", "kittypet"],
+                    ["dead", "meeting", "exists", "kittypet"],
                     ["kittypet", "meeting"]
                 ],
                 "outsider_rep": -3
