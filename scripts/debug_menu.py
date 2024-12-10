@@ -7,12 +7,10 @@ from typing import List
 import pygame
 import pygame_gui
 
-import scripts.game_structure.screen_settings
-import scripts.game_structure.screen_settings
+import scripts.game_structure.screen_settings as screen_settings
 from scripts.debug_commands import commandList
 from scripts.debug_commands.utils import set_debug_class
 from scripts.game_structure.game_essentials import game
-from scripts.game_structure.screen_settings import MANAGER
 from scripts.utility import get_text_box_theme
 
 
@@ -130,7 +128,7 @@ class debugMode:
                     pygame.display.get_surface().get_height(),
                 ),
             ),
-            MANAGER,
+            screen_settings.MANAGER,
         )
 
     def toggle_console(self):
@@ -154,8 +152,8 @@ class debugMode:
 
             _ = pygame.mouse.get_pos()
             self.coords_display.set_text(
-                f"({round(_[0] - scripts.game_structure.screen_settings.offset[0] // scripts.game_structure.screen_settings.screen_scale)}, "
-                f"{round(_[1] - scripts.game_structure.screen_settings.offset[1] // scripts.game_structure.screen_settings.screen_scale)})"
+                f"({round(_[0] - screen_settings.offset[0] // screen_settings.screen_scale)}, "
+                f"{round(_[1] - screen_settings.offset[1] // screen_settings.screen_scale)})"
             )
             self.coords_display.set_position((_[0] + 10, _[1] + 10))
             del _
@@ -179,15 +177,15 @@ class debugMode:
 
         # visual_debug_mode
         if game.debug_settings["visualdebugmode"]:
-            if not MANAGER.visual_debug_active:
-                MANAGER.set_visual_debug_mode(True)
+            if not screen_settings.MANAGER.visual_debug_active:
+                screen_settings.MANAGER.set_visual_debug_mode(True)
         else:
-            if MANAGER.visual_debug_active:
-                MANAGER.set_visual_debug_mode(False)
+            if screen_settings.MANAGER.visual_debug_active:
+                screen_settings.MANAGER.set_visual_debug_mode(False)
 
     def update2(self, screen):
         if game.debug_settings["showbounds"]:
-            elements = MANAGER.ui_group.visible
+            elements = screen_settings.MANAGER.ui_group.visible
             for surface in elements:
                 rect = surface[1]
                 if rect in [self.coords_display.rect, self.console.rect]:

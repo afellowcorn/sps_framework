@@ -96,7 +96,7 @@ def set_display_mode(
         screen = pygame.display.set_mode((screen_x, screen_y))
     game_screen_size = (screen_x, screen_y)
 
-    if source_screen is None:
+    if source_screen is None or MANAGER is None:
         MANAGER = load_manager((screen_x, screen_y), offset, scale=screen_scale)
     else:
         # generate new theme
@@ -202,6 +202,8 @@ def set_display_mode(
 
         ConfirmDisplayChanges(source_screen=source_screen)
 
+    pygame_gui.core.utility.set_default_manager(MANAGER)
+
 
 def determine_screen_scale(x, y, ingame_switch):
     global screen_scale, screen_x, screen_y, offset, game_screen_size
@@ -288,6 +290,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         starting_language="en",
         translation_directory_paths=["resources/lang/en", "resources/lang/po"],
     )
+
     manager.add_font_paths(
         font_name="notosans",
         regular_path="resources/fonts/NotoSans-Medium.ttf",

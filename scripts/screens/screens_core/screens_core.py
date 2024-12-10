@@ -2,7 +2,6 @@ from typing import Optional, Tuple
 
 import pygame
 import pygame_gui
-from pygame_gui.core import ObjectID
 
 import scripts.game_structure.screen_settings
 from scripts.game_structure import image_cache
@@ -54,7 +53,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
         get_button_dict(ButtonStyles.MENU_LEFT, (82, 30)),
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID("#events_button", "@buttonstyles_menu_left"),
+        object_id=pygame_gui.core.ObjectID("#events_button", "@buttonstyles_menu_left"),
         starting_height=5,
     )
     menu_buttons["camp_screen"] = UISurfaceImageButton(
@@ -105,7 +104,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
         get_button_dict(ButtonStyles.SQUOVAL, (118, 30)),
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID(class_id="@image_button", object_id=None),
+        object_id=pygame_gui.core.ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
         anchors={"top": "top", "right": "right"},
     )
@@ -119,7 +118,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
         get_button_dict(ButtonStyles.SQUOVAL, (85, 30)),
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID(class_id="@image_button", object_id=None),
+        object_id=pygame_gui.core.ObjectID(class_id="@image_button", object_id=None),
         starting_height=5,
         anchors={"top_target": menu_buttons["allegiances"], "right": "right"},
     )
@@ -150,7 +149,9 @@ def rebuild_core(*, should_rebuild_bgs=True):
         heading_rect,
         visible=False,
         manager=MANAGER,
-        object_id=ObjectID("#text_box_34_horizcenter_vertcenter", "#dark"),
+        object_id=pygame_gui.core.ObjectID(
+            "#text_box_34_horizcenter_vertcenter", "#dark"
+        ),
         starting_height=5,
         anchors={
             "bottom": "bottom",
