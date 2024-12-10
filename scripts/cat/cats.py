@@ -9,7 +9,7 @@ import itertools
 import os.path
 import sys
 from random import choice, randint, sample, random, getrandbits, randrange
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Callable
 
 import ujson  # type: ignore
 
@@ -3450,7 +3450,7 @@ class Cat:
                 "favourite": self.favourite,
             }
 
-    def determine_next_and_previous_cats(self, status: List[str] = None, exclude_status: List[str] = None):
+    def determine_next_and_previous_cats(self, status: List[str] = None, func: Callable[[Cat], bool] = None):
         """Determines where the next and previous buttons point to, relative to this cat.
 
         :param status: Allows you to constrain the list by status
@@ -3471,11 +3471,11 @@ class Cat:
                 if check_cat.status in status
             ]
 
-        if exclude_status is not None:
+        if func is not None:
             sorted_specific_list = [
                 check_cat
                 for check_cat in sorted_specific_list
-                if check_cat.status not in exclude_status
+                if func(check_cat)
             ]
 
         idx = sorted_specific_list.index(self)
