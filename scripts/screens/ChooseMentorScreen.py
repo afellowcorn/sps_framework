@@ -145,6 +145,8 @@ class ChooseMentorScreen(Screens):
             manager=MANAGER,
             text_kwargs={
                 "count": 1 if self.mentor is not None else 0,
+                "m_c": self.the_cat,
+                "r_c": self.mentor,
                 "name": str(self.the_cat.name),
                 "mentor_name": str(self.mentor.name) if self.mentor is not None else "",
             },
@@ -399,12 +401,14 @@ class ChooseMentorScreen(Screens):
 
         self.heading.set_text(
             "screens.choose_mentor.heading",
-            text_kwargs={"name": str(self.the_cat.name)},
+            text_kwargs={"name": str(self.the_cat.name), "m_c": self.the_cat},
         )
         self.current_mentor_text.set_text(
             "screens.choose_mentor.current_mentor",
             text_kwargs={
                 "count": 1 if self.mentor is not None else 0,
+                "m_c": self.the_cat,
+                "r_c": self.mentor if self.mentor else None,
                 "name": str(self.the_cat.name),
                 "mentor_name": str(self.mentor.name) if self.mentor is not None else "",
             },
@@ -490,6 +494,8 @@ class ChooseMentorScreen(Screens):
             text_kwargs={
                 "count": 1 if self.mentor is not None else 0,
                 "name": str(self.the_cat.name),
+                "m_c": self.the_cat,
+                "r_c": self.mentor,
                 "mentor_name": str(self.mentor.name) if self.mentor is not None else "",
             },
         )

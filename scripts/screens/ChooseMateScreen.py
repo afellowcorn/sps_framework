@@ -620,7 +620,9 @@ class ChooseMateScreen(Screens):
                 object_id="#text_box_30_horizcenter_vertcenter",
                 text_kwargs={
                     "name": str(self.the_cat.name),
+                    "m_c": self.the_cat,
                     "name2": str(self.selected_cat.name) if self.selected_cat else "",
+                    "r_c": self.selected_cat if self.selected_cat else None,
                 },
             )
 
@@ -830,7 +832,10 @@ class ChooseMateScreen(Screens):
             anchors={
                 "centerx": "centerx",
             },
-            text_kwargs={"name": shorten_text_to_fit(str(self.the_cat.name), 500, 18)},
+            text_kwargs={
+                "name": shorten_text_to_fit(str(self.the_cat.name), 500, 18),
+                "m_c": self.the_cat,
+            },
         )
 
         self.info.set_anchors(

@@ -318,7 +318,7 @@ class FamilyTreeScreen(Screens):
             ui_scale(pygame.Rect((150, 25), (500, 50))),
             object_id=get_text_box_theme("#text_box_30_horizcenter"),
             manager=MANAGER,
-            text_kwargs={"name": self.the_cat.name},
+            text_kwargs={"name": self.the_cat.name, "m_c": self.the_cat},
         )
 
         # will need these later to adjust positioning
@@ -406,7 +406,7 @@ class FamilyTreeScreen(Screens):
             ui_scale(pygame.Rect((75, 641), (150, 75))),
             object_id=get_text_box_theme("#text_box_22_horizcenter_spacing_95"),
             manager=MANAGER,
-            text_kwargs={"name": short_name},
+            text_kwargs={"name": short_name, "m_c": self.the_cat},
         )
         self.center_cat_frame = pygame_gui.elements.UIImage(
             ui_scale(pygame.Rect((x_pos, y_pos), (80, 90))),

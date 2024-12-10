@@ -255,7 +255,11 @@ class LeaderDenScreen(Screens):
             object_id=get_text_box_theme("#text_box_30_horizcenter_spacing_95"),
             visible=False,
             manager=MANAGER,
-            text_kwargs={"leader": self.leader_name, "count": 1},
+            text_kwargs={
+                "leader": self.leader_name,
+                "count": 1,
+                "m_c": game.clan.leader if not self.no_leader else None,
+            },
         )
         self.screen_elements["outsider_notice_text"] = pygame_gui.elements.UITextBox(
             relative_rect=ui_scale(pygame.Rect((68, 375), (445, -1))),
@@ -266,6 +270,7 @@ class LeaderDenScreen(Screens):
             text_kwargs={
                 "leader": self.leader_name,
                 "count": 1,
+                "m_c": game.clan.leader if not self.no_leader else None,
             },
         )
 
@@ -294,7 +299,9 @@ class LeaderDenScreen(Screens):
                 "screens.leader_den.clan_notice_text",
                 text_kwargs={
                     "leader": self.leader_name,
+                    "m_c": game.clan.leader,
                     "helper": self.helper_name,
+                    "r_c": self.helper_cat,
                     "count": 2,
                 },
             )
@@ -302,7 +309,9 @@ class LeaderDenScreen(Screens):
                 "screens.leader_den.outsider_notice_text",
                 text_kwargs={
                     "leader": self.leader_name,
+                    "m_c": game.clan.leader,
                     "helper": self.helper_name,
+                    "r_c": self.helper_cat,
                     "count": 2,
                 },
             )
@@ -311,11 +320,11 @@ class LeaderDenScreen(Screens):
             self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
                 "screens.leader_den.leader_sick_clan",
-                text_kwargs={"leader": self.leader_name},
+                text_kwargs={"leader": self.leader_name, "m_c": game.clan.leader},
             )
             self.screen_elements["outsider_notice_text"].set_text(
                 "screens.leader_den.leader_sick_outsider",
-                text_kwargs={"leader": self.leader_name},
+                text_kwargs={"leader": self.leader_name, "m_c": game.clan.leader},
             )
 
         self.screen_elements["clan_notice_text"].show()
@@ -689,6 +698,7 @@ class LeaderDenScreen(Screens):
             "screens.leader_den.action_clan",
             text_kwargs={
                 "leader": self.leader_name,
+                "m_c": game.clan.leader,
                 "interaction": i18n.t(interaction),
                 "clan": other_clan,
             },
@@ -853,7 +863,10 @@ class LeaderDenScreen(Screens):
                 "centerx": "centerx",
                 "top_target": self.focus_outsider_elements["cat_trait"],
             },
-            text_kwargs={"skill": self.focus_cat.skills.skill_string(short=True)},
+            text_kwargs={
+                "skill": self.focus_cat.skills.skill_string(short=True),
+                "m_c": self.focus_cat,
+            },
         )
 
         if self.focus_outsider_button_container:
@@ -1060,10 +1073,12 @@ class LeaderDenScreen(Screens):
             "screens.leader_den.action_outsider",
             text_kwargs={
                 "leader": self.leader_name,
+                "m_c": game.clan.leader,
                 "interaction": i18n.t(
                     f"screens.leader_den.{interaction.replace(' ', '_')}"
                 ),
                 "outsider": outsider,
+                "r_c": self.focus_cat,
             },
         )
 

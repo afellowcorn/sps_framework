@@ -682,7 +682,7 @@ class ChooseAdoptiveParentScreen(Screens):
             "screens.choose_adoptive_parent.heading",
             ui_scale(pygame.Rect((150, 25), (500, 40))),
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
-            text_kwargs={"name": self.the_cat.name},
+            text_kwargs={"name": self.the_cat.name, "m_c": self.the_cat},
         )
 
         self.current_cat_elements["image"] = pygame_gui.elements.UIImage(

@@ -615,7 +615,7 @@ class MediationScreen(Screens):
                 ui_scale(pygame.Rect((x + 20, y + 160), (160, -1))),
                 "screens.mediation.cat_feelings",
                 object_id="#text_box_22_horizcenter",
-                text_kwargs={"name": short_name},
+                text_kwargs={"name": short_name, "m_c": cat},
             )
 
             if other_cat.ID in cat.relationships:

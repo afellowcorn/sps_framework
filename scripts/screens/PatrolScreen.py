@@ -860,7 +860,9 @@ class PatrolScreen(Screens):
             manager=MANAGER,
             text_kwargs={
                 "leader": str(self.patrol_obj.patrol_leader.name),
+                "p_l": self.patrol_obj.patrol_leader,
                 "members": self.get_list_text(members),
+                "patrol_cats": members,
                 "skills": self.get_list_text(skills),
                 "traits": self.get_list_text(traits),
             },
