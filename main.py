@@ -175,6 +175,7 @@ for module_name, module in list(sys.modules.items()):
             and not module_name.endswith("container_interface")
             and not module_name.endswith("_constants")
             and not module_name.endswith("layered_gui_group")
+            and not module_name.endswith("object_id")
         ):
             # Reload the module
             reload(module)

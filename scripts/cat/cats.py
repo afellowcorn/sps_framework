@@ -9,7 +9,7 @@ import itertools
 import os.path
 import sys
 from random import choice, randint, sample, random, getrandbits, randrange
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Union
 
 import i18n
 import ujson  # type: ignore
@@ -101,7 +101,7 @@ class Cat:
         "master": (321, 321),
     }
 
-    _default_pronouns = {}
+    _default_pronouns: List[Dict[str, Union[str, int]]] = {}
 
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
@@ -187,7 +187,9 @@ class Cat:
         self.relationships = {}
         self.mate = []
         self.previous_mates = []
-        self._pronouns = {i18n.config.get("locale"): [self.default_pronouns[0].copy()]}
+        self._pronouns: Dict[str, List[Dict[str, Union[str, int]]]] = {
+            i18n.config.get("locale"): [self.default_pronouns[0].copy()]
+        }
         self.placement = None
         self.example = example
         self.dead = False
@@ -509,17 +511,30 @@ class Cat:
                 ]
             elif self.genderalign in ["female", "trans female"]:
                 self._pronouns[i18n.config.get("locale")] = [
-                    self.default_pronouns[1].copy()
+                    self.default_pronouns[2].copy()
                 ]
             elif self.genderalign in ["male", "trans male"]:
                 self._pronouns[i18n.config.get("locale")] = [
-                    self.default_pronouns[2].copy()
+                    self.default_pronouns[1].copy()
                 ]
             else:
                 self._pronouns[i18n.config.get("locale")] = [
                     self.default_pronouns[0].copy()
                 ]
             value = self._pronouns.get(i18n.config.get("locale"))
+        for p_set in value:
+            if p_set.get("gender") is None:
+                p_set["gender"] = self.default_pronouns[
+                    0
+                    if (
+                        game.settings["they them default"]
+                        or self.genderalign
+                        not in ["male", "female", "trans male", "trans female"]
+                    )
+                    else 1
+                    if self.genderalign in ["male", "trans male"]
+                    else 2
+                ]["gender"]
         return value
 
     @pronouns.setter

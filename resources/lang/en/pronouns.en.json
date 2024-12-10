@@ -10,15 +10,6 @@
             "gender": 0
         },
         "1": {
-            "subject": "she",
-            "object": "her",
-            "poss": "her",
-            "inposs": "hers",
-            "self": "herself",
-            "conju": 2,
-            "gender": 2
-        },
-        "2": {
             "subject": "he",
             "object": "him",
             "poss": "his",
@@ -26,6 +17,15 @@
             "self": "himself",
             "conju": 2,
             "gender": 1
+        },
+        "2": {
+            "subject": "she",
+            "object": "her",
+            "poss": "her",
+            "inposs": "hers",
+            "self": "herself",
+            "conju": 2,
+            "gender": 2
         }
     }
 }
