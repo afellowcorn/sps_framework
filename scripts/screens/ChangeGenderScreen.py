@@ -56,16 +56,7 @@ class ChangeGenderScreen(Screens):
         self.removalbuttons = {}
         self.deletebuttons = {}
         self.addbuttons = {}
-        self.pronoun_template = [
-            {
-                "subject": "",
-                "object": "",
-                "poss": "",
-                "inposs": "",
-                "self": "",
-                "conju": 1,
-            }
-        ]
+        self.pronoun_template = Cat().default_pronouns[0]
         self.remove_button = {}
         self.removalboxes_text = {}
         self.boxes = {}
@@ -208,20 +199,6 @@ class ChangeGenderScreen(Screens):
             if value is False:
                 return False
         return True
-
-    def get_sample_text(self, pronouns):
-        text = i18n.t(
-            "screens.change_gender.demo",
-            subject=pronouns["subject"],
-            conju=i18n.t("general.are")
-            if pronouns["conju"] == 1
-            else i18n.t("general.is"),
-            object=pronouns["object"],
-            poss=pronouns["poss"],
-            inposs=pronouns["inposs"],
-            catself=pronouns["self"],
-        )
-        return text
 
     def update_selected_cat(self):
         self.reset_buttons_and_boxes()

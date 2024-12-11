@@ -564,7 +564,7 @@ class RelationshipScreen(Screens):
             ):
                 col2.append(i18n.t("general.has_a_mate", name=self.the_cat.name))
             else:
-                col2.append(i18n.t("mate_none"))
+                col2.append(i18n.t("general.mate_none"))
 
             # Relation info:
             if related:
