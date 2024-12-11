@@ -3450,7 +3450,7 @@ class Cat:
                 "favourite": self.favourite,
             }
 
-    def determine_next_and_previous_cats(self, status: List[str] = None, filter_func: Callable[[Cat], bool] = None):
+    def determine_next_and_previous_cats(self, filter_func: Callable[[Cat], bool] = None):
         """Determines where the next and previous buttons point to, relative to this cat.
 
         :param status: Allows you to constrain the list by status
