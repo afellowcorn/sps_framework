@@ -3467,13 +3467,6 @@ class Cat:
             and not check_cat.faded
         ]
 
-        if status is not None:
-            sorted_specific_list = [
-                check_cat
-                for check_cat in sorted_specific_list
-                if check_cat.status in status
-            ]
-
         if filter_func is not None:
             sorted_specific_list = [
                 check_cat
