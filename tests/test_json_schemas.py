@@ -40,7 +40,8 @@ def test_thoughts_schema():
     """Test that all thought JSONs are correct according to the JSON schema"""
     for thought_file in all_thought_files():
         data = json.loads(thought_file.read_text())
-        jsonschema.validate(data, THOUGHT_SCHEMA, registry=registry)
+        jsonschema.validate(data, THOUGHT_SCHEMA, cls=jsonschema.Draft7Validator,
+                            registry=registry)
 
 class TestJsonSchemas(unittest.TestCase):
     """Unittest for local use to test that JSON files
