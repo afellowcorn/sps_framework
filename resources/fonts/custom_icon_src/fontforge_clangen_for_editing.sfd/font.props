@@ -22,7 +22,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
 CreationTime: 1720127807
-ModificationTime: 1733681685
+ModificationTime: 1733842889
 PfmFamily: 81
 TTFWeight: 400
 TTFWidth: 5
@@ -85,5 +85,5 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 8528 16 12
+WinInfo: 64 16 12
 EndSplineFont

@@ -57,11 +57,18 @@ def accessory_display_name(cat):
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat):
     if cat.status in ["kittypet", "loner", "rogue", "former Clancat"]:
-        return i18n.t(
-            "backstories.cats_outside_the_clan", status=i18n.t(f"general.{cat.status}")
+        return event_text_adjust(
+            Cat,
+            i18n.t(
+                "backstories.cats_outside_the_clan",
+                status=i18n.t(f"general.{cat.status}"),
+            ),
+            main_cat=cat,
         )
     else:
-        return i18n.t(f"backstories.{cat.backstory}")
+        return event_text_adjust(
+            Cat, i18n.t(f"backstories.{cat.backstory}"), main_cat=cat
+        )
 
 
 # ---------------------------------------------------------------------------- #

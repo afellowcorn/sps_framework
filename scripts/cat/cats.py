@@ -42,6 +42,7 @@ from scripts.utility import (
     update_sprite,
     leader_ceremony_text_adjust,
     load_string_resource,
+    init_pronouns,
 )
 
 
@@ -187,9 +188,7 @@ class Cat:
         self.relationships = {}
         self.mate = []
         self.previous_mates = []
-        self._pronouns: Dict[str, List[Dict[str, Union[str, int]]]] = {
-            i18n.config.get("locale"): [self.default_pronouns[0].copy()]
-        }
+        self._pronouns: Dict[str, List[Dict[str, Union[str, int]]]] = {}
         self.placement = None
         self.example = example
         self.dead = False
@@ -417,19 +416,7 @@ class Cat:
             else:
                 self.genderalign = "trans female"
 
-        # PRONOUNS
-        if theythemdefault is True:
-            self.pronouns = [self.default_pronouns[0].copy()]
-        else:
-            # Assigning pronouns based on gender
-            if self.genderalign in ["female", "trans female"]:
-                i18n.resource_loader.search_translation("pronouns.1")
-                self.pronouns = [self.default_pronouns[1].copy()]
-            elif self.genderalign in ["male", "trans male"]:
-                self.pronouns = [self.default_pronouns[2].copy()]
-            else:
-                self.genderalign = "nonbinary"
-                self.pronouns = [self.default_pronouns[0].copy()]
+        # PRONOUNS AUTO-GENERATE WHEN REQUIRED
 
         # APPEARANCE
         self.pelt = Pelt.generate_new_pelt(
@@ -502,43 +489,31 @@ class Cat:
             )
 
     @property
-    def pronouns(self):
-        value = self._pronouns.get(i18n.config.get("locale"))
+    def pronouns(self) -> List[Dict[str, Union[str, int]]]:
+        """
+        Loads the correct pronouns for the loaded language.
+        :return: List of dicts for the cat's pronouns
+        """
+        locale = i18n.config.get("locale")
+        value = self._pronouns.get(locale)
         if value is None:
-            if game.settings["they them default"]:
-                self._pronouns[i18n.config.get("locale")] = [
-                    self.default_pronouns[0].copy()
-                ]
-            elif self.genderalign in ["female", "trans female"]:
-                self._pronouns[i18n.config.get("locale")] = [
-                    self.default_pronouns[2].copy()
-                ]
-            elif self.genderalign in ["male", "trans male"]:
-                self._pronouns[i18n.config.get("locale")] = [
-                    self.default_pronouns[1].copy()
-                ]
-            else:
-                self._pronouns[i18n.config.get("locale")] = [
-                    self.default_pronouns[0].copy()
-                ]
-            value = self._pronouns.get(i18n.config.get("locale"))
-        for p_set in value:
-            if p_set.get("gender") is None:
-                p_set["gender"] = self.default_pronouns[
-                    0
-                    if (
-                        game.settings["they them default"]
-                        or self.genderalign
-                        not in ["male", "female", "trans male", "trans female"]
-                    )
-                    else 1
-                    if self.genderalign in ["male", "trans male"]
-                    else 2
-                ]["gender"]
+            self._pronouns[locale] = init_pronouns(self.genderalign)
+            value = self._pronouns[locale]
         return value
 
     @pronouns.setter
-    def pronouns(self, val):
+    def pronouns(
+        self,
+        val: Union[
+            Dict[str, List[Dict[str, Union[str, int]]]],
+            List[Dict[str, Union[str, int]]],
+        ],
+    ):
+        """
+        Sets the pronouns for the cat. Contains protection for "old-style" pronouns
+        :param val:
+        :return:
+        """
         if isinstance(val, dict):
             self._pronouns = val
             return
@@ -552,11 +527,12 @@ class Cat:
         try:
             return self._default_pronouns[i18n.config.get("locale")]
         except KeyError:
-            temp = load_string_resource(f"pronouns.{i18n.config.get('locale')}.json")
-            self._default_pronouns[i18n.config.get("locale")] = [
+            locale = i18n.config.get("locale")
+            temp = load_string_resource("pronouns.{lang}.json")
+            self._default_pronouns[locale] = [
                 pronoun_dict for pronoun_dict in temp[next(iter(temp))].values()
             ]
-        return self._default_pronouns[i18n.config.get("locale")]
+        return self._default_pronouns[locale]
 
     def get_genderalign_string(self):
         # translate it if it's default
@@ -3499,7 +3475,9 @@ class Cat:
                 "specsuffix_hidden": self.name.specsuffix_hidden,
                 "gender": self.gender,
                 "gender_align": self.genderalign,
-                "pronouns": self._pronouns,
+                "pronouns": self._pronouns
+                if self._pronouns is not None
+                else {i18n.config.get("locale"): self.pronouns},
                 "birth_cooldown": self.birth_cooldown,
                 "status": self.status,
                 "backstory": self.backstory or None,
