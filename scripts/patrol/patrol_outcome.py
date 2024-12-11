@@ -21,7 +21,7 @@ from scripts.utility import (
     unpack_rel_block,
     event_text_adjust,
     create_new_cat_block,
-    gather_cat_objects,
+    gather_cat_objects, adjust_list_text,
 )
 from scripts.game_structure.game_essentials import game
 from scripts.cat.skills import SkillPath
@@ -657,57 +657,45 @@ class PatrolOutcome:
         if not self.herbs or game.clan.game_mode == "classic":
             return ""
 
+        list_of_herb_strs = []
+
         large_bonus = False
         if "many_herbs" in self.herbs:
             large_bonus = True
 
-        # Determine which herbs get picked
-        specific_herbs = [x for x in self.herbs if x in HERBS]
-        if "random_herbs" in self.herbs:
-            specific_herbs += random.sample(
-                HERBS, k=choices([1, 2, 3], [6, 5, 1], k=1)[0]
-            )
-
-        # Remove duplicates
-        specific_herbs = list(set(specific_herbs))
-
-        if not specific_herbs:
-            print(f"{self.herbs} - gave no herbs to give")
-            return ""
-
-        patrol_size_modifier = int(len(patrol.patrol_cats) * 0.5)
-        for _herb in specific_herbs:
-            if large_bonus:
-                amount_gotten = 6
-            else:
-                amount_gotten = choices([2, 4, 6], [2, 3, 1], k=1)[0]
-
-            amount_gotten = int(amount_gotten * patrol_size_modifier)
-            amount_gotten = max(1, amount_gotten)
-
-            if _herb in game.clan.herbs:
-                game.clan.herbs[_herb] += amount_gotten
-            else:
-                game.clan.herbs[_herb] = amount_gotten
-
-        plural_herbs_list = ["cobwebs", "oak leaves"]
-
-        if len(specific_herbs) == 1 and specific_herbs[0] not in plural_herbs_list:
-            insert = f"{specific_herbs[0]} was"
-        elif len(specific_herbs) == 1 and specific_herbs[0] in plural_herbs_list:
-            insert = f"{specific_herbs[0]} were"
-        elif len(specific_herbs) == 2:
-            if str(specific_herbs[0]) == str(specific_herbs[1]):
-                insert = f"{specific_herbs[0]} was"
-            else:
-                insert = f"{specific_herbs[0]} and {specific_herbs[1]} were"
+        if len(patrol.patrol_cats) > 2:
+            patrol_size_modifier = int(len(patrol.patrol_cats) * 0.5)
         else:
-            insert = f"{', '.join(specific_herbs[:-1])}, and {specific_herbs[-1]} were"
+            patrol_size_modifier = 1
 
-        insert = re.sub("[_]", " ", insert)
+        if "random_herbs" in self.herbs:
+            list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
+                med_cat=patrol.patrol_leader,
+                general_amount_bonus=large_bonus,
+                specific_amount_bonus=patrol_size_modifier
+            )
+        else:
+            found_herbs = {}
+            for herb in [x for x in self.herbs if x not in ["many_herbs", "random_herbs"]]:
+                amount = choices([2, 3, 4], weights=[2, 1, 1], k=1)[0]
+                amount *= patrol_size_modifier
+                if large_bonus:
+                    amount *= 2
 
-        game.herb_events_list.append(f"{insert.capitalize()} gathered on a patrol.")
-        return f"{insert.capitalize()} gathered."
+                found_herbs[herb] = amount
+
+            for herb, count in found_herbs.items():
+                game.clan.herb_supply.add_herb(herb, count)
+                if count > 1:
+                    list_of_herb_strs.append(f"{count} {game.clan.herb_supply.herb[herb].plural_display}")
+                else:
+                    list_of_herb_strs.append(f"{count} {game.clan.herb_supply.herb[herb].singular_display}")
+
+        if not found_herbs:
+            return f"Despite searching, no herbs were found."
+
+        game.herb_events_list.append(f"{adjust_list_text(list_of_herb_strs).capitalize()} gathered on a patrol.")
+        return f"{adjust_list_text(list_of_herb_strs).capitalize()} gathered."
 
     def _handle_prey(self, patrol: "Patrol") -> str:
         """Handle giving prey"""

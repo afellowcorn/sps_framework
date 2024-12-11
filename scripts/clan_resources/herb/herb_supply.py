@@ -75,8 +75,8 @@ class HerbSupply:
         for herb in self.storage:
             for stock in self.storage[herb]:
                 total += stock
-        for herb in self.collected:
-            total += herb
+        for herb, count in self.collected.items():
+            total += count
 
         return total
 
@@ -320,6 +320,80 @@ class HerbSupply:
             if self.collected[herb] < 0:
                 self.collected[herb] = 0
 
+    def get_found_herbs(self, med_cat, general_amount_bonus: bool = False, specific_amount_bonus: float = 0) -> vars():
+        """
+        Takes a med cat and chooses "random" herbs for them to find. Herbs found are based on cat's skill, how badly
+        the herb is needed, and herb rarity
+        :param med_cat: cat object for med doing the gathering
+        :param general_amount_bonus: set to True if cat should gather a boosted number of herbs
+        :param specific_amount_bonus: a specific float to multiply the gathered herb amount by
+        """
+        # meds with relevant skills will get a boost to the herbs they find
+        # SENSE finds larger amount of herbs
+        # CLEVER finds greater quantity of herbs
+        primary = med_cat.skills.primary.path
+        secondary = med_cat.skills.secondary.path
+        amount_modifier = 1
+        quantity_modifier = 1
+
+        if primary == SkillPath.SENSE:
+            amount_modifier = 3
+        elif primary == SkillPath.CLEVER:
+            quantity_modifier = 3
+
+        if secondary == SkillPath.SENSE:
+            amount_modifier = 2
+        elif secondary == SkillPath.CLEVER:
+            quantity_modifier = 2
+
+        # list of the herbs, sorted by most need
+        herb_list = self.sorted_by_need
+
+        # dict where key is herb name and value is the quantity found of that herb
+        found_herbs = {}
+
+        # adjust weighting according to season
+        if game.clan.current_season in ["Newleaf", "Greenleaf"]:
+            weight = [1, 2, 3]
+        else:
+            weight = [5, 2, 1]
+
+        # the amount of herb types the med has found
+        amount_of_herbs = choices(population=[1, 2, 3], weights=weight, k=1)[0] + amount_modifier
+        if general_amount_bonus:
+            amount_of_herbs *= 2
+        if specific_amount_bonus:
+            amount_of_herbs *= specific_amount_bonus
+
+        # now we find what herbs have actually been found and their quantity
+        for herb in herb_list:
+            if amount_of_herbs == 0:
+                break
+
+            # rarity is set to 0 if the herb can't be found in the current season
+            if not self.herb[herb].rarity:
+                continue
+
+            # chance to find a herb is based on it's rarity
+            if randint(1, self.herb[herb].rarity) == 1:
+                found_herbs[herb] = choices(population=[1, 2, 3], weights=weight, k=1)[0] * quantity_modifier
+                amount_of_herbs -= 1
+
+        list_of_herb_strs = []
+
+        if found_herbs:
+            for herb, count in found_herbs.items():
+                # add it to the collection
+                self.add_herb(herb, count)
+
+                # figure out how grammar needs to work in log
+                if count > 1:
+                    list_of_herb_strs.append(f"{count} {self.herb[herb].plural_display}")
+                else:
+                    list_of_herb_strs.append(f"{count} {self.herb[herb].singular_display}")
+
+        return list_of_herb_strs, found_herbs
+
     def _add_collection_to_storage(self, med_cats):
         for herb, count in self.collected.items():
             # check if any meds can use a skill to store herbs better (aka, reduce time to expire)
@@ -330,10 +404,10 @@ class HerbSupply:
 
                 # we base this modifier on their path points,
                 # this means there's skill variation even within cats with matching tiers
-                if med.skill.primary_path == SkillPath.CAMP:
-                    modifier = med.skill.primary_points
-                elif med.skill.secondary_path == SkillPath.CAMP:
-                    modifier = med.skill.secondary_points
+                if med.skills.primary.path == SkillPath.CAMP:
+                    modifier = med.skills.primary.points
+                elif med.skills.secondary.path == SkillPath.CAMP:
+                    modifier = med.skills.secondary.points
                 else:
                     continue
 
@@ -424,65 +498,10 @@ class HerbSupply:
         and log
         """
         # TODO: decide how to simplify for classic
-        # meds with relevant skills will get a boost to the herbs they find
-        # SENSE finds larger amount of herbs
-        # CLEVER finds greater quantity of herbs
-        primary = med_cat.skills.primary_path
-        secondary = med_cat.skills.secondary_path
-        amount_modifier = 1
-        quantity_modifier = 1
 
-        if primary == SkillPath.SENSE:
-            amount_modifier = 3
-        elif primary == SkillPath.CLEVER:
-            quantity_modifier = 3
-
-        if secondary == SkillPath.SENSE:
-            amount_modifier = 2
-        elif secondary == SkillPath.CLEVER:
-            quantity_modifier = 2
-
-        # list of the herbs, sorted by most need
-        herb_list = self.sorted_by_need
-
-        # dict where key is herb name and value is the quantity found of that herb
-        found_herbs = {}
-
-        # adjust weighting according to season
-        if game.clan.current_season in ["Newleaf", "Greenleaf"]:
-            weight = [1, 2, 3]
-        else:
-            weight = [5, 2, 1]
-
-        # the amount of herb types the med has found
-        amount_of_herbs = choices(population=[1, 2, 3], weights=weight, k=1)[0] + amount_modifier
-
-        # now we find what herbs have actually been found and their quantity
-        for herb in herb_list:
-            if amount_of_herbs == 0:
-                break
-
-            # rarity is set to 0 if the herb can't be found in the current season
-            if not self.herb[herb].rarity:
-                continue
-
-            # chance to find a herb is based on it's rarity
-            if randint(1, self.herb[herb].rarity) == 1:
-                found_herbs[herb] = choices(population=[1, 2, 3], weights=weight, k=1)[0] * quantity_modifier
-                amount_of_herbs -= 1
+        list_of_herb_strs, found_herbs = self.get_found_herbs(med_cat)
 
         if found_herbs:
-            list_of_herb_strs = []
-            for herb, count in found_herbs.items():
-                # add it to the collection
-                self.add_herb(herb, count)
-
-                # figure out how grammar needs to work in log
-                if count > 1:
-                    list_of_herb_strs.append(f"{count} {self.herb[herb].plural_display}")
-                else:
-                    list_of_herb_strs.append(f"{count} {self.herb[herb].singular_display}")
-
             # add found herbs to log
             self.log.append(f"{med_cat.name} collected {adjust_list_text(list_of_herb_strs)} during this moon.")
         else:
