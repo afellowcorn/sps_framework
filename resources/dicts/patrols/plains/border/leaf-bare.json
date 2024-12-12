@@ -3056,7 +3056,7 @@
                 "lost_cats": ["app1"]
             },
             {
-                "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collpased roof into a wider tunnel system, smelling faintly of something app1 can't identify. Huh, app1 wonders what-",
+                "text": "This is going to be such a cool story to tell back at camp, app1 tells {PRONOUN/app1/self}. Checking the tunnel out, it looks like a collapsed roof into a wider tunnel system, smelling faintly of something app1 can't identify. Huh, app1 wonders what-",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_patrolapprenticesessionsuccess",
