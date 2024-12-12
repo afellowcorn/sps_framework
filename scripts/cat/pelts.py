@@ -1516,20 +1516,20 @@ class Pelt:
         groups = []
         for grouping in config["groups"]:
             temp = ""
-            items = [output[i] for i in grouping["values"] if output[i] != ""]
+            items = [
+                i18n.t(output[i], count=1 if short else 2)
+                for i in grouping["values"]
+                if output[i] != ""
+            ]
             if len(items) == 0:
                 continue
             if "pre_value" in grouping:
                 temp = grouping["pre_value"]
 
             if grouping["format"] == "list":
-                temp += adjust_list_text(
-                    [i18n.t(item, count=1 if short else 2) for item in items]
-                )
+                temp += adjust_list_text(items)
             else:
-                temp += grouping["format"].join(
-                    [i18n.t(item, count=1 if short else 2) for item in items]
-                )
+                temp += grouping["format"].join(items)
 
             if "post_value" in grouping:
                 temp += grouping["post_value"]
@@ -1648,7 +1648,7 @@ def unpack_appearance_ruleset(cat, rule, short, pelt, color):
             for scar in cat.pelt.scars:
                 if scar in _scar_details:
                     scarlist.append(i18n.t(f"pelts.{scar}"))
-            return adjust_list_text(set(scarlist))
+            return adjust_list_text(set(scarlist)) if len(scarlist) > 0 else ""
     else:
         raise Exception(f"Unmatched ruleset item {rule} in describe_appearance!")
     return ""

@@ -19,6 +19,6 @@
             "one": "%{names} found a %{insert} and decide to adopt it.",
             "many": "%{names} found a %{insert} and decide to adopt them."
         },
-        "new_kit_thought": "Snuggles up to the belly of %{name}"
+        "new_kit_thought": "Snuggles up to the belly of r_c"
     }
 }

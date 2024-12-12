@@ -796,13 +796,13 @@ class Pregnancy_Events:
                 kit = Cat(
                     parent1=cat.ID, parent2=other_cat.ID, moons=0, status="newborn"
                 )
-                kit.thought = i18n.t("hardcoded.new_kit_thought", name=cat)
+                kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
             else:
                 # A one blood parent litter is the only option left.
                 kit = Cat(
                     parent1=cat.ID, moons=0, backstory=backstory, status="newborn"
                 )
-                kit.thought = i18n.t("hardcoded.new_kit_thought", name=cat)
+                kit.thought = i18n.t("hardcoded.new_kit_thought", name=str(cat.name))
 
             # Prevent duplicate prefixes in the same litter
             while kit.name.prefix in [kitty.name.prefix for kitty in all_kitten]:

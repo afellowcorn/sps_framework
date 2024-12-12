@@ -5,6 +5,7 @@ import platform
 import subprocess
 from math import floor
 
+import i18n
 import pygame
 import pygame_gui
 import ujson
@@ -194,6 +195,7 @@ class SettingsScreen(Screens):
                     if self.sub_menu == "language":
                         self.checkboxes[MANAGER.get_locale()].enable()
                         MANAGER.set_locale(key)
+                        i18n.config.set("locale", key)
                         self.checkboxes[key].disable()
                         game.settings["language"] = key
                     else:
