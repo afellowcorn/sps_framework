@@ -651,7 +651,7 @@
                 ]
             },
             {
-                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when r_c starts crying, {PRONOUN/s_c/poss} pelt prickles with shame, and {PRONOUN/s_c/subject} awkwardly apologize.",
+                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when r_c starts crying, {PRONOUN/s_c/poss} pelt prickles with shame, and {PRONOUN/s_c/subject} awkwardly {VERB/s_c/apologize/apologizes}.",
                 "exp": 10,
                 "weight": 10,
                 "can_have_stat": ["p_l"],
