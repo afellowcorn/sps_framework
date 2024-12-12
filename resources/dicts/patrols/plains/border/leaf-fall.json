@@ -208,7 +208,7 @@
             ]
         },
         {
-            "text": "p_l bolts back to camp, {PRONOUN/p_l/poss} heart pounding. {PRONOUN/p_l/subject/CAP} have to tell {PRONOUN/p_l/poss} clanmates. {PRONOUN/p_l/subject/CAP} burst into camp yowling a warning!",
+            "text": "p_l bolts back to camp, {PRONOUN/p_l/poss} heart pounding. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} to tell {PRONOUN/p_l/poss} Clanmates. {PRONOUN/p_l/subject/CAP} {VERB/p_l/burst/bursts} into camp yowling a warning!",
             "exp": 40,
             "weight": 10,
             "art": "running_warrior",
@@ -223,7 +223,7 @@
             ]
         },
         {
-            "text": "Frozen in the face of the large threat, {PRONOUN/s_c/subject} musters a surge of courage. As the coyote comes into sight {PRONOUN/s_c/subject/} {VERB/s_c/manage/manages} to flee from the coyote, sprinting back to camp to warn the clan.",
+            "text": "Frozen in the face of the large threat, {PRONOUN/s_c/subject} musters a surge of courage. As the coyote comes into sight {PRONOUN/s_c/subject/} {VERB/s_c/manage/manages} to flee from the coyote, sprinting back to camp to warn the Clan.",
             "exp": 40,
             "weight": 20,
             "art": "running_warrior",
@@ -246,14 +246,14 @@
             "stat_skill": ["HUNTER,2", "CLEVER,2", "INSIGHTFUL,2"]
         },
         {
-            "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent. {PRONOUN/s_c/subject/CAP} run. Runs as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} see a group of sleeping Thunderbeasts, and dart to them, yowling. As a Thunderbeast slowly stands, the coyote turns tail and flees.",
+            "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent. {PRONOUN/s_c/subject/CAP} {VERB/s_c/run/runs}. {VERB/s_c/run/runs/CAP} as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} a group of sleeping Thunderbeasts, and {VERB/s_c/dart/darts} to them, yowling. As a Thunderbeast slowly stands, the coyote turns tail and flees.",
             "exp": 40,
             "weight": 20,
             "art": "gen_coyote1",
             "stat_skill": ["RUNNER,2", "CLEVER,2", "INSIGHTFUL,2"]
         },
         {
-            "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent.  {PRONOUN/s_c/subject/CAP} run. Run as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} see a group of sleeping Thunderbeasts, and dart to them, yowling. s_c watches with a new respect and fear as the Thunderbeasts kill the predator with ease.",
+            "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/run/runs}. {VERB/s_c/run/runs/CAP} as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} a group of sleeping Thunderbeasts, and {VERB/s_c/dart/darts} to them, yowling. s_c watches with a new respect and fear as the Thunderbeasts kill the predator with ease.",
             "exp": 40,
             "weight": 10,
             "art": "gen_coyote1",
@@ -261,7 +261,7 @@
             "stat_skill": ["RUNNER,2", "CLEVER,2", "INSIGHTFUL,2"]
         },
         {
-            "text": "s_c bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c/subject/CAP} burst into camp, yowling a warning with plenty of time for c_n to prepare to drive the coyote away.",
+            "text": "s_c bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c/subject/CAP} {VERB/s_c/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the coyote away.",
             "exp": 40,
             "weight": 20,
             "art": "running_warrior",

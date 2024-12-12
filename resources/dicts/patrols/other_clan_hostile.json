@@ -651,7 +651,7 @@
                 ]
             },
             {
-                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when r_c starts crying, {PRONOUN/s_c/poss} pelt prickles with shame, and {PRONOUN/s_c/subject} awkwardly apologize.",
+                "text": "s_c can't resist the temptation to make pointed remarks {PRONOUN/s_c/subject} {VERB/s_c/know/knows} are hurtful to r_c. But when r_c starts crying, {PRONOUN/s_c/poss} pelt prickles with shame, and {PRONOUN/s_c/subject} awkwardly {VERB/s_c/apologize/apologizes}.",
                 "exp": 10,
                 "weight": 10,
                 "can_have_stat": ["p_l"],
@@ -777,7 +777,7 @@
                 ]
             },
             {
-                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retortes that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, but r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't have to prove anything to s_c.",
+                "text": "As s_c pounces on a bug, r_c can't help but snap that this is exactly what {PRONOUN/r_c/subject} dislikes about s_c. s_c retorts that r_c needs to learn to lighten up and enjoy life. r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does} know how to have fun, and s_c says to prove it, but r_c says that {PRONOUN/r_c/subject} {VERB/r_c/do/does}n't have to prove anything to s_c.",
                 "exp": 0,
                 "weight": 10,
                 "can_have_stat": ["p_l"],
@@ -4693,7 +4693,7 @@
             "normal adult": [1, 6]
         },
         "weight": 5,
-        "intro_text": "The patrol was tense as the patroled near o_c_n, things had been hostile lately, so it's with surprise that p_l sees two kits from o_c_n playing close to the border.",
+        "intro_text": "The patrol is tense as they patrol near o_c_n. Things have been hostile lately, so it's with surprise that p_l sees two kits from o_c_n playing close to the border.",
         "decline_text": "It's not {PRONOUN/p_l/poss} problem that those kits are alone and vulnerable. o_c_n should keep a closer eye on their kits.",
         "chance_of_success": 35,
         "success_outcomes": [

@@ -562,7 +562,7 @@
                 ]
             },
             {
-                "text": "Your patrol gathers their courage and valiantly tries to lead away the coyote. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
+                "text": "The patrol gathers their courage and valiantly tries to lead away the coyote. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
                 "exp": 30,
                 "weight": 5,
                 "art": "running_two_warriors",
@@ -1537,7 +1537,7 @@
                 ]
             },
             {
-                "text": "s_c is an expert on the network of tunnels and burrows that dot the plains, and the entire patrol immediately looks to {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} nod - {PRONOUN/s_c/subject} know just the place, an old sett. By the smell of the wind, the storm blowing down on them will be one of sleet capable of wicking away all warmth from a pelt. The patrol needs to shelter and wait it out.",
+                "text": "s_c is an expert on the network of tunnels and burrows that dot the plains, and the entire patrol immediately looks to {PRONOUN/s_c/object}. {PRONOUN/s_c/subject/CAP} {VERB/s_c/nod/nods}- {PRONOUN/s_c/subject} {VERB/s_c/know/knows} just the place, an old sett. By the smell of the wind, the storm blowing down on them will be one of sleet capable of wicking away all warmth from a pelt. The patrol needs to shelter and wait it out.",
                 "exp": 40,
                 "weight": 30,
                 "can_have_stat": ["any"],
