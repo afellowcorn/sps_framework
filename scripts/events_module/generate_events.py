@@ -1031,4 +1031,3 @@ class GenerateEvents:
 
 
 generate_events = GenerateEvents()
-

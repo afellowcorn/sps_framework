@@ -188,7 +188,7 @@ class LeaderDenScreen(Screens):
                     self.helper_cat = game.clan.deputy  # if lead is sick, dep helps
             if not self.helper_cat:  # if dep is sick, med cat helps
                 meds = get_alive_status_cats(
-                    Cat,
+                    Cat(),
                     get_status=["medicine cat", "medicine cat apprentice"],
                     working=True,
                     sort=True,
@@ -929,9 +929,9 @@ class LeaderDenScreen(Screens):
             and self.focus_cat.status
             not in ["kittypet", "loner", "rogue", "former Clancat"]
         ):
-            self.focus_button["invite_in"].change_object_id("#outsider_search")
+            self.focus_button["invite_in"].set_text("screens.leader_den.search_for")
         else:
-            self.focus_button["invite_in"].change_object_id("#outsider_invite")
+            self.focus_button["invite_in"].set_text("screens.leader_den.invite_in")
 
         self.focus_button["invite_in"].show()
 
