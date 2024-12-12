@@ -94,7 +94,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c limping. It's nothing, {PRONOUN/r_c/subject} {VERB/r_c/say/says}, just sleeping on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off.",
+                "text": "They trek, and they wander, and they amble, and they pad. But as the sun creeps over the sky, before they reach the far border itself, p_l spots r_c limping. It's nothing, {PRONOUN/r_c/subject} {VERB/r_c/say/says}, just slept on the leg wrong. But far from camp isn't the right place to be limping, and p_l calls the patrol off.",
                 "exp": 0,
                 "weight": 10,
                 "art": "gen_train_sunset",
