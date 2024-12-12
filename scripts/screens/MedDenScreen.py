@@ -545,7 +545,7 @@ class MedDenScreen(Screens):
             if cat.illnesses:
                 condition_list.extend(
                     [
-                        i18n.t(f"illnesses.{illness}")
+                        i18n.t(f"conditions.illnesses.{illness}")
                         for illness in list(cat.illnesses.keys())
                     ]
                 )
@@ -592,7 +592,7 @@ class MedDenScreen(Screens):
         herb_list = []
         for herb in herbs_stored:
             amount = str(herb[1])
-            herb_type = i18n.t(f"herbs.{herb[0]}", count=herb[1])
+            herb_type = i18n.t(f"conditions.herbs.{herb[0]}", count=herb[1])
             herb_list.append(f"{amount} {herb_type}")
         if not herbs_stored:
             herb_list.append(i18n.t("general.empty").capitalize())

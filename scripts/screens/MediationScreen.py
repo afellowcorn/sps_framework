@@ -541,7 +541,7 @@ class MediationScreen(Screens):
                 )
 
         col1 = i18n.t("general.moons_age", count=cat.moons)
-        t = i18n.t(f"personality.{cat.personality.trait}")
+        t = i18n.t(f"cat.personality.{cat.personality.trait}")
         if len(t) > 15:
             col1 += "\n" + t[:12] + "..."
         else:

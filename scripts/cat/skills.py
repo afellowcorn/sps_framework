@@ -415,14 +415,14 @@ class CatSkills:
 
         if short:
             if self.primary:
-                output.append(i18n.t(f"skills.{self.primary.get_short_skill()}"))
+                output.append(i18n.t(f"cat.skills.{self.primary.get_short_skill()}"))
             if self.secondary:
-                output.append(i18n.t(f"skills.{self.secondary.get_short_skill()}"))
+                output.append(i18n.t(f"cat.skills.{self.secondary.get_short_skill()}"))
         else:
             if self.primary:
-                output.append(i18n.t(f"skills.{self.primary.skill}"))
+                output.append(i18n.t(f"cat.skills.{self.primary.skill}"))
             if self.secondary:
-                output.append(i18n.t(f"skills.{self.secondary.skill}"))
+                output.append(i18n.t(f"cat.skills.{self.secondary.skill}"))
 
         if not output:
             return "???"

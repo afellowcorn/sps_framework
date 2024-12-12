@@ -530,7 +530,7 @@ class Condition_Events:
                 illness,
                 illnesses,
                 Condition_Events.ILLNESSES,
-                i18n.t(f"illnesses.{illness}"),
+                i18n.t(f"conditions.illnesses.{illness}"),
             )
 
             # moon skip to try and kill or heal cat
@@ -1242,25 +1242,25 @@ class Condition_Events:
 
             effect_message = "this should not show up"
             if effect == "mortality":
-                effect_message = i18n.t("herbs.mortality_down")
+                effect_message = i18n.t("conditions.herbs.mortality_down")
                 conditions[condition]["mortality"] += (
                     11 - modifier + int(amount_used * 1.5)
                 )
                 if conditions[condition]["mortality"] < 1:
                     conditions[condition]["mortality"] = 1
             elif effect == "duration":
-                effect_message = i18n.t("herbs.duration_down")
+                effect_message = i18n.t("conditions.herbs.duration_down")
                 conditions[condition]["duration"] -= 1
             elif effect == "risks":
-                effect_message = i18n.t("herbs.risks_down")
+                effect_message = i18n.t("conditions.herbs.risks_down")
                 for risk in conditions[condition]["risks"]:
                     risk["chance"] += 11 - modifier + int(amount_used * 1.5)
                     if risk["chance"] < 0:
                         risk["chance"] = 0
 
             text = i18n.t(
-                "herbs.herb_used",
-                herb=i18n.t(f"herbs.{herb_used}", count=2),
+                "conditions.herbs.herb_used",
+                herb=i18n.t(f"conditions.herbs.{herb_used}", count=2),
                 condition=translated_name,
                 effect=effect_message,
             )

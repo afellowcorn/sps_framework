@@ -180,7 +180,7 @@ class Pregnancy_Events:
         print_event = i18n.t(
             event,
             names=cats_names,
-            insert=i18n.t("pregnancy.kit_amount", count=amount),
+            insert=i18n.t("conditions.pregnancy.kit_amount", count=amount),
             count=amount,
         )
 
@@ -393,7 +393,7 @@ class Pregnancy_Events:
                 kit.relationships = {}
                 kit.create_one_relationship(cat)
 
-        insert = i18n.t("pregnancy.kit_amount", count=kits_amount)
+        insert = i18n.t("conditions.pregnancy.kit_amount", count=kits_amount)
 
         # Since cat has given birth, apply the birth cooldown.
         cat.birth_cooldown = game.config["pregnancy"]["birth_cooldown"]
@@ -465,18 +465,24 @@ class Pregnancy_Events:
             if cat.status == "leader":
                 clan.leader_lives -= 1
                 cat.die()
-                death_event = i18n.t("pregnancy.leader_kitting_death")
+                death_event = i18n.t("conditions.pregnancy.leader_kitting_death")
             else:
                 cat.die()
-                death_event = i18n.t("pregnancy.kitting_death", name=cat.name)
+                death_event = i18n.t(
+                    "conditions.pregnancy.kitting_death", name=cat.name
+                )
             History.add_death(cat, death_text=death_event)
         elif not cat.outside:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if "blood loss" in cat.injuries:
                 if cat.status == "leader":
-                    death_event = i18n.t("pregnancy.leader_kitting_death_severe")
+                    death_event = i18n.t(
+                        "conditions.pregnancy.leader_kitting_death_severe"
+                    )
                 else:
-                    death_event = i18n.t("pregnancy.kitting_death_harsh", name=cat.name)
+                    death_event = i18n.t(
+                        "conditions.pregnancy.kitting_death_harsh", name=cat.name
+                    )
                 History.add_possible_history(cat, "blood loss", death_text=death_event)
                 possible_events = events["birth"]["difficult_birth"]
                 # just makin sure meds aren't mentioned if they aren't around or if they are a parent
@@ -771,7 +777,8 @@ class Pregnancy_Events:
                 if not blood_parent:
                     # Generate a blood parent if we haven't already.
                     thought = i18n.t(
-                        "pregnancy.halfblood_kitting_thought", count=kits_amount
+                        "conditions.pregnancy.halfblood_kitting_thought",
+                        count=kits_amount,
                     )
                     blood_parent = create_new_cat(
                         Cat,

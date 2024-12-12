@@ -1826,7 +1826,7 @@ def adjust_prey_abbr(patrol_text):
     global PREY_LISTS
     if langs["prey"] != i18n.config.get("locale"):
         langs["prey"] = i18n.config.get("locale")
-        PREY_LISTS = load_string_resource("prey_text_replacements.json")
+        PREY_LISTS = load_string_resource("patrols/prey_text_replacements.json")
 
     for abbr in PREY_LISTS["abbreviations"]:
         if abbr in patrol_text:
@@ -2261,13 +2261,14 @@ def event_text_adjust(
     # acc_plural (only works for main_cat's acc)
     if "acc_plural" in text:
         text = text.replace(
-            "acc_plural", i18n.t(f"accessories.{main_cat.pelt.accessory}", count=2)
+            "acc_plural", i18n.t(f"cat.accessories.{main_cat.pelt.accessory}", count=2)
         )
 
     # acc_singular (only works for main_cat's acc)
     if "acc_singular" in text:
         text = text.replace(
-            "acc_singular", i18n.t(f"accessories.{main_cat.pelt.accessory}", count=1)
+            "acc_singular",
+            i18n.t(f"cat.accessories.{main_cat.pelt.accessory}", count=1),
         )
 
     if "given_herb" in text:

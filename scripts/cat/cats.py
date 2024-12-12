@@ -1014,45 +1014,6 @@ class Cat:
         output = f"an {output}" if output[0].lower() in "aeiou" else f"a {output}"
         return output
 
-    def describe_eyes(self):
-        """Get a human-readable description of this cat's eye colour"""
-        colour = str(self.pelt.eye_colour).lower()
-        colour2 = str(self.pelt.eye_colour2).lower()
-
-        if colour == "palegreen":
-            colour = "pale green"
-        elif colour == "darkblue":
-            colour = "dark blue"
-        elif colour == "paleblue":
-            colour = "pale blue"
-        elif colour == "paleyellow":
-            colour = "pale yellow"
-        elif colour == "heatherblue":
-            colour = "heather blue"
-        elif colour == "blue2":
-            colour = "blue"
-        elif colour == "sunlitice":
-            colour = "sunlit ice"
-        elif colour == "greenyellow":
-            colour = "green-yellow"
-        if self.pelt.eye_colour2:
-            if colour2 == "palegreen":
-                colour2 = "pale green"
-            if colour2 == "darkblue":
-                colour2 = "dark blue"
-            if colour2 == "paleblue":
-                colour2 = "pale blue"
-            if colour2 == "paleyellow":
-                colour2 = "pale yellow"
-            if colour2 == "heatherblue":
-                colour2 = "heather blue"
-            if colour2 == "sunlitice":
-                colour2 = "sunlit ice"
-            if colour2 == "greenyellow":
-                colour2 = "green-yellow"
-            colour = f"{colour} and {colour2}"
-        return colour
-
     def convert_history(self, died_by, scar_events):
         """
         Handle old history save conversions
@@ -3416,7 +3377,7 @@ class Cat:
                         else "general.kitten_profile",
                         count=1,
                     ),
-                    i18n.t(f"personality.{self.personality.trait}"),
+                    i18n.t(f"cat.personality.{self.personality.trait}"),
                     self.skills.skill_string(),
                 ]
             )
@@ -3424,9 +3385,9 @@ class Cat:
             return "<br>".join(
                 [
                     i18n.t(f"general.{self.status.lower()}", count=1),
-                    i18n.t(f"personality.{self.personality.trait}"),
-                    self.skills.skill_string(),
-                    i18n.t(f"skills.{self.experience_level}")
+                    i18n.t(f"cat.personality.{self.personality.trait}"),
+                    self.skills.skill_string(short=True),
+                    i18n.t(f"cat.skills.{self.experience_level}")
                     + (
                         f" ({str(self.experience)})\n"
                         if game.clan.clan_settings["showxp"]
@@ -3439,7 +3400,7 @@ class Cat:
                 [
                     i18n.t("general.moons_age", count=self.moons),
                     self.genderalign,
-                    i18n.t(f"personality.{self.personality.trait}"),
+                    i18n.t(f"cat.personality.{self.personality.trait}"),
                 ]
             )
 
@@ -3448,7 +3409,7 @@ class Cat:
                 i18n.t("general.moons_age", count=self.moons),
                 i18n.t(f"general.{self.status.lower()}", count=1),
                 self.genderalign,
-                i18n.t(f"personality.{self.personality.trait}"),
+                i18n.t(f"cat.personality.{self.personality.trait}"),
             ]
         )
 
@@ -3675,8 +3636,8 @@ def load_leader_ceremonies():
     global LEAD_CEREMONY_SC, LEAD_CEREMONY_DF, lead_ceremony_lang
     if lead_ceremony_lang == i18n.config.get("locale"):
         return
-    LEAD_CEREMONY_SC = load_string_resource("lead_ceremony_sc.json")
-    LEAD_CEREMONY_DF = load_string_resource("lead_ceremony_df.json")
+    LEAD_CEREMONY_SC = load_string_resource("events/lead_ceremony_sc.json")
+    LEAD_CEREMONY_DF = load_string_resource("events/lead_ceremony_df.json")
     lead_ceremony_lang = i18n.config.get("locale")
 
 
