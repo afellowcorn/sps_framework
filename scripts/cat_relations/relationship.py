@@ -111,7 +111,7 @@ class Relationship:
             in_de_crease = "neutral"
 
         # choice any type of intensity
-        intensity = choice(["low", "medium", "high"])
+        intensity = choice(random.choices(["low", "medium", "high"], weights=[4, 3, 2]))
 
         # get other possible filters
         season = str(game.clan.current_season).casefold()
