@@ -599,7 +599,7 @@
         "max_cats": 4,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Padding along the border, the cats find fresh coyote scat, steaming in the greeanleaf heat. There's a yip in the distance.",
+        "intro_text": "Padding along the border, the cats find fresh coyote scat, steaming in the greenleaf heat. There's a yip in the distance.",
         "decline_text": "The patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
         "chance_of_success": 30,
         "success_outcomes": [
