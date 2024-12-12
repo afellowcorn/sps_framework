@@ -3191,7 +3191,7 @@
                 }
             },
             {
-                "text": "Okay, so that might be a tunnel. app1 should go check it out, right? c_n cares about tunnels and stuff. {PRONOUN/app1/subject/CAP} clamber in, and then there's a sharp pain.",
+                "text": "Okay, so that might be a tunnel. app1 should go check it out, right? c_n cares about tunnels and stuff. {PRONOUN/app1/subject/CAP} {VERB/app1/clamber/clambers} in, and then there's a sharp pain.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_dead_cat_app_EXPLICIT",
