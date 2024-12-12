@@ -1743,7 +1743,7 @@
                 ]
             },
             {
-                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} do best, racing the wind home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/arrive/arrives} in one piece. One shivering, sodden piece.",
+                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} {VERB/s_c/do/does} best, racing the wind home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/arrive/arrives} in one piece. One shivering, sodden piece.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_soggykitty_mad_warrior",
@@ -1840,7 +1840,7 @@
                 ]
             },
             {
-                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} do best, racing the wind home. {PRONOUN/s_c/subject/CAP} don't arrive at camp.",
+                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} {VERB/s_c/do/does} best, racing the wind home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/do/does}n't arrive at camp.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_bord_flashflood",
@@ -2218,7 +2218,7 @@
                 ]
             },
             {
-                "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's caution.",
+                "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/want/wants} to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's caution.",
                 "exp": 30,
                 "weight": 20,
                 "art": "pln_bord_tunnel",
@@ -2247,7 +2247,7 @@
                 ]
             },
             {
-                "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. What if someone got hurt? {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's selflessness.",
+                "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. What if someone got hurt? {PRONOUN/app1/subject/CAP} {VERB/app1/want/wants} to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's selflessness.",
                 "exp": 30,
                 "weight": 20,
                 "art": "pln_bord_tunnel",
@@ -2277,7 +2277,7 @@
                 ]
             },
             {
-                "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, burrow investigation is serious. {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's focus.",
+                "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, burrow investigation is serious. {PRONOUN/app1/subject/CAP} {VERB/app1/want/wants} to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's focus.",
                 "exp": 30,
                 "weight": 20,
                 "art": "pln_bord_tunnel",
@@ -3546,7 +3546,7 @@
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c went out with a gorup of friends as an apprentice, and they were all caught in sleet, which has left its marks on {PRONOUN/m_c/poss} pelt.",
+                    "scar": "m_c went out with a group of friends as an apprentice, and they were all caught in sleet, which has left its marks on {PRONOUN/m_c/poss} pelt.",
                     "reg_death": "This cat was killed as an apprentice, after {PRONOUN/m_c/subject} went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm.",
                     "lead_death": "went on a border patrol with {PRONOUN/m_c/poss} friends and got caught in a sleetstorm"
                 }

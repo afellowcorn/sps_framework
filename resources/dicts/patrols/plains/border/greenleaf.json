@@ -343,7 +343,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "p_l bolts back to camp, eyes blown wide. It takes a moment for {PRONOUN/p_l/object} to catch {PRONOUN/p_l/poss} breath before {PRONOUN/p_l/subject} are able to manage to gasp out a single word. <i>Coyote!</i>",
+                "text": "p_l bolts back to camp, eyes blown wide. It takes a moment for {PRONOUN/p_l/object} to catch {PRONOUN/p_l/poss} breath before {PRONOUN/p_l/subject} {VERB/p_l/are/is} able to manage to gasp out a single word. <i>Coyote!</i>",
                 "exp": 40,
                 "weight": 20,
                 "art": "cat_running_solo",
@@ -358,7 +358,7 @@
                 ]
             },
             {
-                "text": "p_l bolts back to camp, {PRONOUN/p_l/poss} heart pounding. {PRONOUN/p_l/subject/CAP} have to tell {PRONOUN/p_l/poss} clanmates. {PRONOUN/p_l/subject/CAP} burst into camp yowling a warning!",
+                "text": "p_l bolts back to camp, {PRONOUN/p_l/poss} heart pounding. {PRONOUN/p_l/subject/CAP} {VERB/p_l/have/has} to tell {PRONOUN/p_l/poss} clanmates. {PRONOUN/p_l/subject/CAP} {VERB/p_l/burst/bursts} into camp yowling a warning!",
                 "exp": 40,
                 "weight": 10,
                 "art": "cat_running_solo",
@@ -373,7 +373,7 @@
                 ]
             },
             {
-                "text": "Frozen in the face of the large threat, {PRONOUN/s_c/subject} musters a surge of courage. As the coyote comes into sight {PRONOUN/s_c/subject/} {VERB/s_c/manage/manages} to flee from the coyote, sprinting back to camp to warn the clan.",
+                "text": "Frozen in the face of the large threat, {PRONOUN/s_c/subject} {VERB/s_c/muster/musters} a surge of courage. As the coyote comes into sight {PRONOUN/s_c/subject/} {VERB/s_c/manage/manages} to flee from the coyote, sprinting back to camp to warn the clan.",
                 "exp": 40,
                 "weight": 20,
                 "art": "gen_coyote_danger1",
@@ -396,14 +396,14 @@
                 "stat_skill": ["HUNTER,2", "CLEVER,2", "INSIGHTFUL,2"]
             },
             {
-                "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent. {PRONOUN/s_c/subject/CAP} run. Runs as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} see a group of sleeping thunderbeasts, and dart to them, yowling. As a thunderbeast slowly stands, the coyote turns tail and flees.",
+                "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent. {PRONOUN/s_c/subject/CAP} {VERB/s_c/run/runs}. {VERB/s_c/Run/Runs} as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} a group of sleeping Thunderbeasts, and {VERB/s_c/dart/darts} to them, yowling. As a Thunderbeast slowly stands, the coyote turns tail and flees.",
                 "exp": 40,
                 "weight": 20,
                 "art": "gen_coyote1",
                 "stat_skill": ["RUNNER,2", "CLEVER,2", "INSIGHTFUL,2"]
             },
             {
-                "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent.  {PRONOUN/s_c/subject/CAP} run. Run as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} see a group of sleeping thunderbeasts, and dart to them, yowling. s_c watches with a new respect and fear as the thunderbeasts kill the predator with ease.",
+                "text": "s_c hears the yips. The coyote has {PRONOUN/s_c/poss} scent.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/run/runs}. {VERB/s_c/Run/Runs} as fast as {PRONOUN/s_c/subject} can because {PRONOUN/s_c/poss} life depends on it. But s_c can't run forever, the thudding footsteps are catching up.  {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} a group of sleeping Thunderbeasts, and {VERB/s_c/dart/darts} to them, yowling. s_c {VERB/s_c/watch/watches} with a new respect and fear as the Thunderbeasts kill the predator with ease.",
                 "exp": 40,
                 "weight": 10,
                 "art": "gen_coyote1",
@@ -411,7 +411,7 @@
                 "stat_skill": ["RUNNER,2", "CLEVER,2", "INSIGHTFUL,2"]
             },
             {
-                "text": "s_c bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c/subject/CAP} burst into camp, yowling a warning with plenty of time for c_n to prepare to drive the coyote away.",
+                "text": "s_c bolts back to camp, easily keeping ahead of the beast. {PRONOUN/s_c/subject/CAP} {VERB/s_c/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the coyote away.",
                 "exp": 40,
                 "weight": 20,
                 "art": "cat_running_solo",
@@ -492,7 +492,7 @@
                 ]
             },
             {
-                "text": "r_c would give their life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge coyote to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the coyote's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
+                "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge coyote to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the coyote's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
                 "exp": 0,
                 "weight": 10,
                 "art": "gen_coyote_danger2_w2",
@@ -574,7 +574,7 @@
                 }
             },
 	        {
-                "text": "Maybe s_c should have been paying more attention. {PRONOUN/s_c/subject/CAP} see darkness around them, and realize the terrible mistake of their distraction.",
+                "text": "Maybe s_c should have been paying more attention. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} darkness around {PRONOUN/s_c/object}, and {VERB/s_c/realize/realizes} the terrible mistake of {PRONOUN/s_c/poss} distraction.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_dead_cat_EXPLICIT",
@@ -599,7 +599,7 @@
         "max_cats": 4,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "Padding along the border, the cats find fresh coyote scat, steaming in the greeanleaf heat. There's a yip in the distance.",
+        "intro_text": "Padding along the border, the cats find fresh coyote scat, steaming in the greenleaf heat. There's a yip in the distance.",
         "decline_text": "The patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
         "chance_of_success": 30,
         "success_outcomes": [
@@ -656,7 +656,7 @@
                 ]
             },
             {
-                "text": "Your patrol gathers their courage and valiantly tries to lead away the coyote. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
+                "text": "The patrol gathers their courage and valiantly tries to lead away the coyote. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
                 "exp": 30,
                 "weight": 5,
                 "art": "running_two_warriors",
@@ -1417,7 +1417,7 @@
                 ]
             },
             {
-                "text": "It's always valuable to have safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. The patrol carefully marks the burrow. One day, in danger, it might save a Clanmate's life.",
+                "text": "It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. The patrol carefully marks the burrow. One day, in danger, it might save a Clanmate's life.",
                 "exp": 40,
                 "weight": 20,
                 "art": "gen_speaking_cat_w3",
@@ -1513,7 +1513,7 @@
                 ]
             },
             {
-                "text": "Careful consideration is right up s_c's alley. They investigate the tunnel slowly and throughly before {PRONOUN/s_c/subject} give the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use.",
+                "text": "Careful consideration is right up s_c's alley. They investigate the tunnel slowly and throughly before {PRONOUN/s_c/subject} {VERB/s_c/give/gives} the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use.",
                 "exp": 50,
                 "weight": 20,
                 "art": "gen_warrior_crouching",
@@ -1782,7 +1782,7 @@
             "normal adult":[1, 6]
         },
         "weight": 20,
-        "intro_text": "The wind rustles through the grass peacefully. As p_l checks the next border marking, that peace is broken with  a squeak and a muffled thump behind {PRONOUN/p_l/object}.",
+        "intro_text": "The wind rustles through the grass peacefully. As p_l checks the next border marking, that peace is broken with a squeak and a muffled thump behind {PRONOUN/p_l/object}.",
         "decline_text": "app1 needs to stop screwing around and focus on the patrol.",
         "chance_of_success": 40,
         "success_outcomes": [
@@ -2570,7 +2570,7 @@
                 ]
             },
             {
-                "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. What if someone got hurt? {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's selflessness.",
+                "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. What if someone got hurt? {PRONOUN/app1/subject/CAP} {VERB/app1/want/wants} to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's selflessness.",
                 "exp": 30,
                 "weight": 20,
                 "art": "gen_hunt_mentor_app",
@@ -2600,7 +2600,7 @@
                 ]
             },
             {
-                "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, burrow investigation is serious. {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's focus.",
+                "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, burrow investigation is serious. {PRONOUN/app1/subject/CAP} {VERB/app1/want/wants} to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's focus.",
                 "exp": 30,
                 "weight": 20,
                 "art": "gen_hunt_mentor_app",
@@ -3199,7 +3199,7 @@
                 "art": "pln_hunt_gonetwolegtrap1"
             },
             {
-                "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} don't know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
+                "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
                 "exp": 20,
                 "weight": 20,
                 "art": "pln_hunt_gonetwolegtrap1",
@@ -3215,7 +3215,7 @@
                 ]
             },
             {
-                "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} don't just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around eachother rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
+                "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead waiting and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around each other rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_scared_cat_app",
@@ -3365,7 +3365,7 @@
                 }
             },
             {
-                "text": "Okay, so that might be a tunnel. app1 should go check it out, right? c_n cares about tunnels and stuff. {PRONOUN/app1/subject/CAP} clamber in, and then there's a sharp pain.",
+                "text": "Okay, so that might be a tunnel. app1 should go check it out, right? c_n cares about tunnels and stuff. {PRONOUN/app1/subject/CAP} {VERB/app1/clamber/clambers} in, and then there's a sharp pain.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_dead_cat_app_EXPLICIT",

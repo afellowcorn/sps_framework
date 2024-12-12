@@ -342,7 +342,7 @@
             ]
         },
         {
-            "text": "r_c would give their life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge coyote to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the coyote's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
+            "text": "r_c would give {PRONOUN/r_c/poss} life to protect c_n, and as {PRONOUN/r_c/subject} {VERB/r_c/charge/charges} past the huge coyote to lead it far, far from c_n, {PRONOUN/r_c/subject} {VERB/r_c/accept/accepts} it. Fear gives {PRONOUN/r_c/object} speed, but it only takes one successful hit. Miraculously {PRONOUN/r_c/subject} {VERB/r_c/fly/flies} out of the coyote's jaws while it shakes {PRONOUN/r_c/object}, landing in a refuge. r_c is injured, desperate, and terrified - but {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} alive.",
             "exp": 0,
             "weight": 10,
             "art": "gen_coyote_danger2_w2",
@@ -424,7 +424,7 @@
             }
         },
         {
-            "text": "Maybe s_c should have been paying more attention. {PRONOUN/s_c/subject/CAP} see darkness around them, and realize the terrible mistake of their distraction.",
+            "text": "Maybe s_c should have been paying more attention. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} darkness around {PRONOUN/s_c/object}, and realize the terrible mistake of {PRONOUN/s_c/poss} distraction.",
             "exp": 0,
             "weight": 20,
             "art": "gen_dead_cat_EXPLICIT",
@@ -506,7 +506,7 @@
             ]
         },
         {
-            "text": "Your patrol gathers their courage and valiantly tries to lead away the coyote. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
+            "text": "The patrol gathers their courage and valiantly tries to lead away the coyote. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
             "exp": 30,
             "weight": 5,
             "art": "running_two_warriors",
@@ -1343,7 +1343,7 @@
             ]
         },
         {
-            "text": "Careful consideration is right up s_c's alley. They investigate the tunnel slowly and throughly before {PRONOUN/s_c/subject} give the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use.",
+            "text": "Careful consideration is right up s_c's alley. They investigate the tunnel slowly and throughly before {PRONOUN/s_c/subject} {VERB/s_c/give/gives} the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use.",
             "exp": 30,
             "weight": 20,
             "art": "gen_warrior_crouching",
@@ -2344,7 +2344,7 @@
             ]
         },
         {
-            "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's caution.",
+            "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. {PRONOUN/app1/subject/CAP} {VERB/app1/want/wants} to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's caution.",
             "exp": 30,
             "weight": 20,
             "art": "gen_hunt_huntassessment",
@@ -2373,7 +2373,7 @@
             ]
         },
         {
-            "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. What if someone got hurt? {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's selflessness.",
+            "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, app1 takes safety seriously. What if someone got hurt? {PRONOUN/app1/subject/CAP} {VERB/app1/want/wants} to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's selflessness.",
             "exp": 30,
             "weight": 20,
             "art": "gen_hunt_huntassessment",
@@ -2403,7 +2403,7 @@
             ]
         },
         {
-            "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, burrow investigation is serious. {PRONOUN/app1/subject/CAP} want to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's focus.",
+            "text": "Careful, p_l warns. But {PRONOUN/p_l/subject} {VERB/p_l/don't/doesn't} need to warn app1, burrow investigation is serious. {PRONOUN/app1/subject/CAP} {VERB/app1/want/wants} to know how p_l spotted this new burrow, what makes p_l think that there's nothing dangerous inside, how to check without running face first into a badger. p_l appreciates app1's focus.",
             "exp": 30,
             "weight": 20,
             "art": "gen_hunt_huntassessment",
@@ -3002,7 +3002,7 @@
             "art": "pln_hunt_gonetwolegtrap1"
         },
         {
-            "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} don't know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
+            "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
             "exp": 20,
             "weight": 20,
             "art": "pln_hunt_gonetwolegtrap1",
@@ -3018,7 +3018,7 @@
             ]
         },
         {
-            "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} don't just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around eachother rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
+            "text": "app1 is brave, but {PRONOUN/app1/subject}{VERB/app1/'re/'s} not stupid. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't just stick {PRONOUN/app1/poss} head into an unknown tunnel, instead wait and scenting and watching for ages until a furry flat head pokes above ground. A stoat. It eyes app1, but both are far away enough to shuffle awkwardly around each other rather than fighting, as the thin predator heads off to find food and app1 turns for home.",
             "exp": 20,
             "weight": 20,
             "art": "gen_scared_cat_app",
@@ -3040,7 +3040,7 @@
             ]
         },
         {
-            "text": "app1 carefully explores the tunnel {PRONOUN/app1/subject} spotted, seeing how a bush noramlly conceals its entrance. The idea of having a secret, hidden place that only {PRONOUN/app1/subject} {VERB/app1/know/knows} about is incredibly appealing.",
+            "text": "app1 carefully explores the tunnel {PRONOUN/app1/subject} spotted, seeing how a bush normally conceals its entrance. The idea of having a secret, hidden place that only {PRONOUN/app1/subject} {VERB/app1/know/knows} about is incredibly appealing.",
             "exp": 20,
             "weight": 20,
             "art": "gen_happy_cat2",
@@ -3103,7 +3103,7 @@
             ]
         },
         {
-            "text": "app1 sticks {PRONOUN/app1/poss} head into {PRONOUN/app1/poss} new discovery and finds a furious prairie dog. {PRONOUN/app1/subject/CAP} exchange blows and chatter at each other, both escaping unscathed and irritated.",
+            "text": "app1 sticks {PRONOUN/app1/poss} head into {PRONOUN/app1/poss} new discovery and finds a furious prairie dog. They exchange blows and chatter at each other, both escaping unscathed and irritated.",
             "exp": 20,
             "weight": 20,
             "art": "pln_hunt_prairiedog1",
@@ -3284,7 +3284,7 @@
         "normal adult":[-1, -1]
     },
     "weight": 20,
-    "intro_text": "The apprentices are at the border - not exaclty a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Anyway, is that a tunnel entrance over there?",
+    "intro_text": "The apprentices are at the border - not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Anyway, is that a tunnel entrance over there?",
     "decline_text": "Eventually the apprentices get tired. Whatever, they're not supposed to be out here without a warrior anyway.",
     "chance_of_success": 30,
     "success_outcomes": [
@@ -3488,7 +3488,7 @@
     ],
     "fail_outcomes": [
         {
-            "text": "Oh hey cool, what's this? The apprentices gather round the tunnel, investigating. Hey s_c, does this look safe?When s_c nods, app2 scrambles inside - but inside lurks a sleepy wolverine.",
+            "text": "Oh hey cool, what's this? The apprentices gather round the tunnel, investigating. Hey s_c, does this look safe? When s_c nods, app2 scrambles inside - but inside lurks a sleepy wolverine.",
             "exp": 20,
             "weight": 20,
             "art": "gen_dead_cat_app_EXPLICIT",
@@ -3580,7 +3580,7 @@
             }
         },
         {
-            "text": "Come on, let's check it out! s_c bounds forward to the entrance, tail lashing excitedly. There's a shirek, and something pulls {PRONOUN/s_c/subject} in.",
+            "text": "Come on, let's check it out! s_c bounds forward to the entrance, tail lashing excitedly. There's a shriek, and something pulls {PRONOUN/s_c/subject} in.",
             "exp": 0,
             "weight": 20,
             "art": "gen_dead_cat_app_EXPLICIT",
