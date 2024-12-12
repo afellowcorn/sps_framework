@@ -3604,7 +3604,7 @@
                 }
             },
             {
-                "text": "Come on, let's check it out! s_c bounds forward to the entrance, tail lashing excitedly. There's a shirek, and something pulls {PRONOUN/s_c/subject} in.",
+                "text": "Come on, let's check it out! s_c bounds forward to the entrance, tail lashing excitedly. There's a shriek, and something pulls {PRONOUN/s_c/subject} in.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_dead_cat_app_EXPLICIT",
