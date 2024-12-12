@@ -3308,7 +3308,7 @@
             "normal adult":[-1, -1]
         },
         "weight": 20,
-        "intro_text": "The apprentices are at the border - not exaclty a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Anyway, is that a tunnel entrance over there?",
+        "intro_text": "The apprentices are at the border - not exactly a patrol they were sent on. Not exactly a patrol they're supposed to do without a warrior, actually. Anyway, is that a tunnel entrance over there?",
         "decline_text": "Eventually the apprentices get tired. Whatever, they're not supposed to be out here without a warrior anyway.",
         "chance_of_success": 30,
         "success_outcomes": [
