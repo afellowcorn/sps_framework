@@ -2336,7 +2336,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Checking the new tunnels is cold hard work. Digging in leaf-bare is no fun, whether it's snow, soil, or plant debris, and all of them clog the entrance in a soggy cold mess. p_l gives up when {PRONOUN/p_l/subject} see app1 starting to shiver, and takes the younger cat back to camp before the cold starts to truly bite.",
+                "text": "Checking the new tunnels is cold hard work. Digging in leaf-bare is no fun, whether it's snow, soil, or plant debris, and all of them clog the entrance in a soggy cold mess. p_l gives up when {PRONOUN/p_l/subject} {VERB/p_l/see/sees} app1 starting to shiver, and takes the younger cat back to camp before the cold starts to truly bite.",
                 "exp": 0,
                 "weight": 20,
                 "art": "mtn_hunt_newleafsnowstorm",
