@@ -687,62 +687,51 @@ class Events:
             game.freshkill_event_list.append(focus_text)
 
         elif game.clan.clan_settings.get("herb gathering"):
-            herbs_found = []
-
-            # handle medicine cats
-            healthy_meds = list(
-                filter(
-                    lambda c: c.status == "medicine cat"
-                    and not c.dead
-                    and not c.outside
-                    and not c.exiled
-                    and not c.not_working(),
-                    Cat.all_cats.values(),
-                )
+            # get medicine cats
+            healthy_meds = get_alive_status_cats(
+                Cat,
+                get_status=["medicine cat", "medicine cat apprentice"],
+                working=True
             )
-            med_amount = game.config["focus"]["herb gathering"]["med"]
+            # get warriors to help
+            healthy_warriors = get_alive_status_cats(
+                Cat,
+                get_status=["warrior", "deputy", "leader"],
+                working=True
+            )
+            
+            # get herbs found
+            herb_list = []
+            list_of_herb_strs = []
             for med in healthy_meds:
-                herbs_found.extend(random.sample(HERBS, k=med_amount))
+                list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
+                    med,
+                    specific_amount_bonus=len(healthy_warriors))
+                herb_list.extend(found_herbs)
 
-            # handle medicine cat apprentices
-            healthy_med_apps = list(
-                filter(
-                    lambda c: c.status == "medicine cat apprentice"
-                    and not c.dead
-                    and not c.outside
-                    and not c.exiled
-                    and not c.not_working(),
-                    Cat.all_cats.values(),
-                )
-            )
-            med_amount = game.config["focus"]["herb gathering"]["med_apprentice"]
-            for med in healthy_med_apps:
-                herbs_found.extend(random.sample(HERBS, k=med_amount))
+            # remove dupes
+            herb_list = list(set(herb_list))
+            # get display strings for herbs
+            herb_strs = []
+            if len(herb_list) > 1:
+                for herb in herb_list:
+                    herb_strs.append(game.clan.herb_supply.herb[herb].plural_display)
+            else:
+                herb_strs.append(game.clan.herb_supply.herb[herb_list[0]].singular_display)
 
             # finish
-            herb_amount = len(herbs_found)
-            herb_counter = Counter(herbs_found)
-            game.clan.herbs.update(herb_counter)
-            if herb_amount > 1:
-                focus_text = f"With the additional focus of the Clan, {herb_amount} herbs were gathered."
-            elif herb_amount == 1:
-                focus_text = f"With the additional focus of the Clan, {herb_amount} herb was gathered."
+            if len(herb_list) > 1:
+                focus_text = f"With the additional focus of the Clan, {adjust_list_text(herb_strs)} were gathered."
+            elif len(herb_list) == 1:
+                focus_text = f"With the additional focus of the Clan, some {adjust_list_text(herb_strs)} was gathered."
             else:
                 focus_text = f"Despite the additional focus of the Clan, no herbs could be gathered."
 
-            log_text = (
-                "With the additional focus of the Clan, following herbs were gathered: "
-            )
-            idx = 0
-            for herb, amount in herb_counter.items():
-                log_text += str(amount) + " " + herb.replace("_", " ")
-                idx += 1
-                if idx < len(herb_counter) - 1:
-                    log_text += ", "
-                elif idx < len(herb_counter):
-                    log_text += " and "
-            log_text += "."
-            game.herb_events_list.append(log_text)
+            if herb_list:
+                log_text = (
+                    f"With the additional focus of the Clan, following herbs were gathered: {adjust_list_text(list_of_herb_strs)}."
+                )
+                game.herb_events_list.append(log_text)
 
         elif game.clan.clan_settings.get("threaten outsiders"):
             amount = game.config["focus"]["outsiders"]["reputation"]

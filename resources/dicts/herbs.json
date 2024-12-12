@@ -160,8 +160,8 @@
       }
     },
     "display": {
-      "singular": "juniper",
-      "plural": "juniper"
+      "singular": "juniper berry",
+      "plural": "juniper berries"
     }
   },
   "lungwort": {
@@ -391,8 +391,8 @@
       }
     },
     "display": {
-      "singular": "raspberry",
-      "plural": "raspberry"
+      "singular": "raspberry leaf",
+      "plural": "raspberry leaves"
     }
   },
   "tansy": {
@@ -655,8 +655,8 @@
       }
     },
     "display": {
-      "singular": "blackberry",
-      "plural": "blackberry"
+      "singular": "blackberry leaf",
+      "plural": "blackberry leaves"
     }
   },
   "betony": {
