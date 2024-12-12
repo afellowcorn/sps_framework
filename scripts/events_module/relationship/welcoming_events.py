@@ -3,7 +3,6 @@ from copy import deepcopy
 from random import choice
 
 import i18n
-import ujson
 
 from scripts.cat.cats import Cat
 from scripts.event_class import Single_Event
@@ -11,8 +10,8 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     change_relationship_values,
     event_text_adjust,
-    load_string_resource,
 )
+from scripts.game_structure.localization import load_string_resource
 
 
 class Welcoming_Events:

@@ -10,8 +10,8 @@ from scripts.utility import (
     filter_relationship_type,
     get_living_clan_cat_count,
     get_alive_status_cats,
-    load_string_resource,
 )
+from scripts.game_structure.localization import load_string_resource
 
 
 def get_resource_directory(fallback=False):

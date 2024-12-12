@@ -3,7 +3,6 @@ from copy import deepcopy
 from random import choice, shuffle
 
 import i18n.config
-import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
@@ -17,8 +16,8 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import (
     change_relationship_values,
     process_text,
-    load_string_resource,
 )
+from scripts.game_structure.localization import load_string_resource
 
 
 class GroupEvents:

@@ -2,9 +2,8 @@ import traceback
 from random import choice
 
 import i18n
-import ujson
 
-from scripts.utility import load_string_resource
+from scripts.game_structure.localization import load_string_resource
 
 
 class Thoughts:

@@ -50,8 +50,8 @@ from scripts.utility import (
     process_text,
     ui_scale_dimensions,
     ui_scale_offset,
-    init_pronouns,
 )
+from scripts.game_structure.localization import get_new_pronouns
 
 if TYPE_CHECKING:
     from scripts.screens.Screens import Screens
@@ -757,7 +757,7 @@ class PronounCreation(UIWindow):
             container_rect, container=self, anchors={"bottom": "bottom", "left": "left"}
         )
 
-        beginning_pronouns = init_pronouns("default")
+        beginning_pronouns = get_new_pronouns("default")[0]
         for i, (name, value) in enumerate(beginning_pronouns.items()):
             self.box_labels[f"container_{i}"] = pygame_gui.core.UIContainer(
                 ui_scale(pygame.Rect((0, 0), (350, 40))),
@@ -963,7 +963,7 @@ class PronounCreation(UIWindow):
         self.set_blocking(True)
 
     def get_new_pronouns(self):
-        pronoun_template = init_pronouns("default")[0]
+        pronoun_template = get_new_pronouns("default")[0]
 
         for i, (name, value) in enumerate(pronoun_template.items()):
             if isinstance(value, int):

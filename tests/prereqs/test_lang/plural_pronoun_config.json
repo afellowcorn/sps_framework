@@ -10,8 +10,8 @@
             "trans female": "2",
             "default": "0",
             "plural default": "0",
-            "plural male": "0",
-            "plural female": "0",
+            "plural male": "1",
+            "plural female": "2",
             "plural nonbinary": "0",
             "-&-default_comment-&-": "Default is the fallback/'what-happens-if-nothing-matches' pronoun set. Also the 'they them default' value."
         },
@@ -20,7 +20,8 @@
                 "1": "plural male",
                 "2": "plural female",
                 "0": "plural nonbinary"
-            }
+            },
+            "notes": "Ensure the values exactly match the keys in the sets above, otherwise there will be errors."
         },
         "adj_default": "1",
         "adj_default_comment": "This determines which section of an {ADJ} label is used but the matching cat is not supplied (e.g. as a general use of the word). The first supplied value is 1."

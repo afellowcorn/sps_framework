@@ -41,9 +41,10 @@ from scripts.utility import (
     event_text_adjust,
     update_sprite,
     leader_ceremony_text_adjust,
-    load_string_resource,
-    init_pronouns,
 )
+from scripts.game_structure.localization import load_string_resource
+
+import scripts.game_structure.localization as pronouns
 
 
 class Cat:
@@ -101,8 +102,6 @@ class Cat:
         "expert": (241, 320),
         "master": (321, 321),
     }
-
-    _default_pronouns: List[Dict[str, Union[str, int]]] = {}
 
     all_cats: Dict[str, Cat] = {}  # ID: object
     outside_cats: Dict[str, Cat] = {}  # cats outside the clan
@@ -289,7 +288,6 @@ class Cat:
         # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
             self.gender = choice(["female", "male"])
-        self.g_tag = self.gender_tags[self.gender]
 
         """if self.genderalign == "":
             self.genderalign = self.gender"""
@@ -497,7 +495,7 @@ class Cat:
         locale = i18n.config.get("locale")
         value = self._pronouns.get(locale)
         if value is None:
-            self._pronouns[locale] = init_pronouns(self.genderalign)
+            self._pronouns[locale] = pronouns.get_new_pronouns(self.genderalign)
             value = self._pronouns[locale]
         return value
 
@@ -525,14 +523,16 @@ class Cat:
     @property
     def default_pronouns(self):
         try:
-            return self._default_pronouns[i18n.config.get("locale")]
+            return pronouns.default_pronouns[i18n.config.get("locale")]
         except KeyError:
             locale = i18n.config.get("locale")
-            temp = load_string_resource("pronouns.{lang}.json")
-            self._default_pronouns[locale] = [
-                pronoun_dict for pronoun_dict in temp[next(iter(temp))].values()
+            temp: Dict[str, List[Dict[str, Union[str, int]]]] = load_string_resource(
+                "pronouns.{lang}.json"
+            )
+            pronouns.default_pronouns[locale] = [
+                pronoun_dict for pronoun_dict in temp[locale].values()
             ]
-        return self._default_pronouns[locale]
+        return pronouns.default_pronouns[locale]
 
     def get_genderalign_string(self):
         # translate it if it's default

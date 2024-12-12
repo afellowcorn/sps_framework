@@ -630,6 +630,8 @@ class UISpriteButton:
         container=None,
         object_id=None,
         tool_tip_text=None,
+        text_kwargs=None,
+        tool_tip_text_kwargs=None,
         anchors=None,
     ):
         # The transparent button. This a subclass that UIButton that also hold the cat_id.
@@ -637,6 +639,7 @@ class UISpriteButton:
         self.button = CatButton(
             relative_rect,
             "",
+            text_kwargs=text_kwargs,
             object_id=ObjectID("#cat_button", object_id),
             visible=visible,
             cat_id=cat_id,
@@ -644,6 +647,7 @@ class UISpriteButton:
             starting_height=starting_height,
             manager=manager,
             tool_tip_text=tool_tip_text,
+            tool_tip_text_kwargs=tool_tip_text_kwargs,
             container=container,
             anchors=anchors,
         )
@@ -732,6 +736,8 @@ class CatButton(UIImageButton):
         object_id=None,
         manager=None,
         tool_tip_text=None,
+        text_kwargs=None,
+        tool_tip_text_kwargs=None,
         container=None,
         anchors=None,
         auto_disable_if_no_data=False,
@@ -741,6 +747,8 @@ class CatButton(UIImageButton):
         super().__init__(
             relative_rect,
             text,
+            text_kwargs=text_kwargs,
+            tool_tip_text_kwargs=tool_tip_text_kwargs,
             object_id=object_id,
             visible=visible,
             parent_element=parent_element,

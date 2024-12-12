@@ -12,15 +12,20 @@ from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
 from sys import exit as sys_exit
-from typing import List, Tuple, TYPE_CHECKING, Type, Dict, Optional, Union
+from typing import List, Tuple, TYPE_CHECKING, Type
 
 import i18n
 import pygame
 import ujson
 from pygame_gui.core import ObjectID
 
+from scripts.game_structure.localization import (
+    load_string_resource,
+    determine_plural_pronouns,
+)
+
 logger = logging.getLogger(__name__)
-from scripts.game_structure import image_cache
+from scripts.game_structure import image_cache, localization
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.pelts import Pelt
@@ -1735,7 +1740,18 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
     inner_details = m.group(1).split("/")
 
     try:
-        d = cat_pronouns_dict[inner_details[1]][1]
+        if inner_details[1].upper() == "PLURAL":
+            inner_details.pop(1)
+            catlist = []
+            for cat in inner_details[1].split("+"):
+                try:
+                    catlist.append(cat_pronouns_dict[cat][1])
+                except KeyError:
+                    print(f"Missing pronouns for {cat}")
+                    continue
+            d = determine_plural_pronouns(catlist)
+        else:
+            d = cat_pronouns_dict[inner_details[1]][1]
         if inner_details[0].upper() == "PRONOUN":
             pro = d[inner_details[2]]
             if inner_details[-1] == "CAP":
@@ -2147,7 +2163,7 @@ def event_text_adjust(
     if "n_c" in text:
         for i, cat_list in enumerate(new_cats):
             if len(new_cats) > 1:
-                pronoun = Cat.default_pronouns[0]  # They/them for multiple cats
+                pronoun = localization.get_new_pronouns("default plural")[0]
             else:
                 pronoun = choice(cat_list[0].pronouns)
 
@@ -2908,33 +2924,6 @@ def quit(savesettings=False, clearevents=False):
     sys_exit()
 
 
-def load_string_resource(location: str):
-    """
-    Get a string resource from the resources/lang folder for the loaded language
-    :param location: If the language code is required, substitute `{lang}`. Relative location from the resources/lang/[language]/ folder. do not include slash.
-    :return: Whatever resource was there
-    """
-    resource_directory = f"resources/lang/{i18n.config.get('locale')}/"
-    fallback_directory = f"resources/lang/{i18n.config.get('fallback')}/"
-    location = location.lstrip("\\/")  # just in case someone is an egg and does add it
-    try:
-        with open(
-            f"{resource_directory}{location.replace('{lang}', i18n.config.get('locale'))}",
-            "r",
-            encoding="utf-8",
-        ) as string_file:
-            return ujson.loads(string_file.read())
-    except FileNotFoundError:
-        location2 = location
-        location2.replace("{lang}", i18n.config.get("fallback"))
-        with open(
-            f"{fallback_directory}{location.replace('{lang}', i18n.config.get('fallback'))}",
-            "r",
-            encoding="utf-8",
-        ) as string_file:
-            return ujson.loads(string_file.read())
-
-
 with open(f"resources/dicts/conditions/permanent_conditions.json", "r") as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
@@ -2945,37 +2934,3 @@ PREY_LISTS = None
 
 with open(f"resources/dicts/backstories.json", "r") as read_file:
     BACKSTORIES = ujson.loads(read_file.read())
-
-lang_config: Optional[Dict] = None
-
-
-def get_lang_config() -> Dict:
-    """
-    :return: the config file for the currently-loaded language. Raises error if config doesn't exist.
-    """
-    global lang_config
-    locale = i18n.config.get("locale")
-    if lang_config is None or lang_config["lang"] != locale:
-        with open(
-            f"resources/lang/{locale}/config.json", "r", encoding="utf-8"
-        ) as lang_file:
-            lang_config = ujson.loads(lang_file.read())
-    return lang_config
-
-
-def init_pronouns(genderalign: str) -> List[Dict[str, Union[str, int]]]:
-    """
-    Handles getting the right pronoun set for the language.
-    :param genderalign: The cat's gender alignment
-    :return: The default list of pronouns for the cat's genderalign in the selected lang
-    """
-    config = get_lang_config()["pronouns"]
-    if game.settings["they them default"]:
-        pronouns = config["sets"].get("default")
-    else:
-        pronouns = config["sets"].get(genderalign, config["sets"].get("default"))
-    if pronouns is None:
-        raise Exception(
-            "Default pronouns not provided in lang file! Check config.json to confirm correct labels"
-        )
-    return pronouns

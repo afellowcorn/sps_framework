@@ -10,6 +10,7 @@ from typing import List, Tuple, Optional
 import i18n
 import pygame
 
+from scripts.game_structure import localization
 from scripts.cat.cats import Cat
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game
@@ -24,8 +25,9 @@ from scripts.utility import (
     find_special_list_types,
     filter_relationship_type,
     get_special_snippet_list,
-    load_string_resource,
+    adjust_list_text,
 )
+from scripts.game_structure.localization import load_string_resource
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -949,15 +951,9 @@ class Patrol:
             if len(new_cats) == 1:
                 names = str(new_cats[0].name)
                 pronoun = choice(new_cats[0].pronouns)
-            elif len(new_cats) == 1:
-                names = f"{new_cats[0].name} and {new_cats[1].name}"
-                pronoun = Cat.default_pronouns[0]  # They/them for muliple cats
             else:
-                names = (
-                    ", ".join([str(x.name) for x in new_cats[:-1]])
-                    + f", and {new_cats[1].name}"
-                )
-                pronoun = Cat.default_pronouns[0]  # They/them for muliple cats
+                names = adjust_list_text([str(cat.name) for cat in new_cats])
+                pronoun = pronouns.get_new_pronouns("default plural")
 
             replace_dict[f"n_c:{i}"] = (names, pronoun)
 

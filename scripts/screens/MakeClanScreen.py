@@ -661,6 +661,10 @@ class MakeClanScreen(Screens):
         elif self.sub_screen in ["choose leader", "choose deputy", "choose med cat"]:
             if self.selected_cat.age in ["newborn", "kitten", "adolescent"]:
                 self.elements["select_cat"].hide()
+                self.elements["error_message"].set_text(
+                    self.elements["error_message"].text,
+                    text_kwargs={"m_c": self.selected_cat},
+                )
                 self.elements["error_message"].show()
             else:
                 self.elements["select_cat"].show()
@@ -1077,20 +1081,26 @@ class MakeClanScreen(Screens):
 
     def refresh_selected_cat_info(self, selected: Optional[Cat] = None):
         # SELECTED CAT INFO
-        if selected is not None:
-            if self.sub_screen == "choose leader":
-                self.elements["cat_name"].set_text(
-                    str(selected.name) + " --> " + selected.name.prefix + "star"
-                )
-            else:
-                self.elements["cat_name"].set_text(str(selected.name))
-            self.elements["cat_name"].show()
-            self.elements["cat_info"].set_text(selected.get_info_block(make_clan=True))
-            self.elements["cat_info"].show()
-        else:
+        if selected is None:
             self.elements["next_step"].disable()
             self.elements["cat_info"].hide()
             self.elements["cat_name"].hide()
+            return
+
+        if self.sub_screen == "choose leader":
+            self.elements["cat_name"].set_text(
+                str(selected.name) + " --> " + selected.name.prefix + "star"
+            )
+        else:
+            self.elements["cat_name"].set_text(str(selected.name))
+        self.elements["select_cat"].set_text(
+            self.elements["select_cat"].text, text_kwargs={"m_c": selected}
+        )
+        self.elements["cat_name"].show()
+        self.elements["cat_info"].set_text(
+            selected.get_info_block(make_clan=True), text_kwargs={"m_c": selected}
+        )
+        self.elements["cat_info"].show()
 
     def refresh_cat_images_and_info(self, selected=None):
         """Update the image of the cat selected in the middle. Info and image.
@@ -1552,15 +1562,15 @@ class MakeClanScreen(Screens):
             starting_height=2,
             visible=False,
             manager=MANAGER,
+            text_kwargs={"m_c": self.selected_cat},
         )
         # Error message, to appear if you can't choose that cat.
         self.elements["error_message"] = pygame_gui.elements.UITextBox(
-            "screens.make_clan.error_too_young",
+            "screens.make_clan.error_too_young_leader",
             ui_scale(pygame.Rect((150, 353), (500, 55))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
             visible=False,
             manager=MANAGER,
-            text_kwargs={"role": i18n.t("general.leader", count=1)},
         )
 
         # Next and previous buttons
@@ -1611,12 +1621,11 @@ class MakeClanScreen(Screens):
         )
         # Error message, to appear if you can't choose that cat.
         self.elements["error_message"] = pygame_gui.elements.UITextBox(
-            "screens.make_clan.error_too_young",
+            "screens.make_clan.error_too_young_deputy",
             ui_scale(pygame.Rect((150, 353), (500, 55))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
             visible=False,
             manager=MANAGER,
-            text_kwargs={"role": i18n.t("general.deputy", count=1)},
         )
 
         # Next and previous buttons
@@ -1666,12 +1675,11 @@ class MakeClanScreen(Screens):
         )
         # Error message, to appear if you can't choose that cat.
         self.elements["error_message"] = pygame_gui.elements.UITextBox(
-            "screens.make_clan.error_too_young",
+            "screens.make_clan.error_too_young_medcat",
             ui_scale(pygame.Rect((150, 353), (500, 55))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_red"),
             visible=False,
             manager=MANAGER,
-            text_kwargs={"role": i18n.t("general.medicine cat", count=1)},
         )
 
         # Next and previous buttons

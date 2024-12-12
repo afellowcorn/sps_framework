@@ -2,7 +2,6 @@ import random
 from random import choice, randint
 
 import i18n
-import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
@@ -18,9 +17,9 @@ from scripts.utility import (
     get_personality_compatibility,
     change_relationship_values,
     get_alive_status_cats,
-    load_string_resource,
     adjust_list_text,
 )
+from scripts.game_structure.localization import load_string_resource
 
 
 class Pregnancy_Events:

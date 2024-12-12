@@ -23,8 +23,8 @@ from scripts.utility import (
     event_text_adjust,
     get_alive_status_cats,
     get_leader_life_notice,
-    load_string_resource,
 )
+from scripts.game_structure.localization import load_string_resource
 
 
 # ---------------------------------------------------------------------------- #

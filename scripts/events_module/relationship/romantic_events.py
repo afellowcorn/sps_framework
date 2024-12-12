@@ -4,7 +4,6 @@ from random import choice
 from typing import Dict
 
 import i18n
-import ujson
 
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
@@ -20,8 +19,8 @@ from scripts.utility import (
     event_text_adjust,
     get_personality_compatibility,
     process_text,
-    load_string_resource,
 )
+from scripts.game_structure.localization import load_string_resource
 
 
 class RomanticEvents:

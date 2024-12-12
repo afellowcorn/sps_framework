@@ -7,7 +7,7 @@ import i18n
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
-from ..utility import init_pronouns
+from scripts.game_structure.localization import get_new_pronouns
 from ..cat.personality import Personality
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
@@ -150,7 +150,7 @@ def json_load():
             new_cat.pronouns = (
                 cat["pronouns"]
                 if "pronouns" in cat
-                else {i18n.config.get("locale"): init_pronouns(new_cat.genderalign)}
+                else {i18n.config.get("locale"): get_new_pronouns(new_cat.genderalign)}
             )
             new_cat.backstory = cat["backstory"] if "backstory" in cat else None
             if new_cat.backstory in BACKSTORIES["conversion"]:

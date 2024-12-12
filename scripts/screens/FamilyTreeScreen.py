@@ -17,6 +17,7 @@ from scripts.utility import (
     ui_scale,
     shorten_text_to_fit,
     ui_scale_dimensions,
+    adjust_list_text,
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
@@ -566,13 +567,13 @@ class FamilyTreeScreen(Screens):
                     rel_types.remove("BLOOD")  # removes empty
                 if len(rel_types) > 0:
                     info_text += "\n"
-                    info_text += ", ".join(
+                    info_text += adjust_list_text(
                         [i18n.t(f"general.relation_{rel}") for rel in rel_types]
                     )
                 if len(additional_info["additional"]) > 0:
                     add_info = set(additional_info["additional"])  # remove duplicates
                     info_text += "\n"
-                    info_text += ", ".join(add_info)
+                    info_text += adjust_list_text(add_info)
 
             self.relation_elements["cat" + str(i)] = UISpriteButton(
                 ui_scale(pygame.Rect((324 + pos_x, 485 + pos_y), (50, 50))),
@@ -580,6 +581,7 @@ class FamilyTreeScreen(Screens):
                 cat_id=_kitty.ID,
                 manager=MANAGER,
                 tool_tip_text=info_text,
+                tool_tip_text_kwargs={"r_c": _kitty},
                 starting_height=2,
             )
 

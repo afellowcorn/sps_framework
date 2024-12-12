@@ -13,9 +13,7 @@ import traceback
 from collections import Counter
 
 import i18n
-import ujson
 
-from scripts import utility
 from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.history import History
 from scripts.cat.names import Name
@@ -49,8 +47,8 @@ from scripts.utility import (
     get_other_clan,
     history_text_adjust,
     unpack_rel_block,
-    load_string_resource,
 )
+from scripts.game_structure.localization import load_string_resource
 
 
 class Events:

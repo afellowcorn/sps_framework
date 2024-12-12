@@ -3,10 +3,8 @@
 from re import sub
 from typing import Dict, Union
 
-import i18n
 import pygame
 import pygame_gui
-import ujson
 from pygame_gui.core import ObjectID, UIContainer
 
 from scripts.cat.cats import Cat
@@ -22,8 +20,8 @@ from scripts.utility import (
     ui_scale_dimensions,
     ui_scale_value,
     ui_scale_offset,
-    load_string_resource,
 )
+from scripts.game_structure.localization import load_string_resource
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
