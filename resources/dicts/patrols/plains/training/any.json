@@ -2578,7 +2578,7 @@
                 ]
             },
             {
-                "text": "When p_l stops the patrol at the entrance to a abandoned badger sett and asks if the apprentices know why c_n values every safe burrow and underground haven, s_c pipes up. {PRONOUN/s_c/subject/CAP} know! It's because these are the places c_n retreat to in times of danger!",
+                "text": "When p_l stops the patrol at the entrance to a abandoned badger sett and asks if the apprentices know why c_n values every safe burrow and underground haven, s_c pipes up. {PRONOUN/s_c/subject/CAP} {VERB/s_c/know/knows}! It's because these are the places c_n retreat to in times of danger!",
                 "exp": 40,
                 "weight": 30,
                 "can_have_stat": ["any", "app"],
@@ -2835,7 +2835,7 @@
                 ]
             },
             {
-                "text": "s_c doesn't need to know where the Clan's refuges are, they're going to be far too good of a warrior to ever need them!<br>p_l doens't look so convinced.",
+                "text": "s_c doesn't need to know where the Clan's refuges are, {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} going to be far too good of a warrior to ever need them!<br>p_l doens't look so convinced.",
                 "exp": 0,
                 "weight": 20,
                 "can_have_stat": ["any", "app"],
