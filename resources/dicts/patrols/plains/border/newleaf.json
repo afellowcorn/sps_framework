@@ -152,7 +152,7 @@
         "chance_of_success": 20,
         "success_outcomes": [
             {
-                "text": "p_l bolts back to camp, eyes blown wide. It takes a moment for {PRONOUN/p_l/object} to catch {PRONOUN/p_l/poss} breath before {PRONOUN/p_l/subject} are able to manage to gasp out a single word. <i>Coyote!</i>",
+                "text": "p_l bolts back to camp, eyes blown wide. It takes a moment for {PRONOUN/p_l/object} to catch {PRONOUN/p_l/poss} breath before {PRONOUN/p_l/subject} {VERB/p_l/are/is} able to manage to gasp out a single word. <i>Coyote!</i>",
                 "exp": 40,
                 "weight": 20,
                 "art": "running_warrior",
