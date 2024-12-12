@@ -383,7 +383,7 @@
                 }
             },
 	        {
-                "text": "Maybe s_c should have been paying more attention. {PRONOUN/s_c/subject/CAP} see darkness around them, and realize the terrible mistake of their distraction.",
+                "text": "Maybe s_c should have been paying more attention. {PRONOUN/s_c/subject/CAP} {VERB/s_c/see/sees} darkness around {PRONOUN/s_c/object}, and realize the terrible mistake of {PRONOUN/s_c/poss} distraction.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_dead_cat_EXPLICIT",
