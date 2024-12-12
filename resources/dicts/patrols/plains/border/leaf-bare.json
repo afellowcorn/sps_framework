@@ -1743,7 +1743,7 @@
                 ]
             },
             {
-                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} do best, racing the wind home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/arrive/arrives} in one piece. One shivering, sodden piece.",
+                "text": "s_c insists they can all get back to camp before the storm hits. The rest of the patrol won't risk it, they're going to hide in some tunnels, but s_c takes a chance and does what {PRONOUN/s_c/subject} {VERB/s_c/do/does} best, racing the wind home. {PRONOUN/s_c/subject/CAP} {VERB/s_c/arrive/arrives} in one piece. One shivering, sodden piece.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_soggykitty_mad_warrior",
