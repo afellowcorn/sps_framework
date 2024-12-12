@@ -2910,7 +2910,7 @@
                 "lost_cats": ["p_l"]
             },
             {
-                "text": "The shallow cave is home to a young badger, inexperienced, dangerous, and far from its natal family. Larchpaw escapes, battered, bruised, and bleeding, but the subadult predator won't follow Larchpaw back to camp. Not in territory that's unfamiliar and new to it.",
+                "text": "The shallow cave is home to a young badger, inexperienced, dangerous, and far from its natal family. p_l escapes, battered, bruised, and bleeding, but the subadult predator won't follow p_l back to camp. Not in territory that's unfamiliar and new to it.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_scarybadger",
