@@ -1910,7 +1910,7 @@
                 ]
             },
             {
-                "text": "app1 screeches. Something has {PRONOUN/app1/object} by the leg! The patrol tries to drag {PRONOUN/app1/object} out of the sinkhole thats developing around {PRONOUN/app1/object}, but it's no use, app1 is pulled down and out of sight.",
+                "text": "app1 screeches. Something has {PRONOUN/app1/object} by the leg! The patrol tries to drag {PRONOUN/app1/object} out of the sinkhole that's developing around {PRONOUN/app1/object}, but it's no use, app1 is pulled down and out of sight.",
                 "exp": 0,
                 "weight": 10,
                 "art": "gen_dead_cat_app_ghost_EXPLICIT",
