@@ -3335,7 +3335,7 @@
                 ]
             },
             {
-                "text": "app1 sticks {PRONOUN/app1/poss} head into {PRONOUN/app1/poss} new discovery and finds a furious prairie dog. {PRONOUN/app1/subject/CAP} exchange blows and chatter at each other, both escaping unscathed and irritated.",
+                "text": "app1 sticks {PRONOUN/app1/poss} head into {PRONOUN/app1/poss} new discovery and finds a furious prairie dog. They exchange blows and chatter at each other, both escaping unscathed and irritated.",
                 "exp": 20,
                 "weight": 2,
                 "art": "pln_hunt_prairiedog1",
