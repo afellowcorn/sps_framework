@@ -2863,7 +2863,7 @@
                 "art": "gen_hunt_huntassessment"
             },
             {
-                "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} don't know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
+                "text": "This is no burrow. app1 shivers. {PRONOUN/app1/subject/CAP} {VERB/app1/do/does}n't know what it <i>is</i>, but tunnels don't have straight edges and sharp corners, app1 knows that much. {PRONOUN/app1/subject/CAP} should go report this to {PRONOUN/app1/poss} mentor maybe? Yeah, yeah that sounds good.",
                 "exp": 20,
                 "weight": 10,
                 "art": "pln_hunt_gonetwolegtrap1",
