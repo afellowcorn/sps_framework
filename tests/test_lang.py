@@ -77,16 +77,21 @@ class TestLocalisation(unittest.TestCase):
         nb_cat.genderalign = "nonbinary"
 
         for cat in [male_cat, female_cat, nb_cat]:
-            text = "{PRONOUN/m_c/subject}"
-            self.assertEqual(
-                event_text_adjust(Cat, text, main_cat=cat), cat.pronouns[0]["subject"]
-            )
+            for pronoun in ["subject", "object", "poss", "inposs", "self"]:
+                with self.subTest(
+                    "singular pronouns", cat=cat.genderalign, pronoun=pronoun
+                ):
+                    text = f"{{PRONOUN/m_c/{pronoun}}}"
+                    self.assertEqual(
+                        event_text_adjust(Cat, text, main_cat=cat),
+                        cat.pronouns[0][pronoun],
+                    )
 
     def test_insert_plural_pronouns(self):
         set_lang_config_directory("tests/prereqs/test_lang/plural_pronoun_config.json")
         text = "{PRONOUN/PLURAL/m_c+r_c/subject}"
         for key, value in self.cat_combos_two.items():
-            with self.subTest("two cat combination", combination=key):
+            with self.subTest("plural pronouns", combination=key):
                 self.assertEqual(
                     event_text_adjust(
                         Cat, text, main_cat=value[0][0], random_cat=value[0][1]

@@ -619,9 +619,7 @@ class ChooseMateScreen(Screens):
                 container=self.offspring_container,
                 object_id="#text_box_30_horizcenter_vertcenter",
                 text_kwargs={
-                    "name": str(self.the_cat.name),
                     "m_c": self.the_cat,
-                    "name2": str(self.selected_cat.name) if self.selected_cat else "",
                     "r_c": self.selected_cat if self.selected_cat else None,
                 },
             )

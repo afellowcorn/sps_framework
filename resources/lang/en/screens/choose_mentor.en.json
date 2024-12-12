@@ -1,10 +1,10 @@
 {
     "en": {
-        "heading": "Choose a new mentor for %{name}",
+        "heading": "Choose a new mentor for m_c",
         "info": "If an apprentice is 6 moons old and their mentor is changed, they will not be listed as a former apprentice on their old mentor's profile. Apprentices without a mentor will have one automatically assigned next moon. An apprentice's mentor can have an influence on their trait and skill later in life.\nChoose your mentors wisely.",
         "current_mentor": {
-            "zero": "%{name} does not have a mentor",
-            "one": "%{name}'s current mentor is %{mentor_name}"
+            "zero": "m_c does not have a mentor",
+            "one": "m_c's current mentor is r_c"
         },
         "set_mentor": "Confirm Mentor",
         "unset_mentor": "Remove Mentor",

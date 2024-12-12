@@ -107,7 +107,7 @@ class LeaderDenScreen(Screens):
                 self.update_outsider_focus()
             elif event.ui_element in self.focus_button.values():
                 self.update_outsider_interaction_choice(
-                    event.ui_element.get_object_ids()[3]
+                    event.ui_element.text.replace("screens.leader_den.", "")
                 )
                 self.update_outsider_cats()
 
@@ -256,9 +256,8 @@ class LeaderDenScreen(Screens):
             visible=False,
             manager=MANAGER,
             text_kwargs={
-                "leader": self.leader_name,
-                "count": 1,
                 "m_c": game.clan.leader if not self.no_leader else None,
+                "count": 1,
             },
         )
         self.screen_elements["outsider_notice_text"] = pygame_gui.elements.UITextBox(
@@ -268,7 +267,6 @@ class LeaderDenScreen(Screens):
             visible=False,
             manager=MANAGER,
             text_kwargs={
-                "leader": self.leader_name,
                 "count": 1,
                 "m_c": game.clan.leader if not self.no_leader else None,
             },
@@ -298,9 +296,7 @@ class LeaderDenScreen(Screens):
             self.screen_elements["clan_notice_text"].set_text(
                 "screens.leader_den.clan_notice_text",
                 text_kwargs={
-                    "leader": self.leader_name,
                     "m_c": game.clan.leader,
-                    "helper": self.helper_name,
                     "r_c": self.helper_cat,
                     "count": 2,
                 },
@@ -308,9 +304,7 @@ class LeaderDenScreen(Screens):
             self.screen_elements["outsider_notice_text"].set_text(
                 "screens.leader_den.outsider_notice_text",
                 text_kwargs={
-                    "leader": self.leader_name,
                     "m_c": game.clan.leader,
-                    "helper": self.helper_name,
                     "r_c": self.helper_cat,
                     "count": 2,
                 },
@@ -320,11 +314,11 @@ class LeaderDenScreen(Screens):
             self.no_leader = True
             self.screen_elements["clan_notice_text"].set_text(
                 "screens.leader_den.leader_sick_clan",
-                text_kwargs={"leader": self.leader_name, "m_c": game.clan.leader},
+                text_kwargs={"m_c": game.clan.leader},
             )
             self.screen_elements["outsider_notice_text"].set_text(
                 "screens.leader_den.leader_sick_outsider",
-                text_kwargs={"leader": self.leader_name, "m_c": game.clan.leader},
+                text_kwargs={"m_c": game.clan.leader},
             )
 
         self.screen_elements["clan_notice_text"].show()
@@ -692,15 +686,12 @@ class LeaderDenScreen(Screens):
         """
 
         interaction = object_id.replace("#clan_", "")
-        other_clan = self.focus_clan.name
 
         self.screen_elements["clan_notice_text"].set_text(
-            "screens.leader_den.action_clan",
+            f"screens.leader_den.action_clan_{interaction}",
             text_kwargs={
-                "leader": self.leader_name,
                 "m_c": game.clan.leader,
-                "interaction": i18n.t(interaction),
-                "clan": other_clan,
+                "other_clan": self.focus_clan,
             },
         )
 
@@ -885,11 +876,12 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        self.focus_button["hunt_down"] = UIImageButton(
+        self.focus_button["hunt_down"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 0), (121, 30))),
-            "",
-            object_id="#outsider_hunt",
+            "screens.leader_den.hunt_down",
+            get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
             tool_tip_text="screens.leader_den.hunt_down_tooltip",
+            tool_tip_text_kwargs={"r_c": self.focus_cat},
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
@@ -898,11 +890,13 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        self.focus_button["drive_off"] = UIImageButton(
+        self.focus_button["drive_off"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 5), (121, 30))),
-            "",
-            object_id="#outsider_drive",
+            "screens.leader_den.drive_off",
+            get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
+            object_id="@buttonstyles_squoval",
             tool_tip_text="screens.leader_den.drive_off_tooltip",
+            tool_tip_text_kwargs={"r_c": self.focus_cat},
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
@@ -912,11 +906,13 @@ class LeaderDenScreen(Screens):
             },
         )
 
-        self.focus_button["invite_in"] = UIImageButton(
+        self.focus_button["invite_in"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 5), (121, 30))),
-            "",
-            object_id="#outsider_invite",
+            "screens.leader_den.invite_in",
+            get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
+            object_id="@buttonstyles_squoval",
             tool_tip_text="screens.leader_den.invite_in_tooltip",
+            tool_tip_text_kwargs={"r_c": self.focus_cat},
             container=self.focus_outsider_button_container,
             starting_height=3,
             manager=MANAGER,
@@ -1052,52 +1048,35 @@ class LeaderDenScreen(Screens):
 
             i += 1
 
-    def update_outsider_interaction_choice(self, object_id):
+    def update_outsider_interaction_choice(self, action):
         """
         handles changing chosen outsider interaction. updates notice text.
-        :param object_id: the object ID of the interaction button
+        :param action: the object ID of the interaction button
         """
-        outsider = self.focus_cat.name
-
-        interaction = "this should not appear - report as bug!"
-        if object_id in ["#outsider_hunt", "hunt"]:
-            interaction = "hunt down"
-        elif object_id in ["#outsider_drive", "drive"]:
-            interaction = "drive off"
-        elif object_id in ["#outsider_invite", "invite"]:
-            interaction = "invite in"
-        elif object_id in ["#outsider_search", "search"]:
-            interaction = "search for"
 
         self.screen_elements["outsider_notice_text"].set_text(
-            "screens.leader_den.action_outsider",
+            f"screens.leader_den.action_outsider_{action}",
             text_kwargs={
-                "leader": self.leader_name,
                 "m_c": game.clan.leader,
-                "interaction": i18n.t(
-                    f"screens.leader_den.{interaction.replace(' ', '_')}"
-                ),
-                "outsider": outsider,
                 "r_c": self.focus_cat,
             },
         )
 
-        self.handle_outsider_interaction(object_id)
+        self.handle_outsider_interaction(action)
 
-    def handle_outsider_interaction(self, object_id):
+    def handle_outsider_interaction(self, action):
         """
         handles determining the outcome of an outsider interaction, returns result text
-        :param object_id: the object id of the interaction button pressed
+        :param action: the object id of the interaction button pressed
         """
         game.clan.clan_settings["lead_den_interaction"] = True
-        interaction_type = object_id.replace("#outsider_", "")
 
         # percentage of success
         success_chance = (int(game.clan.reputation) / 100) / 1.5
         if game.clan.leader.not_working:
             success_chance = success_chance / 1.2
         # searching should be extra hard, after all those kitties are LOST
-        if interaction_type == "search":
+        if action == "search":
             success_chance = success_chance / 2
         # if we got to zero somehow, reset to give a teeny little chance of success
         if success_chance <= 0:
@@ -1110,7 +1089,7 @@ class LeaderDenScreen(Screens):
 
         game.clan.clan_settings["lead_den_outsider_event"] = {
             "cat_ID": self.focus_cat.ID,
-            "interaction_type": interaction_type,
+            "interaction_type": action,
             "success": success,
         }
 

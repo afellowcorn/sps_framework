@@ -8,8 +8,8 @@
         "with_selected_cat": "Offspring with selected cat",
         "no_mates": "No mates",
         "can_have_kits": "Can have biological kits",
-        "no_kits_pair": "%{name} has no offspring with %{name2}.",
-        "no_kits_single": "%{name} has no offspring.",
+        "no_kits_pair": "m_c has no offspring with r_c.",
+        "no_kits_single": "m_c has no offspring.",
         "no_kit_warning": "This pair can't have biological kittens.",
         "set_mate": "It's Official!",
         "unset_mate": "Break It Up"

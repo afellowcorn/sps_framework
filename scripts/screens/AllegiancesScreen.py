@@ -219,9 +219,7 @@ class AllegiancesScreen(Screens):
         # Apprentice Box:
         if living_apprentices:
             _box = ["", ""]
-            _box[
-                0
-            ] = f"<b><u>{i18n.t('general.apprentice', count=len(living_apprentices)).upper()}</u></b>"
+            _box[0] = f"<b><u>{i18n.t('general.apprentice', count=2).upper()}</u></b>"
 
             _box[1] = "\n".join(
                 [self.generate_one_entry(i) for i in living_apprentices]
@@ -272,9 +270,7 @@ class AllegiancesScreen(Screens):
         if living_elders:
             _box = ["", ""]
             if len(living_elders) == 1:
-                _box[
-                    0
-                ] = f"<b><u>{i18n.t('general.elder', count=len(living_elders)).upper()}</u></b>"
+                _box[0] = f"<b><u>{i18n.t('general.elder', count=2).upper()}</u></b>"
 
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_elders])
             outputs.append(_box)
