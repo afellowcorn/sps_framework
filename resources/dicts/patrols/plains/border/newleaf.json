@@ -3512,7 +3512,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Oh hey cool, what's this? The apprentices gather round the tunnel, investigating. Hey s_c, does this look safe?When s_c nods, app2 scrambles inside - but inside lurks a sleepy wolverine.",
+                "text": "Oh hey cool, what's this? The apprentices gather round the tunnel, investigating. Hey s_c, does this look safe? When s_c nods, app2 scrambles inside - but inside lurks a sleepy wolverine.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_dead_cat_app_EXPLICIT",
