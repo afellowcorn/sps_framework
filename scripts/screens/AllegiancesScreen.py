@@ -10,6 +10,7 @@ from scripts.utility import (
     ui_scale,
     get_alive_clan_queens,
     ui_scale_offset,
+    adjust_list_text,
 )
 from .Screens import Screens
 
@@ -114,14 +115,14 @@ class AllegiancesScreen(Screens):
         if len(cat.apprentice) == 0:
             return output
 
-        output += f"\n      {i18n.t('general.apprentice', count=len(cat.apprentice)).upper()}:"
-        output += ", ".join(
+        output += f"\n      {i18n.t('general.apprentice', count=len(cat.apprentice)).upper()}: "
+        output += adjust_list_text(
             [
                 str(Cat.fetch_cat(i).name).upper()
                 for i in cat.apprentice
                 if Cat.fetch_cat(i)
             ]
-        )
+        ).upper()
 
         return output
 
