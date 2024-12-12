@@ -1861,7 +1861,7 @@
                 ]
             },
             {
-                "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneth {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole, muddy, panicked, but unharmed.",
+                "text": "p_l turns back just in time to catch a glimpse of app1 disappearing under the soil as the ground collapses beneath {PRONOUN/app1/object}. {PRONOUN/p_l/poss/CAP} yowls bring the rest of the patrol, frantically digging app1 out from the sinkhole, muddy, panicked, but unharmed.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_train_patrolapprenticesessionfail",
