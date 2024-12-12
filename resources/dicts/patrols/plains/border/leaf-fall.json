@@ -1343,7 +1343,7 @@
             ]
         },
         {
-            "text": "Careful consideration is right up s_c's alley. They investigate the tunnel slowly and throughly before {PRONOUN/s_c/subject} give the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use.",
+            "text": "Careful consideration is right up s_c's alley. They investigate the tunnel slowly and throughly before {PRONOUN/s_c/subject} {VERB/s_c/give/gives} the okay for the patrol to mark the new discovery as a useful and safe feature for c_n to use.",
             "exp": 30,
             "weight": 20,
             "art": "gen_warrior_crouching",
