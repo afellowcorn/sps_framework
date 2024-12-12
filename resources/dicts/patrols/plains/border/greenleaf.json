@@ -1417,7 +1417,7 @@
                 ]
             },
             {
-                "text": "It's always valuable to have safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. The patrol carefully marks the burrow. One day, in danger, it might save a Clanmate's life.",
+                "text": "It's always valuable to have a safe place to retreat to near c_n's borders, s_c points out. {PRONOUN/s_c/subject/CAP} {VERB/s_c/check/checks} over the tunnel - the scents inside are long stale, but the construction is still good. The patrol carefully marks the burrow. One day, in danger, it might save a Clanmate's life.",
                 "exp": 40,
                 "weight": 20,
                 "art": "gen_speaking_cat_w3",
