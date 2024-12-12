@@ -317,7 +317,7 @@
                 "stat_skill": ["RUNNER,2", "CLEVER,2", "INSIGHTFUL,2"]
             },
             {
-                "text": "s_c bolts back to camp, easily keeping ahead of the beast, even with the unstable snowy footing. {PRONOUN/s_c/subject/CAP} burst into camp, yowling a warning with plenty of time for c_n to prepare to drive the coyote away.",
+                "text": "s_c bolts back to camp, easily keeping ahead of the beast, even with the unstable snowy footing. {PRONOUN/s_c/subject/CAP} {VERB/s_c/burst/bursts} into camp, yowling a warning with plenty of time for c_n to prepare to drive the coyote away.",
                 "exp": 40,
                 "weight": 20,
                 "art": "running_warrior",
