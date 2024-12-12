@@ -4722,7 +4722,7 @@
                 "outsider_rep": -2
             },
             {
-                "text": "n_c:0 is on c_n's territory. Get off it. Wooooow, n_c:0 replies, rude. Besides, they've only just met, it's a little quick for anyone to get off. s_c blushes with what is definitely <i>only</i> righteous fury. GET OUT!",
+                "text": "n_c:0 is on c_n's territory, and p_l will see {PRONOUN/n_c:0/object} removed. n_c0 suggests that p_l only wants to watch them leave, tail lashing flirtatiously, and p_l's temper snaps. GET OUT!",
                 "exp": 15,
                 "weight": 20,
                 "art": "gen_angry_cat_warrior",
