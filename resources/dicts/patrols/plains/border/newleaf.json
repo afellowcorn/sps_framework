@@ -2720,7 +2720,7 @@
                 ]
             },
             {
-                "text": "Careful, p_l warns. app1 sneers at them, and bounds forward to check out the new discovery, crawling into the hole. p_l is too far away to do anything when the wolverine inside kills {PRONOUN/app1/object}.",
+                "text": "Careful, p_l warns. app1 sneers at {PRONOUN/app1/object}, and bounds forward to check out the new discovery, crawling into the hole. p_l is too far away to do anything when the wolverine inside kills {PRONOUN/app1/object}.",
                 "exp": 30,
                 "weight": 20,
                 "art": "gen_dead_cat_app_ghost_EXPLICIT",
