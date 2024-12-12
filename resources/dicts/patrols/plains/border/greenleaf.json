@@ -338,7 +338,7 @@
         "max_cats": 1,
         "min_max_status": {},
         "weight": 20,
-        "intro_text": "p_l is out at night, enjoying the coolness after the heat of the day, when {PRONOUN/p_l/subject} come across the fresh scent of a coyote. Dangerous - not just to p_l, but to all of c_n.",
+        "intro_text": "p_l is out at night, enjoying the coolness after the heat of the day, when {PRONOUN/p_l/subject} {VERB/p_l/come/comes} across the fresh scent of a coyote. Dangerous - not just to p_l, but to all of c_n.",
         "decline_text": "p_l decides not to pursue such a dangerous creature, especially with the knowledge that coyotes often  feast on cats.",
         "chance_of_success": 20,
         "success_outcomes": [
