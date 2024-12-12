@@ -38,25 +38,31 @@ class Condition_Events:
     resource_directory = "resources/dicts/conditions/"
     current_loaded_lang = None
 
-    with open(f"{resource_directory}illnesses.json", "r") as read_file:
+    with open(
+        f"{resource_directory}illnesses.json", "r", encoding="utf-8"
+    ) as read_file:
         ILLNESSES = ujson.loads(read_file.read())
 
-    with open(f"{resource_directory}injuries.json", "r") as read_file:
+    with open(f"{resource_directory}injuries.json", "r", encoding="utf-8") as read_file:
         INJURIES = ujson.loads(read_file.read())
 
     with open(
-        f"resources/dicts/conditions/permanent_conditions.json", "r"
+        f"resources/dicts/conditions/permanent_conditions.json", "r", encoding="utf-8"
     ) as read_file:
         PERMANENT = ujson.loads(read_file.read())
     # ---------------------------------------------------------------------------- #
     #                                    CHANCE                                    #
     # ---------------------------------------------------------------------------- #
 
-    with open(f"resources/dicts/conditions/illnesses_seasons.json", "r") as read_file:
+    with open(
+        f"resources/dicts/conditions/illnesses_seasons.json", "r", encoding="utf-8"
+    ) as read_file:
         ILLNESSES_SEASON_LIST = ujson.loads(read_file.read())
 
     with open(
-        f"resources/dicts/conditions/event_injuries_distribution.json", "r"
+        f"resources/dicts/conditions/event_injuries_distribution.json",
+        "r",
+        encoding="utf-8",
     ) as read_file:
         INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 

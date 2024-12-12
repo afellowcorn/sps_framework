@@ -35,10 +35,12 @@ def json_load():
     all_cats = []
     clanname = game.switches["clan_list"][0]
     clan_cats_json_path = f"{get_save_dir()}/{clanname}/clan_cats.json"
-    with open(f"resources/dicts/conversion_dict.json", "r") as read_file:
+    with open(
+        f"resources/dicts/conversion_dict.json", "r", encoding="utf-8"
+    ) as read_file:
         convert = ujson.loads(read_file.read())
     try:
-        with open(clan_cats_json_path, "r") as read_file:
+        with open(clan_cats_json_path, "r", encoding="utf-8") as read_file:
             cat_data = ujson.loads(read_file.read())
     except PermissionError as e:
         game.switches["error_message"] = f"Can\t open {clan_cats_json_path}!"
@@ -301,12 +303,16 @@ def csv_load(all_cats):
             get_save_dir() + "/" + game.switches["clan_list"][0] + "cats.csv"
         ):
             with open(
-                get_save_dir() + "/" + game.switches["clan_list"][0] + "cats.csv", "r"
+                get_save_dir() + "/" + game.switches["clan_list"][0] + "cats.csv",
+                "r",
+                encoding="utf-8",
             ) as read_file:
                 cat_data = read_file.read()
         else:
             with open(
-                get_save_dir() + "/" + game.switches["clan_list"][0] + "cats.txt", "r"
+                get_save_dir() + "/" + game.switches["clan_list"][0] + "cats.txt",
+                "r",
+                encoding="utf-8",
             ) as read_file:
                 cat_data = read_file.read()
     if len(cat_data) > 0:

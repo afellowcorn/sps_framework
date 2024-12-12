@@ -16,7 +16,7 @@ def process_json_file(input_path, output_path, lang):
     else:
         data = data
 
-    with open(output_path, "w") as file:
+    with open(output_path, "w", encoding="utf-8") as file:
         ujson.dump(data, file, indent=4)
 
 

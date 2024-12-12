@@ -32,6 +32,7 @@ from scripts.utility import (
 )
 from .Screens import Screens
 from ..cat.history import History
+from ..game_structure.localization import get_new_pronouns
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import ChangeCatName, KillCat, ChangeCatToggles
 from ..housekeeping.datadir import get_save_dir
@@ -294,20 +295,7 @@ class ProfileScreen(Screens):
                 # if the cat is trans then set them to nonbinary
                 elif self.the_cat.genderalign in ["trans female", "trans male"]:
                     self.the_cat.genderalign = "nonbinary"
-                # pronoun handler
-                if self.the_cat.genderalign in ["female", "trans female"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[1].copy()]
-                elif self.the_cat.genderalign in ["male", "trans male"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[2].copy()]
-                elif self.the_cat.genderalign in ["nonbinary"]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]
-                elif self.the_cat.genderalign not in [
-                    "female",
-                    "trans female",
-                    "male",
-                    "trans male",
-                ]:
-                    self.the_cat.pronouns = [self.the_cat.default_pronouns[0].copy()]
+                self.the_cat.pronouns = get_new_pronouns(self.the_cat.genderalign)
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -1143,7 +1131,7 @@ class ProfileScreen(Screens):
             return
 
         try:
-            with open(notes_file_path, "r") as read_file:
+            with open(notes_file_path, "r", encoding="utf-8") as read_file:
                 rel_data = ujson.loads(read_file.read())
                 self.user_notes = i18n.t("screens.profile.user_notes")
                 if str(self.the_cat.ID) in rel_data:

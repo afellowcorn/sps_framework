@@ -105,3 +105,18 @@ def set_lang_config_directory(directory: str):
     global _lang_config_directory, _directory_changed
     _lang_config_directory = directory
     _directory_changed = True
+
+
+def get_default_pronouns(lang=None):
+    if lang is None:
+        lang = i18n.config.get("locale")
+    try:
+        return default_pronouns[lang]
+    except KeyError:
+        temp: Dict[str, Dict[Dict[str, Union[str, int]]]] = load_string_resource(
+            "pronouns.{lang}.json"
+        )
+        default_pronouns[lang] = {
+            key: pronoun_dict for key, pronoun_dict in temp[lang].items()
+        }
+    return default_pronouns[lang]

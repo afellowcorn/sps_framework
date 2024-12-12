@@ -30,20 +30,23 @@ class GenerateEvents:
 
     INJURY_DISTRIBUTION = None
     with open(
-        f"resources/dicts/conditions/event_injuries_distribution.json", "r"
+        f"resources/dicts/conditions/event_injuries_distribution.json",
+        "r",
+        encoding="utf-8",
     ) as read_file:
         INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 
     INJURIES = None
-    with open(f"resources/dicts/conditions/injuries.json", "r") as read_file:
+    with open(
+        f"resources/dicts/conditions/injuries.json", "r", encoding="utf-8"
+    ) as read_file:
         INJURIES = ujson.loads(read_file.read())
 
     @staticmethod
     def get_short_event_dicts(file_path):
         try:
             with open(
-                get_resource_directory() + file_path,
-                "r",
+                get_resource_directory() + file_path, "r", encoding="utf-8"
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -51,6 +54,7 @@ class GenerateEvents:
                 with open(
                     get_resource_directory(fallback=True) + file_path,
                     "r",
+                    encoding="utf-8",
                 ) as read_file:
                     events = ujson.loads(read_file.read())
             except:
@@ -63,10 +67,7 @@ class GenerateEvents:
     def get_ongoing_event_dicts(file_path):
         events = None
         try:
-            with open(
-                file_path,
-                "r",
-            ) as read_file:
+            with open(file_path, "r", encoding="utf-8") as read_file:
                 events = ujson.loads(read_file.read())
         except:
             print(f"ERROR: Unable to load events from biome {file_path}.")
@@ -83,7 +84,7 @@ class GenerateEvents:
     def get_lead_den_event_dicts(event_type: str, success: bool):
         try:
             file_path = f"{get_resource_directory()}leader_den/{'success' if success else 'fail'}/{event_type}.json"
-            with open(file_path, "r") as read_file:
+            with open(file_path, "r", encoding="utf-8") as read_file:
                 events = ujson.loads(read_file.read())
         except:
             events = None

@@ -737,7 +737,9 @@ class Screens:
         try:
             return "dark" if game.settings["dark mode"] else "light"
         except AttributeError:
-            with open("resources/gamesettings.json", "r") as read_file:
+            with open(
+                "resources/gamesettings.json", "r", encoding="utf-8"
+            ) as read_file:
                 _settings = ujson.loads(read_file.read())
                 return "dark" if _settings["dark mode"] else "light"
 

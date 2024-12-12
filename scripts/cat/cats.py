@@ -520,20 +520,6 @@ class Cat:
             self._pronouns[i18n.config.get("locale")] = val
             return
 
-    @property
-    def default_pronouns(self):
-        try:
-            return pronouns.default_pronouns[i18n.config.get("locale")]
-        except KeyError:
-            locale = i18n.config.get("locale")
-            temp: Dict[str, List[Dict[str, Union[str, int]]]] = load_string_resource(
-                "pronouns.{lang}.json"
-            )
-            pronouns.default_pronouns[locale] = {
-                key: pronoun_dict for key, pronoun_dict in temp[locale].items()
-            }
-        return pronouns.default_pronouns[locale]
-
     def get_genderalign_string(self):
         # translate it if it's default
         if self.genderalign in [

@@ -21,9 +21,10 @@ from scripts.utility import (
     ui_scale_value,
     ui_scale_offset,
 )
-from scripts.game_structure.localization import load_string_resource, get_new_pronouns
+from scripts.game_structure.localization import load_string_resource
 from scripts.utility import ui_scale
 from .Screens import Screens
+from ..game_structure import localization as pronouns
 from ..game_structure.screen_settings import MANAGER
 from ..game_structure.windows import PronounCreation
 from ..ui.generate_button import get_button_dict, ButtonStyles
@@ -54,7 +55,7 @@ class ChangeGenderScreen(Screens):
         self.removalbuttons = {}
         self.deletebuttons = {}
         self.addbuttons = {}
-        self.pronoun_template = get_new_pronouns("default")
+        self.pronoun_template = pronouns.get_new_pronouns("default")
         self.remove_button = {}
         self.removalboxes_text = {}
         self.boxes = {}
@@ -433,7 +434,9 @@ class ChangeGenderScreen(Screens):
         pronoun_frame = "resources/images/pronoun_frame.png"
 
         all_pronouns = self.pronouns_dict + [
-            x for x in game.clan.custom_pronouns if x not in Cat.default_pronouns
+            x
+            for x in game.clan.custom_pronouns
+            if x not in pronouns.get_default_pronouns()
         ]
         for pronounset in all_pronouns:
             displayname = (

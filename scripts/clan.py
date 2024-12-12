@@ -80,7 +80,7 @@ class Clan:
         "high_social": ["gracious", "mellow", "logical"],
     }
 
-    with open("resources/placements.json", "r") as read_file:
+    with open("resources/placements.json", "r", encoding="utf-8") as read_file:
         layouts = ujson.loads(read_file.read())
 
     age = 0
@@ -135,7 +135,7 @@ class Clan:
         # Init Settings
         self.clan_settings = {}
         self.setting_lists = {}
-        with open("resources/clansettings.json", "r") as read_file:
+        with open("resources/clansettings.json", "r", encoding="utf-8") as read_file:
             _settings = ujson.loads(read_file.read())
 
         for setting, values in _settings["__other"].items():
@@ -253,9 +253,14 @@ class Clan:
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
             other_clan_names = [str(i.name) for i in self.all_clans] + [game.clan.name]
-            other_clan_name = choice(names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"])
+            other_clan_name = choice(
+                names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"]
+            )
             while other_clan_name in other_clan_names:
-                other_clan_name = choice(names.names_dict["normal_prefixes"] + names.names_dict["clan_prefixes"])
+                other_clan_name = choice(
+                    names.names_dict["normal_prefixes"]
+                    + names.names_dict["clan_prefixes"]
+                )
             other_clan = OtherClan(name=other_clan_name)
             self.all_clans.append(other_clan)
         self.save_clan()
@@ -518,7 +523,7 @@ class Clan:
 
         # OTHER CLANS
         clan_data["other_clans"] = [vars(i) for i in self.all_clans]
-        
+
         clan_data["war"] = self.war
 
         self.save_herbs(game.clan)
@@ -531,7 +536,9 @@ class Clan:
 
         game.safe_save(f"{get_save_dir()}/{self.name}clan.json", clan_data)
 
-        if os.path.exists(get_save_dir() + f"/{self.name}clan.txt") & (self.name != 'current'):
+        if os.path.exists(get_save_dir() + f"/{self.name}clan.txt") & (
+            self.name != "current"
+        ):
             os.remove(get_save_dir() + f"/{self.name}clan.txt")
 
     def switch_setting(self, setting_name):
@@ -843,7 +850,14 @@ class Clan:
 
         if "other_clans" in clan_data:
             for other_clan in clan_data["other_clans"]:
-                game.clan.all_clans.append(OtherClan(other_clan["name"], int(other_clan["relations"]), other_clan["temperament"], other_clan["chosen_symbol"]))
+                game.clan.all_clans.append(
+                    OtherClan(
+                        other_clan["name"],
+                        int(other_clan["relations"]),
+                        other_clan["temperament"],
+                        other_clan["chosen_symbol"],
+                    )
+                )
         else:
             if "other_clan_chosen_symbol" not in clan_data:
                 for name, relation, temper in zip(

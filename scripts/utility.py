@@ -1786,7 +1786,7 @@ def name_repl(m, cat_dict):
 def process_text(text, cat_dict, raise_exception=False):
     """Add the correct name and pronouns into a string."""
     adjust_text = re.sub(
-        r"\{(.*?)\}", lambda x: pronoun_repl(x, cat_dict, raise_exception), text
+        r"(?<!%)\{(.*?)}", lambda x: pronoun_repl(x, cat_dict, raise_exception), text
     )
 
     name_patterns = [r"(?<!\{)" + re.escape(l) + r"(?!\})" for l in cat_dict]
@@ -2420,7 +2420,7 @@ def ceremony_text_adjust(
 def get_pronouns(Cat: "Cat"):
     """Get a cat's pronoun even if the cat has faded to prevent crashes (use gender-neutral pronouns when the cat has faded)"""
     if Cat.pronouns == {}:
-        return Cat.default_pronouns[0]
+        return localization.get_new_pronouns("default")
     else:
         return choice(Cat.pronouns)
 
@@ -2929,7 +2929,9 @@ def quit(savesettings=False, clearevents=False):
     sys_exit()
 
 
-with open(f"resources/dicts/conditions/permanent_conditions.json", "r") as read_file:
+with open(
+    f"resources/dicts/conditions/permanent_conditions.json", "r", encoding="utf-8"
+) as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
 langs = {"snippet": None, "prey": None}
@@ -2937,5 +2939,5 @@ langs = {"snippet": None, "prey": None}
 SNIPPETS = None
 PREY_LISTS = None
 
-with open(f"resources/dicts/backstories.json", "r") as read_file:
+with open(f"resources/dicts/backstories.json", "r", encoding="utf-8") as read_file:
     BACKSTORIES = ujson.loads(read_file.read())

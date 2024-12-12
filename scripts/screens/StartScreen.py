@@ -329,7 +329,9 @@ class StartScreen(Screens):
                     show_popup = True
                     if os.path.exists(f"{get_cache_dir()}/suppress_update_popup"):
                         with open(
-                            f"{get_cache_dir()}/suppress_update_popup", "r"
+                            f"{get_cache_dir()}/suppress_update_popup",
+                            "r",
+                            encoding="utf-8",
                         ) as read_file:
                             if read_file.readline() == get_latest_version_number():
                                 show_popup = False
@@ -351,7 +353,9 @@ class StartScreen(Screens):
             show_changelog = True
             lastCommit = "0000000000000000000000000000000000000000"
             if os.path.exists(f"{get_cache_dir()}/changelog_popup_shown"):
-                with open(f"{get_cache_dir()}/changelog_popup_shown") as read_file:
+                with open(
+                    f"{get_cache_dir()}/changelog_popup_shown", encoding="utf-8"
+                ) as read_file:
                     lastCommit = read_file.readline()
                     if lastCommit == get_version_info().version_number:
                         show_changelog = False
@@ -359,7 +363,7 @@ class StartScreen(Screens):
             if show_changelog:
                 ChangelogPopup(game.switches["last_screen"])
                 with open(
-                    f"{get_cache_dir()}/changelog_popup_shown", "w"
+                    f"{get_cache_dir()}/changelog_popup_shown", "w", encoding="utf-8"
                 ) as write_file:
                     write_file.write(get_version_info().version_number)
 
