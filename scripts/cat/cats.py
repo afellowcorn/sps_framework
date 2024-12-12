@@ -529,9 +529,9 @@ class Cat:
             temp: Dict[str, List[Dict[str, Union[str, int]]]] = load_string_resource(
                 "pronouns.{lang}.json"
             )
-            pronouns.default_pronouns[locale] = [
-                pronoun_dict for pronoun_dict in temp[locale].values()
-            ]
+            pronouns.default_pronouns[locale] = {
+                key: pronoun_dict for key, pronoun_dict in temp[locale].items()
+            }
         return pronouns.default_pronouns[locale]
 
     def get_genderalign_string(self):
@@ -3537,7 +3537,9 @@ class Cat:
                 "favourite": self.favourite,
             }
 
-    def determine_next_and_previous_cats(self, status: List[str] = None, exclude_status: List[str] = None):
+    def determine_next_and_previous_cats(
+        self, status: List[str] = None, exclude_status: List[str] = None
+    ):
         """Determines where the next and previous buttons point to, relative to this cat.
 
         :param status: Allows you to constrain the list by status

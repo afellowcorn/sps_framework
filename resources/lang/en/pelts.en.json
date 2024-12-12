@@ -4,6 +4,7 @@
             "one": "pale",
             "many": "pale"
         },
+        "FULLWHITE": "white",
         "PALEGREY": {
             "one": "gray",
             "many": "pale gray"
@@ -76,6 +77,10 @@
             "one": "brown",
             "many": "dark brown"
         },
+        "SingleColour": "single color",
+        "SingleColour_long": "%{color}",
+        "TwoColour": "%{color}",
+        "TwoColour_long": "%{color}",
         "Tabby": "Tabby",
         "Tabby_long": "%{color} tabby",
         "Speckled": "Speckled",
@@ -102,13 +107,13 @@
         "Sokoke_long": "%{color} tabby",
         "Masked": "Masked",
         "Masked_long": "masked %{color} tabby",
-        "tabby_base": " tabby",
         "Calico": "calico",
+        "Calico_tabby": "calico tabby",
         "Tortie": "tortie",
-        "mottled": {
-            "one": "mottled",
-            "many": "%{patches} mottled %{color}"
-        },
+        "Tortie_tabby": "tortie tabby",
+        "mottled": "mottled",
+        "mottled_long": "%{color} mottled",
+        "point": "%{color} point",
         "NOTAIL": "no tail",
         "HALFTAIL": "half a tail",
         "NOPAW": "three legs",
@@ -116,8 +121,8 @@
         "NORIGHTEAR": "a missing ear",
         "NOEAR": "no ears",
         "vitiligo": "vitiligo",
-        "long_furred": "long-furred %{color}",
-        "scarred": "scarred %{color}",
+        "long_furred": "long-furred",
+        "scarred": "scarred",
         "fur_short": "short",
         "fur_medium": "medium",
         "fur_long": "long"

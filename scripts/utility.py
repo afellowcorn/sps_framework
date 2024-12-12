@@ -28,7 +28,6 @@ logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache, localization
 from scripts.cat.history import History
 from scripts.cat.names import names
-from scripts.cat.pelts import Pelt
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 import scripts.game_structure.screen_settings  # must be done like this to get updates when we change screen size etc
@@ -819,7 +818,7 @@ def create_new_cat(
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
                 if bool(getrandbits(1)):
-                    accessory = choice(Pelt.collars)
+                    accessory = choice(Cat.pelt.collars)
             elif loner and bool(
                 getrandbits(1)
             ):  # try to give name from full loner name list

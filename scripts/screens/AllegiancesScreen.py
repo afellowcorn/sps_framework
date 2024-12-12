@@ -269,8 +269,7 @@ class AllegiancesScreen(Screens):
         # Elder Box:
         if living_elders:
             _box = ["", ""]
-            if len(living_elders) == 1:
-                _box[0] = f"<b><u>{i18n.t('general.elder', count=2).upper()}</u></b>"
+            _box[0] = f"<b><u>{i18n.t('general.elder', count=2).upper()}</u></b>"
 
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_elders])
             outputs.append(_box)

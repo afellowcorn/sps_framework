@@ -21,7 +21,7 @@ from scripts.utility import (
     ui_scale_value,
     ui_scale_offset,
 )
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_string_resource, get_new_pronouns
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
@@ -54,7 +54,7 @@ class ChangeGenderScreen(Screens):
         self.removalbuttons = {}
         self.deletebuttons = {}
         self.addbuttons = {}
-        self.pronoun_template = Cat().default_pronouns[0]
+        self.pronoun_template = get_new_pronouns("default")
         self.remove_button = {}
         self.removalboxes_text = {}
         self.boxes = {}

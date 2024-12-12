@@ -662,7 +662,7 @@ class MakeClanScreen(Screens):
             if self.selected_cat.age in ["newborn", "kitten", "adolescent"]:
                 self.elements["select_cat"].hide()
                 self.elements["error_message"].set_text(
-                    self.elements["error_message"].text,
+                    self.elements["error_message"].html_text,
                     text_kwargs={"m_c": self.selected_cat},
                 )
                 self.elements["error_message"].show()
