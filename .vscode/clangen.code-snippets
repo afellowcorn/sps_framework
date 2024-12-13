@@ -1,0 +1,36 @@
+{
+  "Clangen patrol template (minimal)": {
+    "prefix": "clangen-patrol-minimal",
+    "scope": "json",
+    "body": [
+      "{",
+      "    \"patrol_id\": \"$1\",",
+      "    \"biome\": [$2],",
+      "    \"season\": [$3],",
+      "    \"types\": [$4],",
+      "    \"tags\": [$5],",
+      "    \"patrol_art\": ${6:null},",
+      "    \"min_cats\": ${7:1},",
+      "    \"max_cats\": ${8:6},",
+      "    \"weight\": ${9:20},",
+      "    \"chance_of_success\": ${10:50},",
+      "    \"intro_text\": \"$11\",",
+      "    \"decline_text\": \"$12\",",
+      "    \"success_outcomes\": [$13],",
+      "    \"fail_outcomes\": [$14]",
+      "}"
+    ],
+    "description": "Clangen patrol template, with only the required fields."
+  },
+  "Clangen outcome template (minimal)": {
+    "prefix": "clangen-patrol-outcome-minimal",
+    "body": [
+      "{",
+      "    \"text\": \"$1\",",
+      "    \"exp\": ${2:0},",
+      "    \"weight\": ${3:20}",
+      "}"
+    ],
+    "description": "Clangen outcome template, with only the required fields."
+  }
+}
