@@ -38,7 +38,9 @@ class RomanticEvents:
     current_loaded_lang = None
     ROMANTIC_EVENTS: Dict = {}
     ROMANTIC_INTERACTIONS: Dict = {}
-    MATE_INTERACTIONS = []
+    MATE_INTERACTIONS: Dict[str, List] = {}
+    MATE_RELEVANT_INTERACTIONS: Dict[str, Dict[str, List]] = {}
+    ROMANTIC_RELEVANT_INTERACTIONS: Dict[str, Dict[str, List]] = {}
 
     @classmethod
     def rebuild_dicts(cls):
@@ -95,8 +97,9 @@ class RomanticEvents:
             )
 
         # resort the first generated overview dictionary to only "positive" and "negative" interactions
-        cls.MATE_INTERACTIONS: Dict[str, List] = {"positive": [], "negative": []}
+        cls.MATE_INTERACTIONS = {"positive": [], "negative": []}
         for val_type, dictionary in cls.MATE_RELEVANT_INTERACTIONS.items():
+            # pylint: disable = invalid-sequence-index
             if val_type in ["jealousy", "dislike"]:
                 cls.MATE_INTERACTIONS["positive"].extend(dictionary["decrease"])
                 cls.MATE_INTERACTIONS["negative"].extend(dictionary["increase"])
@@ -137,15 +140,15 @@ class RomanticEvents:
                     if "romantic" in tag
                 ]
 
-            # resort the first generated overview dictionary to only "positive" and "negative" interactions
-            cls.ROMANTIC_INTERACTIONS = {"positive": [], "negative": []}
-            for val_type, dictionary in cls.ROMANTIC_RELEVANT_INTERACTIONS.items():
-                if val_type in ["jealousy", "dislike"]:
-                    cls.ROMANTIC_INTERACTIONS["positive"].extend(dictionary["decrease"])
-                    cls.ROMANTIC_INTERACTIONS["negative"].extend(dictionary["increase"])
-                else:
-                    cls.ROMANTIC_INTERACTIONS["positive"].extend(dictionary["increase"])
-                    cls.ROMANTIC_INTERACTIONS["negative"].extend(dictionary["decrease"])
+        # resort the first generated overview dictionary to only "positive" and "negative" interactions
+        cls.ROMANTIC_INTERACTIONS = {"positive": [], "negative": []}
+        for val_type, dictionary in cls.ROMANTIC_RELEVANT_INTERACTIONS.items():
+            if val_type in ["jealousy", "dislike"]:
+                cls.ROMANTIC_INTERACTIONS["positive"].extend(dictionary["decrease"])
+                cls.ROMANTIC_INTERACTIONS["negative"].extend(dictionary["increase"])
+            else:
+                cls.ROMANTIC_INTERACTIONS["positive"].extend(dictionary["increase"])
+                cls.ROMANTIC_INTERACTIONS["negative"].extend(dictionary["decrease"])
 
     @staticmethod
     def start_interaction(cat_from, cat_to):
