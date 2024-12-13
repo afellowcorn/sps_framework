@@ -11,7 +11,7 @@ from scripts.utility import (
     change_relationship_values,
     event_text_adjust,
 )
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 
 
 class Welcoming_Events:
@@ -158,13 +158,13 @@ class Welcoming_Events:
                 continue
             status = file.split(".")[0]
             WELCOMING_MASTER_DICT[status] = create_welcome_interaction(
-                load_string_resource(
+                load_lang_resource(
                     f"events/relationship_events/welcoming_events/{file}"
                 )
             )
 
         GENERAL_WELCOMING = create_welcome_interaction(
-            load_string_resource(
+            load_lang_resource(
                 "events/relationship_events/welcoming_events/general.json"
             )
         )

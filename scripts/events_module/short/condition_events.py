@@ -24,7 +24,7 @@ from scripts.utility import (
     get_alive_status_cats,
     get_leader_life_notice,
 )
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 
 
 # ---------------------------------------------------------------------------- #
@@ -120,7 +120,7 @@ class Condition_Events:
         ]
 
         for class_property, file in resources:
-            setattr(cls, class_property, load_string_resource(f"conditions/{file}"))
+            setattr(cls, class_property, load_lang_resource(f"conditions/{file}"))
 
     @staticmethod
     def handle_nutrient(cat: Cat, nutrition_info: dict) -> None:

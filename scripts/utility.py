@@ -20,7 +20,7 @@ import ujson
 from pygame_gui.core import ObjectID
 
 from scripts.game_structure.localization import (
-    load_string_resource,
+    load_lang_resource,
     determine_plural_pronouns,
 )
 
@@ -1737,10 +1737,11 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
         return m.group(0)
 
     inner_details = m.group(1).split("/")
+    out = None
 
     try:
         if inner_details[1].upper() == "PLURAL":
-            inner_details.pop(1)
+            inner_details.pop(1)  # remove plural tag so it can be processed as normal
             catlist = []
             for cat in inner_details[1].split("+"):
                 try:
@@ -1750,16 +1751,33 @@ def pronoun_repl(m, cat_pronouns_dict, raise_exception=False):
                     continue
             d = determine_plural_pronouns(catlist)
         else:
-            d = cat_pronouns_dict[inner_details[1]][1]
+            try:
+                d = cat_pronouns_dict[inner_details[1]][1]
+            except KeyError:
+                if inner_details[0].upper() == "ADJ":
+                    # find the default - this is a semi-expected behaviour for the adj tag as it may be called when
+                    # there is no relevant cat
+                    return inner_details[localization.get_default_adj()]
+                else:
+                    logger.warning(
+                        f"Could not get pronouns for {inner_details[1]}. Using default."
+                    )
+                    print(
+                        f"Could not get pronouns for {inner_details[1]}. Using default."
+                    )
+                    d = choice(localization.get_new_pronouns("default"))
+
         if inner_details[0].upper() == "PRONOUN":
-            pro = d[inner_details[2]]
-            if inner_details[-1] == "CAP":
-                pro = pro.capitalize()
-            return pro
+            out = d[inner_details[2]]
         elif inner_details[0].upper() == "VERB":
-            return inner_details[d["conju"] + 1]
+            out = inner_details[d["conju"] + 1]
         elif inner_details[0].upper() == "ADJ":
-            return inner_details[(d["gender"] + 2) if "gender" in d else 2]
+            out = inner_details[(d["gender"] + 2) if "gender" in d else 2]
+
+        if out is not None:
+            if inner_details[-1] == "CAP":
+                out = out.capitalize()
+            return out
 
         if raise_exception:
             raise KeyError(
@@ -1826,7 +1844,7 @@ def adjust_prey_abbr(patrol_text):
     global PREY_LISTS
     if langs["prey"] != i18n.config.get("locale"):
         langs["prey"] = i18n.config.get("locale")
-        PREY_LISTS = load_string_resource("patrols/prey_text_replacements.json")
+        PREY_LISTS = load_lang_resource("patrols/prey_text_replacements.json")
 
     for abbr in PREY_LISTS["abbreviations"]:
         if abbr in patrol_text:
@@ -1863,7 +1881,7 @@ def get_special_snippet_list(
     global SNIPPETS
     if langs["snippet"] != i18n.config.get("locale"):
         langs["snippet"] = i18n.config.get("locale")
-        SNIPPETS = load_string_resource("snippet_collections.json")
+        SNIPPETS = load_lang_resource("snippet_collections.json")
 
     # these lists don't get sense specific snippets, so is handled first
     if chosen_list in ["dream_list", "story_list"]:

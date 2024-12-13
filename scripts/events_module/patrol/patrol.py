@@ -27,7 +27,7 @@ from scripts.utility import (
     get_special_snippet_list,
     adjust_list_text,
 )
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
@@ -55,6 +55,26 @@ class Patrol:
 
         # Holds new cats for easy access
         self.new_cats: List[List[Cat]] = []
+
+        # the patrols
+        self.HUNTING_SZN = None
+        self.HUNTING = None
+        self.TRAINING_SZN = None
+        self.TRAINING = None
+        self.BORDER_SZN = None
+        self.BORDER = None
+        self.MEDCAT_SZN = None
+        self.MEDCAT = None
+        self.NEW_CAT = None
+        self.NEW_CAT_HOSTILE = None
+        self.NEW_CAT_WELCOMING = None
+        self.OTHER_CLAN = None
+        self.OTHER_CLAN_HOSTILE = None
+        self.OTHER_CLAN_ALLIES = None
+        self.HUNTING_GEN = None
+        self.BORDER_GEN = None
+        self.TRAINING_GEN = None
+        self.MEDCAT_GEN = None
 
     def setup_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
         # Add cats
@@ -801,7 +821,7 @@ class Patrol:
         for patrol_property, location in resources:
             try:
                 setattr(
-                    self, patrol_property, load_string_resource(f"patrols/{location}")
+                    self, patrol_property, load_lang_resource(f"patrols/{location}")
                 )
             except:
                 raise Exception("Something went wrong loading patrols!")
@@ -953,7 +973,7 @@ class Patrol:
                 pronoun = choice(new_cats[0].pronouns)
             else:
                 names = adjust_list_text([str(cat.name) for cat in new_cats])
-                pronoun = pronouns.get_new_pronouns("default plural")
+                pronoun = localization.get_new_pronouns("default plural")
 
             replace_dict[f"n_c:{i}"] = (names, pronoun)
 

@@ -20,7 +20,7 @@ from scripts.utility import (
     get_personality_compatibility,
     process_text,
 )
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 
 
 class RomanticEvents:
@@ -59,7 +59,7 @@ class RomanticEvents:
             setattr(
                 cls,
                 resource,
-                load_string_resource(f"events/relationship_events/{location}"),
+                load_lang_resource(f"events/relationship_events/{location}"),
             )
 
         RomanticEvents.current_loaded_lang = i18n.config.get("locale")

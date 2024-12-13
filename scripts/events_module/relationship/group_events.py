@@ -17,7 +17,7 @@ from scripts.utility import (
     change_relationship_values,
     process_text,
 )
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 
 
 class GroupEvents:
@@ -43,7 +43,7 @@ class GroupEvents:
                 cls.GROUP_INTERACTION_MASTER_DICT[cat_amount][
                     file[:-5]
                 ] = create_group_interaction(
-                    load_string_resource(f"{directory}/{cat_amount}/{file}")
+                    load_lang_resource(f"{directory}/{cat_amount}/{file}")
                 )
 
     @staticmethod

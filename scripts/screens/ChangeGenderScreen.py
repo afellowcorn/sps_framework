@@ -21,7 +21,7 @@ from scripts.utility import (
     ui_scale_value,
     ui_scale_offset,
 )
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..game_structure import localization as pronouns
@@ -117,7 +117,7 @@ class ChangeGenderScreen(Screens):
 
     def screen_switches(self):
         super().screen_switches()
-        temp = load_string_resource("pronouns.{lang}.json")
+        temp = load_lang_resource("pronouns.{lang}.json")
         self.pronouns_dict = [
             pronoun_dict for pronoun_dict in temp[next(iter(temp))].values()
         ]

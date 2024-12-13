@@ -42,7 +42,7 @@ from scripts.utility import (
     update_sprite,
     leader_ceremony_text_adjust,
 )
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 
 import scripts.game_structure.localization as pronouns
 
@@ -3605,7 +3605,7 @@ def load_grief_reactions():
     global MINOR_MAJOR_REACTION, grief_lang
     if grief_lang == i18n.config.get("locale"):
         return
-    MINOR_MAJOR_REACTION = load_string_resource(
+    MINOR_MAJOR_REACTION = load_lang_resource(
         "events/death/death_reactions/minor_major.json"
     )
     grief_lang = i18n.config.get("locale")
@@ -3622,8 +3622,8 @@ def load_leader_ceremonies():
     global LEAD_CEREMONY_SC, LEAD_CEREMONY_DF, lead_ceremony_lang
     if lead_ceremony_lang == i18n.config.get("locale"):
         return
-    LEAD_CEREMONY_SC = load_string_resource("events/lead_ceremony_sc.json")
-    LEAD_CEREMONY_DF = load_string_resource("events/lead_ceremony_df.json")
+    LEAD_CEREMONY_SC = load_lang_resource("events/lead_ceremony_sc.json")
+    LEAD_CEREMONY_DF = load_lang_resource("events/lead_ceremony_df.json")
     lead_ceremony_lang = i18n.config.get("locale")
 
 

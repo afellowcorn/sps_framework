@@ -19,7 +19,7 @@ from scripts.utility import (
     get_alive_status_cats,
     adjust_list_text,
 )
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 
 
 class Pregnancy_Events:
@@ -33,7 +33,7 @@ class Pregnancy_Events:
     def rebuild_strings():
         if Pregnancy_Events.currently_loaded_lang == i18n.config.get("locale"):
             return
-        Pregnancy_Events.PREGNANT_STRINGS = load_string_resource(
+        Pregnancy_Events.PREGNANT_STRINGS = load_lang_resource(
             "conditions/pregnancy.json"
         )
         Pregnancy_Events.currently_loaded_lang = i18n.config.get("locale")

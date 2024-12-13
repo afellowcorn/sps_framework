@@ -1,4 +1,4 @@
-from typing import List, Dict, Union, TYPE_CHECKING, Optional, Tuple
+from typing import List, Dict, Union, Optional
 
 import i18n
 import i18n.translations
@@ -32,7 +32,7 @@ def get_new_pronouns(genderalign: str) -> List[Dict[str, Union[str, int]]]:
     try:
         return [default_pronouns[locale][pronouns]]
     except KeyError:
-        temp = load_string_resource("pronouns.{lang}.json")
+        temp = load_lang_resource("pronouns.{lang}.json")
         default_pronouns[locale] = temp[locale]
     return [default_pronouns[locale][pronouns]]
 
@@ -53,12 +53,22 @@ def determine_plural_pronouns(cat_list: List[Dict[str, Union[str, int]]]):
     return get_new_pronouns("plural default")[0]
 
 
-def load_string_resource(location: str, *, root_directory="resources/lang/"):
+def get_default_adj():
     """
-    Get a string resource from the resources/lang folder for the loaded language
-    :param location: If the language code is required, substitute `{lang}`. Relative location from the resources/lang/[language]/ folder. do not include slash.
-    :param root_directory: pretty much just for testing, allows you to change where it looks for the specified resource.
-    :return: Whatever resource was there
+
+    :return: string representing the default adjective
+    """
+    return get_lang_config()["pronouns"]["adj_default"]
+
+
+def load_lang_resource(location: str, *, root_directory="resources/lang/"):
+    """
+    Get a resource from the resources/lang folder for the loaded language
+    :param location: If the language code is required, substitute `{lang}`. Relative location
+    from the resources/lang/[language]/ folder. Don't include a slash.
+    :param root_directory: for testing only.
+    :return: Whatever resource was there, from either the locale or fallback
+    :exception FileNotFoundError: If requested resource doesn't exist in selected locale or fallback
     """
     resource_directory = f"{root_directory}{i18n.config.get('locale')}/"
     fallback_directory = f"{root_directory}{i18n.config.get('fallback')}/"
@@ -113,7 +123,7 @@ def get_default_pronouns(lang=None):
     try:
         return default_pronouns[lang]
     except KeyError:
-        temp: Dict[str, Dict[Dict[str, Union[str, int]]]] = load_string_resource(
+        temp: Dict[str, Dict[Dict[str, Union[str, int]]]] = load_lang_resource(
             "pronouns.{lang}.json"
         )
         default_pronouns[lang] = {

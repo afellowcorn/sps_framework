@@ -13,7 +13,7 @@ from scripts.utility import (
     get_living_clan_cat_count,
     get_alive_status_cats,
 )
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 
 
 def get_resource_directory(fallback=False):
@@ -76,7 +76,7 @@ class GenerateEvents:
 
     @staticmethod
     def get_death_reaction_dicts(family_relation, rel_value):
-        return load_string_resource(
+        return load_lang_resource(
             f"events/death/death_reactions/{family_relation}/{family_relation}_{rel_value}.json"
         )
 

@@ -48,7 +48,7 @@ from scripts.utility import (
     history_text_adjust,
     unpack_rel_block,
 )
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 
 
 class Events:
@@ -527,11 +527,13 @@ class Events:
             # 1/10 chance
             if not int(random.random() * 10):
                 random_cat = get_random_moon_cat(Cat, main_cat=cat)
-                handle_short_events.handle_event(event_type="misc",
-                                                 main_cat=cat,
-                                                 random_cat=random_cat,
-                                                 sub_type=["mediator"],
-                                                 freshkill_pile=game.clan.freshkill_pile)
+                handle_short_events.handle_event(
+                    event_type="misc",
+                    main_cat=cat,
+                    random_cat=random_cat,
+                    sub_type=["mediator"],
+                    freshkill_pile=game.clan.freshkill_pile,
+                )
 
         if game.clan.clan_settings["become_mediator"]:
             # Note: These chances are large since it triggers every moon.
@@ -1239,7 +1241,7 @@ class Events:
     def load_war_resources(self):
         if Events.war_lang == i18n.config.get("locale"):
             return
-        self.WAR_TXT = load_string_resource("events/war.json")
+        self.WAR_TXT = load_lang_resource("events/war.json")
         Events.war_lang = i18n.config.get("locale")
 
     def check_war(self):
@@ -1584,9 +1586,7 @@ class Events:
         if Events.ceremony_lang == i18n.config.get("locale"):
             return
 
-        self.CEREMONY_TXT = load_string_resource(
-            "events/ceremonies/ceremony-master.json"
-        )
+        self.CEREMONY_TXT = load_lang_resource("events/ceremonies/ceremony-master.json")
 
         self.ceremony_id_by_tag = {}
         # Sorting.
@@ -1794,7 +1794,7 @@ class Events:
         # getting the random honor if it's needed
         random_honor = None
         if promoted_to in ["warrior", "mediator", "medicine cat"]:
-            traits = load_string_resource("events/ceremonies/ceremony_traits.json")
+            traits = load_lang_resource("events/ceremonies/ceremony_traits.json")
 
             try:
                 random_honor = random.choice(traits[cat.personality.trait])

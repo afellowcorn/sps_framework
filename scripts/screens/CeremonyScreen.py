@@ -12,7 +12,6 @@ from .Screens import Screens
 from ..cat.history import History
 from ..game_structure.screen_settings import MANAGER
 from ..ui.generate_button import ButtonStyles, get_button_dict
-from ..ui.get_arrow import get_arrow
 
 
 class CeremonyScreen(Screens):

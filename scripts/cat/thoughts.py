@@ -3,7 +3,7 @@ from random import choice
 
 import i18n
 
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 
 
 class Thoughts:
@@ -365,14 +365,14 @@ class Thoughts:
         # newborns only pull from their status thoughts. this is done for convenience
         try:
             if main_cat.age == "newborn":
-                loaded_thoughts = load_string_resource(
+                loaded_thoughts = load_lang_resource(
                     f"thoughts/{life_dir}{spec_dir}/newborn.json"
                 )
             else:
-                thoughts = load_string_resource(
+                thoughts = load_lang_resource(
                     f"thoughts/{life_dir}{spec_dir}/{status}.json"
                 )
-                genthoughts = load_string_resource(
+                genthoughts = load_lang_resource(
                     f"thoughts/{life_dir}{spec_dir}/general.json"
                 )
                 loaded_thoughts = thoughts + genthoughts
@@ -428,11 +428,11 @@ class Thoughts:
         THOUGHTS: []
         try:
             if lives_left > 0:
-                loaded_thoughts = load_string_resource(
+                loaded_thoughts = load_lang_resource(
                     f"thoughts/ondeath{spec_dir}/leader_life.json"
                 )
             else:
-                loaded_thoughts = load_string_resource(
+                loaded_thoughts = load_lang_resource(
                     f"thoughts/ondeath{spec_dir}/leader_death.json"
                 )
             thought_group = choice(
@@ -457,7 +457,7 @@ class Thoughts:
             spec_dir = "/darkforest"
         THOUGHTS: []
         try:
-            loaded_thoughts = load_string_resource(
+            loaded_thoughts = load_lang_resource(
                 f"thoughts/ondeath{spec_dir}/general.json"
             )
             thought_group = choice(

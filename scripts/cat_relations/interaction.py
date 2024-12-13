@@ -1,6 +1,6 @@
 import i18n
 
-from scripts.game_structure.localization import load_string_resource
+from scripts.game_structure.localization import load_lang_resource
 
 
 class SingleInteraction:
@@ -428,18 +428,18 @@ def rebuild_relationship_dicts():
 
     for rel in rel_types:
         INTERACTION_MASTER_DICT[rel]["increase"] = create_interaction(
-            load_string_resource(
+            load_lang_resource(
                 f"events/relationship_events/normal_interactions/{rel}/increase.json"
             )
         )
         INTERACTION_MASTER_DICT[rel]["decrease"] = create_interaction(
-            load_string_resource(
+            load_lang_resource(
                 f"events/relationship_events/normal_interactions/{rel}/decrease.json"
             )
         )
 
     NEUTRAL_INTERACTIONS = create_interaction(
-        load_string_resource(
+        load_lang_resource(
             f"events/relationship_events/normal_interactions/neutral.json"
         )
     )
