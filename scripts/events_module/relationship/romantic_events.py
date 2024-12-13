@@ -1,7 +1,7 @@
 import random
 from copy import deepcopy
 from random import choice
-from typing import Dict
+from typing import Dict, List
 
 import i18n
 
@@ -76,7 +76,7 @@ class RomanticEvents:
         # ---------------------------------------------------------------------------- #
 
         # Use the overall master interaction dictionary and filter for mate tag
-        cls.MATE_RELEVANT_INTERACTIONS = {}
+        cls.MATE_RELEVANT_INTERACTIONS: Dict[str, Dict[str, List]] = {}
         for val_type, dictionary in interactions.INTERACTION_MASTER_DICT.items():
             cls.MATE_RELEVANT_INTERACTIONS[val_type] = {}
             cls.MATE_RELEVANT_INTERACTIONS[val_type]["increase"] = list(
@@ -95,7 +95,7 @@ class RomanticEvents:
             )
 
         # resort the first generated overview dictionary to only "positive" and "negative" interactions
-        cls.MATE_INTERACTIONS = {"positive": [], "negative": []}
+        cls.MATE_INTERACTIONS: Dict[str, List] = {"positive": [], "negative": []}
         for val_type, dictionary in cls.MATE_RELEVANT_INTERACTIONS.items():
             if val_type in ["jealousy", "dislike"]:
                 cls.MATE_INTERACTIONS["positive"].extend(dictionary["decrease"])

@@ -1,5 +1,6 @@
 import random
 from random import choice, randint
+from typing import Dict
 
 import i18n
 
@@ -26,8 +27,8 @@ class Pregnancy_Events:
     """All events which are related to pregnancy such as kitting and defining who are the parents."""
 
     biggest_family = {}
-    PREGNANT_STRINGS = None
-    currently_loaded_lang = None
+    PREGNANT_STRINGS: Dict = None
+    currently_loaded_lang: str = None
 
     @staticmethod
     def rebuild_strings():

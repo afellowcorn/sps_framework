@@ -1,5 +1,6 @@
 import random
 from copy import deepcopy
+from typing import Dict
 
 import i18n
 import ujson
@@ -70,16 +71,16 @@ class Condition_Events:
     #                                   STRINGS                                    #
     # ---------------------------------------------------------------------------- #
 
-    PERM_CONDITION_RISK_STRINGS = None
-    ILLNESS_RISK_STRINGS = None
-    INJURY_RISK_STRINGS = None
-    CONGENITAL_CONDITION_GOT_STRINGS = None
-    PERMANENT_CONDITION_GOT_STRINGS = None
-    ILLNESS_GOT_STRINGS = None
-    ILLNESS_HEALED_STRINGS = None
-    INJURY_HEALED_STRINGS = None
-    INJURY_DEATH_STRINGS = None
-    ILLNESS_DEATH_STRINGS = None
+    PERM_CONDITION_RISK_STRINGS: Dict = None
+    ILLNESS_RISK_STRINGS: Dict = None
+    INJURY_RISK_STRINGS: Dict = None
+    CONGENITAL_CONDITION_GOT_STRINGS: Dict = None
+    PERMANENT_CONDITION_GOT_STRINGS: Dict = None
+    ILLNESS_GOT_STRINGS: Dict = None
+    ILLNESS_HEALED_STRINGS: Dict = None
+    INJURY_HEALED_STRINGS: Dict = None
+    INJURY_DEATH_STRINGS: Dict = None
+    ILLNESS_DEATH_STRINGS: Dict = None
 
     @classmethod
     def rebuild_strings(cls):
