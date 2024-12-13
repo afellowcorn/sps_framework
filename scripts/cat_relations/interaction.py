@@ -88,7 +88,7 @@ class GroupInteraction:
         self.interactions = (
             interactions
             if interactions
-            else [i18n.t("defaults.single_interaction", id=interact_id)]
+            else [i18n.t("defaults.interaction", id=interact_id)]
         )
         self.get_injuries = get_injuries if get_injuries else {}
         self.has_injuries = has_injuries if has_injuries else {}
