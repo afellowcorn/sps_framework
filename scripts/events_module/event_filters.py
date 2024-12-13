@@ -30,6 +30,7 @@ def event_for_location(locations: list) -> bool:
                 return True
             else:
                 return False
+            
         return False
 
 
@@ -41,6 +42,7 @@ def event_for_season(seasons: list) -> bool:
         return True
     elif game.clan.current_season.lower() in seasons:
         return True
+
     return False
 
 
@@ -126,6 +128,7 @@ def event_for_reputation(required_rep: list) -> bool:
         return True
     elif "welcoming" in required_rep and 71 <= clan_rep:
         return True
+
     return False
 
 
@@ -144,6 +147,7 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
         return True
     elif "ally" in required_rel and 18 <= current_rel:
         return True
+
     return False
 
 
@@ -218,6 +222,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
         elif "excess" in trigger and len(
                 [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]) == num_of_herbs:
             return True
+
         return False
 
     elif supply_type == "any_herb":
@@ -229,6 +234,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
             return True
         elif "excess" in trigger and [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]:
             return True
+
         return False
 
     else:
@@ -244,6 +250,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
             return True
         elif "excess" in trigger and needed_amount * 2 < herb_supply[chosen_herb]:
             return True
+
         return False
 
 
@@ -291,6 +298,7 @@ def _check_cat_age(cat, ages: list) -> bool:
 
     if cat.age in ages:
         return True
+
     return False
 
 
@@ -303,6 +311,7 @@ def _check_cat_status(cat, statuses: list) -> bool:
 
     if cat.status in statuses:
         return True
+
     return False
 
 
@@ -314,11 +323,20 @@ def _check_cat_trait(cat, traits: list, not_traits: list) -> bool:
         return True
 
     cat_trait = cat.personality.trait
+    allowed = False
 
-    if cat_trait in traits and cat_trait not in not_traits:
-        return True
-    else:
-        return False
+    if traits:
+        if cat_trait in traits:
+            allowed = True
+        else:
+            return False
+    if not_traits:
+        if cat_trait in not_traits:
+            allowed = False
+        else:
+            return True
+
+    return allowed
 
 
 def _check_cat_skills(cat, skills: list, not_skills: list) -> bool:
@@ -385,7 +403,7 @@ def _check_cat_gender(cat, genders: list) -> bool:
 
     if cat.gender in genders:
         return True
-    
+
     return False
 
 
