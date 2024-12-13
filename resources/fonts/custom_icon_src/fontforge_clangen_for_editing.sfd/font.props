@@ -22,7 +22,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
 CreationTime: 1720127807
-ModificationTime: 1733842889
+ModificationTime: 1734099659
 PfmFamily: 81
 TTFWeight: 400
 TTFWidth: 5
@@ -80,10 +80,11 @@ EndShort
 LangName: 1033 "" "" "" " :clangen Medium" "" "Version " "" " " " " " " " " " " " " " " " " "" "clangen" "Medium"
 GaspTable: 1 65535 2 0
 Encoding: UnicodeFull
+Compacted: 1
 UnicodeInterp: none
 NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 64 16 12
+WinInfo: 0 16 12
 EndSplineFont
