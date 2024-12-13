@@ -1,4 +1,12 @@
 {
+    "json.schemas": [
+        {
+            "url": "./schemas/thought.schema.json",
+            "fileMatch": [
+                "thoughts/**/*.json"
+            ]
+        }
+    ],
     "python.formatting.provider": "yapf",
     "editor.formatOnSave": false,
     "python.linting.enabled": true,
