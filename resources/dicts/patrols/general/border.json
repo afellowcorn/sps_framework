@@ -1756,10 +1756,12 @@
                 "exp": 10,
                 "weight": 5,
                 "art": "gen_battle_rogue_warrior",
-                "injury": {
-                    "cats": ["r_c"],
-                    "injuries": ["battle_injury", "battle_injury"]
-                },
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury", "battle_injury"]
+                    }
+                ],
                 "history_text": {
                     "reg_death": "m_c died from {PRONOUN/r_c/poss} injuries after a fight with a rogue.",
                     "scar": "m_c was scarred in a fight with a rogue."
@@ -1818,10 +1820,12 @@
                 "text": "While they are bickering, r_c trips, and p_l snickers, earning r_c's ire.",
                 "exp": 0,
                 "weight": 20,
-                "injury": {
-                    "cats": ["r_c"],
-                    "injuries": ["minor_injury"]
-                },
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["minor_injury"]
+                    }
+                ],
                 "relationships": [
                     {
                         "cats_to": ["p_l"],
@@ -1950,10 +1954,12 @@
                 "exp": 10,
                 "weight": 15,
                 "art": "gen_otherclan_ambush",
-                "injury": {
-                    "cats": ["r_c"],
-                    "injuries": ["battle_injury", "battle_injury"]
-                },
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["battle_injury", "battle_injury"]
+                    }
+                ],
                 "history_text": {
                     "scar": "m_c was scarred after being ambushed on patrol.",
                     "reg_death": "m_c died of injuries sustained in an ambush.",
@@ -2014,10 +2020,12 @@
                 "exp": 0,
                 "weight": 10,
                 "art": "gen_warrior_infighting",
-                "injury": {
-                    "cats": ["r_c", "p_l"],
-                    "injuries": ["minor_injury","minor_injury","battle_injury"]
-                },
+                "injury": [
+                    {
+                        "cats": ["r_c", "p_l"],
+                        "injuries": ["minor_injury","minor_injury","battle_injury"]
+                    }
+                ],
                 "history_text": {
                     "scar": "m_c was scarred after brawling with a Clanmate.",
                     "reg_death": "m_c died from injuries sustained in a brawl with a Clanmate.",
