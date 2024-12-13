@@ -1779,7 +1779,7 @@
                 "exp": 10,
                 "weight": 10,
                 "can_have_stat": ["p_l"],
-                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -1848,7 +1848,7 @@
                 "exp": 0,
                 "weight": 10,
                 "can_have_stat": ["p_l"],
-                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -1974,7 +1974,7 @@
                 "exp": 10,
                 "weight": 10,
                 "can_have_stat": ["p_l"],
-                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -2077,7 +2077,7 @@
                 "exp": 0,
                 "weight": 10,
                 "can_have_stat": ["p_l"],
-                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivous", "rebellious"],
+                "stat_trait": ["troublesome", "fierce", "bloodthirsty", "cold", "childish", "shameless", "vengeful", "arrogant", "competitive", "grumpy", "cunning", "oblivious", "rebellious"],
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
