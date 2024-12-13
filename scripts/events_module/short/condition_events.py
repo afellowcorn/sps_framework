@@ -48,7 +48,7 @@ class Condition_Events:
         INJURIES = ujson.loads(read_file.read())
 
     with open(
-        f"resources/dicts/conditions/permanent_conditions.json", "r", encoding="utf-8"
+        "resources/dicts/conditions/permanent_conditions.json", "r", encoding="utf-8"
     ) as read_file:
         PERMANENT = ujson.loads(read_file.read())
     # ---------------------------------------------------------------------------- #
@@ -56,12 +56,12 @@ class Condition_Events:
     # ---------------------------------------------------------------------------- #
 
     with open(
-        f"resources/dicts/conditions/illnesses_seasons.json", "r", encoding="utf-8"
+        "resources/dicts/conditions/illnesses_seasons.json", "r", encoding="utf-8"
     ) as read_file:
         ILLNESSES_SEASON_LIST = ujson.loads(read_file.read())
 
     with open(
-        f"resources/dicts/conditions/event_injuries_distribution.json",
+        "resources/dicts/conditions/event_injuries_distribution.json",
         "r",
         encoding="utf-8",
     ) as read_file:
@@ -71,19 +71,22 @@ class Condition_Events:
     #                                   STRINGS                                    #
     # ---------------------------------------------------------------------------- #
 
-    PERM_CONDITION_RISK_STRINGS: Dict[str, Dict[str, List[str]]] = None
-    ILLNESS_RISK_STRINGS: Dict[str, Dict[str, List[str]]] = None
-    INJURY_RISK_STRINGS: Dict[str, Dict[str, List[str]]] = None
-    CONGENITAL_CONDITION_GOT_STRINGS: Dict[str, List[str]] = None
-    PERMANENT_CONDITION_GOT_STRINGS: Dict[str, List[str]] = None
-    ILLNESS_GOT_STRINGS: Dict[str, List[str]] = None
-    ILLNESS_HEALED_STRINGS: Dict[str, List[str]] = None
-    INJURY_HEALED_STRINGS: Dict[str, List[str]] = None
-    INJURY_DEATH_STRINGS: Dict[str, List[str]] = None
-    ILLNESS_DEATH_STRINGS: Dict[str, List[str]] = None
+    PERM_CONDITION_RISK_STRINGS: Dict[str, Dict[str, List[str]]] = {}
+    ILLNESS_RISK_STRINGS: Dict[str, Dict[str, List[str]]] = {}
+    INJURY_RISK_STRINGS: Dict[str, Dict[str, List[str]]] = {}
+    CONGENITAL_CONDITION_GOT_STRINGS: Dict[str, List[str]] = {}
+    PERMANENT_CONDITION_GOT_STRINGS: Dict[str, List[str]] = {}
+    ILLNESS_GOT_STRINGS: Dict[str, List[str]] = {}
+    ILLNESS_HEALED_STRINGS: Dict[str, List[str]] = {}
+    INJURY_HEALED_STRINGS: Dict[str, List[str]] = {}
+    INJURY_DEATH_STRINGS: Dict[str, List[str]] = {}
+    ILLNESS_DEATH_STRINGS: Dict[str, List[str]] = {}
 
     @classmethod
     def rebuild_strings(cls):
+        if cls.current_loaded_lang == i18n.config.get("locale"):
+            return
+
         resources = [
             (
                 "PERM_CONDITION_RISK_STRINGS",
@@ -121,6 +124,8 @@ class Condition_Events:
         for class_property, file in resources:
             setattr(cls, class_property, load_lang_resource(f"conditions/{file}"))
 
+        cls.current_loaded_lang = i18n.config.get("locale")
+
     @staticmethod
     def handle_nutrient(cat: Cat, nutrition_info: dict) -> None:
         """
@@ -152,9 +157,7 @@ class Condition_Events:
         illness = None
         heal = False
 
-        if Condition_Events.current_loaded_lang != i18n.config.get("locale"):
-            Condition_Events.current_loaded_lang = i18n.config.get("locale")
-            Condition_Events.rebuild_strings()
+        Condition_Events.rebuild_strings()
 
         # handle death first, if percentage is 0 or lower, the cat will die
         if cat_nutrition.percentage <= 0:
@@ -195,7 +198,7 @@ class Condition_Events:
             return
 
         # heal cat if percentage is high enough and cat is ill
-        elif (
+        if (
             cat_nutrition.percentage > MAL_PERCENTAGE
             and cat.is_ill()
             and "malnourished" in cat.illnesses
@@ -518,9 +521,7 @@ class Condition_Events:
             "stomachache": "diarrhea",
             "grief stricken": "lasting grief",
         }
-        if Condition_Events.current_loaded_lang != i18n.config.get("locale"):
-            Condition_Events.current_loaded_lang = i18n.config.get("locale")
-            Condition_Events.rebuild_strings()
+        Condition_Events.rebuild_strings()
         # ---------------------------------------------------------------------------- #
         #                         handle currently sick cats                           #
         # ---------------------------------------------------------------------------- #
@@ -632,9 +633,7 @@ class Condition_Events:
         This function handles, when the cat is already injured
         Returns: True if an event was triggered, False if nothing happened
         """
-        if Condition_Events.current_loaded_lang != i18n.config.get("locale"):
-            Condition_Events.current_loaded_lang = i18n.config.get("locale")
-            Condition_Events.rebuild_strings()
+        Condition_Events.rebuild_strings()
 
         triggered = False
         event_list = []
@@ -809,9 +808,7 @@ class Condition_Events:
 
         event_list = []
 
-        if Condition_Events.current_loaded_lang != i18n.config.get("locale"):
-            Condition_Events.current_loaded_lang = i18n.config.get("locale")
-            Condition_Events.rebuild_strings()
+        Condition_Events.rebuild_strings()
 
         condition_progression = {
             "one bad eye": "failing eyesight",
@@ -1026,9 +1023,7 @@ class Condition_Events:
 
     @staticmethod
     def give_risks(cat, event_list, condition, progression, conditions, dictionary):
-        if Condition_Events.current_loaded_lang != i18n.config.get("locale"):
-            Condition_Events.current_loaded_lang = i18n.config.get("locale")
-            Condition_Events.rebuild_strings()
+        Condition_Events.rebuild_strings()
 
         event_triggered = False
         if dictionary == cat.permanent_condition:
@@ -1283,3 +1278,6 @@ class Condition_Events:
             for risk in conditions[condition]["risks"]:
                 if risk["chance"] > 2:
                     risk["chance"] -= 1
+
+
+Condition_Events.rebuild_strings()
