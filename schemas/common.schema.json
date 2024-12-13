@@ -419,7 +419,22 @@
     "gather_cat": {
       "anyOf": [
         {
-          "enum": ["m_c", "r_c", "p_l", "s_c", "app1", "app2", "clan", "some_clan", "patrol", "multi"]
+          "enum": [
+            "m_c",
+            "r_c",
+            "p_l",
+            "s_c",
+            "app1",
+            "app2",
+            "app3",
+            "app4",
+            "app5",
+            "app6",
+            "clan",
+            "some_clan",
+            "patrol",
+            "multi"
+          ]
         },
         {
           "pattern": "^n_c:[0-9]+$"
