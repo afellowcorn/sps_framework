@@ -5,6 +5,12 @@
             "fileMatch": [
                 "thoughts/**/*.json"
             ]
+        },
+        {
+            "url": "./schemas/patrol.schema.json",
+            "fileMatch": [
+                "patrols/**/*.json"
+            ]
         }
     ],
     "python.formatting.provider": "yapf",
