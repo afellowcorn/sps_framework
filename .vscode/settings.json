@@ -9,7 +9,8 @@
         {
             "url": "./schemas/patrol.schema.json",
             "fileMatch": [
-                "patrols/**/*.json"
+                "patrols/**/*.json",
+                "!patrols/explicit_patrol_art.json"
             ]
         }
     ],
