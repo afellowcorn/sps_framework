@@ -30,8 +30,7 @@ def event_for_location(locations: list) -> bool:
                 return True
             else:
                 return False
-        else:
-            return False
+        return False
 
 
 def event_for_season(seasons: list) -> bool:
@@ -42,8 +41,7 @@ def event_for_season(seasons: list) -> bool:
         return True
     elif game.clan.current_season.lower() in seasons:
         return True
-    else:
-        return False
+    return False
 
 
 def event_for_tags(tags: list, cat, other_cat=None) -> bool:
@@ -128,8 +126,7 @@ def event_for_reputation(required_rep: list) -> bool:
         return True
     elif "welcoming" in required_rep and 71 <= clan_rep:
         return True
-    else:
-        return False
+    return False
 
 
 def event_for_clan_relations(required_rel: list, other_clan) -> bool:
@@ -147,8 +144,7 @@ def event_for_clan_relations(required_rel: list, other_clan) -> bool:
         return True
     elif "ally" in required_rel and 18 <= current_rel:
         return True
-    else:
-        return False
+    return False
 
 
 def event_for_freshkill_supply(pile, trigger, factor, clan_size) -> bool:
@@ -222,8 +218,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
         elif "excess" in trigger and len(
                 [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]) == num_of_herbs:
             return True
-        else:
-            return False
+        return False
 
     elif supply_type == "any_herb":
         if "low" in trigger and [x for x in herb_supply if herb_supply[x] < half_amount]:
@@ -234,8 +229,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
             return True
         elif "excess" in trigger and [x for x in herb_supply if needed_amount * 2 < herb_supply[x]]:
             return True
-        else:
-            return False
+        return False
 
     else:
         chosen_herb = supply_type
@@ -250,8 +244,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
             return True
         elif "excess" in trigger and needed_amount * 2 < herb_supply[chosen_herb]:
             return True
-        else:
-            return False
+        return False
 
 
 def event_for_cat(cat_info: dict, cat, cat_group: list = None, event_id: str = None, p_l=None) -> bool:
@@ -298,8 +291,7 @@ def _check_cat_age(cat, ages: list) -> bool:
 
     if cat.age in ages:
         return True
-    else:
-        return False
+    return False
 
 
 def _check_cat_status(cat, statuses: list) -> bool:
@@ -311,8 +303,7 @@ def _check_cat_status(cat, statuses: list) -> bool:
 
     if cat.status in statuses:
         return True
-    else:
-        return False
+    return False
 
 
 def _check_cat_trait(cat, traits: list, not_traits: list) -> bool:
@@ -368,8 +359,8 @@ def _check_cat_skills(cat, skills: list, not_skills: list) -> bool:
 
     if has_good_skill and not has_bad_skill:
         return True
-    else:
-        return False
+
+    return False
 
 
 def _check_cat_backstory(cat, backstories: list) -> bool:
@@ -381,8 +372,8 @@ def _check_cat_backstory(cat, backstories: list) -> bool:
 
     if cat.backstory in backstories:
         return True
-    else:
-        return False
+
+    return False
 
 
 def _check_cat_gender(cat, genders: list) -> bool:
@@ -394,8 +385,8 @@ def _check_cat_gender(cat, genders: list) -> bool:
 
     if cat.gender in genders:
         return True
-    else:
-        return False
+    
+    return False
 
 
 # until we make a herbs class, this will have to live here too to avoid a circular import. i am screaming.
