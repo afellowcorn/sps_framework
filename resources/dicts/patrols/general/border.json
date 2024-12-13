@@ -3158,12 +3158,12 @@
         "injuries": [ "grief stricken" ]
     }
 ],
-    "history_text": [
+    "history_text":
                 {
                     "scar": "m_c was scarred by {PRONOUN/m_c/poss} mate's Clanmates.",
                     "reg_death": "m_c died from injuries inflicted by {PRONOUN/m_c/poss} mate's Clanmates."
                 }
-            ],
+            ,
     "relationships": [
 {
             "cats_to": ["p_l"],
