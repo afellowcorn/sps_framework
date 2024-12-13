@@ -24,7 +24,7 @@
         "torn ear": "torn ear",
         "frostbite": "frostbite",
         "recovering from birth": "recovering from birth",
-        "water in their lungs": "water in their lungs",
+        "water in their lungs": "water in {PRONOUN/m_c/poss} lungs",
         "burn": "burn",
         "severe burn": "severe burn",
         "shock": "shock",

@@ -1,3 +1,4 @@
+import os.path
 from typing import TYPE_CHECKING
 
 import ujson
@@ -281,6 +282,10 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
     if MANAGER is not None:
         MANAGER = None
 
+    translation_paths = ["resources/lang/en"]
+    if os.path.exists("resources/lang/po"):
+        translation_paths.append("resources/lang/po")
+
     # initialize pygame_gui manager, and load themes
     manager = UIManager(
         res,
@@ -289,7 +294,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         None,
         enable_live_theme_updates=False,
         starting_language="en",
-        translation_directory_paths=["resources/lang/en", "resources/lang/po"],
+        translation_directory_paths=translation_paths,
     )
 
     manager.add_font_paths(

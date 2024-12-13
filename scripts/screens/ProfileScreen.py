@@ -1809,6 +1809,7 @@ class ProfileScreen(Screens):
                 container=self.condition_data[f"bg_{con}"],
                 manager=MANAGER,
                 anchors={"centerx": "centerx"},
+                text_kwargs={"m_c": self.the_cat},
             )
 
             y_adjust = self.condition_data[f"name_{con}"].get_relative_rect().height
@@ -1823,6 +1824,7 @@ class ProfileScreen(Screens):
                 container=self.condition_data[f"bg_{con}"],
                 manager=MANAGER,
                 anchors={"bottom": "bottom", "centerx": "centerx"},
+                text_kwargs={"m_c": self.the_cat},
             )
 
             x_pos += 152
