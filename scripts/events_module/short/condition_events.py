@@ -71,9 +71,9 @@ class Condition_Events:
     #                                   STRINGS                                    #
     # ---------------------------------------------------------------------------- #
 
-    PERM_CONDITION_RISK_STRINGS: Dict[str, List[str]] = None
-    ILLNESS_RISK_STRINGS: Dict[str, List[str]] = None
-    INJURY_RISK_STRINGS: Dict[str, List[str]] = None
+    PERM_CONDITION_RISK_STRINGS: Dict[str, Dict[str, List[str]]] = None
+    ILLNESS_RISK_STRINGS: Dict[str, Dict[str, List[str]]] = None
+    INJURY_RISK_STRINGS: Dict[str, Dict[str, List[str]]] = None
     CONGENITAL_CONDITION_GOT_STRINGS: Dict[str, List[str]] = None
     PERMANENT_CONDITION_GOT_STRINGS: Dict[str, List[str]] = None
     ILLNESS_GOT_STRINGS: Dict[str, List[str]] = None
@@ -582,7 +582,7 @@ class Condition_Events:
                 game.herb_events_list.append(event)
                 break
 
-            # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead dead
+            # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead-dead
             if cat.status == "leader" and starting_life_count != game.clan.leader_lives:
                 break
 

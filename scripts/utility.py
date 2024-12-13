@@ -84,7 +84,7 @@ def get_alive_clan_queens(living_cats):
 
 
 def get_alive_status_cats(
-    Cat: Union[Cat, Type[Cat]],
+    Cat: Union["Cat", Type["Cat"]],
     get_status: list,
     working: bool = False,
     sort: bool = False,

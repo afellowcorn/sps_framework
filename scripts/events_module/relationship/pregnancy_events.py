@@ -327,6 +327,8 @@ class Pregnancy_Events:
         else:
             correct_guess = "large"
 
+        Pregnancy_Events.rebuild_strings()
+
         if thinking_amount[0] == "correct":
             if correct_guess == "small":
                 text = Pregnancy_Events.PREGNANT_STRINGS["litter_guess"][0]
@@ -402,6 +404,7 @@ class Pregnancy_Events:
         # choose event string
         # TODO: currently they don't choose which 'mate' is the 'blood' parent or not
         # change or leaf as it is?
+        Pregnancy_Events.rebuild_strings()
         events = Pregnancy_Events.PREGNANT_STRINGS
         event_list = []
         if not cat.outside and other_cat is None:

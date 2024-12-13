@@ -75,6 +75,7 @@ class Patrol:
         self.BORDER_GEN = None
         self.TRAINING_GEN = None
         self.MEDCAT_GEN = None
+        self.DISASTER = None
 
     def setup_patrol(self, patrol_cats: List[Cat], patrol_type: str) -> str:
         # Add cats
