@@ -12,7 +12,7 @@ from itertools import combinations
 from math import floor
 from random import choice, choices, randint, random, sample, randrange, getrandbits
 from sys import exit as sys_exit
-from typing import List, Tuple, TYPE_CHECKING, Type
+from typing import List, Tuple, TYPE_CHECKING, Type, Union
 
 import i18n
 import pygame
@@ -84,7 +84,7 @@ def get_alive_clan_queens(living_cats):
 
 
 def get_alive_status_cats(
-    Cat, get_status: list, working: bool = False, sort: bool = False
+    Cat: Union[Cat, Type[Cat]], get_status: list, working: bool = False, sort: bool = False
 ) -> list:
     """
     returns a list of cat objects for all living cats of get_status in Clan

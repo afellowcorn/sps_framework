@@ -1,6 +1,6 @@
 import random
 from copy import deepcopy
-from typing import Dict
+from typing import Dict, List
 
 import i18n
 import ujson
@@ -71,21 +71,19 @@ class Condition_Events:
     #                                   STRINGS                                    #
     # ---------------------------------------------------------------------------- #
 
-    PERM_CONDITION_RISK_STRINGS: Dict = None
-    ILLNESS_RISK_STRINGS: Dict = None
-    INJURY_RISK_STRINGS: Dict = None
-    CONGENITAL_CONDITION_GOT_STRINGS: Dict = None
-    PERMANENT_CONDITION_GOT_STRINGS: Dict = None
-    ILLNESS_GOT_STRINGS: Dict = None
-    ILLNESS_HEALED_STRINGS: Dict = None
-    INJURY_HEALED_STRINGS: Dict = None
-    INJURY_DEATH_STRINGS: Dict = None
-    ILLNESS_DEATH_STRINGS: Dict = None
+    PERM_CONDITION_RISK_STRINGS: Dict[str, List[str]] = None
+    ILLNESS_RISK_STRINGS: Dict[str, List[str]] = None
+    INJURY_RISK_STRINGS: Dict[str, List[str]] = None
+    CONGENITAL_CONDITION_GOT_STRINGS: Dict[str, List[str]] = None
+    PERMANENT_CONDITION_GOT_STRINGS: Dict[str, List[str]] = None
+    ILLNESS_GOT_STRINGS: Dict[str, List[str]] = None
+    ILLNESS_HEALED_STRINGS: Dict[str, List[str]] = None
+    INJURY_HEALED_STRINGS: Dict[str, List[str]] = None
+    INJURY_DEATH_STRINGS: Dict[str, List[str]] = None
+    ILLNESS_DEATH_STRINGS: Dict[str, List[str]] = None
 
     @classmethod
     def rebuild_strings(cls):
-        resource_directory = f"resources/lang/{i18n.config.get('locale')}/conditions/"
-        fallback_directory = f"resources/lang/{i18n.config.get('fallback')}/conditions/"
         resources = [
             (
                 "PERM_CONDITION_RISK_STRINGS",
@@ -486,7 +484,9 @@ class Condition_Events:
                     return perm_condition
             else:
                 print(
-                    f"WARNING: {scar} for {injury_name} is either None or is not in scar_to_condition dict. This is not necessarily a bug.  Only report if you feel the scar should have resulted in a permanent condition."
+                    f"WARNING: {scar} for {injury_name} is either None or is not in scar_to_condition dict. This is "
+                    f"not necessarily a bug.  Only report if you feel the scar should have "
+                    f"resulted in a permanent condition."
                 )
 
         elif condition is not None:
@@ -596,7 +596,7 @@ class Condition_Events:
                 # choose event string
                 random_index = int(random.random() * len(possible_string_list))
                 event = possible_string_list[random_index]
-                event = event_text_adjust(Cat, event, main_cat=cat, random_cat=None)
+                event = event_text_adjust(Cat, event, main_cat=cat)
                 event_list.append(event)
                 game.herb_events_list.append(event)
 
@@ -712,11 +712,12 @@ class Condition_Events:
                         )
                     except KeyError:
                         print(
-                            f"WARNING: {injury} couldn't be found in the healed strings dict! placeholder string was used."
+                            f"WARNING: {injury} couldn't be found in the healed strings dict! "
+                            f"placeholder string was used."
                         )
                         event = f"m_c's injury {injury} has healed"
 
-                event = event_text_adjust(Cat, event, main_cat=cat, random_cat=None)
+                event = event_text_adjust(Cat, event, main_cat=cat)
 
                 game.herb_events_list.append(event)
 
@@ -744,7 +745,8 @@ class Condition_Events:
                             f"condition '{condition_got}'. Using default."
                         )
                         possible_string_list = [
-                            f"After m_c's {injury} healed, {{PRONOUN/m_c/subject}} now {{VERB/m_c/have/has}} {condition_got}. [Please report this if you see it!]",
+                            f"After m_c's {injury} healed, {{PRONOUN/m_c/subject}} now {{VERB/m_c/have/has}} "
+                            f"{condition_got}. [Please report this if you see it!]",
                         ]
                     # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = random.randrange(0, len(possible_string_list))
@@ -864,7 +866,8 @@ class Condition_Events:
                 if cat.parent1 is not None and cat.parent2 is not None:
                     # Check if the parent is in Cat.all_cats. If not, they are faded are dead.
 
-                    med_parent = False  # If they have a med parent, this will be flicked to True in the next couple lines.
+                    # If they have a med parent, this will be flicked to True in the next couple lines.
+                    med_parent = False
                     if cat.parent1 in Cat.all_cats:
                         parent1_dead = Cat.all_cats[cat.parent1].dead
                         if Cat.all_cats[cat.parent1].status == "medicine cat":
@@ -965,7 +968,8 @@ class Condition_Events:
                     retire_chances = {
                         "newborn": 0,
                         "kitten": 0,
-                        "adolescent": 50,  # This is high so instances where an cat retires the same moon they become an apprentice is rare
+                        "adolescent": 50,  # This is high so instances where a cat retires the same moon they become
+                        # an apprentice is rare
                         "young adult": 10,
                         "adult": 5,
                         "senior adult": 5,
