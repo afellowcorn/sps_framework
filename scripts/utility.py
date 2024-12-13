@@ -84,7 +84,10 @@ def get_alive_clan_queens(living_cats):
 
 
 def get_alive_status_cats(
-    Cat: Union[Cat, Type[Cat]], get_status: list, working: bool = False, sort: bool = False
+    Cat: Union[Cat, Type[Cat]],
+    get_status: list,
+    working: bool = False,
+    sort: bool = False,
 ) -> list:
     """
     returns a list of cat objects for all living cats of get_status in Clan
