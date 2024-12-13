@@ -230,8 +230,8 @@ class GenerateEvents:
 
         return event_list
 
+    @staticmethod
     def filter_possible_short_events(
-            self,
             Cat_class,
             possible_events,
             cat,
