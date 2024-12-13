@@ -134,12 +134,14 @@
         }
       },
       "main_backstory_constraint": {
+        "description": "Constrains the thought to only occur if m_c has a certain backstory.",
         "type": "array",
         "items": {
           "$ref": "common.schema.json#/definitions/backstory"
         }
       },
       "random_backstory_constraint": {
+        "description": "Constrains the thought to only occur if r_c has a certain backstory.",
         "type": "array",
         "items": {
           "$ref": "common.schema.json#/definitions/backstory"
@@ -224,6 +226,7 @@
           ]
         }
       }
-    }
+    },
+    "required": ["id", "thoughts"]
   }
 }
