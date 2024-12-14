@@ -28,9 +28,6 @@ def event_for_location(locations: list) -> bool:
         if req_biome == game.clan.biome.lower():
             if "any" in req_camps or game.clan.camp_bg in req_camps:
                 return True
-            else:
-                return False
-            
         return False
 
 
@@ -38,9 +35,7 @@ def event_for_season(seasons: list) -> bool:
     """
         checks if the clan is within the given seasons
         """
-    if "any" in seasons:
-        return True
-    elif game.clan.current_season.lower() in seasons:
+    if "any" in seasons or game.clan.current_season.lower() in seasons:
         return True
 
     return False
@@ -95,7 +90,7 @@ def event_for_tags(tags: list, cat, other_cat=None) -> bool:
             if rank in ["leader", "deputy"] and not get_alive_status_cats(cat, [rank]):
                 return False
 
-            elif not len(get_alive_status_cats(cat, [rank])) >= 2:
+            if not len(get_alive_status_cats(cat, [rank])) >= 2:
                 return False
 
     # check if main cat will allow for adoption
@@ -225,7 +220,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
 
         return False
 
-    elif supply_type == "any_herb":
+    if supply_type == "any_herb":
         if "low" in trigger and [x for x in herb_supply if herb_supply[x] < half_amount]:
             return True
         elif "adequate" in trigger and [x for x in herb_supply if half_amount < herb_supply[x] <= needed_amount]:
@@ -325,18 +320,11 @@ def _check_cat_trait(cat, traits: list, not_traits: list) -> bool:
     cat_trait = cat.personality.trait
     allowed = False
 
-    if traits:
-        if cat_trait in traits:
-            allowed = True
-        else:
-            return False
-    if not_traits:
-        if cat_trait in not_traits:
-            allowed = False
-        else:
-            return True
-
-    return allowed
+    if traits and cat_trait not in traits:
+        return False
+    if not_traits and cat_trait in not_traits:
+        return False
+    return True
 
 
 def _check_cat_skills(cat, skills: list, not_skills: list) -> bool:
