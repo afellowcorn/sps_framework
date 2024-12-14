@@ -2041,10 +2041,7 @@
         "biome": ["plains"],
         "season": ["greenleaf"],
         "types": ["hunting"],
-        "tags": [
-            "respect",
-            "trust"
-        ],
+        "tags": [],
         "patrol_art": "gen_hunt_burrow",
         "patrol_art_clean": null,
         "min_cats": 3,

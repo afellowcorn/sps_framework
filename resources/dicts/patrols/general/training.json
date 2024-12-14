@@ -11158,7 +11158,7 @@
         "biome": ["any"],
         "season": ["any"],
         "types": ["training"],
-        "tags": ["platonic","trust","respect","dislike","comfort"],
+        "tags": [],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
