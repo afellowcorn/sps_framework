@@ -3513,7 +3513,7 @@
         "biome": ["any"],
         "season": ["any"],
         "types": ["border"],
-        "tags": ["distrust", "disrespect"],
+        "tags": ["distrust"],
         "patrol_art": "gen_bord_scent_hostile_dislikelocked1",
         "min_cats": 2,
         "max_cats": 6,
