@@ -1852,7 +1852,7 @@
         "biome": ["mountainous"],
         "season": ["leaf-bare"],
         "types": ["hunting"],
-        "tags": ["distrust"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 1,
         "max_cats": 1,
