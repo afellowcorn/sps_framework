@@ -7515,7 +7515,7 @@
         "biome": ["any"],
         "season": ["any"],
         "types": ["training"],
-        "tags": ["app_only"],
+        "tags": [],
         "patrol_art": "train_general_intro",
         "min_cats": 2,
         "max_cats": 2,
