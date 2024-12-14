@@ -2045,8 +2045,7 @@
             "hunting",
             "respect",
             "trust",
-            "patrol_to_s_c",
-            "patrol_to_r_c"
+            "patrol_to_s_c"
         ],
         "patrol_art": "gen_hunt_burrow",
         "patrol_art_clean": null,
