@@ -462,7 +462,7 @@ class Cat:
         # experience and current patrol status
         if self.age in [AgeEnum.YOUNG_ADULT, AgeEnum.NEWBORN]:
             self.experience = 0
-        elif self.age in [AgeEnum.ADOLESCENT]:
+        elif self.age == AgeEnum.ADOLESCENT:
             m = self.moons
             self.experience = 0
             while m > Cat.age_moons[AgeEnum.ADOLESCENT][0]:
@@ -473,17 +473,17 @@ class Cat:
                 )
                 self.experience += exp + 3
                 m -= 1
-        elif self.age in [AgeEnum.YOUNG_ADULT, AgeEnum.ADULT]:
+        elif self.age == [AgeEnum.YOUNG_ADULT, AgeEnum.ADULT]:
             self.experience = randint(
                 Cat.experience_levels_range["prepared"][0],
                 Cat.experience_levels_range["proficient"][1],
             )
-        elif self.age in [AgeEnum.SENIOR_ADULT]:
+        elif self.age == AgeEnum.SENIOR_ADULT:
             self.experience = randint(
                 Cat.experience_levels_range["competent"][0],
                 Cat.experience_levels_range["expert"][1],
             )
-        elif self.age in [AgeEnum.SENIOR]:
+        elif self.age == AgeEnum.SENIOR:
             self.experience = randint(
                 Cat.experience_levels_range["competent"][0],
                 Cat.experience_levels_range["master"][1],
