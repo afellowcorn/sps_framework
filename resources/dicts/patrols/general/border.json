@@ -1265,7 +1265,7 @@
         "biome": ["any"],
         "season": ["any"],
         "types": ["border"],
-        "tags": ["clan_to_pl"],
+        "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
