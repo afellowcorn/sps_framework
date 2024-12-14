@@ -1265,7 +1265,7 @@
         "biome": ["any"],
         "season": ["any"],
         "types": ["border"],
-        "tags": ["non-lethal", "clan_to_pl"],
+        "tags": ["clan_to_pl"],
         "patrol_art": "bord_general_intro",
         "min_cats": 1,
         "max_cats": 1,
