@@ -404,7 +404,6 @@ class UIModifiedScrollingContainer(pygame_gui.elements.UIScrollingContainer):
                 manager=self.ui_manager,
                 container=self._root_container,
                 parent_element=self,
-                starting_height=10,
                 anchors={
                     "left": "right",
                     "right": "right",
@@ -545,7 +544,6 @@ class UIImageVerticalScrollBar(pygame_gui.elements.UIVerticalScrollBar):
         )
 
         self.scroll_wheel_speed = 100
-        self.sliding_button.change_layer(starting_height)
         self.button_height = 16
         self.arrow_button_height = self.button_height
         self.top_button.kill()

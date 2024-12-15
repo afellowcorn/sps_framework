@@ -130,3 +130,23 @@ def get_default_pronouns(lang=None):
             key: pronoun_dict for key, pronoun_dict in temp[lang].items()
         }
     return default_pronouns[lang]
+
+
+def get_custom_pronouns(lang=None):
+    if lang is None:
+        lang = i18n.config.get("locale")
+    try:
+        return game.clan.custom_pronouns[lang]
+    except KeyError:
+        game.clan.custom_pronouns[lang] = []
+    return game.clan.custom_pronouns[lang]
+
+
+def add_custom_pronouns(pronouns, lang=None):
+    if lang is None:
+        lang = i18n.config.get("locale")
+    try:
+        game.clan.custom_pronouns[lang].append(pronouns)
+    except KeyError:
+        game.clan.custom_pronouns[lang] = []
+        game.clan.custom_pronouns[lang].append(pronouns)

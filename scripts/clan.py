@@ -13,6 +13,7 @@ import random
 import statistics
 from random import choice, randint
 
+import i18n
 import pygame
 import ujson
 
@@ -130,7 +131,7 @@ class Clan:
         self.game_mode = game_mode
         self.pregnancy_data = {}
         self.inheritance = {}
-        self.custom_pronouns = []
+        self.custom_pronouns = {}
 
         # Init Settings
         self.clan_settings = {}
@@ -830,7 +831,11 @@ class Clan:
         # Allows for the custom pronouns to show up in the add pronoun list after the game has closed and reopened.
         if "custom_pronouns" in clan_data.keys():
             if clan_data["custom_pronouns"]:
-                game.clan.custom_pronouns = clan_data["custom_pronouns"]
+                if isinstance(clan_data["custom_pronouns"], list):
+                    # english-only pronouns from an old version
+                    game.clan.custom_pronouns["en"] = clan_data["custom_pronouns"]
+                else:
+                    game.clan.custom_pronouns = clan_data["custom_pronouns"]
 
         # Instructor Info
         if clan_data["instructor"] in Cat.all_cats:

@@ -450,23 +450,26 @@ def generate_button(base: pygame.Surface, scaled_dimensions: Tuple[int, int]):
 
 
 def get_button_dict(
-    style: ButtonStyles,
-    unscaled_dimensions: Tuple[int, int],
+    style: ButtonStyles, unscaled_dimensions: Tuple[int, int], *, static=False
 ) -> Dict[str, pygame.Surface]:
     """
     Return a dictionary of surfaces suitable for passing into a UISurfaceImageButton.
     :param style: The ButtonStyles style required for the button
     :param unscaled_dimensions: The UNSCALED dimensions of the button
+    :param static: Whether to return only the normal surface, default False
     :return: A dictionary of surfaces
     """
     return _get_button_dict(
-        style, unscaled_dimensions, scripts.game_structure.screen_settings.screen_scale
+        style,
+        unscaled_dimensions,
+        scripts.game_structure.screen_settings.screen_scale,
+        static,
     )
 
 
 @lru_cache(maxsize=None)
 def _get_button_dict(
-    style: ButtonStyles, unscaled_dimensions: Tuple[int, int], scale
+    style: ButtonStyles, unscaled_dimensions: Tuple[int, int], scale, static
 ) -> Dict[str, pygame.Surface]:
     """
     This wrapper exists so that we can cache the values to make toggling quicker.
@@ -479,6 +482,13 @@ def _get_button_dict(
     dontdeletethatpls = scale
 
     if buttonstyles[style.value]["scale_only"]:
+        if static:
+            return {
+                "normal": pygame.transform.scale(
+                    buttonstyles[style.value]["normal"],
+                    ui_scale_dimensions(unscaled_dimensions),
+                )
+            }
         return {
             "normal": pygame.transform.scale(
                 buttonstyles[style.value]["normal"],
@@ -499,6 +509,17 @@ def _get_button_dict(
         }
 
     if buttonstyles[style.value]["ninetile"]:
+        if static:
+            return {
+                "normal": get_box(
+                    BoxData(
+                        style.value + "_normal",
+                        buttonstyles[style.value]["normal"],
+                        (3, 3),
+                    ),
+                    unscaled_dimensions,
+                )
+            }
         return {
             "normal": get_box(
                 BoxData(
@@ -530,6 +551,14 @@ def _get_button_dict(
                 ),
                 unscaled_dimensions,
             ),
+        }
+
+    if static:
+        return {
+            "normal": generate_button(
+                buttonstyles[style.value]["normal"],
+                ui_scale_dimensions(unscaled_dimensions),
+            )
         }
 
     return {

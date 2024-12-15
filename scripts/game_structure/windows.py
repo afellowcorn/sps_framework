@@ -3,6 +3,8 @@ import shutil
 import subprocess
 import threading
 import time
+from collections import namedtuple
+from copy import deepcopy
 from platform import system
 from random import choice
 from re import search as re_search
@@ -19,12 +21,18 @@ from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import (
+    get_lang_config,
+    get_custom_pronouns,
+    add_custom_pronouns,
+)
 from scripts.game_structure.screen_settings import MANAGER
 from scripts.game_structure.ui_elements import (
     UIImageButton,
     UITextBoxTweaked,
     UISurfaceImageButton,
     UIModifiedScrollingContainer,
+    UIDropDownContainer,
 )
 from scripts.housekeeping.datadir import (
     get_save_dir,
@@ -51,7 +59,6 @@ from scripts.utility import (
     ui_scale_dimensions,
     ui_scale_offset,
 )
-from scripts.game_structure.localization import get_new_pronouns
 
 if TYPE_CHECKING:
     from scripts.screens.Screens import Screens
@@ -675,16 +682,23 @@ class ChangeCatName(UIWindow):
 
 class PronounCreation(UIWindow):
     # This window allows the user to create a pronoun set
+    PronounCat = namedtuple("PronounCat", ["name", "pronouns"])
 
     def __init__(self, cat):
         super().__init__(
-            ui_scale(pygame.Rect((80, 150), (650, 400))),
+            ui_scale(pygame.Rect((80, 150), (650, 450))),
             window_display_title="Create Cat Pronouns",
             object_id="#change_cat_gender_window",
             resizable=False,
         )
         self.the_cat = cat
-        self.conju = 1
+        self.pronoun_cat = self.PronounCat(
+            str(self.the_cat.name), self.the_cat.pronouns
+        )
+        self.pronoun_template = self.the_cat.pronouns[0].copy()
+        self.pronoun_template["ID"] = "custom" + str(len(get_custom_pronouns()))
+        self.conju = self.pronoun_template.get("conju", 2)
+        self.gender = self.pronoun_template.get("gender", 0)
         self.box_labels = {}
         self.elements = {}
         self.boxes = {}
@@ -695,206 +709,236 @@ class PronounCreation(UIWindow):
             object_id="#exit_window_button",
             container=self,
         )
-        self.heading = pygame_gui.elements.UITextBox(
-            "windows.create_pronouns_heading",
-            ui_scale(pygame.Rect((15, 60), (380, 75))),
-            object_id="#text_box_30_horizcenter_spacing_95",
+
+        self.elements["core_container"] = pygame_gui.core.UIContainer(
+            ui_scale(pygame.Rect((0, 3), (375, 448))),
             manager=MANAGER,
             container=self,
         )
+        self.elements["core_box"] = pygame_gui.elements.UIImage(
+            ui_scale(pygame.Rect((4, 0), (375, 448))),
+            get_box(BoxStyles.FRAME, (375, 448), sides=(False, True, False, False)),
+            container=self.elements["core_container"],
+            manager=MANAGER,
+        )
 
         # Create a sub-container for the Demo frame and sample text
-        demo_container_rect = ui_scale(pygame.Rect((397, 57), (425, 592)))
-        self.demo_container = pygame_gui.elements.UIScrollingContainer(
-            relative_rect=demo_container_rect, manager=MANAGER, container=self
+        demo_container_rect = ui_scale(pygame.Rect((0, 0), (275, 450)))
+        self.demo_container = pygame_gui.core.UIContainer(
+            relative_rect=demo_container_rect,
+            manager=MANAGER,
+            container=self,
+            anchors={"left": "left", "left_target": self.elements["core_container"]},
         )
 
-        # Add the Demo frame to the sub-container
+        # # Add the Demo frame to the sub-container
         self.elements["demo_frame"] = pygame_gui.elements.UIImage(
-            ui_scale(pygame.Rect((0, 0), (207, 288))),
-            get_box(BoxStyles.FRAME, (207, 288)),
+            ui_scale(pygame.Rect((0, 4), (208, 288))),
+            get_box(BoxStyles.FRAME, (208, 288), sides=(False, True, True, True)),
             manager=MANAGER,
             container=self.demo_container,
+            anchors={"center": "center"},
         )
         # Title of Demo Box
-        self.elements["demo title"] = pygame_gui.elements.UITextBox(
+        self.elements["demo_title"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, -14), (208, 30))),
             "windows.create_pronouns_demo_title",
-            ui_scale(pygame.Rect((75, 15), (225, 32))),
-            object_id="#text_box_34_horizleft",
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (208, 30), static=True),
+            object_id="@buttonstyles_rounded_rect",
             manager=MANAGER,
             container=self.demo_container,
+            anchors={
+                "centerx": "centerx",
+                "bottom": "bottom",
+                "bottom_target": self.elements["demo_frame"],
+            },
         )
+        self.elements["demo_title"].disable()
 
         # Add UITextBox for the sample text to the sub-container
         self.sample_text_box = pygame_gui.elements.UITextBox(
             "screens.change_gender.demo",
-            ui_scale(pygame.Rect((9, 60), (197, 278))),
-            object_id="#text_box_30_horizcenter",
+            ui_scale(pygame.Rect((0, 4), (195, 268))),
+            object_id="#text_box_30_horizcenter_vertcenter",
             manager=MANAGER,
             container=self.demo_container,
+            anchors={"center": "center"},
             text_kwargs={"m_c": self.the_cat},
         )
 
-        self.elements["core_container"] = pygame_gui.core.UIContainer(
-            ui_scale(pygame.Rect((0, 0), (375, 400))),
-            manager=MANAGER,
-            container=self,
-        )
-
-        # Tittle
-        self.elements["Pronoun Creation"] = pygame_gui.elements.UITextBox(
-            "windows.pronoun_creation",
+        # Title
+        self.elements["title"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((0, 15), (225, 40))),
-            object_id="#text_box_40_horizcenter",
+            "windows.pronoun_creation",
+            get_button_dict(ButtonStyles.ROUNDED_RECT, (225, 40), static=True),
+            object_id="@buttonstyles_icon",
+            manager=MANAGER,
+            container=self.elements["core_container"],
+            anchors={"centerx": "centerx"},
+        )
+        self.elements["title"].disable()
+
+        self.heading = pygame_gui.elements.UITextBox(
+            "windows.create_pronouns_desc",
+            ui_scale(pygame.Rect((0, 60), (350, 75))),
+            object_id="#text_box_30_horizcenter_spacing_95",
             manager=MANAGER,
             container=self.elements["core_container"],
             anchors={"centerx": "centerx"},
         )
 
-        container_rect = ui_scale(pygame.Rect((10, 130), (370, 250)))
-        container_rect.bottomleft = ui_scale_offset((10, -10))
-        self.box_labels["container"] = UIModifiedScrollingContainer(
-            container_rect, container=self, anchors={"bottom": "bottom", "left": "left"}
+        self.dropdowns = {
+            "conju_label": pygame_gui.elements.UILabel(
+                ui_scale(pygame.Rect((-50, 130), (100, 32))),
+                "windows.conju",
+                object_id="#text_box_30_horizcenter_spacing_95",
+                container=self.elements["core_container"],
+                anchors={"centerx": "centerx"},
+            )
+        }
+        self.dropdowns["conju_button"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 130), (100, 32))),
+            f"windows.conju{self.conju}",
+            get_button_dict(ButtonStyles.DROPDOWN, (100, 32)),
+            object_id="@buttonstyles_dropdown",
+            container=self.elements["core_container"],
+            anchors={"left_target": self.dropdowns["conju_label"]},
         )
 
-        beginning_pronouns = get_new_pronouns("default")[0]
-        for i, (name, value) in enumerate(beginning_pronouns.items()):
-            self.box_labels[f"container_{i}"] = pygame_gui.core.UIContainer(
-                ui_scale(pygame.Rect((0, 0), (350, 40))),
-                container=self.box_labels["container"],
+        self.dropdowns["conju_container"] = pygame_gui.elements.UIAutoResizingContainer(
+            ui_scale(pygame.Rect((0, -2), (0, 0))),
+            object_id="#conju_dropdown_container",
+            manager=MANAGER,
+            container=self.elements["core_container"],
+            anchors={
+                "top_target": self.dropdowns["conju_button"],
+                "left_target": self.dropdowns["conju_label"],
+            },
+            starting_height=3,
+            visible=False,
+        )
+
+        self.dropdowns["gender_label"] = pygame_gui.elements.UILabel(
+            ui_scale(pygame.Rect((-50, 5), (100, 32))),
+            "windows.gender",
+            object_id="#text_box_30_horizcenter_spacing_95",
+            container=self.elements["core_container"],
+            anchors={"top_target": self.dropdowns["conju_label"], "centerx": "centerx"},
+        )
+        self.dropdowns["gender_button"] = UISurfaceImageButton(
+            ui_scale(pygame.Rect((0, 5), (100, 32))),
+            f"windows.gender{self.gender}",
+            get_button_dict(ButtonStyles.DROPDOWN, (100, 32)),
+            object_id="@buttonstyles_dropdown",
+            container=self.elements["core_container"],
+            tool_tip_text="windows.gender_tooltip",
+            tool_tip_text_kwargs={"m_c": self.the_cat},
+            starting_height=2,
+            anchors={
+                "top_target": self.dropdowns["conju_label"],
+                "left_target": self.dropdowns["gender_label"],
+            },
+        )
+        self.dropdowns[
+            "gender_container"
+        ] = pygame_gui.elements.UIAutoResizingContainer(
+            ui_scale(pygame.Rect((0, -2), (0, 0))),
+            object_id="#conju_dropdown_container",
+            manager=MANAGER,
+            container=self.elements["core_container"],
+            anchors={
+                "top_target": self.dropdowns["gender_button"],
+                "left_target": self.dropdowns["gender_label"],
+            },
+            visible=False,
+        )
+
+        config = get_lang_config()["pronouns"]
+
+        for i in range(1, config["conju_count"] + 1):
+            self.dropdowns[f"conju{i}"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((0, -2 if i > 1 else 0), (100, 34))),
+                f"windows.conju{i}",
+                get_button_dict(ButtonStyles.DROPDOWN, (100, 34)),
+                container=self.dropdowns["conju_container"],
+                object_id="@buttonstyles_dropdown",
+                anchors={"top_target": self.dropdowns[f"conju{i-1}"]}
+                if i > 1
+                else None,
+            )
+
+        for i in range(0, config["gender_count"]):
+            self.dropdowns[f"gender{i}"] = UISurfaceImageButton(
+                ui_scale(pygame.Rect((0, -2 if i > 0 else 0), (100, 34))),
+                f"windows.gender{i}",
+                get_button_dict(ButtonStyles.DROPDOWN, (100, 34)),
+                container=self.dropdowns["gender_container"],
+                object_id="@buttonstyles_dropdown",
+                anchors={"top_target": self.dropdowns[f"gender{i-1}"]}
+                if i > 0
+                else None,
+            )
+
+        self.dropdowns["conju_dropdown"] = UIDropDownContainer(
+            ui_scale(pygame.Rect((0, 125), (0, 0))),
+            container=self,
+            object_id="#conju_dropdown",
+            starting_height=1,
+            parent_button=self.dropdowns["conju_button"],
+            child_button_container=self.dropdowns["conju_container"],
+            visible=False,
+            manager=MANAGER,
+        )
+        self.dropdowns["gender_dropdown"] = UIDropDownContainer(
+            ui_scale(pygame.Rect((0, 125), (0, 0))),
+            container=self,
+            object_id="#gender_dropdown",
+            starting_height=1,
+            parent_button=self.dropdowns["gender_button"],
+            child_button_container=self.dropdowns["gender_container"],
+            visible=False,
+            manager=MANAGER,
+        )
+
+        text_inputs = list(self.pronoun_template.keys())
+        try:
+            text_inputs.remove("ID")
+            text_inputs.remove("conju")
+            text_inputs.remove("gender")
+        except ValueError:
+            pass
+
+        for i, item in enumerate(text_inputs):
+            self.box_labels[item] = pygame_gui.elements.UITextBox(
+                f"windows.{item}",
+                ui_scale(pygame.Rect((0, 5), (200, 30))),
+                object_id="#text_box_30_horizcenter_spacing_95",
                 manager=MANAGER,
+                container=self.elements["core_container"],
+                anchors={"top_target": self.box_labels[text_inputs[i - 1]]}
+                if i > 0
+                else {"top_target": self.dropdowns["gender_label"]},
+            )
+            self.boxes[item] = pygame_gui.elements.UITextEntryLine(
+                ui_scale(pygame.Rect((0, 5), (150, 30))),
+                placeholder_text=self.the_cat.pronouns[0][item],
+                manager=MANAGER,
+                container=self,
                 anchors={
-                    "top_target": self.box_labels[f"container_{i-1}"],
-                    "left": "left",
-                    "right": "right",
+                    "top_target": self.boxes[text_inputs[i - 1]],
+                    "left_target": self.box_labels[item],
                 }
                 if i > 0
                 else {
-                    "left": "left",
-                    "right": "right",
+                    "top_target": self.dropdowns["gender_label"],
+                    "left_target": self.box_labels[item],
                 },
             )
-            self.box_labels[f"label_{i}"] = pygame_gui.elements.UILabel(
-                ui_scale(pygame.Rect((10, 0), (-1, 40))),
-                f"windows.{name}",
-                container=self.box_labels[f"container_{i}"],
-                object_id="#text_box_30_horizcenter_spacing_95",
-            )
-            if isinstance(self.the_cat.pronouns[0][name], str):
-                self.boxes[f"box_{i}"] = pygame_gui.elements.UITextEntryLine(
-                    ui_scale(pygame.Rect((10, 5), (100, 30))),
-                    placeholder_text=str(self.the_cat.pronouns[0][name]),
-                    manager=MANAGER,
-                    container=self.box_labels[f"container_{i}"],
-                    anchors={"left_target": self.box_labels[f"label_{i}"]},
-                )
+            self.boxes[item].set_allowed_characters("alpha_numeric")
 
-        # # Adjusted positions for labels
-        # self.box_labels["subject"] = pygame_gui.elements.UITextBox(
-        #     "windows.subject",
-        #     ui_scale(pygame.Rect((87, 115), (100, 30))),
-        #     object_id="#text_box_30_horizcenter_spacing_95",
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        #
-        # self.box_labels["object"] = pygame_gui.elements.UITextBox(
-        #     "windows.object",
-        #     ui_scale(pygame.Rect((212, 115), (100, 30))),
-        #     object_id="#text_box_30_horizcenter_spacing_95",
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        #
-        # self.box_labels["poss"] = pygame_gui.elements.UITextBox(
-        #     "windows.poss",
-        #     ui_scale(pygame.Rect((25, 205), (100, 30))),
-        #     object_id="#text_box_30_horizcenter_spacing_95",
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        #
-        # self.box_labels["inposs"] = pygame_gui.elements.UITextBox(
-        #     "windows.inposs",
-        #     ui_scale(pygame.Rect((125, 185), (150, 60))),
-        #     object_id="#text_box_30_horizcenter_spacing_95",
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        #
-        # self.box_labels["self"] = pygame_gui.elements.UITextBox(
-        #     "windows.reflexive",
-        #     ui_scale(pygame.Rect((275, 205), (100, 30))),
-        #     object_id="#text_box_30_horizcenter_spacing_95",
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        # self.checkbox_label["singular_label"] = pygame_gui.elements.UITextBox(
-        #     "windows.singular",
-        #     ui_scale(pygame.Rect((128, 285), (100, 30))),
-        #     object_id="#text_box_30_horizcenter_spacing_95",
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        # self.checkbox_label["plural_label"] = pygame_gui.elements.UITextBox(
-        #     "windows.plural",
-        #     ui_scale(pygame.Rect((235, 285), (100, 30))),
-        #     object_id="#text_box_30_horizcenter_spacing_95",
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        #
-        # # Row 1
-        # self.boxes["subject"] = pygame_gui.elements.UITextEntryLine(
-        #     ui_scale(pygame.Rect((90, 145), (100, 30))),
-        #     placeholder_text=self.the_cat.pronouns[0]["subject"],
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        #
-        # self.boxes["object"] = pygame_gui.elements.UITextEntryLine(
-        #     ui_scale(pygame.Rect((215, 145), (100, 30))),
-        #     placeholder_text=self.the_cat.pronouns[0]["object"],
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        #
-        # # Row 2
-        # self.boxes["poss"] = pygame_gui.elements.UITextEntryLine(
-        #     ui_scale(pygame.Rect((25, 235), (100, 30))),
-        #     placeholder_text=self.the_cat.pronouns[0]["poss"],
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        #
-        # self.boxes["inposs"] = pygame_gui.elements.UITextEntryLine(
-        #     ui_scale(pygame.Rect((150, 235), (100, 30))),
-        #     placeholder_text=self.the_cat.pronouns[0]["inposs"],
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        #
-        # self.boxes["self"] = pygame_gui.elements.UITextEntryLine(
-        #     ui_scale(pygame.Rect((275, 235), (100, 30))),
-        #     placeholder_text=self.the_cat.pronouns[0]["self"],
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-
-        # Save Confirmation
-        self.pronoun_added = pygame_gui.elements.UITextBox(
-            "windows.pronoun_confirm",
-            ui_scale(pygame.Rect((225, 350), (400, 40))),
-            visible=False,
-            object_id="#text_box_30_horizleft",
-            manager=MANAGER,
-            container=self,
-        )
-
-        # Add buttons
         self.buttons = {}
         self.buttons["save_pronouns"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((0, 335), (73, 30))),
+            ui_scale(pygame.Rect((0, 400), (73, 30))),
             "buttons.save",
             get_button_dict(ButtonStyles.SQUOVAL, (73, 30)),
             object_id="@buttonstyles_squoval",
@@ -902,135 +946,94 @@ class PronounCreation(UIWindow):
             container=self.elements["core_container"],
             anchors={"centerx": "centerx"},
         )
-        # # Creating Checkmarks
-        # self.buttons["singular_unchecked"] = UIImageButton(
-        #     ui_scale(pygame.Rect((112, 285), (34, 34))),
-        #     "",
-        #     object_id="@unchecked_checkbox",
-        #     starting_height=2,
-        #     visible=False,
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        # self.buttons["singular_checked"] = UIImageButton(
-        #     ui_scale(pygame.Rect((112, 285), (34, 34))),
-        #     "",
-        #     object_id="@checked_checkbox",
-        #     starting_height=2,
-        #     visible=False,
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        #
-        # self.buttons["plural_unchecked"] = UIImageButton(
-        #     ui_scale(pygame.Rect((227, 285), (34, 34))),
-        #     "",
-        #     object_id="@unchecked_checkbox",
-        #     starting_height=2,
-        #     visible=False,
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        # self.buttons["plural_checked"] = UIImageButton(
-        #     ui_scale(pygame.Rect((227, 285), (34, 34))),
-        #     "",
-        #     object_id="@checked_checkbox",
-        #     starting_height=2,
-        #     visible=False,
-        #     manager=MANAGER,
-        #     container=self,
-        # )
-        # if self.the_cat.pronouns[0]["conju"] == 1:
-        #     # self.buttons["plural"].disable()
-        #     self.buttons["plural_checked"].show()
-        #     self.buttons["singular_unchecked"].show()
-        # else:
-        #     self.buttons["plural_unchecked"].show()
-        #     self.buttons["singular_checked"].show()
-        #     self.conju = 2
 
-        self.buttons["test_set"] = UISurfaceImageButton(
-            ui_scale(pygame.Rect((60, 237), (104, 30))),
-            "windows.pronoun_test_set",
-            get_button_dict(ButtonStyles.SQUOVAL, (104, 30)),
-            object_id="@buttonstyles_squoval",
-            starting_height=2,
+        self.pronoun_added = pygame_gui.elements.UITextBox(
+            f"Pronoun saved and added to presets!",
+            ui_scale(pygame.Rect((0, 375), (300, 40))),
+            visible=False,
+            object_id="#text_box_30_horizleft",
             manager=MANAGER,
-            text_kwargs={"m_c": self.the_cat.pronouns[0]},
-            container=self.demo_container,
+            container=self.elements["core_container"],
+            anchors={"centerx": "centerx"},
         )
 
         self.set_blocking(True)
 
-    def get_new_pronouns(self):
-        pronoun_template = get_new_pronouns("default")[0]
-
-        for i, (name, value) in enumerate(pronoun_template.items()):
-            if isinstance(value, int):
-                pronoun_template[name] = value
-                continue
-            if sub(r"[^A-Za-z0-9 ]+", "", self.boxes[name].get_text()) != "":
-                pronoun_template[name] = sub(
-                    r"[^A-Za-z0-9 ]+", "", self.boxes[name].get_text()
-                )
-            else:
-                pronoun_template[name] = ""
-        # if save button or add to cat is pressed, set 'name' as a counting number thing as an invisible identifier
-        newid = len(game.clan.custom_pronouns) + 1
-        pronoun_template["ID"] = "custom" + str(newid)
-        return pronoun_template
-
-    # def is_box_full(self, entry):
-    #     if entry.get_text() == "":
-    #         return False
-    #     else:
-    #         return True
-    #
-    # def are_boxes_full(self):
-    #     values = []
-    #     values.append(self.is_box_full(self.boxes["subject"]))
-    #     values.append(self.is_box_full(self.boxes["object"]))
-    #     values.append(self.is_box_full(self.boxes["poss"]))
-    #     values.append(self.is_box_full(self.boxes["inposs"]))
-    #     values.append(self.is_box_full(self.boxes["self"]))
-    #     for value in values:
-    #         if value is False:
-    #             return False
-    #     return True
+    def update_display(self):
+        for name, entry in self.boxes.items():
+            self.pronoun_template[name] = (
+                entry.get_text() if entry.get_text() != "" else entry.placeholder_text
+            )
+        self.sample_text_box.set_text(
+            "screens.change_gender.demo",
+            text_kwargs={
+                "m_c": self.PronounCat(str(self.the_cat.name), [self.pronoun_template])
+            },
+        )
 
     def process_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 game.all_screens["change gender screen"].exit_screen()
                 game.all_screens["change gender screen"].screen_switches()
+                [item.kill() for item in self.dropdowns.values()]
                 self.kill()
-        #     elif event.ui_element == self.buttons["save_pronouns"]:
-        #         if self.are_boxes_full():
-        #             new_pronouns = self.get_new_pronouns()
-        #             game.clan.custom_pronouns.append(new_pronouns)
-        #             self.pronoun_added.show()
-        #     elif event.ui_element == self.buttons["singular_unchecked"]:
-        #         self.buttons["plural_checked"].hide()
-        #         self.buttons["singular_unchecked"].hide()
-        #         self.buttons["plural_unchecked"].show()
-        #         self.buttons["singular_checked"].show()
-        #         self.conju = 2
-        #     elif event.ui_element == self.buttons["plural_unchecked"]:
-        #         """self.buttons["plural"].enable()"""
-        #         self.buttons["plural_checked"].show()
-        #         self.buttons["singular_unchecked"].show()
-        #         self.buttons["plural_unchecked"].hide()
-        #         self.buttons["singular_checked"].hide()
-        #         self.conju = 1
-        #     elif event.ui_element == self.buttons["test_set"]:
-        #         self.sample_text_box.kill()
-        #         self.sample_text_box = pygame_gui.elements.UITextBox(
-        #             self.get_sample_text(self.get_new_pronouns()),
-        #             ui_scale(pygame.Rect((7, 60), (197, 278))),
-        #             object_id="#text_box_30_horizcenter_spacing_95",
-        #             manager=MANAGER,
-        #             container=self.demo_container,
-        #         )
+            elif event.ui_element == self.dropdowns["conju_button"]:
+                if self.dropdowns["conju_dropdown"].is_open:
+                    self.dropdowns["conju_dropdown"].close()
+                    self.dropdowns["gender_button"].enable()
+                else:
+                    self.dropdowns["conju_dropdown"].open()
+                    self.dropdowns["gender_button"].disable()
+                    self.dropdowns["gender_dropdown"].close()
+            elif event.ui_element in self.dropdowns["conju_container"]:
+                self.pronoun_template["conju"] = int(
+                    event.ui_element.text.replace("windows.conju", "")
+                )
+                self.dropdowns["conju_button"].set_text(event.ui_element.text)
+                self.dropdowns["conju_dropdown"].close()
+                self.dropdowns["gender_button"].enable()
+                self.update_display()
+            elif event.ui_element == self.dropdowns["gender_button"]:
+                if self.dropdowns["gender_dropdown"].is_open:
+                    self.dropdowns["gender_dropdown"].close()
+                else:
+                    self.dropdowns["gender_dropdown"].open()
+                    self.dropdowns["conju_dropdown"].close()
+            elif event.ui_element in self.dropdowns["gender_container"]:
+                self.pronoun_template["gender"] = int(
+                    event.ui_element.text.replace("windows.gender", "")
+                )
+                self.dropdowns["gender_button"].set_text(event.ui_element.text)
+                self.dropdowns["gender_dropdown"].close()
+                self.update_display()
+            elif event.ui_element == self.buttons["save_pronouns"]:
+                add_custom_pronouns(self.pronoun_template)
+                self.pronoun_added.show()
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_TAB:
+                focused_box = [key for key, box in self.boxes.items() if box.is_focused]
+                if not focused_box:
+                    [box.unfocus() for box in self.boxes.values()]
+                    return super().process_event(event)
+                key = focused_box[0]
+                boxlist = list(self.boxes)
+                if event.mod & pygame.KMOD_SHIFT:
+                    try:
+                        idx = boxlist[boxlist.index(key) - 1]
+                    except IndexError:
+                        idx = boxlist[-1]
+                else:
+                    try:
+                        idx = boxlist[boxlist.index(key) + 1]
+                    except IndexError:
+                        idx = boxlist[0]
+
+                self.boxes[key].unfocus()
+                self.boxes[idx].focus()
+        elif event.type == pygame_gui.UI_TEXT_ENTRY_CHANGED:
+            self.update_display()
+
         return super().process_event(event)
 
 

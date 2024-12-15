@@ -3,6 +3,7 @@
 from re import sub
 from typing import Dict, Union
 
+import i18n
 import pygame
 import pygame_gui
 from pygame_gui.core import ObjectID, UIContainer
@@ -110,8 +111,10 @@ class ChangeGenderScreen(Screens):
                     ):
                         self.the_cat.pronouns.remove(event.ui_element.cat_object)
                 elif event.ui_element.cat_id == "delete":
-                    if event.ui_element.cat_object in game.clan.custom_pronouns:
-                        game.clan.custom_pronouns.remove(event.ui_element.cat_object)
+                    if event.ui_element.cat_object in pronouns.get_custom_pronouns():
+                        game.clan.custom_pronouns[i18n.config.get("locale")].remove(
+                            event.ui_element.cat_object
+                        )
 
                 self.update_selected_cat()
 
@@ -331,7 +334,7 @@ class ChangeGenderScreen(Screens):
                 f"{pronounset['subject']}/{pronounset['object']}/"
                 f"{pronounset['inposs']}/{pronounset['self']}"
             )
-            short_name = shorten_text_to_fit(displayname, 180, 13)
+            short_name = shorten_text_to_fit(displayname, 170, 13)
 
             # Create block for each pronounset
             block_rect = ui_scale(pygame.Rect((0, 0), (272, 45)))
@@ -435,8 +438,8 @@ class ChangeGenderScreen(Screens):
 
         all_pronouns = self.pronouns_dict + [
             x
-            for x in game.clan.custom_pronouns
-            if x not in pronouns.get_default_pronouns()
+            for x in pronouns.get_custom_pronouns()
+            if x not in pronouns.get_default_pronouns().values()
         ]
         for pronounset in all_pronouns:
             displayname = (

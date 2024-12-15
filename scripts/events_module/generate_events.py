@@ -54,7 +54,7 @@ class GenerateEvents:
     def get_short_event_dicts(file_path):
         try:
             with open(
-                    get_resource_directory() + file_path, "r", encoding="utf-8"
+                get_resource_directory() + file_path, "r", encoding="utf-8"
             ) as read_file:
                 events = ujson.loads(read_file.read())
         except:
@@ -234,14 +234,14 @@ class GenerateEvents:
 
     @staticmethod
     def filter_possible_short_events(
-            Cat_class,
-            possible_events,
-            cat,
-            random_cat,
-            other_clan,
-            freshkill_active,
-            freshkill_trigger_factor,
-            sub_types=None,
+        Cat_class,
+        possible_events,
+        cat,
+        random_cat,
+        other_clan,
+        freshkill_active,
+        freshkill_trigger_factor,
+        sub_types=None,
     ):
         final_events = []
         incorrect_format = []
@@ -256,12 +256,12 @@ class GenerateEvents:
         for event in possible_events:
             if event.history:
                 if (
-                        not isinstance(event.history, list)
-                        or "cats" not in event.history[0]
+                    not isinstance(event.history, list)
+                    or "cats" not in event.history[0]
                 ):
                     if (
-                            f"{event.event_id} history formatted incorrectly"
-                            not in incorrect_format
+                        f"{event.event_id} history formatted incorrectly"
+                        not in incorrect_format
                     ):
                         incorrect_format.append(
                             f"{event.event_id} history formatted incorrectly"
@@ -269,8 +269,8 @@ class GenerateEvents:
             if event.injury:
                 if not isinstance(event.injury, list) or "cats" not in event.injury[0]:
                     if (
-                            f"{event.event_id} injury formatted incorrectly"
-                            not in incorrect_format
+                        f"{event.event_id} injury formatted incorrectly"
+                        not in incorrect_format
                     ):
                         incorrect_format.append(
                             f"{event.event_id} injury formatted incorrectly"
@@ -301,15 +301,15 @@ class GenerateEvents:
 
             # check for old age
             if (
-                    "old_age" in event.sub_type
-                    and cat.moons < game.config["death_related"]["old_age_death_start"]
+                "old_age" in event.sub_type
+                and cat.moons < game.config["death_related"]["old_age_death_start"]
             ):
                 continue
             # remove some non-old age events to encourage elders to die of old age more often
             if (
-                    "old_age" not in event.sub_type
-                    and cat.moons > game.config["death_related"]["old_age_death_start"]
-                    and int(random.random() * 3)
+                "old_age" not in event.sub_type
+                and cat.moons > game.config["death_related"]["old_age_death_start"]
+                and int(random.random() * 3)
             ):
                 continue
 
@@ -319,19 +319,19 @@ class GenerateEvents:
 
             if event.m_c:
                 if not event_for_cat(
-                        cat_info=event.m_c,
-                        cat=cat,
-                        cat_group=[cat, random_cat] if random_cat else None,
-                        event_id=event.event_id
+                    cat_info=event.m_c,
+                    cat=cat,
+                    cat_group=[cat, random_cat] if random_cat else None,
+                    event_id=event.event_id,
                 ):
                     continue
 
             if event.r_c and random_cat:
                 if not event_for_cat(
-                        cat_info=event.r_c,
-                        cat=random_cat,
-                        cat_group=[random_cat, cat],
-                        event_id=event.event_id
+                    cat_info=event.r_c,
+                    cat=random_cat,
+                    cat_group=[random_cat, cat],
+                    event_id=event.event_id,
                 ):
                     continue
 
@@ -366,16 +366,16 @@ class GenerateEvents:
                     for injury in block["injuries"]:
                         if injury in GenerateEvents.INJURIES:
                             if (
-                                    GenerateEvents.INJURIES[injury]["severity"]
-                                    != allowed_severity
+                                GenerateEvents.INJURIES[injury]["severity"]
+                                != allowed_severity
                             ):
                                 discard = True
                                 break
 
                             if "m_c" in block["cats"]:
                                 if injury == "mangled tail" and (
-                                        "NOTAIL" in cat.pelt.scars
-                                        or "HALFTAIL" in cat.pelt.scars
+                                    "NOTAIL" in cat.pelt.scars
+                                    or "HALFTAIL" in cat.pelt.scars
                                 ):
                                     continue
 
@@ -383,14 +383,14 @@ class GenerateEvents:
                                     continue
                             if "r_c" in block["cats"]:
                                 if injury == "mangled tail" and (
-                                        "NOTAIL" in random_cat.pelt.scars
-                                        or "HALFTAIL" in random_cat.pelt.scars
+                                    "NOTAIL" in random_cat.pelt.scars
+                                    or "HALFTAIL" in random_cat.pelt.scars
                                 ):
                                     continue
 
                                 if (
-                                        injury == "torn ear"
-                                        and "NOEAR" in random_cat.pelt.scars
+                                    injury == "torn ear"
+                                    and "NOEAR" in random_cat.pelt.scars
                                 ):
                                     continue
 
@@ -407,7 +407,9 @@ class GenerateEvents:
                 if not other_clan:
                     continue
 
-                if not event_for_clan_relations(event.other_clan["current_rep"], other_clan):
+                if not event_for_clan_relations(
+                    event.other_clan["current_rep"], other_clan
+                ):
                     continue
 
                 # during a war we want to encourage the clans to have positive events
@@ -415,8 +417,8 @@ class GenerateEvents:
                 if "war" in event.sub_type:
                     rel_change_type = game.switches["war_rel_change_type"]
                     if (
-                            event.other_clan["changed"] < 0
-                            and rel_change_type != "rel_down"
+                        event.other_clan["changed"] < 0
+                        and rel_change_type != "rel_down"
                     ):
                         continue
 
@@ -435,10 +437,10 @@ class GenerateEvents:
                             continue
 
                         if not event_for_freshkill_supply(
-                                game.clan.freshkill_pile,
-                                trigger,
-                                freshkill_trigger_factor,
-                                clan_size
+                            game.clan.freshkill_pile,
+                            trigger,
+                            freshkill_trigger_factor,
+                            clan_size,
                         ):
                             discard = True
                             break
@@ -446,10 +448,7 @@ class GenerateEvents:
                             discard = False
 
                     else:  # if supply type wasn't freshkill, then it must be a herb type
-                        if not event_for_herb_supply(
-                                trigger,
-                                supply_type,
-                                clan_size):
+                        if not event_for_herb_supply(trigger, supply_type, clan_size):
                             discard = True
                             break
                         else:
@@ -509,13 +508,13 @@ class GenerateEvents:
         return possible_events
 
     def possible_lead_den_events(
-            self,
-            cat,
-            event_type: str,
-            interaction_type: str,
-            success: bool,
-            other_clan_temper=None,
-            player_clan_temper=None,
+        self,
+        cat,
+        event_type: str,
+        interaction_type: str,
+        success: bool,
+        other_clan_temper=None,
+        player_clan_temper=None,
     ) -> list:
         """
         finds and generates a list of possible leader den events
@@ -535,13 +534,13 @@ class GenerateEvents:
 
             if "other_clan_temper" in event or "player_clan_temper" in event:
                 if (
-                        other_clan_temper not in event["other_clan_temper"]
-                        and "any" not in event["other_clan_temper"]
+                    other_clan_temper not in event["other_clan_temper"]
+                    and "any" not in event["other_clan_temper"]
                 ):
                     continue
                 if (
-                        player_clan_temper not in event["player_clan_temper"]
-                        and "any" not in event["player_clan_temper"]
+                    player_clan_temper not in event["player_clan_temper"]
+                    and "any" not in event["player_clan_temper"]
                 ):
                     continue
 
@@ -550,10 +549,7 @@ class GenerateEvents:
                     continue
 
             cat_info = event["m_c"]
-            if not event_for_cat(
-                    cat_info=cat_info,
-                    cat=cat
-            ):
+            if not event_for_cat(cat_info=cat_info, cat=cat):
                 continue
 
             possible_events.append(event)
