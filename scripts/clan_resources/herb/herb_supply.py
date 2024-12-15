@@ -102,7 +102,7 @@ class HerbSupply:
             return self.sorted_by_lowest
 
         for herb in self.sorted_by_lowest:
-            if herb in self.in_need_of:
+            if herb in self.in_need_of and self.get_herb_rating(herb) in [Supply.EMPTY, Supply.LOW]:
                 final_sort_list.append(herb)
             else:
                 extra.append(herb)
@@ -170,6 +170,11 @@ class HerbSupply:
         }
         cats_to_treat = [kitty for kitty in clan_cats if kitty.is_ill() or kitty.is_injured() or kitty.is_disabled()]
         for kitty in cats_to_treat:
+            # if there are no working med cats, then only allow med cats to be treated. the idea being that a med cat
+            # could conceivably attempt to care for themselves, but would not be well enough to care for the Clan as
+            # a whole. also helps prevent death spiral when med cats aren't able to work.
+            if not med_cats and kitty.status != "medicine cat":
+                break
             severities = []
             conditions = kitty.permanent_condition.copy()
             conditions.update(kitty.injuries)
@@ -195,11 +200,11 @@ class HerbSupply:
                 continue
             # if last item is a 0, don't expire, just remove it
             if self.storage[herb_name][-1] == 0:
-                self.storage.pop(-1)
+                self.storage[herb_name].pop(-1)
             # now check if list is long enough to expire and remove the expired herbs
             if len(self.storage[herb_name]) > self.herb[herb_name].expiration:
                 expired.append(self.herb[herb_name])
-                self.storage.pop(-1)
+                self.storage[herb_name].pop(-1)
 
         # add log entry to inform player of removal
         if expired:
@@ -226,24 +231,21 @@ class HerbSupply:
         """
         returns the rating of given supply, aka how "full" the supply is compared to clan size
         """
-        rating = Supply.EMPTY
-
         if not self.storage:
-            return rating
+            return Supply.EMPTY
 
-        for single_herb in self.storage:
-            total = self.get_single_herb_total(single_herb)
-            if self.low_qualifier <= total <= self.adequate_qualifier and rating not in [Supply.ADEQUATE,
-                                                                                         Supply.FULL,
-                                                                                         Supply.EXCESS]:
-                rating = Supply.LOW
-            elif self.adequate_qualifier < total <= self.full_qualifier and rating not in [Supply.FULL,
-                                                                                           Supply.EXCESS]:
-                rating = Supply.ADEQUATE
-            elif self.full_qualifier < total <= self.excess_qualifier and rating != Supply.EXCESS:
-                rating = Supply.EXCESS
+        lowest_herb = self.sorted_by_lowest[0]
+        highest_herb = self.sorted_by_lowest[-1]
+        average_count = (self.total_of_herb(lowest_herb) + self.total_of_herb(highest_herb)) / 2
 
-        return rating
+        if self.low_qualifier <= average_count <= self.adequate_qualifier:
+            return Supply.LOW
+        if self.adequate_qualifier < average_count <= self.full_qualifier:
+            return Supply.ADEQUATE
+        if self.full_qualifier < average_count <= self.excess_qualifier:
+            return Supply.FULL
+        else:
+            return Supply.EXCESS
 
     def get_herb_rating(self, herb):
         """
@@ -329,13 +331,13 @@ class HerbSupply:
             if self.collected[herb] < 0:
                 self.collected[herb] = 0
 
-    def get_found_herbs(self, med_cat, general_amount_bonus: bool = False, specific_amount_bonus: float = 0) -> vars():
+    def get_found_herbs(self, med_cat, general_amount_bonus: bool = False, specific_quantity_bonus: float = 0) -> vars():
         """
         Takes a med cat and chooses "random" herbs for them to find. Herbs found are based on cat's skill, how badly
         the herb is needed, and herb rarity
         :param med_cat: cat object for med doing the gathering
         :param general_amount_bonus: set to True if cat should gather a boosted number of herbs
-        :param specific_amount_bonus: a specific float to multiply the gathered herb amount by
+        :param specific_quantity_bonus: a specific float to multiply the gathered herb amount by
         """
         # meds with relevant skills will get a boost to the herbs they find
         # SENSE finds larger amount of herbs
@@ -373,8 +375,10 @@ class HerbSupply:
         amount_of_herbs = choices(population=[1, 2, 3], weights=weight, k=1)[0] + amount_modifier
         if general_amount_bonus:
             amount_of_herbs *= 2
-        if specific_amount_bonus:
-            amount_of_herbs *= specific_amount_bonus
+
+        # adding herb quantity bonus
+        if specific_quantity_bonus:
+            quantity_modifier *= specific_quantity_bonus
 
         # now we find what herbs have actually been found and their quantity
         for herb in herb_list:
@@ -427,7 +431,7 @@ class HerbSupply:
 
             better_storage = []
             for herb, count in self.collected.items():
-                if herb not in self.storage:
+                if not self.storage.get(herb, []):
                     # herbs can't be stored better if there isn't an existing store of that herb
                     break
 
@@ -440,8 +444,8 @@ class HerbSupply:
             if better_storage:
                 # inform player of expiration perk
                 self.log.append(
-                    f"{med.name} did an excellent job storing herbs this moon. "
-                    f"{adjust_list_text([self.herb[herb].plural_display for herb in better_storage]).capitalize()} "
+                    f"{med.name} did an excellent job storing herbs this moon. The "
+                    f"{adjust_list_text([self.herb[herb].plural_display for herb in better_storage])} "
                     f"will expire slower.")
                 # remove herbs that were stored well from the collection
                 for herb in better_storage:
@@ -597,10 +601,11 @@ class HerbSupply:
                 effect_message = "The risks associated with {PRONOUN/m_c/poss} condition are lowered."
 
         # create and append log message
-        message = (f"m_c was given "
-                   f"{self.herb[herb_used].plural_display if amount_used > 1 else self.herb[herb_used].singular_display}"
-                   f" this moon as treatment for: {condition}. "
-                   f"{effect_message}")
+        message = (
+            f"m_c was given "
+            f"{self.herb[herb_used].plural_display if amount_used > 1 else str('a ') + self.herb[herb_used].singular_display}"
+            f" this moon as treatment for: {condition}. "
+            f"{effect_message}")
 
         message = event_text_adjust(
             Cat=treated_cat,

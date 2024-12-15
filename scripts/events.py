@@ -655,7 +655,8 @@ class Events:
             for med in healthy_meds:
                 list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
                     med,
-                    specific_amount_bonus=len(healthy_warriors))
+                    general_amount_bonus=True,
+                    specific_quantity_bonus=len(healthy_warriors))
                 herb_list.extend(found_herbs)
 
             # remove dupes
@@ -670,7 +671,7 @@ class Events:
 
             # finish
             if len(herb_list) > 1:
-                focus_text = f"With the additional focus of the Clan, {adjust_list_text(herb_strs)} were gathered."
+                focus_text = f"With the additional focus of the Clan; {adjust_list_text(herb_strs)} were gathered."
             elif len(herb_list) == 1:
                 focus_text = f"With the additional focus of the Clan, some {adjust_list_text(herb_strs)} was gathered."
             else:

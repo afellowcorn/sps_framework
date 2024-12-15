@@ -10,7 +10,6 @@ from scripts.clan_resources.freshkill import (
     FRESHKILL_EVENT_ACTIVE,
     FRESHKILL_EVENT_TRIGGER_FACTOR,
 )
-from scripts.clan_resources.supply import Supply
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.relation_events import Relation_Events
@@ -26,7 +25,6 @@ from scripts.utility import (
     create_new_cat_block,
     get_leader_life_notice,
     get_alive_status_cats,
-    get_living_clan_cat_count,
     adjust_list_text,
 )
 
@@ -211,7 +209,8 @@ class HandleShortEvents:
             )
             unpack_rel_block(Cat, self.chosen_event.relationships, self)
 
-        # used in some murder events, this kind of sucks tho it would be nice to change how this sort of thing is handled
+        # used in some murder events,
+        # this kind of sucks tho it would be nice to change how this sort of thing is handled
         if "kit_manipulated" in self.chosen_event.tags:
             kit = Cat.fetch_cat(random.choice(get_alive_status_cats(Cat, ["kitten"])))
             self.involved_cats.append(kit.ID)
@@ -645,7 +644,8 @@ class HandleShortEvents:
 
     def handle_injury(self):
         """
-        assigns an injury to involved cats and then assigns possible histories (if in classic, assigns scar and scar history)
+        assigns an injury to involved cats and then assigns possible histories (if in classic, assigns scar and scar
+        history)
         """
 
         # if no injury block, then no injury gets assigned
@@ -698,7 +698,7 @@ class HandleShortEvents:
         # TODO: problematic as we currently cannot mark who is the r_c and who is the m_c
         #  should consider if we can have history text be converted to use the cat's ID number in place of abbrs
 
-        # if injury is false, then this is classic and they just need scar history
+        # if injury is false, then this is classic, and they just need scar history
         if not injury:
             for block in self.chosen_event.history:
                 if "scar" not in block:

@@ -672,7 +672,7 @@ class PatrolOutcome:
             list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
                 med_cat=patrol.patrol_leader,
                 general_amount_bonus=large_bonus,
-                specific_amount_bonus=patrol_size_modifier
+                specific_quantity_bonus=patrol_size_modifier
             )
         else:
             found_herbs = {}

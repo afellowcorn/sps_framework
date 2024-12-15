@@ -29,7 +29,7 @@ from scripts.housekeeping.version import get_version_info, SAVE_VERSION_NUMBER
 from scripts.utility import (
     get_current_season,
     quit,
-    clan_symbol_sprite,
+    clan_symbol_sprite, get_living_clan_cat_count,
 )  # pylint: disable=redefined-builtin
 
 
@@ -1100,6 +1100,7 @@ class Clan:
             # else just start us with an empty herb supply
             else:
                 clan.herb_supply = HerbSupply()
+            clan.herb_supply.required_herb_count = get_living_clan_cat_count(Cat) * 2
         except:
             clan.herb_supply = HerbSupply()
 

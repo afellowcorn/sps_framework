@@ -71,7 +71,7 @@
     "This isn't right - there should be a source of comfort and guidance in this den, not an uneasy absence and unsettling silence."
   ],
   "single_not_working": [
-    "m_c's tail twitches with irritation, but the rest of {PRONOUN/m_c/poss} body stubbornly stays limp with exhaustion. c_n will have to manage without {PRONOUN/m_c/object} this moon.",
+    "m_c's tail twitches with irritation, but {PRONOUN/m_c/subject} {VERB/m_c/stay/stays} limp with exhaustion. c_n will have to manage without {PRONOUN/m_c/object} this moon.",
     "m_c rests deeply, curled into a tight ball. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} that sleep is the only thing that'll get {PRONOUN/m_c/object} back on {PRONOUN/m_c/poss} paws.",
     "m_c isn't seeing patients this moon, {PRONOUN/m_c/subject} {VERB/m_c/are/is} the patient.",
     "m_c just hopes no one does anything mouse-brained this moon. {PRONOUN/m_c/subject/CAP} {VERB/m_c/aren't/isn't} in any condition to patch anyone up.",
