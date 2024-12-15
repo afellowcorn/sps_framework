@@ -512,7 +512,7 @@ class ChangeCatName(UIWindow):
 
         self.done_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((161, 145), (77, 30))),
-            "buttons.done",
+            "buttons.done_lower",
             get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
@@ -1091,7 +1091,7 @@ class KillCat(UIWindow):
         if self.the_cat.status == "leader":
             self.done_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((347, 152), (77, 30))),
-                "buttons.done",
+                "buttons.done_lower",
                 get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
@@ -1153,7 +1153,7 @@ class KillCat(UIWindow):
 
             self.done_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((186, 152), (77, 30))),
-                "buttons.done",
+                "buttons.done_lower",
                 get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,
@@ -1175,7 +1175,7 @@ class KillCat(UIWindow):
 
             self.done_button = UISurfaceImageButton(
                 ui_scale(pygame.Rect((186, 152), (77, 30))),
-                "buttons.done",
+                "buttons.done_lower",
                 get_button_dict(ButtonStyles.SQUOVAL, (77, 30)),
                 object_id="@buttonstyles_squoval",
                 manager=MANAGER,

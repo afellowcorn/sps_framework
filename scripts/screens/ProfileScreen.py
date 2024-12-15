@@ -2186,7 +2186,9 @@ class ProfileScreen(Screens):
                 object_id="@buttonstyles_ladder_top",
                 tool_tip_text="screens.profile.exile_guide_tooltip"
                 if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID
-                else "screens.profile.exile_tooltip",
+                else "screens.profile.exile_tooltip"
+                if not self.the_cat.dead
+                else None,
                 starting_height=2,
                 manager=MANAGER,
             )
@@ -2211,6 +2213,7 @@ class ProfileScreen(Screens):
                 self.exile_cat_button.disable()
 
             if self.the_cat.dead:
+                self.exile_cat_button.enable()
                 self.exile_cat_button.join_focus_sets(self.exile_layer)
 
             if not self.the_cat.dead:
