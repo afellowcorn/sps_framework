@@ -374,17 +374,6 @@ class Game:
                 self.settings[key] = value
 
         self.switches["language"] = self.settings["language"]
-        if self.settings["language"] != "english":
-            self.switch_language()
-
-    def switch_language(self):
-        # add translation information here
-        if os.path.exists("languages/" + game.settings["language"] + ".txt"):
-            with open(
-                "languages/" + game.settings["language"] + ".txt", "r", encoding="utf-8"
-            ) as read_file:
-                raw_language = read_file.read()
-            game.language = literal_eval(raw_language)
 
     def switch_setting(self, setting_name):
         """Call this function to change a setting given in the parameter by one to the right on it's list"""
