@@ -1,6 +1,7 @@
 import i18n
 
 from scripts.cat.cats import Cat
+from scripts.game_structure.game_essentials import game
 from scripts.utility import event_text_adjust
 
 # please for the love of GOD don't do this. ever.
@@ -44,7 +45,7 @@ def translate(text: str, **kwargs):
             patrol_apprentices=dict.get("patrol_apprentices"),
             new_cats=dict.get("new_cats"),
             multi_cats=dict.get("multi_cats"),
-            clan=dict.get("clan"),
+            clan=dict.get("clan", game.clan),
             other_clan=dict.get("other_clan"),
             chosen_herb=dict.get("chosen_herb"),
         )

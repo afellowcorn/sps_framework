@@ -392,7 +392,7 @@ class Thoughts:
             if (main_cat.name.prefix + main_cat.name.suffix).replace(
                 " ", ""
             ).lower() == "rickastley":
-                return i18n.t("hardcoded.rickroll")
+                return i18n.t("defaults.rickroll")
             else:
                 chosen_thought_group = choice(
                     Thoughts.load_thoughts(
