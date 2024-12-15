@@ -51,11 +51,6 @@
                 "format": "list",
                 "pre_value": ", with "
             }
-
-        ],
-        "pattern": {
-
-        }
-
+        ]
     }
 }

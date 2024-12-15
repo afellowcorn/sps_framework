@@ -948,7 +948,7 @@ class PronounCreation(UIWindow):
         )
 
         self.pronoun_added = pygame_gui.elements.UITextBox(
-            f"Pronoun saved and added to presets!",
+            f"windows.pronoun_confirm",
             ui_scale(pygame.Rect((0, 375), (300, 40))),
             visible=False,
             object_id="#text_box_30_horizleft",

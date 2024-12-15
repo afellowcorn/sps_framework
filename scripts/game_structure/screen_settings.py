@@ -216,7 +216,7 @@ def determine_screen_scale(x, y, ingame_switch):
         with open(
             get_save_dir() + "/settings.json", "r", encoding="utf-8"
         ) as read_config:
-            screen_config = ujson.load(read_config)
+            screen_config = ujson.load(read_config.read())
 
     if "fullscreen scaling" in screen_config and screen_config["fullscreen scaling"]:
         scalex = (x - 20) // 80
@@ -282,9 +282,19 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
     if MANAGER is not None:
         MANAGER = None
 
-    translation_paths = ["resources/lang/en"]
-    if os.path.exists("resources/lang/po"):
-        translation_paths.append("resources/lang/po")
+    try:
+        with open(
+            get_save_dir() + "/settings.json", "r", encoding="utf-8"
+        ) as read_file:
+            settings_data = ujson.loads(read_file.read())
+    except FileNotFoundError:
+        return
+
+    translation_paths = []
+    for root, dirs, files in os.walk("resources\\lang"):
+        for directory in dirs:
+            translation_paths.append(os.path.join(root, directory))
+        break
 
     # initialize pygame_gui manager, and load themes
     manager = UIManager(
@@ -293,7 +303,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         scale,
         None,
         enable_live_theme_updates=False,
-        starting_language="en",
+        starting_language=settings_data["language"],
         translation_directory_paths=translation_paths,
     )
 

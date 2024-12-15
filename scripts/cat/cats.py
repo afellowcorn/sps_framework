@@ -997,7 +997,11 @@ class Cat:
         """
         output = Pelt.describe_appearance(self, short)
         # Add "a" or "an"
-        output = f"an {output}" if output[0].lower() in "aeiou" else f"a {output}"
+        if i18n.config.get("locale") == "en":
+            output = f"an {output}" if output[0].lower() in "aeiou" else f"a {output}"
+        # else:
+        #     output = i18n.t("utility.indefinite", text=output, m_c=self)
+        event_text_adjust(Cat, output, main_cat=self)
         return output
 
     def convert_history(self, died_by, scar_events):
