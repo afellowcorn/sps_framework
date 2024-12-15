@@ -2601,7 +2601,7 @@ def generate_sprite(
     if life_state is not None:
         age = life_state
     else:
-        age = cat.age
+        age = cat.age.value
 
     if always_living:
         dead = False

@@ -4,7 +4,7 @@ from random import choice
 import pygame.transform
 import pygame_gui.elements
 
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, CatAgeEnum
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
@@ -634,7 +634,7 @@ class MediationScreen(Screens):
             # ROMANTIC LOVE
             # CHECK AGE DIFFERENCE
             same_age = the_relationship.cat_to.age == cat.age
-            adult_ages = ["young adult", "adult", "senior adult", "senior"]
+            adult_ages = [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT, CatAgeEnum.SENIOR_ADULT, CatAgeEnum.SENIOR]
             both_adult = (
                 the_relationship.cat_to.age in adult_ages and cat.age in adult_ages
             )

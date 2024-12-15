@@ -10,7 +10,7 @@ from typing import List, Tuple, Optional
 import pygame
 import ujson
 
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, CatAgeEnum
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.patrol.patrol_event import PatrolEvent
@@ -156,7 +156,7 @@ class Patrol:
                 else:
                     self.patrol_statuses["all apprentices"] = 1
 
-            if cat.status in ("warrior", "deputy", "leader") and cat.age != "adolescent":
+            if cat.status in ("warrior", "deputy", "leader") and cat.age != CatAgeEnum.ADOLESCENT:
                 if "normal adult" in self.patrol_statuses:
                     self.patrol_statuses["normal adult"] += 1
                 else:

@@ -293,6 +293,9 @@ def _check_cat_age(cat, ages: list) -> bool:
 
     if cat.age in ages:
         return True
+    elif not isinstance(cat.age, str) and cat.age.value in ages:
+        print('WARNING: cat age is not enum')
+        return True # return true anyways lol
 
     return False
 
