@@ -324,7 +324,7 @@ class MedDenScreen(Screens):
 
         self.meds_messages = UITextBoxTweaked(
             "",
-            ui_scale(pygame.Rect((108, 310), (600, 80))),
+            ui_scale(pygame.Rect((108, 310), (600, 100))),
             object_id=get_text_box_theme("#text_box_30_horizcenter_vertcenter"),
             line_spacing=1,
         )
