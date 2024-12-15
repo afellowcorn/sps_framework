@@ -1,6 +1,6 @@
 import random
 from random import choice, randint
-from typing import Dict
+from typing import Dict, List, Union
 
 import i18n
 
@@ -27,7 +27,7 @@ class Pregnancy_Events:
     """All events which are related to pregnancy such as kitting and defining who are the parents."""
 
     biggest_family = {}
-    PREGNANT_STRINGS: Dict = None
+    PREGNANT_STRINGS: Dict[str, Union[List, Dict[str, List]]] = None
     currently_loaded_lang: str = None
 
     @staticmethod
