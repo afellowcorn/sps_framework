@@ -118,7 +118,7 @@ class Game:
         "name_cat": None,
         "biome": None,
         "camp_bg": None,
-        "language": "english",
+        "language": "en",
         "options_tab": None,
         "profile_tab_group": None,
         "sub_tab_group": None,

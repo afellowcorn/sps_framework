@@ -8,7 +8,7 @@
         "sfx_volume": "Sound Effect Volume:",
         "info": "info",
         "language": "language",
-        "language_info": "Change the language of the game here. This has not been implemented yet.",
+        "language_info": "Change the language of the game here. This is currently a work-in-progress.",
         "lang_english": "english",
         "lang_spanish": "spanish",
         "lang_german": "german"
