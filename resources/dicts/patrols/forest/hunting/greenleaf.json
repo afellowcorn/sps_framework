@@ -677,7 +677,7 @@
         "biome": ["forest"],
         "season": ["greenleaf"],
         "types": ["hunting"],
-        "tags": ["disrespect", "distrust"],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 2,
         "max_cats": 6,
