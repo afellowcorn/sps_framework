@@ -748,7 +748,7 @@ class SettingsScreen(Screens):
                 manager=MANAGER,
                 anchors={"top_target": self.checkboxes["en"]},
             )
-            self.checkboxes["po"] = UISurfaceImageButton(
+            self.checkboxes["de"] = UISurfaceImageButton(
                 ui_scale(pygame.Rect((310, 0), (180, 37))),
                 "deutsch",
                 get_button_dict(ButtonStyles.LADDER_BOTTOM, (180, 37)),
@@ -761,8 +761,8 @@ class SettingsScreen(Screens):
                 self.checkboxes["en"].disable()
             elif language == "es":  # Spanish
                 self.checkboxes["es"].disable()
-            elif language == "po":  # German TODO: replace with "de"
-                self.checkboxes["po"].disable()
+            elif language == "de":  # German
+                self.checkboxes["de"].disable()
 
         else:
             for i, (code, desc) in enumerate(settings_dict[self.sub_menu].items()):
