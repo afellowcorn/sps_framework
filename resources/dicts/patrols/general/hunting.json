@@ -374,7 +374,7 @@
         "biome": ["any"],
         "season": ["any"],
         "types": ["hunting"],
-        "tags": ["disrespect", "distrust"],
+        "tags": [],
         "patrol_art": "gen_hunt_sneakprey",
         "min_cats": 1,
         "max_cats": 1,
