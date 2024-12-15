@@ -10,6 +10,7 @@ from scripts.clan_resources.freshkill import (
     FRESHKILL_EVENT_ACTIVE,
     FRESHKILL_EVENT_TRIGGER_FACTOR,
 )
+from scripts.clan_resources.supply import Supply
 from scripts.event_class import Single_Event
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.events_module.relationship.relation_events import Relation_Events
@@ -777,89 +778,69 @@ class HandleShortEvents:
         :param block: supplies block
         """
 
-        herbs = game.clan.herbs
+        herb_supply = game.clan.herb_supply
 
         adjustment = block["adjust"]
         supply_type = block["type"]
         trigger = block["trigger"]
 
-        clan_size = get_living_clan_cat_count(Cat)
-        needed_amount = int(clan_size * 3)
-
         self.herb_notice = "Lost "
-        herb_list = []
-
         if "reduce" in adjustment:
             self.herb_notice = "Lost "
         elif "increase" in adjustment:
             self.herb_notice = "Gained "
+        herb_list = []
 
         # adjust entire herb store
         if supply_type == "all_herb":
-            for herb in herbs:
+            for herb, count in herb_supply.entire_supply.copy():
                 herb_list.append(herb)
                 if adjustment == "reduce_full":
-                    herbs[herb] = 0
+                    herb_supply.remove_herb(herb, count)
                 elif adjustment == "reduce_half":
-                    herbs[herb] = int(game.clan.herbs[herb] / 2)
+                    herb_supply.remove_herb(herb, count / 2)
                 elif adjustment == "reduce_quarter":
-                    herbs[herb] = int(game.clan.herbs[herb] / 4)
+                    herb_supply.remove_herb(herb, count / 4)
                 elif adjustment == "reduce_eighth":
-                    herbs[herb] = int(game.clan.herbs[herb] / 8)
+                    herb_supply.remove_herb(herb, count / 8)
                 elif "increase" in adjustment:
-                    herbs[herb] += adjustment.split("_")[1]
+                    herb_supply.add_herb(herb, adjustment.split("_")[1])
 
         # if we weren't adjusted the whole herb store, then adjust an individual
         else:
             # picking a random herb to adjust
             if supply_type == "any_herb":
                 possible_herbs = []
-                for herb in herbs:
+                for herb in herb_supply.entire_supply:
                     if "always" in trigger:
                         possible_herbs.append(herb)
-                    if "low" in trigger and herbs[herb] < needed_amount / 2:
+
+                    rating = herb_supply.get_herb_rating(herb)
+                    if rating in trigger:
                         possible_herbs.append(herb)
-                    if (
-                        "adequate" in trigger
-                        and needed_amount / 2 < herbs[herb] < needed_amount
-                    ):
-                        possible_herbs.append(herb)
-                    if (
-                        "full" in trigger
-                        and needed_amount < herbs[herb] < needed_amount * 2
-                    ):
-                        possible_herbs.append(herb)
-                    if "excess" in trigger and needed_amount * 2 < herbs[herb]:
-                        possible_herbs.append(herb)
+
                 self.chosen_herb = random.choice(possible_herbs)
 
             # if it wasn't a random herb or all herbs, then it's one specific herb
             else:
                 self.chosen_herb = supply_type
 
-            # now adjust the supply for the chosen_herb
-            if adjustment == "reduce_full":
-                herbs[self.chosen_herb] = 0
-            elif adjustment == "reduce_half":
-                herbs[self.chosen_herb] = int(game.clan.herbs[self.chosen_herb] / 2)
-            elif adjustment == "reduce_quarter":
-                herbs[self.chosen_herb] = int(game.clan.herbs[self.chosen_herb] / 4)
-            elif adjustment == "reduce_eighth":
-                herbs[self.chosen_herb] = int(game.clan.herbs[self.chosen_herb] / 8)
-            elif "increase" in adjustment:
-                herbs[self.chosen_herb] += int(adjustment.split("_")[1])
-
-        if not self.chosen_herb:
-            self.chosen_herb = random.choice(list(herbs.keys()))
-        if self.chosen_herb:
             herb_list.append(self.chosen_herb)
 
-        if herb_list:
-            for herb in herb_list:
-                if herb in herbs and herbs[herb] == 0:
-                    herbs.pop(herb)
+            # now adjust the supply for the chosen_herb
+            total_herb = herb_supply.total_of_herb(self.chosen_herb)
+            if adjustment == "reduce_full":
+                herb_supply.remove_herb(self.chosen_herb, total_herb)
+            elif adjustment == "reduce_half":
+                herb_supply.remove_herb(self.chosen_herb, total_herb / 2)
+            elif adjustment == "reduce_quarter":
+                herb_supply.remove_herb(self.chosen_herb, total_herb / 4)
+            elif adjustment == "reduce_eighth":
+                herb_supply.remove_herb(self.chosen_herb, total_herb / 8)
+            elif "increase" in adjustment:
+                herb_supply.add_herb(self.chosen_herb, int(adjustment.split("_")[1]))
 
-        self.herb_notice = self.herb_notice + adjust_list_text(herb_list)
+        self.herb_notice = self.herb_notice + adjust_list_text(herb_list) + "during this moon."
 
     def reset(self):
         """
