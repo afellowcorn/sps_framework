@@ -122,6 +122,32 @@
             "text_vert_alignment": "center"
         }
     },
+    "@clangen_16": {
+        "font": {
+            "name": "clangen",
+            "size": "16"
+        },
+        "colours": {
+            "normal_text": "#EFE5CE",
+            "active_text": "#EFE5CE",
+            "selected_text": "#EFE5CE",
+            "disabled_text": "#EFE5CE"
+        },
+        "misc": {"text_horiz_alignment": "center", "text_vert_alignment": "center", "line_spacing": "1.1"}
+    },
+    "@clangen_32": {
+        "font": {
+            "name": "clangen",
+            "size": "32"
+        },
+        "colours": {
+            "normal_text": "#EFE5CE",
+            "active_text": "#EFE5CE",
+            "selected_text": "#EFE5CE",
+            "disabled_text": "#EFE5CE"
+        },
+        "misc": {"text_horiz_alignment": "center", "text_vert_alignment": "center", "line_spacing": "1.1"}
+    },
     "button": {
         "font": {"name": "clangen", "size": "16"},
         "colours": {
@@ -1761,7 +1787,7 @@
         },
         "misc": {
             "text_vert_alignment": "top",
-            "text_vert_alignment_padding": "15"
+            "text_vert_alignment_padding": "25"
         }
     },
     "biome_button_prototype": {

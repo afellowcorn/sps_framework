@@ -1297,7 +1297,7 @@ class MakeClanScreen(Screens):
     def _get_cat_tooltip_string(self, cat: Cat):
         """Get tooltip for cat. Tooltip displays name, sex, age group, and trait."""
 
-        return f"<b>{cat.name}</b><br>{cat.genderalign}<br>{i18n.t('general.' + cat.age, count=1)}<br>{i18n.t('personality.' + cat.personality.trait)}"
+        return f"<b>{cat.name}</b><br>{cat.get_genderalign_string()}<br>{i18n.t('general.' + cat.age, count=1)}<br>{i18n.t('cat.personality.' + cat.personality.trait)}<br>{cat.skills.skill_string(short=True)}"
 
     def open_game_mode(self):
         # Clear previous screen
@@ -1458,6 +1458,18 @@ class MakeClanScreen(Screens):
             object_id="@buttonstyles_squoval",
             manager=MANAGER,
         )
+        self.elements["title"] = pygame_gui.elements.UITextBox(
+            "screens.make_clan.name_clan_title",
+            ui_scale(pygame.Rect((0, 525), (300, 40))),
+            object_id="@clangen_32",
+            anchors={"centerx": "centerx"},
+        )
+        self.elements["subtitle"] = pygame_gui.elements.UITextBox(
+            "screens.make_clan.name_clan_subtitle",
+            ui_scale(pygame.Rect((0, -5), (300, 30))),
+            object_id="@buttonstyles_rounded_rect",
+            anchors={"centerx": "centerx", "top_target": self.elements["title"]},
+        )
 
     def clan_name_header(self):
         self.elements["name_backdrop"] = pygame_gui.elements.UIImage(
@@ -1485,6 +1497,13 @@ class MakeClanScreen(Screens):
 
         self.elements["background"].disable()
         self.clan_name_header()
+
+        self.elements["title"] = pygame_gui.elements.UITextBox(
+            "screens.make_clan.leader_title",
+            ui_scale(pygame.Rect((0, 610), (800, 90))),
+            object_id="@clangen_32",
+            anchors={"centerx": "centerx"},
+        )
 
         # Roll_buttons
         x_pos = 155
@@ -1608,6 +1627,12 @@ class MakeClanScreen(Screens):
         )
         self.elements["background"].disable()
         self.clan_name_header()
+        self.elements["title"] = pygame_gui.elements.UITextBox(
+            "screens.make_clan.deputy_title",
+            ui_scale(pygame.Rect((0, 610), (800, 90))),
+            object_id="@clangen_32",
+            anchors={"centerx": "centerx"},
+        )
 
         self.create_cat_info()
 
@@ -1661,6 +1686,12 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
         self.clan_name_header()
+        self.elements["title"] = pygame_gui.elements.UITextBox(
+            "screens.make_clan.medcat_title",
+            ui_scale(pygame.Rect((0, 610), (800, 90))),
+            object_id="@clangen_32",
+            anchors={"centerx": "centerx"},
+        )
 
         self.create_cat_info()
 
@@ -1720,6 +1751,12 @@ class MakeClanScreen(Screens):
             manager=MANAGER,
         )
         self.elements["background"].disable()
+        self.elements["title"] = pygame_gui.elements.UITextBox(
+            "screens.make_clan.recruit_title",
+            ui_scale(pygame.Rect((0, 610), (800, 90))),
+            object_id="@clangen_32",
+            anchors={"centerx": "centerx"},
+        )
         self.clan_name_header()
 
         self.create_cat_info()
