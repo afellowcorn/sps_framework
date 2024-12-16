@@ -301,13 +301,14 @@ def change_clan_relations(other_clan, difference):
 
 
 def create_new_cat_block(
-    Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]
+    Cat, Relationship, event, CatAgeEnum, in_event_cats: dict, i: int, attribute_list: List[str]
 ) -> list:
     """
     Creates a single new_cat block and then generates and returns the cats within the block
     :param Cat Cat: always pass Cat class
     :param Relationship Relationship: always pass Relationship class
     :param event: always pass the event class
+    :param CatStatusEnum: always pass the CatStatusEnum class
     :param dict in_event_cats: dict containing involved cats' abbreviations as keys and cat objects as values
     :param int i: index of the cat block
     :param list[str] attribute_list: attribute list contained within the block
@@ -431,15 +432,17 @@ def create_new_cat_block(
             continue
 
         if match.group(1) in Cat.age_moons:
+            min_age, max_age = Cat.age_moons[CatAgeEnum(match.group(1))]
             age = randint(
-                Cat.age_moons[match.group(1)][0], Cat.age_moons[match.group(1)][1]
+                min_age, max_age
             )
             break
 
         # Set same as first mate
         if match.group(1) == "mate" and give_mates:
+            min_age, max_age = Cat.age_moons[give_mates[0].age]
             age = randint(
-                Cat.age_moons[give_mates[0].age][0], Cat.age_moons[give_mates[0].age][1]
+                min_age, max_age
             )
             break
 
@@ -450,7 +453,7 @@ def create_new_cat_block(
     if status and not age:
         if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
             age = randint(
-                Cat.age_moons["adolescent"][0], Cat.age_moons["adolescent"][1]
+                Cat.age_moons[CatAgeEnum.ADOLESCENT][0], Cat.age_moons[CatAgeEnum.ADOLESCENT][1]
             )
         elif status in ["warrior", "mediator", "medicine cat"]:
             age = randint(
