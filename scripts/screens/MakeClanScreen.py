@@ -1921,10 +1921,11 @@ class MakeClanScreen(Screens):
         # set basics
         self.sub_screen = "choose symbol"
 
-        self.elements["previous_step"] = UIImageButton(
+        self.elements["previous_step"] = UISurfaceImageButton(
             ui_scale(pygame.Rect((253, 645), (147, 30))),
-            "",
-            object_id="#previous_step_button",
+            "buttons.previous_step",
+            get_button_dict(ButtonStyles.MENU_LEFT, (147, 30)),
+            object_id="@buttonstyles_menu_left",
             manager=MANAGER,
             starting_height=2,
         )
