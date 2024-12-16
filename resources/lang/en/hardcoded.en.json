@@ -3,7 +3,7 @@
         "comment": "at some point, this file should become empty and unnecessary.",
         "event_deaths": {
             "one": "This past moon, m_c has taken {PRONOUN/m_c/poss} place in StarClan. c_n mourns their loss, and {PRONOUN/m_c/poss} Clanmates will miss where {PRONOUN/m_c/subject} had been in their lives. Moments of {PRONOUN/m_c/poss} life are shared in stories around the circle of mourners as those that were closest to {PRONOUN/m_c/object} take {PRONOUN/m_c/object} to {PRONOUN/m_c/poss} final resting place.",
-            "many": "The past moon, %{insert} have taken their place in StarClan. {game.clan.name}Clan mourns their loss, and their Clanmates will miss where they had been in their lives. Moments of their lives are shared in stories around the circle of mourners as those that were closest to them take them to their final resting place."
+            "many": "The past moon, %{insert} have taken their place in StarClan. c_n mourns their loss, and their Clanmates will miss where they had been in their lives. Moments of their lives are shared in stories around the circle of mourners as those that were closest to them take them to their final resting place."
         },
         "event_shaken_grief": {
             "one": "So much grief and death has taken its toll on the cats of c_n. %{insert} is particularly shaken by it.",
@@ -49,7 +49,7 @@
         "new_kit_thought": "Snuggles up to the belly of r_c",
         "event_mediator_app": "m_c has chosen to use {PRONOUN/m_c/poss} skills and experience to help solve the Clan's disagreements. A meeting is called, and {PRONOUN/m_c/subject} {VERB/m_c/become/becomes} the Clan's newest mediator.",
         "herbs_found": {
-            "zero": "{med.name} could not find any herbs this moon.",
+            "zero": "med_name could not find any herbs this moon.",
             "many": "med_name gathered %{insert} this moon."
         },
         "prey_catch_count": {
@@ -63,8 +63,8 @@
         },
         "focus_herbs": {
             "zero": "Despite the focus of the Clan, no additional herbs could be gathered.",
-            "one": "With the focus of the Clan, {herb_amount} additional herb was gathered",
-            "many": "With the focus of the Clan, {herb_amount} additional herbs were gathered."
+            "one": "With the focus of the Clan, %{herb_amount} additional herb was gathered.",
+            "many": "With the focus of the Clan, %{herb_amount} additional herbs were gathered."
         },
         "focus_herbs_log": "With the additional focus of the Clan, the following herbs were gathered: %{herbs}.",
         "focus_raid_prey": {
