@@ -1746,7 +1746,7 @@
     {
         "patrol_id": "dst_hunt_mouse2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_mouse",
@@ -1785,7 +1785,7 @@
     {
         "patrol_id": "dst_hunt_mouse_warriorapp1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_mouse",
@@ -1825,7 +1825,7 @@
     {
         "patrol_id": "dst_hunt_bird1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_bird",
@@ -1862,7 +1862,7 @@
     {
         "patrol_id": "dst_hunt_rabbit2",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_rabbit",
@@ -1980,7 +1980,7 @@
     {
         "patrol_id": "dst_hunt_rabbit3",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_rabbit",
@@ -2039,7 +2039,7 @@
     {
         "patrol_id": "dst_hunt_strangerabbit1",
         "biome": ["desert"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_strangerabbit",

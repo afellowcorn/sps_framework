@@ -2136,7 +2136,7 @@
     {
         "patrol_id": "fst_train_risingclangift_storylorelocked1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["training"],
         "tags": [],
         "patrol_art": "fst_hunt_gonetwolegtrap",

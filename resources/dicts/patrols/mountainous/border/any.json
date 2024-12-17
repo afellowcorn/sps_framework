@@ -326,7 +326,7 @@
     {
         "patrol_id": "mtn_bord_rogue2",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -759,7 +759,7 @@
 {
   "patrol_id": "mtn_bord_wolf1",
   "biome": ["mountainous"],
-  "season": ["Any"],
+  "season": ["any"],
   "types": ["border"],
   "tags": [],
   "patrol_art": "bord_general_intro",

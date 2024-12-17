@@ -33,7 +33,7 @@
     {
         "patrol_id": "pln_hunt_prairiedog_allwarriors1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "pln_hunt_prairiedog1",
@@ -192,7 +192,7 @@
     {
         "patrol_id": "pln_hunt_prairiedog_warriorsappmix1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "pln_hunt_prairiedog1",
@@ -3122,7 +3122,7 @@
     {
         "patrol_id": "pln_hunt_mouse_warriorapp1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_mouse",
@@ -3162,7 +3162,7 @@
     {
         "patrol_id": "pln_hunt_hare1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_hare",
@@ -3200,7 +3200,7 @@
     {
         "patrol_id": "pln_hunt_rabbit2",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_rabbit",
@@ -3318,7 +3318,7 @@
     {
         "patrol_id": "pln_hunt_rabbit3",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_rabbit",
@@ -3377,7 +3377,7 @@
     {
         "patrol_id": "pln_hunt_strangerabbit1",
         "biome": ["plains"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_strangerabbit",

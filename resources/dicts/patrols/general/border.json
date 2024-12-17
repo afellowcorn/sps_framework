@@ -1,8 +1,8 @@
 [
     {
         "patrol_id": "Gen_bord_balancing_boringborder",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_dog",
@@ -81,8 +81,8 @@
     },
     {
         "patrol_id": "Gen_bord_balancing_scent",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",
@@ -146,8 +146,8 @@
     },
     {
         "patrol_id": "Gen_bord_balancing_tracks",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "gen_bord_trackrogue",
@@ -205,8 +205,8 @@
     },
     {
         "patrol_id": "Gen_bord_balancing_markings",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
         "tags": [],
         "patrol_art": "bord_general_intro",

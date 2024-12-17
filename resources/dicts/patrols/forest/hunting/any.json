@@ -3071,7 +3071,7 @@
     {
         "patrol_id": "fst_hunt_mouse2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_mouse",
@@ -3110,7 +3110,7 @@
     {
         "patrol_id": "fst_hunt_mouse_warriorapp1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_mouse",
@@ -3150,7 +3150,7 @@
     {
         "patrol_id": "fst_hunt_rat1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_rat",
@@ -3193,7 +3193,7 @@
     {
         "patrol_id": "fst_hunt_bird1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_bird",
@@ -3230,7 +3230,7 @@
     {
         "patrol_id": "fst_hunt_squirrel1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_squirrel",
@@ -3267,7 +3267,7 @@
     {
         "patrol_id": "fst_hunt_fish1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_fish",
@@ -3304,7 +3304,7 @@
     {
         "patrol_id": "fst_hunt_rabbit2",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_rabbit",
@@ -3422,7 +3422,7 @@
     {
         "patrol_id": "fst_hunt_rabbit3",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_rabbit",
@@ -3481,7 +3481,7 @@
     {
         "patrol_id": "fst_hunt_strangerabbit1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_strangerabbit",
@@ -3570,7 +3570,7 @@
     {
         "patrol_id": "fst_hunt_twolegdogsdeer1",
         "biome": ["forest"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "hunt_general_intro",

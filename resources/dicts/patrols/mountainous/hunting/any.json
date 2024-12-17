@@ -1217,7 +1217,7 @@
     {
         "patrol_id": "mtn_hunt_mouse_warriorapp1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_mouse",
@@ -1257,7 +1257,7 @@
     {
         "patrol_id": "mtn_hunt_hare1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_hare",
@@ -1295,7 +1295,7 @@
     {
         "patrol_id": "mtn_hunt_bird1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_bird",
@@ -1332,7 +1332,7 @@
     {
         "patrol_id": "mtn_hunt_squirrel1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_squirrel",
@@ -1369,7 +1369,7 @@
     {
         "patrol_id": "mtn_hunt_rabbit2",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_rabbit",
@@ -1487,7 +1487,7 @@
     {
         "patrol_id": "mtn_hunt_rabbit3",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_rabbit",
@@ -1546,7 +1546,7 @@
     {
         "patrol_id": "mtn_hunt_strangerabbit1",
         "biome": ["mountainous"],
-        "season": ["Any"],
+        "season": ["any"],
         "types": ["hunting"],
         "tags": [],
         "patrol_art": "gen_hunt_strangerabbit",

@@ -2180,10 +2180,10 @@
     },
     {
         "patrol_id": "gen_bord_allies_otherclankits1",
-        "biome": ["Any"],
-        "season": ["Any"],
+        "biome": ["any"],
+        "season": ["any"],
         "types": ["border"],
-        "tags": ["other_clan"],
+        "tags": [],
         "patrol_art": "bord_general_intro",
         "min_cats": 3,
         "max_cats": 6,
