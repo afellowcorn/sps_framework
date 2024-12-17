@@ -5411,6 +5411,10 @@
     },
     {
         "patrol_id": "bch_hunt_wareprey_lorelocked1",
+        "biome": ["beach"],
+        "season": ["newleaf"],
+        "types": [],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 3,
         "max_cats": 6,
