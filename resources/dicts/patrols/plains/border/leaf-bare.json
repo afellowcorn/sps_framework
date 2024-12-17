@@ -676,7 +676,7 @@
         ],
         "fail_outcomes": [
             {
-                "text": "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c/subject/CAP} were only out of sight for seconds - but r_c won't be coming home.",
+                "text": "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was} only out of sight for seconds - but r_c won't be coming home.",
                 "exp": 0,
                 "art": "gen_dead_cat_EXPLICIT",
                 "art_clean": "gen_dead_cat",
@@ -1136,7 +1136,7 @@
                 }
             },
             {
-                "text": "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c/subject/CAP} were only out of sight for seconds - but r_c won't be coming home.",
+                "text": "Ears pricked, the patrol stalks closer and fans out, crossing the border. On the other side, a female assesses the males trying to court her. One offers a gift to the female, and p_l's stomach drops. {PRONOUN/r_c/subject/CAP} {VERB/r_c/were/was} only out of sight for seconds - but r_c won't be coming home.",
                 "exp": 0,
                 "weight": 20,
                 "art": "gen_dead_cat_ghost_EXPLICIT",
