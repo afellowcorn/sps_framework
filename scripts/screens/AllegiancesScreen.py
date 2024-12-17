@@ -11,6 +11,7 @@ from scripts.utility import (
     get_alive_clan_queens,
     ui_scale_offset,
     adjust_list_text,
+    event_text_adjust,
 )
 from .Screens import Screens
 
@@ -113,7 +114,7 @@ class AllegiancesScreen(Screens):
         output = f"{str(cat.name).upper()} - {cat.describe_cat()} {extra_details}"
 
         if len(cat.apprentice) == 0:
-            return output
+            return event_text_adjust(Cat, output, main_cat=cat)
 
         output += f"\n      {i18n.t('general.apprentice', count=len(cat.apprentice)).upper()}: "
         output += adjust_list_text(
@@ -124,7 +125,7 @@ class AllegiancesScreen(Screens):
             ]
         ).upper()
 
-        return output
+        return event_text_adjust(Cat, output, main_cat=cat)
 
     def get_allegiances_text(self):
         """Determine Text. Ouputs list of tuples."""
@@ -242,7 +243,11 @@ class AllegiancesScreen(Screens):
                     continue
                 kittens = []
                 for k in queen_dict[q]:
-                    kittens += [f"{k.name} - {k.describe_cat(short=True)}"]
+                    kittens += [
+                        event_text_adjust(
+                            Cat, f"{k.name} - {k.describe_cat(short=True)}", main_cat=k
+                        )
+                    ]
                 if len(kittens) == 1:
                     kittens = i18n.t(
                         "screens.allegiances.caring_for",
@@ -261,7 +266,11 @@ class AllegiancesScreen(Screens):
             # Now kittens without carers
             for k in living_kits:
                 all_entries.append(
-                    f"{str(k.name).upper()} - {k.describe_cat(short=True)}"
+                    event_text_adjust(
+                        Cat,
+                        f"{str(k.name).upper()} - {k.describe_cat(short=True)}",
+                        main_cat=k,
+                    )
                 )
 
             _box[1] = "\n".join(all_entries)

@@ -1547,7 +1547,7 @@ class Pelt:
                 temp += grouping["post_value"]
             groups.append(temp)
 
-        return " ".join(groups)
+        return "".join(groups)
 
     def get_sprites_name(self):
         return Pelt.sprites_names[self.name]
@@ -1568,12 +1568,13 @@ def _describe_pattern(cat, short=False):
             color_name = i18n.t("cat.pelts.FULLWHITE")
             pelt_name = ""
         elif cat.pelt.name != "Calico":
+            white = i18n.t("cat.pelts.FULLWHITE")
             if i18n.t("cat.pelts.WHITE", count=1) in color_name:
-                color_name = i18n.t("cat.pelts.FULLWHITE")
+                color_name = white
             elif cat.pelt.white_patches in Pelt.mostly_white:
-                color_name = adjust_list_text(["white", color_name])
+                color_name = adjust_list_text([white, color_name])
             else:
-                color_name = adjust_list_text([color_name, "white"])
+                color_name = adjust_list_text([color_name, white])
 
     if cat.pelt.points:
         color_name = i18n.t("cat.pelts.point", color=color_name)

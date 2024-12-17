@@ -33,7 +33,10 @@ def get_new_pronouns(genderalign: str) -> List[Dict[str, Union[str, int]]]:
         return [default_pronouns[locale][pronouns]]
     except KeyError:
         temp = load_lang_resource("pronouns.{lang}.json")
-        default_pronouns[locale] = temp[locale]
+        try:
+            default_pronouns[locale] = temp[locale]
+        except KeyError:
+            default_pronouns[locale] = temp[i18n.config.get("fallback")]
     return [default_pronouns[locale][pronouns]]
 
 

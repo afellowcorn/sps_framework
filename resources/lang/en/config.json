@@ -40,7 +40,7 @@
             {
                 "values": [0, 1],
                 "format": ", ",
-                "post_value": ","
+                "post_value": ", "
             },
             {
                 "values": [2, 3],
