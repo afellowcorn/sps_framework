@@ -1,7 +1,7 @@
 [
     {
         "patrol_id": "wtlnd_hunt_lizard1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -32,7 +32,7 @@
     },
     {
         "patrol_id": "wtlnd_gen_hunt_twolegplace1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -131,7 +131,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_strange1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -186,7 +186,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_strange2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -235,7 +235,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_huntassessment1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -308,7 +308,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_solo2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -375,7 +375,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_solo3",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -444,7 +444,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_solo4",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -513,7 +513,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_gonetnr1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -584,7 +584,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_gonetnr2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -655,7 +655,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_gonetnr3",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -726,7 +726,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_gonetnr4",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": ["disaster"],
@@ -797,7 +797,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegden1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -871,7 +871,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegden2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -939,7 +939,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_twolegdencatdare1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": ["romantic"],
@@ -1082,7 +1082,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_twolegdenappdare1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": ["romantic"],
@@ -1210,7 +1210,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegtrap1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -1272,7 +1272,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_gonetwolegtrap2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -1334,7 +1334,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_thunderpath1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -1405,7 +1405,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_thunderpath2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": ["cruel_season"],
@@ -1476,7 +1476,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_thunderpath3",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -1541,7 +1541,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_thunderpath4",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": ["cruel_season"],
@@ -1611,7 +1611,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_lilsalamander1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -1706,7 +1706,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_lilsalamander2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": ["rom_two_apps", "romantic"],
@@ -1773,7 +1773,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -1862,7 +1862,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge4",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -1998,7 +1998,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_redfox_scavenge3",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -6045,7 +6045,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_fish1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -6082,7 +6082,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_fish2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -6120,7 +6120,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_rabbit2",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -6238,7 +6238,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_rabbit3",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -6297,7 +6297,7 @@
     },
     {
         "patrol_id": "wtlnd_hunt_strangerabbit1",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
         "tags": [],
@@ -6387,9 +6387,10 @@
     {
         "patrol_id": "wtlnd_hunt_wareprey_lorelocked1",
         "patrol_art": "gen_train_patrolapprenticesessionsuccess",
-        "biome": ["wetland"],
+        "biome": ["wetlands"],
         "season": ["any"],
         "types": ["hunting"],
+        "tags": [],
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {

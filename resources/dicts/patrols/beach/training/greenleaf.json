@@ -452,6 +452,10 @@
     },
     {
         "patrol_id": "bch_train_greenleaf_twolegmigration_lorelocked1",
+        "biome": ["beach"],
+        "season": ["greenleaf"],
+        "tags": [],
+        "types": [],
         "patrol_art": "gen_bord_story",
         "min_cats": 3,
         "max_cats": 6,

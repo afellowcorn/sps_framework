@@ -1379,6 +1379,10 @@
     {
         "patrol_id": "mtn_train_greenleaf_sunsetmyth_storylocked1",
         "patrol_art": "gen_bord_story",
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": [],
+        "tags": [],
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {

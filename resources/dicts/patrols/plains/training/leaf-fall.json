@@ -272,6 +272,10 @@
     },
     {
         "patrol_id": "pln_train_leaffall_locustswarm_storylorelocked1",
+        "biome": ["plains"],
+        "season": ["leaf-fall"],
+        "tags": [],
+        "types": [],
         "patrol_art": "gen_bord_story",
         "min_cats": 3,
         "max_cats": 6,

@@ -377,7 +377,7 @@
             "injury": [
                 {
                     "cats": ["s_c"],
-                    "injuries": ["mangled_leg"],
+                    "injuries": ["mangled leg"],
                     "scars": ["MANLEG"]
                 }
             ],
@@ -1416,7 +1416,7 @@
             "exp": 20,
             "weight": 20,
             "art": "gen_hunt_burrow",
-            "stat_trait": ["careful", "wise", "patient", "responsible"],
+            "stat_trait": ["careful", "wise", "responsible"],
             "relationships": [
                 {
                     "cats_to": ["patrol"],
@@ -1509,7 +1509,7 @@
             "exp": 0,
             "weight": 20,
             "art": "gen_hunt_heat",
-            "stat_trait": ["childish", "impulsive", "playful", "adventurous"],
+            "stat_trait": ["childish", "troublesome", "playful", "adventurous"],
             "relationships": [
                 {
                     "cats_to": ["patrol"],
@@ -2116,7 +2116,7 @@
             "exp": 20,
             "weight": 2,
             "art": "gen_hunt_burrow",
-            "stat_trait": ["careful", "wise", "patient", "responsible"],
+            "stat_trait": ["careful", "wise", "responsible"],
             "relationships": [
                 {
                     "cats_to": ["patrol"],
@@ -2215,7 +2215,7 @@
             "exp": 0,
             "weight": 10,
             "art": "gen_hunt_heat",
-            "stat_trait": ["childish", "impulsive", "playful", "adventurous"],
+            "stat_trait": ["childish", "troublesome", "playful", "adventurous"],
             "relationships": [
                 {
                     "cats_to": ["s_c"],
@@ -2923,7 +2923,7 @@
             "exp": 0,
             "weight": 20,
             "art": "gen_hunt_heat",
-            "stat_trait": ["childish", "impulsive", "playful", "adventurous"]
+            "stat_trait": ["childish", "troublesome", "playful", "adventurous"]
         },
         {
             "text": "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover! The wolverine inside is less pleased to have company.",
@@ -2931,7 +2931,7 @@
             "weight": 20,
             "art": "gen_dead_cat_EXPLICIT",
             "art_clean": "gen_dead_cat",
-            "stat_trait": ["childish", "impulsive", "playful", "adventurous"],
+            "stat_trait": ["childish", "troublesome", "playful", "adventurous"],
             "dead_cats": ["s_c"],
             "history_text": {
                 "scar": "m_c was injured after disturbing a wolverine in its sett.",

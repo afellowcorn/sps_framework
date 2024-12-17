@@ -1634,6 +1634,10 @@
     },
     {
         "patrol_id": "mtn_hunt_wareprey_lorelocked1",
+        "biome": ["mountainous"],
+        "season": ["any"],
+        "types": [],
+        "tags": [],
         "patrol_art": "hunt_general_intro",
         "min_cats": 3,
         "max_cats": 6,

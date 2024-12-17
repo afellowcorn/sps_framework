@@ -527,7 +527,7 @@
                 "injury": [
                     {
                         "cats": ["s_c"],
-                        "injuries": ["mangled_leg"],
+                        "injuries": ["mangled leg"],
                         "scars": ["MANLEG"]
                     }
                 ],
@@ -4101,7 +4101,7 @@
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_hunt_eagleswim",
-                "dead_cats":["app"],
+                "dead_cats":["app1"],
                 "history_text": {
                     "scar": "",
                     "reg_death": "m_c was taken by an eagle as an apprentice, out on a border patrol with {PRONOUN/m_c/poss} friends.",

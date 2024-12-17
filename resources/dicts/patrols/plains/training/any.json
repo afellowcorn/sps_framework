@@ -2608,10 +2608,9 @@
                 ]
             },
             {
-                "text": "p_l shows the apprentices different types of tunnels, expanding their knowledge of safe hideyholes to retreat from danger into. It soothes something in s_c to know about them. By the end of the afternoom there's a happy lightness to {PRONOUN/s_c/poss} step and {PRONOUN/s_c/poss} tail is up.",
+                "text": "p_l shows the apprentices different types of tunnels, expanding their knowledge of safe hideyholes to retreat from danger into. It soothes something in s_c to know about them. By the end of the afternoon there's a happy lightness to {PRONOUN/s_c/poss} step and {PRONOUN/s_c/poss} tail is up.",
                 "exp": 40,
                 "weight": 30,
-                "art": ["gen_train_soloapp"],
                 "can_have_stat": ["any", "app"],
                 "stat_trait":[
                     "nervous",
@@ -2646,7 +2645,6 @@
                 "text": "As p_l shows the apprentices different types of tunnels and explains how valuable they are as refuges for c_n in moments of danger, s_c gives p_l {PRONOUN/s_c/poss} full attention. This sounds just as important as p_l promised, and {PRONOUN/s_c/subject}{VERB/s_c/'re/'s} determined to remember the locations of the safe hideyholes in c_n's territory.",
                 "exp": 40,
                 "weight": 30,
-                "art": ["gen_train_soloapp"],
                 "can_have_stat": ["any", "app"],
                 "stat_trait":[
                     "wise",
@@ -2892,6 +2890,10 @@
     },
     {
         "patrol_id": "pln_train_thelongjourneyhome_storylorelocked1",
+        "biome": ["plains"],
+        "season": ["any"],
+        "tags": [],
+        "types": [],
         "patrol_art": "pln_train_session1",
         "min_cats": 3,
         "max_cats": 6,

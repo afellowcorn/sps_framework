@@ -5688,6 +5688,10 @@
     },
     {
         "patrol_id": "fst_hunt_leafbare_dewclangift_storylorelocked1",
+        "biome": ["forest"],
+        "season": ["leaf-bare"],
+        "tags": [],
+        "types": [],
         "patrol_art": "gen_hunt_leafbaresnowstorm",
         "min_cats": 2,
         "max_cats": 6,
