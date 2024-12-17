@@ -3244,7 +3244,7 @@
                     "cats_to": [ "p_l" ],
                     "cats_from": [ "n_c:0" ],
                     "mutual": false,
-                    "values": [ "jealousy", "dislike" ],
+                    "values": [ "jealous", "dislike" ],
                     "amount": 15
                 }
         ],
@@ -3503,7 +3503,7 @@
             "cats_to": [ "p_l" ],
             "cats_from": [ "n_c:0" ],
             "mutual": false,
-            "values": [ "dislike", "jealousy" ],
+            "values": [ "dislike", "jealous" ],
             "amount": 35
         },
         {
