@@ -806,7 +806,7 @@ class PatrolOutcome:
         for i, attribute_list in enumerate(self.new_cat):
             patrol.new_cats.append(
                 create_new_cat_block(
-                    Cat, Relationship, patrol, CatStatusEnum, in_event_cats, i, attribute_list
+                    Cat, Relationship, patrol, CatAgeEnum, in_event_cats, i, attribute_list
                 )
             )
 
