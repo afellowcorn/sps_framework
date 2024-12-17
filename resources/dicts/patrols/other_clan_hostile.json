@@ -308,12 +308,10 @@
             "injuries": [ "grief stricken" ]
         }
     ],
-        "history_text": [
-                    {
+        "history_text": {
                         "scar": "m_c was scarred by {PRONOUN/m_c/poss} mate's Clanmates.",
                         "reg_death": "m_c died from injuries inflicted by {PRONOUN/m_c/poss} mate's Clanmates."
-                    }
-                ],
+                    },
         "relationships": [
     {
                 "cats_to": ["p_l"],
@@ -631,10 +629,15 @@
                 "exp": 10,
                 "weight": 15,
                 "art": "gen_otherclan_ambush",
-                "injury": {
-                    "cats": ["r_c"],
-                    "injuries": ["battle_injury", "battle_injury"]
-                },
+                "injury": [
+                  {
+                    "cats": [
+                      "r_c"
+                    ],
+                    "injuries": [
+                      "battle_injury"
+                    ]
+                  }],
                 "history_text": {
                     "scar": "m_c was scarred after being ambushed on patrol.",
                     "reg_death": "m_c died of injuries sustained in an ambush.",
@@ -695,10 +698,18 @@
                 "exp": 0,
                 "weight": 10,
                 "art": "gen_warrior_infighting",
-                "injury": {
-                    "cats": ["r_c", "p_l"],
-                    "injuries": ["minor_injury","minor_injury","battle_injury"]
-                },
+                "injury": [
+                  {
+                    "cats": [
+                      "r_c",
+                      "p_l"
+                    ],
+                    "injuries": [
+                      "minor_injury",
+                      "minor_injury",
+                      "battle_injury"
+                    ]
+                  }],
                 "history_text": {
                     "scar": "m_c was scarred after brawling with a Clanmate.",
                     "reg_death": "m_c died from injuries sustained in a brawl with a Clanmate.",
