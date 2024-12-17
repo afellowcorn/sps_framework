@@ -1597,7 +1597,7 @@ def _describe_torties(cat, color_name, short=False) -> [str, str]:
         ):
             return "cat.pelts.mottled", ""
         else:
-            return f"cat.pelts.{cat.pelt.name.lower()}", ""
+            return f"cat.pelts.{cat.pelt.name}", ""
 
     base = cat.pelt.tortiebase.lower()
 
@@ -1617,10 +1617,10 @@ def _describe_torties(cat, color_name, short=False) -> [str, str]:
             "rosette",
             "speckled",
         ]:
-            base = i18n.t("cat.pelts.tabby_base")  # the extra space is intentional
+            base = f"cat.pelts.{base}_long"  # the extra space is intentional
         else:
             base = ""
-        return i18n.t(f"{cat.pelt.name.lower()}{base}"), patches_color
+        return base, color_name
 
 
 _scar_details = [
