@@ -1364,7 +1364,7 @@
         "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
-        "event_text": "{PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} killed while investigating enemy territory.",
+        "event_text": "m_c {VERB/m_c/were/was} killed while investigating enemy territory.",
         "m_c": {
             "status": ["apprentice", "warrior"],
             "dies": true
