@@ -4,30 +4,21 @@
 
 1. Make a GitHub account.
 2. Set up GitHub Desktop.
-- Install Git. 
-> You can install git on windows using https://git-scm.com/download/win
-> You can check if you have git installed by entering the command git --version in terminal
-- Install GitHub Desktop.
-- Log into GitHub in GitHub Desktop.
-
-
-(Optional) Git may be set to sign your commits with your email. If you would like your email to remain anonymous, see [Setting your commit email address on GitHub](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address) and [Configuring your global author information](https://docs.github.com/en/desktop/configuring-and-customizing-github-desktop/configuring-git-for-github-desktop)
-
+    - Install Git. 
+    > You can install git on windows using https://git-scm.com/download/win
+    > 
+    > You can check if you have git installed by entering the command git --version in terminal
+    - Install GitHub Desktop.
+    - Log into GitHub in GitHub Desktop.
+    - (Optional) Git may be set to sign your commits with your email. If you would like your email to remain anonymous, see [Setting your commit email address on GitHub](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address) and [Configuring your global author information](https://docs.github.com/en/desktop/configuring-and-customizing-github-desktop/configuring-git-for-github-desktop)
 3. Download an IDE
-
-An IDE (Integrated Development Environment) is a code interpreter. These are programs that allow you to view, run, and edit code, they generally provide shortcuts and point out errors to help speed the process. Importantly, that have the code equivalent of Microsoft Word's spellchecker, and help you by highlighting errors. PyCharm or Virtual Studio Code (VSC) are common favorites among the developers of Clangen, but you aren't required to use a specific one. GitHub desktop will automatically try to open the game files within your IDE, and your IDE will also display things like merging conflicts in an easier to understand way.
-
+    - An IDE (Integrated Development Environment) is a code interpreter. These are programs that allow you to view, run, and edit code, they generally provide shortcuts and point out errors to help speed the process. Importantly, that have the code equivalent of Microsoft Word's spellchecker, and help you by highlighting errors. PyCharm or Virtual Studio Code (VSC) are common favorites among the developers of Clangen, but you aren't required to use a specific one. GitHub desktop will automatically try to open the game files within your IDE, and your IDE will also display things like merging conflicts in an easier to understand way.
 4. Create a fork of Clangen
-
-A fork is a new repository that is a copy of an existing repository. By making a fork, it becomes easier to sync your code with any changes from the main Clangen repository. Changing things on your fork will not affect the main Clangen repository in any way. In fact, unless you are a Senior Contributor, it is _impossible_ for you to accidentally commit to the main Clangen repository.
-
-You can create a fork from GitHub Desktop or github web browser or using the terminal. [Github's documentation for doing so is here.](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
-
+    - A fork is a new repository that is a copy of an existing repository. By making a fork, it becomes easier to sync your code with any changes from the main Clangen repository. Changing things on your fork will not affect the main Clangen repository in any way. In fact, unless you are a Senior Contributor, it is _impossible_ for you to accidentally commit to the main Clangen repository.
+    - You can create a fork from GitHub Desktop or github web browser or using the terminal. [Github's documentation for doing so is here.](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 5. Create branches of your own and other people's forks
-
-A branch represents a lineage of changes. You should make a new branch to track the changes you make from the base game (the "remote"). You branch _from_ forks, either your own or someone else's. 
-
-[This is how you make a branch.](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)
+    - A branch represents a lineage of changes. You should make a new branch to track the changes you make from the base game (the "remote"). You branch _from_ forks, either your own or someone else's. 
+    - [This is how you make a branch.](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)
 
 When working on multiple projects(or if you already have made a personal fork of clangen), sometimes it is required to work on multiple forks and branches from different developers (we'll refer to them as "sister forks"). Unfortunately, there is no way to do this directly through github desktop, but there is a work around. Branching from someone else's fork lets you PR to their fork, rather than the main Clangen repository, which is very helpful for large milestone development.
 
