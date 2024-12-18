@@ -1,10 +1,11 @@
-# General
+# Basic
+## General
 If you would like to contribute art to the project, we highly encourage you to join the discord in order to collaborate more directly with the team.  We have applications available for artists seeking to join the project as an Apprentice Developer.  If accepted, you would be able to seek direct guidance from other art contributors and senior contributors, as well as collaborate with coders if you do not have the coding knowledge to add your art to the project.  While you are very welcome to make a PR without being an established contributor or Apprentice Dev, please keep in mind that your PR will likely receive critique that must be taken into account before it is merged.  
 
 Our priority when adding new art is to keep a consistent art style and quality level.  
 
-## Cat Sprites
-### Spritesheets
+### Cat Sprites
+#### Spritesheets
 Spritesheets is how the game picks which sprite parts to draw for each cat, by finding the exact position of each sprite from the whole canvas. The sprite parts are drawn on top of each other like layers, where the order of drawing decides which part is below or on top of another. The order of the parts goes like this:
 
 1. Pelt
@@ -29,21 +30,21 @@ Pelt, white patch, scar and accessory spritesheets that have multiple pose sheet
 
 Some spritesheets are made to be masks rather than be drawn normally. At the time of writing this, the spritesheets that work as masks are the tortie patch and the missing limb scar spritesheets. We'll go over their uses individually.
 
-### Missing limbs
+#### Missing limbs
 
-### Tortie patches
+#### Tortie patches
 
 WIP
 
 [Cat Sprites](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#clangen-cat-sprites)
 
-## Accessories
+### Accessories
 #TODO: explain sprite sheets
 
 [Accessories](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#accessory-style-guide)
 
-## Camp BGs
-### File name
+### Camp BGs
+#### File name
 Once you've finished your BG, you will need to provide separate .png files for each seasonal and day/night combo.  These must be named accordingly.
 
 `[season]_camp#_[light/dark]`
@@ -59,12 +60,12 @@ As an example, the nighttime forest greenleaf grotto camp is be named `greenleaf
 !!! tip
     If you are unsure what number camp your camp will be, check the `resources/images/camp_bg` folder for the cooresponding biome camps.  Find what the highest camp number within those files currently is and increment it by 1 for your files.
 
-### Camp Button
+#### Camp Button
 Your camp BG will also need a button to be used on the clan creation screen!  If you're able to create and provide this button, then the addition of your BG into the game proper will go much faster.  Check the [User Interface](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Basic#user-interface) art section for more information on creating this.
 
 [Camp BGs Style Guide](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#camp-bgs-style-guide)
 
-## Patrol Sprites
+### Patrol Sprites
 To find out what patrol sprites are currently needed for the game, you can check our Tracking and Requests Spreadsheets.  Follow the instructions found within those spreadsheets to claim and check off patrol sprites.  
 
 !!! note "Important"
@@ -74,7 +75,7 @@ These spreadsheets and drive folders are only shared within the developer sectio
 
 [Patrol Sprite Style Guide](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#patrol-sprite-style-guide)
 
-## User Interface
+### User Interface
 #TODO: explain file names for buttons (hover, unavailable)
 
 [User Interface](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#ui-style-guide)

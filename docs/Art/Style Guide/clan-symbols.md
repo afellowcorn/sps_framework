@@ -1,3 +1,4 @@
+# Clan Symbols Style Guide
 
 ## Symbolism over Realism
 
