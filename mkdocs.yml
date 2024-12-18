@@ -1,5 +1,6 @@
 site_name: ClanGen Documentation
 site_url: https://clangen.io/clangen-docs/
+repo_url: https://github.com/ClanGenOfficial/clangen
 theme:
   name: material
 markdown_extensions:
@@ -7,3 +8,5 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tilde
+plugins:
+  - git-authors
