@@ -11,6 +11,9 @@ RUN pip install --no-cache-dir uv && \
 COPY mkdocs.yml .
 COPY docs/ docs/
 
+# To support git-authors plugin
+COPY .git .git/
+
 RUN mkdocs build
 
 FROM nginx:alpine
