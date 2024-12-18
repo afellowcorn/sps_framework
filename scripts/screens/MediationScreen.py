@@ -4,7 +4,8 @@ from random import choice
 import pygame.transform
 import pygame_gui.elements
 
-from scripts.cat.cats import Cat, CatAgeEnum
+from scripts.cat.cats import Cat
+from ..cat.enums import CatAgeEnum
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (

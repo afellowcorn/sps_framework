@@ -3,7 +3,8 @@ from copy import deepcopy
 
 import ujson
 
-from scripts.cat.cats import Cat, CatAgeEnum
+from scripts.cat.cats import Cat
+from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.clan_resources.freshkill import (
     FRESHKILL_ACTIVE,

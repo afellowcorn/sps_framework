@@ -1,7 +1,8 @@
 import random
 from typing import List
 
-from scripts.cat.cats import Cat, CatAgeEnum
+from scripts.cat.cats import Cat
+from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.relationship import Relationship

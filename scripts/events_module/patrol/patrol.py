@@ -10,7 +10,8 @@ from typing import List, Tuple, Optional
 import pygame
 import ujson
 
-from scripts.cat.cats import Cat, CatAgeEnum
+from scripts.cat.cats import Cat
+from scripts.cat.enums import CatAgeEnum
 from scripts.clan import Clan
 from scripts.game_structure.game_essentials import game
 from scripts.events_module.patrol.patrol_event import PatrolEvent

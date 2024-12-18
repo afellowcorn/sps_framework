@@ -6,7 +6,8 @@ from unittest.mock import patch
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-from scripts.cat.cats import Cat, CatAgeEnum
+from scripts.cat.cats import Cat
+from scripts.cat.enums import CatAgeEnum
 from scripts.cat_relations.relationship import Relationship
 
 class TestCreationAge(unittest.TestCase):

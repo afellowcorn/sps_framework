@@ -8,7 +8,8 @@ import pygame
 import pygame_gui
 import ujson
 
-from scripts.cat.cats import Cat, BACKSTORIES, CatAgeEnum
+from scripts.cat.cats import Cat, BACKSTORIES
+from ..cat.enums import CatAgeEnum
 from scripts.cat.pelts import Pelt
 from scripts.clan_resources.freshkill import FRESHKILL_ACTIVE
 from scripts.game_structure import image_cache

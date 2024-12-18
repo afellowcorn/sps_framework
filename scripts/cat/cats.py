@@ -10,10 +10,10 @@ import os.path
 import sys
 from random import choice, randint, sample, random, getrandbits, randrange
 from typing import Dict, List, Any
-from enum import Enum
 
 import ujson  # type: ignore
 
+from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.cat.pelts import Pelt
@@ -42,15 +42,6 @@ from scripts.utility import (
     update_sprite,
     leader_ceremony_text_adjust,
 )
-
-class CatAgeEnum(Enum):
-    NEWBORN = "newborn"
-    KITTEN = "kitten"
-    ADOLESCENT = "adolescent"
-    YOUNG_ADULT = "young adult"
-    ADULT = "adult"
-    SENIOR_ADULT = "senior adult"
-    SENIOR = "senior"
 
 class Cat:
     """The cat class."""
@@ -473,7 +464,7 @@ class Cat:
                 )
                 self.experience += exp + 3
                 m -= 1
-        elif self.age == [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT]:
+        elif self.age in [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT]:
             self.experience = randint(
                 Cat.experience_levels_range["prepared"][0],
                 Cat.experience_levels_range["proficient"][1],

@@ -13,7 +13,8 @@ from collections import Counter
 
 import ujson
 
-from scripts.cat.cats import Cat, cat_class, BACKSTORIES, CatAgeEnum
+from scripts.cat.cats import Cat, cat_class, BACKSTORIES
+from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
 from scripts.clan import HERBS
