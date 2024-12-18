@@ -112,6 +112,7 @@ All biomes are different from each other and this should be taken into account w
 **Do not capitalize, except when beginning a sentence.**
  
 Spell and hyphenate as:
+
 - newleaf 
 - greenleaf
 - leaf-fall
@@ -168,6 +169,7 @@ Try to use phrases from this list when you can instead of using "our" version of
 
 #### Animal Names:
 Some animals have multiple names that can refer to them, we want to keep our writing consistent by only using a single agreed upon name.  
+
 - Use cougar for mountain lions/cougars
 - Use crayfish for crayfish/crawdads/koura
 - Use deathjaws for alligators, crocodiles, and any other crocodylomorphs!

@@ -52,6 +52,7 @@ Once you've finished your BG, you will need to provide separate .png files for e
 `[season]_camp#_[light/dark]`
 
 Seasons must be spelled and capitalized as following:
+
 - greenleaf
 - leaffall
 - leafbare

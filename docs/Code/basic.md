@@ -13,6 +13,7 @@ This will cover the basic information for code.
 This form will be used to create bug reports in the repo in the future.
 
 **Type:** (only select one)
+
 * UI - anything to do with the user interface. Maybe a button is not working, or the way some assets are formatted seems to be off.
 * Sprite - an issue with the art in the game
 * Code - general bugs related to how the game runs and responds to you. 
@@ -22,6 +23,7 @@ This form will be used to create bug reports in the repo in the future.
 ex.: This bug implies that the cat is never ....
 
 **Grade:** (only select one)
+
 * Game-breaking - a bug that makes it impossible to play the game
 * Dire - Still playable, but a major feature is broken
 * Important - The bug has a large affect on the gameplay, but is not urgent
@@ -31,6 +33,7 @@ ex.: This bug implies that the cat is never ....
 
 **Reproduce**
 Steps to reproduce the behavior:
+
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'

@@ -75,6 +75,7 @@ SOMETHING SOMETHING milestone organisation
 Senior developers are those with write access to the Clangen github. Nothing can be merged to Clangen without the approval of at least two senior developers.
 
 If a Pull Request is meant to fix an issue, please ensure the following: Check (or have the developer check) whether the bug affects the latest release branch, too. If it does:
+
 - Tell the developer to change the target branch of their Pull Request to the latest release branch. For example, release-0.10
 - Ensure that the Pull Request only contains the bugfixes. New features, pelts, sprites, [...] don't belong in a bugfix; there's some exceptions like the Halloween toggle, but usually we want to make sure that there's no gameplay difference between... let's say v0.10.0 and v0.10.5
 - You may review and approve as per usual; I'd ask you to refrain from making merges to the release branches though

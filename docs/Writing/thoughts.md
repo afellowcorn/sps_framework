@@ -57,6 +57,7 @@ Each constraint within a thought has specific tags that limit the thought to occ
 
 **ID:**
 Separates the thoughts into their blocks. Generally, the ID includes the condition, personality, age, and status of the main_cat, as well as the condition, personality, age, and status of any other cat mentioned.
+
 * paralyzed_gen_to_alive_gen
 * insecure_apprentice
 * general_formerclancat_dead_thoughts
@@ -79,6 +80,7 @@ Constrains the thought to only occur if a specific camp type is chosen (IE “ca
 
 **THOUGHTS:**
 This is where the text that will be displayed in-game is placed, current abbreviations that work are r_c (for random_cat) and c_n (for player clan name).
+
 * "Mewls pitifully for milk" (gen_dead_newborn)
 * "Wonders if {PRONOUN/m_c/subject} would have gotten the chance to do r_c's first check-up" (general_med_cat_app_to_dead_starclan_newborn1)
 * "Is wondering if r_c would have been {PRONOUN/m_c/poss} friend" (kit_dead_kit)
@@ -140,6 +142,7 @@ Constrains the thought if r_c has a specific place of death (first set of tags) 
 
 ## Examples and Notes
 Some general notes for thoughts:
+
 * Make sure everything is pronoun tagged before they go into a PR (if PR-ing to the official branch)
 * Try to keep the thoughts short, roughly around a 20-25 max word count
 * Do not include the name of the "thinker" (or the cat who is experiencing the thought)

@@ -4,6 +4,7 @@
 To make the camp backgrounds themselves, go to [this page](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Basic#camp-bgs). Style guide for camp backgrounds can be found [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#camp-bgs-style-guide).
 
 The steps for adding a new camp background to the game go as following:
+
 1. **Add the camp image files to the correct folders with the correct names**
 2. **Creating and coding in a button to select said camp in clan creation screen**
 3. **Adjusting cat sprite & label placements inside the camp, if needed**
