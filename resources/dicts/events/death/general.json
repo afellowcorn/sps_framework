@@ -2596,7 +2596,7 @@
         ],
         "tags": ["no_body"],
         "weight": 20,
-        "event_text": "r_c yowls a warning as {PRONOUN/r_c/subject} {VERB/r_c/spot/spots} a circling shadow, right above m_c. r_c can't get there before m_c is carried high into the sky.",
+        "event_text": "r_c yowled a warning as {PRONOUN/r_c/subject} saw a circling shadow, right above m_c. r_c couldn't get there before m_c was carried high into the sky.",
         "m_c": {
             "age": [ "kitten", "adolescent"],
             "status": [ "any" ],
