@@ -46,7 +46,7 @@ If applicable, add screenshots to help explain your problem.
 **Additional context**
 Add any other context about the issue here.
 
-# Game Config
+## Game Config
 The [game config](https://github.com/ClanGenOfficial/clangen/blob/development/resources/game_config.json), found in resources/game_config.json, holds several developmental settings that are used within ClanGen. These settings are used to control chances of certain events happening, relationship values, patrol generation, and more.
 
 **The first set of settings control relationship values.**
