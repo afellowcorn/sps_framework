@@ -268,7 +268,7 @@ When in doubt, please ask for feedback! We have multiple disabled contributors o
     - github desktop - An application that makes syncing, editing, and committing your code easier. This, along with an IDE, is highly recommended for anyone contributing to the Clangen game files.
     - repository / repo - In many ways, you can think of a Git repository as a directory that stores all the files, folders, and content needed for Clangen. What it actually is, is the object database of the project, storing everything from the files themselves, to the versions of those files, commits, deletions, et cetera. Repositories are not limited by user, and can be shared and copied (see: fork).
     - PR - a Pull Request (PR) is how you will merge your code into a repository. Pull requests ask the repo maintainers to review the commits made, and then, if acceptable, merge the changes upstream.
-merge - Taking the changes from one branch and adding them into another (traditionally master) branch. These commits are usually first requested via pull request before being merged by a project maintainer.
+    - merge - Taking the changes from one branch and adding them into another (traditionally master) branch. These commits are usually first requested via pull request before being merged by a project maintainer.
     - pull - A “pull” happens when adding the changes to the master branch. 
     - push - Updates a remote branch with the commits made to the current branch. You are literally “pushing” your changes onto the remote.
     - origin - The conventional name for the primary version of a repository.
