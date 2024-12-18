@@ -11,4 +11,5 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tilde
 plugins:
+  - search
   - git-authors

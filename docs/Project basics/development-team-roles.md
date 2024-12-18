@@ -30,7 +30,7 @@
 
 Betas are often invited to playtest secret, in development features before they go public. Remember to confine your discussion of these features to the private testing threads. 
 
-!!! warning "Caution"
+!!! caution
     If you repeatedly break confidentiality, you are liable to be kicked from the beta testing program without warning.
 
 ## Apprentice developer expectations

@@ -87,9 +87,9 @@ This is where the text that will be displayed in-game is placed, current abbrevi
 **HAS_INJURIES:**            
 Constraints the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain condition (either illness or injury).
 
-> [Illness Tag List](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#illnesses)
+> [Illness Tag List](basic.md#illnesses)
 >
-> [Injury Tag List](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#injuries)
+> [Injury Tag List](basic.md#injuries)
 
 You can additionally use the tag "any" to allow the thought to occur if the cat is experiencing any illness or injury.
 
@@ -97,7 +97,7 @@ You can additionally use the tag "any" to allow the thought to occur if the cat 
 **PERM_CONDITIONS:**
 Constraints the thought to only occur if m_c (the cat that is thinking the thought) or r_c (the cat that is being thought about) has a certain perm condition. 
 
-> [Permanent Conditions Tag List](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#permanent-conditions)
+> [Permanent Conditions Tag List](basic.md#permanent-conditions)
 >
 > You can additionally use the tag "any" to allow the thought to occur if the cat is experiencing any permanent condition.
 
@@ -109,34 +109,34 @@ Constrains the thought to only occur if m_c and r_c fulfill the tags requirement
 BACKSTORY_CONSTRAINT:
 Constrains the thought to only occur if m_c or r_c has the specific listed backstory. To find what each backstory describes, you can find more by going to resources, dicts, then the backstories.json (thank you Tiri and Ryos!)
 
-> [Backstory Tag List](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#backstories)
+> [Backstory Tag List](basic.md#backstories)
 
 STATUS_CONSTRAINT:
 Constrains the thought to only happen if m_c or r_c are in a certain role. 
 
-> [Status Tag List](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#statuses)
+> [Status Tag List](basic.md#statuses)
 > 
 > You can also use the tag "any" to allow the thought to occur for all roles except "newborns", who shouldn't get any general thoughts, just the ones placed in their specific JSON.
 
 AGE_CONSTRAINT:
 Constrains the thought to only occur if m_c or r_c are within a certain age group.
 
-> [Age Tag List](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#ages)
+> [Age Tag List](basic.md#ages)
 
 TRAIT_CONSTRAINT:
 Constrains the thought to only occur if m_c or r_c has a specific trait.
 
-> [Trait Tag List](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#traits)
+> [Trait Tag List](basic.md#traits)
 
 **SKILL_CONSTRAINT:**
 Constrains the thought to occur only if m_c or r_c has a specific skill.
 
-> [Skill Tag List](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#skills)
+> [Skill Tag List](basic.md#skills)
 
 **RANDOM_LIVING/OUTSIDE_STATUS:**
 Constrains the thought if r_c has a specific place of death (first set of tags) or outside role (second set of tags).
 
-> [Other Status Tag List](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#other-statuses)
+> [Other Status Tag List](basic.md#other-statuses)
 
 ## Examples and Notes
 Some general notes for thoughts:

@@ -5,7 +5,7 @@ _by Tiri and Scribble_
 
 - Clangen is a game that relies on random event generation. This means that whatever you're writing needs to function for all cats it might generate for, under all circumstances it can be generated in.
 
-!!! warning "Caution"
+!!! caution
     No assumptions should be made about the gender of any cat. Nothing in the game is completely gender-locked, including pregnancy under certain settings, so all text should take this into account.
 
 - Remember that the focus of this game is allowing players to build their own story! Most of the time, it’s better not to insert character motivations into the text. We want to leave space for the player to explain and expand upon the events that happen in the game. Of course, there are some trait, skill, rank, or age specific texts that can allow more personality to shine through
@@ -13,7 +13,7 @@ _by Tiri and Scribble_
 - If you have something you'd like to do with a patrol or event, but the code doesn't seem to have functionality for it yet, please let a coder know! 
 
 ### Upsetting vs graphic content
-!!! warning "Caution"
+!!! caution
     Clangen contains content that is designed to cause distress. There is no way around it, and it is intentional, and it is **not malicious**. Players are supposed to care about the death of a cat, or a cat being injured, or the Clan not having enough food. Writers for Clangen spend our time trying to provoke emotions in players, both good, positive, happy emotions, and sad ones, or feelings of injustice, or loss. Video games as a medium, especially a story generator like Clangen, are designed to need active investment from a player on many levels, including emotional.
 
 - There is an important difference between upsetting content and graphic content. 
@@ -368,8 +368,8 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 
 ### Skills
 
-> [!NOTE]
-> Remember, skills are formatted as `SKILL,#`.  For example, `TEACHER,1` is "quick to help" and `SPEAKER,4` is "eloquent speaker".
+!!! note
+    Remember, skills are formatted as `SKILL,#`.  For example, `TEACHER,1` is "quick to help" and `SPEAKER,4` is "eloquent speaker".
 
 | **SKILL,**       | **1**                            | **2**                     | **3**                    | **4**                          |
 |------------------|----------------------------------|---------------------------|--------------------------|--------------------------------|

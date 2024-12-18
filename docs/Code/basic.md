@@ -16,7 +16,7 @@ This form will be used to create bug reports in the repo in the future.
 * UI - anything to do with the user interface. Maybe a button is not working, or the way some assets are formatted seems to be off.
 * Sprite - an issue with the art in the game
 * Code - general bugs related to how the game runs and responds to you. 
-* Typo - misspellings or incorrect grammar - IMPORTANT: this type of "bugs" are collected here: https://github.com/ClanGenOfficial/clangen/issues/1818
+* Typo - misspellings or incorrect grammar - IMPORTANT: this type of "bugs" are collected in the [typo tracking issue](https://github.com/ClanGenOfficial/clangen/issues/1818)
 
 **Describe the bug**
 ex.: This bug implies that the cat is never ....
@@ -47,7 +47,9 @@ If applicable, add screenshots to help explain your problem.
 Add any other context about the issue here.
 
 ## Game Config
-The [game config](https://github.com/ClanGenOfficial/clangen/blob/development/resources/game_config.json), found in resources/game_config.json, holds several developmental settings that are used within ClanGen. These settings are used to control chances of certain events happening, relationship values, patrol generation, and more.
+The [game config](https://github.com/ClanGenOfficial/clangen/blob/development/resources/game_config.json), found in 
+resources/game_config.json, holds several developmental settings that are used within ClanGen. These settings are 
+used to control chances of certain events happening, relationship values, patrol generation, and more.
 
 **The first set of settings control relationship values.**
 

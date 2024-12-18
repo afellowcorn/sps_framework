@@ -34,15 +34,16 @@ Some spritesheets are made to be masks rather than be drawn normally. At the tim
 
 #### Tortie patches
 
-WIP
+!!! todo "TODO"
+    Explain cat sprites
 
-[Cat Sprites](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#clangen-cat-sprites)
+    `[Cat Sprites](Style Guide/cat-sprites.md)`
 
 ### Accessories
 !!! todo "TODO"
-    Explain sprite sheets
+    Explain accessory sheets
 
-[Accessories](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#accessory-style-guide)
+    `[Accessories](Style Guide/accessory-style-guide.md)`
 
 ### Camp BGs
 #### File name
@@ -62,9 +63,9 @@ As an example, the nighttime forest greenleaf grotto camp is be named `greenleaf
     If you are unsure what number camp your camp will be, check the `resources/images/camp_bg` folder for the cooresponding biome camps.  Find what the highest camp number within those files currently is and increment it by 1 for your files.
 
 #### Camp Button
-Your camp BG will also need a button to be used on the clan creation screen!  If you're able to create and provide this button, then the addition of your BG into the game proper will go much faster.  Check the [User Interface](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Basic#user-interface) art section for more information on creating this.
+Your camp BG will also need a button to be used on the clan creation screen!  If you're able to create and provide this button, then the addition of your BG into the game proper will go much faster.  Check the [User Interface](#user-interface) art section for more information on creating this.
 
-[Camp BGs Style Guide](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#camp-bgs-style-guide)
+[Camp BGs Style Guide](Style Guide/camp-backgrounds.md)
 
 ### Patrol Sprites
 To find out what patrol sprites are currently needed for the game, you can check our Tracking and Requests Spreadsheets.  Follow the instructions found within those spreadsheets to claim and check off patrol sprites.  
@@ -74,10 +75,10 @@ To find out what patrol sprites are currently needed for the game, you can check
 
 These spreadsheets and drive folders are only shared within the developer section of our Discord, for the sake of security (it wouldn't be fun if random people edited things they shouldn't).  If you already have a developer role on the Discord, just head over to the Patrol Sprites forum to find those links.  If you do not have a dev role, then this is a case where you will need to either be accepted as an Apprentice Dev through applying or you will need to make at least one accepted Pull Request.
 
-[Patrol Sprite Style Guide](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#patrol-sprite-style-guide)
+[Patrol Sprite Style Guide](Style Guide/patrol-sprites.md)
 
 ### User Interface
 !!! todo "TODO"
     explain file names for buttons (hover, unavailable)
-
-[User Interface](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#ui-style-guide)
+    
+    `[User Interface](Style Guide/ui-style-guide.md)`

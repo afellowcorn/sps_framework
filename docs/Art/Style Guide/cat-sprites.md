@@ -21,8 +21,8 @@ Not like this:
 
 ![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/8812e512-59b7-43fe-b85f-9c62894ea9ff)
 
-> [!NOTE]
-> Exceptions should only be made in places like corners where erasing a pixel would change the shape in an odd way or make things unclear (often the ears).
+!!! note
+    Exceptions should only be made in places like corners where erasing a pixel would change the shape in an odd way or make things unclear (often the ears).
 
 Any lineart that goes inside the cat outline should be at **50% opacity** (the ear was an exception in one sprite). They should be used very sparingly- only in places where the shape/pose of the cat would look odd and unclear otherwise or to give the sprite depth, aka helping you see what is at the front and what is at the back. **Otherwise they should be left out.** Very small line extensions can be used inside the sprite if it looks good.
 
@@ -88,7 +88,7 @@ While the colors can be quite straightforward with how they’re colored, there 
 Most pelts have a little gradient of lighter color on their chest, running all the way from the face to their front legs and bellies (on certain sprites).
 You’ll want to keep this gradient a subtle and smooth transition onto the other color. As a tip, it’s also usually better to use a different hue color for the lighter area than the base color for more interesting look, such as using pale **yellow** on an **orange** or **brown** pelt.
 
-!!! warning "Caution"
+!!! caution
     ![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/5343a533-df3f-468a-958f-f5c9ec196743)
 
     Here’s what you want to avoid - the gradient transition isn’t subtle or smooth enough, so it ends up looking more like a simple brushstroke than a gradient as intended. The lighter color is also the same hue as the base orange, so while it doesn’t look bad, it’s less vibrant than using a different hue would be.
