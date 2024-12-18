@@ -37,14 +37,14 @@ These should be flavored as occurring during the Gathering and should specify as
 > The type of interaction.  Each level of relationship with other clans has a matching positive and negative interaction type.  They are as follows:
 
 - ally
-  - negative: "offend"
-  - positive: "praise"
+    - negative: "offend"
+    - positive: "praise"
 - neutral
-  - negative: "provoke"
-  - positive: "befriend"
+    - negative: "provoke"
+    - positive: "befriend"
 - hostile
-  - negative: "antagonize"
-  - positive: "appease"
+    - negative: "antagonize"
+    - positive: "appease"
 
 ***
 
@@ -139,13 +139,13 @@ These events are flavored as the Clan going out to deliberately interact with th
 #### interaction_type: str
 > The type of interaction this event corresponds to:
 - "hunt"
-  - the Clan attempts to hunt down and kill the Outsider
+    - the Clan attempts to hunt down and kill the Outsider
 - "drive"
-  - the Clan attempts to find and drive out the Outsider (mechanically, this makes the cat "invisible" to the player and prevents them from interacting with the Clan anymore)
+    - the Clan attempts to find and drive out the Outsider (mechanically, this makes the cat "invisible" to the player and prevents them from interacting with the Clan anymore)
 - "invite"
-  - the Clan attempts to find and invite the Outsider into the Clan
+    - the Clan attempts to find and invite the Outsider into the Clan
 - "search"
-  - LOST CATS ONLY, the Clan searches for a lost Clanmate
+    - LOST CATS ONLY, the Clan searches for a lost Clanmate
 
 ***
 

@@ -145,8 +145,8 @@ Try to use phrases from this list when you can instead of using "our" version of
 - Embrace this! Such wild additions to the game in the past include such favorites as including kea and elephant seals from New Zealand, wolverines from North America, wolves from Definitely Not England, and having swift, kit, and fennec foxes available to find in the desert! 
 - Some biomes may require further research in order to give them a diverse set of animals to encounter, such as wetlands and desert which are very different to the original warriors setting. So go wild finding cool animals from those biomes who you want to see in the game!
 - There are some restrictions here, however, such as:
-  - We use the European badger, not the American badger
-  - Red foxes are European red foxes, not North American. European red foxes are larger than North American
+    - We use the European badger, not the American badger
+    - Red foxes are European red foxes, not North American. European red foxes are larger than North American
 - We encourage you to include interactions with megafauna, but see the following section for specific guidelines!
 
 ### Megafauna 
@@ -162,8 +162,8 @@ Try to use phrases from this list when you can instead of using "our" version of
 - Please try and keep animals behaving in a way that is realistic to how they behave in real life. For example, while there are many fox patrols, unfortunately it isn't very realistic to have them befriend the cats (nor is it canonical, with Hollyleaf's fox kit trying to attack her even though she saved its life)
 - If you want to include fun biological facts, this is encouraged! For example, the various fox patrols all have different success likelihoods and have the text explain that particular fox species' size compared to a warrior, so swift foxes are less dangerous than red ones. 
 - For patrols: 
-  - Keep in mind that it's absolutely okay and encouraged to make certain animal encounters restricted to certain seasons, but that if it's possible to encounter an animal, it should be possible to encounter it with any size of patrol - i.e if introducing a dangerous predator, make sure it can still be encountered by single cat patrols, even if those patrols are very lethal and difficult.
-  - Keep in mind that the size of a patrol should have a major impact on how difficult things are to accomplish. For example, while any size of patrol can encounter the maned wolf in the plains biome, only a full 6 cat patrol can try to fight the maned wolf
+    - Keep in mind that it's absolutely okay and encouraged to make certain animal encounters restricted to certain seasons, but that if it's possible to encounter an animal, it should be possible to encounter it with any size of patrol - i.e if introducing a dangerous predator, make sure it can still be encountered by single cat patrols, even if those patrols are very lethal and difficult.
+    - Keep in mind that the size of a patrol should have a major impact on how difficult things are to accomplish. For example, while any size of patrol can encounter the maned wolf in the plains biome, only a full 6 cat patrol can try to fight the maned wolf
 - There is a difference between venom and poison, as stated by the lovely Zabe: venom is if it bites you and you die, while poison is if you bite it and you die! It won't really matter, but if you want to spruce up your writing!
 
 #### Animal Names:
@@ -182,22 +182,22 @@ Some animals have multiple names that can refer to them, we want to keep our wri
 - We use American spelling!
 - Keep it simple!  We do not include direct dialogue within our events and we try to keep the word count of each event low.  
 - The classics:
-  - you're vs your
-    - "Your" is always possessive, while “you’re” = “you are”. If you aren’t sure whether “you’re” should be used in a sentence, imagine the same sentence with “you are” in place of “you’re/your” and see if it still makes sense.
-  - than vs then
-    - "Than" is used to compare things. For instance "I like cake better than pie." On the other hand, "then" relates to time. 1. "First I brushed my teeth, then I went to work." 2. "If there are no apples left, then please go to the store and get some."
-  - to vs too vs two
-    - “Too” means “in addition”, “as well”, or "excessively". For example, “Bluestar had some prey too.” Or, "The elder was too old to hunt." Two is, of course, only referring to the number. NGL my method for remembering “to” is just “if too should not be used” LOL but it’s kind of a “directional” word if that makes sense. Shows the relationship between two words, the opposite of “from”.
-  - its vs it's
-    - “Its” is always possessive. "It’s" is an abbreviation for “it is”. Again, if you’re not sure, try imagining the same sentence with “it is” in place of “its/it’s”.
-  - their vs they’re vs there
-    - "Their" is possessive. “Their tail”, “their prey”, etc. “There” refers to a place. “They’re” is an abbreviation for “they are”.
-  - affect vs effect
-    - Less common, but always seems to trip people up. “Affect” is a verb. “The poison has affected them quite strongly.” “Effect” is a noun. “They felt the effects of the poison quite strongly.”
-  - cats vs cat’s vs cats’
-    - Plurals and possessives! Basically, English grammar conventions are hell. I will try to make it not too confusing with the word cat as an example noun. "Cat's" = single cat, possessive. "The cat's tail." "Cats" = plural, multiple cats, not possessive. "The cats gathered around the High Rock." Cats' = plural possessive. "The cats' nests were lined with fresh moss." 
-    - For singular words that end in S, add an apostrophe to make them possessive. For instance, "the crocus' petals". For a possessive plural of a word that ends in S, add "es" to the end, then apostrophe. Random example sentence: "The actresses' rooms were located across the hall."
-    - Basically, anytime there's a possessive, you want an apostrophe in there somewhere. If the word ends in S, plural or singular, the apostrophe goes at the end. If the singular form of the word ends in S and it's a plural possessive, add "es" at the end, then apostrophe.  The exception to this is “it’s’ and “its”, where “its” is the possessive form and has no apostrophe.
+    - you're vs your
+        - "Your" is always possessive, while “you’re” = “you are”. If you aren’t sure whether “you’re” should be used in a sentence, imagine the same sentence with “you are” in place of “you’re/your” and see if it still makes sense.
+    - than vs then
+        - "Than" is used to compare things. For instance "I like cake better than pie." On the other hand, "then" relates to time. 1. "First I brushed my teeth, then I went to work." 2. "If there are no apples left, then please go to the store and get some."
+    - to vs too vs two
+        - “Too” means “in addition”, “as well”, or "excessively". For example, “Bluestar had some prey too.” Or, "The elder was too old to hunt." Two is, of course, only referring to the number. NGL my method for remembering “to” is just “if too should not be used” LOL but it’s kind of a “directional” word if that makes sense. Shows the relationship between two words, the opposite of “from”.
+    - its vs it's
+        - “Its” is always possessive. "It’s" is an abbreviation for “it is”. Again, if you’re not sure, try imagining the same sentence with “it is” in place of “its/it’s”.
+    - their vs they’re vs there
+        - "Their" is possessive. “Their tail”, “their prey”, etc. “There” refers to a place. “They’re” is an abbreviation for “they are”.
+    - affect vs effect
+        - Less common, but always seems to trip people up. “Affect” is a verb. “The poison has affected them quite strongly.” “Effect” is a noun. “They felt the effects of the poison quite strongly.”
+    - cats vs cat’s vs cats’
+        - Plurals and possessives! Basically, English grammar conventions are hell. I will try to make it not too confusing with the word cat as an example noun. "Cat's" = single cat, possessive. "The cat's tail." "Cats" = plural, multiple cats, not possessive. "The cats gathered around the High Rock." Cats' = plural possessive. "The cats' nests were lined with fresh moss." 
+        - For singular words that end in S, add an apostrophe to make them possessive. For instance, "the crocus' petals". For a possessive plural of a word that ends in S, add "es" to the end, then apostrophe. Random example sentence: "The actresses' rooms were located across the hall."
+        - Basically, anytime there's a possessive, you want an apostrophe in there somewhere. If the word ends in S, plural or singular, the apostrophe goes at the end. If the singular form of the word ends in S and it's a plural possessive, add "es" at the end, then apostrophe.  The exception to this is “it’s’ and “its”, where “its” is the possessive form and has no apostrophe.
 - All Clangen game text should follow normal grammar rules for capitalizing the first letter of a sentence, and trying to avoid spelling or grammar typos. We all make typos, don't worry! But this is one of the ways beta testing your new content can help you!
 - If you are struggling with remembering or understanding a grammar rule, even one that isn't mentioned in the above list, feel free to contact zabe#1117 on Discord for one on one help. Either DM or ping in the writing contributor thread, please!
 - The only exception to the above rule is Thoughts! Thoughts should be structured in such a way that they read as a full sentence if the cat’s name is read at the beginning.  For example: “Thinks about their past mistakes.” is the correct grammar for a Thought, as you could imagine a name at the beginning of the sentence and it would be grammatically correct.  However, the sentence should still be capitalized normally.
@@ -208,10 +208,10 @@ Event and flavor text should always use Americanized spelling.
 - Advice for fixing typos: control + F and control + shift + F is your friend, and the computer is going to be able to scan the entire document to find every time you wrote “teh” instead of “the” much faster than you can. If you are trying to fix typos in game files in VSCode, you can also use the search tool (magnifying glass on the left sidebar) to find every instance of a specific typo across all files in the currently-open folder and rapidly find and replace. Very useful for patrols, which often have many different iterations of the same text across different files.
 - If a code abbreviation (such as o_c_n) needs an ‘a’ or ‘an’ to precede it, always use “a”.  We have code in place to dynamically adjust ‘a’ and ‘an’ depending on the word that replaces the abbreviation.
 - HTML tags for bolding and italicizing are usable. These tags are:
-  - `<i>` and `</i>` for italicizing
-  - `<b>` and `</b>` for bolding
+    - `<i>` and `</i>` for italicizing
+    - `<b>` and `</b>` for bolding
 - Keeping a change log: as a writer, people are going to be super excited to experience what you write! Make sure to keep a rough record of what that might be, i.e Tiri has no idea how many fox patrols she has added total, but does know how many species are added are in what biomes, so that when she made the PR to merge them into the game she could mention their existence in the changelog for that PR.
-  - An easy way to keep track of your additions is with your commit titles and descriptions.  Making commits whenever you reach a ‘milestone’ of sorts and then titling it appropriately will leave you with a nice list of commits to review for your later change log.  When I bugfix, for example, I tend to make a commit every time I fix a bug and then title that commit with a short description of the bug I fixed.
+    - An easy way to keep track of your additions is with your commit titles and descriptions.  Making commits whenever you reach a ‘milestone’ of sorts and then titling it appropriately will leave you with a nice list of commits to review for your later change log.  When I bugfix, for example, I tend to make a commit every time I fix a bug and then title that commit with a short description of the bug I fixed.
 
 
 ### Being Mindful of Disabilities
@@ -265,15 +265,15 @@ When in doubt, please ask for feedback! We have multiple disabled contributors o
 - json - a file type. We use these files to hold strings and other important game info.  Nearly all of the strings in the game are held in jsons. Some IDEs, like PyCharm or virtual studio code, are able to help you properly format and spot errors in jsons. I’d recommend using one of those IDEs to help streamline your process.
 
 - Github Terms 
-  - github desktop - An application that makes syncing, editing, and committing your code easier. This, along with an IDE, is highly recommended for anyone contributing to the Clangen game files.
-  - repository / repo - In many ways, you can think of a Git repository as a directory that stores all the files, folders, and content needed for Clangen. What it actually is, is the object database of the project, storing everything from the files themselves, to the versions of those files, commits, deletions, et cetera. Repositories are not limited by user, and can be shared and copied (see: fork).
-  - PR - a Pull Request (PR) is how you will merge your code into a repository. Pull requests ask the repo maintainers to review the commits made, and then, if acceptable, merge the changes upstream.
+    - github desktop - An application that makes syncing, editing, and committing your code easier. This, along with an IDE, is highly recommended for anyone contributing to the Clangen game files.
+    - repository / repo - In many ways, you can think of a Git repository as a directory that stores all the files, folders, and content needed for Clangen. What it actually is, is the object database of the project, storing everything from the files themselves, to the versions of those files, commits, deletions, et cetera. Repositories are not limited by user, and can be shared and copied (see: fork).
+    - PR - a Pull Request (PR) is how you will merge your code into a repository. Pull requests ask the repo maintainers to review the commits made, and then, if acceptable, merge the changes upstream.
 merge - Taking the changes from one branch and adding them into another (traditionally master) branch. These commits are usually first requested via pull request before being merged by a project maintainer.
-  - pull - A “pull” happens when adding the changes to the master branch. 
-  - push - Updates a remote branch with the commits made to the current branch. You are literally “pushing” your changes onto the remote.
-  - origin - The conventional name for the primary version of a repository.
-  - fork - a fork is a copy of a repository.  This fork is unique to your github account and allows you to make edits without changing the original repository. 
-  - branch - A version of the repository that diverges from the main working project. Branches can be a new version of a repository, experimental changes, or personal forks of a repository for users to alter and test changes.
+    - pull - A “pull” happens when adding the changes to the master branch. 
+    - push - Updates a remote branch with the commits made to the current branch. You are literally “pushing” your changes onto the remote.
+    - origin - The conventional name for the primary version of a repository.
+    - fork - a fork is a copy of a repository.  This fork is unique to your github account and allows you to make edits without changing the original repository. 
+    - branch - A version of the repository that diverges from the main working project. Branches can be a new version of a repository, experimental changes, or personal forks of a repository for users to alter and test changes.
 
 
 ## Pronoun Tags

@@ -4,13 +4,13 @@
 - If using dialogue quotes, put a `\` before the `"` to allow it to work within a json.
 - Event text should be 400 character max, with 250 characters preferred (these counts aren't strict, as pronoun tags do artificially inflate them)
 - We have two versions of ceremonies! The StarClan and the Dark Forest.  Which one is used is determined by where the Clan's dead guide is residing.  Focus on the SC ceremonies, as they'll be seen most often, but when possible try to create Dark Forest versions of your SC ceremonies.
-  - Dark Forest ceremonies are held in `lead_ceremony_df.json`
-  - StarClan ceremonies are held in `lead_ceremony_sc.json`
+    - Dark Forest ceremonies are held in `lead_ceremony_df.json`
+    - StarClan ceremonies are held in `lead_ceremony_sc.json`
 - Ceremonies are structured as:
-  1. Intro
-  2. 9 separate life events
-      - If 9 dead cats are not available, any excess lives are given by an `Unknown Blessing` event
-  3. Outro
+    1. Intro
+    2. 9 separate life events
+        - If 9 dead cats are not available, any excess lives are given by an `Unknown Blessing` event
+    3. Outro
 - Each life giving event must include a virtue that the life represents.  
 
 ### Replacement Text:

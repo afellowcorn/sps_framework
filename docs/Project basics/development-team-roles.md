@@ -2,19 +2,19 @@
 
 ## Team Roles
 - **Beta Tester**
-  - _Players who help us test the dev version of the game and have been given access to beta tester discord channels after application acceptance._
+    - _Players who help us test the dev version of the game and have been given access to beta tester discord channels after application acceptance._
 - **Apprentice Developer**
-  - _Developers who have been added to the team via application acceptance, but have not yet contributed to the dev or base game._
+    - _Developers who have been added to the team via application acceptance, but have not yet contributed to the dev or base game._
 - **Developer**
-  - _Developers who have contributed to the dev or base game._
+    - _Developers who have contributed to the dev or base game._
 - **Senior Developer**
-  - _Developers who have contributed significantly and have the responsibility of reviewing and accepting pull requests._
+    - _Developers who have contributed significantly and have the responsibility of reviewing and accepting pull requests._
 
 ## Beta tester expectations
 
 ### Making a GitHub Issues bug report: 
 1. Search the forums and the [issues list](https://github.com/ClanGenOfficial/clangen/issues) for your bug. If a post already exists for that error, don't make a new one. Please comment on the currently-existing issue to let us know that you are experiencing the issue as well, with as many screenshots as you can. 
-   1. This is especially relevant for typos and spelling errors, which should all be collected under the same issue.
+    1. This is especially relevant for typos and spelling errors, which should all be collected under the same issue.
 
 2.  If a post for your bug doesn't already exist, make one! You'll see a "New Issue" button on Issues page. Enter a title that is clear, specific, and easily searchable. Add any additional information (such as images, instructions to replicate) in the body of the issue. 
 
