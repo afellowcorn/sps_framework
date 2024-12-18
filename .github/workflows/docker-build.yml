@@ -45,3 +45,11 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+      - name: Set up kubernetex context
+        uses: azure/setup-kubectl@v3
+      - name: Configure kubectl
+        run: |
+          echo "${{ secrets.KUBECONFIG }}" > kubeconfig.yaml
+          export KUBECONFIG=kubeconfig.yaml
+      - name: Restart deployment
+        run: kubectl rollout restart deployment/clangen-docs -n clangen
