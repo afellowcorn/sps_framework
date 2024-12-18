@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from strenum import Enum, StrEnum
+from strenum import StrEnum
 
 
 class CatAgeEnum(StrEnum):
@@ -11,3 +11,6 @@ class CatAgeEnum(StrEnum):
     ADULT = "adult"
     SENIOR_ADULT = "senior adult"
     SENIOR = "senior"
+
+    def is_baby(self):
+        return self in [CatAgeEnum.KITTEN, CatAgeEnum.NEWBORN]

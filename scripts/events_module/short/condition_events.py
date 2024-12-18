@@ -946,23 +946,23 @@ class Condition_Events:
                     # Higher chances for "severe". These are meant to be nearly 100% without
                     # being 100%
                     retire_chances = {
-                        CatAgeEnum.NEWBORN.value: 0,
-                        CatAgeEnum.KITTEN.value: 0,
-                        CatAgeEnum.ADOLESCENT.value: 50,  # This is high so instances where a cat retires the same moon they become an apprentice is rare
-                        CatAgeEnum.YOUNG_ADULT.value: 10,
-                        CatAgeEnum.ADULT.value: 5,
-                        CatAgeEnum.SENIOR_ADULT.value: 5,
-                        CatAgeEnum.SENIOR.value: 5,
+                        CatAgeEnum.NEWBORN: 0,
+                        CatAgeEnum.KITTEN: 0,
+                        CatAgeEnum.ADOLESCENT: 50,  # This is high so instances where a cat retires the same moon they become an apprentice is rare
+                        CatAgeEnum.YOUNG_ADULT: 10,
+                        CatAgeEnum.ADULT: 5,
+                        CatAgeEnum.SENIOR_ADULT: 5,
+                        CatAgeEnum.SENIOR: 5,
                     }
                 else:
                     retire_chances = {
-                        CatAgeEnum.NEWBORN.value: 0,
-                        CatAgeEnum.KITTEN.value: 0,
-                        CatAgeEnum.ADOLESCENT.value: 100,
-                        CatAgeEnum.YOUNG_ADULT.value: 80,
-                        CatAgeEnum.ADULT.value: 70,
-                        CatAgeEnum.SENIOR_ADULT.value: 50,
-                        CatAgeEnum.SENIOR.value: 10,
+                        CatAgeEnum.NEWBORN: 0,
+                        CatAgeEnum.KITTEN: 0,
+                        CatAgeEnum.ADOLESCENT: 100,
+                        CatAgeEnum.YOUNG_ADULT: 80,
+                        CatAgeEnum.ADULT: 70,
+                        CatAgeEnum.SENIOR_ADULT: 50,
+                        CatAgeEnum.SENIOR: 10,
                     }
 
                 chance = int(retire_chances.get(cat.age))

@@ -20,6 +20,7 @@ from pygame_gui.core import ObjectID
 
 logger = logging.getLogger(__name__)
 from scripts.game_structure import image_cache
+from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import names
 from scripts.cat.pelts import Pelt
@@ -300,15 +301,12 @@ def change_clan_relations(other_clan, difference):
     game.clan.all_clans[y].relations = clan_relations
 
 
-def create_new_cat_block(
-    Cat, Relationship, event, CatAgeEnum, in_event_cats: dict, i: int, attribute_list: List[str]
-) -> list:
+def create_new_cat_block(Cat, Relationship, event, in_event_cats: dict, i: int, attribute_list: List[str]) -> list:
     """
     Creates a single new_cat block and then generates and returns the cats within the block
     :param Cat Cat: always pass Cat class
     :param Relationship Relationship: always pass Relationship class
     :param event: always pass the event class
-    :param CatStatusEnum: always pass the CatStatusEnum class
     :param dict in_event_cats: dict containing involved cats' abbreviations as keys and cat objects as values
     :param int i: index of the cat block
     :param list[str] attribute_list: attribute list contained within the block

@@ -448,7 +448,7 @@ class Cat:
         )
 
         # Personality
-        self.personality = Personality(kit_trait=self.is_baby())
+        self.personality = Personality(kit_trait=self.age.is_baby())
 
         # experience and current patrol status
         if self.age in [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.NEWBORN]:
@@ -959,7 +959,7 @@ class Cat:
         if not (self.outside or self.exiled):
             return
 
-        self.personality.set_kit(self.is_baby())  # Update kit trait stuff
+        self.personality.set_kit(self.age.is_baby())  # Update kit trait stuff
 
     def describe_cat(self, short=False):
         """Generates a string describing the cat's appearance and gender.
@@ -1497,7 +1497,7 @@ class Cat:
 
         if self.exiled or self.outside:
             # this is handled in events.py
-            self.personality.set_kit(self.is_baby())
+            self.personality.set_kit(self.age.is_baby())
             self.thoughts()
             return
 
@@ -1510,7 +1510,7 @@ class Cat:
             self.personality.facet_wobble(facet_max=2)
 
         # Set personality to correct type
-        self.personality.set_kit(self.is_baby())
+        self.personality.set_kit(self.age.is_baby())
         # Upon age-change
 
         if self.status in [
@@ -3353,9 +3353,6 @@ class Cat:
     # ---------------------------------------------------------------------------- #
     #                                  other                                       #
     # ---------------------------------------------------------------------------- #
-
-    def is_baby(self):
-        return self.age in [CatAgeEnum.KITTEN, CatAgeEnum.NEWBORN]
 
     def get_save_dict(self, faded=False):
         if faded:
