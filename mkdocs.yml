@@ -2,3 +2,7 @@ site_name: ClanGen Documentation
 site_url: https://clangen.io/clangen-docs/
 theme:
   name: material
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
