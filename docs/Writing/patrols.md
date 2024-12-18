@@ -113,6 +113,7 @@ What each parameter does, and what the options are for patrol.
 >patrol_id is a unique string used to identify the patrol. It does not affect patrol behavior, but it allows us to easily find patrols.
 
 > A patrol_id is formatted as following: `biome_type_enemy_seasondescription#`, enemy and season are optional (some patrols do not have a specific enemy or season), # is a number at the end of the descriptive section starting at 1 and incrementing up as you create new versions of that patrol. 
+>
 >- If you are making new_cat or other_clan patrols, please include if the patrol is hostile/neutral/welcoming or hostile/neutral/allies in the ID
 >- If the patrol is under some kind of constraint, like being skill locked or relationship locked, please indicate that in the ID 
 
