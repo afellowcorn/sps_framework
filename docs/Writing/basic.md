@@ -223,25 +223,33 @@ When writing events related to permanent conditions, we need to be very mindful 
 
 - The idea that a cat is closer to a kitten than an adult
 >EG: "crawling" for paralysed cats - this implies they are weaker and also implies they are kit-like. This then takes away the paralysed cat's perceived ability to decide for themself, even though it's accidental. 
+>
 >INSTEAD: use "clambering", "climbing", "stalking" - these allow a paralysed cat to give themselves agency. 
+>
 >EXCEPTIONS: "Dragged" can be used in an emotional usage, such as "Poppyheart... drags herself to her front paws, complaining about dawn patrol". 
 
 - The idea that a cat "isn't" effected by their disability
 >EG: "Wolfclaw... is proud that they can still work like the rest of the clan." This makes it seem like the cat is comparing themselves to the abled cats, and sets up standards where a disabled cat cannot show their disability. This eventually means you're implying it's somehow "lesser" to be disabled. It might make sense for an insecure cat, but be careful!
+>
 >INSTEAD: Allow the disability to effect them, and focus on their personal achievements rather than comparing them to other cats. 
+>
 >EXCEPTIONS: "Raspy lungs", "joint pain", "allergies", "persistent headaches", "constantly dizzy", "recurring shock" - you can reword these into being happy their disability isn't as harsh this moon. These disabilities all come in "waves", where you can have a few days where you aren't as affected, and a few days where you're effected lots. 
 
 - The idea that a disability is only negative
 >EG: Any thoughts that give the idea that they'd prefer to be dead, excessive sadness about being disabled, etc.
+>
 >INSTEAD: Balance the thoughts out! Give them good thoughts alongside the bad! 
 
 - The idea that disabled cats can't make their own choices
 >EG: Excessive thoughts that imply a cat asking for another's opinion. 
+>
 >INSTEAD: Balance out the thoughts. Treat it like any other cat!
+>
 >EXCEPTIONS: Personality basis - insecure/gloomy/charismatic cats are more likely to ask for other opinions on personal things. 
 
 - The idea that disability is inherently worse than being abled
 >EG: Thoughts that imply shame or inherent upset about being disabled, comparison to abled cats, etc.
+>
 >INSTEAD: Use benign embarrassment! Maybe a cat with lasting grief fell asleep during a ceremony, or a cat with partial hearing loss misheard a request and brought moss instead of a mole.
 
 When in doubt, please ask for feedback! We have multiple disabled contributors on the team and they've lended us their valuable perspectives time and time again.

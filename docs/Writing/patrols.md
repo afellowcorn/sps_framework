@@ -653,6 +653,7 @@ What each parameter does, and what the options are for outcomes.
 >
 >Default behavior: 
 >In 1 and 2 cat patrols, only p_l can be stat_cat.
+>
 >In 3+ cat patrols, p_l and r_c can't be stat_cat, but anyone else is eligible. 
 
 >To override default behavior:
@@ -924,8 +925,11 @@ What each parameter does, and what the options are for outcomes.
 
 #### outsider_rep
 > This parameter is used for **all** patrols that involve new_cats, loners, and rogues (regardless of if the new cat joins, or if the loner or rogue is even open to joining the clan). It changes the reputation the player Clan has among outsiders, those who don't belong to any Clan. 
+>
 > If the player Clan has a welcoming reputation (above 71), new_cat patrols tagged with the ["new_cat" tag](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Patrols#tags-liststr) have a increased chance to appear, and will be generated from the resources/dicts/patrols/new_cat_welcoming.json. 
+>
 > If the player Clan has a neutral reputation (between 31 to 70), new_cat patrols have no increased or deceased chance to appear, and will be generated from the resources/dicts/patrols/new_cat.json.
+>
 > If the player Clan has a hostile reputation (from 1 to 30), new_cat patrols have a decreased chance to appear, and will be generated from the resources/dicts/patrols/new_cat_hostile.json.
 >
 > The exception to this is if the player Clan has less than 20 cats. If the player Clan is small, the chance to get a new_cat patrol is overridden and becomes equal to the chance of the welcoming reputation. However, the new_cat patrols that are generated with the small_clan chance will still be generated from the json that is appropriate to the Clan's reputation.
@@ -947,8 +951,11 @@ Outsider reputation changes
 
 #### other_clan_rep
 > This parameter is used for **all** patrols that involve the other Clans that border the player Clan. It changes the reputation the player Clan has among it neighbors. 
+>
 > If the player Clan is allied with the other_clan the reputation will be greater than 17. The other_clan patrols will be generated from the resources/dicts/patrols/other_clan_allies.json. 
+>
 > If the player Clan is neutral with the other_clan the reputation will be equal or greater than 7 and less than or equal to 17. The other_clan patrols will be generated from the resources/dicts/patrols/other_clan.json. 
+>
 > If the player Clan is hostile with the other_clan the reputation will be less than 7. The other_clan patrols will be generated from the resources/dicts/patrols/other_clan_hostile.json. 
 >
 > By default 3 to 5 other Clans are generated on Clan creations to neighbor the player Clan. Relationships with the other Clans are individual, the player Clan can get along with one Clan and hate another. Relationships can also be influenced by the temperament of the other Clan and of the player Clan (link to appropriate documentation WIP)
