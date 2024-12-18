@@ -5,7 +5,8 @@ WORKDIR /docs
 COPY pyproject.toml .
 COPY uv.lock .
 
-RUN pip install --no-cache-dir uv && \
+RUN apt-get update && apt-get install -y git && \
+    pip install --no-cache-dir uv && \
     uv pip install --system .
 
 COPY mkdocs.yml .
