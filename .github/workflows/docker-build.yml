@@ -47,9 +47,10 @@ jobs:
           cache-to: type=gha,mode=max
       - name: Set up kubernetex context
         uses: azure/setup-kubectl@v3
-      - name: Configure kubectl
-        run: |
-          echo "${{ secrets.KUBECONFIG }}" > kubeconfig.yaml
-          export KUBECONFIG=kubeconfig.yaml
+      - name: Set Kubernetes context
+        uses: Azure/k8s-set-context@v4
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBECONFIG }}
       - name: Restart deployment
         run: kubectl rollout restart deployment/clangen-docs -n clangen
