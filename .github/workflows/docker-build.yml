@@ -28,6 +28,7 @@ jobs:
             ${{ secrets.REGISTRY_URL }}/clangen/clangen-docs
           tags: |
             type=sha
+            type=raw,value=latest,enable={{is_default_branch}}
       - name: Login to private registry
         uses: docker/login-action@v3
         with:
