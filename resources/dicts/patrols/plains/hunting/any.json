@@ -2353,7 +2353,7 @@
         "min_cats": 2,
         "max_cats": 6,
         "min_max_status": {},
-        "weight": 20,
+        "weight": 10,
         "intro_text": "r_c catches the scent of a fox. Tracking it down, the cats spot a kit fox wandering through the grass, carrying a mouse in its jaws.",
         "decline_text": "That's an insignificant amount of fresh-kill to start a fight over.",
         "chance_of_success": 40,
@@ -2367,7 +2367,7 @@
             {
                 "text": "The kit fox isn't a hare-brain, and immediately drops the mouse, running for its life from the patrol.",
                 "exp": 10,
-                "weight": 5,
+                "weight": 10,
                 "prey": ["small"]
             },
             {
@@ -2406,6 +2406,112 @@
                 "exp": 0,
                 "weight": 20,
                 "prey": ["very_small"]
+            }
+        ]
+    },
+    {
+        "patrol_id": "pln_hunt_wabbit1",
+        "biome": ["plains"],
+        "season": ["any"],
+        "types": ["hunting"],
+        "tags": [],
+        "patrol_art": "gen_hunting_rabbit.png",
+        "min_cats": 4,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 5,
+        "intro_text": "It's rabbit season, hahahaha.",
+        "decline_text": "Actually no, would you believe it's duck season?",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "Rudely, their first target bolts, and it needs the entire patrol to bring it down, swerving and jolting, zig zagging until cornered. But they <i>do</i> corner it. One rabbit split between so many cats isn't a huge bounty, but they're too tired to continue hunting.",
+                "exp": 20,
+                "weight": 10,
+                "art": "gen_hunt_rabbit.png",
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 3
+                    }
+                ]
+            },
+            {
+                "text": "The rabbits aren't interested in cooperating. Between every cat present, they only manage a single kill. But it's not a failure, and as they pad home, s_c tells the story of El-ahrairah, the Prince with a Thousand Enemies, digger, listener, runner, the prince with the swift warning.",
+                "exp": 20,
+                "weight": 10,
+                "art": "gen_hunt_rabbit.png",
+                "can_have_stat": ["any"],
+                "stat_skill": ["LORE,1", "STORY,1"],
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 3
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic"],
+                        "amount": 3
+                    }
+                ]
+            },
+            {
+                "text": "The ambush goes cartoonishly poorly, and it's only s_c's skill that still nets them one rabbit, snatching a sliver of victory form the jaws of failure.",
+                "exp": 20,
+                "weight": 10,
+                "art": "fst_hunt_fun1.png",
+                "can_have_stat": ["any"],
+                "stat_skill": ["HUNTER,1", "RUNNER,1"],
+                "prey": ["small"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["trust"],
+                        "amount": 3
+                    },
+                    {
+                        "cats_to": ["s_c"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["respect"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Isn't <i>every</i> season rabbit season? The unnecessry confusion starts an equally unecessary argument, and no hunting gets down as the patrol talks in circles.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_train_argue.png",
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["dislike"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "It doesn't matter how tightly the patrol locks down the entrance to this burrow - the rabbits escape elsewhere. Crafty wabbits.",
+                "exp": 0,
+                "weight": 20,
+                "art": "gen_hunt_burrow.png"
             }
         ]
     },
