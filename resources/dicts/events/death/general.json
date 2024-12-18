@@ -1548,7 +1548,7 @@
         "sub_type": [ "old_age" ],
         "tags": [ "all_lives" ],
         "weight": 20,
-        "event_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n finds their bodies still wrapped around each other in the morning.",
+        "event_text": "m_c and r_c loved each other so much they could not be parted, even by death. c_n found their bodies still wrapped around each other in the morning.",
         "m_c": {
             "age": [ "senior" ],
             "status": [ "any" ],
@@ -1576,7 +1576,7 @@
         ],
         "tags": [ "no_body", "all_lives" ],
         "weight": 20,
-        "event_text": "m_c met the long claws of a predator. Later, c_n finds only {PRONOUN/m_c/poss} blood and a foul smell.",
+        "event_text": "m_c met the long claws of a predator. Later, c_n found only {PRONOUN/m_c/poss} blood and a foul smell.",
         "m_c": {
             "age": [ "adolescent", "young adult", "adult", "senior adult" ],
             "dies": true
