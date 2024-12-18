@@ -2,9 +2,7 @@ name: Docker Build and Push
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
   # Allow manual triggers from the Actions tab
   workflow_dispatch:
 
