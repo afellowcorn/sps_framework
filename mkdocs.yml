@@ -1,19 +1,43 @@
 site_name: ClanGen Documentation
 site_url: https://clangen.io/clangen-docs/
 repo_url: https://github.com/ClanGenOfficial/clangen
+repo_name: ClanGenOfficial/clangen
+edit_uri: https://github.com/ClanGenOfficial/clangen-docs/edit/master/docs/
 theme:
   name: material
+  logo: assets/main.png
+  favicon: assets/main.ico
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.tooltips
+    - content.code.copy
+    - content.code.annotate
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme)"
+      accent: deep purple
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      accent: deep purple
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - scheme: slate
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: black
       accent: deep purple
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: Switch to system preference
+extra:
+  homepage: https://clangen.io/
 extra_css:
   - stylesheets/extra.css
 markdown_extensions:
@@ -21,6 +45,16 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
 plugins:
   - search
-  - git-authors
+  - git-committers:
+      repository: ClanGenOfficial/clangen-docs
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago

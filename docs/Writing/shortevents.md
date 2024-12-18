@@ -11,7 +11,7 @@ New cats can also join the clan through moon events.  They are referred to with 
 Some death events are considered "mass death" events (aka "mass extinction").  These events kill 3-11 cats at a time.  Use the abbreviation `multi_cat` in place of a name and for the history block.  The names will replace this abbreviation in a "name1, name2, and name3" format, write your event accordingly.  The `m_c` age and status parameters will also be used to define which cats are allowed to be killed in this event.
 
 ## Event Format:
-```
+```json
   {
     "event_id": "",
     "location": [],
@@ -355,7 +355,7 @@ lowercase season names + "any"
 ### injury:list[dict[str, various]]
 >Optional. Indicates which cats get injured, and how. In classic mode, there are no conditions, so you can include a "scars" line to scar the cat instead. You can include as many of the blocks as you like within the list. 
 >
->```py
+>```json
 >    {
 >      "cats": [],
 >      "injuries": [],
@@ -395,7 +395,7 @@ lowercase season names + "any"
 >
 >Block:
 >
->```
+>```json
 >      {
 >      "cats": []
 >      "scar": "",
