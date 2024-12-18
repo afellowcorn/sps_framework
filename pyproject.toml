@@ -1,0 +1,10 @@
+[project]
+name = "clangen-docs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mkdocs-material>=9.5.49",
+    "mkdocs>=1.6.1",
+]
