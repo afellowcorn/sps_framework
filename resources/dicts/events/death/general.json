@@ -2093,7 +2093,7 @@
         "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
-        "event_text": "Blinded by blood in the midst of battle, r_c accidentally kills m_c.",
+        "event_text": "Blinded by blood in the midst of battle, r_c accidentally killed m_c.",
         "m_c": {
             "status": [
                 "warrior",
