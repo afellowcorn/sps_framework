@@ -1880,7 +1880,7 @@ class Events:
         chance = acc_chances["base_acc_chance"]
         if cat.status in ["medicine cat", "medicine cat apprentice"]:
             chance += acc_chances["med_modifier"]
-        if cat.age in [CatAgeEnum.KITTEN, CatAgeEnum]:
+        if cat.age in [CatAgeEnum.KITTEN, CatAgeEnum.ADOLESCENT]:
             chance += acc_chances["baby_modifier"]
         elif cat.age in [CatAgeEnum.SENIOR_ADULT, CatAgeEnum.SENIOR]:
             chance += acc_chances["elder_modifier"]
