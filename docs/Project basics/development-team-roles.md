@@ -2,19 +2,19 @@
 
 ## Team Roles
 - **Beta Tester**
-  - _Players who help us test the dev version of the game and have been given access to beta tester discord channels after application acceptance._
+    - _Players who help us test the dev version of the game and have been given access to beta tester discord channels after application acceptance._
 - **Apprentice Developer**
-  - _Developers who have been added to the team via application acceptance, but have not yet contributed to the dev or base game._
+    - _Developers who have been added to the team via application acceptance, but have not yet contributed to the dev or base game._
 - **Developer**
-  - _Developers who have contributed to the dev or base game._
+    - _Developers who have contributed to the dev or base game._
 - **Senior Developer**
-  - _Developers who have contributed significantly and have the responsibility of reviewing and accepting pull requests._
+    - _Developers who have contributed significantly and have the responsibility of reviewing and accepting pull requests._
 
 ## Beta tester expectations
 
 ### Making a GitHub Issues bug report: 
 1. Search the forums and the [issues list](https://github.com/ClanGenOfficial/clangen/issues) for your bug. If a post already exists for that error, don't make a new one. Please comment on the currently-existing issue to let us know that you are experiencing the issue as well, with as many screenshots as you can. 
-   1. This is especially relevant for typos and spelling errors, which should all be collected under the same issue.
+    1. This is especially relevant for typos and spelling errors, which should all be collected under the same issue.
 
 2.  If a post for your bug doesn't already exist, make one! You'll see a "New Issue" button on Issues page. Enter a title that is clear, specific, and easily searchable. Add any additional information (such as images, instructions to replicate) in the body of the issue. 
 
@@ -75,6 +75,7 @@ SOMETHING SOMETHING milestone organisation
 Senior developers are those with write access to the Clangen github. Nothing can be merged to Clangen without the approval of at least two senior developers.
 
 If a Pull Request is meant to fix an issue, please ensure the following: Check (or have the developer check) whether the bug affects the latest release branch, too. If it does:
+
 - Tell the developer to change the target branch of their Pull Request to the latest release branch. For example, release-0.10
 - Ensure that the Pull Request only contains the bugfixes. New features, pelts, sprites, [...] don't belong in a bugfix; there's some exceptions like the Halloween toggle, but usually we want to make sure that there's no gameplay difference between... let's say v0.10.0 and v0.10.5
 - You may review and approve as per usual; I'd ask you to refrain from making merges to the release branches though

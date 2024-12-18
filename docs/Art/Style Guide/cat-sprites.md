@@ -121,6 +121,7 @@ When you draw out the shape of the patches, try to give them more depth by follo
 _by scribble (scribblecrumb)_
 
 Accessories (Accs) range from collars to leaves scattered through fur. We want to take care that any new accessories follow these guidelines:
+
 - Do not obscure a significant amount of the cat (at most 1/3 of the cat may be covered)
 - Accs should always be attached to the cat (exceptions allowed for younger age stages).  We don't want an acc to be a snail sitting next to the cat, for example.
 - Likewise, accs should generally avoid being a living animal.  There's some leeway here, with insects for instance.  But we don't want a mouse clinging to the cat or a snake winding around it's shoulders.

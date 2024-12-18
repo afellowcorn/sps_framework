@@ -96,6 +96,7 @@ Some death events are considered "mass death" events (aka "mass extinction").  T
 the event_id is a unique string used to identify the event. It does not affect event behavior, but it allows us to easily find events.
 
 > An event_id is formatted as following: `biome_type_cause_seasondescription#`, 
+>
 >- 'cause' is something of a secondary type indicator.  Perhaps a death event is for death by heat stroke, you could use `heat` for the 'cause' section of the id. Or if a cat is hurt by a certain animal, you can indicate the animal here. If you cannot think of an appropriate 'cause' then you do not have to include one.
 >- if an event happens in more than one season, but not all seasons, then you can use `multi` for the 'season' section of the id
 >- If you are making new_cat or other_clan events, please include if the event is hostile/neutral/welcoming or hostile/neutral/allies in the ID

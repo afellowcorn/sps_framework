@@ -4,6 +4,7 @@
 To make the camp backgrounds themselves, go to [this page](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Basic#camp-bgs). Style guide for camp backgrounds can be found [here](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#camp-bgs-style-guide).
 
 The steps for adding a new camp background to the game go as following:
+
 1. **Add the camp image files to the correct folders with the correct names**
 2. **Creating and coding in a button to select said camp in clan creation screen**
 3. **Adjusting cat sprite & label placements inside the camp, if needed**
@@ -140,6 +141,7 @@ Under the default are listed all camps, named in this format: `Biome+camp#`. You
 The editing process is quite straightforward and simple, although tedious; it involves a lot of testing to see what looks right. You edit the numbers after the "dens" to change the placements of the den labels. To edit the cat sprite placements, you edit the numbers in the lists after each "place". You are also able to add (or reduce) cat sprite placements by adding `[[number, number], "xy"]` in any of the lists - just be mindful of the right amount of square brackets and correct comma placements.
 
 Few numbers to keep in mind:
+
 - A single cat sprite on the camp screen counts for 100x100 pixels
 - Camp screen length is 1600 pixels. This means that to not have cat sprites go behind the screens, their x-coordinate should not be placed beyond 1500 pixels.
 - Camp screen height is 1400 pixels. Like before, the cat sprite y-coordinates shouldn't be placed beyond 1300 pixels.
