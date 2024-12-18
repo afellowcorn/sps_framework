@@ -1116,7 +1116,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c sneaked out of camp, intending to find more about {PRONOUN/m_c/poss} origins. c_n finds {PRONOUN/m_c/poss} cooling body in the morning, after a long search.",
+        "event_text": "m_c sneaked out of camp, intending to find more about {PRONOUN/m_c/poss} origins. c_n found {PRONOUN/m_c/poss} cooling body in the morning, after a long search.",
         "m_c": {
             "age": [ "adolescent", "young adult"],
             "status": [ "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "mediator", "medicine cat", "deputy" ],
