@@ -58,3 +58,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
+  - awesome-pages:
+      order: asc
+      sort_type: natural
+      order_by: title
