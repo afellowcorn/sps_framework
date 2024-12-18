@@ -1,8 +1,10 @@
 # Advanced documentation
 
-## TODO: success in depth
+!!! todo "TODO"
+    success in depth
 
-## TODO: hunting filtering in depth
+!!! todo "TODO"
+    hunting filtering in depth
 
 
 !!! tip
