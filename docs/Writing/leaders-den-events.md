@@ -138,6 +138,7 @@ These events are flavored as the Clan going out to deliberately interact with th
 
 #### interaction_type: str
 > The type of interaction this event corresponds to:
+
 - "hunt"
     - the Clan attempts to hunt down and kill the Outsider
 - "drive"
