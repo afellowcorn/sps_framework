@@ -93,34 +93,42 @@ _These are just a few of the BGs I’ve done.  If you’d like more references, 
 ## Specific Textures
 Use these images as guidelines for how to stylize certain elements.  Please don’t feel constrained to replicate these exactly, rather use them as a guide to better keep our style consistent.
 
-#TODO: add images
-Moss. Grass bedding. Woven brambles.
+!!! todo "TODO"
+    add images
+    Moss. Grass bedding. Woven brambles.
 
-#TODO: add images
-Beach grass.  Cliff trees.  Grass/Woven grass.
+!!! todo "TODO"
+    add images
+    Beach grass.  Cliff trees.  Grass/Woven grass.
 
-#TODO: add images
-Various bark textures.
+!!! todo "TODO"
+    add images
+    Various bark textures.
 
+!!! todo "TODO"
+    add images
+    Flat rock.  Rocks along a tide pool.  Rounded/water eroded rocks.
 
-#TODO: add images
-Flat rock.  Rocks along a tide pool.  Rounded/water eroded rocks.
+!!! todo "TODO"
+    add images
+    Various types of rock walls. Mountain cliff.  Tidal cave.  Beach cliff.
 
-#TODO: add images
-Various types of rock walls. Mountain cliff.  Tidal cave.  Beach cliff.
+!!! todo "TODO"
+    add images
+    Frozen water.  Cloudy swamp/marsh water.  Tidepool water.  Cave pool.
 
-#TODO: add images
-Frozen water.  Cloudy swamp/marsh water.  Tidepool water.  Cave pool.
-
-#TODO: add images
-Snow “dusting”.  Snowflakes.  Trampled snow.
+!!! todo "TODO"
+    add images
+    Snow “dusting”.  Snowflakes.  Trampled snow.
 
 ## Tutorial Sheets
 These were created for people asking for advice on the Discord, but I figure they could be helpful here as well.  If you ever have questions about how to go about drawing something specific, just ask!  
 
 ### Rocks
-#TODO: add images
+!!! todo "TODO"
+    add images
 
 ### Woven Grass/Brambles
-#TODO: add images
+!!! todo "TODO"
+    add images
 

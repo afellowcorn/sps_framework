@@ -277,7 +277,8 @@ merge - Taking the changes from one branch and adding them into another (traditi
 
 
 ## Pronoun Tags
-#TODO: transfer info from pronoun tag doc
+!!! todo "TODO"
+    transfer info from pronoun tag doc
 
 ## Writing Histories
 Cats receive history text to go with each scar-able injury as well as possibly-fatal injury and direct deaths.  This histories show up in their profile.  Many event formats require you to include the history text if a cat is being injured or killed.  These typically refer to three different history types: `scar`, `reg_death`, `lead_death`.  Following are the guidelines for writing each:
@@ -460,7 +461,8 @@ Use this to pull the name of a story, in the vein of Aesop's Fables. Possible st
 ***
 
 ## Name Guidelines
-#TODO: rules regarding what is or isn't allowed in warrior names, approval processes, and loner/kittypet names
+!!! todo "TODO"
+    rules regarding what is or isn't allowed in warrior names, approval processes, and loner/kittypet names
 
 ## Common Errors
 _by summoner (clownthoughts)_

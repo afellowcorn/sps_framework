@@ -39,7 +39,8 @@ WIP
 [Cat Sprites](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#clangen-cat-sprites)
 
 ### Accessories
-#TODO: explain sprite sheets
+!!! todo "TODO"
+    Explain sprite sheets
 
 [Accessories](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#accessory-style-guide)
 
@@ -76,6 +77,7 @@ These spreadsheets and drive folders are only shared within the developer sectio
 [Patrol Sprite Style Guide](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#patrol-sprite-style-guide)
 
 ### User Interface
-#TODO: explain file names for buttons (hover, unavailable)
+!!! todo "TODO"
+    explain file names for buttons (hover, unavailable)
 
 [User Interface](https://github.com/ClanGenOfficial/clangen/wiki/%5BArt%5D-%E2%80%90-Style-Guides#ui-style-guide)

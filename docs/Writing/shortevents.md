@@ -116,7 +116,8 @@ the event_id is a unique string used to identify the event. It does not affect e
 | misc          | any event type that does not fit into the preceding three       |
 
 Example:
-##TODO: write example
+!!! todo "TODO"
+    write example
 
 How to make sure your event_id is unique:
 > ctrl (or command) + f through the .json file you're writing the event into. As each event_id contains the biome & type within it and we have different jsons for different biomes and event types, if your potential event_id isn't in the json already, your event_id will be unique.
@@ -138,7 +139,8 @@ How to make sure your event_id is unique:
 | "desert"      | appears in the desert biome      |
 | "any"         | appears in any biome             |
 
-#TODO: add a table listing various camps
+!!! todo "TODO"
+    add a table listing various camps
 
 Please have a look at the [full biome differences list](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#clangen-biomes) when thinking about writing patrols. 
 
@@ -223,7 +225,8 @@ lowercase season names + "any"
 ### new_accessory:list[str]
 >If the event gives a new accessory, list possible new accessories here (one will be chosen from the list).
 
-##TODO: need to make an accessory tag list
+!!! todo "TODO"
+    need to make an accessory tag list
 
 ### m_c:dict[str, various]
 >Specifies the requirements for the main cat (m_c) of the event. 

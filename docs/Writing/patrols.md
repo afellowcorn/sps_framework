@@ -3,11 +3,14 @@
 ## Guidelines
 When considering patrols, keep in mind challenge vs reward. That isn't to say certain patrol events should necessarily be locked behind certain patrol sizes, but try to imagine what a group of cats that size would do in a given situation, and how likely it would be for them to succeed in whatever it is they're trying to do. If making large size and small sized variants of the same patrol, it's encouraged to give different outcomes even if the success chance is the same for both variants. For example, 6 cats have very different options for dealing with an owl than 2 cats do.
 
-#TODO: add some guidelines here for success chance and weights, just an idea of number baselines compared to the current patrol spread
+!!! todo "TODO"
+    add some guidelines here for success chance and weights, just an idea of number baselines compared to the current patrol spread
 
-#TODO: add guidelines regarding tracking and requests sheets for art
+!!! todo "TODO"
+    add guidelines regarding tracking and requests sheets for art
 
-#TODO: add guide to hunting filtering code
+!!! todo "TODO"
+    add guide to hunting filtering code
 
 [Full ClanGen writing universal guidelines](https://github.com/ClanGenOfficial/clangen/wiki/%5BWriting%5D-%E2%80%90-Basic#the-basics)
 
@@ -22,7 +25,8 @@ When writing the text for patrol events, we use a variety of abbreviations that 
 | app2        | The second apprentice on the patrol.  When used on it's own this will generate the cat's name, when used in a pronoun tag this will generate that cat's pronouns.                                                                                                                                                                                                                                                                                             |
 | n_c:{index} | The newly generated cat specified in list index {index}. The list is 0-indexed, so the first entry is 0. If more than one cat is generated in a single list entry (for example, a litter), this will use the first generated cat. Currently, there is no way to retrieve the name's or pronouns of other members of a litter.  When used on it's own this will generate the cat's name, when used in a pronoun tag this will generate that cat's pronouns.
 
-#TODO: look over patrol code and find the other abbreviations, i know this ain't all of it
+!!! todo "TODO"
+    look over patrol code and find the other abbreviations, i know this ain't all of it
 
 ## Formatting
 
