@@ -938,6 +938,7 @@ What each parameter does, and what the options are for outcomes.
 
 Outsider reputation changes
 > Defaults:
+>
 > | Outcome type          | Change                  |
 > |-----------------------|-------------------------|
 > | Success               | 1                       |
@@ -963,6 +964,7 @@ Outsider reputation changes
 
 Other clan reputation changes
 > Defaults:
+>
 > | Outcome type          | Change                  |
 > |-----------------------|-------------------------|
 > | Success               | 2                       |

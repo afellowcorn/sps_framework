@@ -424,6 +424,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 
 #### prophecy_list
 Use this for amorphous, dreamy concepts.
+
 | Sense group | Examples |
 |--|--|
 | sight | blood pooling on the ground<br>a bird's feather<br>a ghostly pair of eyes |
@@ -436,6 +437,7 @@ Use this for amorphous, dreamy concepts.
 
 #### omen_list
 Use this for more physical ideas: odd and meaningful but still grounded in reality.
+
 | Sense group | Examples |
 |--|--|
 | sight | a five-pointed leaf<br>a split acorn<br>a dew-covered spider's web |
@@ -448,6 +450,7 @@ Use this for more physical ideas: odd and meaningful but still grounded in reali
 
 #### clair_list
 Use this for amorphous, unclear things that already happened/could happen.
+
 | Sense group | Examples |
 |--|--|
 | sound | the rumble of many paws on the ground<br>a betrayal on the wind<br>distant wails of grief |
