@@ -1849,7 +1849,7 @@
         ],
         "tags": ["all_lives"],
         "weight": 20,
-        "event_text": "m_c and r_c went to play together on the frozen pond. They never return.",
+        "event_text": "m_c and r_c went to play together on the frozen pond. They never returned.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult"],
             "not_skill": [
