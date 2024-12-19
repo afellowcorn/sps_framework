@@ -13,6 +13,8 @@ theme:
     - content.tooltips
     - content.code.copy
     - content.code.annotate
+    - navigation.top
+  custom_dir: overrides
   palette:
     - media: "(prefers-color-scheme)"
       accent: deep purple
@@ -49,8 +51,19 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - attr_list
+  - md_in_html
+
 plugins:
   - search
   - git-committers:
