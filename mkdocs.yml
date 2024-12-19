@@ -13,6 +13,7 @@ theme:
     - content.tooltips
     - content.code.copy
     - content.code.annotate
+    - navigation.top
   palette:
     - media: "(prefers-color-scheme)"
       accent: deep purple
@@ -49,8 +50,12 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - attr_list
+
 plugins:
   - search
   - git-committers:

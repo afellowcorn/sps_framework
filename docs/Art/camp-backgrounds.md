@@ -39,21 +39,19 @@ Our style is very painterly in that it doesn’t focus on lineart and is fairly 
 
 I always start big and refine down to small details, which I find works well for achieving that loose look.  To do this, I first create my sketch (this is rather unrefined and loose, but has enough in it to get the idea of what I’m doing) and then I use a brush at a larger size to block out sections of color, following the guidelines my sketch has set.  Once I have the canvas filled with these blocks, I make my brush smaller and begin refining the shapes and adding new colors or shading as I see fit.  I try to keep my eye on the image as a whole, rather than focusing on one small area.  To ensure I don’t focus too much on one place, I will usually keep my canvas zoomed out enough to see the entire image.  I continue working with a smaller and smaller brush as I add more detailing.  Details should be kept limited, however, I very rarely worry about it being “pixel perfect”.  The majority of detailing in my BGs is less intentional detail and more the illusion of detail caused by that naturally jagged brush I mentioned.
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/d95b2431-771c-41e0-93be-aeaaf04d0a42)
 
-_sketch_
+=== "Sketch"
+    ![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/d95b2431-771c-41e0-93be-aeaaf04d0a42)
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/51d12e06-9b06-46aa-a907-fefe90648a96)
+=== "Basic Color Mapping"
+    ![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/51d12e06-9b06-46aa-a907-fefe90648a96)
 
-_basic coloring mapping_
+=== "Refined Base"
+    ![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/c367eaec-725b-4142-bb96-4dc15487f947)
 
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/c367eaec-725b-4142-bb96-4dc15487f947)
+=== "Seasonal Additions"
+    ![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/894daee3-bfa5-498c-8981-26f1b4fd7db2)
 
-_refined base_
-
-![image](https://github.com/ClanGenOfficial/clangen/assets/115410010/894daee3-bfa5-498c-8981-26f1b4fd7db2)
-
-_seasonal additions_
 
 
 ### Color
