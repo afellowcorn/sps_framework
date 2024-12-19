@@ -3,6 +3,29 @@ site_url: https://clangen.io/clangen-docs/
 repo_url: https://github.com/ClanGenOfficial/clangen
 repo_name: ClanGenOfficial/clangen
 edit_uri: https://github.com/ClanGenOfficial/clangen-docs/edit/master/docs/
+nav:
+  - Project Basics:
+      - Project basics/development-team-roles.md
+      - Project basics/getting-started-with-github-and-clangen.md
+  - Code:
+      - Code/index.md
+      - Code/content-adding.md
+  - Writing:
+      - Writing/index.md
+      - Writing/patrols.md
+      - Writing/shortevents.md
+      - Writing/leaders-den-events.md
+      - Writing/thoughts.md
+      - Writing/leader-ceremonies.md
+      - Writing/advanced-documentation.md
+  - Art:
+      - Art/index.md
+      - Art/cat-sprites.md
+      - Art/patrol-sprites.md
+      - Art/clan-symbols.md
+      - Art/camp-backgrounds.md
+  - Audio:
+      - Audio/index.md
 theme:
   name: material
   logo: assets/main.png
@@ -14,6 +37,7 @@ theme:
     - content.code.copy
     - content.code.annotate
     - navigation.top
+    - navigation.indexes
   palette:
     - media: "(prefers-color-scheme)"
       accent: deep purple
@@ -63,7 +87,3 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
-  - awesome-pages:
-      order: asc
-      sort_type: natural
-      order_by: title
