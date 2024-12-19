@@ -508,6 +508,7 @@ def create_new_cat_block(
                     stor.append(story)
                 elif story in BACKSTORIES["backstory_categories"]:
                     stor.extend(BACKSTORIES["backstory_categories"][story])
+            chosen_backstory = choice(stor)
             bs_override = True
             break
 
