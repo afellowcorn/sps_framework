@@ -15,26 +15,23 @@ theme:
     - content.code.annotate
   palette:
     - media: "(prefers-color-scheme)"
-      accent: deep purple
+      scheme: clangen_light
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      scheme: default 
-      accent: deep purple
+      scheme: clangen_light
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-sunny
         name: Switch to dark mode
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
-      accent: deep purple
+      scheme: clangen_dark
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Switch to system preference
 extra:
   homepage: https://clangen.io/
