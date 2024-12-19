@@ -2937,5 +2937,86 @@
       "all_traits"
     ],
     "Time has taken its toll and m_c has noticed {PRONOUN/m_c/self} slowing down. {PRONOUN/m_c/subject/CAP} {VERB/m_c/have/has} worked timelessly for many moons, but it is time for {PRONOUN/m_c/object} to retire. "
+  ],
+  "elder_6": [
+    [
+      "elder",
+      "general_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "m_c holds {PRONOUN/m_c/poss} head up high as l_n calls upon StarClan to witness m_c's service to c_n. This is a retirement hard earned."
+  ],
+  "elder_7": [
+    [
+      "elder",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "As m_c entering into the sunset of {PRONOUN/m_c/poss} life, {PRONOUN/m_c/subject} {VERB/m_c/join/joins} the ranks of the elders without regret, looking forward to the rest {PRONOUN/m_c/subject} {VERB/m_c/have/has} earned."
+  ],
+  "elder_8": [
+    [
+      "elder",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "flamboyant",
+      "rebellious",
+      "sneaky",
+      "shameless",
+      "charismatic"
+    ],
+    "m_c grins through the celebration of {PRONOUN/m_c/poss} retirement, looking forward to being the gossipiest elder on this side of the rising sun."
+  ],
+  "elder_9": [
+    [
+      "elder",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "responsible",
+      "ambitious",
+      "strict",
+      "insecure"
+    ],
+    "m_c stops {PRONOUN/m_c/poss} tail from twitching as {PRONOUN/m_c/poss} retirement is announced. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} c_n will be fine without {PRONOUN/m_c/object} on the front lines, {PRONOUN/m_c/subject} know this is the right time to relax {PRONOUN/m_c/poss} claws and let {PRONOUN/m_c/poss} responsibilities fall from {PRONOUN/m_c/poss} paws, but... it's hard, letting go."
+  ],
+  "elder_10": [
+    [
+      "elder",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "gloomy",
+      "nervous",
+      "lonesome",
+      "insecure"
+    ],
+    "m_c takes a deep breath, and tries to see the celebration of {PRONOUN/m_c/poss} retirement as a compliment, not an exile to the elder's den. {PRONOUN/m_c/subject/CAP} {VERB/m_c/know/knows} it isn't meant that way."
+  ],
+  "elder_11": [
+    [
+      "elder",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "loyal",
+      "righteous",
+      "fierce",
+      "bloodthirsty",
+      "vengeful",
+      "sincere"
+    ],
+    "m_c sits with a puffed out pelt of pride, hearing c_n celebrate {PRONOUN/m_c/poss} achivements. Retiring means trusting younger, fresher cats to take up the fight to keep c_n safe, but {PRONOUN/m_c/subject} {VERB/m_c/think/thinks} {PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} done the best {PRONOUN/m_c/subject} could've to pass on {PRONOUN/m_c/poss} lessons."
   ]
 }
