@@ -331,7 +331,11 @@ class HerbSupply:
             if self.collected[herb] < 0:
                 self.collected[herb] = 0
 
-    def get_found_herbs(self, med_cat, general_amount_bonus: bool = False, specific_quantity_bonus: float = 0) -> vars():
+    def get_found_herbs(
+            self,
+            med_cat,
+            general_amount_bonus: bool = False,
+            specific_quantity_bonus: float = 0) -> vars():
         """
         Takes a med cat and chooses "random" herbs for them to find. Herbs found are based on cat's skill, how badly
         the herb is needed, and herb rarity
