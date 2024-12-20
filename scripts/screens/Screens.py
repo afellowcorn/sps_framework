@@ -336,7 +336,8 @@ class Screens:
         elif event.ui_element == Screens.menu_buttons["warrior_den"]:
             self.change_screen("warrior den screen")
 
-    def update_dens(self):
+    @classmethod
+    def update_dens(cls):
         dens = [
             "dens_bar",
             "lead_den",
@@ -392,23 +393,23 @@ class Screens:
     def mns_ui_offset(cls, x_shift, y_shift):
         """shifts the dens UI by the given amount - needed for positioning around the MnS widget"""
         try:
-            if cls.menu_buttons['dens']:
-                cls.menu_buttons['dens'].kill()
-            if cls.menu_buttons['dens_bar']:
-                cls.menu_buttons['dens_bar'].kill()
-                del cls.menu_buttons['dens_bar']
-            if cls.menu_buttons['lead_den']:
-                cls.menu_buttons['lead_den'].kill()
-                del cls.menu_buttons['lead_den']
-            if cls.menu_buttons['med_cat_den']:
-                cls.menu_buttons['med_cat_den'].kill()
-                del self.menu_buttons['med_cat_den']
-            if cls.menu_buttons['warrior_den']:
-                cls.menu_buttons['warrior_den'].kill()
-                del self.menu_buttons['warrior_den']
-            if cls.menu_buttons['clearing']:
-                cls.menu_buttons['clearing'].kill()
-                del cls.menu_buttons['clearing']
+            if cls.menu_buttons["dens"]:
+                cls.menu_buttons["dens"].kill()
+            if cls.menu_buttons["dens_bar"]:
+                cls.menu_buttons["dens_bar"].kill()
+                del cls.menu_buttons["dens_bar"]
+            if cls.menu_buttons["lead_den"]:
+                cls.menu_buttons["lead_den"].kill()
+                del cls.menu_buttons["lead_den"]
+            if cls.menu_buttons["med_cat_den"]:
+                cls.menu_buttons["med_cat_den"].kill()
+                del cls.menu_buttons["med_cat_den"]
+            if cls.menu_buttons["warrior_den"]:
+                cls.menu_buttons["warrior_den"].kill()
+                del cls.menu_buttons["warrior_den"]
+            if cls.menu_buttons["clearing"]:
+                cls.menu_buttons["clearing"].kill()
+                del cls.menu_buttons["clearing"]
         except:
             pass
         if y_shift != 0:
