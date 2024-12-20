@@ -5328,7 +5328,7 @@
         "sub_type": [ "murder" ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c died during battle training with r_c, r_c exclaimed that it was all an accident.",
+        "event_text": "m_c died during battle training with r_c. {PRONOUN/r_c/subject/CAP} exclaimed that it was all an accident.",
         "m_c": {
             "age": [
                 "adolescent", "young adult"
