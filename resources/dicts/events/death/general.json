@@ -1116,7 +1116,7 @@
         ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c sneaked out of camp, intending to find more about {PRONOUN/m_c/poss} origins. c_n found {PRONOUN/m_c/poss} cooling body in the morning, after a long search.",
+        "event_text": "m_c sneaked out of camp, intending to discover more about {PRONOUN/m_c/poss} origins. After a long morning search, c_n found {PRONOUN/m_c/poss} cooling body.",
         "m_c": {
             "age": [ "adolescent", "young adult"],
             "status": [ "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "mediator", "medicine cat", "deputy" ],
@@ -1731,7 +1731,7 @@
         "sub_type": [ "murder" ],
         "tags": [ "all_lives" ],
         "weight": 20,
-        "event_text": "m_c was shoved into a ravine by r_c, having been lured near by trickery.",
+        "event_text": "Lured by trickery and deceptive words, m_c was shoved into a ravine by r_c, killing {PRONOUN/m_c/object}.",
         "m_c": {
             "status": [
                 "deputy", "leader"
@@ -1849,7 +1849,7 @@
         ],
         "tags": ["all_lives"],
         "weight": 20,
-        "event_text": "m_c and r_c went to play together on the frozen pond. They never returned.",
+        "event_text": "Last c_n heard, m_c and r_c were going out to play. They don't return, and the ice on a nearby pond is cracked.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult"],
             "not_skill": [
@@ -2093,7 +2093,7 @@
         "sub_type": [ "war" ],
         "tags": [],
         "weight": 20,
-        "event_text": "Blinded by blood in the midst of battle, r_c accidentally killed m_c.",
+        "event_text": "Blinded by blood in the midst of battle, r_c fatally mistakes m_c for a foe.",
         "m_c": {
             "status": [
                 "warrior",
@@ -4412,7 +4412,7 @@
         "sub_type": [ "old_age" ],
         "tags": [ "all_lives" ],
         "weight": 20,
-        "event_text": "{PRONOUN/m_c/subject}{VERB/m_c/'ve/'s} lost all of {PRONOUN/m_c/poss} remaining lives to old age.",
+        "event_text": "m_c has lost all of {PRONOUN/m_c/poss} remaining lives to old age.",
         "m_c": {
             "age": [
                 "senior"
@@ -4792,7 +4792,7 @@
             "all_lives"
         ],
         "weight": 20,
-        "event_text": "{PRONOUN/m_c/poss/CAP} remaining lives were taken by old age.",
+        "event_text": "m_c's remaining lives were taken by old age.",
         "m_c": {
             "age": [
                 "senior"
@@ -5023,7 +5023,7 @@
             "all_lives"
         ],
         "weight": 20,
-        "event_text": "m_c and r_c were ambushed by a pack of dogs. r_c was nowhere to be found when m_c looked for help.",
+        "event_text": "m_c and r_c were ambushed by a pack of dogs, but r_c was nowhere to be found when m_c looked for help.",
         "m_c": {
             "status": [
                 "leader"
@@ -5085,7 +5085,7 @@
             "kit_manipulated"
         ],
         "weight": 20,
-        "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterwards, but no one noticed.",
+        "event_text": "m_c lost a life while saving a kit from drowning. The kit seemed wary of r_c afterwards, but no one notices.",
         "m_c": {
             "age": [
                 "young adult",
@@ -5328,7 +5328,7 @@
         "sub_type": [ "murder" ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c died during battle training with r_c, r_c claimed that it was all an accident.",
+        "event_text": "m_c died during battle training with r_c, r_c exclaimed that it was all an accident.",
         "m_c": {
             "age": [
                 "adolescent", "young adult"

@@ -27,7 +27,7 @@
         "sub_type": [],
         "tags": ["clan:kitten"],
         "weight": 20,
-        "event_text": "m_c snuck out of camp and was lost to the strange tunnels, nothing left to be found but blood and weasel scent.",
+        "event_text": "m_c snuck out of camp and was lost to the strange tunnels, nothing left to find but blood and weasel scent.",
         "m_c": {
             "age": ["kitten"],
             "dies": true
