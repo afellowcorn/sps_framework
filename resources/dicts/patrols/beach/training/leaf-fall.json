@@ -202,7 +202,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} {VERB/app1/edge/edges} over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -295,7 +295,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} {VERB/app1/edge/edges} over beside app2, both apprentices staring down at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -323,7 +323,7 @@
                 "weight": 20
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip. {PRONOUN/s_c/poss/CAP} heart jumps with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip. {PRONOUN/s_c/poss/CAP} heart jumps with terror as sudden pain sparks down {PRONOUN/s_c/poss} flank. The other apprentice digs {PRONOUN/r_c/poss} fangs into s_c's side, saving {PRONOUN/s_c/poss} life, if not {PRONOUN/s_c/poss} pelt.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -348,7 +348,7 @@
                 }
             },
             {
-                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip, {PRONOUN/s_c/poss} claws gripping on nothing as {PRONOUN/s_c/subject} {VERB/s_c/tumble/tumbles}, spinning end over end, yowling with terror, until {PRONOUN/s_c/poss} flight comes to an abrupt and terrible end.",
+                "text": "s_c crowds forward, daringly letting {PRONOUN/s_c/poss} paws dangle over the edge as {PRONOUN/s_c/subject} {VERB/s_c/look/looks} at the chicks - and the ground crumbles. Both apprentices flinch backwards with yelps and yowls, but s_c is too close, on too unstable ground, and {PRONOUN/s_c/subject} {VERB/s_c/feel/feels} {PRONOUN/s_c/self} losing {PRONOUN/s_c/poss} grip. {PRONOUN/s_c/poss/CAP} claws grip on nothing as {PRONOUN/s_c/subject} {VERB/s_c/tumble/tumbles}, spinning end over end, yowling with terror... until {PRONOUN/s_c/poss} flight comes to an abrupt and terrible end.",
                 "exp": 0,
                 "weight": 10,
                 "stat_trait": [
@@ -363,7 +363,127 @@
                 "dead_cats": ["s_c"],
                 "history_text": {
                     "scar": "r_c was scarred when another apprentice (violently) saved {PRONOUN/r_c/poss} life from a cliff fall during a youthful adventure.",
-                    "death": "r_c fell from a cliff as an apprentice when {PRONOUN/r_c/subject} took a stupid risk, cutting {PRONOUN/r_c/poss} life short."
+                    "death": "r_c fell from a cliff when {PRONOUN/r_c/subject} took a stupid risk, cutting {PRONOUN/r_c/poss} life short."
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_leaffall_berrybush1",
+        "biome": ["beach"],
+        "season": ["leaf-fall"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 10,
+        "intro_text": "While helping gather herbs, r_c stumbles upon a bush of red berries.",
+        "decline_text": "r_c decides not to touch the berries.",
+        "chance_of_success": 40,
+        "success_outcomes": [
+            {
+                "text": "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "After careful consideration, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
+                "exp": 20,
+                "weight": 5,
+                "herbs": ["raspberry"]
+            },
+            {
+                "text": "Astutely, s_c recognizes the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "While plucking them from the bush, r_c finds them tasty, and eats a few, only for p_l to notice what {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} eating. {PRONOUN/r_c/subject/CAP}{VERB/r_c/'re/'s} rushed back to camp, where the medicine cat might have a chance at saving {PRONOUN/r_c/object} from deathberry poisoning.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["poisoned"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c mistook deathberries for something edible.",
+                    "lead_death": "after eating deathberries"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "bch_train_leaffall_berrybush2",
+        "biome": ["beach"],
+        "season": ["leaf-fall"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 10,
+        "intro_text": "While helping gathering herbs, app1 stumbles upon a bush of red berries.",
+        "decline_text": "r_c decides not to touch the berries.",
+        "chance_of_success": 20,
+        "success_outcomes": [
+            {
+                "text": "Unsure but remembering the kitten-tales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries.",
+                "exp": 20,
+                "weight": 5,
+                "herbs": ["raspberry"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallows a few. {PRONOUN/app1/subject/CAP} {VERB/app1/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/r_c/object}, having not identified deathberries before eating them.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["app1"],
+                "history_text": {
+                    "reg_death": "m_c mistook deathberries for something edible.",
+                    "lead_death": "after eating deathberries"
+                }
+            },
+            {
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/app1/object} from deathberry poisoning.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["poisoned"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c mistook deathberries for something edible.",
+                    "lead_death": "after eating deathberries"
                 }
             }
         ]
@@ -388,7 +508,7 @@
         "decline_text": "Taking a break turns into ending the patrol early.",
         "success_outcomes": [
                 {
-                    "text": "s_c sits on the windward side of app1, trying to give {PRONOUN/app1/object} a little more shelter. It's understandable, {PRONOUN/s_c/subject} {VERB/s_c/sympathise/sympathises}, but app1 can't rely on cats in distress only showing up with the sea is inviting. The sympathy (and a little physical warmth) put cheer back into app1, and {PRONOUN/app1/subject} {VERB/app1/take/takes} {PRONOUN/app1/poss} next turn at life guarding practice with enthusiasm.",
+                    "text": "s_c sits on the windward side of app1, trying to give {PRONOUN/app1/object} a little more shelter. It's understandable, {PRONOUN/s_c/subject} {VERB/s_c/sympathize/sympathizes}, but app1 can't rely on cats in distress only showing up when the sea is inviting. The sympathy (and a little physical warmth) puts cheer back into app1, and {PRONOUN/app1/subject} {VERB/app1/take/takes} {PRONOUN/app1/poss} next turn at life guarding practice with enthusiasm.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -419,7 +539,7 @@
                     ]
                 },
                 {
-                    "text": "s_c nods. Life guarding isn't easy, even in practice. But they offer up the story of a kitten saved by a c_n warrior, who had the strenght and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes app1 sit up straight, proud to be carrying on that tradition.",
+                    "text": "s_c nods. Life guarding isn't easy, even in practice. But {PRONOUN/s_c/subject} {VERB/s_c/offer/offers} up the story of a kitten saved by a c_n warrior who had the strength and will to keep the little ball of fur above the waves under nearly impossible circumstances. It makes app1 sit up straight, proud to be carrying on that tradition.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_train_soggykitty_happy_app",
@@ -450,7 +570,7 @@
                     ]
                 },
                 {
-                    "text": "Doesn't app1 want to be a ocean dancer, one of the many cats in c_n ancestry who've managed to master the waves, streaking in and out in to save lives that who've been lost to the ocean's jaws, s_c asks? And well, when {PRONOUN/s_c/subject} {VERB/s_c/put/puts} it like <i>that</i>... app1's motivation returns.",
+                    "text": "Doesn't app1 want to be an ocean dancer, one of the many cats in c_n's ancestry who managed to master the waves, streaking in and out in to save lives that have been lost to the ocean's jaws, s_c asks? And well, when {PRONOUN/s_c/subject} {VERB/s_c/put/puts} it like <i>that</i>... app1's motivation returns.",
                     "exp": 30,
                     "weight": 20,
                     "art": "gen_bord_story",
@@ -498,7 +618,7 @@
                     ]
                 },
                 {
-                    "text": "app1 is right - this is far, far too cold of a pool to train in, and they're shivering too badly to continue. Time to go home, and p_l apologises for bringing the patrol out here.",
+                    "text": "app1 is right - this is far, far too cold of a pool to train in, and they're shivering too badly to continue. Time to go home, and p_l apologizes for bringing the patrol out here.",
                     "exp": 0,
                     "weight": 20,
                     "art": "gen_train_soggykitty_mad_app",

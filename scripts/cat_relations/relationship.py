@@ -105,7 +105,7 @@ class Relationship:
             in_de_crease = "neutral"
 
         # choice any type of intensity
-        intensity = choice(["low", "medium", "high"])
+        intensity = choice(random.choices(["low", "medium", "high"], weights=[4, 3, 2]))
 
         # get other possible filters
         season = str(game.clan.current_season).casefold()
@@ -124,22 +124,15 @@ class Relationship:
                 all_interactions, intensity, biome, season, game_mode
             )
 
+        # return if there are no possible interactions.
         if len(possible_interactions) <= 0:
             print(
-                "ERROR: No interaction with this conditions. ",
+                "WARNING: No interaction with this conditions.",
                 rel_type,
                 in_de_crease,
                 intensity,
             )
-            possible_interactions = [
-                SingleInteraction(
-                    "fall_back",
-                    "Any",
-                    "Any",
-                    "medium",
-                    ["Default string, this should never appear."],
-                )
-            ]
+            return
 
         # check if the current interaction id is already used and us another if so
         chosen_interaction = choice(possible_interactions)
@@ -159,8 +152,8 @@ class Relationship:
         self.used_interaction_ids.append(self.chosen_interaction.id)
 
         self.interaction_affect_relationships(in_de_crease, intensity, rel_type)
-        # give cats injuries if the game mode is not classic
-        if self.chosen_interaction.get_injuries and game_mode != "classic":
+        # give cats injuries
+        if self.chosen_interaction.get_injuries:
             injuries = []
             for (
                 abbreviations,
@@ -423,7 +416,7 @@ class Relationship:
             value_weights["dislike"] += 1
             value_weights["jealousy"] += 1
 
-        # increase the chance of a romantic interaction if there already mates
+        # increase the chance of a romantic interaction if they are already mates
         if self.mates:
             value_weights["romantic"] += 1
 
@@ -443,6 +436,14 @@ class Relationship:
         if (not mate_from_to or not mate_to_from) and not self.mates:
             while "romantic" in types:
                 types.remove("romantic")
+
+        # if cats have no romantic relationship already, don't allow romantic decrease
+        if (
+            not positive
+            and "romantic" in types
+            and not self.cat_from.relationships[self.cat_to.ID].romantic_love
+        ):
+            types.remove("romantic")
 
         rel_type = choice(types)
         return rel_type

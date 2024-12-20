@@ -3,7 +3,18 @@
 		"id": "platonic_inc_low1",
 		"intensity": "low",
 		"interactions": [
-			"m_c thinks r_c was nice to {PRONOUN/m_c/object} today."
+			"m_c thinks r_c was nice to {PRONOUN/m_c/object} today.",
+			"m_c thought r_c was very polite today.",
+			"r_c does something that makes m_c's day a little happier.",
+			"r_c compliments m_c's name.",
+			"r_c compliments one of m_c's friends.",
+			"r_c mentions that m_c looks good today.",
+			"r_c tells m_c that {PRONOUN/m_c/poss} pelt is shiny today.",
+			"m_c wants to be closer to r_c.",
+			"r_c thanked m_c for bringing {PRONOUN/r_c/object} food.",
+			"r_c guides m_c to someone {PRONOUN/m_c/subject} {VERB/m_c/are/is} looking for.",
+			"m_c sees r_c put something back where it belongs.",
+			"m_c hears a nice story about r_c."
 		]
 	},
 	{
@@ -11,6 +22,15 @@
 		"intensity": "low",
 		"interactions": [
 			"m_c is talking with r_c.",
+			"m_c and r_c roll up moss balls together.",
+			"m_c and r_c talk about what they see in the clouds.",
+			"m_c explains what a joke means to r_c.",
+			"m_c and r_c chat about Clan news.",
+			"m_c talks with r_c about some Clan drama.",
+			"m_c is asking r_c interesting questions.",
+			"m_c learns something new about a Clanmate from r_c.",
+			"m_c prevents something from falling on r_c.",
+			"m_c warns r_c about something on the ground so r_c doesn't trip.",
 			"m_c asks r_c how {PRONOUN/r_c/subject}{VERB/r_c/'re/'s} doing."
 		],
 		"reaction_random_cat": {
@@ -21,14 +41,25 @@
 		"id": "platonic_inc_med1",
 		"interactions": [
 			"m_c saw r_c the other day and did get a chance to meow hello!",
-			"m_c reminds r_c to grab something from the fresh-kill pile if {PRONOUN/r_c/subject} {VERB/r_c/have/has}n't already."
+			"r_c points out that m_c's fresh-kill has gone bad before {PRONOUN/r_c/subject} {VERB/r_c/eat/eats} it.",
+			"m_c thinks r_c has interesting things to talk about.",
+			"m_c is fascinated by one of r_c's stories.",
+			"m_c likes the way r_c laughs.",
+			"m_c is impressed by some of r_c's advice.",
+			"r_c reminds m_c to grab something from the fresh-kill pile if {PRONOUN/r_c/subject} {VERB/r_c/have/has}n't already."
 		]
 	},
 	{
 		"id": "platonic_inc_med2",
 		"interactions": [
 			"m_c is telling a story to r_c.",
-			"m_c is sharing prey with r_c.",
+			"m_c is sharing a piece of fresh-kill with r_c.",
+			"m_c is making up a new Clan with r_c.",
+			"m_c and r_c are chatting about what they're doing today.",
+			"m_c is talking about what to do tomorrow with r_c.",
+			"m_c is telling r_c something interesting about another Clan.",
+			"m_c and r_c laugh about something small together.",
+			"m_c spends some time sheltering with r_c during a storm.",
 			"m_c chats with r_c while grabbing something to eat."
 		],
 		"reaction_random_cat": {
@@ -40,6 +71,12 @@
 		"interactions": [
 			"m_c waves to r_c with {PRONOUN/m_c/poss} tail as their patrols cross paths on the territory.",
 			"m_c calls to r_c to catch {PRONOUN/m_c/object} a fat mouse on {PRONOUN/r_c/poss} next hunting patrol.",
+			"m_c and r_c have a fun patrol and plan to tell stories about it later to their Clanmates.",
+			"m_c stands up for r_c on a border patrol when confronted by another Clan.",
+			"m_c got into an unexpectedly in-depth conversation while on a patrol with r_c.",
+			"m_c and r_c had such a good time on a patrol that they came back late.",
+			"A Clanmate that went on patrol with m_c and r_c says they talked the entire time and almost left them behind.",
+			"m_c and r_c challenge one another during a hunting patrol.",
 			"m_c hopes {PRONOUN/m_c/subject} {VERB/m_c/are/is} assigned to patrol with r_c tomorrow."
 		],
 		"main_status_constraint": [
@@ -64,10 +101,15 @@
 			"r_c charms m_c.",
 			"r_c smiles at m_c whenever they meet.",
 			"r_c knows what to say to make m_c feel better.",
+			"m_c is inspired by r_c's confident demeanor.",
+			"m_c is easily swayed by r_c's words.",
+			"m_c thinks that r_c is so easy to get along with.",
+			"m_c wants to be as confident as r_c.",
 			"r_c compliments m_c for {PRONOUN/m_c/poss} good disposition."
 		],
 		"random_trait_constraint": [
-			"charismatic"
+			"charismatic",
+			"confident"
 		]
 	},
 	{
@@ -105,6 +147,8 @@
 		"id": "platonic_inc_med8",
 		"interactions": [
 			"r_c is playing tag with m_c.",
+			"r_c bats a moss ball towards m_c to play.",
+			"r_c gets the zoomies with m_c.",
 			"r_c bats a bit of fluff in front of m_c and gets {PRONOUN/m_c/object} to play a game."
 		],
 		"random_trait_constraint": [
@@ -118,7 +162,8 @@
 			"m_c convinces r_c to help {PRONOUN/m_c/object} pull a prank on a Clanmate."
 		],
 		"main_trait_constraint": [
-			"troublesome"
+			"troublesome",
+			"childish"
 		],
 		"reaction_random_cat": {
 			"platonic": "increase"
@@ -147,7 +192,12 @@
 	{
 		"id": "platonic_inc_med4",
 		"interactions": [
-			"m_c wants to explore the whole territory with r_c!"
+			"m_c wants to explore the whole territory with r_c!",
+			"m_c claims that r_c is one of {PRONOUN/m_c/poss} best friends.",
+			"m_c always wants to say hello to r_c first thing in the morning.",
+			"m_c always asks where r_c is.",
+			"m_c always tries to get on patrols with r_c.",
+			"m_c always takes food to r_c."
 		],
 		"relationship_constraint": [
 			"platonic_40"
@@ -362,7 +412,7 @@
 			"m_c brings r_c a piece of prey to share after a long day of training.",
 			"m_c offers to help r_c clean out the elder's bedding.",
 			"m_c was playing with r_c and learned a fun new battle move from {PRONOUN/r_c/object}!",
-			"m_c is excitedly trying to guess what {PRONOUN/m_c/poss} and r_c's warrior names will be."
+			"m_c is trying to guess what {PRONOUN/m_c/poss} and r_c's warrior names will be."
 		],
 		"main_status_constraint": [
 			"apprentice"
@@ -449,6 +499,17 @@
 		"interactions": [
 			"m_c wants to spend more time with r_c!",
 			"m_c is always happy to be around r_c.",
+			"m_c talks all the time about r_c.",
+			"m_c thinks very often about r_c.",
+			"m_c defends r_c in conversations.",
+			"m_c wants r_c to stay safe and happy.",
+			"m_c has a lot of fun with r_c!",
+			"r_c always knows how to make m_c laugh.",
+			"m_c doesn't think there's ever a dull moment with r_c.",
+			"m_c has had a great time hanging out with r_c lately.",
+			"m_c starts to plan things hoping that r_c will get involved.",
+			"m_c won't stand for slander about r_c.",
+			"m_c checks in on r_c every day.",
 			"m_c is glad to have a Clanmate like r_c."
 		]
 	},
@@ -473,6 +534,12 @@
 		"interactions": [
 			"m_c is having a wonderful time discussing recent Clan news with r_c.",
 			"m_c and r_c enjoy each other's company.",
+			"While looking at the stars, m_c and r_c make up some constellations.",
+			"m_c eats with r_c all the time!",
+			"m_c dispels a bad rumor about r_c.",
+			"m_c and r_c plan all their days together.",
+			"m_c and r_c always have something to share with each other.",
+			"The whole Clan notices how close m_c and r_c are lately.",
 			"m_c is happy to run into r_c today."
 		],
 		"reaction_random_cat": {
@@ -485,6 +552,10 @@
 		"interactions": [
 			"m_c thinks about how lucky {PRONOUN/m_c/subject} {VERB/m_c/are/is} to have someone like r_c as a friend.",
 			"m_c considers r_c to be one of {PRONOUN/m_c/poss} close friends.",
+			"m_c and r_c know more about each other than anyone else.",
+			"m_c always has something good to say about r_c.",
+			"m_c can think of a hundred good things to say about r_c.",
+			"Some of m_c's favorite memories are with r_c.",
 			"m_c couldn't imagine how boring things would be without a friend like r_c."
 		],
 		"relationship_constraint": [
@@ -496,7 +567,10 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c tells a joke that only r_c can understand.",
-			"m_c is always happy to grab some fresh-kill for r_c to share.",
+			"m_c is always happy to share a piece of fresh-kill with r_c.",
+			"m_c and r_c laugh over happy memories together.",
+			"m_c purrs whenever r_c comes around.",
+			"m_c and r_c don't start their days without one another.",
 			"m_c saved a piece of fresh-kill that {PRONOUN/m_c/subject} {VERB/m_c/know/knows} is r_c's favorite."
 		],
 		"relationship_constraint": [
@@ -512,6 +586,12 @@
 		"interactions": [
 			"m_c can't imagine {PRONOUN/m_c/poss} life if {PRONOUN/m_c/subject} never met r_c.",
 			"m_c thinks of r_c as {PRONOUN/m_c/poss} best friend.",
+			"Wherever r_c is found, m_c is always with {PRONOUN/r_c/object}.",
+			"Clanmates are envious of m_c and r_c's bond.",
+			"m_c and r_c can always rely on each other.",
+			"There's nothing that can separate m_c and r_c.",
+			"The first one to panic when r_c gets hurt is always m_c.",
+			"The Clan notices that m_c and r_c have picked up each other's mannerisms.",
 			"m_c and r_c are inseparable, and can almost always be found with each other."
 		],
 		"relationship_constraint": [
@@ -523,6 +603,8 @@
 		"intensity": "high",
 		"interactions": [
 			"m_c thinks r_c tells the best stories.",
+			"m_c doesn't understand why no one visits r_c to listen to {PRONOUN/r_c/poss} great stories.",
+			"m_c always brings food to r_c so {PRONOUN/r_c/subject} {VERB/r_c/don't/doesn't} have to walk to the fresh-kill pile.",
 			"m_c listens to r_c talk about what life was like when {PRONOUN/r_c/subject} {VERB/r_c/were/was} young.",
 			"m_c values r_c's insights on life."
 		],

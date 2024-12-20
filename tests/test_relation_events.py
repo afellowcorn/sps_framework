@@ -2,15 +2,14 @@ import os
 import unittest
 from unittest.mock import patch
 
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
 from scripts.clan import Clan
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 from scripts.events_module.relationship.romantic_events import Romantic_Events
-
-os.environ["SDL_VIDEODRIVER"] = "dummy"
-os.environ["SDL_AUDIODRIVER"] = "dummy"
-
 
 class CanHaveKits(unittest.TestCase):
     def test_prevent_kits(self):
@@ -77,7 +76,7 @@ class Pregnancy(unittest.TestCase):
     def test_single_cat_female(self, check_if_can_have_kits):
         # given
         clan = Clan(name="clan")
-        cat = Cat(gender='female')
+        cat = Cat(gender='female', age="adult", moons=40)
         clan.pregnancy_data = {}
 
         # when
@@ -91,8 +90,8 @@ class Pregnancy(unittest.TestCase):
     def test_pair(self, check_if_can_have_kits):
         # given
         clan = Clan(name="clan")
-        cat1 = Cat(gender='female')
-        cat2 = Cat(gender='male')
+        cat1 = Cat(gender='female', age="adult", moons=40)
+        cat2 = Cat(gender='male', age="adult", moons=40)
 
         clan.pregnancy_data = {}
 

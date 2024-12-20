@@ -46,7 +46,7 @@
         ["frozen paws"],
         ["an unyielding fog", "a suffocating fog"],
         ["an oppressive darkness", "darkness unending", "a panther-black night", "darkness despite the shining sun"],
-        ["the apprentice den", "the leader's den", "the nursery", "the warrior's den", "the elder's den"],
+        ["the apprentices' den", "the leader's den", "the nursery", "the warriors' den", "the elders' den"],
         ["a deep lake"],
         ["a snake eating it's own tail"],
         ["a ghostly pair of eyes"],
@@ -80,6 +80,12 @@
       ],
       "mountainous": [
 
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
       ]
     },
     "sound": {
@@ -97,7 +103,7 @@
         ["crashing waves", "the roar of waves in the distance"],
         ["the sounds of battle", "the screams of fighting cats"],
         ["the rushing sound of a river"],
-        ["their own voice answering them"],
+        ["{PRONOUN/cat_tag/poss} own voice answering {PRONOUN/cat_tag/object}"],
         ["the sound of cracking ice"],
         ["the sound of a heartbeat"],
         ["a whispered message", "whispers of hope long past"],
@@ -115,6 +121,12 @@
 
       ],
       "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
 
       ]
     },
@@ -140,6 +152,12 @@
       ],
       "mountainous": [
 
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
       ]
     },
     "emotional": {
@@ -164,13 +182,19 @@
       ],
       "mountainous": [
 
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
       ]
     },
     "touch": {
       "general": [
-        ["the brush of a pelt against their own"],
+        ["the brush of a pelt against {PRONOUN/cat_tag/poss} own"],
         ["the touch of a mentor to an apprentice's forehead"],
-        ["a tail twining with their own"],
+        ["a tail twining with {PRONOUN/cat_tag/poss} own"],
         ["the warmth of a parent"]
       ],
       "forest": [
@@ -184,6 +208,12 @@
       ],
       "mountainous": [
 
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
       ]
     }
   },
@@ -193,7 +223,6 @@
       "general": [
         ["a five-pointed leaf", "a star-shaped leaf", "an oddly torn leaf"],
         ["a stone of two halves perfectly fitting together", "a stone with shining chips in it", "a stone with odd patterns on it", "a sparkling stone"],
-        ["a crooked-jawed squirrel"],
         ["an odd pile of soft downy fur", "a tuft of fox fur", "a tuft of badger fur", "a charred scrap of fur"],
         ["a shard of glass"],
         ["withered deathberries"],
@@ -201,37 +230,49 @@
         ["a gleaming feather", "an oddly shaped feather", "a broken feather", "tattered feathers"],
         ["the tooth of a large predator", "the claw of a large predator", "an old bloody claw"],
         ["an eagle's talon", "the talon of a hawk"],
-        ["a split acorn"],
         ["a piece of fresh prey already rotting"],
-        ["a shell shining with the colors of water"],
-        ["a branch that looks whole but comes apart with a gentle touch", "a stick rotted through"],
-        ["a three-eyed fish"],
         ["a two-headed adder", "a dead snake eating it's own tail", "a perfectly shed snake-skin"],
-        ["a glowing bug fallen into the middle of camp"],
+        ["a glowing bug fallen to the ground"],
         ["a pawprint of red on rock"],
         ["destroyed herbs", "wilting herbs"],
         ["a bird's broken egg", "a perfectly intact yet hollow bird's egg"],
-        ["a dew covered spider's web"],
+        ["a dew-covered spider's web"],
         ["a torn collar"],
-        ["the bones of freshkill", "a cracked mouse skull", "a cracked rabbit skull"],
+        ["the bones of fresh-kill", "a cracked mouse skull", "a cracked rabbit skull"],
         ["a shining beetle shell"],
         ["a green moth"],
         ["an emaciated vole", "an emaciated rabbit", "an emaciated mouse"],
         ["a headless centipede"],
         ["an abandoned bee-stinger"],
-        ["a miraculously burning reed"],
         ["a shed whisker"]
       ],
       "forest": [
-
+        ["a crooked-jawed squirrel", "a dying rat"],
+        ["a split acorn", "a perfect walnut", "a massive slab of tree-bark", "a scorched pine cone"],
+        ["a branch that looks whole but comes apart with a gentle touch", "a stick rotted through"]
       ],
       "plains": [
+        ["a patch of dying grass", "wilted grass", "a single burnt stalk of grass", "sprouting grass"],
+        ["a towering thundercloud", "the vast blue clear sky", "the flat horizon simmering in the far distance"],
+        ["a crooked-jawed squirrel", "a white rabbit", "a white spotted rabbit"]
 
       ],
       "beach": [
+        ["a three-eyed fish"],
+        ["a miraculously burning reed"],
+        ["a shell shining with the colors of water"]
 
       ],
       "mountainous": [
+        ["a crooked-jawed squirrel"]
+      ],
+      "wetlands": [
+        ["a three-eyed fish"],
+        ["a miraculously burning reed"],
+        ["a shell shining with the colors of water"]
+
+      ],
+      "desert": [
 
       ]
     },
@@ -244,12 +285,20 @@
 
       ],
       "plains": [
+        ["the rustle of wind through the grass", "the howl of wind over an empty plain"],
+        ["the cry of hawk", "the screech of an eagle"]
 
       ],
       "beach": [
 
       ],
       "mountainous": [
+        ["the cry of hawk", "the screech of an eagle"]
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
 
       ]
     },
@@ -260,6 +309,7 @@
 
       ],
       "forest": [
+        ["pine sap scent strong in the air"]
 
       ],
       "plains": [
@@ -269,6 +319,12 @@
 
       ],
       "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
 
       ]
     },
@@ -291,11 +347,19 @@
       ],
       "mountainous": [
 
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
       ]
     },
     "touch": {
       "general": [
-
+        ["the wind whistling past a claw raised in anger"],
+        ["the ache of fatigue as eyes close for good"],
+        ["an endless cold that seeps into {PRONOUN/cat_tag/poss} bones"]
       ],
       "forest": [
 
@@ -307,6 +371,12 @@
 
       ],
       "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
 
       ]
     }
@@ -390,6 +460,12 @@
       ],
       "mountainous": [
 
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
       ]
     },
     "smell": {
@@ -409,6 +485,12 @@
 
       ],
       "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
 
       ]
     },
@@ -432,8 +514,8 @@
         ["hatred for a dear friend"],
         ["knowing a secret that can never be revealed"],
         ["a truth unbelieved", "a truth concealed", "a truth never revealed"],
-        ["a weakness in their legs"],
-        ["a belly so empty they feel nauseous"],
+        ["a weakness in {PRONOUN/cat_tag/poss} legs"],
+        ["a belly so empty {PRONOUN/cat_tag/subject} feel nauseous"],
         ["a home no longer welcoming", "a home long lost", "a home once forgotten"],
         ["oozing corruption"]
       ],
@@ -447,6 +529,12 @@
 
       ],
       "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
 
       ]
     },
@@ -475,6 +563,12 @@
       ],
       "mountainous": [
 
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
+
       ]
     },
     "taste": {
@@ -493,6 +587,12 @@
 
       ],
       "mountainous": [
+
+      ],
+      "wetlands": [
+
+      ],
+      "desert": [
 
       ]
     }
@@ -551,6 +651,12 @@
       ["The Betrayal of the Ravens"],
       ["The Dancing Sky"],
       ["The Sun-drown Place"]
+
+    ],
+    "wetlands": [
+
+    ],
+    "desert": [
 
     ]
   }

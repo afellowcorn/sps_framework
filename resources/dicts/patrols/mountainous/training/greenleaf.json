@@ -63,7 +63,7 @@
                 "text": "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans.",
                 "exp": 15,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": ["SPEAKER,2", "LORE,1", "STORY,1"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -322,7 +322,7 @@
                 "text": "As they watch the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat Clans.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": ["SPEAKER,2", "LORE,1", "STORY,1"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -581,7 +581,7 @@
                 "text": "s_c pulls app1's attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction.",
                 "exp": 15,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": ["SPEAKER,2", "LORE,1", "STORY,1"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -753,7 +753,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under app1's chin, prompting {PRONOUN/app1/poss} head up. {PRONOUN/app1/subject} {VERB/app1/gasp/gasps}. Above {PRONOUN/app1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
+                "text": "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under app1's chin, prompting {PRONOUN/app1/poss} head up. {PRONOUN/app1/subject/CAP} {VERB/app1/gasp/gasps}. Above {PRONOUN/app1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
                 "exp": 20,
                 "weight": 20,
                 "relationships": [
@@ -798,7 +798,7 @@
                 "text": "s_c pulls the apprentices' attention towards the flashing hummingbirds darting about. Once upon a time, a fire threatened to consume everything but the bare rock of the mountains, but StarClan caught its embers, stopping it from spreading. They released those embers in greenleaf, to fly above the flowering meadows they'd saved from destruction.",
                 "exp": 20,
                 "weight": 20,
-                "stat_skill": ["SPEAKER,1"],
+                "stat_skill": ["SPEAKER,2", "LORE,1", "STORY,1"],
                 "can_have_stat": ["adult"],
                 "relationships": [
                     {
@@ -862,7 +862,7 @@
         "chance_of_success": 40,
         "success_outcomes": [
             {
-                "text": "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under app1's chin, prompting {PRONOUN/app1/poss} head up. {PRONOUN/app1/subject} {VERB/app1/gasp/gasps}. Above {PRONOUN/app1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
+                "text": "The apprentices stick their noses down into the soft dew-covered meadowgrass, searching for prey scent, but p_l's tail flicks under app1's chin, prompting {PRONOUN/app1/poss} head up. {PRONOUN/app1/subject/CAP} {VERB/app1/gasp/gasps}. Above {PRONOUN/app1/object}, a male hummingbird hovers, his full breeding plumage flashing brilliantly in the sun.",
                 "exp": 15,
                 "weight": 20,
                 "relationships": [
@@ -974,12 +974,12 @@
                 "weight": 20
             },
             {
-                "text": "Ha! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused-concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
+                "text": "Ha! app1 leaps, tail lashing furiously as the beetle buzzes under {PRONOUN/app1/poss} forepaws, claws sheathed. {PRONOUN/app1/subject/CAP} {VERB/app1/bat/bats} the bug off the rock and onto the ground, pouncing after it, jumping and twisting as {PRONOUN/app1/poss} colorful prey flits around {PRONOUN/app1/poss} head in confused, concussed beetle-behavior, unused to being an apprentice's new favorite toy.",
                 "exp": 20,
                 "weight": 5
             },
             {
-                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/don't/doesn't} notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
+                "text": "s_c pounces, flipping the beetle with soft paws and flopping over onto {PRONOUN/app1/poss} back, watching the insect scurry from one paw to the other, so completely entranced by its color and tiny, perfect legs that {PRONOUN/app1/subject} {VERB/app1/do/does}n't notice {PRONOUN/app1/poss} own skill catching and keeping the bug.",
                 "exp": 20,
                 "weight": 20,
                 "stat_skill": ["HUNTER,0"]
@@ -992,7 +992,7 @@
                 "weight": 20
             },
             {
-                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
+                "text": "Slimy, yet satisfying! Curiosity completed, app1 wanders off - but has to report to the medicine cat den later, when {PRONOUN/app1/poss} stomach reminds {PRONOUN/app1/object} why cats don't eat random bugs.",
                 "exp": 0,
                 "weight": 10,
                 "injury": [
@@ -1045,7 +1045,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} {VERB/app1/edge/edges} over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1138,7 +1138,7 @@
                 ]
             },
             {
-                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} edge over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
+                "text": "app1 has never seen those before! {PRONOUN/app1/subject/CAP} {VERB/app1/edge/edges} over beside app2, both apprentices staring at the eagle nest in the tree below them, calling down advice. No, beat their wings harder! Harder! They can do it!",
                 "exp": 20,
                 "weight": 5,
                 "relationships": [
@@ -1212,12 +1212,177 @@
         ]
     },
     {
-        "patrol_id": "mtn_train_greenleaf_sunsetmyth_storylocked1",
+        "patrol_id": "mtn_train_greenleaf_berrybush1",
         "biome": ["mountainous"],
         "season": ["greenleaf"],
         "types": ["training"],
         "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {},
+        "weight": 20,
+        "intro_text": "While out training, r_c stumbles upon a bush of red berries.",
+        "decline_text": "r_c decides not to touch the berries.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Unsure but remembering the kitten-tales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
+                "exp": 20,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "After careful consideration and consulting with the other cats, r_c recognizes them as raspberries and brings the rare berries back to the medicine cat's den.",
+                "exp": 20,
+                "weight": 5,
+                "herbs": ["raspberry"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "text": "Astutely, s_c recognizes the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit.",
+                "exp": 20,
+                "weight": 20,
+                "stat_skill": ["CLEVER,2"],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": 5
+                    }
+                ]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that redcurrants aren't a useful medicinal herb.",
+                "exp": 0,
+                "weight": 20,
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            },
+            {
+                "text": "While plucking them from the bush, r_c is surprised to find they taste pretty good. Before anyone can stop them, {PRONOUN/r_c/subject} {VERB/r_c/eat/eats} a few, and are rushed back to camp for deathberry poisoning.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["poisoned"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c mistook deathberries for something edible.",
+                    "lead_death": "after eating deathberries"
+                },
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["comfort", "trust"],
+                        "amount": -5
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "patrol_id": "mtn_train_greenleaf_berrybush2",
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": ["training"],
+        "tags": [],
+        "patrol_art": "train_general_intro",
+        "min_cats": 3,
+        "max_cats": 6,
+        "min_max_status": {
+            "apprentice": [1, 6]
+        },
+        "weight": 20,
+        "intro_text": "While helping gathering herbs, app1 stumbles upon a bush of red berries.",
+        "decline_text": "r_c decides not to touch the berries.",
+        "chance_of_success": 60,
+        "success_outcomes": [
+            {
+                "text": "Unsure but remembering the kitten-tales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
+                "exp": 20,
+                "weight": 20
+            },
+            {
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called raspberries.",
+                "exp": 20,
+                "weight": 5,
+                "herbs": ["raspberry"]
+            }
+        ],
+        "fail_outcomes": [
+            {
+                "text": "Confidently gathering them and prancing back to camp, app1 is then informed that redcurrants aren't a useful medicinal herb.",
+                "exp": 0,
+                "weight": 20
+            },
+            {
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, surprised at the pleasant taste, and swallows a few. {PRONOUN/app1/subject/CAP} {VERB/app1/collapse/collapses} on the way back to camp, and there's nothing any cat can do for {PRONOUN/app1/object}, having not identified deathberries before eating them.",
+                "exp": 0,
+                "weight": 10,
+                "dead_cats": ["app1"],
+                "history_text": {
+                    "reg_death": "m_c mistook deathberries for something edible.",
+                    "lead_death": "after eating deathberries"
+                }
+            },
+            {
+                "text": "Whatever. Identifying them is a medicine cat problem. app1 plucks the tasty berries, swallowing a few, and takes the rest back to camp where the medicine cat immediately starts work trying to save {PRONOUN/app1/object} from deathberry poisoning.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["app1"],
+                        "injuries": ["poisoned"],
+                        "scars": []
+                    }
+                ],
+                "history_text": {
+                    "reg_death": "m_c mistook deathberries for something edible.",
+                    "lead_death": "after eating deathberries"
+                }
+            }
+        ]
+    },
+    {
+        "patrol_id": "mtn_train_greenleaf_sunsetmyth_storylocked1",
         "patrol_art": "gen_bord_story",
+        "biome": ["mountainous"],
+        "season": ["greenleaf"],
+        "types": [],
+        "tags": [],
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -1456,7 +1621,7 @@
             ],
             "fail_outcomes": [
                 {
-                    "text": "As p_l starts the story, r_c continues practicing {PRONOUN/r_c/poss} moves and then pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine den to disrupt the flow of a story.",
+                    "text": "As p_l starts the story, r_c continues practicing {PRONOUN/r_c/poss} moves and then pounces straight into a tree trunk. Whoops. Nothing quite like a visit to the medicine cat den to disrupt the flow of a story.",
                     "exp": 0,
                     "weight": 20,
                     "injury": [
