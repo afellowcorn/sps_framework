@@ -520,12 +520,15 @@ class HerbSupply:
                 herb_used = self.get_highest_herb_in_group(herbs_available)
                 total_herb_amount = self.get_single_herb_total(herb_used)
 
-                # TODO: consider making this a flat 1
                 amount_used = randint(1, total_herb_amount if total_herb_amount < 4 else 4)
+                strength = 1
+                for level, herb_list in source_dict[condition]["herbs"].items():
+                    if herb_used in herb_list:
+                        strength = level
 
                 self.remove_herb(herb_used, amount_used)
 
-                self.__apply_herb_effect(treatment_cat, name, herb_used, chosen_effect, amount_used)
+                self.__apply_herb_effect(treatment_cat, name, herb_used, chosen_effect, amount_used, strength)
 
             else:
                 self.__apply_lack_of_herb(treatment_cat, name, chosen_effect)
@@ -560,11 +563,10 @@ class HerbSupply:
 
         return needed_num
 
-    def __apply_herb_effect(self, treated_cat, condition: str, herb_used: str, effect: str, amount_used: int):
+    def __apply_herb_effect(self, treated_cat, condition: str, herb_used: str, effect: str, amount_used: int, strength: int):
         """
         applies the given effect to the treated_cat
         """
-        # TODO: you'll need herb_used for determining strength
 
         # grab the correct condition dict so that we can modify it
         if condition in treated_cat.illnesses:
@@ -574,15 +576,13 @@ class HerbSupply:
         else:
             con_info = treated_cat.permanent_condition[condition]
 
-        # TODO: hook this up to the herb strength for that condition
-        strength_modifier = 1
         amt_modifier = int(amount_used * .5) if int(amount_used * .5) >= 1 else 1
 
         effect_message = "this should not show up"
         # apply mortality effect
         if effect == HerbEffect.MORTALITY:
             con_info[effect] += (
-                    3 * strength_modifier + amt_modifier
+                    3 * strength + amt_modifier
             )
             effect_message = "{PRONOUN/m_c/subject/CAP} be less likely to die."
 
@@ -590,7 +590,7 @@ class HerbSupply:
         elif effect == HerbEffect.DURATION:
             # duration doesn't get amt_modifier, as that would be far too strong an affect
             con_info[effect] -= (
-                    1 * strength_modifier
+                    1 * strength
             )
             if con_info["duration"] < 0:
                 con_info["duration"] = 0
@@ -600,7 +600,7 @@ class HerbSupply:
         elif effect == HerbEffect.RISK:
             for risk in con_info[effect]:
                 risk["chance"] += (
-                        3 * strength_modifier + amt_modifier
+                        3 * strength + amt_modifier
                 )
                 effect_message = "The risks associated with {PRONOUN/m_c/poss} condition are lowered."
 
