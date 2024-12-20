@@ -416,7 +416,7 @@ class Cat:
         nb_chance = randint(0, 75)
 
         # GENDER IDENTITY
-        if self.age in [CatAgeEnum.NEWBORN, CatAgeEnum.KITTEN]:
+        if self.age.is_baby():
             # newborns can't be trans, sorry babies
             pass
         elif nb_chance == 1:
@@ -451,7 +451,7 @@ class Cat:
         self.personality = Personality(kit_trait=self.age.is_baby())
 
         # experience and current patrol status
-        if self.age in [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.NEWBORN]:
+        if self.age.is_baby():
             self.experience = 0
         elif self.age == CatAgeEnum.ADOLESCENT:
             m = self.moons
@@ -2425,9 +2425,8 @@ class Cat:
             ):
                 return False
 
-        age_restricted_ages = [CatAgeEnum.NEWBORN, CatAgeEnum.KITTEN, CatAgeEnum.ADOLESCENT]
         if (
-            self.age in age_restricted_ages or other_cat.age in age_restricted_ages
+            not self.age.can_have_mate() or not other_cat.age.can_have_mate()
         ) and self.age != other_cat.age:
             return False
 

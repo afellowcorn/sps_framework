@@ -2054,8 +2054,7 @@ class Events:
 
         if (
             not int(random.random() * chance)
-            and cat.age != CatAgeEnum.KITTEN
-            and cat.age != CatAgeEnum.ADOLESCENT
+            and not cat.age.is_baby()
             and not self.new_cat_invited
         ):
             self.new_cat_invited = True
@@ -2149,7 +2148,7 @@ class Events:
         relationships = cat.relationships.values()
         targets = []
 
-        if cat.age in [CatAgeEnum.KITTEN, CatAgeEnum.NEWBORN]:
+        if cat.age.is_baby():
             return
 
         # if this cat is unstable and aggressive, we lower the random murder chance
@@ -2425,7 +2424,7 @@ class Events:
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
 
-        if cat.age in [CatAgeEnum.KITTEN, CatAgeEnum.NEWBORN]:
+        if cat.age.is_baby():
             return
 
         random_cat = get_random_moon_cat(Cat, main_cat=cat)

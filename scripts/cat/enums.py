@@ -13,4 +13,7 @@ class CatAgeEnum(StrEnum):
     SENIOR = "senior"
 
     def is_baby(self):
-        return self in [CatAgeEnum.KITTEN, CatAgeEnum.NEWBORN]
+        return self in (CatAgeEnum.KITTEN, CatAgeEnum.NEWBORN)
+
+    def can_have_mate(self):
+        return self not in (CatAgeEnum.KITTEN, CatAgeEnum.NEWBORN, CatAgeEnum.ADOLESCENT)
