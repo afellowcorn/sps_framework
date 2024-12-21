@@ -119,13 +119,15 @@ class ViewPregnancyCommand(Command):
             add_output_line_to_log("Please specify the name/id of the cat to edit the pregnancy of.")
             return
         cat = get_cat_from_name_or_id(args[0])
-        
+     
+        second_parent_cat = get_cat_from_name_or_id(game.clan.pregnancy_data[cat.ID]["second_parent"]) if game.clan.pregnancy_data[cat.ID]["second_parent"] else None
+        second_parent_repr = f"{second_parent_cat.name} ({second_parent_cat.ID})" if second_parent_cat else "None"
         if "pregnant" in cat.injuries:
             add_multiple_lines_to_log(f"""Cat: {cat.name} ({cat.ID})
                                         Moons: {game.clan.pregnancy_data[cat.ID]["moons"]}
                                         Amount of Kits: {game.clan.pregnancy_data[cat.ID]["amount"]}
                                         Severity: {cat.injuries["pregnant"]["severity"]}
-                                        Second Parent: {game.clan.pregnancy_data[cat.ID]["second_parent"]}""")
+                                        Second Parent: {second_parent_repr}""")
         else:
             add_output_line_to_log("Specified cat is not pregnant")
 
