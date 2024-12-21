@@ -513,10 +513,15 @@ class HerbSupply:
 
             chosen_effect = choice(possible_effects)
 
+            if game.clan.game_mode == "classic":
+                # classic always applies basic treatment, regardless of herb supply
+                self.__apply_herb_effect(treatment_cat, name, "cobwebs", chosen_effect, amount_used=1, strength=1)
+                return
+
             # find which required herbs the clan currently has
             herbs_available = [herb for herb in required_herbs if self.get_single_herb_total(herb) > 0]
 
-            if herbs_available or game.clan.game_mode == "classic":
+            if herbs_available:
                 herb_used = self.get_highest_herb_in_group(herbs_available)
                 total_herb_amount = self.get_single_herb_total(herb_used)
 
@@ -538,7 +543,6 @@ class HerbSupply:
         finds out what herbs an individual med cat gathered during moon skip and adds those herbs to collection
         and log
         """
-        # TODO: decide how to simplify for classic
 
         list_of_herb_strs, found_herbs = self.get_found_herbs(med_cat)
 
