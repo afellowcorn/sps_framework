@@ -324,7 +324,7 @@ def create_new_cat_block(
     :param list[str] attribute_list: attribute list contained within the block
     """
 
-    thought = "Is looking around the camp with wonder"
+    thought = i18n.t("hardcoded.thought_new_cat")
     new_cats = None
 
     # gather parents
@@ -526,7 +526,7 @@ def create_new_cat_block(
 
     # KITTEN THOUGHT
     if status in ["kitten", "newborn"]:
-        thought = "Is snuggled safe in the nursery"
+        thought = i18n.t("hardcoded.thought_new_kitten")
 
     # MEETING - DETERMINE IF THIS IS AN OUTSIDE CAT
     outside = False
@@ -534,7 +534,7 @@ def create_new_cat_block(
         outside = True
         status = cat_type
         new_name = False
-        thought = "Is wondering about those new cats"
+        thought = i18n.t("hardcoded.thought_meeting")
         if age is not None and age <= 6 and not bs_override:
             chosen_backstory = "outsider1"
 
@@ -542,7 +542,7 @@ def create_new_cat_block(
     alive = True
     if "dead" in attribute_list:
         alive = False
-        thought = "Explores a new, starry world"
+        thought = i18n.t("hardcoded.thought_new_dead")
 
     # check if we can use an existing cat here
     chosen_cat = None
@@ -711,7 +711,7 @@ def get_other_clan(clan_name):
 
 
 def create_new_cat(
-    Cat,
+    Cat: Union["Cat", Type["Cat"]],
     new_name: bool = False,
     loner: bool = False,
     kittypet: bool = False,
@@ -722,7 +722,7 @@ def create_new_cat(
     status: str = None,
     age: int = None,
     gender: str = None,
-    thought: str = "Is looking around the camp with wonder",
+    thought: str = None,
     alive: bool = True,
     outside: bool = False,
     parent1: str = None,
@@ -750,6 +750,10 @@ def create_new_cat(
     :param str parent2: Cat ID to set as the biological parent2
     :param list adoptive_parents: Cat IDs to set as adoptive parents
     """
+
+    if thought is None:
+        thought = i18n.t("hardcoded.thought_new_cat")
+
     # TODO: it would be nice to rewrite this to be less bool-centric
     accessory = None
     if isinstance(backstory, list):
@@ -1524,9 +1528,9 @@ def unpack_rel_block(
                 positive = True
 
         if positive:
-            effect = f" (positive effect)"
+            effect = i18n.t("relationships.positive_postscript")
         else:
-            effect = f" (negative effect)"
+            effect = i18n.t("relationships.negative_postscript")
 
         # Get log
         log1 = None
@@ -1553,7 +1557,7 @@ def unpack_rel_block(
                         f"WARNING: event changed relationships but did not create a relationship log"
                     )
             else:
-                log1 = "These cats recently interacted." + effect
+                log1 = i18n.t("defaults.relationship_log") + effect
         if not log2:
             if hasattr(event, "text"):
                 try:
@@ -1563,7 +1567,7 @@ def unpack_rel_block(
                         f"WARNING: event changed relationships but did not create a relationship log"
                     )
             else:
-                log2 = f"These cats recently interacted." + effect
+                log2 = i18n.t("defaults.relationship_log") + effect
 
         change_relationship_values(
             cats_to_ob,
@@ -1679,20 +1683,12 @@ def change_relationship_values(
                   " /Trust: " + str(trust)) if changed else print("No relationship change")"""
 
             if log and isinstance(log, str):
-                if single_cat_to.moons <= 1:
-                    log_text = (
-                        log
-                        + f"- {single_cat_to.name} was {single_cat_to.moons} moon old"
-                    )
-                    if log_text not in rel.log:
-                        rel.log.append(log_text)
-                else:
-                    log_text = (
-                        log
-                        + f"- {single_cat_to.name} was {single_cat_to.moons} moons old"
-                    )
-                    if log_text not in rel.log:
-                        rel.log.append(log_text)
+                log_text = (
+                    log
+                    + i18n.t("relationships.age_postscript", name=single_cat_to, count=single_cat_to.moons)
+                )
+                if log_text not in rel.log:
+                    rel.log.append(log_text)
 
 
 # ---------------------------------------------------------------------------- #
@@ -1704,19 +1700,9 @@ def get_leader_life_notice() -> str:
     """
     Returns a string specifying how many lives the leader has left or notifying of the leader's full death
     """
-    text = ""
-
-    lives = game.clan.leader_lives
-
-    if lives > 0:
-        text = f"The leader has {int(lives)} lives left."
-    elif lives <= 0:
-        if game.clan.instructor.df is False:
-            text = "The leader has no lives left and has travelled to StarClan."
-        else:
-            text = "The leader has no lives left and has travelled to the Dark Forest."
-
-    return text
+    if game.clan.instructor.df:
+        return i18n.t("cat.history.leader_lives_left_df", count=game.clan.leader_lives)
+    return i18n.t("cat.history.leader_lives_left_sc", count=game.clan.leader_lives)
 
 
 def get_other_clan_relation(relation):
@@ -2296,9 +2282,7 @@ def event_text_adjust(
         )
 
     if "given_herb" in text:
-        if "_" in chosen_herb:
-            chosen_herb = chosen_herb.replace("_", " ")
-        text = text.replace("given_herb", str(chosen_herb))
+        text = text.replace("given_herb", i18n.t(f"conditions.herbs.{chosen_herb}", count=2))
 
     return text
 

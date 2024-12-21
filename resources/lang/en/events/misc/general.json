@@ -3157,7 +3157,7 @@
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 10,
-    "event_text": "The o_c_n medicine cat comes asking if c_n has any given_herb to spare. Graciously, your Clan decides to aid their allies and share the herbs.",
+    "event_text": "The o_c_n medicine cat comes asking if c_n have any given_herb to spare. Graciously, your Clan decides to aid their allies and share the herbs.",
     "supplies": [
       {
           "type": "any_herb",
@@ -3195,7 +3195,7 @@
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 5,
-    "event_text": "The o_c_n medicine cat comes asking if c_n has any given_herb to spare. However, c_n only has enough for themselves and they refuse to share.",
+    "event_text": "The o_c_n medicine cat comes asking if c_n have any given_herb to spare. However, c_n only has enough for themselves and they refuse to share.",
     "supplies": [
       {
           "type": "any_herb",
@@ -3604,7 +3604,7 @@
     "season": ["any"],
     "tags": ["clan_wide"],
     "weight": 30,
-    "event_text": "The herb stores have quite a lot of given_herb, the excess is given back to the earth",
+    "event_text": "The herb stores have quite a lot of given_herb, the excess is given back to the earth.",
     "supplies": [
       {
           "type": "any_herb",

@@ -1,6 +1,8 @@
 import random
 from typing import List
 
+import i18n
+
 from scripts.game_structure import localization
 from scripts.cat.cats import Cat
 from scripts.cat.history import History
@@ -332,12 +334,16 @@ class HandleShortEvents:
             # check if we want to add some extra info to the event text and if we need to welcome
             for cat in self.new_cats[-1]:
                 if cat.dead:
-                    extra_text = f"{cat.name}'s ghost now wanders."
+                    extra_text = event_text_adjust(
+                        Cat, i18n.t("defaults.event_dead_outsider"), main_cat=cat
+                    )
                 elif cat.outside:
                     if "unknown" in attribute_list:
                         extra_text = ""
                     else:
-                        extra_text = f"The Clan has encountered {cat.name}."
+                        extra_text = event_text_adjust(
+                            Cat, i18n.t("defaults.event_met_outsider"), main_cat=cat
+                        )
                 else:
                     Relation_Events.welcome_new_cats([cat])
                 self.involved_cats.append(cat.ID)

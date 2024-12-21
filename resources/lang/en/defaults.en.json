@@ -10,6 +10,10 @@
         "deputy_event": "m_c becomes deputy.",
         "warn_low_freshkill": "c_n doesn't have enough prey for next moon!",
         "warn_low_medcats": "c_n doesn't have enough healthy medicine cats! Cats will be sick or hurt for longer and have a higher chance of dying.",
-        "warn_no_medcats": "c_n has no medicine cat!"
+        "warn_no_medcats": "c_n has no medicine cat!",
+        "event_dead_outsider": "m_c's ghost now wanders.",
+        "event_met_outsider": "The Clan has encountered m_c.",
+        "patrol_regular_death": "m_c died on patrol.",
+        "relationship_log": "These cats recently interacted."
     }
 }

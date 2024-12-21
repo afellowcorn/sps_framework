@@ -8,7 +8,6 @@
         "event_shaken_grief": {
             "one": "So much grief and death has taken its toll on the cats of c_n. %{insert} is particularly shaken by it.",
             "many": "So much grief and death has taken its toll on the cats of c_n. %{insert} are particularly shaken by it."
-
         },
         "relation_improved": " (o_c_n relations improved.)",
         "relations_neutral": " (o_c_n relations unchanged.)",
@@ -109,6 +108,10 @@
             "two": "Fleas have been hopping from pelt to pelt and now %{cats} are both infested.",
             "many": "Fleas have been hopping from pelt to pelt and now %{cats} are all infested."
         },
-        "illness_spread": "%{illness} has spread around the camp. %{cats} have been infected."
+        "illness_spread": "%{illness} has spread around the camp. %{cats} have been infected.",
+        "thought_new_cat": "Is looking around the camp with wonder",
+        "thought_new_kitten": "Is snuggled safe in the nursery",
+        "thought_meeting": "Is wondering about those new cats",
+        "thought_new_dead": "Explores a new, starry world"
     }
 }
