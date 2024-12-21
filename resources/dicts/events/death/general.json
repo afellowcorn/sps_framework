@@ -1576,7 +1576,7 @@
         ],
         "tags": [ "no_body", "all_lives" ],
         "weight": 20,
-        "event_text": "m_c met the long claws of a predator. Later, c_n found only {PRONOUN/m_c/poss} blood and a foul smell.",
+        "event_text": "m_c met their end to the long claws of a predator. Later, c_n found only {PRONOUN/m_c/poss} blood and a foul smell.",
         "m_c": {
             "age": [ "adolescent", "young adult", "adult", "senior adult" ],
             "dies": true
