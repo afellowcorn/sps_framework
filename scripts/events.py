@@ -649,39 +649,7 @@ class Events:
                 working=True
             )
 
-            # get herbs found
-            herb_list = []
-            list_of_herb_strs = []
-            for med in healthy_meds:
-                list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
-                    med,
-                    general_amount_bonus=True,
-                    specific_quantity_bonus=len(healthy_warriors))
-                herb_list.extend(found_herbs)
-
-            # remove dupes
-            herb_list = list(set(herb_list))
-            # get display strings for herbs
-            herb_strs = []
-            if len(herb_list) > 1:
-                for herb in herb_list:
-                    herb_strs.append(game.clan.herb_supply.herb[herb].plural_display)
-            else:
-                herb_strs.append(game.clan.herb_supply.herb[herb_list[0]].singular_display)
-
-            # finish
-            if len(herb_list) > 1:
-                focus_text = f"With the additional focus of the Clan; {adjust_list_text(herb_strs)} were gathered."
-            elif len(herb_list) == 1:
-                focus_text = f"With the additional focus of the Clan, some {adjust_list_text(herb_strs)} was gathered."
-            else:
-                focus_text = f"Despite the additional focus of the Clan, no herbs could be gathered."
-
-            if herb_list:
-                log_text = (
-                    f"With the additional focus of the Clan, following herbs were gathered: {adjust_list_text(list_of_herb_strs)}."
-                )
-                game.herb_events_list.append(log_text)
+            focus_text = game.clan.herb_supply.handle_focus(healthy_meds, healthy_warriors)
 
         elif game.clan.clan_settings.get("threaten outsiders"):
             amount = game.config["focus"]["outsiders"]["reputation"]
@@ -747,9 +715,9 @@ class Events:
                     Cat.all_cats.values(),
                 )
             )
-            med_amount = info_dict["herb_medicine"]
-            for med in healthy_meds:
-                herbs_found.extend(random.sample(HERBS, k=med_amount))
+
+            game.clan.herb_supply.handle_focus(healthy_meds)
+
             herb_amount = len(herbs_found)
             if herb_amount > 0:
                 herb_counter = Counter(herbs_found)
@@ -838,17 +806,17 @@ class Events:
                     )
 
             if warrior_amount > 1 and herb_amount > 1:
-                focus_text = f"With the additional focus of the Clan, {warrior_amount} pieces of prey and {herb_amount} herbs were gathered."
+                focus_text = f"With the additional focus of the Clan, {warrior_amount} pieces of prey and extra herbs were gathered."
             elif warrior_amount > 1 and herb_amount == 1:
-                focus_text = f"With the additional focus of the Clan, {warrior_amount} pieces of prey and {herb_amount} herb were gathered."
+                focus_text = f"With the additional focus of the Clan, {warrior_amount} pieces of prey and extra herb were gathered."
             elif warrior_amount > 1 and herb_amount <= 0:
                 focus_text = f"With the additional focus of the Clan, {warrior_amount} pieces of prey and no herbs were gathered."
             elif warrior_amount == 1 and herb_amount > 1:
-                focus_text = f"With the additional focus of the Clan, {warrior_amount} piece of prey and {herb_amount} herbs were gathered."
+                focus_text = f"With the additional focus of the Clan, {warrior_amount} piece of prey and extra herbs were gathered."
             elif warrior_amount <= 0 and herb_amount > 1:
-                focus_text = f"With the additional focus of the Clan, no prey and {herb_amount} herbs were gathered."
+                focus_text = f"With the additional focus of the Clan, no prey and extra herbs were gathered."
             elif warrior_amount == 1 and herb_amount == 1:
-                focus_text = f"With the additional focus of the Clan, {warrior_amount} piece of prey and {herb_amount} herb were gathered."
+                focus_text = f"With the additional focus of the Clan, {warrior_amount} piece of prey and extra herb were gathered."
             elif warrior_amount <= 0 and herb_amount <= 0:
                 focus_text = "Despite the additional focus of the Clan, neither prey nor herbs could be gathered."
             else:

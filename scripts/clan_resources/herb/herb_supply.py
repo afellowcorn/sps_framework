@@ -331,6 +331,51 @@ class HerbSupply:
             if self.collected[herb] < 0:
                 self.collected[herb] = 0
 
+    def handle_focus(self, med_cats: list, assistants: list = None):
+        """
+        Handles sending med cats to gather extra herbs in accordance to Clan focus
+        """
+
+        # get herbs found
+        herb_list = []
+        list_of_herb_strs = []
+        for med in med_cats:
+            if assistants:
+                list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
+                    med,
+                    general_amount_bonus=True,
+                    specific_quantity_bonus=len(assistants))
+            else:
+                list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
+                    med)
+            herb_list.extend(found_herbs)
+
+        # remove dupes
+        herb_list = list(set(herb_list))
+        # get display strings for herbs
+        herb_strs = []
+        if len(herb_list) > 1:
+            for herb in herb_list:
+                herb_strs.append(game.clan.herb_supply.herb[herb].plural_display)
+        else:
+            herb_strs.append(game.clan.herb_supply.herb[herb_list[0]].singular_display)
+
+        # finish
+        if len(herb_list) > 1:
+            focus_text = f"With the additional focus of the Clan; {adjust_list_text(herb_strs)} were gathered."
+        elif len(herb_list) == 1:
+            focus_text = f"With the additional focus of the Clan, some {adjust_list_text(herb_strs)} was gathered."
+        else:
+            focus_text = f"Despite the additional focus of the Clan, no herbs could be gathered."
+
+        if herb_list:
+            log_text = (
+                f"With the additional focus of the Clan, following herbs were gathered: {adjust_list_text(list_of_herb_strs)}."
+            )
+            game.herb_events_list.append(log_text)
+
+        return focus_text
+
     def get_found_herbs(
             self,
             med_cat,
