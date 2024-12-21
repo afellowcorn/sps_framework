@@ -716,23 +716,7 @@ class Events:
                 )
             )
 
-            game.clan.herb_supply.handle_focus(healthy_meds)
-
-            herb_amount = len(herbs_found)
-            if herb_amount > 0:
-                herb_counter = Counter(herbs_found)
-                game.clan.herbs.update(herb_counter)
-                log_text = "With the additional focus of the Clan, following herbs were gathered: "
-                idx = 0
-                for herb, amount in herb_counter.items():
-                    log_text += str(amount) + " " + herb.replace("_", " ")
-                    idx += 1
-                    if idx < len(herb_counter) - 1:
-                        log_text += ", "
-                    elif idx < len(herb_counter):
-                        log_text += " and "
-                log_text += "."
-                game.herb_events_list.append(log_text)
+            herb_focus_text = game.clan.herb_supply.handle_focus(healthy_meds)
 
             # handle injuries / illness
             relevant_cats = healthy_warriors + healthy_meds
@@ -805,22 +789,13 @@ class Events:
                         )
                     )
 
-            if warrior_amount > 1 and herb_amount > 1:
-                focus_text = f"With the additional focus of the Clan, {warrior_amount} pieces of prey and extra herbs were gathered."
-            elif warrior_amount > 1 and herb_amount == 1:
-                focus_text = f"With the additional focus of the Clan, {warrior_amount} pieces of prey and extra herb were gathered."
-            elif warrior_amount > 1 and herb_amount <= 0:
-                focus_text = f"With the additional focus of the Clan, {warrior_amount} pieces of prey and no herbs were gathered."
-            elif warrior_amount == 1 and herb_amount > 1:
-                focus_text = f"With the additional focus of the Clan, {warrior_amount} piece of prey and extra herbs were gathered."
-            elif warrior_amount <= 0 and herb_amount > 1:
-                focus_text = f"With the additional focus of the Clan, no prey and extra herbs were gathered."
-            elif warrior_amount == 1 and herb_amount == 1:
-                focus_text = f"With the additional focus of the Clan, {warrior_amount} piece of prey and extra herb were gathered."
-            elif warrior_amount <= 0 and herb_amount <= 0:
-                focus_text = "Despite the additional focus of the Clan, neither prey nor herbs could be gathered."
-            else:
-                focus_text = "This is a bug, report it - focus feature"
+            if warrior_amount > 1:
+                focus_text = f"With the additional focus of the Clan, {warrior_amount} pieces of prey were gathered."
+            elif warrior_amount <= 0:
+                focus_text = f"With the additional focus of the Clan, no prey was gathered."
+
+            if herb_focus_text:
+                focus_text += f" {herb_focus_text}"
 
         if focus_text:
             game.cur_events_list.insert(0, Single_Event(focus_text, "misc"))

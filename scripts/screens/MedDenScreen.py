@@ -564,7 +564,7 @@ class MedDenScreen(Screens):
         if not herb_supply.total:
             herb_list = ["Empty"]
 
-        else:
+        elif game.clan.game_mode != "classic":
             for herb, count in herb_supply.entire_supply.items():
                 if count <= 0:
                     continue
@@ -618,22 +618,8 @@ class MedDenScreen(Screens):
                 manager=MANAGER,
             )
 
-        if game.clan.game_mode == "classic":
-            num_drawn = 0
-            herb_amount = sum(herb_supply.entire_supply.values())
-
-            # draw x different herbs where x is how many herbs you have
-            herbs = {}
-            for herb in HERBS:
-                # 2 so we have both cobwebs
-                herbs[herb] = 2
-                num_drawn += 1
-
-                if num_drawn >= herb_amount:
-                    break
-        else:
-            # otherwise draw the herbs you have
-            herbs = game.clan.herb_supply.entire_supply
+        # otherwise draw the herbs you have
+        herbs = game.clan.herb_supply.entire_supply
 
         for herb, count in herbs.items():
             if count <= 0:

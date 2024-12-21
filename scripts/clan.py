@@ -1086,7 +1086,7 @@ class Clan:
                 ) as save_file:
                     herbs = ujson.load(save_file)
                     clan.herb_supply = HerbSupply()
-                    clan.herb_supply.start_storage(herbs)
+                    clan.herb_supply.convert_old_save(herbs)
 
             # load the current file path, if it exists in save
             elif os.path.exists(current_file_path):

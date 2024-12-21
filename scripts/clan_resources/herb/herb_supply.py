@@ -137,13 +137,23 @@ class HerbSupply:
         """
         return self.required_herb_count * 2
 
-    def start_storage(self, herb_list):
+    def convert_old_save(self, herb_list):
         """
         used to start a new storage dict if the clan had old save file to convert
         """
         for herb, count in herb_list.items():
             if herb in HERBS:
                 self.storage[herb] = [count]
+
+    def start_storage(self, clan_size):
+        """
+        start's a Clan's storage. Clans begin with a random set of herbs.
+        """
+        self.required_herb_count = clan_size * 2
+
+        for herb in HERBS:
+            if randint(1, 4) == 1:
+                self.add_herb(herb, num_collected=randint(self.adequate_qualifier, self.full_qualifier))
 
     def handle_moon(self, clan_size: int, clan_cats: list, med_cats: list):
         """
@@ -231,7 +241,7 @@ class HerbSupply:
         """
         returns the rating of given supply, aka how "full" the supply is compared to clan size
         """
-        if not self.storage:
+        if not self.entire_supply:
             return Supply.EMPTY
 
         lowest_herb = self.sorted_by_lowest[0]
@@ -527,7 +537,9 @@ class HerbSupply:
         for name, condition in condition_dict.items():
             # get the herbs that the condition allows as treatment
             try:
-                required_herbs = source_dict[name]["herbs"]
+                required_herbs = []
+                for level in source_dict[name]["herbs"].values():
+                    required_herbs.extend(level)
             except KeyError:
                 print(
                     f"WARNING: {name} does not exist in it's condition dict! That condition may have been removed "
@@ -572,9 +584,9 @@ class HerbSupply:
 
                 amount_used = randint(1, total_herb_amount if total_herb_amount < 4 else 4)
                 strength = 1
-                for level, herb_list in source_dict[condition]["herbs"].items():
+                for level, herb_list in source_dict[name]["herbs"].items():
                     if herb_used in herb_list:
-                        strength = level
+                        strength = int(level)
 
                 self.remove_herb(herb_used, amount_used)
 
@@ -652,6 +664,10 @@ class HerbSupply:
                         3 * strength + amt_modifier
                 )
                 effect_message = "The risks associated with {PRONOUN/m_c/poss} condition are lowered."
+
+        if game.clan.game_mode == "classic":
+            # classic doesn't get logs
+            return
 
         # create and append log message
         message = (

@@ -28,8 +28,8 @@
       }
     },
     "display": {
-      "singular": "elder leaf",
-      "plural": "elder leaves"
+      "singular": "elder leaf bundle",
+      "plural": "elder leaf bundles"
     }
   },
   "cobwebs": {
@@ -127,8 +127,8 @@
       }
     },
     "display": {
-      "singular": "horsetail",
-      "plural": "horsetail"
+      "singular": "horsetail clump",
+      "plural": "horsetail clumps"
     }
   },
   "juniper": {
@@ -160,8 +160,8 @@
       }
     },
     "display": {
-      "singular": "juniper berry",
-      "plural": "juniper berries"
+      "singular": "juniper berry bunch",
+      "plural": "juniper berry bunches"
     }
   },
   "lungwort": {
@@ -325,8 +325,8 @@
       }
     },
     "display": {
-      "singular": "oak leaf",
-      "plural": "oak leaves"
+      "singular": "oak leaf bundle",
+      "plural": "oak leaf bundles"
     }
   },
   "ragwort": {
@@ -391,8 +391,8 @@
       }
     },
     "display": {
-      "singular": "raspberry leaf",
-      "plural": "raspberry leaves"
+      "singular": "raspberry leaf cluster",
+      "plural": "raspberry leaf clusters"
     }
   },
   "tansy": {
@@ -457,8 +457,8 @@
       }
     },
     "display": {
-      "singular": "thyme",
-      "plural": "thyme"
+      "singular": "thyme bundle",
+      "plural": "thyme bundles"
     }
   },
   "wild_garlic": {
@@ -490,8 +490,8 @@
       }
     },
     "display": {
-      "singular": "wild garlic",
-      "plural": "wild garlic"
+      "singular": "wild garlic cluster",
+      "plural": "wild garlic clusters"
     }
   },
   "dandelion": {
@@ -589,8 +589,8 @@
       }
     },
     "display": {
-      "singular": "rosemary",
-      "plural": "rosemary"
+      "singular": "rosemary clump",
+      "plural": "rosemary clumps"
     }
   },
   "burdock": {
@@ -655,8 +655,8 @@
       }
     },
     "display": {
-      "singular": "blackberry leaf",
-      "plural": "blackberry leaves"
+      "singular": "blackberry leaf cluster",
+      "plural": "blackberry leaf clusters"
     }
   },
   "betony": {
@@ -787,8 +787,8 @@
       }
     },
     "display": {
-      "singular": "plantain leaf",
-      "plural": "plantain leaves"
+      "singular": "plantain leaf bundle",
+      "plural": "plantain leaf bundles"
     }
   },
   "catmint": {
@@ -820,8 +820,8 @@
       }
     },
     "display": {
-      "singular": "catmint",
-      "plural": "catmint"
+      "singular": "catmint cluster",
+      "plural": "catmint clusters"
     }
   }
 }
