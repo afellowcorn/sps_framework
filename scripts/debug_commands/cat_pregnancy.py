@@ -7,7 +7,7 @@ from scripts.game_structure.game_essentials import game
 from scripts.events_module.relationship.pregnancy_events import Pregnancy_Events
 
 def get_cat_from_name_or_id(nameid: str) -> Cat:
-    cat = [x for x in Cat.all_cats_list if nameid in (x.ID or str(x.name))]
+    cat = [x for x in Cat.all_cats_list if nameid in (x.ID or str(x.name).lower())]
     if len(cat) > 0:
         cat = cat[0]
     else:
