@@ -134,7 +134,7 @@ class ViewPregnancyCommand(Command):
 class PregnanciesCommand(Command):
     name = "pregnancies"
     description = "Manage Cat Pregnancies"
-    aliases = ["preg", "p"]
+    aliases = ["preg", "p", "pregnancy"]
 
     sub_commands = [
         AddPregnancyCommand(),
