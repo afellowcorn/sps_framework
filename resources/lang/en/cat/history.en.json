@@ -39,6 +39,7 @@
             "zero": "The leader has no lives left and has travelled to StarClan.",
             "one": "The leader has one life left.",
             "many": "The leader has %{count} lives left."
-        }
+        },
+        "scar_from_injury": "m_c was scarred from an injury (%{injury_name})."
     }
 }

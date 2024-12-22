@@ -117,28 +117,26 @@ class Welcoming_Events:
 
         # add to relationship logs
         if new_cat.ID in clan_cat.relationships:
-            if clan_cat.age == 1:
-                clan_cat.relationships[new_cat.ID].log.append(
-                    interaction_str
-                    + f" - {clan_cat.name} was {clan_cat.moons} moons old"
+            clan_cat.relationships[new_cat.ID].log.append(
+                interaction_str
+                + i18n.t(
+                    "relationships.age_postscript",
+                    name=str(clan_cat.name),
+                    count=clan_cat.moons,
                 )
-            else:
-                clan_cat.relationships[new_cat.ID].log.append(
-                    interaction_str
-                    + f" - {clan_cat.name} was {clan_cat.moons} moons old"
-                )
+            )
 
             new_cat.relationships[clan_cat.ID].link_relationship()
 
         if clan_cat.ID in new_cat.relationships:
-            if new_cat.age == 1:
-                new_cat.relationships[clan_cat.ID].log.append(
-                    interaction_str + f" - {new_cat.name} was {new_cat.moons} moon old"
+            clan_cat.relationships[new_cat.ID].log.append(
+                interaction_str
+                + i18n.t(
+                    "relationships.age_postscript",
+                    name=str(new_cat.name),
+                    count=new_cat.moons,
                 )
-            else:
-                new_cat.relationships[clan_cat.ID].log.append(
-                    interaction_str + f" - {new_cat.name} was {new_cat.moons} moons old"
-                )
+            )
 
     @staticmethod
     def rebuild_dicts():

@@ -292,9 +292,6 @@ class Clan:
         if cat.ID in Cat.all_cats and cat.ID not in self.clan_cats:
             self.clan_cats.append(cat.ID)
 
-    def add_pronouns(self, pronouns):  # pronouns is a dict
-        self.custom_pronouns.append(pronouns)
-
     def add_to_starclan(self, cat):  # Same as add_cat
         """
         Places the dead cat into StarClan.

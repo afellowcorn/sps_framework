@@ -305,10 +305,18 @@ class Condition_Events:
                 cat.get_ill(chosen_illness)
 
                 # create event text
-                if chosen_illness in ["running nose", "stomachache"]:
-                    event_string = f"{cat.name} has gotten a {chosen_illness}."
-                else:
-                    event_string = f"{cat.name} has gotten {chosen_illness}."
+                if i18n.config.get("locale") == "en" and chosen_illness in [
+                    "running nose",
+                    "stomachache",
+                ]:
+                    illness = f"a {chosen_illness}"
+                # try to translate the illness
+                illness = i18n.t(f"conditions.illness.{chosen_illness}")
+                illness.replace("conditions.illness.", "")
+                event_string = i18n.t(
+                    "defaults.illness_get_event",
+                    illness=illness,
+                )
 
         # if an event happened, then add event to cur_event_list and save death if it happened.
         if event_string:
@@ -538,7 +546,7 @@ class Condition_Events:
                 illness,
                 illnesses,
                 Condition_Events.ILLNESSES,
-                i18n.t(f"conditions.illnesses.{illness}"),
+                translated_name=i18n.t(f"conditions.illnesses.{illness}"),
             )
 
             # moon skip to try and kill or heal cat
@@ -563,8 +571,12 @@ class Condition_Events:
                     print(
                         f"WARNING: {illness} does not have an injury death string, placeholder used."
                     )
-                    event = "m_c was killed by their illness."
-                    history_event = "m_c died to an illness."
+                    event = i18n.t("defaults.illness_death_event")
+                    history_event = (
+                        i18n.t("defaults.illness_death_history")
+                        if cat.status != "leader"
+                        else i18n.t("defaults.illness_death_history_leader")
+                    )
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
 
@@ -653,7 +665,7 @@ class Condition_Events:
                 injury,
                 injuries,
                 Condition_Events.INJURIES,
-                i18n.t(f"injuries.{injury}"),
+                translated_name=i18n.t(f"injuries.{injury}"),
             )
 
             skipped = cat.moon_skip_injury(injury)
@@ -676,8 +688,12 @@ class Condition_Events:
                         f"WARNING: {injury} does not have an injury death string, placeholder used"
                     )
 
-                    event = "m_c was killed by their injuries."
-                    history_text = "m_c died to an injury."
+                    event = i18n.t("defaults.injury_death_event")
+                    history_text = (
+                        i18n.t("defaults.injury_death_history")
+                        if cat.status != "leader"
+                        else i18n.t("injury_death_history_leader")
+                    )
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
 
@@ -714,7 +730,13 @@ class Condition_Events:
                             f"WARNING: {injury} couldn't be found in the healed strings dict! "
                             f"placeholder string was used."
                         )
-                        event = f"m_c's injury {injury} has healed"
+                        # try to translate the string
+                        new_injury = i18n.t(f"conditions.injury.{injury}")
+                        new_injury.replace("conditions.injury.", "")
+
+                        event = i18n.t(
+                            "defaults.injury_healed_event", injury=new_injury
+                        )
 
                 event = event_text_adjust(Cat, event, main_cat=cat)
 
@@ -743,10 +765,26 @@ class Condition_Events:
                             f"WARNING: No entry in gain_permanent_condition_strings for injury '{injury}' causing "
                             f"condition '{condition_got}'. Using default."
                         )
+
+                        # try to translate the injury & condition
+                        translated_injury = i18n.t(f"conditions.injury.{injury}")
+                        translated_injury.replace("conditions.injury.", "")
+
+                        translated_condition = i18n.t(
+                            f"conditions.permanent_conditions.{condition_got}"
+                        )
+                        translated_condition.replace(
+                            "conditions.permanent_conditions.", ""
+                        )
+
                         possible_string_list = [
-                            f"After m_c's {injury} healed, {{PRONOUN/m_c/subject}} now {{VERB/m_c/have/has}} "
-                            f"{condition_got}. [Please report this if you see it!]",
+                            i18n.t(
+                                "defaults.permanent_condition_from_injury_event",
+                                injury=translated_injury,
+                                condition=translated_condition,
+                            )
                         ]
+                        del translated_condition, translated_injury
                     # choose event string and ensure Clan's med cat number aligns with event text
                     random_index = random.randrange(0, len(possible_string_list))
 
@@ -826,15 +864,33 @@ class Condition_Events:
             if cat.dead or game.clan.leader_lives < prev_lives:
                 triggered = True
                 event_types.append("birth_death")
-                event = f"{cat.name} died from complications caused by {condition}."
+                translated_condition = i18n.t(
+                    f"conditions.permanent_condition.{condition}"
+                )
+                event = i18n.t(
+                    "defaults.complications_death_event", condition=translated_condition
+                )
                 if cat.status == "leader" and game.clan.leader_lives >= 1:
-                    event = f"{cat.name} lost a life to {condition}."
+                    event = i18n.t(
+                        "defaults.complications_death_event_leader",
+                        condition=translated_condition,
+                    )
                 event_list.append(event)
 
                 if cat.status != "leader":
-                    History.add_death(cat, death_text=event)
+                    History.add_death(
+                        cat,
+                        death_text=i18n.t("defaults.complications_death_history"),
+                        condition=translated_condition,
+                    )
                 else:
-                    History.add_death(cat, death_text=f"died to {condition}")
+                    History.add_death(
+                        cat,
+                        death_text=i18n.t(
+                            "defaults.complications_death_history_leader"
+                        ),
+                        condition=translated_condition,
+                    )
 
                 game.herb_events_list.append(event)
                 break
@@ -912,7 +968,9 @@ class Condition_Events:
                     condition,
                     conditions,
                     Condition_Events.PERMANENT,
-                    i18n.t(f"permanent_conditions.{condition}"),
+                    translated_name=i18n.t(
+                        f"conditions.permanent_conditions.{condition}"
+                    ),
                 )
 
             # give risks
@@ -1132,7 +1190,9 @@ class Condition_Events:
                     print(
                         f"WARNING: {condition} couldn't be found in the risk strings! placeholder string was used"
                     )
-                    event = i18n.t("permanent_conditions.unknown_condition_risk_given")
+                    event = i18n.t(
+                        "conditions.permanent_conditions.unknown_condition_risk_given"
+                    )
 
                 event = event_text_adjust(
                     Cat, event, main_cat=cat, random_cat=med_cat
@@ -1172,7 +1232,7 @@ class Condition_Events:
                 break
 
     @staticmethod
-    def use_herbs(cat, condition, conditions, source, translated_name):
+    def use_herbs(cat, condition, conditions, source, *, translated_name: str):
         # herbs that can be used for the condition and the Clan has available
         clan_herbs = set()
         needed_herbs = set()

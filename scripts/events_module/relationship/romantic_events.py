@@ -305,13 +305,19 @@ class RomanticEvents:
 
         # now add the age of the cats before the string is sent to the cats' relationship logs
         relationship.log.append(
-            interaction_str + f" - {cat_from.name} was {cat_from.moons} moons old"
+            interaction_str
+            + i18n.t("relationships.age_postscript", name=cat_from.name, count=cat_from.moons)
         )
 
         if not relationship.opposite_relationship and cat_from.ID != cat_to.ID:
             relationship.link_relationship()
             relationship.opposite_relationship.log.append(
-                interaction_str + f" - {cat_to.name} was {cat_to.moons} moons old"
+                interaction_str
+                + i18n.t(
+                    "relationships.age_postscript",
+                    name=str(cat_to.name),
+                    count=cat_to.moons,
+                )
             )
 
         return True
@@ -391,7 +397,7 @@ class RomanticEvents:
             ):
                 # randint is a slow function, don't call it unless we have to.
                 if not cat_mate.no_mates and random.random() > 0.5:
-                    text = f"{cat.name} will always love {cat_mate.name} but has decided to move on."
+                    text = i18n.t("hardcoded.move_on_dead_mate", mate=str(cat_mate.name))
                     game.cur_events_list.append(
                         Single_Event(text, "relation", [cat.ID, cat_mate.ID])
                     )
@@ -463,9 +469,9 @@ class RomanticEvents:
             relationship_from.dislike += 10
 
         if had_fight:
-            text = f"{cat_from.name} and {cat_to.name} had a huge fight and broke up."
+            text = i18n.t("hardcoded.breakup_angy")
         else:
-            text = f"{cat_from.name} and {cat_to.name} broke up."
+            text = i18n.t("hardcoded.breakup_chill")
         game.cur_events_list.append(
             Single_Event(text, ["relation", "misc"], [cat_from.ID, cat_to.ID])
         )

@@ -1850,7 +1850,9 @@ class ProfileScreen(Screens):
                 )
 
             # is permanent
-            text_list.append(i18n.t("permanent_conditions.permanent condition"))
+            text_list.append(
+                i18n.t("conditions.permanent_conditions.permanent condition")
+            )
 
             # infected or festering
             complication = self.the_cat.permanent_condition[name].get(

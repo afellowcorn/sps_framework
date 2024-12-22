@@ -1683,9 +1683,10 @@ def change_relationship_values(
                   " /Trust: " + str(trust)) if changed else print("No relationship change")"""
 
             if log and isinstance(log, str):
-                log_text = (
-                    log
-                    + i18n.t("relationships.age_postscript", name=single_cat_to, count=single_cat_to.moons)
+                log_text = log + i18n.t(
+                    "relationships.age_postscript",
+                    name=str(single_cat_to.name),
+                    count=single_cat_to.moons,
                 )
                 if log_text not in rel.log:
                     rel.log.append(log_text)
@@ -2282,7 +2283,9 @@ def event_text_adjust(
         )
 
     if "given_herb" in text:
-        text = text.replace("given_herb", i18n.t(f"conditions.herbs.{chosen_herb}", count=2))
+        text = text.replace(
+            "given_herb", i18n.t(f"conditions.herbs.{chosen_herb}", count=2)
+        )
 
     return text
 
