@@ -4,6 +4,7 @@ from random import choice, randint
 import ujson
 
 from scripts.cat.cats import Cat
+from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import names, Name
 from scripts.cat_relations.relationship import Relationship
@@ -523,7 +524,7 @@ class Pregnancy_Events:
         # decide chances of having kits, and if it's possible at all.
         # Including - age, dead statis, having kits turned off.
         not_correct_age = (
-            cat.age in ["newborn", "kitten", "adolescent"] or cat.moons < 15
+            cat.age in [CatAgeEnum.NEWBORN, CatAgeEnum.KITTEN, CatAgeEnum.ADOLESCENT] or cat.moons < 15
         )
         if not_correct_age or cat.no_kits or cat.dead:
             return False
@@ -930,22 +931,22 @@ class Pregnancy_Events:
     def get_amount_of_kits(cat):
         """Get the amount of kits which will be born."""
         min_kits = game.config["pregnancy"]["min_kits"]
-        min_kit = [min_kits] * game.config["pregnancy"]["one_kit_possibility"][cat.age]
+        min_kit = [min_kits] * game.config["pregnancy"]["one_kit_possibility"][cat.age.value]
         two_kits = [min_kits + 1] * game.config["pregnancy"]["two_kit_possibility"][
-            cat.age
+            cat.age.value
         ]
         three_kits = [min_kits + 2] * game.config["pregnancy"]["three_kit_possibility"][
-            cat.age
+            cat.age.value
         ]
         four_kits = [min_kits + 3] * game.config["pregnancy"]["four_kit_possibility"][
-            cat.age
+            cat.age.value
         ]
         five_kits = [min_kits + 4] * game.config["pregnancy"]["five_kit_possibility"][
-            cat.age
+            cat.age.value
         ]
         max_kits = [game.config["pregnancy"]["max_kits"]] * game.config["pregnancy"][
             "max_kit_possibility"
-        ][cat.age]
+        ][cat.age.value]
         amount = choice(
             min_kit + two_kits + three_kits + four_kits + five_kits + max_kits
         )
