@@ -42,8 +42,6 @@ extra:
   homepage: https://clangen.io/
 extra_css:
   - stylesheets/extra.css
-hooks:
-  - hooks/lowercase_urls.py
 markdown_extensions:
   - admonition
   - pymdownx.details
