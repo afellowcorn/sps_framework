@@ -2,13 +2,13 @@
 
 <div class="grid" markdown>
 
-[:clangen-leaf: Camp Backgrounds](./style_guide/camp-backgrounds.md){.md-button}
+[:clangen-leaf: Camp Backgrounds](./style-guide/camp-backgrounds.md){.md-button}
 
-[:clangen-cat-head: Cat Sprites](./style_guide/cat-sprites.md){.md-button}
+[:clangen-cat-head: Cat Sprites](./style-guide/cat-sprites.md){.md-button}
 
-[:clangen-clan-question: Clan Symbols](./style_guide/clan-symbols.md){.md-button}
+[:clangen-clan-question: Clan Symbols](./style-guide/clan-symbols.md){.md-button}
 
-[:clangen-paw: Patrol Art](./style_guide/patrol-sprites.md){.md-button}
+[:clangen-paw: Patrol Art](./style-guide/patrol-sprites.md){.md-button}
 
 </div>
 
