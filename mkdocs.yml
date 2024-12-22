@@ -18,11 +18,18 @@ theme:
       scheme: clangen_light
       toggle:
         icon: material/brightness-auto
-        name: Switch to light mode
+        name: Switch to clangen light mode
 
-    # Palette toggle for light mode
+    # Palette toggle for clangen light mode
     - media: "(prefers-color-scheme: light)"
       scheme: clangen_light
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to basic light mode
+
+    # Palette toggle for basic light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
@@ -30,6 +37,13 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: clangen_dark
+      toggle:
+        icon: material/weather-night
+        name: Switch to basic dark mode
+
+    # Palette toggle for basic dark mode
+    - media: "(prefers-color-scheme: og-dark)"
+      scheme: slate
       toggle:
         icon: material/weather-night
         name: Switch to system preference
