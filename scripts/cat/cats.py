@@ -265,7 +265,14 @@ class Cat:
             ]:
                 self.age = CatAgeEnum.ADOLESCENT
             else:
-                self.age = choice([CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT, CatAgeEnum.ADULT, CatAgeEnum.SENIOR_ADULT])
+                self.age = choice(
+                    [
+                        CatAgeEnum.YOUNG_ADULT,
+                        CatAgeEnum.ADULT,
+                        CatAgeEnum.ADULT,
+                        CatAgeEnum.SENIOR_ADULT,
+                    ]
+                )
             self.moons = randint(
                 self.age_moons[self.age][0], self.age_moons[self.age][1]
             )
@@ -1530,7 +1537,7 @@ class Cat:
         elif self.outside:
             where_kitty = "outside"
         else:
-            where_kitty = "inside"    
+            where_kitty = "inside"
 
         # get other cat
         i = 0
@@ -2659,8 +2666,12 @@ class Cat:
                 jealousy = 0
                 trust = 0
                 if game.settings["random relation"]:
-                    if game.clan and the_cat == game.clan.instructor and game.clan.instructor.dead_for >= self.moons:
-                            pass
+                    if (
+                        game.clan
+                        and the_cat == game.clan.instructor
+                        and game.clan.instructor.dead_for >= self.moons
+                    ):
+                        pass
                     elif randint(1, 20) == 1 and romantic_love < 1:
                         dislike = randint(10, 25)
                         jealousy = randint(5, 15)
@@ -2680,7 +2691,7 @@ class Cat:
                             romantic_love = randint(15, 30)
                             comfortable = int(comfortable * 1.3)
                             trust = int(trust * 1.2)
-                    
+
                 if are_parents and like < 60:
                     like = 60
                 if siblings and like < 30:
@@ -3077,7 +3088,11 @@ class Cat:
             file_name = "faded_newborn"
         elif self.age == CatAgeEnum.KITTEN:
             file_name = "faded_kitten"
-        elif self.age in [CatAgeEnum.ADULT, CatAgeEnum.YOUNG_ADULT, CatAgeEnum.SENIOR_ADULT]:
+        elif self.age in [
+            CatAgeEnum.ADULT,
+            CatAgeEnum.YOUNG_ADULT,
+            CatAgeEnum.SENIOR_ADULT,
+        ]:
             file_name = "faded_adult"
         elif self.age == CatAgeEnum.ADOLESCENT:
             file_name = "faded_adol"

@@ -444,17 +444,13 @@ def create_new_cat_block(
 
         if match.group(1) in Cat.age_moons:
             min_age, max_age = Cat.age_moons[CatAgeEnum(match.group(1))]
-            age = randint(
-                min_age, max_age
-            )
+            age = randint(min_age, max_age)
             break
 
         # Set same as first mate
         if match.group(1) == "mate" and give_mates:
             min_age, max_age = Cat.age_moons[give_mates[0].age]
-            age = randint(
-                min_age, max_age
-            )
+            age = randint(min_age, max_age)
             break
 
         if match.group(1) == "has_kits":
@@ -464,7 +460,8 @@ def create_new_cat_block(
     if status and not age:
         if status in ["apprentice", "mediator apprentice", "medicine cat apprentice"]:
             age = randint(
-                Cat.age_moons[CatAgeEnum.ADOLESCENT][0], Cat.age_moons[CatAgeEnum.ADOLESCENT][1]
+                Cat.age_moons[CatAgeEnum.ADOLESCENT][0],
+                Cat.age_moons[CatAgeEnum.ADOLESCENT][1],
             )
         elif status in ["warrior", "mediator", "medicine cat"]:
             age = randint(
@@ -2910,15 +2907,21 @@ def apply_opacity(surface, opacity):
 def chunks(L, n):
     return [L[x : x + n] for x in range(0, len(L), n)]
 
-def clamp(value: float, minimum_value: float, maximum_value: float) ->float: 
+
+def clamp(value: float, minimum_value: float, maximum_value: float) -> float:
     """
-    Takes a value and return it constrained to a certain range
+    Takes a value and returns it constrained to a certain range
+    :param value: The input value
+    :param minimum_value: Lower bound
+    :param maximum_value: Upper bound
+    :return: Clamped float.
     """
     if value < minimum_value:
         return minimum_value
     elif value > maximum_value:
         return maximum_value
     return value
+
 
 def is_iterable(y):
     try:
