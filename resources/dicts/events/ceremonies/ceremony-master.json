@@ -2789,6 +2789,108 @@
     ],
     "(previous_mentor) gathers the Clan for a meeting. {PRONOUN/(previous_mentor)/subject/CAP} {VERB/(previous_mentor)/have/has} spent many moons training (old_name), and it's time for {PRONOUN/m_c/object} to be granted {PRONOUN/m_c/poss} warrior name. (previous_mentor) gives {PRONOUN/m_c/object} the name m_c and honors {PRONOUN/m_c/poss} r_h."
   ],
+  "warrior_60": [
+    [
+      "warrior",
+      "prepared",
+      "general_mentor",
+      "dead2_parents",
+      "yes_leader",
+      "general_backstory",
+      "righteous",
+      "faithful",
+      "loyal",
+      "responsible"
+    ],
+    "As c_n yowl m_c's new name, l_n murmurs that dead_par1 and dead_par2 would be proud of {PRONOUN/m_c/poss} r_h."
+  ],
+  "warrior_61": [
+    [
+      "warrior",
+      "prepared",
+      "general_mentor",
+      "dead2_parents",
+      "general_leader",
+      "general_backstory",
+      "righteous",
+      "faithful",
+      "loving",
+      "responsible",
+      "lonesome",
+      "strange",
+      "thoughtful",
+      "wise",
+      "sincere"
+    ],
+    "dead_par1 and dead_par2 watch over (old_name) still. As {PRONOUN/m_c/subject} {VERB/m_c/step/steps} forward, the name m_c settling upon {PRONOUN/m_c/object} like sunlight on {PRONOUN/m_c/poss} pelt, {PRONOUN/m_c/subject} {VERB/m_c/carry/carries} {PRONOUN/m_c/poss} parents' legacy with {PRONOUN/m_c/poss} r_h."
+  ],
+  "warrior_62": [
+    [
+      "warrior",
+      "prepared",
+      "general_mentor",
+      "dead1_parents",
+      "general_leader",
+      "general_backstory",
+      "righteous",
+      "faithful",
+      "loving",
+      "responsible",
+      "lonesome",
+      "strange",
+      "thoughtful",
+      "wise",
+      "sincere"
+    ],
+    "dead_par1 watches over (old_name) still. As {PRONOUN/m_c/subject} {VERB/m_c/step/steps} forward, the name m_c settling upon {PRONOUN/m_c/object} like sunlight on {PRONOUN/m_c/poss} pelt, {PRONOUN/m_c/subject} {VERB/m_c/carry/carries} {PRONOUN/m_c/poss} parent's legacy with {PRONOUN/m_c/poss} r_h."
+  ],
+  "warrior_63": [
+    [
+      "warrior",
+      "prepared",
+      "general_mentor",
+      "dead1_parents",
+      "general_leader",
+      "general_backstory",
+      "faithful",
+      "loving",
+      "ambitious",
+      "lonesome",
+      "strange",
+      "thoughtful",
+      "wise",
+      "sincere"
+    ],
+    "As (old_name) steps forward to take up the mantle of m_c, {PRONOUN/m_c/subject} {VERB/m_c/feel/feels} and wind ruffle through {PRONOUN/m_c/poss} fur, like a touch of approval. {PRONOUN/m_c/subject} {VERB/m_c/wonder/wonders} if dead_par1 would approve of the r_h m_c is honored for."
+  ],
+  "warrior_56": [
+    [
+      "warrior",
+      "prepared",
+      "general_mentor",
+      "alive2_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "p1 and p2's eyes meet and they purr with pride as (old_name) steps forward to receive {PRONOUN/m_c/poss} new name, m_c, and {VERB/m_c/are/is} honored for {PRONOUN/m_c/poss} r_h."
+  ],
+  "warrior_64": [
+    [
+      "warrior",
+      "prepared",
+      "general_mentor",
+      "alive2_parents",
+      "general_leader",
+      "general_backstory",
+      "childish",
+      "lonesome",
+      "insecure",
+      "nervous",
+      "grumpy"
+    ],
+    "(old_name) meets p1 and p2's eyes as {PRONOUN/m_c/subject} {VERB/m_c/swell/swells} with pride, taking {PRONOUN/m_c/poss} hard earned place in the spotlight in front of all of c_n. Given the name m_c in honor of {PRONOUN/m_c/poss} r_h, {PRONOUN/m_c/subject} {VERB/m_c/bask/basks} in the celebration of {PRONOUN/m_c/poss} warrior name, {PRONOUN/m_c/poss} family by {PRONOUN/m_c/poss} side."
+  ],
   "mediator_0": [
     [
       "mediator",
