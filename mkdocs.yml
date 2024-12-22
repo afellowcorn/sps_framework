@@ -20,7 +20,7 @@ theme:
       scheme: clangen_light
       toggle:
         icon: material/brightness-auto
-        name: Switch to clangen light mode
+        name: Switch to ClanGen light mode
 
     # Palette toggle for clangen light mode
     - media: "(prefers-color-scheme: light)"
@@ -34,7 +34,7 @@ theme:
       scheme: default
       toggle:
         icon: material/weather-sunny
-        name: Switch to clangen dark mode
+        name: Switch to ClanGen dark mode
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
@@ -46,6 +46,8 @@ theme:
     # Palette toggle for basic dark mode
     - media: "(prefers-color-scheme: og-dark)"
       scheme: slate
+      primary: black
+      accent: deep purple
       toggle:
         icon: material/weather-night
         name: Switch to system preference
