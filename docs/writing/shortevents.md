@@ -143,7 +143,7 @@ How to make sure your event_id is unique:
 !!! todo "TODO"
     add a table listing various camps
 
-Please have a look at the [full biome differences list](basic.md#clangen-biomes) when thinking about writing patrols. 
+Please have a look at the [full biome differences list](index.md#clangen-biomes) when thinking about writing patrols. 
 
 ### season:list[str]
 >List of seasons in which the event may occur.
@@ -232,9 +232,9 @@ lowercase season names + "any"
 ### m_c:dict[str, various]
 >Specifies the requirements for the main cat (m_c) of the event. 
 >
->**age:[list]** : a list of ages m_c can be. if they can be anything, use "any".  [Possible Ages](basic.md#ages)
+>**age:[list]** : a list of ages m_c can be. if they can be anything, use "any".  [Possible Ages](index.md#ages)
 >
->**status:[list]** : a list of statuses m_c can b. if they can be anything, use "any".  [Possible Statuses](basic.md#statuses)
+>**status:[list]** : a list of statuses m_c can b. if they can be anything, use "any".  [Possible Statuses](index.md#statuses)
 
 !!! tip
     Keep in mind that the status and ages you input can limit each other! For example, if you add "kitten" to `age`, remember that kitten age cats can only ever have the kitten status.  This means that you *could* leave `status` as "any" and be secure in the knowledge that kitten status cats will be the only ones chosen.  
@@ -381,18 +381,18 @@ lowercase season names + "any"
 
 >**injuries: List[str]:** Pool of injures to draw from
 >
->[Injury List](basic.md#injuries)
+>[Injury List](index.md#injuries)
 >
 >The above list includes both singular injuries and injury pools.  Adding an injury pool will allow for any of the injuries within that pool to be possible.  One will be chosen at random.  You don't have to pick just one injury or injury pool, you can include as many as you like!
 
 >**scars: List[str]:** 
 >Optional. If in classic mode, a scar is chosen from this pool to be given instead of an injury.  If in expanded mode, a scar is chosen from this pool to possibly be given upon healing their injury.
 >
->[Scar List](basic.md#scars)
+>[Scar List](index.md#scars)
 
 ## history_text: Dict[str, str]:
 >Controls the history-text for scars and death. You must include a list of cats for whom the history will be assigned (i.e. "m_c", "r_c").
->[History Writing Guidelines](basic.md#writing-histories)
+>[History Writing Guidelines](index.md#writing-histories)
 >
 >Block:
 >
