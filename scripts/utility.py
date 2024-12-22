@@ -1139,6 +1139,9 @@ def filter_relationship_type(
     :param str event_id: if the event has an ID, include it here
     :param Cat patrol_leader: if you are testing a patrol, ensure you include the self.patrol_leader here
     """
+    if not filter_types:
+        return True
+
     # keeping this list here just for quick reference of what tags are handled here
     possible_rel_types = [
         "siblings",
@@ -2865,6 +2868,15 @@ def apply_opacity(surface, opacity):
 def chunks(L, n):
     return [L[x : x + n] for x in range(0, len(L), n)]
 
+def clamp(value: float, minimum_value: float, maximum_value: float) ->float: 
+    """
+    Takes a value and return it constrained to a certain range
+    """
+    if value < minimum_value:
+        return minimum_value
+    elif value > maximum_value:
+        return maximum_value
+    return value
 
 def is_iterable(y):
     try:
