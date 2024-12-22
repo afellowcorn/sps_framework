@@ -222,7 +222,11 @@ class Relationship:
         interaction_str = interaction_str + effect
         self.log.append(
             interaction_str
-            + i18n.t("relationships.age_postscript", name=str(self.cat_from.name), count=self.cat_from.moons)
+            + i18n.t(
+                "relationships.age_postscript",
+                name=str(self.cat_from.name),
+                count=self.cat_from.moons,
+            )
         )
         relevant_event_tabs = ["relation", "interaction"]
         if self.chosen_interaction.get_injuries:

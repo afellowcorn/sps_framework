@@ -306,7 +306,9 @@ class RomanticEvents:
         # now add the age of the cats before the string is sent to the cats' relationship logs
         relationship.log.append(
             interaction_str
-            + i18n.t("relationships.age_postscript", name=cat_from.name, count=cat_from.moons)
+            + i18n.t(
+                "relationships.age_postscript", name=cat_from.name, count=cat_from.moons
+            )
         )
 
         if not relationship.opposite_relationship and cat_from.ID != cat_to.ID:
@@ -397,7 +399,9 @@ class RomanticEvents:
             ):
                 # randint is a slow function, don't call it unless we have to.
                 if not cat_mate.no_mates and random.random() > 0.5:
-                    text = i18n.t("hardcoded.move_on_dead_mate", mate=str(cat_mate.name))
+                    text = i18n.t(
+                        "hardcoded.move_on_dead_mate", mate=str(cat_mate.name)
+                    )
                     game.cur_events_list.append(
                         Single_Event(text, "relation", [cat.ID, cat_mate.ID])
                     )
