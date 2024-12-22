@@ -11,3 +11,9 @@ wheels/
 
 # macOS
 **/.DS_Store
+
+# Output
+site/
+
+# Cache
+.cache/
