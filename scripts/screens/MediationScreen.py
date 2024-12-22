@@ -5,7 +5,6 @@ import pygame.transform
 import pygame_gui.elements
 
 from scripts.cat.cats import Cat
-from ..cat.enums import CatAgeEnum
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
@@ -635,10 +634,7 @@ class MediationScreen(Screens):
             # ROMANTIC LOVE
             # CHECK AGE DIFFERENCE
             same_age = the_relationship.cat_to.age == cat.age
-            adult_ages = [CatAgeEnum.YOUNG_ADULT, CatAgeEnum.ADULT, CatAgeEnum.SENIOR_ADULT, CatAgeEnum.SENIOR]
-            both_adult = (
-                the_relationship.cat_to.age in adult_ages and cat.age in adult_ages
-            )
+            both_adult = cat.age.can_have_mate() and the_relationship.cat_to.age.can_have_mate()
             check_age = both_adult or same_age
 
             # If they are not both adults, or the same age, OR they are related, don't display any romantic affection,
