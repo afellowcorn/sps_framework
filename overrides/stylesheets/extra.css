@@ -41,3 +41,110 @@
     -webkit-mask-image: var(--md-admonition-icon--caution);
     mask-image: var(--md-admonition-icon--caution);
 }
+
+/* custom theming */
+[data-md-color-scheme="clangen_light"] {
+    /* color of the header */
+    --md-primary-fg-color: #655934;
+    /* color of github button */
+    --md-primary-fg-color--dark: #393224;
+    /* color of the header text */
+    --md-primary-bg-color: #EFE5CE;
+    /* search box text */
+    --md-primary-bg-color--light: #B1A588;
+
+    /* footer color */
+    --md-footer-bg-color: #655934;
+    --md-footer-fg-color: #EFE5CE;
+
+    /* link color */
+    --md-typeset-a-color: #723645;
+    /* link highlight color */
+    --md-accent-fg-color: #91805F;
+
+    /* background color of the site */
+    --md-default-bg-color: #EFE5CE;
+
+    /* h1 text color */
+    --md-default-fg-color--light: #2F1F17;
+    /* text color */
+    --md-typeset-color: #2F1F17;
+
+    /* icon button color */
+    --md-default-fg-color--lighter: #56392E;
+
+    /* code snippet bg color */
+    --md-code-bg-color: #DFCFB5;
+    /* code snippet text color */
+    --md-code-fg-color: #2F1F17;
+
+    /* specific code snippet colors */
+    --md-code-hl-punctuation-color: #443413;
+    --md-code-hl-name-color: #42361F;
+    --md-code-hl-string-color: #0B3720;
+    --md-code-hl-keyword-color: #1E3967;
+    --md-code-hl-constant-color: #321C97;
+    --md-code-hl-function-color: #542259;
+    --md-code-hl-special-color: #700A2C;
+    --md-code-hl-number-color: #611414;
+    --md-code-hl-color: #003694;
+
+    /* admonition bg color */
+    --md-admonition-bg-color: #EFE5CE;
+    /* admonition text */
+    --md-admonition-fg-color: #2F1F17;
+}
+[data-md-color-scheme="clangen_dark"] {
+    /* color of the header */
+    --md-primary-fg-color: #655934;
+    /* color of github button */
+    --md-primary-fg-color--dark: #393224;
+    /* color of the header text */
+    --md-primary-bg-color: #EFE5CE;
+    /* search box text */
+    --md-primary-bg-color--light: #B1A588;
+
+    /* footer color */
+    --md-footer-bg-color: #291B0F;
+    --md-footer-fg-color: #EFE5CE;
+
+    /* link color */
+    --md-typeset-a-color: #E5BD6C;
+    /* link highlight color */
+    --md-accent-fg-color: #EFE5CE;
+
+    /* background color of the site */
+    --md-default-bg-color: #393224;
+
+    /* h1 text color */
+    --md-default-fg-color--light: #EFE5CE;
+    /* text color */
+    --md-typeset-color: #E4CFB5;
+
+    /* icon button color */
+    --md-default-fg-color--lighter: #B1A588;
+
+    /* tooltip text color */
+    --md-default-fg-color: #E4CFB5;
+
+    /* code snippet bg color */
+    --md-code-bg-color: #322B1F;
+    /* code snippet default text color */
+    --md-code-fg-color: #EFE5CE;
+
+    /* specific code snippet colors */
+    --md-code-hl-punctuation-color: #EFE5CE;
+    --md-code-hl-name-color: #DDD0B4;
+    --md-code-hl-string-color: #3CD387;
+    --md-code-hl-keyword-color: #B8CAEA;
+    --md-code-hl-constant-color: #BEB2F0;
+    --md-code-hl-function-color: #DAAEE0;
+    --md-code-hl-special-color: #F6A2BE;
+    --md-code-hl-number-color: #EEAAAA;
+    --md-code-hl-color: #99BEFF;
+
+    /* admonition bg color */
+    --md-admonition-bg-color: #393224;
+    /* admonition text */
+    --md-admonition-fg-color: #E4CFB5;
+}
