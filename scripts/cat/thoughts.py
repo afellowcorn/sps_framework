@@ -173,12 +173,14 @@ class Thoughts:
         # Filter for the living status of the random cat. The living status of the main cat
         # is taken into account in the thought loading process.
         if random_cat and "random_living_status" in thought:
-            if random_cat and not random_cat.dead:
-                living_status = "living"
-            elif random_cat and random_cat.dead and random_cat.df:
-                living_status = "darkforest"
-            elif random_cat and random_cat.dead and not random_cat.df:
-                living_status = "starclan"
+            if random_cat:
+                if random_cat.dead:
+                    if random_cat.df:
+                        living_status = "darkforest"
+                    else:
+                        living_status = "starclan"
+                else:
+                    living_status = "living"
             else:
                 living_status = "unknownresidence"
             if living_status and living_status not in thought["random_living_status"]:
@@ -192,36 +194,19 @@ class Thoughts:
             if living_status and living_status != "living":
                 return False
 
-        if random_cat and "random_outside_status" in thought:
-            if (
-                random_cat
-                and random_cat.outside
-                and random_cat.status
-                not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]
-            ):
-                outside_status = "lost"
-            elif random_cat and random_cat.outside:
-                outside_status = "outside"
-            else:
-                outside_status = "clancat"
-
-            if outside_status not in thought["random_outside_status"]:
+        if random_cat and random_cat.outside and random_cat.status not in ["kittypet", "loner", "rogue",
+                                                                           "former Clancat", "exiled"]:
+            outside_status = "lost"
+        elif random_cat and random_cat.outside:
+            outside_status = "outside"
+        else:
+            outside_status = "clancat"
+        if random_cat and 'random_outside_status' in thought:
+            if outside_status not in thought['random_outside_status']:
                 return False
         else:
-            if (
-                random_cat
-                and random_cat.outside
-                and random_cat.status
-                not in ["kittypet", "loner", "rogue", "former Clancat", "exiled"]
-            ):
-                outside_status = "lost"
-            elif random_cat and random_cat.outside:
-                outside_status = "outside"
-            else:
-                outside_status = "clancat"
-            if (
-                main_cat.outside
-            ):  # makes sure that outsiders can get thoughts all the time
+
+            if main_cat.outside:  # makes sure that outsiders can get thoughts all the time
                 pass
             else:
                 if outside_status and outside_status != "clancat" and len(r_c_in) > 0:
@@ -351,14 +336,15 @@ class Thoughts:
         else:
             life_dir = "dead"
 
-        if not main_cat.dead and main_cat.outside:
+        if main_cat.dead:
+            if main_cat.outside:
+                spec_dir = "/unknownresidence"
+            elif main_cat.df:
+                spec_dir = "/darkforest"
+            else:
+                spec_dir = "/starclan"
+        elif main_cat.outside:
             spec_dir = "/alive_outside"
-        elif main_cat.dead and not main_cat.outside and not main_cat.df:
-            spec_dir = "/starclan"
-        elif main_cat.dead and not main_cat.outside and main_cat.df:
-            spec_dir = "/darkforest"
-        elif main_cat.dead and main_cat.outside:
-            spec_dir = "/unknownresidence"
         else:
             spec_dir = ""
 
