@@ -12,7 +12,7 @@ When considering patrols, keep in mind challenge vs reward. That isn't to say ce
 !!! todo "TODO"
     add guide to hunting filtering code
 
-[Full ClanGen writing universal guidelines](basic.md#the-basics)
+[Full ClanGen writing universal guidelines](index.md#the-basics)
 
 ### Replacement Text
 When writing the text for patrol events, we use a variety of abbreviations that will later be replaced automatically before displaying to the player.  These are things like names and pronouns.  Pronoun Tagging is discussed in the basic guidelines.
@@ -33,7 +33,7 @@ When writing the text for patrol events, we use a variety of abbreviations that 
 !!! tip
 	If you are new to patrol writing, I recommend going through the [Full Featured Patrol Example](#full-featured-patrol-example) line by line and reading the following parameter explanations as you do.
 
-	Likewise, before beginning, be sure to at least read the first section of [Coding Terms for Writers to Know](basic.md#coding-terms-for-writers-to-know). This explains much of the terminology used here.
+	Likewise, before beginning, be sure to at least read the first section of [Coding Terms for Writers to Know](index.md#coding-terms-for-writers-to-know). This explains much of the terminology used here.
 
 ### Patrol Template
 This is a good starting point for writing your own patrols. 
@@ -157,7 +157,7 @@ How to make sure your patrol_id is unique:
 | "desert"      | appears in the desert biome      |
 | "any"         | appears in any biome             |
 
-Please have a look at the [full biome differences list](basic.md#clangen-biomes) when thinking about writing patrols. 
+Please have a look at the [full biome differences list](index.md#clangen-biomes) when thinking about writing patrols. 
 
 [Back to Patrol Template](#patrol-template)
 
