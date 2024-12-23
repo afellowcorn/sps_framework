@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y git && \
 COPY mkdocs.yml .
 COPY docs/ docs/
 COPY overrides/ overrides/
+COPY includes/ includes/
 
 # To support git-authors plugin
 COPY .git .git/
