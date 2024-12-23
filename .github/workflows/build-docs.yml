@@ -4,6 +4,8 @@ on:
   push:
     branches: [ "development" ]
     paths:
+      - "workflows/build-docs.yml"
+      - "Dockerfile"
       - "docs/**"
       - "docs-resources/**"
       - "mkdocs.yml"
