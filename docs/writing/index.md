@@ -287,23 +287,73 @@ When in doubt, please ask for feedback! We have multiple disabled contributors o
 
 
 ## Pronoun Tags
-!!! todo "TODO"
-    transfer info from pronoun tag doc
+
+There are three kinds of pronoun tag: `PRONOUN`, `VERB` and `ADJ` tags.
+
+#### A note on plural pronouns
+Though less relevant in English, the ability to specify plural pronouns is provided. The format is slightly different:
+```
+{PRONOUN/PLURAL/m_c+r_c/subject/CAP}
+{VERB/PLURAL/m_c+r_c/conju_0/conju_1/[...]/conju_n}
+{ADJ/PLURAL/m_c+r_c/gender_0/gender_1/[...]/gender_n}
+```
+The addition of `PLURAL` immediately following the tag identifier signals that it's a plural pronoun and to use the relevant system. Each cat that is to be referred to by the plural must be referenced in this block, separated by a `+`. Otherwise, the system is the same as below for singular pronouns.
+
+### PRONOUN
+A `PRONOUN` tag has three main sections: the `PRONOUN` identifier, the relevant cat, and which pronoun is being requested. There is an optional modifier at the end - `CAP` - that is used to signal that the requested pronoun should be capitalized.
+
+Example:
+```
+{PRONOUN/m_c/subject}
+{PRONOUN/m_c/subject/CAP}
+```
+Permitted pronouns and their English equivalents:
+
+| Pronoun   | English equivalent       |
+|-----------|--------------------------|
+| `subject` | he/she/they              |
+| `object`  | him/her/them             |
+| `poss`    | his/her/their            |
+| `inposs`  | his/hers/theirs          |
+| `self`    | himself/herself/themself |
+
+### VERB
+A `VERB` tag has a technically-infinite number of sections depending on the language, but in English it has four sections: the `VERB` identifier, the relevant cat, and the options for each conjugation in the language (in the case of English, plural and singular conjugations).
+
+Example:
+```
+{VERB/m_c/were/was}
+```
+
+!!! caution
+    Pay close attention to the order of verbs. In English, **plural conjugation is first**.
+
+### ADJ
+Not especially relevant for English, the `ADJ` tag exists to allow items in a sentence to be referred to with the correct grammatical gender. An English example of gendered words could be actor/actress.
+
+Example:
+```
+{ADJ/m_c/parent/father/mother}
+```
 
 ## Writing Histories
 Cats receive history text to go with each scar-able injury as well as possibly-fatal injury and direct deaths.  This histories show up in their profile.  Many event formats require you to include the history text if a cat is being injured or killed.  These typically refer to three different history types: `scar`, `reg_death`, `lead_death`.  Following are the guidelines for writing each:
 
-| history type | guidelines                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| scar         | This history is given to a cat who gains a scar from an injury gotten during the event.  ONLY INCLUDE if the injury being given is able to scar (i.e a bruise will not scar, but a claw-wound will scar).  This should be a single, full sentence specifying how the cat was scarred.                                                                                                                                                                                                                                                                                                                                                                      |
-| reg_death    | This history is given to a non-leader cat who is either killed by the event or dies from an injury gotten during the event.  This should be a single, full sentence specifying how the cat died.  Try not to get too wordy with these.                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| lead_death   | This history is given to a leader cat who is either killed by the event or dies from and injury gotten during the event.  This should be a sentence fragment.  Leaders are able to die multiple times, so on their profiles their deaths are listed in one single sentence.  This sentence is formatted as such: "[leader name] lost a life when they [lead_death sentence fragment]" with each following death being added on to create a list with a comma between each item (and the last list item being added with an "and").  Your lead_death text must be able to work within this grammar format and should not include punctuation at the end of the text.  |
+| history type | guidelines                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| scar         | This history is given to a cat who gains a scar from an injury gotten during the event.  ONLY INCLUDE if the injury being given is able to scar (i.e a bruise will not scar, but a claw-wound will scar).  This should be a single, full sentence specifying how the cat was scarred.                                                                                                                                                                                                                                                                                                                                                                               |
+| reg_death    | This history is given to a non-leader cat who is either killed by the event or dies from an injury gotten during the event.  This should be a single, full sentence specifying how the cat died.  Try not to get too wordy with these.                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| lead_death   | This history is given to a leader cat who is either killed by the event or dies from and injury gotten during the event.  This should be a sentence fragment.  Leaders are able to die multiple times, so on their profiles their deaths are listed in one single sentence.  This sentence is formatted as such: "[leader name] lost a life when they [lead_death sentence fragment]" with each following death being added on to create a list with a comma between each item (and the last list item being added with an "and").  Your lead_death text must be able to work within this grammar format and should not include punctuation at the end of the text. |
 
 **Example of acceptable histories**
-```py
-"scar": "m_c gained a scar from a fox.",
-"reg_death": "m_c died from a fox bite.",
-"lead_death": "died from a fox bite"
+```json
+[
+    {
+        "scar": "m_c gained a scar from a fox.",
+        "reg_death": "m_c died from a fox bite.",
+        "lead_death": "died from a fox bite"
+    }
+]
 ```
 
 ## Tag Lists
@@ -327,8 +377,7 @@ Taggable Injury Pools:
 | "big_bite_injury"    | "bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail" |
 | "small_bite_injury"  | "bite-wound", "torn ear", "torn pelt", "scrapes"                        |
 | "beak_bite"          | "beak bite", "torn ear", "scrapes"                                      |
-| "rat_bite"           | "rat bite", "torn ear", "torn pelt"  
-
+| "rat_bite"           | "rat bite", "torn ear", "torn pelt"                                     |
 
 If you’d like a patrol to have an injury from one of the injury pools above, use the pool name (i.e. "battle_injury" for injuries from other cats) instead of the injury.  Think we need another pool? Let the senior developers know in the discord developer areas and let's talk.  We can have many different pools, there's no limit!
 
@@ -360,7 +409,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 | "healer_backstories"         | "medicine_cat", "wandering_healer1", "wandering_healer2"                                                                                                                                           |
 | "orphaned_backstories"       | "orphaned1", "orphaned2", "orphaned3", "orphaned4", "orphaned5", "orphaned6"                                                                                                                       |
 | "abandoned_backstories"      | "abandoned1", "abandoned2", "abandoned3", "abandoned4"                                                                                                                                             |
-| "outsider_backstories"       | "outsider1", "outsider2", "outsider3"         
+| "outsider_backstories"       | "outsider1", "outsider2", "outsider3"                                                                                                                                                              |
 
 ### Statuses
 > "newborn", "kitten" "apprentice", "mediator apprentice", "medicine cat apprentice", "warrior", "mediator", "medicine cat", "deputy", "leader", "elder", "any", 
@@ -405,59 +454,59 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 | **DREAM,**       | "restless sleeper",              | "strange dreamer",        | "dream walker",          | "dream shaper"                 |
 | **CLAIRVOYANT,** | "oddly insightful",              | "somewhat clairvoyant",   | "fairly clairvoyant",    | "incredibly clairvoyant"       |
 | **PROPHET,**     | "fascinated by prophecies",      | "prophecy seeker",        | "prophecy interpreter",  | "prophet"                      |
-| **GHOST,**        | "morbid curiosity",              | "ghost sense",            | "ghost sight",           | "ghost speaker"                |
+| **GHOST,**       | "morbid curiosity",              | "ghost sense",            | "ghost sight",           | "ghost speaker"                |
 
 ### Snippet Lists
 > These abbreviations can be used to insert items from snippet lists into your text. Using an abbr will add 1-3 random items from the given snippet list, formatted as a written list (i.e. "item1, item2, and item3").  The following table also displays certain categories within each snippet list that you can call. To call these categories, you can just add the category after the snippet list abbr, like so: `prophecy_list_sight`.  You can even specify multiple categories, like so: `prophecy_list_sight_touch`.  If you do not add a category, then every category will be used. 
 
 > Full snippet lists are found in `resources/dicts/snippet_collections.json`.  Feel free to add more options into these lists!
 
-| Snippet | Sight | Sound | Smell | Emotion | Touch | Taste |
-|--|--|--|--|--|--|--|
-| prophecy_list | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| omen_list | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| clair_list | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| dream_list | :x: | :x: | :x: | :x: | :x: | :x: |
-| story_list | :x: | :x: | :x: | :x: | :x: | :x: |
+| Snippet       | Sight              | Sound              | Smell              | Emotion            | Touch              | Taste              |
+|---------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| prophecy_list | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                |
+| omen_list     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                |
+| clair_list    | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| dream_list    | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
+| story_list    | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
 
 ***
 
 #### prophecy_list
 Use this for amorphous, dreamy concepts.
 
-| Sense group | Examples |
-|--|--|
-| sight | blood pooling on the ground<br>a bird's feather<br>a ghostly pair of eyes |
-| sound | a kit's mewl<br>the rushing sound of a river<br>a dying promise |
-| smell | the smell of the medicine-cat den<br>the scent of someone long dead<br>the scent of another Clan|
-| emotional | the excitement of an apprentice<br>the feeling of flight<br>a half-remembered promise |
-| touch | the brush of a pelt against their own<br>a tail twining with their own<br>the warmth of a parent |
+| Sense group | Examples                                                                                         |
+|-------------|--------------------------------------------------------------------------------------------------|
+| sight       | blood pooling on the ground<br>a bird's feather<br>a ghostly pair of eyes                        |
+| sound       | a kit's mewl<br>the rushing sound of a river<br>a dying promise                                  |
+| smell       | the smell of the medicine-cat den<br>the scent of someone long dead<br>the scent of another Clan |
+| emotional   | the excitement of an apprentice<br>the feeling of flight<br>a half-remembered promise            |
+| touch       | the brush of a pelt against their own<br>a tail twining with their own<br>the warmth of a parent |
 
 ***
 
 #### omen_list
 Use this for more physical ideas: odd and meaningful but still grounded in reality.
 
-| Sense group | Examples |
-|--|--|
-| sight | a five-pointed leaf<br>a split acorn<br>a dew-covered spider's web |
-| sound | a whispering on the wind<br>the sound of a cat no longer there<br><b>[that's all! please write more!] |
-| smell | the scent of spoiled queen's milk<br>the scent of a long-dead cat<br><b>[that's all! please write more!] |
-| emotional | a pervasive feeling of dread<br>the imprint of fangs on skin<br>the feeling of a hidden onlooker |
-| touch | <b>[that's all! please write more!] |
+| Sense group | Examples                                                                                                 |
+|-------------|----------------------------------------------------------------------------------------------------------|
+| sight       | a five-pointed leaf<br>a split acorn<br>a dew-covered spider's web                                       |
+| sound       | a whispering on the wind<br>the sound of a cat no longer there<br><b>[that's all! please write more!]    |
+| smell       | the scent of spoiled queen's milk<br>the scent of a long-dead cat<br><b>[that's all! please write more!] |
+| emotional   | a pervasive feeling of dread<br>the imprint of fangs on skin<br>the feeling of a hidden onlooker         |
+| touch       | <b>[that's all! please write more!]                                                                      |
 
 ***
 
 #### clair_list
 Use this for amorphous, unclear things that already happened/could happen.
 
-| Sense group | Examples |
-|--|--|
-| sound | the rumble of many paws on the ground<br>a betrayal on the wind<br>distant wails of grief |
-| smell | the smell of kittypet food<br>the smell of dirt baked by the sun<br>a strange acidic scent |
-| emotional | blood spilt in battle<br>the ache of an elder's bones<br>oozing corruption |
-| touch | deathly still air<br>tails entwining<br>paws heavy with blood|
-| taste | the bitter taste of poppy seeds<br>the lingering taste of iron on the tongue<br>the volatile taste of berries |
+| Sense group | Examples                                                                                                      |
+|-------------|---------------------------------------------------------------------------------------------------------------|
+| sound       | the rumble of many paws on the ground<br>a betrayal on the wind<br>distant wails of grief                     |
+| smell       | the smell of kittypet food<br>the smell of dirt baked by the sun<br>a strange acidic scent                    |
+| emotional   | blood spilt in battle<br>the ache of an elder's bones<br>oozing corruption                                    |
+| touch       | deathly still air<br>tails entwining<br>paws heavy with blood                                                 |
+| taste       | the bitter taste of poppy seeds<br>the lingering taste of iron on the tongue<br>the volatile taste of berries |
 
 ***
 
