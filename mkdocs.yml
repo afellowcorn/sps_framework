@@ -7,7 +7,6 @@ nav:
   - index.md
   - Project Basics:
       - project-basics/index.md
-      - project-basics/documentation-resources.md
       - project-basics/development-team-roles.md
       - project-basics/getting-started-with-github-and-clangen.md
   - Code:
@@ -31,6 +30,7 @@ nav:
       - audio/index.md
   - Contribute Documentation:
       - contributing/index.md
+      - contributing/documentation-resources.md
 theme:
   name: material
   logo: assets/main.png
