@@ -512,7 +512,7 @@ def create_new_cat_block(
     for _tag in attribute_list:
         match = re.match(r"backstory:(.+)", _tag)
         if match:
-            bs_list = [x for x in match.group(1).split(",")]
+            bs_list = [x for x in re.split(r", ?", match.group(1))]
             stor = []
             for story in bs_list:
                 if story in set(
@@ -523,6 +523,8 @@ def create_new_cat_block(
                     stor.extend(BACKSTORIES["backstory_categories"][story])
             bs_override = True
             break
+    if bs_override:
+        chosen_backstory = choice(stor)
 
     # KITTEN THOUGHT
     if status in ["kitten", "newborn"]:
