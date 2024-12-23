@@ -3048,7 +3048,7 @@
     [
       "warrior",
       "prepared",
-      "alive_mentor",
+      "general_mentor",
       "general_parents",
       "yes_leader",
       "general_backstory",
@@ -3057,6 +3057,106 @@
       "loyal"
     ],
     "All {PRONOUN/m_c/poss} hard work has come to this. m_c stands straight and proud, adorned with {PRONOUN/m_c/poss} new name and the congratulations of {PRONOUN/m_c/poss} Clan. Tomorrow, tomorrow {PRONOUN/m_c/subject} will return to responsibility and service and r_h. Tonight is {PRONOUN/m_c/poss} night to celebrate."
+  ],
+  "warrior_76": [
+    [
+      "warrior",
+      "prepared",
+      "general_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "ambitious",
+      "confident"
+    ],
+    "l_n calls (old_name) forward, honoring {PRONOUN/m_c/poss} r_h with the name m_c. One day, it'll be m_c's power to grant names to the warriors of c_n. This marks the first completed goal on that quest."
+  ],
+  "warrior_77": [
+    [
+      "warrior",
+      "prepared",
+      "general_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "troublesome",
+      "rebellious",
+      "daring",
+      "adventurous"
+    ],
+    "(old_name) can't help the way {PRONOUN/m_c/poss} tail lashes, excitement bubbling over into bouncy energy as the Clan gathers. l_n mentions {PRONOUN/m_c/poss} r_h, but what (old_name) cares about is the <i>name</i>. m_c means liberty, means control over {PRONOUN/m_c/poss} own life, means the freedom to wander and hunt on {PRONOUN/m_c/poss} own, nothing holding {PRONOUN/m_c/object} back. {PRONOUN/m_c/subject/CAP} can't wait!"
+  ],
+  "warrior_78": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "alive2_parents",
+      "yes_leader",
+      "general_backstory",
+      "competitive",
+      "flamboyant",
+      "charismatic",
+      "righteous"
+    ],
+    "Hearing l_n speak about {PRONOUN/m_c/poss} r_h in front of all the Clan, seeing (previous_mentor)'s approving nod, p1's eyes shining with pride, p2 purring loud enough to choke on the sound, it all comes together into a moment of brilliant recognition and celebration as m_c takes on {PRONOUN/m_c/poss} warrior name."
+  ],
+  "warrior_79": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "alive2_parents",
+      "yes_leader",
+      "general_backstory",
+      "grumpy",
+      "gloomy",
+      "cold",
+      "strange"
+    ],
+    "Even at {PRONOUN/m_c/poss} own naming ceremony, m_c doesn't love being the center of attention, the tip of {PRONOUN/m_c/poss} tail twitching with unease. But {PRONOUN/m_c/subject} still {VERB/m_c/accept/accepts} (previous_mentor)'s congratulations and {PRONOUN/m_c/poss} parents proud purrs, still smiles slightly when l_n praises {PRONOUN/m_c/poss} r_h."
+  ],
+  "warrior_80": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "alive1_parents",
+      "yes_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "(previous_mentor) backs up, giving p1 room to tuck (old_name) underneath {PRONOUN/p1/poss} chin one last time, as p1 murmurs how proud {PRONOUN/p1/subject} {VERB/p1/are/is}. l_n calls (old_name) forward with words honoring {PRONOUN/m_c/poss} r_h, as {PRONOUN/m_c/subject} {VERB/m_c/take/takes} up the name m_c and {VERB/m_c/step/steps} into full warrior duties."
+  ],
+  "warrior_81": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "loyal",
+      "faithful",
+      "sincere",
+      "loving"
+    ],
+    "As l_n exults (old_name)'s r_h, (old_name) quietly tucks {PRONOUN/m_c/poss} head against (previous_mentor)'s shoulder, deeply respectful. It feels unreal to receive {PRONOUN/m_c/poss} full name, and m_c will still be coming to (previous_mentor) for advice for many moons in the future."
+  ],
+  "warrior_82": [
+    [
+      "warrior",
+      "prepared",
+      "alive_mentor",
+      "general_parents",
+      "yes_leader",
+      "general_backstory",
+      "fierce",
+      "bloodthirsty",
+      "vengeful",
+      "loyal"
+    ],
+    "Together (old_name) and (previous_mentor) have torn claws and taken names, and as (old_name) is honored for {PRONOUN/m_c/poss} r_h and named m_c, they're not planning on stopping any time soon!"
   ],
   "mediator_0": [
     [
