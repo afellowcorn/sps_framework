@@ -6,6 +6,8 @@ edit_uri: https://github.com/ClanGenOfficial/clangen-docs/edit/master/docs/
 nav:
   - index.md
   - Project Basics:
+      - project-basics/index.md
+      - project-basics/documentation-resources.md
       - project-basics/development-team-roles.md
       - project-basics/getting-started-with-github-and-clangen.md
   - Code:
@@ -81,6 +83,7 @@ extra:
 extra_css:
   - stylesheets/extra.css
 markdown_extensions:
+  - abbr
   - admonition
   - pymdownx.details
   - pymdownx.superfences
@@ -101,10 +104,15 @@ markdown_extensions:
         custom_icons:
           - overrides/.icons
   - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - attr_list
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
   - md_in_html
+  - toc:
+      permalink: True
 
+watch:
+  - includes
 plugins:
   - search
   - git-committers:
