@@ -1,6 +1,11 @@
 name: PyInstaller build
 
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - "docs/**"
+      - "docs-resources/**"
+      - "mkdocs.yml"
 
 permissions:
   contents: write
