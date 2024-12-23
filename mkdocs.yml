@@ -29,6 +29,8 @@ nav:
       - art/camp-backgrounds.md
   - Audio:
       - audio/index.md
+  - Contribute Documentation:
+      - contributing/index.md
 theme:
   name: material
   logo: assets/main.png
