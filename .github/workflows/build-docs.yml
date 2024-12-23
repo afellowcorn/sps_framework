@@ -56,6 +56,6 @@ jobs:
         uses: Azure/k8s-set-context@v4
         with:
           method: kubeconfig
-          kubeconfig: ${{ secrets.KUBECONFIG }}
+          kubeconfig: ${{ secrets.DOCS_RESTART_KUBECONFIG }}
       - name: Restart deployment
         run: kubectl rollout restart deployment/clangen-docs -n clangen
