@@ -116,7 +116,8 @@ watch:
 plugins:
   - search
   - git-committers:
-      repository: ClanGenOfficial/clangen-docs
+      repository: ClanGenOfficial/clangen
+      branch: development
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago

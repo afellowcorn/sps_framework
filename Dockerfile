@@ -15,7 +15,9 @@ COPY docs-resources/ docs-resources/
 
 COPY .git .git
 
-RUN poetry run mkdocs build
+RUN --mount=type=cache,target=.cache/plugin/git-committers \
+    --mount=type=secret,id=github_token,env=GITHUB_TOKEN \
+    poetry run mkdocs build
 
 FROM nginx:alpine
 
