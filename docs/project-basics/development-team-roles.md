@@ -93,6 +93,7 @@ Be sure to check out the [Developer Expectations](#developer-expectations) for f
 
 ### PR Ettiquette
 
+* PRs that include significant code-base changes should also include appropriate documentation changes. If a PR is made without accompanying documentation, a senior dev may request the addition of documentation.
 * PRs should be as small in scope as possible and should only contain singular features/changes. For example, you should not create a PR that includes both art additions and bugfixes. Instead, that PR should be split into two: one for the art additions and a second for the bugfixes. Remember that the larger in scope a PR is, the longer it will take for a senior dev to review and merge it.
 * When creating a PR, please pay attention to the built-in template.
 * You *must* provide proof of testing for your PR and ensure that all built-in tests pass. If your PR fails a test, please address the issue promptly.
