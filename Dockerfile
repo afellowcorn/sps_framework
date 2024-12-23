@@ -17,7 +17,7 @@ COPY .git .git
 
 RUN --mount=type=cache,target=.cache/plugin/git-committers \
     --mount=type=secret,id=github_token,env=GITHUB_TOKEN \
-    poetry run mkdocs build
+    poetry run mkdocs build --strict
 
 FROM nginx:alpine
 
