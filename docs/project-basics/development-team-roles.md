@@ -10,7 +10,7 @@
 
     Players who help us test the dev version of the game and have been given access to beta tester discord channels after application acceptance. 
 
-    [Expections](#beta-tester-expectations)
+    [Expections](#beta-tester-expectations){ .md-button .md-button--primary}
 
 - __Apprentice Developer__
 
@@ -18,7 +18,7 @@
 
     Developers who have been added to the team via application acceptance, but have not yet contributed to the dev or base game.
 
-    [Expections](#apprentice-developer-expectations)
+    [Expections](#apprentice-developer-expectations){ .md-button .md-button--primary}
 
 - __Developer__
 
@@ -26,7 +26,7 @@
 
     Contributors who have had a PR accepted and intend to continue contributing to the project. 
 
-    [Expections](#developer-expectations)
+    [Expections](#developer-expectations){ .md-button .md-button--primary}
 
 - __Senior Developer__
 
@@ -34,7 +34,7 @@
 
     Developers who have contributed signifcantly to the project and have the responsibility of reviewing PRs. These developers are expected to help steer the team and preserve game identity.
 
-    [Expections](#senior-developer-expectations)
+    [Expections](#senior-developer-expectations){ .md-button .md-button--primary}
 
 </div>
 
@@ -106,18 +106,19 @@ Be sure to check out the [Developer Expectations](#developer-expectations) for f
 
 ### Private Testing Creation
 If you have a new feature that you feel needs extensive testing before merging with the main repo then you are welcome to recruit beta testers to assist you.
+
 1. Create a **thread** within the #dev-version-discussion channel. 
 2. Ensure that this thread has a clear title and detailed description. Descriptions should include a link to your branch and detailed expectations of what beta testers should be testing for and how they should relay their feedback.
 3. Ping the beta tester role. If beta testers need tech support in any fashion, encourage them to seek it in the #dev-version-tech-help channel.
 
 ## Senior Developer expectations
 
-Senior developers are those with write access to the ClanGen GitHub. Nothing can be merged to ClanGen without the approval of a senior developers.
+Senior developers are those with write access to the ClanGen GitHub. Nothing can be merged to ClanGen without the approval of a senior developer.
 
 If a Pull Request is meant to fix an issue, please ensure the following: Check (or have the developer check) whether the bug affects the latest release branch, too. If it does:
 
 1. Tell the developer to change the target branch of their Pull Request to the latest release branch. For example, release-0.10
 2. Ensure that the Pull Request only contains the bugfixes. New features, pelts, sprites, [...] don't belong in a bugfix; there's some exceptions like the Halloween toggle, but usually we want to make sure that there's no gameplay difference between... let's say v0.10.0 and v0.10.5
-3. You may review and approve as per usual; I'd ask you to refrain from making merges to the release branches though
+3. You may review and approve as per usual; but we'd ask you to refrain from making merges to the release branches though
 
 
