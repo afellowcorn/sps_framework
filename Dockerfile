@@ -2,6 +2,8 @@ FROM python:3.12-slim
 
 WORKDIR /docs
 
+ARG GIT_COMMITTERS_ENABLED=true
+
 COPY pyproject.toml .
 COPY poetry.lock .
 

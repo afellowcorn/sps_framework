@@ -116,6 +116,7 @@ watch:
 plugins:
   - search
   - git-committers:
+      enabled: !ENV [GIT_COMMITTERS_ENABLED, False]
       repository: ClanGenOfficial/clangen
       branch: development
   - git-revision-date-localized:
