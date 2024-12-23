@@ -1,14 +1,39 @@
 # Welcome to the ClanGen Wiki! 
 
-This wiki is intended to document the intended behavior of implemented systems. 
+This wiki is intended to document the intended behavior of implemented systems and provide a range of resources for developers, modders, and players. 
 
-It can be divided in 4 main topics:
+Basic information regarding the ClanGen project as a whole can be found in [Project Basics](project-basics/index.md), otherwise this wiki can be divided in 4 main topics:
 
-* [Art Related](art/index.md)
-* [Writing Related](writing/index.md)
-* [Code Related](code/index.md)
-* [Audio Related](audio/index.md)
+<div class="grid cards" markdown>
 
-## Contributing
-Clangen is an open-source project, and anyone can contribute to it by making a pull request. Everyone who created a PR which was also merged will get the `developer` role in our [discord server](https://discord.com/invite/clangen). Another way for people to join the team is through applying to become an Apprentice Developer to join our projects. Inactive developers (especially Apprentice Devs) may be cleared out from time to time. They are always free to reapply for the position or make a new PR in order to get their roles back, though.
+- __[Art Related](art/index.md)__
+
+    ---
+
+    A variety of guides about our art styles.
+
+    
+
+- __[Writing Related](writing/index.md)__
+
+    ---
+
+    Writing style guidelines and details on how to create new events within ClanGen.
+
+- __[Code Related](code/index.md)__
+
+    ---
+
+    Information about our codebase itself.
+
+- __[Audio Related](audio/index.md)__
+
+    ---
+
+    Information about creating new audio for ClanGen.
+
+</div>
+
+
+
 
