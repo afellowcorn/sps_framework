@@ -3,17 +3,17 @@ FROM python:3.13-slim
 WORKDIR /docs
 
 COPY pyproject.toml .
-COPY uv.lock .
+COPY poetry.lock .
 
 RUN apt-get update && apt-get install -y git && \
-    pip install --no-cache-dir uv && \
-    uv pip install --system .
+    pip install --no-cache-dir poetry && \
+    poetry install --no-root --only docs
 
 COPY mkdocs.yml .
 COPY docs/ docs/
 COPY docs-resources/ docs-resources/
 
-RUN mkdocs build
+RUN poetry run mkdocs build
 
 FROM nginx:alpine
 
