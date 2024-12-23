@@ -13,6 +13,8 @@ COPY mkdocs.yml .
 COPY docs/ docs/
 COPY docs-resources/ docs-resources/
 
+COPY .git .git
+
 RUN poetry run mkdocs build
 
 FROM nginx:alpine
