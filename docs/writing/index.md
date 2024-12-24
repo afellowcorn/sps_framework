@@ -1,30 +1,28 @@
-# Basic
-_by Tiri and Scribble_
+# Writing Basics
+Thank you for your interest in contributing to the written content within ClanGen. This is the heart and soul of the game, everything we do is built around the generation of story events!
 
-## The Basics
-
-- Clangen is a game that relies on random event generation. This means that whatever you're writing needs to function for all cats it might generate for, under all circumstances it can be generated in.
+- ClanGen is a game that relies on random event generation. This means that whatever you're writing needs to function for all cats it might generate for, under all circumstances it can be generated in.
 
 !!! caution
     No assumptions should be made about the gender of any cat. Nothing in the game is completely gender-locked, including pregnancy under certain settings, so all text should take this into account.
 
 - Remember that the focus of this game is allowing players to build their own story! Most of the time, it’s better not to insert character motivations into the text. We want to leave space for the player to explain and expand upon the events that happen in the game. Of course, there are some trait, skill, rank, or age specific texts that can allow more personality to shine through
-- The Dark Forest is not fully implemented yet, and flavor text should not mention it too much at the moment. It exists, but there hasn't been a consensus on the exact implementation yet for things like training in the Dark Forest, or how exactly it operates in Clangen. For example, if it's a secret to all except those who are chosen to train there, or if it's well-known to all Clan cats.
+- The Dark Forest is not fully implemented yet, and flavor text should not mention it too much at the moment. It exists, but there hasn't been a consensus on the exact implementation yet for things like training in the Dark Forest, or how exactly it operates in ClanGen. For example, if it's a secret to all except those who are chosen to train there, or if it's well-known to all Clan cats.
 - If you have something you'd like to do with a patrol or event, but the code doesn't seem to have functionality for it yet, please let a coder know! 
 
 ### Upsetting vs graphic content
 !!! caution
-    Clangen contains content that is designed to cause distress. There is no way around it, and it is intentional, and it is **not malicious**. Players are supposed to care about the death of a cat, or a cat being injured, or the Clan not having enough food. Writers for Clangen spend our time trying to provoke emotions in players, both good, positive, happy emotions, and sad ones, or feelings of injustice, or loss. Video games as a medium, especially a story generator like Clangen, are designed to need active investment from a player on many levels, including emotional.
+    ClanGen contains content that is designed to cause distress. There is no way around it, and it is intentional, and it is **not malicious**. Players are supposed to care about the death of a cat, or a cat being injured, or the Clan not having enough food. Writers for ClanGen spend our time trying to provoke emotions in players, both good, positive, happy emotions, and sad ones, or feelings of injustice, or loss. Video games as a medium, especially a story generator like ClanGen, are designed to need active investment from a player on many levels, including emotional.
 
 - There is an important difference between upsetting content and graphic content. 
-- Clangen follows the warriors canonical levels of graphic content and gore. **This is not a non-graphic book series.** For example, in warriors canon Scourge gets an extensive scene where he takes all of Tigerstar(the first)'s lives at once by ripping out his throat. This would be the absolute maximum graphic content allowed in Clangen.
+- ClanGen follows the warriors canonical levels of graphic content and gore. **This is not a non-graphic book series.** For example, in warriors canon Scourge gets an extensive scene where he takes all of Tigerstar(the first)'s lives at once by ripping out his throat. This would be the absolute maximum graphic content allowed in ClanGen.
 - However, everyone has far different levels of comfort with regards to graphical content, particularly written graphical content rather than visual. We have needed to edit content to be less graphic before. We will doubtless do so again in the future. When we receive feedback that game text is particularly upsetting, it's important to take that feedback and carefully consider it. This does not always mean removing that content - but we must carefully consider it.
 - Graphical content is not limited to violent content. Illness, injury, pregnancy - no one wants to read a play by play of a cat giving birth in extreme graphical detail. 
 - This is one of the reasons the development version of the game exists. By playing the development version, people have accepted they may be exposed to features that aren't ready for the stable release of the game yet, including upsetting content that is being playtested.
 - People have drastically different levels of comfort for graphical content for kittens (and sometimes apprentices) than for adult characters. This does not mean that nothing upsetting should ever be allowed to happen to kittens, but it's worth considering. 
 - For distressing content, aim to use text that is emotive and provokes an emotional response, without using descriptive imagery that is likely to provoke disgust. The diarrhea illness progression and reaction texts are a good example of this. It's an illness that's actually reasonably dangerous, but the text tries to communicate that without focusing on the shitting uncontrollably part. 
 
-### Clangen Biomes
+### ClanGen Biomes
 
 All biomes are different from each other and this should be taken into account when writing (e.g a generalized hunting patrol shouldn't mention fishing in the desert). If the content you're writing is generalized (available in any biome), then you have to be careful to make it _truly_ general in nature, able to be triggered no matter _what_ the circumstances. Therefore, under most circumstances, making biome (or even camp) specific content is preferred for a more detailed, rich gameplay experience. Each biome also has different prey available - see the randomized prey lists for inspiration, but be creative (though realistic) with your own prey choices. Cats cannot take down giraffe, but there's plenty of unique things in the right size range for them to hunt you _could_ include in your content. 
 
@@ -152,10 +150,10 @@ Try to use phrases from this list when you can instead of using "our" version of
 
 ### Megafauna 
 
-- Megafauna, in the Clangen context, is any creature that is so far out of a cat's size range as to make a contest between a cat and that creature fundamentally pointless.
+- Megafauna, in the ClanGen context, is any creature that is so far out of a cat's size range as to make a contest between a cat and that creature fundamentally pointless.
 - A canon example would be Sharptooth, the mountain lion
 - Examples you might want to include in game are lions, tigers, wolves, bears, elephants, moose, cows, alligators, dolphins, etc.
-- What's important for clangen is that we want to make the game feel like these big creatures exist in the same world as the Clan, but that the Clan is not _constantly interacting or in danger from them_. So, for example, a plain patrol about scenting lion scat? Great. A plain patrol about being chased by a lion? That one better be _rare_ (and very dangerous). 
+- What's important for ClanGen is that we want to make the game feel like these big creatures exist in the same world as the Clan, but that the Clan is not _constantly interacting or in danger from them_. So, for example, a plain patrol about scenting lion scat? Great. A plain patrol about being chased by a lion? That one better be _rare_ (and very dangerous). 
 - You're encouraged to think of interesting interactions with megafauna that increase their presence in the game without subjecting the player Clan to undue amounts of danger! For example, a mountain Clan scavenging and eating the discarded placenta of a moose in newleaf is a wonderful source of prey, that implies moose are present in the world without requiring the Clan to risk interacting with it. Or what myths might a plains Clan tell about elephant? The beach Clans swap herbs and prey with dolphins without risking getting eaten by them.
 - Basically, we want to feel like there are these massive creatures in the Clan's world, without having to solely focus gameplay on why the Clan isn't immediately getting eaten by a tiger.
 
@@ -200,7 +198,7 @@ Some animals have multiple names that can refer to them, we want to keep our wri
         - Plurals and possessives! Basically, English grammar conventions are hell. I will try to make it not too confusing with the word cat as an example noun. "Cat's" = single cat, possessive. "The cat's tail." "Cats" = plural, multiple cats, not possessive. "The cats gathered around the High Rock." Cats' = plural possessive. "The cats' nests were lined with fresh moss." 
         - For singular words that end in S, add an apostrophe to make them possessive. For instance, "the crocus' petals". For a possessive plural of a word that ends in S, add "es" to the end, then apostrophe. Random example sentence: "The actresses' rooms were located across the hall."
         - Basically, anytime there's a possessive, you want an apostrophe in there somewhere. If the word ends in S, plural or singular, the apostrophe goes at the end. If the singular form of the word ends in S and it's a plural possessive, add "es" at the end, then apostrophe.  The exception to this is “it’s’ and “its”, where “its” is the possessive form and has no apostrophe.
-- All Clangen game text should follow normal grammar rules for capitalizing the first letter of a sentence, and trying to avoid spelling or grammar typos. We all make typos, don't worry! But this is one of the ways beta testing your new content can help you!
+- All ClanGen game text should follow normal grammar rules for capitalizing the first letter of a sentence, and trying to avoid spelling or grammar typos. We all make typos, don't worry! But this is one of the ways beta testing your new content can help you!
 - If you are struggling with remembering or understanding a grammar rule, even one that isn't mentioned in the above list, feel free to contact zabe#1117 on Discord for one on one help. Either DM or ping in the writing contributor thread, please!
 - The only exception to the above rule is Thoughts! Thoughts should be structured in such a way that they read as a full sentence if the cat’s name is read at the beginning.  For example: “Thinks about their past mistakes.” is the correct grammar for a Thought, as you could imagine a name at the beginning of the sentence and it would be grammatically correct.  However, the sentence should still be capitalized normally.
 Event and flavor text should always use Americanized spelling. 
@@ -275,8 +273,8 @@ When in doubt, please ask for feedback! We have multiple disabled contributors o
 - json - a file type. We use these files to hold strings and other important game info.  Nearly all of the strings in the game are held in jsons. Some IDEs, like PyCharm or virtual studio code, are able to help you properly format and spot errors in jsons. I’d recommend using one of those IDEs to help streamline your process.
 
 - Github Terms 
-    - github desktop - An application that makes syncing, editing, and committing your code easier. This, along with an IDE, is highly recommended for anyone contributing to the Clangen game files.
-    - repository / repo - In many ways, you can think of a Git repository as a directory that stores all the files, folders, and content needed for Clangen. What it actually is, is the object database of the project, storing everything from the files themselves, to the versions of those files, commits, deletions, et cetera. Repositories are not limited by user, and can be shared and copied (see: fork).
+    - github desktop - An application that makes syncing, editing, and committing your code easier. This, along with an IDE, is highly recommended for anyone contributing to the ClanGen game files.
+    - repository / repo - In many ways, you can think of a Git repository as a directory that stores all the files, folders, and content needed for ClanGen. What it actually is, is the object database of the project, storing everything from the files themselves, to the versions of those files, commits, deletions, et cetera. Repositories are not limited by user, and can be shared and copied (see: fork).
     - PR - a Pull Request (PR) is how you will merge your code into a repository. Pull requests ask the repo maintainers to review the commits made, and then, if acceptable, merge the changes upstream.
     - merge - Taking the changes from one branch and adding them into another (traditionally master) branch. These commits are usually first requested via pull request before being merged by a project maintainer.
     - pull - A “pull” happens when adding the changes to the master branch. 
@@ -337,7 +335,7 @@ Pronoun tags are the code replacements for singular they/them within the text, a
 
 ![Screenshot 2024-04-17 111107](https://github.com/CL0WNTH0UGHTS/Summoners-Clownthoughts-Death-Events/assets/124001594/16a82903-a1a6-48eb-ac5c-3adae8d665f8)
 
-The best ways to fix this is to first, double check that all the pronouns are properly tagged and rely on copy and pasting the actual filled out versions of the code, or to copy and paste your code into [Clangen Pronoun Tag Tester (cgen-tools.github.io)](https://cgen-tools.github.io/pronoun-tester/), which will show if the thought has an error in the tagging and makes sense given different pronouns
+The best ways to fix this is to first, double check that all the pronouns are properly tagged and rely on copy and pasting the actual filled out versions of the code, or to copy and paste your code into [ClanGen Pronoun Tag Tester (cgen-tools.github.io)](https://cgen-tools.github.io/pronoun-tester/), which will show if the thought has an error in the tagging and makes sense given different pronouns
 
 
 ### Verb tags
@@ -345,4 +343,4 @@ Verb tags, much similar to pronoun tags, serve to procedurally change verbs to m
 
 ![Screenshot 2024-04-17 211211](https://github.com/CL0WNTH0UGHTS/Summoners-Clownthoughts-Death-Events/assets/124001594/7a2f04b8-1eac-4beb-a126-dce836a2e95f)
 
-The best ways to fix this is to first, double check that all the pronouns are properly tagged and rely on copy and pasting the actual filled out versions of the code ( {VERB/cat/plural/singular} ), or to copy and paste your code into [Clangen Pronoun Tag Tester (cgen-tools.github.io)](https://cgen-tools.github.io/pronoun-tester/), which will show if the thought has an error in the tagging and makes sense given different pronouns
+The best ways to fix this is to first, double check that all the pronouns are properly tagged and rely on copy and pasting the actual filled out versions of the code ( {VERB/cat/plural/singular} ), or to copy and paste your code into [ClanGen Pronoun Tag Tester (cgen-tools.github.io)](https://cgen-tools.github.io/pronoun-tester/), which will show if the thought has an error in the tagging and makes sense given different pronouns
