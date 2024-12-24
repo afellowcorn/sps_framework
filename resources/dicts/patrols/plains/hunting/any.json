@@ -638,7 +638,7 @@
                 "prey": ["very_small"]
             },
             {
-                "text": "Bolds, s_c charges towards a feeding bunny. And sure, s_c gets <i>{PRONOUN/s_c/poss}</i> rabbit, but what about the rest of the patrol? It does not leave the rest of them feeling particularly impressed.",
+                "text": "Boldly, s_c charges towards a feeding bunny. And sure, s_c gets <i>{PRONOUN/s_c/poss}</i> rabbit, but what about the rest of the patrol? It does not leave the rest of them feeling particularly impressed.",
                 "exp": 20,
                 "weight": 20,
                 "art": "gen_hunting_rabbit",
