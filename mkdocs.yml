@@ -7,6 +7,7 @@ nav:
   - Welcome:
     - index.md
   - Developer Documentation:
+    - def/index.md
     - Project Basics:
         - dev/project-basics/index.md
         - dev/project-basics/development-team-roles.md
@@ -22,6 +23,7 @@ nav:
         - dev/writing/leaders-den-events.md
         - dev/writing/thoughts.md
         - dev/writing/leader-ceremonies.md
+        - dev/writing/localization.md
         - dev/writing/advanced-documentation.md
     - Art:
         - dev/art/index.md
