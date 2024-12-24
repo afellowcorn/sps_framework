@@ -12,21 +12,18 @@ on:
       - "pyproject.toml"
       - "poetry.lock"
 
-
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: vars.DO_BUILD_DOCS == 'true'
     permissions:
       contents: read
-      packages: write
-
+      packages: write    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
@@ -52,6 +49,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          secrets: |
+            github_token=${{ secrets.GITHUB_TOKEN }}
       - name: Set up kubernetex context
         uses: azure/setup-kubectl@v3
       - name: Set Kubernetes context
