@@ -7,7 +7,7 @@ nav:
   - Welcome:
     - index.md
   - Developer Documentation:
-    - def/index.md
+    - dev/index.md
     - Project Basics:
         - dev/project-basics/index.md
         - dev/project-basics/development-team-roles.md
@@ -33,11 +33,11 @@ nav:
         - dev/art/camp-backgrounds.md
     - Audio:
         - dev/audio/index.md
-    - Contribute Documentation:
-        - dev/contributing/index.md
-        - dev/contributing/documentation-resources.md
   - User Guides:
     - user-guides/index.md
+  - Contributing to the Docs:
+      - contributing/index.md
+      - contributing/documentation-resources.md
 theme:
   name: material
   logo: assets/main.png
