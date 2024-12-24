@@ -1,6 +1,6 @@
-# Contribute Documentation
+# Contributing Documentation
 
-Thank you for your interest in contributing to Clangen's documentation!
+Thank you for your interest in contributing to ClanGen's documentation!
 
 ## Getting Started
 
