@@ -296,6 +296,16 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
             translation_paths.append(os.path.join(root, directory))
         break
 
+    # update old settings data from pre-localization
+    if settings_data["language"] == "english":
+        settings_data["language"] = "en"
+        with open(
+            get_save_dir() + "/settings.json", "w", encoding="utf-8"
+        ) as write_file:
+            new_settings = ujson.dumps(settings_data, ensure_ascii=False, indent=4)
+            write_file.write(new_settings)
+            del new_settings
+
     # initialize pygame_gui manager, and load themes
     manager = UIManager(
         res,
