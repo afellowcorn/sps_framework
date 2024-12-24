@@ -6,7 +6,7 @@ Basic information regarding the ClanGen project as a whole can be found in [Proj
 
 <div class="grid cards" markdown>
 
-- __[Art Related](art/index.md)__
+- __[Art Related](aart/index.md)__
 
     ---
 
