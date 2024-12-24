@@ -183,6 +183,3 @@ cache/
 download.tmp
 version.ini
 *.xml
-
-# Docs
-docs/

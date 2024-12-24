@@ -1,5 +1,5 @@
 # Documentation Resources
-## Getting Started
+## External Resources
 
 Our documentation is built on [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). Both Material and MkDocs provide extensive documentation of their own:
 
