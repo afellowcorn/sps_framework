@@ -17,7 +17,8 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale,
-    update_previous_next_cat_buttons
+    update_previous_next_cat_buttons,
+    adjust_list_text,
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
