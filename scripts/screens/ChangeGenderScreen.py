@@ -21,6 +21,7 @@ from scripts.utility import (
     ui_scale_dimensions,
     ui_scale_value,
     ui_scale_offset,
+    update_previous_next_cat_buttons
 )
 from scripts.utility import ui_scale
 from .Screens import Screens
@@ -308,19 +309,8 @@ class ChangeGenderScreen(Screens):
         ) = self.the_cat.determine_next_and_previous_cats()
         self.pronoun_update()
         self.preset_update()
-        self.update_disabled_buttons()
-
-    def update_disabled_buttons(self):
-        # Previous and next cat button
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
-
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
+        update_previous_next_cat_buttons(self.previous_cat, self.next_cat,
+                                         self.previous_cat_button, self.next_cat_button)
 
     def pronoun_update(self):
         self.removalboxes_text["instr"] = pygame_gui.elements.UITextBox(

@@ -17,6 +17,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale,
+    update_previous_next_cat_buttons
 )
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
@@ -323,16 +324,9 @@ class RoleScreen(Screens):
         self.update_disabled_buttons()
 
     def update_disabled_buttons(self):
-        # Previous and next cat button
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
 
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
+        update_previous_next_cat_buttons(self.previous_cat, self.next_cat,
+                                         self.previous_cat_button, self.next_cat_button)
 
         if game.clan.leader:
             leader_invalid = game.clan.leader.dead or game.clan.leader.outside

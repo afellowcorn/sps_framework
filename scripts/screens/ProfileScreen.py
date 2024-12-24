@@ -29,7 +29,7 @@ from scripts.utility import (
     ui_scale_dimensions,
     shorten_text_to_fit,
     ui_scale_offset,
-    adjust_list_text,
+    adjust_list_text, update_previous_next_cat_buttons,
 )
 from .Screens import Screens
 from ..cat.history import History
@@ -716,15 +716,8 @@ class ProfileScreen(Screens):
         ) = self.the_cat.determine_next_and_previous_cats()
 
         # Disable and enable next and previous cat buttons as needed.
-        if self.next_cat == 0:
-            self.next_cat_button.disable()
-        else:
-            self.next_cat_button.enable()
-
-        if self.previous_cat == 0:
-            self.previous_cat_button.disable()
-        else:
-            self.previous_cat_button.enable()
+        update_previous_next_cat_buttons(self.previous_cat, self.next_cat,
+                                         self.previous_cat_button, self.next_cat_button)
 
         if self.open_tab == "history" and self.open_sub_tab == "user notes":
             self.load_user_notes()
