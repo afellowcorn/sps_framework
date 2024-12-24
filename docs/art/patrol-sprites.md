@@ -67,7 +67,7 @@ We work off of strict color palettes for cat silhouettes and other specific enti
 
 Cats are color-coded by status, follow the below ref sheet.
 
-![patrol palette guide](https://cdn.discordapp.com/attachments/1101278644648812604/1293329474439610399/colorguide.png?ex=676bd52f&is=676a83af&hm=90db524decde87b7c17f096dccf6bebd0c708c450a5cb438301d7504822fb3b4&)
+![patrol palette guide](https://github.com/SnapshotManor/Snapshot-ClanGen/blob/development/docs/art/img/color%20palette%20guide.png?raw=true)
 
 - As you can see, some ranks (app and med cat) have specific colors, while other ranks (like warrior and leader) have no specific colors.  If the patrol text does not refer to a cat as being an app or med cat, then you should use the "unspecified rank" colors.  There are multiple "unspecified rank" palettes to choose from in order to make it easy to distinguish multiple "unspecified rank" cats from each other.
 
