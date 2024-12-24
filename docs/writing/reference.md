@@ -319,7 +319,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 
     > Use this for amorphous, dreamy concepts.
     
-    | Sense group | Examples                                                                                   |
+    > | Sense group | Examples                                                                                   |
     |-------------|--------------------------------------------------------------------------------------------|
     | sight       | blood pooling on the ground, a bird's feather, and a ghostly pair of eyes                        |
     | sound       | a kit's mewl, the rushing sound of a river, and a dying promise                                  |
@@ -332,7 +332,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 
     > Use this for more physical ideas: odd and meaningful but still grounded in reality.
     
-    | Sense group | Examples                                                                                        |
+    > | Sense group | Examples                                                                                        |
     |-------------|-------------------------------------------------------------------------------------------------|
     | sight       | a five-pointed leaf, a split acorn, and a dew-covered spider's web                                    |
     | sound       | a whispering on the wind, the sound of a cat no longer there, and the rustle of wind through the grass    |
@@ -345,7 +345,7 @@ You can use either the backstory pool name, or an individual backstory name.  Wh
 
     > Use this for amorphous, unclear things that already happened/could happen.
     
-    | Sense group | Examples                                                                                                |
+    > | Sense group | Examples                                                                                                |
     |-------------|---------------------------------------------------------------------------------------------------------|
     | sound       | the rumble of many paws on the ground, a betrayal on the wind, and distant wails of grief                     |
     | smell       | the smell of kittypet food, the smell of dirt baked by the sun, and a strange acidic scent                    |
