@@ -6,11 +6,11 @@ This wiki is intended to document the intended behavior of implemented systems a
 
 - _[Developer Documentation](dev/index.md)_
 
-    Information on how to contribute to ClanGen.
+    Information on ClanGen from a developer standpoint.
 
 - _[User-Guides](user-guides/index.md)_
 
-    User-created guides on a variety of topics
+    User-created guides on a variety of topics.
 
 </div> 
 
