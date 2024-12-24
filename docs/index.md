@@ -2,37 +2,10 @@
 
 This wiki is intended to document the intended behavior of implemented systems and provide a range of resources for developers, modders, and players. 
 
-Basic information regarding the ClanGen project as a whole can be found in [Project Basics](project-basics/index.md), otherwise this wiki can be divided in 4 main topics:
+Information on how to contribute to ClanGen can be found in the [Developer Documentation](dev/index.md)
 
-<div class="grid cards" markdown>
+User-created guides on a variety of topics can be found in [User-Guides](user-guides/index.md)
 
-- __[Art Related](art/index.md)__
-
-    ---
-
-    A variety of guides about our art styles.
-
-    
-
-- __[Writing Related](writing/index.md)__
-
-    ---
-
-    Writing style guidelines and details on how to create new events within ClanGen.
-
-- __[Code Related](code/index.md)__
-
-    ---
-
-    Information about our codebase itself.
-
-- __[Audio Related](audio/index.md)__
-
-    ---
-
-    Information about creating new audio for ClanGen.
-
-</div>
 
 
 
