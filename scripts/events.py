@@ -338,9 +338,9 @@ class Events:
             if rel_change > 0:
                 event_text += i18n.t("hardcoded.relations_improved")
             elif rel_change == 0:
-                event_text += i18n.t("hardcoded.relation_neutral")
+                event_text += i18n.t("hardcoded.relations_neutral")
             else:
-                event_text += i18n.t("hardcoded.relation_worsened")
+                event_text += i18n.t("hardcoded.relations_worsened")
 
             # adjust text and add to event list
             event_text = event_text_adjust(
