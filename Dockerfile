@@ -2,6 +2,8 @@ FROM python:3.12-slim
 
 WORKDIR /docs
 
+ARG GIT_COMMITTERS_ENABLED=true
+
 COPY pyproject.toml .
 COPY poetry.lock .
 
@@ -15,7 +17,9 @@ COPY docs-resources/ docs-resources/
 
 COPY .git .git
 
-RUN poetry run mkdocs build
+RUN --mount=type=cache,target=.cache/plugin/git-committers \
+    --mount=type=secret,id=mkdocs_git_committers_apikey,env=MKDOCS_GIT_COMMITTERS_APIKEY \
+    poetry run mkdocs build --strict
 
 FROM nginx:alpine
 

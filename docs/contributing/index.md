@@ -1,14 +1,20 @@
-# Contribute Documentation
+# Contributing Documentation
 
-Thank you for your interest in contributing to Clangen's documentation!
+Thank you for your interest in contributing to ClanGen's documentation!
 
-## Editing Pages
+## Getting Started
+
+### Editing Pages
 
 To make a change in the documentation, just edit the corresponding `.md` file in the `/docs` folder. Note that every page has an edit button (:material-file-edit-outline:) in the top right that will take you directly to its corresponding file.
 
-## Creating New Pages
+### Creating New Pages
 
 If you want to create a new page, create a new `.md` file. Then edit `mkdocs.yml` (in the main clangen folder) to add your new page to the navigation on the sidebar.
+
+### Additional Resources
+
+[Documentation Resources](documentation-resources.md){ .md-button .md-button--primary}
 
 ## Build Instructions
 
