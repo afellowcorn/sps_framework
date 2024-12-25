@@ -336,7 +336,7 @@ class Events:
             rel_change = chosen_event["rel_change"]
             other_clan.relations += rel_change
             if rel_change > 0:
-                event_text += i18n.t("hardcoded.relation_improved")
+                event_text += i18n.t("hardcoded.relations_improved")
             elif rel_change == 0:
                 event_text += i18n.t("hardcoded.relation_neutral")
             else:
