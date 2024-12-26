@@ -12,8 +12,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale_offset,
-    get_text_box_theme, update_previous_next_cat_buttons,
-)
+    get_text_box_theme, )
 from scripts.utility import ui_scale
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
@@ -445,8 +444,7 @@ class SpriteInspectScreen(Screens):
 
     def update_disabled_buttons(self):
 
-        update_previous_next_cat_buttons(self.previous_cat, self.next_cat,
-                                         self.previous_cat_button, self.next_cat_button)
+        self.update_previous_next_cat_buttons()
 
         if self.displayed_life_stage >= len(self.valid_life_stages) - 1:
             self.next_life_stage.disable()

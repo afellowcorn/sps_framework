@@ -906,6 +906,11 @@ class Screens:
                 _settings = ujson.loads(read_file.read())
                 return "dark" if _settings["dark mode"] else "light"
 
+    def update_previous_next_cat_buttons(self) -> None:
+        """Updates disabled status of previous and next cat buttons."""
+        self.previous_cat_button.enable() if self.previous_cat else self.previous_cat_button.disable()
+        self.next_cat_button.enable() if self.next_cat else self.next_cat_button.enable()
+
 
 # CAT PROFILES
 def cat_profiles():

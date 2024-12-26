@@ -2939,10 +2939,6 @@ def get_text_box_theme(theme_name=None):
     else:
         return theme_name
 
-def update_previous_next_cat_buttons(previous_id, next_id, previous_button, next_button) -> None:
-    """Updates disabled status of previous and next cat buttons."""
-    previous_button.enable() if previous_id else previous_button.disable()
-    next_button.enable() if next_id else next_button.disable()
 
 def quit(savesettings=False, clearevents=False):
     """

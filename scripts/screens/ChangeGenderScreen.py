@@ -20,8 +20,7 @@ from scripts.utility import (
     shorten_text_to_fit,
     ui_scale_dimensions,
     ui_scale_value,
-    ui_scale_offset,
-    update_previous_next_cat_buttons
+    ui_scale_offset
 )
 from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import ui_scale
@@ -290,8 +289,7 @@ class ChangeGenderScreen(Screens):
         ) = self.the_cat.determine_next_and_previous_cats()
         self.pronoun_update()
         self.preset_update()
-        update_previous_next_cat_buttons(self.previous_cat, self.next_cat,
-                                         self.previous_cat_button, self.next_cat_button)
+        self.update_previous_next_cat_buttons()
 
     def pronoun_update(self):
         self.removalboxes_text["instr"] = pygame_gui.elements.UITextBox(
