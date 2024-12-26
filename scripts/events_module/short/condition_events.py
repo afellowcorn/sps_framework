@@ -316,8 +316,8 @@ class Condition_Events:
                 ]:
                     illness = f"a {chosen_illness}"
                 # try to translate the illness
-                illness = i18n.t(f"conditions.illness.{chosen_illness}")
-                illness.replace("conditions.illness.", "")
+                illness = i18n.t(f"conditions.illnesses.{chosen_illness}")
+                illness.replace("conditions.illnesses.", "")
                 event_string = i18n.t(
                     "defaults.illness_get_event",
                     illness=illness,
