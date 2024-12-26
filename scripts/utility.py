@@ -1961,7 +1961,7 @@ def find_special_list_types(text):
     elif "story_list" in list_text:
         list_type = "story_list"
     else:
-        print("No list type recognized!")
+        logger.error("WARNING: no list type found for %s", list_text)
         return text, None, None, None
 
     if "_sight" in list_text:
