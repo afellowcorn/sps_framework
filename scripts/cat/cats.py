@@ -48,6 +48,7 @@ from scripts.game_structure.localization import load_lang_resource
 
 import scripts.game_structure.localization as pronouns
 
+
 class Cat:
     """The cat class."""
 

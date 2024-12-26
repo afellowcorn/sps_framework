@@ -299,8 +299,6 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
             translation_paths.append(os.path.join(root, directory))
         break
 
-    print("translation paths:", translation_paths)
-
     # initialize pygame_gui manager, and load themesz
     manager = UIManager(
         res,
@@ -311,7 +309,6 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         starting_language=settings_data["language"],
         translation_directory_paths=translation_paths,
     )
-    print("Selected language: %s", settings_data["language"])
 
     manager.add_font_paths(
         font_name="notosans",

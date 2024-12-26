@@ -166,7 +166,6 @@ for module_name, module in list(sys.modules.items()):
             module.translate is pygame_gui.core.utility.translate
         ):  # Ensure it's the original reference
             setattr(module, "translate", translate)
-            print("translate module monkeypatched")
             break
 
 for module_name, module in list(sys.modules.items()):
