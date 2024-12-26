@@ -294,7 +294,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         return
 
     translation_paths = []
-    for root, dirs, files in os.walk("resources\\lang"):
+    for root, dirs, files in os.walk(os.path.join("resources", "lang")):
         for directory in dirs:
             translation_paths.append(os.path.join(root, directory))
         break
