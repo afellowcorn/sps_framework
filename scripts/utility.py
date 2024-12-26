@@ -1960,6 +1960,9 @@ def find_special_list_types(text):
         list_type = "clair_list"
     elif "story_list" in list_text:
         list_type = "story_list"
+    else:
+        print("No list type recognized!")
+        return text, None, None, None
 
     if "_sight" in list_text:
         senses.append("sight")
