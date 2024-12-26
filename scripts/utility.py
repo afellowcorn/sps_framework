@@ -7,6 +7,7 @@ TODO: Docs
 """  # pylint: enable=line-too-long
 
 import logging
+import os
 import re
 from itertools import combinations
 from math import floor
@@ -516,7 +517,13 @@ def create_new_cat_block(
             stor = []
             for story in bs_list:
                 if story in set(
-                    [backstory for backstory in BACKSTORIES["backstory_categories"]]
+                    [
+                        backstory
+                        for backstory_block in BACKSTORIES[
+                            "backstory_categories"
+                        ].values()
+                        for backstory in backstory_block
+                    ]
                 ):
                     stor.append(story)
                 elif story in BACKSTORIES["backstory_categories"]:
@@ -1963,6 +1970,9 @@ def find_special_list_types(text):
         list_type = "clair_list"
     elif "story_list" in list_text:
         list_type = "story_list"
+    else:
+        logger.error("WARNING: no list type found for %s", list_text)
+        return text, None, None, None
 
     if "_sight" in list_text:
         senses.append("sight")
@@ -2961,7 +2971,9 @@ def quit(savesettings=False, clearevents=False):
 
 
 with open(
-    f"resources/dicts/conditions/permanent_conditions.json", "r", encoding="utf-8"
+    os.path.normpath("resources/dicts/conditions/permanent_conditions.json"),
+    "r",
+    encoding="utf-8",
 ) as read_file:
     PERMANENT = ujson.loads(read_file.read())
 
@@ -2970,5 +2982,7 @@ langs = {"snippet": None, "prey": None}
 SNIPPETS = None
 PREY_LISTS = None
 
-with open(f"resources/dicts/backstories.json", "r", encoding="utf-8") as read_file:
+with open(
+    os.path.normpath("resources/dicts/backstories.json"), "r", encoding="utf-8"
+) as read_file:
     BACKSTORIES = ujson.loads(read_file.read())
