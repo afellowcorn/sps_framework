@@ -834,7 +834,10 @@ def create_new_cat(
             if kittypet:
                 name = choice(names.names_dict["loner_names"])
                 if bool(getrandbits(1)):
-                    accessory = choice(Cat.pelt.collars)
+                    # TODO: refactor this entire function to remove this call amongst other things
+                    from scripts.cat.pelts import Pelt
+
+                    accessory = choice(Pelt.collars)
             elif loner and bool(
                 getrandbits(1)
             ):  # try to give name from full loner name list
