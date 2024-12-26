@@ -1934,6 +1934,7 @@ def find_special_list_types(text):
     words = text.split(" ")
     for bit in words:
         if "_list" in bit:
+            print("bit found: %s", bit)
             list_text = bit
             # just getting rid of pesky punctuation
             list_text = list_text.replace(".", "")

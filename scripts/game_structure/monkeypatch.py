@@ -24,10 +24,19 @@ other = [
 def translate(text: str, **kwargs):
     if text == "":
         return ""
+    if text == "screens.core.cat_list":
+        print("cat_list loading")
+        print("kwargs:", [kwarg for kwarg in kwargs])
     output = i18n.t(text, **kwargs)
+    if output == "screens.core.cat_list":
+        print("cat_list name unchanged")
+    elif output == "Cat List":
+        print("cat_list successfully pulled from i18n")
     dict = {}
     for cat in groups:
         if cat in kwargs and cat in output:
+            if text == "screens.core.cat_list":
+                print("cat found? ", str(cat))
             dict[cat] = kwargs[cat]
     for role in other:
         if role in kwargs:

@@ -1,3 +1,4 @@
+import logging
 import os.path
 from typing import TYPE_CHECKING
 
@@ -16,6 +17,8 @@ import pygame_gui
 
 from scripts.game_structure.ui_manager import UIManager
 from scripts.ui.generate_screen_scale_json import generate_screen_scale
+
+logger = logging.getLogger(__name__)
 
 
 offset = (0, 0)
@@ -296,7 +299,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
             translation_paths.append(os.path.join(root, directory))
         break
 
-    # initialize pygame_gui manager, and load themes
+    # initialize pygame_gui manager, and load themesz
     manager = UIManager(
         res,
         screen_offset,
@@ -306,6 +309,7 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
         starting_language=settings_data["language"],
         translation_directory_paths=translation_paths,
     )
+    print("Selected language: %s", settings_data["language"])
 
     manager.add_font_paths(
         font_name="notosans",

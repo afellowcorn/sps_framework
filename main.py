@@ -166,6 +166,7 @@ for module_name, module in list(sys.modules.items()):
             module.translate is pygame_gui.core.utility.translate
         ):  # Ensure it's the original reference
             setattr(module, "translate", translate)
+            print("translate module monkeypatched")
             break
 
 for module_name, module in list(sys.modules.items()):
@@ -395,7 +396,11 @@ while 1:
         game.all_screens[game.last_screen_forupdate].exit_screen()
         game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
-    if not music_manager.audio_disabled and not pygame.mixer.music.get_busy() and not music_manager.muted:
+    if (
+        not music_manager.audio_disabled
+        and not pygame.mixer.music.get_busy()
+        and not music_manager.muted
+    ):
         music_manager.play_queued()
 
     debug_mode.pre_update(clock)
