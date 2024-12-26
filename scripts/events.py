@@ -732,18 +732,12 @@ class Events:
             log_text = i18n.t(
                 "hardcoded.focus_herbs_log",
                 herbs=adjust_list_text(
-                    i18n.t(f"conditions.herbs.{herb}", count=2) for herb in herbs_found
+                    [
+                        i18n.t(f"conditions.herbs.{herb}", count=2)
+                        for herb in herbs_found
+                    ]
                 ),
             )
-            idx = 0
-            for herb, amount in herb_counter.items():
-                log_text += str(amount) + " " + herb.replace("_", " ")
-                idx += 1
-                if idx < len(herb_counter) - 1:
-                    log_text += ", "
-                elif idx < len(herb_counter):
-                    log_text += " and "
-            log_text += "."
             game.herb_events_list.append(log_text)
 
         elif game.clan.clan_settings.get("threaten outsiders"):
