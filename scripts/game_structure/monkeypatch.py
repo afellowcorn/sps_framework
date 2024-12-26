@@ -20,8 +20,6 @@ other = [
     "chosen_herb",
 ]
 
-i18n.config.set("error_on_missing_translation", True)
-
 
 def translate(text: str, **kwargs):
     if text == "":
