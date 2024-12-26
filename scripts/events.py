@@ -732,7 +732,10 @@ class Events:
             log_text = i18n.t(
                 "hardcoded.focus_herbs_log",
                 herbs=adjust_list_text(
-                    i18n.t(f"conditions.herbs.{herb}", count=2) for herb in herbs_found
+                    [
+                        i18n.t(f"conditions.herbs.{herb}", count=2)
+                        for herb in herbs_found
+                    ]
                 ),
             )
             idx = 0
