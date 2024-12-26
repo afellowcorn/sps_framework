@@ -299,6 +299,8 @@ def load_manager(res: Tuple[int, int], screen_offset: Tuple[int, int], scale: fl
             translation_paths.append(os.path.join(root, directory))
         break
 
+    print("translation paths:", translation_paths)
+
     # initialize pygame_gui manager, and load themesz
     manager = UIManager(
         res,
