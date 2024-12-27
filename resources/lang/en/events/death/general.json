@@ -1785,7 +1785,7 @@
         "sub_type": ["murder"],
         "tags": ["all_lives"],
         "weight": 20,
-        "event_text": "r_c tricked m_c into playing on thin ice. {PRONOUN/r_c/subject/CAP} watched m_c disappear beneath the surface.",
+        "event_text": "r_c tricked m_c into playing on thin ice. {PRONOUN/r_c/subject/CAP} watched closely as m_c disappeared beneath the surface.",
         "m_c": {
             "age": ["adolescent", "young adult", "adult", "senior adult", "senior"],
             "not_skill": [
@@ -3096,7 +3096,7 @@
         "sub_type": [ "murder" ],
         "tags": [],
         "weight": 20,
-        "event_text": "m_c sneaked out of camp and misjudged the jump across a stream. r_c watched as {PRONOUN/m_c/subject} disappeared under the water.",
+        "event_text": "m_c sneaked out of camp and misjudged the jump across a stream. r_c watched without concern as {PRONOUN/m_c/subject} disappeared under the water.",
         "m_c": {
             "age": [
                 "kitten"
