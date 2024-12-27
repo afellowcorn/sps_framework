@@ -32,8 +32,22 @@ jobs:
           python-version: "3.11"
           architecture: "x64"
           cache: "poetry"
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential zlib1g-dev
       - name: install dependencies
         run: poetry install --with build -E discord
+      - name: Build PyInstaller bootloader
+        run: |
+          git clone https://github.com/pyinstaller/pyinstaller.git
+          cd pyinstaller
+          git checkout v6.11.0
+          cd bootloader
+          poetry run python ./waf all
+          poetry run python ./waf install
+          cd ..
+          poetry run pip install .
       - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
@@ -126,8 +140,22 @@ jobs:
           python-version: "3.11"
           architecture: "x64"
           cache: "poetry"
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential zlib1g-dev
       - name: install dependencies
         run: poetry install --with build -E discord
+      - name: Build PyInstaller bootloader
+        run: |
+          git clone https://github.com/pyinstaller/pyinstaller.git
+          cd pyinstaller
+          git checkout v6.11.0
+          cd bootloader
+          poetry run python ./waf all
+          poetry run python ./waf install
+          cd ..
+          poetry run pip install .
       - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
@@ -219,6 +247,8 @@ jobs:
         uses: abatilo/actions-poetry@v3
         with:
           poetry-version: 1.4.1
+      - name: Install Visual Studio Build Tools
+        uses: microsoft/setup-msbuild@v1.1
       - name: Set up cargo cache
         uses: actions/cache@v4
         continue-on-error: false
@@ -233,6 +263,17 @@ jobs:
           restore-keys: ${{ runner.os }}-cargo-
       - name: install dependencies
         run: poetry install --with build -E discord
+      - name: Build PyInstaller bootloader
+        shell: cmd
+        run: |
+          git clone https://github.com/pyinstaller/pyinstaller.git
+          cd pyinstaller
+          git checkout v6.11.0
+          cd bootloader
+          poetry run python ./waf all
+          poetry run python ./waf install
+          cd ..
+          poetry run pip install .
       - name: Configure dev
         shell: bash
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
@@ -338,6 +379,8 @@ jobs:
           python-version: "3.8" # 3.8 to support older versions of Windows
           architecture: "x64"
           cache: "poetry"
+      - name: Install Visual Studio Build Tools
+        uses: microsoft/setup-msbuild@v1.1
       - name: Set up cargo cache
         uses: actions/cache@v4
         continue-on-error: false
@@ -352,6 +395,17 @@ jobs:
           restore-keys: ${{ runner.os }}-cargo-
       - name: install dependencies
         run: poetry install --with build -E discord
+      - name: Build PyInstaller bootloader
+        shell: cmd
+        run: |
+          git clone https://github.com/pyinstaller/pyinstaller.git
+          cd pyinstaller
+          git checkout v6.11.0
+          cd bootloader
+          poetry run python ./waf all
+          poetry run python ./waf install
+          cd ..
+          poetry run pip install .
       - name: Configure dev
         shell: bash
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
@@ -462,6 +516,8 @@ jobs:
           python-version: "3.11"
           architecture: "x64"
           cache: "poetry"
+      - name: Install Visual Studio Build Tools
+        uses: microsoft/setup-msbuild@v1.1
       - name: Set up cargo cache
         uses: actions/cache@v4
         continue-on-error: false
@@ -476,6 +532,17 @@ jobs:
           restore-keys: ${{ runner.os }}-cargo-
       - name: install dependencies
         run: poetry install --with build -E discord
+      - name: Build PyInstaller bootloader
+        shell: cmd
+        run: |
+          git clone https://github.com/pyinstaller/pyinstaller.git
+          cd pyinstaller
+          git checkout v6.11.0
+          cd bootloader
+          poetry run python ./waf all
+          poetry run python ./waf install
+          cd ..
+          poetry run pip install .
       - name: Configure dev
         shell: bash
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
@@ -590,8 +657,21 @@ jobs:
         with:
           python-version: "3.11"
           cache: "poetry"
+      - name: Install build dependencies
+        run: |
+          brew install zlib
       - name: install dependencies
         run: poetry install --with build -E discord
+      - name: Build PyInstaller bootloader
+        run: |
+          git clone https://github.com/pyinstaller/pyinstaller.git
+          cd pyinstaller
+          git checkout v6.11.0
+          cd bootloader
+          poetry run python ./waf all
+          poetry run python ./waf install
+          cd ..
+          poetry run pip install .
       - name: Configure dev
         if: ${{ !startsWith(github.ref, 'refs/tags/') }}
         run: |
