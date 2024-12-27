@@ -44,8 +44,8 @@ jobs:
           cd pyinstaller
           git checkout v6.11.0
           cd bootloader
-          poetry run python ./waf all
-          poetry run python ./waf install
+          python ./waf all
+          python ./waf install
           cd ..
           poetry run pip install .
       - name: Configure dev
@@ -152,8 +152,8 @@ jobs:
           cd pyinstaller
           git checkout v6.11.0
           cd bootloader
-          poetry run python ./waf all
-          poetry run python ./waf install
+          python ./waf all
+          python ./waf install
           cd ..
           poetry run pip install .
       - name: Configure dev
@@ -270,8 +270,8 @@ jobs:
           cd pyinstaller
           git checkout v6.11.0
           cd bootloader
-          poetry run python ./waf all
-          poetry run python ./waf install
+          python ./waf all
+          python ./waf install
           cd ..
           poetry run pip install .
       - name: Configure dev
@@ -402,8 +402,8 @@ jobs:
           cd pyinstaller
           git checkout v6.11.0
           cd bootloader
-          poetry run python ./waf all
-          poetry run python ./waf install
+          python ./waf all
+          python ./waf install
           cd ..
           poetry run pip install .
       - name: Configure dev
@@ -539,8 +539,8 @@ jobs:
           cd pyinstaller
           git checkout v6.11.0
           cd bootloader
-          poetry run python ./waf all
-          poetry run python ./waf install
+          python ./waf all
+          python ./waf install
           cd ..
           poetry run pip install .
       - name: Configure dev
@@ -668,8 +668,8 @@ jobs:
           cd pyinstaller
           git checkout v6.11.0
           cd bootloader
-          poetry run python ./waf all
-          poetry run python ./waf install
+          python ./waf all
+          python ./waf install
           cd ..
           poetry run pip install .
       - name: Configure dev
