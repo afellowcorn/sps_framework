@@ -39,6 +39,7 @@
         "clan_rep_neutral": "Relations with %{clan} are unchanged.",
         "clan_rep_worsened": "Relations with %{clan} have worsened.",
         "herbs_gathered": {
+            "zero": "Despite searching, no herbs were found.",
             "one": "%{herbs} was gathered.",
             "many": "%{herbs} were gathered."
         },
