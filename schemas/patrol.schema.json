@@ -273,7 +273,16 @@
         "description": "Tags are used for some filtering purposes, and some odd-and-ends. Tags never affect outcome.",
         "type": "array",
         "items": {
-         "type": "string"
+          "enum": [
+            "romantic",
+            "rom_two_apps",
+            "disaster",
+            "new_cat",
+            "halloween",
+            "april_fools",
+            "new_years",
+            "cruel_season"
+          ]
         }
       },
       "patrol_art": {
