@@ -34,7 +34,7 @@ Facets can be found [here (github.com)](https://github.com/ClanGenOfficial/clang
 **Stability**
 
 * **Low**: “I am quick to change my opinions and make decisions. I don’t spend much time considering the consequences of what I do.”  
-* **High**: “I am slow to change my opinions and make decisions. I’m consistent and grounded.
+* **High**: “I am slow to change my opinions and make decisions. I’m consistent and grounded."
 
 ---
 
