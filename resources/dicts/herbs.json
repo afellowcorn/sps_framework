@@ -26,10 +26,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "elder leaf bundle",
-      "plural": "elder leaf bundles"
     }
   },
   "cobwebs": {
@@ -59,10 +55,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "cobweb",
-      "plural": "cobwebs"
     }
   },
   "daisy": {
@@ -92,10 +84,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "daisy",
-      "plural": "daisies"
     }
   },
   "horsetail": {
@@ -125,10 +113,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "horsetail clump",
-      "plural": "horsetail clumps"
     }
   },
   "juniper": {
@@ -158,10 +142,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "juniper berry bunch",
-      "plural": "juniper berry bunches"
     }
   },
   "lungwort": {
@@ -191,10 +171,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "lungwort",
-      "plural": "lungwort"
     }
   },
   "mallow": {
@@ -224,10 +200,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "mallow",
-      "plural": "mallow"
     }
   },
   "marigold": {
@@ -257,10 +229,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "marigold",
-      "plural": "marigold"
     }
   },
   "moss": {
@@ -290,10 +258,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "moss clump",
-      "plural": "moss clumps"
     }
   },
   "oak_leaves": {
@@ -323,10 +287,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "oak leaf bundle",
-      "plural": "oak leaf bundles"
     }
   },
   "ragwort": {
@@ -356,10 +316,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "ragwort",
-      "plural": "ragwort"
     }
   },
   "raspberry": {
@@ -389,10 +345,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "raspberry leaf cluster",
-      "plural": "raspberry leaf clusters"
     }
   },
   "tansy": {
@@ -422,10 +374,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "tansy",
-      "plural": "tansy"
     }
   },
   "thyme": {
@@ -455,10 +403,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "thyme bundle",
-      "plural": "thyme bundles"
     }
   },
   "wild_garlic": {
@@ -488,10 +432,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "wild garlic cluster",
-      "plural": "wild garlic clusters"
     }
   },
   "dandelion": {
@@ -521,10 +461,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "dandelion",
-      "plural": "dandelions"
     }
   },
   "mullein": {
@@ -554,10 +490,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "mullein",
-      "plural": "mullein"
     }
   },
   "rosemary": {
@@ -587,10 +519,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "rosemary clump",
-      "plural": "rosemary clumps"
     }
   },
   "burdock": {
@@ -620,10 +548,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "burdock root",
-      "plural": "burdock roots"
     }
   },
   "blackberry": {
@@ -653,10 +577,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "blackberry leaf cluster",
-      "plural": "blackberry leaf clusters"
     }
   },
   "betony": {
@@ -686,10 +606,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "betony",
-      "plural": "betony"
     }
   },
   "goldenrod": {
@@ -719,10 +635,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "goldenrod",
-      "plural": "goldenrod"
     }
   },
   "poppy": {
@@ -752,10 +664,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "dose of poppy seed",
-      "plural": "doses of poppy seed"
     }
   },
   "plantain": {
@@ -785,10 +693,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "plantain leaf bundle",
-      "plural": "plantain leaf bundles"
     }
   },
   "catmint": {
@@ -818,10 +722,6 @@
         "leaf-fall": 1,
         "leaf-bare": 1
       }
-    },
-    "display": {
-      "singular": "catmint cluster",
-      "plural": "catmint clusters"
     }
   }
 }

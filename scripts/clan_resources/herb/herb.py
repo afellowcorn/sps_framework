@@ -1,4 +1,5 @@
 import ujson
+import i18n
 
 
 class Herb:
@@ -7,13 +8,19 @@ class Herb:
             herb_name,
             season,
             biome
-            ):
+    ):
         self.name: str = herb_name
         self._herb_dict: dict = HERBS.get(self.name, {})
 
         self._display_dict = self._herb_dict.get("display", {})
-        self.singular_display = self._display_dict.get("singular", self.name)
-        self.plural_display = self._display_dict.get("plural", self.name)
+        self.singular_display = i18n.t(
+            f"conditions.herbs.{self.name}",
+            count=1,
+        )
+        self.plural_display = i18n.t(
+            f"conditions.herbs.{self.name}",
+            count=2,
+        )
 
         self.expiration: int = self._herb_dict.get("expiration", 1)
 
