@@ -71,7 +71,7 @@
         "Hopefully c_n won't miss m_c's efforts this moon, because {PRONOUN/m_c/subject} aren't in any condition to work."
     ],
     "many_not_working": [
-        "The medicine cats aren't seeing patients this moon, they are the patients.",
+        "The medicine cats aren't seeing patients this moon, they <i>are</i> the patients.",
         "Hopefully nothing goes wrong this moon, given that the medicine cats are all unable to work.",
         "Medicine cats make terrible patients, it turns out. Add that to the pile of reasons that c_n hopes they'll be back on their paws soon.",
         "With no working medicine cats, c_n is vulnerable."
