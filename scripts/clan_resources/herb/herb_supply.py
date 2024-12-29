@@ -712,5 +712,5 @@ class HerbSupply:
                 con_info[effect] = 2
 
 
-HERBS = load_lang_resource("dicts/herbs.json")
-MESSAGES = load_lang_resource("dicts/med_den_messages.json")
+HERBS = load_lang_resource("herb_info.json")
+MESSAGES = load_lang_resource("screens/med_den_messages.json")
