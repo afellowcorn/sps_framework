@@ -60,10 +60,7 @@ class HerbSupply:
         Dict of the storage and collected herbs combined and totaled. Key is herb name, value is total of that herb
         within the supply.
         """
-        supply = {}
-        for herb in self.base_herb_list:
-            supply[herb] = self.total_of_herb(herb)
-        return supply
+        return {herb: self.total_of_herb(herb) for herb in self.base_herb_list}
 
     @property
     def total(self) -> int:
@@ -296,13 +293,7 @@ class HerbSupply:
         """
         returns int total supply of given herb
         """
-        total = 0
-        for stock in self.storage.get(herb, []):
-            total += stock
-
-        total += self.collected.get(herb, 0)
-
-        return total
+        return sum([stock for stock in self.storage.get(herb, [0])) + self.collected.get(herb, 0)
 
     def get_highest_herb_in_group(self, group) -> str:
         """
@@ -493,7 +484,7 @@ class HerbSupply:
             for herb, count in self.collected.items():
                 if not self.storage.get(herb, []):
                     # herbs can't be stored better if there isn't an existing store of that herb
-                    break
+                    continue
 
                 # attempt the better storage
                 if randint(1, 35 - modifier) == 1:
