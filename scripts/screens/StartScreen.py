@@ -32,7 +32,7 @@ from scripts.game_structure.game_essentials import (
 )
 from scripts.game_structure.ui_elements import UIImageButton, UISurfaceImageButton
 from scripts.game_structure.windows import UpdateAvailablePopup, ChangelogPopup
-from scripts.utility import ui_scale, quit, ui_scale_dimensions, adjust_list_text
+from scripts.utility import ui_scale, quit, ui_scale_dimensions
 from .Screens import Screens
 from ..game_structure.screen_settings import MANAGER
 from ..housekeeping.datadir import get_data_dir, get_cache_dir
@@ -185,20 +185,17 @@ class StartScreen(Screens):
         Screens.show_mute_buttons()
 
         # Create buttons
-        list1 = adjust_list_text(["oneitem"])
-        list2 = adjust_list_text(["oneitem", "twoitem"])
-        list3 = adjust_list_text(["oneitem", "twoitem", "threeitem"])
 
         self.continue_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 310), (200, 30))),
-            list1,
+            "buttons.continue",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
         )
         self.switch_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
-            list2,
+            "buttons.switch_clan",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
@@ -206,7 +203,7 @@ class StartScreen(Screens):
         )
         self.new_clan_button = UISurfaceImageButton(
             ui_scale(pygame.Rect((70, 15), (200, 30))),
-            list3,
+            "buttons.new_clan",
             image_dict=get_button_dict(ButtonStyles.MAINMENU, (200, 30)),
             object_id="@buttonstyles_mainmenu",
             manager=MANAGER,
