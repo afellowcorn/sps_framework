@@ -12,16 +12,14 @@
             "one": "The medicine cat can care for a Clan of up to %{clansize} members, including {PRONOUN/med_name/self}.",
             "many": "c_n's medicine cats can care for a Clan of up to %{clansize} members, including themselves."
         },
-        "log_messages": {
-            "expiration": "It was discovered that some stores of %{herbs} were too old to be of use anymore.",
-            "better_storage": "%{name} did an excellent job storing herbs this moon, %{herbs} will expire slower.",
-            "gather_success": "%{name} collected %{herbs} during this moon.",
-            "gather_fail": "%{name} didn't collect any herbs this moon.",
-            "herb_used": "m_c was given %{herb} as treatment for: %{condition}. %{effect}",
-            "mortality_down": "{PRONOUN/m_c/subject/CAP} will be less likely to die.",
-            "duration_down": "{PRONOUN/m_c/subject/CAP} will heal sooner.",
-            "risks_down": "The risks associated with {PRONOUN/m_c/poss} condition are lowered.",
-            "focus": "With the additional focus of the Clan, the following herbs were gathered: %{herbs}."
-        }
+        "expiration": "It was discovered that some stores of %{herbs} were too old to be of use anymore.",
+        "better_storage": "%{name} did an excellent job storing herbs this moon, %{herbs} will expire slower.",
+        "gather_success": "%{name} collected %{herbs} during this moon.",
+        "gather_fail": "%{name} didn't collect any herbs this moon.",
+        "herb_used": "m_c was given %{herb} as treatment for: %{condition}. %{effect}",
+        "mortality_down": "{PRONOUN/m_c/subject/CAP} will be less likely to die.",
+        "duration_down": "{PRONOUN/m_c/subject/CAP} will heal sooner.",
+        "risks_down": "The risks associated with {PRONOUN/m_c/poss} condition are lowered.",
+        "focus": "With the additional focus of the Clan, the following herbs were gathered: %{herbs}."
     }
 }

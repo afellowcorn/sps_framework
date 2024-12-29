@@ -218,7 +218,7 @@ class HerbSupply:
         # add log entry to inform player of removal
         if expired:
             self.log.append(i18n.t(
-                "screens.med_den.log_messages.expiration",
+                "screens.med_den.expiration",
                 herbs=adjust_list_text([herb.plural_display for herb in expired]))
             )
 
@@ -381,7 +381,7 @@ class HerbSupply:
 
         if herb_list:
             game.herb_events_list.append(i18n.t(
-                "screens.med_den.log_messages.focus",
+                "screens.med_den.focus",
                 herbs=herb_list
             ))
 
@@ -504,7 +504,7 @@ class HerbSupply:
             if better_storage:
                 # inform player of expiration perk
                 self.log.append(i18n.t(
-                    "screens.med_den.log_messages.better_storage",
+                    "screens.med_den.better_storage",
                     name=med.name,
                     herbs=adjust_list_text([self.herb[herb].plural_display for herb in better_storage])
                 ))
@@ -608,13 +608,13 @@ class HerbSupply:
         if found_herbs:
             # add found herbs to log
             self.log.append(i18n.t(
-                "screens.med_den.log_messages.gather_success",
+                "screens.med_den.gather_success",
                 name=med_cat.name,
                 herbs=adjust_list_text(list_of_herb_strs)
             ))
         else:
             self.log.append(i18n.t(
-                "screens.med_den.log_messages.gather_fail",
+                "screens.med_den.gather_fail",
                 name=med_cat.name
             ))
 
@@ -655,7 +655,7 @@ class HerbSupply:
             con_info[effect] += (
                     3 * strength + amt_modifier
             )
-            effect_message = i18n.t("screens.med_den.log_messages.mortality_down")
+            effect_message = i18n.t("screens.med_den.mortality_down")
 
         # apply duration effect
         elif effect == HerbEffect.DURATION:
@@ -665,7 +665,7 @@ class HerbSupply:
             )
             if con_info["duration"] < 0:
                 con_info["duration"] = 0
-            effect_message = i18n.t("screens.med_den.log_messages.duration_down")
+            effect_message = i18n.t("screens.med_den.duration_down")
 
         # apply risk effect
         elif effect == HerbEffect.RISK:
@@ -673,7 +673,7 @@ class HerbSupply:
                 risk["chance"] += (
                         3 * strength + amt_modifier
                 )
-                effect_message = i18n.t("screens.med_den.log_messages.risks_down")
+                effect_message = i18n.t("screens.med_den.risks_down")
 
         if game.clan.game_mode == "classic":
             # classic doesn't get logs
@@ -681,7 +681,7 @@ class HerbSupply:
 
         # create and append log message
         message = i18n.t(
-            "screens.med_den.log_messages.herb_used",
+            "screens.med_den.herb_used",
             herb=self.herb[herb_used].plural_display if amount_used > 1 else str('a ') + self.herb[
                 herb_used].singular_display,
             condition=condition,
