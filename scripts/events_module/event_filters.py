@@ -207,7 +207,7 @@ def event_for_herb_supply(trigger, supply_type, clan_size) -> bool:
         return False
 
     else:
-        possible_herbs = HERBS
+        possible_herbs = herb_supply.base_herb_list
         chosen_herb = supply_type
         if chosen_herb not in possible_herbs.keys():
             print(f"WARNING: possible typo in supply constraint: {chosen_herb}")
@@ -358,8 +358,3 @@ def _check_cat_gender(cat, genders: list) -> bool:
         return True
 
     return False
-
-
-# until we make a herbs class, this will have to live here too to avoid a circular import. i am screaming.
-with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:
-    HERBS = ujson.loads(read_file.read())

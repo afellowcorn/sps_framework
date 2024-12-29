@@ -312,11 +312,17 @@ class Condition_Events:
                 ]:
                     illness = f"a {chosen_illness}"
                 # try to translate the illness
-                illness = i18n.t(f"conditions.illness.{chosen_illness}")
-                illness.replace("conditions.illness.", "")
+                illness = i18n.t(f"conditions.illnesses.{chosen_illness}")
+                illness.replace("conditions.illnesses.", "")
                 event_string = i18n.t(
                     "defaults.illness_get_event",
                     illness=illness,
+                )
+
+                event_string = event_text_adjust(
+                    Cat,
+                    text=event_string,
+                    main_cat=cat
                 )
 
         # if an event happened, then add event to cur_event_list and save death if it happened.
@@ -715,8 +721,8 @@ class Condition_Events:
                             f"placeholder string was used."
                         )
                         # try to translate the string
-                        new_injury = i18n.t(f"conditions.injury.{injury}")
-                        new_injury.replace("conditions.injury.", "")
+                        new_injury = i18n.t(f"conditions.injuries.{injury}")
+                        new_injury.replace("conditions.injuries.", "")
 
                         event = i18n.t(
                             "defaults.injury_healed_event", injury=new_injury

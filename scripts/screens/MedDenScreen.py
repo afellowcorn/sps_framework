@@ -5,7 +5,7 @@ import pygame
 import pygame_gui
 
 from scripts.cat.cats import Cat
-from scripts.clan_resources.herb.herb_supply import HERBS, MESSAGES
+from scripts.clan_resources.herb.herb_supply import MESSAGES
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.ui_elements import (
     UISpriteButton,

@@ -61,8 +61,8 @@
             "many": "thyme bundles"
         },
         "wild_garlic": {
-            "one": "wild garlic cluster",
-            "many": "wild garlic clusters"
+            "one": "wild garlic",
+            "many": "wild garlic"
         },
         "dandelion": {
             "one": "dandelion",
@@ -97,8 +97,8 @@
             "many": "doses poppy seeds"
         },
         "plantain": {
-            "one": "plantain leaf bundle",
-            "many": "plantain leaf bundles"
+            "one": "plantain bundle",
+            "many": "plantain bundles"
         },
         "catmint": {
             "one": "catmint cluster",

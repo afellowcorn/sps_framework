@@ -15,7 +15,6 @@ if TYPE_CHECKING:
     from scripts.events_module.patrol.patrol import Patrol
 
 from scripts.cat.history import History
-from scripts.clan_resources.herb.herb_supply import HERBS
 from scripts.utility import (
     change_clan_relations,
     change_clan_reputation,
@@ -688,6 +687,8 @@ class PatrolOutcome:
         else:
             patrol_size_modifier = 1
 
+        full_amount_count = 0
+
         if "random_herbs" in self.herbs:
             list_of_herb_strs, found_herbs = game.clan.herb_supply.get_found_herbs(
                 med_cat=patrol.patrol_leader,
@@ -706,29 +707,25 @@ class PatrolOutcome:
 
             for herb, count in found_herbs.items():
                 game.clan.herb_supply.add_herb(herb, count)
+                full_amount_count += count
                 if count > 1:
                     list_of_herb_strs.append(f"{count} {game.clan.herb_supply.herb[herb].plural_display}")
                 else:
                     list_of_herb_strs.append(f"{count} {game.clan.herb_supply.herb[herb].singular_display}")
 
-        if not found_herbs:
-            return i18n.t(
-                "screens.patrol.herbs_gathered",
-                count=0
-            )
         herb_string = adjust_list_text(list_of_herb_strs).capitalize()
 
         game.herb_events_list.append(
             i18n.t(
                 "screens.patrol.herb_log",
-                count=len(list_of_herb_strs),
+                count=full_amount_count,
                 herbs=herb_string
             )
         )
 
         return i18n.t(
             "screens.patrol.herbs_gathered",
-            count=len(list_of_herb_strs),
+            count=full_amount_count,
             herbs=herb_string
         )
 

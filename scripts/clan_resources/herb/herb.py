@@ -1,6 +1,8 @@
 import ujson
 import i18n
 
+from scripts.game_structure.localization import load_lang_resource
+
 
 class Herb:
     def __init__(
@@ -33,5 +35,5 @@ class Herb:
         return rarity_dict.get(biome.casefold(), {}).get(season.casefold(), 0)
 
 
-with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:
-    HERBS = ujson.loads(read_file.read())
+HERBS = load_lang_resource("herb_info.json")
+

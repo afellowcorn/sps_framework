@@ -1,16 +1,14 @@
 from random import choice, randint, choices
 
 import i18n
-import ujson
 
-from scripts.cat.cats import ILLNESSES, INJURIES, PERMANENT
 from scripts.cat.skills import SkillPath
-from scripts.clan_resources.herb.herb import Herb
+from scripts.clan_resources.herb.herb import Herb, HERBS
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
 from scripts.game_structure.game_essentials import game
 from scripts.game_structure.localization import load_lang_resource
-from scripts.utility import adjust_list_text, event_text_adjust
+from scripts.utility import adjust_list_text, event_text_adjust, PERMANENT, ILLNESSES, INJURIES
 
 
 class HerbSupply:
@@ -36,7 +34,8 @@ class HerbSupply:
 
         self.herb = {}
         if game.clan:
-            for name in HERBS:
+            self.base_herb_list = HERBS
+            for name in self.base_herb_list:
                 self.herb[name] = Herb(
                     name,
                     biome=game.clan.biome,
@@ -64,7 +63,7 @@ class HerbSupply:
         within the supply.
         """
         supply = {}
-        for herb in HERBS:
+        for herb in self.base_herb_list:
             supply[herb] = self.total_of_herb(herb)
         return supply
 
@@ -144,7 +143,7 @@ class HerbSupply:
         used to start a new storage dict if the clan had old save file to convert
         """
         for herb, count in herb_list.items():
-            if herb in HERBS:
+            if herb in self.base_herb_list:
                 self.storage[herb] = [count]
 
     def start_storage(self, clan_size):
@@ -153,7 +152,7 @@ class HerbSupply:
         """
         self.required_herb_count = clan_size * 2
 
-        for herb in HERBS:
+        for herb in self.base_herb_list:
             if randint(1, 4) == 1:
                 self.add_herb(herb, num_collected=randint(self.adequate_qualifier, self.full_qualifier))
 
@@ -478,7 +477,7 @@ class HerbSupply:
         this is where an expiration perk is added.
         """
         # add empty "clump" to all uncollected herb stores
-        for herb in [x for x in HERBS if x not in self.collected and x in self.storage]:
+        for herb in [x for x in self.base_herb_list if x not in self.collected and x in self.storage]:
             self.storage.get(herb, []).insert(0, 0)
 
         for med in med_cats:
@@ -613,7 +612,7 @@ class HerbSupply:
             self.log.append(i18n.t(
                 "screens.med_den.log_messages.gather_success",
                 name=med_cat.name,
-                herbs=list_of_herb_strs
+                herbs=adjust_list_text(list_of_herb_strs)
             ))
         else:
             self.log.append(i18n.t(
@@ -658,7 +657,7 @@ class HerbSupply:
             con_info[effect] += (
                     3 * strength + amt_modifier
             )
-            effect_message = i18n.t("med_den.log_messages.mortality_down")
+            effect_message = i18n.t("screens.med_den.log_messages.mortality_down")
 
         # apply duration effect
         elif effect == HerbEffect.DURATION:
@@ -668,7 +667,7 @@ class HerbSupply:
             )
             if con_info["duration"] < 0:
                 con_info["duration"] = 0
-            effect_message = i18n.t("med_den.log_messages.duration_down")
+            effect_message = i18n.t("screens.med_den.log_messages.duration_down")
 
         # apply risk effect
         elif effect == HerbEffect.RISK:
@@ -676,7 +675,7 @@ class HerbSupply:
                 risk["chance"] += (
                         3 * strength + amt_modifier
                 )
-                effect_message = i18n.t("med_den.log_messages.risks_down")
+                effect_message = i18n.t("screens.med_den.log_messages.risks_down")
 
         if game.clan.game_mode == "classic":
             # classic doesn't get logs
@@ -684,9 +683,9 @@ class HerbSupply:
 
         # create and append log message
         message = i18n.t(
-            "med_den.log_messages.herb_used",
-            herb={self.herb[herb_used].plural_display if amount_used > 1 else str('a ') + self.herb[
-                herb_used].singular_display},
+            "screens.med_den.log_messages.herb_used",
+            herb=self.herb[herb_used].plural_display if amount_used > 1 else str('a ') + self.herb[
+                herb_used].singular_display,
             condition=condition,
             effect=effect_message
         )
@@ -726,5 +725,4 @@ class HerbSupply:
                 con_info[effect] = 2
 
 
-HERBS = load_lang_resource("herb_info.json")
 MESSAGES = load_lang_resource("screens/med_den_messages.json")
