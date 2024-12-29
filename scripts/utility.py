@@ -23,6 +23,7 @@ from pygame_gui.core import ObjectID
 from scripts.game_structure.localization import (
     load_lang_resource,
     determine_plural_pronouns,
+    get_lang_config,
 )
 
 logger = logging.getLogger(__name__)
@@ -1837,6 +1838,8 @@ def adjust_list_text(list_of_items) -> str:
         item2 = list_of_items[1]
     else:
         item1 = ", ".join(list_of_items[:-1])
+        if get_lang_config().get("oxford_comma"):
+            item1 += ","
         item2 = list_of_items[-1]
 
     return i18n.t("utility.items", count=len(list_of_items), item1=item1, item2=item2)
