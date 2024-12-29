@@ -1977,7 +1977,10 @@ class Cat:
                     herb_used = choice(usable_herbs)
                     game.clan.herb_supply.remove_herb(herb_used, -1)
                     avoided = True
-                    text = f"{herb_used.capitalize()} was used to stop blood loss for {self.name}."
+                    text = i18n.t(
+                        "screens.med_den.blood_loss",
+                        name=self.name
+                    )
                     game.herb_events_list.append(text)
 
             if not avoided:
