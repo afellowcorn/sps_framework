@@ -37,9 +37,7 @@ class HerbSupply:
             self.base_herb_list = HERBS
             for name in self.base_herb_list:
                 self.herb[name] = Herb(
-                    name,
-                    biome=game.clan.biome,
-                    season=game.clan.current_season
+                    name
                 )
 
         # med den log for current moon
