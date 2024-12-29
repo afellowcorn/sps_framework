@@ -293,7 +293,7 @@ class HerbSupply:
         """
         returns int total supply of given herb
         """
-        return sum([stock for stock in self.storage.get(herb, [0])) + self.collected.get(herb, 0)
+        return sum([stock for stock in self.storage.get(herb, [0])]) + self.collected.get(herb, 0)
 
     def get_highest_herb_in_group(self, group) -> str:
         """
@@ -335,6 +335,8 @@ class HerbSupply:
     def handle_focus(self, med_cats: list, assistants: list = None):
         """
         Handles sending med cats to gather extra herbs in accordance to Clan focus
+        :param med_cats: a list of medicine cat objects,
+        :param assistants: a list of any non-meddies who are assisting the search for herbs
         """
 
         # get herbs found
