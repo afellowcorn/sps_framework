@@ -373,19 +373,20 @@ class HerbSupply:
         else:
             herb_strs.append(game.clan.herb_supply.herb[herb_list[0]].singular_display)
 
+        herb_list = adjust_list_text(herb_strs)
+
         # finish
-        if len(herb_list) > 1:
-            focus_text = f"With the additional focus of the Clan; {adjust_list_text(herb_strs)} were gathered."
-        elif len(herb_list) == 1:
-            focus_text = f"With the additional focus of the Clan, some {adjust_list_text(herb_strs)} was gathered."
-        else:
-            focus_text = f"Despite the additional focus of the Clan, no herbs could be gathered."
+        focus_text = i18n.t(
+            "hardcoded.focus_herbs",
+            herbs=herb_list,
+            count=len(herb_list)
+        )
 
         if herb_list:
-            log_text = (
-                f"With the additional focus of the Clan, following herbs were gathered: {adjust_list_text(list_of_herb_strs)}."
-            )
-            game.herb_events_list.append(log_text)
+            game.herb_events_list.append(i18n.t(
+                "screens.med_den.log_messages.focus",
+                herbs=herb_list
+            ))
 
         return focus_text
 
