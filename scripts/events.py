@@ -698,7 +698,6 @@ class Events:
             )
 
             # handle herbs
-            herbs_found = []
             healthy_meds = list(
                 filter(
                     lambda c: c.status == "medicine cat"
@@ -774,10 +773,10 @@ class Events:
                     )
                 )
 
-            if warrior_amount > 1:
-                focus_text = f"With the additional focus of the Clan, {warrior_amount} pieces of prey were gathered."
-            elif warrior_amount <= 0:
-                focus_text = f"With the additional focus of the Clan, no prey was gathered."
+            focus_text = i18n.t(
+                "hardcoded.focus_prey",
+                count=warrior_amount
+            )
 
             if herb_focus_text:
                 focus_text += f" {herb_focus_text}"

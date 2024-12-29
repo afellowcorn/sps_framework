@@ -77,21 +77,6 @@
             "one": "A cat got %{condition} while raiding other Clans for more prey.",
             "many": "Multiple cats got %{condition} while raiding other Clans for more prey."
         },
-        "focus_multi_prey_herbs":{
-            "zero": "With the focus of the Clan, %{warrior_amount} additional pieces of prey were gathered, but no herbs were found.",
-            "one": "With the focus of the Clan, %{warrior_amount} additional pieces of prey and %{count} herb were gathered.",
-            "many": "With the focus of the Clan, %{warrior_amount} additional pieces of prey and %{count} herbs were gathered."
-        },
-        "focus_one_prey_herbs": {
-            "zero": "With the focus of the Clan, %{warrior_amount} additional piece of prey was gathered, but no herbs were found.",
-            "one": "With the focus of the Clan, %{warrior_amount} additional piece of prey and %{count} herb were gathered.",
-            "many": "With the focus of the Clan, %{warrior_amount} additional piece of prey and %{count} herbs were gathered."
-        },
-        "focus_no_prey_herbs": {
-            "zero": "Despite the additional focus of the Clan, neither prey nor herbs could be gathered.",
-            "one": "With the focus of the Clan, no additional prey was gathered, but %{count} herb was gathered.",
-            "many": "With the focus of the Clan, no additional prey was gathered, but %{count} herbs were gathered."
-        },
         "event_lost1": "After a long journey, m_c has finally returned home to c_n.",
         "event_lost2": "m_c was found at the border, tired but happy to be home.",
         "event_lost3": "m_c strides into camp, much to the everyone's surprise. {PRONOUN/m_c/subject/CAP}{VERB/m_c/'re/'s} home!",
