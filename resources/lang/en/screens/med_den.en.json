@@ -8,6 +8,10 @@
         "in_den": "in den",
         "out_den": "out of den",
         "minor": "minor",
+        "meds_cover": {
+            "one": "The medicine cat can care for a Clan of up to %{clansize} members, including {PRONOUN/med_name/self}.",
+            "many": "c_n's medicine cats can care for a Clan of up to %{clansize} members, including themselves."
+        },
         "log_messages": {
             "expiration": "It was discovered that some stores of %{herbs} were too old to be of use anymore.",
             "better_storage": "%{name} did an excellent job storing herbs this moon, %{herbs} will expire slower.",

@@ -350,11 +350,12 @@ class MedDenScreen(Screens):
             number = medical_cats_condition_fulfilled(
                 Cat.all_cats.values(), amount_per_med, give_clanmembers_covered=True
             )
-            if len(self.meds) == 1:
-                insert = "medicine cat"
-            else:
-                insert = "medicine cats"
-            meds_cover = f"The {insert} can care for a Clan of up to {number} members."
+
+            meds_cover = i18n.t(
+                "screens.med_den.meds_cover",
+                clansize=number,
+                count=len(self.meds)
+            )
             if game.clan.game_mode == "classic":
                 meds_cover = ""
 
