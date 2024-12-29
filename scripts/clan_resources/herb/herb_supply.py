@@ -8,6 +8,7 @@ from scripts.clan_resources.herb.herb import Herb
 from scripts.clan_resources.herb.herb_effects import HerbEffect
 from scripts.clan_resources.supply import Supply
 from scripts.game_structure.game_essentials import game
+from scripts.game_structure.localization import load_lang_resource
 from scripts.utility import adjust_list_text, event_text_adjust
 
 
@@ -711,8 +712,5 @@ class HerbSupply:
                 con_info[effect] = 2
 
 
-with open("resources/dicts/herbs.json", "r", encoding="utf-8") as read_file:
-    HERBS = ujson.loads(read_file.read())
-
-with open("resources/dicts/med_den_messages.json", "r", encoding="utf-8") as read_file:
-    MESSAGES = ujson.loads(read_file.read())
+HERBS = load_lang_resource("dicts/herbs.json")
+MESSAGES = load_lang_resource("dicts/med_den_messages.json")

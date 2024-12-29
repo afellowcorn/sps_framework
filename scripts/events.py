@@ -10,7 +10,6 @@ import random
 
 # pylint: enable=line-too-long
 import traceback
-from collections import Counter
 
 import i18n
 
@@ -18,7 +17,6 @@ from scripts.cat.cats import Cat, cat_class, BACKSTORIES
 from scripts.cat.enums import CatAgeEnum
 from scripts.cat.history import History
 from scripts.cat.names import Name
-from scripts.clan_resources.herb.herb_supply import HERBS
 from scripts.clan_resources.freshkill import FRESHKILL_EVENT_ACTIVE
 from scripts.conditions import (
     medical_cats_condition_fulfilled,
