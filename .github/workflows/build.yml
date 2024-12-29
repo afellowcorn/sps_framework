@@ -157,6 +157,7 @@ jobs:
         run: tar -caf ${{ matrix.artifact_name }} -C dist Clangen
       - name: Create archive (Windows)
         if: startsWith(matrix.os, 'windows')
+        shell: powershell
         run: |
           cp dist/Clangen/_internal/.itch.toml dist/ 
           tar.exe -a -c -f ${{ matrix.artifact_name }} -C dist Clangen .itch.toml
