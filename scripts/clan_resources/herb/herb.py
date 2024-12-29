@@ -15,16 +15,22 @@ class Herb:
         self._herb_dict: dict = HERBS.get(self.name, {})
 
         self._display_dict = self._herb_dict.get("display", {})
-        self.singular_display = i18n.t(
+
+        self.expiration: int = self._herb_dict.get("expiration", 1)
+
+    @property
+    def singular_display(self):
+        return i18n.t(
             f"conditions.herbs.{self.name}",
             count=1,
         )
-        self.plural_display = i18n.t(
+
+    @property
+    def plural_display(self):
+        return i18n.t(
             f"conditions.herbs.{self.name}",
             count=2,
         )
-
-        self.expiration: int = self._herb_dict.get("expiration", 1)
 
     def get_rarity(self, biome, season) -> int:
         """
