@@ -1,5 +1,6 @@
 from random import choice, randint, choices
 
+import i18n
 import ujson
 
 from scripts.cat.cats import ILLNESSES, INJURIES, PERMANENT
@@ -219,9 +220,10 @@ class HerbSupply:
 
         # add log entry to inform player of removal
         if expired:
-            message = choice(MESSAGES["expiration"]).replace("[herbs]", adjust_list_text(
-                [herb.plural_display for herb in expired]))
-            self.log.append(message)
+            self.log.append(i18n.t(
+                "screens.med_den.log_messages.expiration",
+                herbs=adjust_list_text([herb.plural_display for herb in expired]))
+            )
 
         game.herb_events_list.extend(self.log)
 
@@ -503,10 +505,11 @@ class HerbSupply:
 
             if better_storage:
                 # inform player of expiration perk
-                self.log.append(
-                    f"{med.name} did an excellent job storing herbs this moon. The "
-                    f"{adjust_list_text([self.herb[herb].plural_display for herb in better_storage])} "
-                    f"will expire slower.")
+                self.log.append(i18n.t(
+                    "screens.med_den.log_messages.better_storage",
+                    name=med.name,
+                    herbs=adjust_list_text([self.herb[herb].plural_display for herb in better_storage])
+                ))
                 # remove herbs that were stored well from the collection
                 for herb in better_storage:
                     self.collected.pop(herb)
@@ -606,9 +609,16 @@ class HerbSupply:
 
         if found_herbs:
             # add found herbs to log
-            self.log.append(f"{med_cat.name} collected {adjust_list_text(list_of_herb_strs)} during this moon.")
+            self.log.append(i18n.t(
+                "screens.med_den.log_messages.gather_success",
+                name=med_cat.name,
+                herbs=list_of_herb_strs
+            ))
         else:
-            self.log.append(f"{med_cat.name} didn't collect any herbs this moon.")
+            self.log.append(i18n.t(
+                "screens.med_den.log_messages.gather_fail",
+                name=med_cat.name
+            ))
 
     def _remove_from_storage(self, herb: str, needed_num: int) -> int:
         """
@@ -625,7 +635,8 @@ class HerbSupply:
 
         return needed_num
 
-    def __apply_herb_effect(self, treated_cat, condition: str, herb_used: str, effect: str, amount_used: int, strength: int):
+    def __apply_herb_effect(self, treated_cat, condition: str, herb_used: str, effect: str, amount_used: int,
+                            strength: int):
         """
         applies the given effect to the treated_cat
         """
@@ -640,13 +651,13 @@ class HerbSupply:
 
         amt_modifier = int(amount_used * .5) if int(amount_used * .5) >= 1 else 1
 
-        effect_message = "this should not show up"
+        effect_message = ""
         # apply mortality effect
         if effect == HerbEffect.MORTALITY:
             con_info[effect] += (
                     3 * strength + amt_modifier
             )
-            effect_message = "{PRONOUN/m_c/subject/CAP} be less likely to die."
+            effect_message = i18n.t("med_den.log_messages.mortality_down")
 
         # apply duration effect
         elif effect == HerbEffect.DURATION:
@@ -656,7 +667,7 @@ class HerbSupply:
             )
             if con_info["duration"] < 0:
                 con_info["duration"] = 0
-            effect_message = "{PRONOUN/m_c/subject/CAP} will heal sooner."
+            effect_message = i18n.t("med_den.log_messages.duration_down")
 
         # apply risk effect
         elif effect == HerbEffect.RISK:
@@ -664,18 +675,20 @@ class HerbSupply:
                 risk["chance"] += (
                         3 * strength + amt_modifier
                 )
-                effect_message = "The risks associated with {PRONOUN/m_c/poss} condition are lowered."
+                effect_message = i18n.t("med_den.log_messages.risks_down")
 
         if game.clan.game_mode == "classic":
             # classic doesn't get logs
             return
 
         # create and append log message
-        message = (
-            f"m_c was given "
-            f"{self.herb[herb_used].plural_display if amount_used > 1 else str('a ') + self.herb[herb_used].singular_display}"
-            f" this moon as treatment for: {condition}. "
-            f"{effect_message}")
+        message = i18n.t(
+            "med_den.log_messages.herb_used",
+            herb={self.herb[herb_used].plural_display if amount_used > 1 else str('a ') + self.herb[
+                herb_used].singular_display},
+            condition=condition,
+            effect=effect_message
+        )
 
         message = event_text_adjust(
             Cat=treated_cat,
