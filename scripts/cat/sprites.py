@@ -203,6 +203,7 @@ class Sprites:
                 "PALEYELLOW",
                 "GOLD",
                 "GREENYELLOW",
+                "ORANGE"
             ],
         ]
 
