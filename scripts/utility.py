@@ -1820,13 +1820,14 @@ def process_text(text, cat_dict, raise_exception=False):
     return adjust_text
 
 
-def adjust_list_text(list_of_items) -> str:
+def adjust_list_text(list_of_items: List) -> str:
     """
     returns the list in correct grammar format (i.e. item1, item2, item3 and item4)
     this works with any number of items
     :param list_of_items: the list of items you want converted
     :return: the new string
     """
+
     if len(list_of_items) == 0:
         item1 = ""
         item2 = ""
