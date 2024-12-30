@@ -666,7 +666,7 @@ class Condition_Events:
                 injury,
                 injuries,
                 Condition_Events.INJURIES,
-                translated_name=i18n.t(f"injuries.{injury}"),
+                translated_name=i18n.t(f"conditions.injuries.{injury}"),
             )
 
             skipped = cat.moon_skip_injury(injury)
