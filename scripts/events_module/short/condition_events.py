@@ -305,15 +305,16 @@ class Condition_Events:
                 # make em sick
                 cat.get_ill(chosen_illness)
 
+                # try to translate the illness
+                illness = i18n.t(f"conditions.illnesses.{chosen_illness}")
+
                 # create event text
                 if i18n.config.get("locale") == "en" and chosen_illness in [
                     "running nose",
                     "stomachache",
                 ]:
                     illness = f"a {chosen_illness}"
-                # try to translate the illness
-                illness = i18n.t(f"conditions.illness.{chosen_illness}")
-                illness.replace("conditions.illness.", "")
+                illness.replace("conditions.illnesses.", "")
                 event_string = i18n.t(
                     "defaults.illness_get_event",
                     illness=illness,
