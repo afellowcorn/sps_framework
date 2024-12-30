@@ -797,9 +797,6 @@ class Patrol:
         return (success_outcome if success else fail_outcome, success)
 
     def update_resources(self, biome_dir, leaf):
-        resource_dir = f"resources/lang/{i18n.config.get('locale')}/patrols/"
-        fallback_dir = f"resources/lang/{i18n.config.get('fallback')}/patrols/"
-
         resources = [
             ("HUNTING_SZN", f"{biome_dir}hunting/{leaf}.json"),
             ("HUNTING", f"{biome_dir}hunting/any.json"),
