@@ -363,11 +363,8 @@ class HerbSupply:
         herb_list = list(set(herb_list))
         # get display strings for herbs
         herb_strs = []
-        if len(herb_list) > 1:
-            for herb in herb_list:
-                herb_strs.append(game.clan.herb_supply.herb[herb].plural_display)
-        else:
-            herb_strs.append(game.clan.herb_supply.herb[herb_list[0]].singular_display)
+        for herb in herb_list:
+            herb_strs.append(game.clan.herb_supply.herb[herb].plural_display)
 
         herb_list = adjust_list_text(herb_strs)
 
