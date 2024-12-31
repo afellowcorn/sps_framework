@@ -444,7 +444,7 @@
 	"comment": "Forces the season to be locked at the Clan's starting_season",
 	"clan_resources": {
 		"herbs": {
-			"comment": "clan size * required_herbs_per_cat / adequate number will determine adequate supply qualifier. clan size * required_herbs_per_cat * excess number will determine excess supply qualifier",
+			"comment": "Clan size * required_herbs_per_cat / adequate number will determine adequate supply qualifier. Clan size * required_herbs_per_cat * excess number will determine excess supply qualifier",
 			"required_herbs_per_cat": 2,
 			"adequate": 2,
 			"excess": 2,
