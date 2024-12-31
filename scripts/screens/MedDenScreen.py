@@ -359,21 +359,27 @@ class MedDenScreen(Screens):
             if game.clan.game_mode == "classic":
                 meds_cover = ""
 
-            if len(self.meds) == 1 and number == 0:
+            if not self.meds:
+                meds_cover = choice(MESSAGES["no_meds_warning"])
+            elif len(self.meds) == 1 and number == 0:
                 meds_cover = event_text_adjust(
                     Cat=Cat,
                     text=choice(MESSAGES["single_not_working"]),
                     main_cat=self.meds[0],
                     clan=game.clan
                 )
-            if len(self.meds) >= 2 and number == 0:
+            elif len(self.meds) >= 2 and number == 0:
                 meds_cover = event_text_adjust(
                     Cat=Cat,
                     text=choice(MESSAGES["many_not_working"]),
                     clan=game.clan
                 )
 
-            med_messages.append(meds_cover)
+            med_messages.append(event_text_adjust(
+                Cat,
+                meds_cover,
+                main_cat=self.meds[0]
+            ))
 
             if self.meds:
                 med_messages.append(game.clan.herb_supply.get_status_message(choice(self.meds)))

@@ -719,4 +719,18 @@ class HerbSupply:
                 con_info[effect] = 2
 
 
-MESSAGES = load_lang_resource("screens/med_den_messages.json")
+MESSAGES = None
+message_lang = None
+
+
+def load_med_den_messages():
+    global MESSAGES, message_lang
+    if message_lang == i18n.config.get("locale"):
+        return
+    MESSAGES = load_lang_resource(
+        "screens/med_den_messages.json"
+    )
+    message_lang = i18n.config.get("locale")
+
+
+load_med_den_messages()
