@@ -201,8 +201,14 @@ class HerbSupply:
                 severity_ranking["minor"].append(kitty)
 
         treatment_cats = severity_ranking["severe"] + severity_ranking["major"] + severity_ranking["minor"]
-        for kitty in treatment_cats:
-            self._use_herbs(kitty)
+        if treatment_cats:
+            # collate all the source info for conditions
+            source_dict = ILLNESSES.copy()
+            source_dict.update(INJURIES)
+            source_dict.update(PERMANENT)
+
+            for kitty in treatment_cats:
+                self._use_herbs(kitty, source_dict)
 
         # remove expired herbs
         expired = []
@@ -515,19 +521,16 @@ class HerbSupply:
         # clear collection dict
         self.collected = {}
 
-    def _use_herbs(self, treatment_cat):
+    def _use_herbs(self, treatment_cat, source_dict):
         """
         utilize current herb supply on given condition
+        :param treatment_cat: the cat object to be treated
+        :source_dict: a full dict of all possible conditions
         """
         # collate all cat's conditions
         condition_dict = treatment_cat.injuries.copy()
         condition_dict.update(treatment_cat.illnesses)
         condition_dict.update(treatment_cat.permanent_condition)
-
-        # collate all the source info for conditions
-        source_dict = ILLNESSES.copy()
-        source_dict.update(INJURIES)
-        source_dict.update(PERMANENT)
 
         for name, condition in condition_dict.items():
             # get the herbs that the condition allows as treatment
