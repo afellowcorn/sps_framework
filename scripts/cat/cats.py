@@ -3549,6 +3549,7 @@ def create_example_cats():
             game.choose_cats[cat_index] = create_cat(status=random_status)
 
 
+
 # CAT CLASS ITEMS
 cat_class = Cat(example=True)
 game.cat_class = cat_class
