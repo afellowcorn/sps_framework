@@ -94,15 +94,15 @@
         },
         "poppy": {
             "one": "dose of poppy seed",
-            "many": "doses poppy seeds"
+            "many": "doses of poppy seeds"
         },
         "plantain": {
             "one": "plantain bundle",
             "many": "plantain bundles"
         },
         "catmint": {
-            "one": "catmint cluster",
-            "many": "catmint clusters"
+            "one": "catmint pile",
+            "many": "catmint piles"
         }
     }
 }

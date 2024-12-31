@@ -428,7 +428,7 @@ class HerbSupply:
         found_herbs = {}
 
         # adjust weighting according to season
-        weight = game.config["clan_resources"]["herbs"][game.clan.biome.casefold][game.clan.current_season.casefold]
+        weight = game.config["clan_resources"]["herbs"][game.clan.biome.casefold()][game.clan.current_season.casefold()]
 
         # the amount of herb types the med has found
         amount_of_herbs = choices(population=[1, 2, 3], weights=weight, k=1)[0] + amount_modifier
