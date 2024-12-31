@@ -619,7 +619,7 @@ class HerbSupply:
         removes needed_num of given herb from storage until needed_num is met or storage is empty, if storage runs out
         before needed_num is met, returns excess
         """
-        while needed_num > 0 and self.storage[herb]:
+        while needed_num > 0 and self.storage.get(herb):
             # remove from oldest stock
             self.storage[herb][-1] -= needed_num
             # if that stock runs out, move to next oldest stock
