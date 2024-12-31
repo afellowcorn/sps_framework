@@ -783,11 +783,6 @@ class HandleShortEvents:
         supply_type = block["type"]
         trigger = block["trigger"]
 
-        self.herb_notice = "Lost "
-        if "reduce" in adjustment:
-            self.herb_notice = "Lost "
-        elif "increase" in adjustment:
-            self.herb_notice = "Gained "
         herb_list = []
 
         # adjust entire herb store
@@ -839,7 +834,16 @@ class HandleShortEvents:
             elif "increase" in adjustment:
                 herb_supply.add_herb(self.chosen_herb, int(adjustment.split("_")[1]))
 
-        self.herb_notice = self.herb_notice + adjust_list_text(herb_list) + "during this moon."
+        if "reduce" in adjustment:
+            self.herb_notice = i18n.t(
+                "screens.med_den.loss_event",
+                herbs=adjust_list_text(herb_list)
+            )
+        elif "increase" in adjustment:
+            self.herb_notice = i18n.t(
+                "screens.med_den.gain_event",
+                herbs=adjust_list_text(herb_list)
+            )
 
     def reset(self):
         """
