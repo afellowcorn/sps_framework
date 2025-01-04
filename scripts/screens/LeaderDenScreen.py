@@ -93,10 +93,14 @@ class LeaderDenScreen(Screens):
                         self.focus_clan = game.clan.all_clans[i]
                         self.update_other_clan_focus()
             elif event.ui_element == self.focus_frame_elements["negative_interaction"]:
-                text = self.focus_frame_elements["negative_interaction"].text
+                text = self.focus_frame_elements["negative_interaction"].text.replace(
+                    "screens.leader_den.", ""
+                )
                 self.update_clan_interaction_choice(text)
             elif event.ui_element == self.focus_frame_elements["positive_interaction"]:
-                text = self.focus_frame_elements["positive_interaction"].text
+                text = self.focus_frame_elements["positive_interaction"].text.replace(
+                    "screens.leader_den.", ""
+                )
                 self.update_clan_interaction_choice(text)
             elif event.ui_element == self.focus_frame_elements["clans_tab"]:
                 self.open_clans_tab()
@@ -832,6 +836,7 @@ class LeaderDenScreen(Screens):
                 "centerx": "centerx",
                 "top_target": self.focus_outsider_elements["cat_name"],
             },
+            text_kwargs={"count": 1},
         )
         self.focus_outsider_elements["cat_trait"] = pygame_gui.elements.UILabel(
             relative_rect=ui_scale(pygame.Rect((0, 0), (218, -1))),
@@ -880,6 +885,7 @@ class LeaderDenScreen(Screens):
             ui_scale(pygame.Rect((0, 0), (121, 30))),
             "screens.leader_den.hunt_down",
             get_button_dict(ButtonStyles.SQUOVAL, (121, 30)),
+            object_id="@buttonstyles_squoval",
             tool_tip_text="screens.leader_den.hunt_down_tooltip",
             tool_tip_text_kwargs={"r_c": self.focus_cat},
             container=self.focus_outsider_button_container,
