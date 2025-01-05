@@ -33,8 +33,8 @@ class HerbSupply:
         self.in_need_of: list = []
 
         self.herb = {}
+        self.base_herb_list = HERBS
         if game.clan:
-            self.base_herb_list = HERBS
             for name in self.base_herb_list:
                 self.herb[name] = Herb(
                     name
