@@ -68,7 +68,7 @@ def rebuild_core(*, should_rebuild_bgs=True):
     )
     menu_buttons["catlist_screen"] = UISurfaceImageButton(
         ui_scale(pygame.Rect((0, 60), (88, 30))),
-        "screens.core.catlist",
+        "screens.core.cat_list",
         get_button_dict(ButtonStyles.MENU_MIDDLE, (88, 30)),
         visible=False,
         object_id="@buttonstyles_menu_middle",
