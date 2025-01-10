@@ -1,12 +1,13 @@
 import os
+import traceback
 from ast import literal_eval
 from shutil import move as shutil_move
 
 import pygame
-import pygame_gui
 import ujson
 
 from scripts.event_class import Single_Event
+from scripts.game_structure.screen_settings import toggle_fullscreen
 from scripts.housekeeping.datadir import get_save_dir, get_temp_dir
 
 pygame.init()
@@ -117,7 +118,7 @@ class Game:
         "name_cat": None,
         "biome": None,
         "camp_bg": None,
-        "language": "english",
+        "language": "en",
         "options_tab": None,
         "profile_tab_group": None,
         "sub_tab_group": None,
@@ -131,13 +132,13 @@ class Game:
         "patrol_chosen": "general",
         "favorite_sub_tab": None,
         "root_cat": None,
-        "window_open": False,
         "skip_conditions": [],
         "show_history_moons": False,
         "fps": 30,
         "war_rel_change_type": "neutral",
         "disallowed_symbol_tags": [],
         "saved_scroll_positions": {},
+        "moon&season_open": False,
     }
     all_screens = {}
     cur_events = {}
@@ -145,7 +146,7 @@ class Game:
 
     # SETTINGS
     settings = {}
-    settings["mns open"] = False
+    settings["moon&season_open"] = False
     setting_lists = {}
 
     debug_settings = {
@@ -156,7 +157,7 @@ class Game:
     }
 
     # Init Settings
-    with open("resources/gamesettings.json", "r") as read_file:
+    with open("resources/gamesettings.json", "r", encoding="utf-8") as read_file:
         _settings = ujson.loads(read_file.read())
 
     for setting, values in _settings["__other"].items():
@@ -195,10 +196,10 @@ class Game:
         self.keyspressed = []
         self.switch_screens = False
 
-        with open(f"resources/game_config.json", "r") as read_file:
+        with open(f"resources/game_config.json", "r", encoding="utf-8") as read_file:
             self.config = ujson.loads(read_file.read())
 
-        with open(f"resources/prey_config.json", "r") as read_file:
+        with open(f"resources/prey_config.json", "r", encoding="utf-8") as read_file:
             self.prey_config = ujson.loads(read_file.read())
 
         if self.config["fun"]["april_fools"]:
@@ -244,13 +245,13 @@ class Game:
             i = 0
             while True:
                 # Attempt to write to temp file
-                with open(temp_file_path, "w") as write_file:
+                with open(temp_file_path, "w", encoding="utf-8") as write_file:
                     write_file.write(_data)
                     write_file.flush()
                     os.fsync(write_file.fileno())
 
                 # Read the entire file back in
-                with open(temp_file_path, "r") as read_file:
+                with open(temp_file_path, "r", encoding="utf-8") as read_file:
                     _read_data = read_file.read()
 
                 if _data != _read_data:
@@ -273,7 +274,7 @@ class Game:
                 return
         else:
             os.makedirs(dir_name, exist_ok=True)
-            with open(path, "w") as write_file:
+            with open(path, "w", encoding="utf-8") as write_file:
                 write_file.write(_data)
                 write_file.flush()
                 os.fsync(write_file.fileno())
@@ -307,7 +308,7 @@ class Game:
         # so we can load it automatically
 
         if os.path.exists(get_save_dir() + "/clanlist.txt"):
-            with open(get_save_dir() + "/clanlist.txt", "r") as f:
+            with open(get_save_dir() + "/clanlist.txt", "r", encoding="utf-8") as f:
                 loaded_clan = f.read().strip().splitlines()
                 if loaded_clan:
                     loaded_clan = loaded_clan[0]
@@ -317,7 +318,7 @@ class Game:
             if loaded_clan:
                 self.safe_save(get_save_dir() + "/currentclan.txt", loaded_clan)
         elif os.path.exists(get_save_dir() + "/currentclan.txt"):
-            with open(get_save_dir() + "/currentclan.txt", "r") as f:
+            with open(get_save_dir() + "/currentclan.txt", "r", encoding="utf-8") as f:
                 loaded_clan = f.read().strip()
         else:
             loaded_clan = None
@@ -353,19 +354,28 @@ class Game:
             if os.path.exists(get_save_dir() + "/currentclan.txt"):
                 os.remove(get_save_dir() + "/currentclan.txt")
 
-    def save_settings(self):
+    def save_settings(self, currentscreen=None):
         """Save user settings for later use"""
         if os.path.exists(get_save_dir() + "/settings.txt"):
             os.remove(get_save_dir() + "/settings.txt")
 
         self.settings_changed = False
-        game.safe_save(get_save_dir() + "/settings.json", self.settings)
+        try:
+            game.safe_save(get_save_dir() + "/settings.json", self.settings)
+        except RuntimeError:
+            from scripts.game_structure.windows import SaveError
+
+            SaveError(traceback.format_exc())
+            if currentscreen is not None:
+                currentscreen.change_screen("start screen")
 
     def load_settings(self):
         """Load settings that user has saved from previous use"""
 
         try:
-            with open(get_save_dir() + "/settings.json", "r") as read_file:
+            with open(
+                get_save_dir() + "/settings.json", "r", encoding="utf-8"
+            ) as read_file:
                 settings_data = ujson.loads(read_file.read())
         except FileNotFoundError:
             return
@@ -375,17 +385,6 @@ class Game:
                 self.settings[key] = value
 
         self.switches["language"] = self.settings["language"]
-        if self.settings["language"] != "english":
-            self.switch_language()
-
-    def switch_language(self):
-        # add translation information here
-        if os.path.exists("languages/" + game.settings["language"] + ".txt"):
-            with open(
-                "languages/" + game.settings["language"] + ".txt", "r"
-            ) as read_file:
-                raw_language = read_file.read()
-            game.language = literal_eval(raw_language)
 
     def switch_setting(self, setting_name):
         """Call this function to change a setting given in the parameter by one to the right on it's list"""
@@ -431,11 +430,7 @@ class Game:
             cat_data = inter_cat.get_save_dict()
             clan_cats.append(cat_data)
 
-            # Don't save conditions for classic condition. This
-            # should allow closing and reloading to clear conditions on
-            # classic, just in case a condition is accidently applied.
-            if game.game_mode != "classic":
-                inter_cat.save_condition()
+            inter_cat.save_condition()
 
             if inter_cat.history:
                 inter_cat.save_history(directory + "/history")
@@ -455,7 +450,6 @@ class Game:
 
         copy_of_info = ""
         for cat in game.cat_to_fade:
-
             inter_cat = self.cat_class.all_cats[cat]
 
             # Add ID to list of faded cats.
@@ -498,9 +492,10 @@ class Game:
         # Save the copies, flush the file.
         if game.clan.clan_settings["save_faded_copy"]:
             with open(
-                get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt", "a"
+                get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt",
+                "a",
+                encoding="utf-8",
             ) as write_file:
-
                 if not os.path.exists(
                     get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt"
                 ):
@@ -508,11 +503,14 @@ class Game:
                     with open(
                         get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt",
                         "w",
+                        encoding="utf-8",
                     ) as create_file:
                         pass
 
                 with open(
-                    get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt", "a"
+                    get_save_dir() + "/" + clanname + "/faded_cats_info_copy.txt",
+                    "a",
+                    encoding="utf-8",
                 ) as write_file:
                     write_file.write(copy_of_info)
 
@@ -541,6 +539,7 @@ class Game:
                 + parent
                 + ".json",
                 "r",
+                encoding="utf-8",
             ) as read_file:
                 cat_info = ujson.loads(read_file.read())
         except:
@@ -564,10 +563,10 @@ class Game:
         events_path = f"{get_save_dir()}/{clanname}/events.json"
         events_list = []
         try:
-            with open(events_path, "r") as f:
+            with open(events_path, "r", encoding="utf-8") as f:
                 events_list = ujson.loads(f.read())
             for event_dict in events_list:
-                event_obj = Single_Event.from_dict(event_dict)
+                event_obj = Single_Event.from_dict(event_dict, game.cat_class)
                 if event_obj:
                     game.cur_events_list.append(event_obj)
         except FileNotFoundError:
@@ -630,81 +629,14 @@ game = Game()
 
 if not os.path.exists(get_save_dir() + "/settings.txt"):
     os.makedirs(get_save_dir(), exist_ok=True)
-    with open(get_save_dir() + "/settings.txt", "w") as write_file:
+    with open(get_save_dir() + "/settings.txt", "w", encoding="utf-8") as write_file:
         write_file.write("")
 game.load_settings()
 
 pygame.display.set_caption("Clan Generator")
 
-if game.settings["fullscreen"]:
-    screen_x, screen_y = 1600, 1400
-    screen = pygame.display.set_mode(
-        (screen_x, screen_y), pygame.FULLSCREEN | pygame.SCALED
-    )
-else:
-    screen_x, screen_y = 800, 700
-    screen = pygame.display.set_mode((screen_x, screen_y))
-
-
-def load_manager(res: tuple):
-    # initialize pygame_gui manager, and load themes
-    manager = pygame_gui.ui_manager.UIManager(
-        res, "resources/theme/defaults.json", enable_live_theme_updates=False
-    )
-    manager.add_font_paths(
-        font_name="notosans",
-        regular_path="resources/fonts/NotoSans-Medium.ttf",
-        bold_path="resources/fonts/NotoSans-ExtraBold.ttf",
-        italic_path="resources/fonts/NotoSans-MediumItalic.ttf",
-        bold_italic_path="resources/fonts/NotoSans-ExtraBoldItalic.ttf",
-    )
-
-    if res[0] > 800:
-        manager.get_theme().load_theme("resources/theme/defaults.json")
-        manager.get_theme().load_theme("resources/theme/buttons.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes_dark.json")
-        manager.get_theme().load_theme("resources/theme/vertical_scroll_bar.json")
-        manager.get_theme().load_theme("resources/theme/horizontal_scroll_bar.json")
-        manager.get_theme().load_theme("resources/theme/window_base.json")
-        manager.get_theme().load_theme("resources/theme/tool_tips.json")
-
-        manager.preload_fonts(
-            [
-                {"name": "notosans", "point_size": 30, "style": "italic"},
-                {"name": "notosans", "point_size": 26, "style": "italic"},
-                {"name": "notosans", "point_size": 30, "style": "bold"},
-                {"name": "notosans", "point_size": 26, "style": "bold"},
-                {"name": "notosans", "point_size": 22, "style": "bold"},
-            ]
-        )
-
-    else:
-        manager.get_theme().load_theme("resources/theme/defaults_small.json")
-        manager.get_theme().load_theme("resources/theme/buttons_small.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes_small.json")
-        manager.get_theme().load_theme("resources/theme/text_boxes_dark_small.json")
-        manager.get_theme().load_theme("resources/theme/vertical_scroll_bar_small.json")
-        manager.get_theme().load_theme(
-            "resources/theme/horizontal_scroll_bar_small.json"
-        )
-        manager.get_theme().load_theme("resources/theme/window_base_small.json")
-        manager.get_theme().load_theme("resources/theme/tool_tips_small.json")
-
-        manager.preload_fonts(
-            [
-                {"name": "notosans", "point_size": 11, "style": "bold"},
-                {"name": "notosans", "point_size": 13, "style": "bold"},
-                {"name": "notosans", "point_size": 15, "style": "bold"},
-                {"name": "notosans", "point_size": 13, "style": "italic"},
-                {"name": "notosans", "point_size": 15, "style": "italic"},
-            ]
-        )
-
-    manager.get_theme().load_theme("resources/theme/windows.json")
-    manager.get_theme().load_theme("resources/theme/image_buttons.json")
-
-    return manager
-
-
-MANAGER = load_manager((screen_x, screen_y))
+toggle_fullscreen(
+    fullscreen=game.settings["fullscreen"],
+    show_confirm_dialog=False,
+    ingame_switch=False,
+)
