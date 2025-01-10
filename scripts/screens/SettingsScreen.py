@@ -73,9 +73,6 @@ class SettingsScreen(Screens):
     contributors_start = 0
     with open("resources/credits_text.json", "r", encoding="utf-8") as f:
         credits_text = ujson.load(f)
-    for string in credits_text["sps_text"]:
-        info_text += string
-        info_text += "<br>"
     for string in credits_text["text"]:
         if string == "{credits}":
             info_text_index = "ogs"

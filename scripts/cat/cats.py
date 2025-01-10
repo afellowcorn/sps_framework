@@ -8,7 +8,7 @@ import bisect
 import itertools
 import os.path
 import sys
-from random import choice, randint, sample, random, getrandbits, randrange
+from random import choice, choices, randint, sample, random, getrandbits, randrange
 from typing import Dict, List, Any, Union, Callable
 
 import i18n
