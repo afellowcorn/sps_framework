@@ -1036,6 +1036,26 @@ class ChooseMateScreen(Screens):
             object_id="#text_box_22_horizcenter_vertcenter_spacing_95",
             manager=MANAGER,
         )
+        
+        if self.kits_selected_pair:
+            self.update_offspring_container()
+
+        self.toggle_mate.kill()
+
+        if self.selected_cat.ID in self.the_cat.mate:
+            self.toggle_mate = UISurfaceImageButton(
+                ui_scale(pygame.Rect((323, 310), (153, 30))),
+                "screens.choose_mate.unset_mate",
+                get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+                object_id="@buttonstyles_squoval",
+            )
+        else:
+            self.toggle_mate = UISurfaceImageButton(
+                ui_scale(pygame.Rect((323, 310), (153, 30))),
+                "screens.choose_mate.set_mate",
+                get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
+                object_id="@buttonstyles_squoval",
+            )
 
         if (
             (not game.clan.clan_settings["same sex birth"]
@@ -1058,40 +1078,6 @@ class ChooseMateScreen(Screens):
                 any("diff_breed" in tag for tag in self.species_dict[self.selected_cat.species])
                 and self.the_cat.species == self.selected_cat.species
             )
-        ):
-            self.selected_cat_elements["no kit warning"] = (
-                pygame_gui.elements.UITextBox(
-                    f"<font pixel_size={int(22 / 1400 * screen_y)}> This pair can't have biological kittens </font>",
-                    scale(pygame.Rect((550, 250), (498, 50))),
-                    object_id=get_text_box_theme(
-                        "#text_box_22_horizcenter_vertcenter_spacing_95"
-                    ),
-                )
-            )
-
-        if self.kits_selected_pair:
-            self.update_offspring_container()
-
-        self.toggle_mate.kill()
-
-        if self.selected_cat.ID in self.the_cat.mate:
-            self.toggle_mate = UISurfaceImageButton(
-                ui_scale(pygame.Rect((323, 310), (153, 30))),
-                "screens.choose_mate.unset_mate",
-                get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
-                object_id="@buttonstyles_squoval",
-            )
-        else:
-            self.toggle_mate = UISurfaceImageButton(
-                ui_scale(pygame.Rect((323, 310), (153, 30))),
-                "screens.choose_mate.set_mate",
-                get_button_dict(ButtonStyles.SQUOVAL, (153, 30)),
-                object_id="@buttonstyles_squoval",
-            )
-
-        if (
-            not game.clan.clan_settings["same sex birth"]
-            and self.the_cat.gender == self.selected_cat.gender
         ):
             warning_rect = ui_scale(pygame.Rect((0, 0), (160, 45)))
             warning_rect.bottomleft = ui_scale_offset((0, -5))
