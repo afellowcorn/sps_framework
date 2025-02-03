@@ -399,8 +399,21 @@ class HandleShortEvents:
                     if acc in acc_list:
                         acc_list.remove(acc)
 
+        acc_categories = ["collars", "head_accessories", "tail_accessories", "body_accessories"]
+
+        if self.main_cat.pelt.accessory:
+            for acc in self.main_cat.pelt.accessory:
+                for category in acc_categories:
+                    if acc in getattr(pelts, category):
+                        for accessory in getattr(pelts, category):
+                            if accessory in acc_list:
+                                acc_list.remove(accessory)
+
         if acc_list:
-            self.main_cat.pelt.accessory = random.choice(acc_list)
+            if self.main_cat.pelt.accessory:
+                self.main_cat.pelt.accessory.append(random.choice(acc_list))
+            else:
+                self.main_cat.pelt.accessory = [random.choice(acc_list)]
 
     def handle_transition(self):
         """
