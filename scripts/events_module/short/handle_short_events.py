@@ -196,7 +196,9 @@ class HandleShortEvents:
 
         # give accessory
         if self.chosen_event.new_accessory:
-            self.handle_accessories()
+            if self.handle_accessories() is False:
+                return
+
 
         # change relationships before killing anyone
         if self.chosen_event.relationships:
@@ -409,11 +411,15 @@ class HandleShortEvents:
                             if accessory in acc_list:
                                 acc_list.remove(accessory)
 
-        if acc_list:
-            if self.main_cat.pelt.accessory:
-                self.main_cat.pelt.accessory.append(random.choice(acc_list))
-            else:
-                self.main_cat.pelt.accessory = [random.choice(acc_list)]
+        if not acc_list:
+            print("Not accessories for", self.main_cat.name)
+            return False
+
+        if self.main_cat.pelt.accessory:
+            self.main_cat.pelt.accessory.append(random.choice(acc_list))
+        else:
+            self.main_cat.pelt.accessory = [random.choice(acc_list)]
+
 
     def handle_transition(self):
         """
