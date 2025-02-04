@@ -412,7 +412,6 @@ class HandleShortEvents:
                                 acc_list.remove(accessory)
 
         if not acc_list:
-            print("Not accessories for", self.main_cat.name)
             return False
 
         if self.main_cat.pelt.accessory:
