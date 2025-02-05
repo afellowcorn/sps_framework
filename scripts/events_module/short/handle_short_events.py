@@ -401,15 +401,15 @@ class HandleShortEvents:
                     if acc in acc_list:
                         acc_list.remove(acc)
 
-        acc_categories = ["collars", "head_accessories", "tail_accessories", "body_accessories"]
-
+        accessory_groups = [pelts.collars, pelts.head_accessories, pelts.tail_accessories, pelts.body_accessories]
         if self.main_cat.pelt.accessory:
             for acc in self.main_cat.pelt.accessory:
-                for category in acc_categories:
-                    if acc in getattr(pelts, category):
-                        for accessory in getattr(pelts, category):
-                            if accessory in acc_list:
-                                acc_list.remove(accessory)
+                # find which accessory group it belongs to
+                for i, lst in enumerate(accessory_groups):
+                    if acc in lst:
+                        # remove that group from possible accessories
+                        acc_list = [a for a in acc_list if a not in accessory_groups[i]]
+                        break
 
         if not acc_list:
             return False
