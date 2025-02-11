@@ -298,7 +298,12 @@ class Cat:
 
         # sex!?!??!?!?!??!?!?!?!??
         if self.gender is None:
-            self.gender = choice(["female", "male"])
+            if any("always_f" in tag for tag in game.species["species"][self.species]):
+                self.gender = "female"
+            elif any("always_m" in tag for tag in game.species["species"][self.species]):
+                self.gender = "male"
+            else:
+                self.gender = choice(["female", "male"])
 
         """if self.genderalign == "":
             self.genderalign = self.gender"""
